@@ -17,12 +17,10 @@ jobs:
     environment: Deploy
     steps:
 #      - uses: actions/checkout@v3
-
-      - name: "Download Godot"
-        # for gdnative: wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$filePath/Godot_v${{ inputs.godot_ver }}_linux_headless.64.zip" -O /tmp/godot.zip
+      - name: "Prepare versions"
         run: |
           version="${{ github.event.inputs.godot-version }}"
-                    
+          
           # if version has already suffix (e.g. -rc1), leave as-is, but replace filePath
           if [[ $1 =~ "-" ]]; then
             filePath=$(echo "$version" | sed "s!-!/!")
@@ -31,11 +29,24 @@ jobs:
             version="${version}-stable"
           fi
           
-          wget --no-verbose "https://downloads.tuxfamily.org/godotengine/${filePath}/Godot_v${version}_linux.x86_64.zip" -O /tmp/godot.zip || {
-            echo "::error::Godot version '$version' not available online."
+          filename=Godot_v${version}_linux.x86_64
+          
+          echo "GODOT4_FILE_URL=$filePath/$filename.zip" >> $GITHUB_ENV
+          echo "GODOT4_BIN=godot_bin/$filename" >> $GITHUB_ENV
+          echo "GODOT4_VER=$version" >> $GITHUB_ENV
+
+      - name: "Download Godot ${{ env.GODOT4_VER }}..."
+        # for gdnative: wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$filePath/Godot_v${{ inputs.godot_ver }}_linux_headless.64.zip" -O /tmp/godot.zip
+        run: |          
+          wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$GODOT4_FILE_URL" -O ${{ runner.temp }}/godot.zip || {
+            echo "::error::Godot version '$GODOT4_VER' not available online."
             exit 1
           }
-          unzip -o /tmp/godot.zip -d ${{ runner.temp }}/godot_bin
+          unzip -o ${{ runner.temp }}/godot.zip -d godot_bin
 
       - name: "List dir"
-        run: ls -la ${{ runner.temp }}/godot_bin
+        run: ls -la godot_bin
+
+      - name: "Invoke Godot"
+        run: $GODOT4_BIN --version
+
