@@ -1,0 +1,41 @@
+name: "Build Godot artifacts"
+
+on:
+  workflow_dispatch:
+    inputs:
+      godot-version:
+        description: 'Version to build (for example "4.0.1")'
+        required: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  download-godot:
+    runs-on: ubuntu-latest
+    environment: Deploy
+    steps:
+#      - uses: actions/checkout@v3
+
+      - name: "Download Godot"
+        # for gdnative: wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$filePath/Godot_v${{ inputs.godot_ver }}_linux_headless.64.zip" -O /tmp/godot.zip
+        run: |
+          version="${{ github.event.inputs.godot-version }}"
+                    
+          # if version has already suffix (e.g. -rc1), leave as-is, but replace filePath
+          if [[ $1 =~ "-" ]]; then
+            filePath=$(echo "$version" | sed "s!-!/!")
+          else
+            filePath="$version"
+            version="${version}-stable"
+          fi
+          
+          wget --no-verbose "https://downloads.tuxfamily.org/godotengine/${filePath}/Godot_v${version}_linux.x86_64.zip" -O /tmp/godot.zip || {
+            echo "::error::Godot version '$version' not available online."
+            exit 1
+          }
+          unzip -o /tmp/godot.zip -d ${{ runner.temp }}/godot_bin
+
+      - name: "List dir"
+        run: ls -la ${{ runner.temp }}/godot_bin
