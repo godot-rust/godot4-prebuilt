@@ -44,6 +44,9 @@ jobs:
           }
           unzip -o ${{ runner.temp }}/godot.zip -d godot_bin
 
+      - name: "Download GDExtension header..."
+        run: wget https://raw.githubusercontent.com/godotengine/godot/$GODOT4_VER/core/extension/gdextension_interface.h -P godot_bin
+
       - name: "List dir"
         run: ls -la godot_bin
 
