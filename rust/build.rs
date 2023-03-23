@@ -19,7 +19,7 @@ fn main() {
 }
 
 fn run_bindgen(out_file: &Path) {
-    let header_path = "../output/gdextension_interface.h";
+    let header_path = "../input/gdextension_interface.h";
     println!("cargo:rerun-if-changed={header_path}");
 
     let builder = bindgen::Builder::default()

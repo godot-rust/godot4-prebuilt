@@ -39,13 +39,27 @@ jobs:
             rust-toolchain: stable
 
     steps:
-      - uses: actions/checkout@v3
+      - name: "Checkout"
+        uses: actions/checkout@v3
+
+      - name: "Prepare versions"
+        run: |
+          version="${{ github.event.inputs.godot-version }}"
+          bash res/set-godot-env.sh $version
 
       - name: "Download GDExtension header"
         run: |
-          wget https://raw.githubusercontent.com/godotengine/godot/$GODOT4_VER/core/extension/gdextension_interface.h -P input
+          curl https://raw.githubusercontent.com/godotengine/godot/$GODOT4_VER/core/extension/gdextension_interface.h \
+            -o input/gdextension_interface.h \
+            --create-dirs \
+            --retry 3
           echo "Output directory:"
           ls -la input
+        shell: bash
+
+      - name: "Line endings (Windows only)"
+        if: ${{ runner.os == 'Windows' }}
+        run: unix2dos input/gdextension_interface.h
 
       - name: "Apply GDExtension patch"
         run: git apply res/tweak.patch -v
@@ -80,18 +94,18 @@ jobs:
 
           rustc --version --verbose
 
-#      - name: "Install LLVM"
-#        if: ${{ os.runner == "macOS" }}
-#        uses: KyleMayes/install-llvm-action@v1
-#        with:
-#          version: "10.0"
-#          directory: ${{ runner.temp }}/llvm
+      - name: "Install LLVM"
+        if: ${{ matrix.with-llvm }}
+        uses: KyleMayes/install-llvm-action@v1
+        with:
+          version: "10.0"
+          directory: ${{ runner.temp }}/llvm
 
       - name: "Generate header using bindgen"
         run: |
           cd rust
           cargo build
-          mkdir ../output
+          mv ../input ../output
           mv src/gen/* ../output/
 
       # Upload as short-lived artifact that can be consumed by dependent job
@@ -108,6 +122,14 @@ jobs:
     needs: generate-header
 #    environment: Deploy
     steps:
+      - name: "Checkout"
+        uses: actions/checkout@v3
+
+      - name: "Prepare versions"
+        run: |
+          version="${{ github.event.inputs.godot-version }}"
+          bash res/set-godot-env.sh $version
+
       - name: "Download intermediate header artifact"
         uses: actions/download-artifact@v3
         with:
@@ -118,24 +140,6 @@ jobs:
           ls -la
           ls -la output || true
           ls -la internal-header-linux || true
-
-      - name: "Prepare versions"
-        run: |
-          version="${{ github.event.inputs.godot-version }}"
-          
-          # if version has already suffix (e.g. -rc1), leave as-is, but replace filePath
-          if [[ $1 =~ "-" ]]; then
-            filePath=$(echo "$version" | sed "s!-!/!")
-          else
-            filePath="$version"
-            version="${version}-stable"
-          fi
-          
-          filename=Godot_v${version}_linux.x86_64
-          
-          echo "GODOT4_FILE_URL=$filePath/$filename.zip" >> $GITHUB_ENV
-          echo "GODOT4_BIN=godot_bin/$filename" >> $GITHUB_ENV
-          echo "GODOT4_VER=$version" >> $GITHUB_ENV
 
       - name: "Download Godot ${{ env.GODOT4_VER }}"
         # for gdnative: wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$filePath/Godot_v${{ inputs.godot_ver }}_linux_headless.64.zip" -O /tmp/godot.zip
