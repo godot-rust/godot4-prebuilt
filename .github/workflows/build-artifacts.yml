@@ -12,42 +12,40 @@ defaults:
     shell: bash
 
 jobs:
-  download-godot:
-    runs-on: ubuntu-latest
-    environment: Deploy
+  # ----------------------------------------------------------------------------------------------------------------------------------------------
+  generate-header:
+    name: generate-header (${{ matrix.name }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false # cancel all jobs as soon as one fails?
+      matrix:
+        # Order this way because macOS typically has the longest duration, followed by Windows, so it benefits total workflow execution time.
+        # Additionally, the 'linux (msrv *)' special case will then be listed next to the other 'linux' jobs.
+        # Note: Windows uses '--target x86_64-pc-windows-msvc' by default as Cargo argument.
+        include:
+          - name: macos
+            os: macos-11
+            rust-toolchain: stable
+            with-llvm: true
+
+          - name: windows
+            os: windows-latest
+            rust-toolchain: stable-x86_64-pc-windows-msvc
+
+          # Don't use latest Ubuntu (22.04) as it breaks lots of ecosystem compatibility.
+          # If ever moving to ubuntu-latest, need to manually install libtinfo5 for LLVM.
+          - name: linux
+            os: ubuntu-20.04
+            rust-toolchain: stable
+
     steps:
       - uses: actions/checkout@v3
 
-      - name: "Prepare versions"
-        run: |
-          version="${{ github.event.inputs.godot-version }}"
-          
-          # if version has already suffix (e.g. -rc1), leave as-is, but replace filePath
-          if [[ $1 =~ "-" ]]; then
-            filePath=$(echo "$version" | sed "s!-!/!")
-          else
-            filePath="$version"
-            version="${version}-stable"
-          fi
-          
-          filename=Godot_v${version}_linux.x86_64
-          
-          echo "GODOT4_FILE_URL=$filePath/$filename.zip" >> $GITHUB_ENV
-          echo "GODOT4_BIN=godot_bin/$filename" >> $GITHUB_ENV
-          echo "GODOT4_VER=$version" >> $GITHUB_ENV
-
-#      - name: "Install LLVM"
-#        if: ${{ os.runner == "macOS" }}
-#        uses: KyleMayes/install-llvm-action@v1
-#        with:
-#          version: "10.0"
-#          directory: ${{ runner.temp }}/llvm
-
       - name: "Download GDExtension header"
         run: |
-          wget https://raw.githubusercontent.com/godotengine/godot/$GODOT4_VER/core/extension/gdextension_interface.h -P output
+          wget https://raw.githubusercontent.com/godotengine/godot/$GODOT4_VER/core/extension/gdextension_interface.h -P input
           echo "Output directory:"
-          ls -la output
+          ls -la input
 
       - name: "Apply GDExtension patch"
         run: git apply res/tweak.patch -v
@@ -82,10 +80,62 @@ jobs:
 
           rustc --version --verbose
 
-      - name: "Run Rust"
+#      - name: "Install LLVM"
+#        if: ${{ os.runner == "macOS" }}
+#        uses: KyleMayes/install-llvm-action@v1
+#        with:
+#          version: "10.0"
+#          directory: ${{ runner.temp }}/llvm
+
+      - name: "Generate header using bindgen"
         run: |
           cd rust
           cargo build
+          mkdir ../output
+          mv src/gen/* ../output/
+
+      # Upload as short-lived artifact that can be consumed by dependent job
+      - name: "Upload intermediate header as artifact"
+        uses: actions/upload-artifact@v3
+        with:
+          name: internal-header-${{ matrix.name }}
+          path: output
+          retention-days: 1
+
+  # ----------------------------------------------------------------------------------------------------------------------------------------------
+  download-godot:
+    runs-on: ubuntu-latest
+    needs: generate-header
+#    environment: Deploy
+    steps:
+      - name: "Download intermediate header artifact"
+        uses: actions/download-artifact@v3
+        with:
+          name: internal-header-linux
+
+      - name: "List dirs"
+        run: |
+          ls -la
+          ls -la output || true
+          ls -la internal-header-linux || true
+
+      - name: "Prepare versions"
+        run: |
+          version="${{ github.event.inputs.godot-version }}"
+          
+          # if version has already suffix (e.g. -rc1), leave as-is, but replace filePath
+          if [[ $1 =~ "-" ]]; then
+            filePath=$(echo "$version" | sed "s!-!/!")
+          else
+            filePath="$version"
+            version="${version}-stable"
+          fi
+          
+          filename=Godot_v${version}_linux.x86_64
+          
+          echo "GODOT4_FILE_URL=$filePath/$filename.zip" >> $GITHUB_ENV
+          echo "GODOT4_BIN=godot_bin/$filename" >> $GITHUB_ENV
+          echo "GODOT4_VER=$version" >> $GITHUB_ENV
 
       - name: "Download Godot ${{ env.GODOT4_VER }}"
         # for gdnative: wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$filePath/Godot_v${{ inputs.godot_ver }}_linux_headless.64.zip" -O /tmp/godot.zip
