@@ -1,0 +1,12 @@
+# IDEs
+.vscode
+.idea
+
+# Build and package artifacts
+target
+*/target
+*.rlib
+**/Cargo.lock
+
+# Generated files
+/output

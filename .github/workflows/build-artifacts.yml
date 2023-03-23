@@ -46,13 +46,14 @@ jobs:
         run: |
           rustup toolchain install stable --profile minimal --no-self-update ${{ steps.configure.outputs.components }}
           rustup default stable
+          echo RUST_VER=$(rustc --version | sed -E "s/rustc ([^ ]+?) \\(.+/\\1/") >> $GITHUB_ENV
 
-      - name: "Setup Rust cache"
+      - name: "Setup cache for Rust ${{ env.RUST_VER }}"
         uses: Swatinem/rust-cache@v2
         with:
           # A cache key that is used instead of the automatic `job`-based key, and is stable over multiple jobs.
           # default: empty
-          shared-key: "${{ runner.os }}"
+          shared-key: "${{ env.RUST_VER }}-${{ runner.os }}"
 
           # An additional cache key that is added alongside the automatic `job`-based
           # cache key and can be used to further differentiate jobs.
@@ -71,7 +72,12 @@ jobs:
 
           rustc --version --verbose
 
-      - name: "Download Godot ${{ env.GODOT4_VER }}..."
+      - name: "Run Rust"
+        run: |
+          cd rust
+          cargo build
+
+      - name: "Download Godot ${{ env.GODOT4_VER }}"
         # for gdnative: wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$filePath/Godot_v${{ inputs.godot_ver }}_linux_headless.64.zip" -O /tmp/godot.zip
         run: |          
           wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$GODOT4_FILE_URL" -O ${{ runner.temp }}/godot.zip || {
@@ -79,13 +85,22 @@ jobs:
             exit 1
           }
           unzip -o ${{ runner.temp }}/godot.zip -d godot_bin
+          echo "Godot directory:"
+          ls -la godot_bin
 
-      - name: "Download GDExtension header..."
-        run: wget https://raw.githubusercontent.com/godotengine/godot/$GODOT4_VER/core/extension/gdextension_interface.h -P godot_bin
-
-      - name: "List dir"
-        run: ls -la godot_bin
-
-      - name: "Invoke Godot"
+      - name: "Check Godot version"
         run: $GODOT4_BIN --version
+
+      - name: "Download GDExtension header"
+        run: |
+          wget https://raw.githubusercontent.com/godotengine/godot/$GODOT4_VER/core/extension/gdextension_interface.h -P output
+          echo "Output directory:"
+          ls -la output
+
+      - name: "Generate GDExtension API JSON"
+        run: |
+          cd output
+          $GODOT4_BIN --dump-gdextension-interface
+          echo "Output directory:"
+          ls -la
 
