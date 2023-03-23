@@ -16,7 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: Deploy
     steps:
-#      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+
       - name: "Prepare versions"
         run: |
           version="${{ github.event.inputs.godot-version }}"
@@ -41,6 +42,15 @@ jobs:
 #        with:
 #          version: "10.0"
 #          directory: ${{ runner.temp }}/llvm
+
+      - name: "Download GDExtension header"
+        run: |
+          wget https://raw.githubusercontent.com/godotengine/godot/$GODOT4_VER/core/extension/gdextension_interface.h -P output
+          echo "Output directory:"
+          ls -la output
+
+      - name: "Apply GDExtension patch"
+        run: git apply res/tweak.patch -v
 
       - name: "Install Rust"
         run: |
@@ -90,12 +100,6 @@ jobs:
 
       - name: "Check Godot version"
         run: $GODOT4_BIN --version
-
-      - name: "Download GDExtension header"
-        run: |
-          wget https://raw.githubusercontent.com/godotengine/godot/$GODOT4_VER/core/extension/gdextension_interface.h -P output
-          echo "Output directory:"
-          ls -la output
 
       - name: "Generate GDExtension API JSON"
         run: |
