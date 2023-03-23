@@ -35,6 +35,42 @@ jobs:
           echo "GODOT4_BIN=godot_bin/$filename" >> $GITHUB_ENV
           echo "GODOT4_VER=$version" >> $GITHUB_ENV
 
+#      - name: "Install LLVM"
+#        if: ${{ os.runner == "macOS" }}
+#        uses: KyleMayes/install-llvm-action@v1
+#        with:
+#          version: "10.0"
+#          directory: ${{ runner.temp }}/llvm
+
+      - name: "Install Rust"
+        run: |
+          rustup toolchain install stable --profile minimal --no-self-update ${{ steps.configure.outputs.components }}
+          rustup default stable
+
+      - name: "Setup Rust cache"
+        uses: Swatinem/rust-cache@v2
+        with:
+          # A cache key that is used instead of the automatic `job`-based key, and is stable over multiple jobs.
+          # default: empty
+          shared-key: "${{ runner.os }}"
+
+          # An additional cache key that is added alongside the automatic `job`-based
+          # cache key and can be used to further differentiate jobs.
+          # default: empty
+          #key: ${{ inputs.cache-key }}
+
+          # Determines if the cache should be saved even when the workflow has failed.
+          # default: "false"
+          cache-on-failure: true
+
+      - name: "Set Rust environment variables"
+        run: |
+          echo CARGO_TERM_COLOR=always >> $GITHUB_ENV
+          echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV
+          echo RUST_BACKTRACE=1 >> $GITHUB_ENV
+
+          rustc --version --verbose
+
       - name: "Download Godot ${{ env.GODOT4_VER }}..."
         # for gdnative: wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$filePath/Godot_v${{ inputs.godot_ver }}_linux_headless.64.zip" -O /tmp/godot.zip
         run: |          
