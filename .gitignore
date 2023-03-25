@@ -6,6 +6,7 @@
 target
 */target
 *.rlib
+/godot4-artifacts/Cargo.lock
 
 # Generated files
 /output
