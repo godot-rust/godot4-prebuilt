@@ -110,7 +110,7 @@ jobs:
 #          # `$workspace -> $target`. The `$target` part is treated as a directory
 #          # relative to the `$workspace` and defaults to "target" if not explicitly given.
 #          # default: ". -> target"
-#          workspaces: rust -> target
+#          workspaces: generator -> target
 
       - name: "Set Rust environment variables"
         run: |
@@ -128,20 +128,20 @@ jobs:
           directory: ${{ runner.temp }}/llvm
 
       - name: "Generate header using bindgen"
-        working-directory: rust
+        working-directory: generator
         run: |
           cargo build
           mv ../input ../output
           mv src/gen/* ../output/
 
-      - name: "Diff"
-        run: git diff
-
-      - name: "Diff Cargo.toml"
-        run: git diff rust/Cargo.toml
-
-      - name: "Diff Cargo.lock"
-        run: git diff rust/Cargo.lock
+#      - name: "Diff"
+#        run: git diff
+#
+#      - name: "Diff Cargo.toml"
+#        run: git diff generator/Cargo.toml
+#
+#      - name: "Diff Cargo.lock"
+#        run: git diff generator/Cargo.lock
 
       - name: "Rename generated file according to platform"
         run: mv output/gdextension_interface.rs output/gdextension_interface_${{ matrix.name }}.rs
