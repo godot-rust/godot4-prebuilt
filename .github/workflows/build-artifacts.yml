@@ -187,11 +187,11 @@ jobs:
           name: internal-header-macos
           path: output
 
-      - name: "Download Godot ${{ env.GODOT4_VER }}"
+      - name: "Download Godot ${{ env.GODOT4_WORDY_VER }}"
         # for gdnative: wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$filePath/Godot_v${{ inputs.godot_ver }}_linux_headless.64.zip" -O /tmp/godot.zip
         run: |          
           wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$GODOT4_FILE_URL" -O ${{ runner.temp }}/godot.zip || {
-            echo "::error::Godot version '$GODOT4_VER' not available online."
+            echo "::error::Godot version '$GODOT4_WORDY_VER' not available online."
             exit 1
           }
           unzip -o ${{ runner.temp }}/godot.zip -d "$GODOT4_DIR"
@@ -213,17 +213,14 @@ jobs:
           ls -la output
 
       - name: "Commit to branch '${{ env.GODOT4_VER }}'"
-        working-directory: output
         run: |
           git config user.name "Godot-Rust Automation"
           git config user.email "GodotRust@users.noreply.github.com"
           git fetch
           git switch $GODOT4_VER || git switch -c $GODOT4_VER origin/lz
-          git checkout master -- godot4-artifacts
-          # Remove all except the crate and output directories, move contents into current dir
-          ls | grep -xvE "output|godot4-artifacts" | xargs rm -rf
-          mv godot4-artifacts/* .
-          mv output res
-          git add *
-          git commit -m "Godot $GODOT4_VER artifact sync"
+          git restore --source origin/master -- godot4-artifacts
+          rm -rf res && mv output res
+          git add godot4-artifacts res
+          git mv godot4-artifacts/* .
+          git commit -m "Godot GODOT4_WORDY_VER artifact sync"
           git push -u origin $GODOT4_VER
