@@ -1,3 +1,7 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 name: "Build Godot artifacts"
 
 on:
@@ -71,28 +75,42 @@ jobs:
           rustup default stable
           echo RUST_VER=$(rustc --version | sed -E "s/rustc ([0-9.]+) \\(.+/\\1/" ) >> $GITHUB_ENV
 
+      # Note: This is a replacement for Swatinem/rust-cache which doesn't work reliably at the moment.
+      # The latter tries to save the cache under a different key than the one it restores, and even fails at doing so.
       - name: "Cache for Rust ${{ env.RUST_VER }}"
-        uses: Swatinem/rust-cache@v2
+        uses: actions/cache@v3
         with:
-          # A cache key that is used instead of the automatic `job`-based key, and is stable over multiple jobs.
-          # default: empty
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-rust-${{ env.RUST_VER }}-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-rust-${{ env.RUST_VER }}-
+
+#      - name: "Cache for Rust ${{ env.RUST_VER }}"
+#        uses: Swatinem/rust-cache@v2
+#        with:
+#          # A cache key that is used instead of the automatic `job`-based key, and is stable over multiple jobs.
+#          # default: empty
 #          shared-key: "${{ env.RUST_VER }}-${{ runner.os }}"
-
-          # An additional cache key that is added alongside the automatic `job`-based
-          # cache key and can be used to further differentiate jobs.
-          # default: empty
-          #key: ${{ inputs.cache-key }}
-
-          # Determines if the cache should be saved even when the workflow has failed.
-          # default: "false"
-          cache-on-failure: true
-
-          # The cargo workspaces and target directory configuration.
-          # These entries are separated by newlines and have the form
-          # `$workspace -> $target`. The `$target` part is treated as a directory
-          # relative to the `$workspace` and defaults to "target" if not explicitly given.
-          # default: ". -> target"
-          workspaces: rust -> target
+#
+#          # An additional cache key that is added alongside the automatic `job`-based
+#          # cache key and can be used to further differentiate jobs.
+#          # default: empty
+#          #key: ${{ inputs.cache-key }}
+#
+#          # Determines if the cache should be saved even when the workflow has failed.
+#          # default: "false"
+##          cache-on-failure: true
+#
+#          # The cargo workspaces and target directory configuration.
+#          # These entries are separated by newlines and have the form
+#          # `$workspace -> $target`. The `$target` part is treated as a directory
+#          # relative to the `$workspace` and defaults to "target" if not explicitly given.
+#          # default: ". -> target"
+#          workspaces: rust -> target
 
       - name: "Set Rust environment variables"
         run: |
@@ -110,12 +128,21 @@ jobs:
           directory: ${{ runner.temp }}/llvm
 
       - name: "Generate header using bindgen"
+        working-directory: rust
         run: |
-          cd rust
           cargo build
           mv ../input ../output
           mv src/gen/* ../output/
-          
+
+      - name: "Diff"
+        run: git diff
+
+      - name: "Diff Cargo.toml"
+        run: git diff rust/Cargo.toml
+
+      - name: "Diff Cargo.lock"
+        run: git diff rust/Cargo.lock
+
       - name: "Rename generated file according to platform"
         run: mv output/gdextension_interface.rs output/gdextension_interface_${{ matrix.name }}.rs
 
@@ -132,7 +159,6 @@ jobs:
   download-godot:
     runs-on: ubuntu-latest
     needs: generate-header
-#    environment: Deploy
     steps:
       - name: "Checkout"
         uses: actions/checkout@v3
@@ -141,6 +167,7 @@ jobs:
         run: |
           version="${{ github.event.inputs.godot-version }}"
           bash res/set-godot-env.sh $version "${{ runner.temp }}"
+          echo "BINDGEN_VER=$(cargo tree -p bindgen --depth 0 | sed "s/bindgen v//")" >> $GITHUB_ENV
 
       - name: "Download intermediate header (Linux)"
         uses: actions/download-artifact@v3
@@ -160,10 +187,6 @@ jobs:
           name: internal-header-macos
           path: output
 
-      - name: "List dirs"
-        run: |
-          ls -la
-
       - name: "Download Godot ${{ env.GODOT4_VER }}"
         # for gdnative: wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$filePath/Godot_v${{ inputs.godot_ver }}_linux_headless.64.zip" -O /tmp/godot.zip
         run: |          
@@ -172,8 +195,6 @@ jobs:
             exit 1
           }
           unzip -o ${{ runner.temp }}/godot.zip -d "$GODOT4_DIR"
-          echo "Godot directory:"
-          ls -la "$GODOT4_DIR"
 
       - name: "Check Godot version"
         run: $GODOT4_BIN --version
@@ -185,3 +206,22 @@ jobs:
           echo "Output directory:"
           ls -la
 
+      - name: "Generate meta JSON"
+        run: |
+          bash res/output-meta-json.sh > output/meta.json
+          echo "Output directory:"
+          ls -la output
+
+      - name: "Commit to branch '${{ env.GODOT4_VER }}'"
+        working-directory: output
+        run: |
+          git config user.name "Godot-Rust Automation"
+          git config user.email "GodotRust@users.noreply.github.com"
+          git fetch
+          git switch $GODOT4_VER || git switch -c $GODOT4_VER origin/lz
+          # Remove all except 'output', move contents into current dir
+          ls | grep -xv "output" | xargs rm -rf
+          mv output/* .
+          git add *
+          git commit -m "Godot $GODOT4_VER artifact sync"
+          git push -u origin $GODOT4_VER
