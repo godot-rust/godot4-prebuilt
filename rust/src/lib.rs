@@ -7,11 +7,12 @@
 // Output of generated code. Mimics the file structure, symbols are re-exported.
 #[rustfmt::skip]
 #[allow(
-    non_camel_case_types,
-    non_upper_case_globals,
-    non_snake_case,
+dead_code,
     deref_nullptr,
-    clippy::redundant_static_lifetimes
+    non_camel_case_types,
+    non_snake_case,
+    non_upper_case_globals,
+    clippy::redundant_static_lifetimes,
 )]
 #[path = "gen/gdextension_interface.rs"]
 mod sys;

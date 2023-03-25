@@ -6,7 +6,6 @@
 target
 */target
 *.rlib
-**/Cargo.lock
 
 # Generated files
 /output
