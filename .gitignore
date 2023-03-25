@@ -1,12 +1,13 @@
 # IDEs
 .vscode
 .idea
+/*.sh
 
 # Build and package artifacts
 target
 */target
 *.rlib
-/godot4-artifacts/Cargo.lock
+/godot4-prebuilt/Cargo.lock
 
 # Generated files
 /output

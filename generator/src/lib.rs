@@ -15,7 +15,7 @@ dead_code,
     clippy::redundant_static_lifetimes,
 )]
 #[path = "gen/gdextension_interface.rs"]
-mod sys;
+pub mod gdextension_interface;
 
 
 // Sanity check, ensures that symbols are available
@@ -25,3 +25,9 @@ trait Distinct {}
 impl Distinct for sys::GDExtensionVariantPtr {}
 impl Distinct for sys::GDExtensionTypePtr {}
 impl Distinct for sys::GDExtensionConstTypePtr {}
+
+
+/// Returns the contents of the JSON API file `extension_api.json`.
+pub fn load_gdextension_json() -> &'static str {
+    include_str!("../res/extension_api.json")
+}

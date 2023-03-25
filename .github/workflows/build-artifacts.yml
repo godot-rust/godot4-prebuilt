@@ -213,14 +213,16 @@ jobs:
           ls -la output
 
       - name: "Commit to branch '${{ env.GODOT4_VER }}'"
+        # GLOBIGNORE: https://stackoverflow.com/a/10448940, patterns separated by :
         run: |
           git config user.name "Godot-Rust Automation"
           git config user.email "GodotRust@users.noreply.github.com"
           git fetch
           git switch $GODOT4_VER || git switch -c $GODOT4_VER origin/lz
-          git restore --source origin/master -- godot4-artifacts
-          rm -rf res && mv output res
-          git add godot4-artifacts res
-          git mv godot4-artifacts/* .
-          git commit -m "Godot GODOT4_WORDY_VER artifact sync"
+          (GLOBIGNORE='.git:output'; rm -rf *)
+          git restore --source origin/master -- godot4-prebuilt
+          mv godot4-prebuilt/* .
+          mv output res
+          git add *
+          git commit -m "Godot $GODOT4_WORDY_VER artifact sync"
           git push -u origin $GODOT4_VER
