@@ -15,6 +15,13 @@ defaults:
   run:
     shell: bash
 
+# Environment variables used in this workflow:
+# * GODOT4_VER:          Short Godot version name, coming from workflow input ("4.0.1", "4.1-rc1", ...)
+# * GODOT4_UPSTREAM_VER: Godot version as used in URLs and filenames ("4.0.1-stable", "4.1-rc1", ...)
+# * GODOT4_FULL_VER:     Output from godot4 --version ("4.0.stable.official.92bee43ad")
+# * RUST_VER:            Rust compiler version
+# * BINDGEN_VER:         Version of `bindgen` used to generate the GDExtension header
+
 jobs:
   # ----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -114,6 +121,12 @@ jobs:
 #          # default: ". -> target"
 #          workspaces: generator -> target
 
+      - name: "DEBUGE LLVM"
+        run: ls -la llvm || true
+
+      - name: "DEBUGE ."
+        run: ls -la .
+
       - name: "Set Rust environment variables"
         run: |
           echo CARGO_TERM_COLOR=always >> $GITHUB_ENV
@@ -129,6 +142,12 @@ jobs:
           version: "10.0"
           directory: llvm
           cached: ${{ steps.cache.outputs.cache-hit }}
+
+      - name: "DEBUGE LLVM"
+        run: ls -la llvm || true
+
+      - name: "DEBUGE ."
+        run: ls -la .
 
       - name: "Generate header using bindgen"
         working-directory: generator
@@ -152,8 +171,14 @@ jobs:
       - name: "Generate intermediate JSON (Linux only)"
         if: ${{ matrix.name == 'linux' }}
         run: |
-          echo "BINDGEN_VER=$(cd generator; cargo tree -p bindgen --depth 0 | sed 's/bindgen v//')" >> $GITHUB_ENV
+          # Don't store in $GITHUB_ENV, only needed locally.
+          export BINDGEN_VER="$(cd generator; cargo tree -p bindgen --depth 0 | sed 's/bindgen v//')"
+          echo "BINDGEN_VER=$BINDGEN_VER"
           bash res/output-intermediate-json.sh > output/intermediate.json
+
+      - name: "DEBUGE"
+        if: ${{ matrix.name == 'linux' }}
+        run: echo "BINDGEN_VER=$BINDGEN_VER"
 
       # Upload as short-lived artifact that can be consumed by dependent job
       - name: "Upload intermediate header as artifact"
@@ -198,17 +223,14 @@ jobs:
           version="${{ github.event.inputs.godot-version }}"
           bash res/set-godot-env.sh $version "${{ runner.temp }}"
 
-      - name: "Download Godot ${{ env.GODOT4_WORDY_VER }}"
+      - name: "Download Godot ${{ env.GODOT4_UPSTREAM_VER }}"
         # for gdnative: wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$filePath/Godot_v${{ inputs.godot_ver }}_linux_headless.64.zip" -O /tmp/godot.zip
         run: |          
           wget --no-verbose "https://downloads.tuxfamily.org/godotengine/$GODOT4_FILE_URL" -O ${{ runner.temp }}/godot.zip || {
-            echo "::error::Godot version '$GODOT4_WORDY_VER' not available online."
+            echo "::error::Godot version '$GODOT4_UPSTREAM_VER' not available online."
             exit 1
           }
           unzip -o ${{ runner.temp }}/godot.zip -d "$GODOT4_DIR"
-
-      - name: "Check Godot version"
-        run: $GODOT4_BIN --version
 
       - name: "Generate GDExtension API JSON"
         working-directory: output
@@ -219,6 +241,7 @@ jobs:
 
       - name: "Generate meta JSON"
         run: |
+          export GODOT4_FULL_VER=$($GODOT4_BIN --version)
           bash res/output-meta-json.sh > output/meta.json
           echo "Output directory:"
           ls -la output
@@ -238,5 +261,5 @@ jobs:
           sed -i "s/%BINDGEN_VER%/${BINDGEN_VER}/" src/lib.rs
           mv output res
           git add *
-          git commit -m "Godot $GODOT4_WORDY_VER artifact sync"
+          git commit -m "Godot $GODOT4_UPSTREAM_VER artifact sync"
           git push -u origin $GODOT4_VER

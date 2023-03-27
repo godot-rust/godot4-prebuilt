@@ -21,5 +21,5 @@ echo "GODOT4_FILE_URL=$filePath/$filename.zip" >> $GITHUB_ENV
 echo "GODOT4_DIR=$runnerTemp/godot_bin" >> $GITHUB_ENV
 echo "GODOT4_BIN=$runnerTemp/godot_bin/$filename" >> $GITHUB_ENV
 echo "GODOT4_VER=$version" >> $GITHUB_ENV
-echo "GODOT4_WORDY_VER=$wordyVersion" >> $GITHUB_ENV
+echo "GODOT4_UPSTREAM_VER=$wordyVersion" >> $GITHUB_ENV
 

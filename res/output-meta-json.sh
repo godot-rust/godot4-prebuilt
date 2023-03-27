@@ -8,6 +8,7 @@ cat <<HEREDOC
     "protocol": 1,
     "versions": {
         "godot": "$GODOT4_VER",
+        "godot_full": "$GODOT4_FULL_VER",
         "rust": "$RUST_VER",
         "bindgen": "$BINDGEN_VER"
     },
