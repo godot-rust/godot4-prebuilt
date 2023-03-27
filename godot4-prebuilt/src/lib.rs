@@ -10,7 +10,7 @@
 //   fn get_property(key: &str) -> Option<String>
 
 /// Version of the Godot engine that the API JSON and C header mirror.
-pub const GODOT_VERSION: &str = "%GODOT_VER%";
+pub const GODOT_VERSION: &str = "%GODOT4_VER%";
 
 /// Version of the Rust compiler used to build this artifact.
 pub const RUST_VERSION: &str = "%RUST_VER%";
