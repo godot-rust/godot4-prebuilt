@@ -78,6 +78,7 @@ jobs:
       # Note: This is a replacement for Swatinem/rust-cache which doesn't work reliably at the moment.
       # The latter tries to save the cache under a different key than the one it restores, and even fails at doing so.
       - name: "Cache for Rust ${{ env.RUST_VER }}"
+        id: cache
         uses: actions/cache@v3
         with:
           path: |
@@ -86,6 +87,7 @@ jobs:
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
             target/
+            llvm/
           key: ${{ runner.os }}-rust-${{ env.RUST_VER }}-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-rust-${{ env.RUST_VER }}-
 
@@ -125,7 +127,8 @@ jobs:
         uses: KyleMayes/install-llvm-action@v1
         with:
           version: "10.0"
-          directory: ${{ runner.temp }}/llvm
+          directory: llvm
+          cached: ${{ steps.cache.outputs.cache-hit }}
 
       - name: "Generate header using bindgen"
         working-directory: generator
