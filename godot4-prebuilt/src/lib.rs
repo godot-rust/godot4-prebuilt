@@ -19,7 +19,7 @@ pub const RUST_VERSION: &str = "%RUST_VER%";
 pub const BINDGEN_VERSION: &str = "%BINDGEN_VER%";
 
 /// Returns the contents of the header file `gdextension_interface.h`.
-pub fn load_gdextension_interface_h() -> &'static str {
+pub const fn load_gdextension_header_h() -> &'static str {
     // std::fs::read_to_string("gdextension_interface.h")
     //     .expect("failed to read gdextension_interface.h")
 
@@ -27,7 +27,7 @@ pub fn load_gdextension_interface_h() -> &'static str {
 }
 
 /// Returns the contents of the header file `gdextension_interface.rs`, generated for the corresponding platform.
-pub fn load_gdextension_interface_rs() -> &'static str {
+pub const fn load_gdextension_header_rs() -> &'static str {
     #[cfg(linux)]
     {
         include_str!("../res/gdextension_interface_linux.rs")
@@ -43,6 +43,6 @@ pub fn load_gdextension_interface_rs() -> &'static str {
 }
 
 /// Returns the contents of the JSON API file `extension_api.json`.
-pub fn load_gdextension_json() -> &'static str {
+pub const fn load_gdextension_json() -> &'static str {
     include_str!("../res/extension_api.json")
 }

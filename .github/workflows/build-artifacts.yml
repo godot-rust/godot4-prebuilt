@@ -222,6 +222,9 @@ jobs:
           (GLOBIGNORE='.git:output'; rm -rf *)
           git restore --source origin/master -- godot4-prebuilt
           mv godot4-prebuilt/* .
+          sed -i "s/%GODOT4_VER%/${GODOT4_VER}/" src/lib.rs
+          sed -i "s/%RUST_VER%/${RUST_VER}/" src/lib.rs
+          sed -i "s/%BINDGEN_VER%/${BINDGEN_VER}/" src/lib.rs
           mv output res
           git add *
           git commit -m "Godot $GODOT4_WORDY_VER artifact sync"

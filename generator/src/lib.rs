@@ -15,19 +15,13 @@ dead_code,
     clippy::redundant_static_lifetimes,
 )]
 #[path = "gen/gdextension_interface.rs"]
-pub mod gdextension_interface;
+mod gdextension_interface;
 
 
 // Sanity check, ensures that symbols are available
 trait Distinct {}
 
 // This only compiles if those are different types -- ensures type safety through patch
-impl Distinct for sys::GDExtensionVariantPtr {}
-impl Distinct for sys::GDExtensionTypePtr {}
-impl Distinct for sys::GDExtensionConstTypePtr {}
-
-
-/// Returns the contents of the JSON API file `extension_api.json`.
-pub fn load_gdextension_json() -> &'static str {
-    include_str!("../res/extension_api.json")
-}
+impl Distinct for gdextension_interface::GDExtensionVariantPtr {}
+impl Distinct for gdextension_interface::GDExtensionTypePtr {}
+impl Distinct for gdextension_interface::GDExtensionConstTypePtr {}
