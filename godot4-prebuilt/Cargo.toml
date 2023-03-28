@@ -1,6 +1,7 @@
 [package]
-name = "godot4-artifacts"
+name = "godot4-prebuilt"
 version = "0.0.0"
 edition = "2021"
+publish = false
 
 [dependencies]

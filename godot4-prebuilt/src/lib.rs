@@ -30,15 +30,15 @@ pub const fn load_gdextension_header_h() -> &'static str {
 pub const fn load_gdextension_header_rs() -> &'static str {
     #[cfg(linux)]
     {
-        return include_str!("../res/gdextension_interface_linux.rs");
+        include_str!("../res/gdextension_interface_linux.rs")
     }
     #[cfg(windows)]
     {
-        return include_str!("../res/gdextension_interface_windows.rs");
+        include_str!("../res/gdextension_interface_windows.rs")
     }
     #[cfg(target_os = "macos")]
     {
-        return include_str!("../res/gdextension_interface_macos.rs");
+        include_str!("../res/gdextension_interface_macos.rs")
     }
 }
 

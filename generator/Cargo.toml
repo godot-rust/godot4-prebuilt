@@ -1,5 +1,7 @@
+# This crate is just a shim around godot-bindings.
+
 [package]
-name = "godot4-artifact-builder"
+name = "prebuilt-generator"
 version = "0.0.0"
 edition = "2021"
 rust-version = "1.63"
@@ -11,4 +13,4 @@ publish = false
 [dependencies]
 
 [build-dependencies]
-bindgen = { version = "=0.64.0", default-features = false, features = ["runtime"] }
+godot-bindings = { git = "https://github.com/godot-rust/gdext", branch = "feature/reuse-artifacts" }
