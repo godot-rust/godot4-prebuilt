@@ -59,23 +59,6 @@ jobs:
           version="${{ github.event.inputs.godot-version }}"
           bash res/set-godot-env.sh $version "${{ runner.temp }}"
 
-      - name: "Download GDExtension header"
-        run: |
-          curl https://raw.githubusercontent.com/godotengine/godot/$GODOT4_VER/core/extension/gdextension_interface.h \
-            -o input/gdextension_interface.h \
-            --create-dirs \
-            --retry 3
-          echo "Output directory:"
-          ls -la input
-        shell: bash
-
-      - name: "Line endings (Windows only)"
-        if: ${{ runner.os == 'Windows' }}
-        run: unix2dos input/gdextension_interface.h
-
-      - name: "Apply GDExtension patch"
-        run: git apply res/tweak.patch -v
-
       - name: "Install Rust"
         run: |
           rustup toolchain install stable --profile minimal --no-self-update ${{ steps.configure.outputs.components }}
@@ -84,6 +67,7 @@ jobs:
 
       # Note: This is a replacement for Swatinem/rust-cache which doesn't work reliably at the moment.
       # The latter tries to save the cache under a different key than the one it restores, and even fails at doing so.
+      # Do not cache whole target directory, e.g. godot-gen should be excluded.
       - name: "Cache for Rust ${{ env.RUST_VER }}"
         id: cache
         uses: actions/cache@v3
@@ -93,7 +77,8 @@ jobs:
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
-            target/
+            target/debug
+            target/.rustc_info.json
             llvm/
           key: ${{ runner.os }}-rust-${{ env.RUST_VER }}-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-rust-${{ env.RUST_VER }}-
@@ -121,12 +106,6 @@ jobs:
 #          # default: ". -> target"
 #          workspaces: generator -> target
 
-      - name: "DEBUGE LLVM"
-        run: ls -la llvm || true
-
-      - name: "DEBUGE ."
-        run: ls -la .
-
       - name: "Set Rust environment variables"
         run: |
           echo CARGO_TERM_COLOR=always >> $GITHUB_ENV
@@ -143,30 +122,25 @@ jobs:
           directory: llvm
           cached: ${{ steps.cache.outputs.cache-hit }}
 
-      - name: "DEBUGE LLVM"
-        run: ls -la llvm || true
-
-      - name: "DEBUGE ."
-        run: ls -la .
-
-      - name: "Generate header using bindgen"
-        working-directory: generator
+      - name: "Download GDExtension header"
         run: |
-          cargo build
-          mv ../input ../output
-          mv src/gen/* ../output/
+          curl https://raw.githubusercontent.com/godotengine/godot/$GODOT4_VER/core/extension/gdextension_interface.h \
+            -o "target/godot-gen/gdextension_interface.h" \
+            --create-dirs \
+            --retry 3
+          echo "Temp directory:"
+          ls -la "target/godot-gen"
+        shell: bash
 
-#      - name: "Diff"
-#        run: git diff
-#
-#      - name: "Diff Cargo.toml"
-#        run: git diff generator/Cargo.toml
-#
-#      - name: "Diff Cargo.lock"
-#        run: git diff generator/Cargo.lock
+      - name: "Translate header to Rust using bindgen"
+        working-directory: generator
+        run: cargo build -vv
 
-      - name: "Rename generated file according to platform"
-        run: mv output/gdextension_interface.rs output/gdextension_interface_${{ matrix.name }}.rs
+      - name: "Move generated files + rename according to platform"
+        run: |
+          mkdir output
+          mv target/godot-gen/* output/
+          mv output/gdextension_interface.rs output/gdextension_interface_${{ matrix.name }}.rs
 
       - name: "Generate intermediate JSON (Linux only)"
         if: ${{ matrix.name == 'linux' }}
@@ -175,10 +149,6 @@ jobs:
           export BINDGEN_VER="$(cd generator; cargo tree -p bindgen --depth 0 | sed 's/bindgen v//')"
           echo "BINDGEN_VER=$BINDGEN_VER"
           bash res/output-intermediate-json.sh > output/intermediate.json
-
-      - name: "DEBUGE"
-        if: ${{ matrix.name == 'linux' }}
-        run: echo "BINDGEN_VER=$BINDGEN_VER"
 
       # Upload as short-lived artifact that can be consumed by dependent job
       - name: "Upload intermediate header as artifact"
@@ -254,8 +224,8 @@ jobs:
           git fetch
           git switch $GODOT4_VER || git switch -c $GODOT4_VER origin/lz
           (GLOBIGNORE='.git:output'; rm -rf *)
-          git restore --source origin/master -- godot4-prebuilt
-          mv godot4-prebuilt/* .
+          git restore --source origin/master -- prebuilt-template
+          mv prebuilt-template/* .
           sed -i "s/%GODOT4_VER%/${GODOT4_VER}/" src/lib.rs
           sed -i "s/%RUST_VER%/${RUST_VER}/" src/lib.rs
           sed -i "s/%BINDGEN_VER%/${BINDGEN_VER}/" src/lib.rs

@@ -14,7 +14,7 @@ dead_code,
     non_upper_case_globals,
     clippy::redundant_static_lifetimes,
 )]
-#[path = "gen/gdextension_interface.rs"]
+#[path = "../../target/godot-gen/gdextension_interface.rs"]
 mod gdextension_interface;
 
 

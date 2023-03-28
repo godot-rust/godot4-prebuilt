@@ -12,5 +12,8 @@ publish = false
 
 [dependencies]
 
-[build-dependencies]
-godot-bindings = { git = "https://github.com/godot-rust/gdext", branch = "feature/reuse-artifacts" }
+[build-dependencies.godot-bindings]
+git = "https://github.com/godot-rust/gdext"
+branch = "feature/reuse-artifacts"
+default-features = false
+features = ["custom-godot", "custom-godot-extheader"]

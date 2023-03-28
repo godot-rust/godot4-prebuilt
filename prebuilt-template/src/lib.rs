@@ -28,10 +28,6 @@ pub const fn load_gdextension_header_h() -> &'static str {
 
 /// Returns the contents of the header file `gdextension_interface.rs`, generated for the corresponding platform.
 pub const fn load_gdextension_header_rs() -> &'static str {
-    #[cfg(linux)]
-    {
-        include_str!("../res/gdextension_interface_linux.rs")
-    }
     #[cfg(windows)]
     {
         include_str!("../res/gdextension_interface_windows.rs")
@@ -39,6 +35,10 @@ pub const fn load_gdextension_header_rs() -> &'static str {
     #[cfg(target_os = "macos")]
     {
         include_str!("../res/gdextension_interface_macos.rs")
+    }
+    #[cfg(all(unix, not(target_os = "macos")))]
+    {
+        include_str!("../res/gdextension_interface_linux.rs")
     }
 }
 
