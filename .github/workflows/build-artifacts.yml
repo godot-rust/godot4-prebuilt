@@ -125,11 +125,11 @@ jobs:
       - name: "Download GDExtension header"
         run: |
           curl https://raw.githubusercontent.com/godotengine/godot/$GODOT4_VER/core/extension/gdextension_interface.h \
-            -o "target/godot-gen/gdextension_interface.h" \
+            -o ".generated/gdextension_interface.h" \
             --create-dirs \
             --retry 3
           echo "Temp directory:"
-          ls -la "target/godot-gen"
+          ls -la ".generated"
         shell: bash
 
       - name: "Translate header to Rust using bindgen"
@@ -139,7 +139,7 @@ jobs:
       - name: "Move generated files + rename according to platform"
         run: |
           mkdir output
-          mv target/godot-gen/* output/
+          mv .generated/* output/
           mv output/gdextension_interface.rs output/gdextension_interface_${{ matrix.name }}.rs
 
       - name: "Generate intermediate JSON (Linux only)"
