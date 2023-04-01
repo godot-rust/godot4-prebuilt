@@ -128,6 +128,10 @@ jobs:
             -o ".generated/gdextension_interface.h" \
             --create-dirs \
             --retry 3
+          cat ".generated/gdextension_interface.h" | grep "404: Not Found" && {
+            echo "Failed to download GDExtension header from GitHub."
+            exit 1
+          }
           echo "Temp directory:"
           ls -la ".generated"
         shell: bash
