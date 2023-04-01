@@ -238,3 +238,10 @@ jobs:
           git add *
           git commit -m "Godot $GODOT4_UPSTREAM_VER artifact sync"
           git push -u origin $GODOT4_VER
+
+      - name: "Write summary"
+        run: |
+          echo "### :heavy_check_mark: Published artifact for Godot $GODOT4_VER" > $GITHUB_STEP_SUMMARY
+          echo "\`\`\`json" >> $GITHUB_STEP_SUMMARY
+          cat res/meta.json >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
