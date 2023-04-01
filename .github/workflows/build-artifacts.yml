@@ -141,6 +141,7 @@ jobs:
           mkdir output
           mv .generated/* output/
           mv output/gdextension_interface.rs output/gdextension_interface_${{ matrix.name }}.rs
+          rm output/*stats*
 
       - name: "Generate intermediate JSON (Linux only)"
         if: ${{ matrix.name == 'linux' }}
@@ -222,7 +223,7 @@ jobs:
           git config user.name "Godot-Rust Automation"
           git config user.email "GodotRust@users.noreply.github.com"
           git fetch
-          git switch $GODOT4_VER || git switch -c $GODOT4_VER origin/lz
+          git switch $GODOT4_VER || git switch -c $GODOT4_VER origin/root
           (GLOBIGNORE='.git:output'; rm -rf *)
           git restore --source origin/master -- prebuilt-template
           mv prebuilt-template/* .
