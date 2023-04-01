@@ -124,7 +124,7 @@ jobs:
 
       - name: "Download GDExtension header"
         run: |
-          curl https://raw.githubusercontent.com/godotengine/godot/$GODOT4_VER/core/extension/gdextension_interface.h \
+          curl https://raw.githubusercontent.com/godotengine/godot/$GODOT4_UPSTREAM_VER/core/extension/gdextension_interface.h \
             -o ".generated/gdextension_interface.h" \
             --create-dirs \
             --retry 3
