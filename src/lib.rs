@@ -13,10 +13,10 @@
 pub const GODOT_VERSION: &str = "4.0";
 
 /// Version of the Rust compiler used to build this artifact.
-pub const RUST_VERSION: &str = "1.68.2";
+pub const RUST_VERSION: &str = "1.69.0";
 
 /// Version of the `bindgen` crate used to generate the `gdextension_interface.h` Rust binding.
-pub const BINDGEN_VERSION: &str = "0.64.0";
+pub const BINDGEN_VERSION: &str = "0.65.1";
 
 /// Returns the contents of the header file `gdextension_interface.h`.
 pub const fn load_gdextension_header_h() -> &'static str {
