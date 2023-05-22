@@ -150,6 +150,13 @@ typedef const struct __GdextObject *GDExtensionConstObjectPtr;
 typedef struct __GdextType *GDExtensionTypePtr;
 typedef const struct __GdextType *GDExtensionConstTypePtr;
 typedef const struct __GdextMethodBind *GDExtensionMethodBindPtr;
+// gdext polyfill
+typedef struct __GdextVariant *GDExtensionUninitializedVariantPtr;
+typedef struct __GdextStringName *GDExtensionUninitializedStringNamePtr;
+typedef struct __GdextString *GDExtensionUninitializedStringPtr;
+typedef struct __GdextObject *GDExtensionUninitializedObjectPtr;
+typedef struct __GdextType *GDExtensionUninitializedTypePtr;
+
 typedef int64_t GDExtensionInt;
 typedef uint8_t GDExtensionBool;
 typedef uint64_t GDObjectInstanceID;
@@ -174,11 +181,11 @@ typedef struct {
 	int32_t expected;
 } GDExtensionCallError;
 
-typedef void (*GDExtensionVariantFromTypeConstructorFunc)(GDExtensionVariantPtr, GDExtensionTypePtr);
-typedef void (*GDExtensionTypeFromVariantConstructorFunc)(GDExtensionTypePtr, GDExtensionVariantPtr);
+typedef void (*GDExtensionVariantFromTypeConstructorFunc)(GDExtensionUninitializedVariantPtr, GDExtensionTypePtr);
+typedef void (*GDExtensionTypeFromVariantConstructorFunc)(GDExtensionUninitializedTypePtr, GDExtensionVariantPtr);
 typedef void (*GDExtensionPtrOperatorEvaluator)(GDExtensionConstTypePtr p_left, GDExtensionConstTypePtr p_right, GDExtensionTypePtr r_result);
 typedef void (*GDExtensionPtrBuiltInMethod)(GDExtensionTypePtr p_base, const GDExtensionConstTypePtr *p_args, GDExtensionTypePtr r_return, int p_argument_count);
-typedef void (*GDExtensionPtrConstructor)(GDExtensionTypePtr p_base, const GDExtensionConstTypePtr *p_args);
+typedef void (*GDExtensionPtrConstructor)(GDExtensionUninitializedTypePtr p_base, const GDExtensionConstTypePtr *p_args);
 typedef void (*GDExtensionPtrDestructor)(GDExtensionTypePtr p_base);
 typedef void (*GDExtensionPtrSetter)(GDExtensionTypePtr p_base, GDExtensionConstTypePtr p_value);
 typedef void (*GDExtensionPtrGetter)(GDExtensionConstTypePtr p_base, GDExtensionTypePtr r_value);
@@ -607,6 +614,17 @@ typedef struct {
 	void (*get_library_path)(GDExtensionClassLibraryPtr p_library, GDExtensionStringPtr r_path);
 
 } GDExtensionInterface;
+
+// gdext polyfill
+typedef struct {
+uint32_t major;
+uint32_t minor;
+uint32_t patch;
+const char *string;
+} GDExtensionGodotVersion;
+typedef void (*GDExtensionInterfaceFunctionPtr)();
+typedef void (*GDExtensionInterfaceGetGodotVersion)(GDExtensionGodotVersion *r_godot_version);
+typedef GDExtensionInterfaceFunctionPtr (*GDExtensionInterfaceGetProcAddress)(const char *p_function_name);
 
 /* INITIALIZATION */
 
