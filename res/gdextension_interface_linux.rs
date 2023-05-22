@@ -354,6 +354,11 @@ pub struct __GdextMethodBind {
     _unused: [u8; 0],
 }
 pub type GDExtensionMethodBindPtr = *const __GdextMethodBind;
+pub type GDExtensionUninitializedVariantPtr = *mut __GdextVariant;
+pub type GDExtensionUninitializedStringNamePtr = *mut __GdextStringName;
+pub type GDExtensionUninitializedStringPtr = *mut __GdextString;
+pub type GDExtensionUninitializedObjectPtr = *mut __GdextObject;
+pub type GDExtensionUninitializedTypePtr = *mut __GdextType;
 pub type GDExtensionInt = i64;
 pub type GDExtensionBool = u8;
 pub type GDObjectInstanceID = u64;
@@ -425,10 +430,10 @@ fn bindgen_test_layout_GDExtensionCallError() {
     );
 }
 pub type GDExtensionVariantFromTypeConstructorFunc = ::std::option::Option<
-    unsafe extern "C" fn(arg1: GDExtensionVariantPtr, arg2: GDExtensionTypePtr),
+    unsafe extern "C" fn(arg1: GDExtensionUninitializedVariantPtr, arg2: GDExtensionTypePtr),
 >;
 pub type GDExtensionTypeFromVariantConstructorFunc = ::std::option::Option<
-    unsafe extern "C" fn(arg1: GDExtensionTypePtr, arg2: GDExtensionVariantPtr),
+    unsafe extern "C" fn(arg1: GDExtensionUninitializedTypePtr, arg2: GDExtensionVariantPtr),
 >;
 pub type GDExtensionPtrOperatorEvaluator = ::std::option::Option<
     unsafe extern "C" fn(
@@ -446,7 +451,10 @@ pub type GDExtensionPtrBuiltInMethod = ::std::option::Option<
     ),
 >;
 pub type GDExtensionPtrConstructor = ::std::option::Option<
-    unsafe extern "C" fn(p_base: GDExtensionTypePtr, p_args: *const GDExtensionConstTypePtr),
+    unsafe extern "C" fn(
+        p_base: GDExtensionUninitializedTypePtr,
+        p_args: *const GDExtensionConstTypePtr,
+    ),
 >;
 pub type GDExtensionPtrDestructor =
     ::std::option::Option<unsafe extern "C" fn(p_base: GDExtensionTypePtr)>;
@@ -3957,6 +3965,78 @@ fn bindgen_test_layout_GDExtensionInterface() {
         )
     );
 }
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct GDExtensionGodotVersion {
+    pub major: u32,
+    pub minor: u32,
+    pub patch: u32,
+    pub string: *const ::std::os::raw::c_char,
+}
+#[test]
+fn bindgen_test_layout_GDExtensionGodotVersion() {
+    const UNINIT: ::std::mem::MaybeUninit<GDExtensionGodotVersion> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<GDExtensionGodotVersion>(),
+        24usize,
+        concat!("Size of: ", stringify!(GDExtensionGodotVersion))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<GDExtensionGodotVersion>(),
+        8usize,
+        concat!("Alignment of ", stringify!(GDExtensionGodotVersion))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).major) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionGodotVersion),
+            "::",
+            stringify!(major)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).minor) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionGodotVersion),
+            "::",
+            stringify!(minor)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).patch) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionGodotVersion),
+            "::",
+            stringify!(patch)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).string) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionGodotVersion),
+            "::",
+            stringify!(string)
+        )
+    );
+}
+pub type GDExtensionInterfaceFunctionPtr = ::std::option::Option<unsafe extern "C" fn()>;
+pub type GDExtensionInterfaceGetGodotVersion =
+    ::std::option::Option<unsafe extern "C" fn(r_godot_version: *mut GDExtensionGodotVersion)>;
+pub type GDExtensionInterfaceGetProcAddress = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_function_name: *const ::std::os::raw::c_char,
+    ) -> GDExtensionInterfaceFunctionPtr,
+>;
 pub const GDEXTENSION_INITIALIZATION_CORE: GDExtensionInitializationLevel = 0;
 pub const GDEXTENSION_INITIALIZATION_SERVERS: GDExtensionInitializationLevel = 1;
 pub const GDEXTENSION_INITIALIZATION_SCENE: GDExtensionInitializationLevel = 2;
