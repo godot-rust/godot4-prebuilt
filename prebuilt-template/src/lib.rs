@@ -20,9 +20,6 @@ pub const BINDGEN_VERSION: &str = "%BINDGEN_VER%";
 
 /// Returns the contents of the header file `gdextension_interface.h`.
 pub const fn load_gdextension_header_h() -> &'static str {
-    // std::fs::read_to_string("gdextension_interface.h")
-    //     .expect("failed to read gdextension_interface.h")
-
     include_str!("../res/gdextension_interface.h")
 }
 

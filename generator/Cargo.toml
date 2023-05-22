@@ -14,6 +14,7 @@ publish = false
 
 [build-dependencies.godot-bindings]
 git = "https://github.com/godot-rust/gdext"
-branch = "master"
+#branch = "master"
+rev = "79568f680c6cb2449cdf39c507545fd580d39262"
 default-features = false
 features = ["custom-godot", "custom-godot-extheader"]

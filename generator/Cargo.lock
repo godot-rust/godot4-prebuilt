@@ -70,7 +70,7 @@ checksum = "d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b"
 [[package]]
 name = "godot-bindings"
 version = "0.1.0"
-source = "git+https://github.com/godot-rust/gdext?branch=master#89904646254c1cf0b69ac643017b4f3aa83fbab7"
+source = "git+https://github.com/godot-rust/gdext?rev=79568f680c6cb2449cdf39c507545fd580d39262#79568f680c6cb2449cdf39c507545fd580d39262"
 dependencies = [
  "bindgen",
  "regex",
