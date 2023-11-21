@@ -10,9 +10,11 @@
 //   fn get_property(key: &str) -> Option<String>
 
 /// Version of the Godot engine that the API JSON and C header mirror.
+/// Note that this currently only contains the `major.minor[.patch]` part, so even `4.2-rc1` will be `4.2`.
 pub const GODOT_VERSION: &str = "%GODOT4_VER%";
 
 /// Version of the Rust compiler used to build this artifact.
+/// Is still a number even for nightly versions.
 pub const RUST_VERSION: &str = "%RUST_VER%";
 
 /// Version of the `bindgen` crate used to generate the `gdextension_interface.h` Rust binding.

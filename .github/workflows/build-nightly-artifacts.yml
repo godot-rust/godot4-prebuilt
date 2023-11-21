@@ -1,0 +1,190 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+name: "Build nightly Linux artifacts"
+# Keep similar to build-artifacts.yml, to keep them in sync easier.
+# There is only 1 step here, because the header can be generated from Godot and doesn't need 3 different platforms.
+
+on:
+  workflow_dispatch: # manual trigger
+  push:
+  schedule:
+    # Run at 05:17 UTC each morning, 2.5h after godot4-nightly (so good enough chances it has started and finished)
+    - cron: "17 5 * * *"
+
+
+defaults:
+  run:
+    shell: bash
+
+
+env:
+  GODOT4_VER: 'nightly'
+
+
+# Environment variables used in this workflow:
+# * GODOT4_VER:          Short Godot version name, coming from workflow input ("4.0.1", "4.1-rc1", ...)
+# * GODOT4_UPSTREAM_VER: Godot version as used in URLs and filenames ("4.0.1-stable", "4.1-rc1", ...)
+# * GODOT4_FULL_VER:     Output from godot4 --version ("4.0.stable.official.92bee43ad")
+# * RUST_VER:            Rust compiler version
+# * BINDGEN_VER:         Version of `bindgen` used to generate the GDExtension header
+
+jobs:
+  # ----------------------------------------------------------------------------------------------------------------------------------------------
+
+  generate-all-nightly:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v3
+
+      # Replaces also backspaces on Windows, since they cause problems in Bash
+      - name: "Store variable to Godot binary"
+        env:
+          GODOT_BINARY: godot.linuxbsd.editor.dev.x86_64
+        run: |
+          runnerDir=$(echo "${{ runner.temp }}" | sed "s!\\\\!/!")
+          echo "RUNNER_DIR=$runnerDir" >> $GITHUB_ENV
+          echo "GODOT4_BIN=$runnerDir/godot_bin/$GODOT_BINARY" >> $GITHUB_ENV
+        shell: bash
+
+      # Copied from https://github.com/godot-rust/gdext/blob/master/.github/composite/godot-install/action.yml
+      - name: "Download Godot nightly artifact"
+        env:
+          ARTIFACT_NAME: godot-linux-nightly
+        run: |
+          url="https://nightly.link/Bromeon/godot4-nightly/workflows/compile-godot-nightly/master/$ARTIFACT_NAME.zip"
+          
+          curl "$url" -Lo artifact.zip --retry 3
+          unzip artifact.zip -d $RUNNER_DIR/godot_bin
+        shell: bash
+
+      - name: "Prepare Godot executable"
+        run: |
+          chmod +x $GODOT4_BIN
+          mkdir output
+        shell: bash
+
+      # -----------------------------------------------------------------------------------------------------------------------------------------
+      # C header
+
+      - name: "Generate GDExtension C header"
+        working-directory: output
+        run: |
+          $GODOT4_BIN --headless --dump-gdextension-interface
+          mkdir -p ../.generated
+          cp gdextension_interface.h ../.generated/gdextension_interface.h
+          echo "Output directory:"
+          ls -la
+          echo "Generated temp directory:"
+          ls -la ../.generated
+
+      - name: "Install Rust"
+        run: |
+          rustup toolchain install stable --profile minimal --no-self-update ${{ steps.configure.outputs.components }}
+          rustup default stable
+          echo RUST_VER=$(rustc --version | sed -E "s/rustc ([0-9.]+) \\(.+/\\1/" ) >> $GITHUB_ENV
+
+      # Note: This is a replacement for Swatinem/rust-cache which doesn't work reliably at the moment.
+      # The latter tries to save the cache under a different key than the one it restores, and even fails at doing so.
+      # Do not cache whole target directory, e.g. godot-gen should be excluded.
+      - name: "Cache for Rust ${{ env.RUST_VER }}"
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/debug
+            target/.rustc_info.json
+            llvm/
+          key: ${{ runner.os }}-rust-${{ env.RUST_VER }}-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-rust-${{ env.RUST_VER }}-
+
+      - name: "Set Rust environment variables"
+        run: |
+          echo CARGO_TERM_COLOR=always >> $GITHUB_ENV
+          echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV
+          echo RUST_BACKTRACE=1 >> $GITHUB_ENV
+
+          rustc --version --verbose
+
+#      - name: "Install LLVM"
+#        if: ${{ matrix.with-llvm }}
+#        uses: KyleMayes/install-llvm-action@v1
+#        with:
+#          version: "10.0"
+#          directory: llvm
+#          cached: ${{ steps.cache.outputs.cache-hit }}
+
+      - name: "Translate header to Rust using bindgen"
+        working-directory: generator
+        run: cargo build -vv
+
+      - name: "Move generated files + rename according to platform"
+        env:
+            BUILD_CONFIG: linux
+        run: |
+          mv .generated/* output/
+          mv output/gdextension_interface.rs output/gdextension_interface_${BUILD_CONFIG}.rs
+          rm output/*stats*
+
+      # -----------------------------------------------------------------------------------------------------------------------------------------
+      # JSON spec
+
+      - name: "Generate GDExtension API JSON"
+        working-directory: output
+        run: |
+          $GODOT4_BIN --headless --dump-extension-api
+          echo "Output directory:"
+          ls -la
+
+      - name: "Generate meta JSON"
+        run: |
+          # Don't store in $GITHUB_ENV, only needed locally.
+          export BINDGEN_VER="$(cd generator; cargo tree -p bindgen --depth 0 | sed 's/bindgen v//')"
+          export GODOT4_FULL_VER=$($GODOT4_BIN --version)
+          export GODOT4_UPSTREAM_VER="$GODOT4_FULL_VER"
+          
+          # Write to GitHub for commit messages
+          echo "BINDGEN_VER=$BINDGEN_VER" >> $GITHUB_ENV
+          echo "GODOT4_FULL_VER=$GODOT4_FULL_VER" >> $GITHUB_ENV
+          
+          bash res/output-meta-json.sh > output/meta.json
+          echo "Output directory:"
+          ls -la output
+
+      # -----------------------------------------------------------------------------------------------------------------------------------------
+      # Git
+
+      - name: "Commit to branch '${{ env.GODOT4_VER }}'"
+        # GLOBIGNORE: https://stackoverflow.com/a/10448940, patterns separated by :
+        run: |
+          git config user.name "Godot-Rust Automation"
+          git config user.email "GodotRust@users.noreply.github.com"
+          git fetch
+          git switch $GODOT4_VER || git switch -c $GODOT4_VER origin/root
+          (GLOBIGNORE='.git:output'; rm -rf *)
+          git restore --source origin/master -- prebuilt-template
+          mv prebuilt-template/* .
+          
+          # Extract "major.minor[.patch]" from full version, write into GODOT4_VER (which is 'nightly', but lib.rs needs number)
+          export GODOT4_VER_NUMERIC="$(echo $GODOT4_FULL_VER | sed -E 's!([0-9]+\.[0-9]+(\.[0-9]+)?).*!\1!')"
+          
+          sed -i "s/%GODOT4_VER%/${GODOT4_VER_NUMERIC}/" src/lib.rs
+          sed -i "s/%RUST_VER%/${RUST_VER}/" src/lib.rs
+          sed -i "s/%BINDGEN_VER%/${BINDGEN_VER}/" src/lib.rs
+          mv output res
+          git add *
+          git commit -m "Godot $GODOT4_UPSTREAM_VER artifact sync"
+          git push -u origin $GODOT4_VER
+
+      - name: "Write summary"
+        run: |
+          echo "### :heavy_check_mark: Published artifact for Godot $GODOT4_VER" > $GITHUB_STEP_SUMMARY
+          echo "\`\`\`json" >> $GITHUB_STEP_SUMMARY
+          cat res/meta.json >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
