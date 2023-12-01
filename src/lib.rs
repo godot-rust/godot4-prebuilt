@@ -11,7 +11,7 @@
 
 /// Version of the Godot engine that the API JSON and C header mirror.
 /// Note that this currently only contains the `major.minor[.patch]` part, so even `4.2-rc1` will be `4.2`.
-pub const GODOT_VERSION: &str = "4.2";
+pub const GODOT_VERSION: &str = "4.3";
 
 /// Version of the Rust compiler used to build this artifact.
 /// Is still a number even for nightly versions.
