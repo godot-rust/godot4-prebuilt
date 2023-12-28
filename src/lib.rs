@@ -15,7 +15,7 @@ pub const GODOT_VERSION: &str = "4.2";
 
 /// Version of the Rust compiler used to build this artifact.
 /// Is still a number even for nightly versions.
-pub const RUST_VERSION: &str = "1.74.0";
+pub const RUST_VERSION: &str = "1.74.1";
 
 /// Version of the `bindgen` crate used to generate the `gdextension_interface.h` Rust binding.
 pub const BINDGEN_VERSION: &str = "0.65.1";
