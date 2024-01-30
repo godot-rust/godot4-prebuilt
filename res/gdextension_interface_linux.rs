@@ -3662,3 +3662,10 @@ pub type GDExtensionInterfaceEditorAddPlugin =
 #[doc = " @name editor_remove_plugin\n @since 4.1\n\n Removes an editor plugin.\n\n @param p_class_name A pointer to a StringName with the name of a class that was previously added as an editor plugin."]
 pub type GDExtensionInterfaceEditorRemovePlugin =
     ::std::option::Option<unsafe extern "C" fn(p_class_name: GDExtensionConstStringNamePtr)>;
+#[doc = " @name editor_help_load_xml_from_utf8_chars\n @since 4.3\n\n Loads new XML-formatted documentation data in the editor.\n\n The provided pointer can be immediately freed once the function returns.\n\n @param p_data A pointer to an UTF-8 encoded C string (null terminated)."]
+pub type GDExtensionsInterfaceEditorHelpLoadXmlFromUtf8Chars =
+    ::std::option::Option<unsafe extern "C" fn(p_data: *const ::std::os::raw::c_char)>;
+#[doc = " @name editor_help_load_xml_from_utf8_chars_and_len\n @since 4.3\n\n Loads new XML-formatted documentation data in the editor.\n\n The provided pointer can be immediately freed once the function returns.\n\n @param p_data A pointer to an UTF-8 encoded C string.\n @param p_size The number of bytes (not code units)."]
+pub type GDExtensionsInterfaceEditorHelpLoadXmlFromUtf8CharsAndLen = ::std::option::Option<
+    unsafe extern "C" fn(p_data: *const ::std::os::raw::c_char, p_size: GDExtensionInt),
+>;
