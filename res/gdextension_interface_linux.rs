@@ -1618,6 +1618,106 @@ fn bindgen_test_layout_GDExtensionClassMethodInfo() {
         )
     );
 }
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct GDExtensionClassVirtualMethodInfo {
+    pub name: GDExtensionStringNamePtr,
+    pub method_flags: u32,
+    pub return_value: GDExtensionPropertyInfo,
+    pub return_value_metadata: GDExtensionClassMethodArgumentMetadata,
+    pub argument_count: u32,
+    pub arguments: *mut GDExtensionPropertyInfo,
+    pub arguments_metadata: *mut GDExtensionClassMethodArgumentMetadata,
+}
+#[test]
+fn bindgen_test_layout_GDExtensionClassVirtualMethodInfo() {
+    const UNINIT: ::std::mem::MaybeUninit<GDExtensionClassVirtualMethodInfo> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<GDExtensionClassVirtualMethodInfo>(),
+        88usize,
+        concat!("Size of: ", stringify!(GDExtensionClassVirtualMethodInfo))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<GDExtensionClassVirtualMethodInfo>(),
+        8usize,
+        concat!(
+            "Alignment of ",
+            stringify!(GDExtensionClassVirtualMethodInfo)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(name)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).method_flags) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(method_flags)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).return_value) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(return_value)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).return_value_metadata) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(return_value_metadata)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).argument_count) as usize - ptr as usize },
+        68usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(argument_count)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).arguments) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(arguments)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).arguments_metadata) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(arguments_metadata)
+        )
+    );
+}
 pub type GDExtensionCallableCustomCall = ::std::option::Option<
     unsafe extern "C" fn(
         callable_userdata: *mut ::std::os::raw::c_void,
@@ -3481,6 +3581,24 @@ pub type GDExtensionInterfaceObjectGetInstanceFromId = ::std::option::Option<
 pub type GDExtensionInterfaceObjectGetInstanceId = ::std::option::Option<
     unsafe extern "C" fn(p_object: GDExtensionConstObjectPtr) -> GDObjectInstanceID,
 >;
+#[doc = " @name object_has_script_method\n @since 4.3\n\n Checks if this object has a script with the given method.\n\n @param p_object A pointer to the Object.\n @param p_method A pointer to a StringName identifying the method.\n\n @returns true if the object has a script and that script has a method with the given name. Returns false if the object has no script."]
+pub type GDExtensionInterfaceObjectHasScriptMethod = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_object: GDExtensionConstObjectPtr,
+        p_method: GDExtensionConstStringNamePtr,
+    ) -> GDExtensionBool,
+>;
+#[doc = " @name object_call_script_method\n @since 4.3\n\n Call the given script method on this object.\n\n @param p_object A pointer to the Object.\n @param p_method A pointer to a StringName identifying the method.\n @param p_args A pointer to a C array of Variant.\n @param p_argument_count The number of arguments.\n @param r_return A pointer a Variant which will be assigned the return value.\n @param r_error A pointer the structure which will hold error information."]
+pub type GDExtensionInterfaceObjectCallScriptMethod = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_object: GDExtensionObjectPtr,
+        p_method: GDExtensionConstStringNamePtr,
+        p_args: *const GDExtensionConstVariantPtr,
+        p_argument_count: GDExtensionInt,
+        r_return: GDExtensionUninitializedVariantPtr,
+        r_error: *mut GDExtensionCallError,
+    ),
+>;
 #[doc = " @name ref_get_object\n @since 4.1\n\n Gets the Object from a reference.\n\n @param p_ref A pointer to the reference.\n\n @return A pointer to the Object from the reference or NULL."]
 pub type GDExtensionInterfaceRefGetObject = ::std::option::Option<
     unsafe extern "C" fn(p_ref: GDExtensionConstRefPtr) -> GDExtensionObjectPtr,
@@ -3580,6 +3698,14 @@ pub type GDExtensionInterfaceClassdbRegisterExtensionClassMethod = ::std::option
         p_library: GDExtensionClassLibraryPtr,
         p_class_name: GDExtensionConstStringNamePtr,
         p_method_info: *const GDExtensionClassMethodInfo,
+    ),
+>;
+#[doc = " @name classdb_register_extension_class_virtual_method\n @since 4.3\n\n Registers a virtual method on an extension class in ClassDB, that can be implemented by scripts or other extensions.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_method_info A pointer to a GDExtensionClassMethodInfo struct."]
+pub type GDExtensionInterfaceClassdbRegisterExtensionClassVirtualMethod = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_library: GDExtensionClassLibraryPtr,
+        p_class_name: GDExtensionConstStringNamePtr,
+        p_method_info: *const GDExtensionClassVirtualMethodInfo,
     ),
 >;
 #[doc = " @name classdb_register_extension_class_integer_constant\n @since 4.1\n\n Registers an integer constant on an extension class in the ClassDB.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_enum_name A pointer to a StringName with the enum name.\n @param p_constant_name A pointer to a StringName with the constant name.\n @param p_constant_value The constant value.\n @param p_is_bitfield Whether or not this is a bit field."]
