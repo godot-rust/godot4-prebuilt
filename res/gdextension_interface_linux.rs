@@ -1395,6 +1395,279 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo2() {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+pub struct GDExtensionClassCreationInfo3 {
+    pub is_virtual: GDExtensionBool,
+    pub is_abstract: GDExtensionBool,
+    pub is_exposed: GDExtensionBool,
+    pub is_runtime: GDExtensionBool,
+    pub set_func: GDExtensionClassSet,
+    pub get_func: GDExtensionClassGet,
+    pub get_property_list_func: GDExtensionClassGetPropertyList,
+    pub free_property_list_func: GDExtensionClassFreePropertyList,
+    pub property_can_revert_func: GDExtensionClassPropertyCanRevert,
+    pub property_get_revert_func: GDExtensionClassPropertyGetRevert,
+    pub validate_property_func: GDExtensionClassValidateProperty,
+    pub notification_func: GDExtensionClassNotification2,
+    pub to_string_func: GDExtensionClassToString,
+    pub reference_func: GDExtensionClassReference,
+    pub unreference_func: GDExtensionClassUnreference,
+    pub create_instance_func: GDExtensionClassCreateInstance,
+    pub free_instance_func: GDExtensionClassFreeInstance,
+    pub recreate_instance_func: GDExtensionClassRecreateInstance,
+    pub get_virtual_func: GDExtensionClassGetVirtual,
+    pub get_virtual_call_data_func: GDExtensionClassGetVirtualCallData,
+    pub call_virtual_with_data_func: GDExtensionClassCallVirtualWithData,
+    pub get_rid_func: GDExtensionClassGetRID,
+    pub class_userdata: *mut ::std::os::raw::c_void,
+}
+#[test]
+fn bindgen_test_layout_GDExtensionClassCreationInfo3() {
+    const UNINIT: ::std::mem::MaybeUninit<GDExtensionClassCreationInfo3> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<GDExtensionClassCreationInfo3>(),
+        160usize,
+        concat!("Size of: ", stringify!(GDExtensionClassCreationInfo3))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<GDExtensionClassCreationInfo3>(),
+        8usize,
+        concat!("Alignment of ", stringify!(GDExtensionClassCreationInfo3))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_virtual) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(is_virtual)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_abstract) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(is_abstract)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_exposed) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(is_exposed)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_runtime) as usize - ptr as usize },
+        3usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(is_runtime)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).set_func) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(set_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_func) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(get_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_property_list_func) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(get_property_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_property_list_func) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(free_property_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).property_can_revert_func) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(property_can_revert_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).property_get_revert_func) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(property_get_revert_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).validate_property_func) as usize - ptr as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(validate_property_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).notification_func) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(notification_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).to_string_func) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(to_string_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).reference_func) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(reference_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).unreference_func) as usize - ptr as usize },
+        88usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(unreference_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).create_instance_func) as usize - ptr as usize },
+        96usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(create_instance_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_instance_func) as usize - ptr as usize },
+        104usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(free_instance_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).recreate_instance_func) as usize - ptr as usize },
+        112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(recreate_instance_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_virtual_func) as usize - ptr as usize },
+        120usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(get_virtual_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_virtual_call_data_func) as usize - ptr as usize },
+        128usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(get_virtual_call_data_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).call_virtual_with_data_func) as usize - ptr as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(call_virtual_with_data_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_rid_func) as usize - ptr as usize },
+        144usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(get_rid_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).class_userdata) as usize - ptr as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(class_userdata)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct __GdextClassLibrary {
     _unused: [u8; 0],
 }
@@ -3558,7 +3831,7 @@ pub type GDExtensionInterfaceObjectSetInstance = ::std::option::Option<
         p_instance: GDExtensionClassInstancePtr,
     ),
 >;
-#[doc = " @name object_get_class_name\n @since 4.1\n\n Gets the class name of an Object.\n\n @param p_object A pointer to the Object.\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param r_class_name A pointer to a String to receive the class name.\n\n @return true if successful in getting the class name; otherwise false."]
+#[doc = " @name object_get_class_name\n @since 4.1\n\n Gets the class name of an Object.\n\n If the GDExtension wraps the Godot object in an abstraction specific to its class, this is the\n function that should be used to determine which wrapper to use.\n\n @param p_object A pointer to the Object.\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param r_class_name A pointer to a String to receive the class name.\n\n @return true if successful in getting the class name; otherwise false."]
 pub type GDExtensionInterfaceObjectGetClassName = ::std::option::Option<
     unsafe extern "C" fn(
         p_object: GDExtensionConstObjectPtr,
@@ -3674,7 +3947,7 @@ pub type GDExtensionInterfaceClassdbGetMethodBind = ::std::option::Option<
 pub type GDExtensionInterfaceClassdbGetClassTag = ::std::option::Option<
     unsafe extern "C" fn(p_classname: GDExtensionConstStringNamePtr) -> *mut ::std::os::raw::c_void,
 >;
-#[doc = " @name classdb_register_extension_class\n @since 4.1\n @deprecated in Godot 4.2. Use `classdb_register_extension_class2` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo struct."]
+#[doc = " @name classdb_register_extension_class\n @since 4.1\n @deprecated in Godot 4.2. Use `classdb_register_extension_class3` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo struct."]
 pub type GDExtensionInterfaceClassdbRegisterExtensionClass = ::std::option::Option<
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,
@@ -3683,13 +3956,22 @@ pub type GDExtensionInterfaceClassdbRegisterExtensionClass = ::std::option::Opti
         p_extension_funcs: *const GDExtensionClassCreationInfo,
     ),
 >;
-#[doc = " @name classdb_register_extension_class2\n @since 4.2\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo2 struct."]
+#[doc = " @name classdb_register_extension_class2\n @since 4.2\n @deprecated in Godot 4.3. Use `classdb_register_extension_class3` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo2 struct."]
 pub type GDExtensionInterfaceClassdbRegisterExtensionClass2 = ::std::option::Option<
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,
         p_class_name: GDExtensionConstStringNamePtr,
         p_parent_class_name: GDExtensionConstStringNamePtr,
         p_extension_funcs: *const GDExtensionClassCreationInfo2,
+    ),
+>;
+#[doc = " @name classdb_register_extension_class3\n @since 4.3\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo2 struct."]
+pub type GDExtensionInterfaceClassdbRegisterExtensionClass3 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_library: GDExtensionClassLibraryPtr,
+        p_class_name: GDExtensionConstStringNamePtr,
+        p_parent_class_name: GDExtensionConstStringNamePtr,
+        p_extension_funcs: *const GDExtensionClassCreationInfo3,
     ),
 >;
 #[doc = " @name classdb_register_extension_class_method\n @since 4.1\n\n Registers a method on an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_method_info A pointer to a GDExtensionClassMethodInfo struct."]
