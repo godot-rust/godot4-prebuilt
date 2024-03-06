@@ -2189,6 +2189,13 @@ pub type GDExtensionScriptInstanceFreePropertyList = ::std::option::Option<
         p_list: *const GDExtensionPropertyInfo,
     ),
 >;
+pub type GDExtensionScriptInstanceFreePropertyList2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_instance: GDExtensionScriptInstanceDataPtr,
+        p_list: *const GDExtensionPropertyInfo,
+        p_count: u32,
+    ),
+>;
 pub type GDExtensionScriptInstanceGetClassCategory = ::std::option::Option<
     unsafe extern "C" fn(
         p_instance: GDExtensionScriptInstanceDataPtr,
@@ -2248,6 +2255,13 @@ pub type GDExtensionScriptInstanceFreeMethodList = ::std::option::Option<
     unsafe extern "C" fn(
         p_instance: GDExtensionScriptInstanceDataPtr,
         p_list: *const GDExtensionMethodInfo,
+    ),
+>;
+pub type GDExtensionScriptInstanceFreeMethodList2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_instance: GDExtensionScriptInstanceDataPtr,
+        p_list: *const GDExtensionMethodInfo,
+        p_count: u32,
     ),
 >;
 pub type GDExtensionScriptInstanceHasMethod = ::std::option::Option<
@@ -2876,6 +2890,301 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo2() {
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionScriptInstanceInfo2),
+            "::",
+            stringify!(free_func)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct GDExtensionScriptInstanceInfo3 {
+    pub set_func: GDExtensionScriptInstanceSet,
+    pub get_func: GDExtensionScriptInstanceGet,
+    pub get_property_list_func: GDExtensionScriptInstanceGetPropertyList,
+    pub free_property_list_func: GDExtensionScriptInstanceFreePropertyList2,
+    pub get_class_category_func: GDExtensionScriptInstanceGetClassCategory,
+    pub property_can_revert_func: GDExtensionScriptInstancePropertyCanRevert,
+    pub property_get_revert_func: GDExtensionScriptInstancePropertyGetRevert,
+    pub get_owner_func: GDExtensionScriptInstanceGetOwner,
+    pub get_property_state_func: GDExtensionScriptInstanceGetPropertyState,
+    pub get_method_list_func: GDExtensionScriptInstanceGetMethodList,
+    pub free_method_list_func: GDExtensionScriptInstanceFreeMethodList2,
+    pub get_property_type_func: GDExtensionScriptInstanceGetPropertyType,
+    pub validate_property_func: GDExtensionScriptInstanceValidateProperty,
+    pub has_method_func: GDExtensionScriptInstanceHasMethod,
+    pub call_func: GDExtensionScriptInstanceCall,
+    pub notification_func: GDExtensionScriptInstanceNotification2,
+    pub to_string_func: GDExtensionScriptInstanceToString,
+    pub refcount_incremented_func: GDExtensionScriptInstanceRefCountIncremented,
+    pub refcount_decremented_func: GDExtensionScriptInstanceRefCountDecremented,
+    pub get_script_func: GDExtensionScriptInstanceGetScript,
+    pub is_placeholder_func: GDExtensionScriptInstanceIsPlaceholder,
+    pub set_fallback_func: GDExtensionScriptInstanceSet,
+    pub get_fallback_func: GDExtensionScriptInstanceGet,
+    pub get_language_func: GDExtensionScriptInstanceGetLanguage,
+    pub free_func: GDExtensionScriptInstanceFree,
+}
+#[test]
+fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
+    const UNINIT: ::std::mem::MaybeUninit<GDExtensionScriptInstanceInfo3> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<GDExtensionScriptInstanceInfo3>(),
+        200usize,
+        concat!("Size of: ", stringify!(GDExtensionScriptInstanceInfo3))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<GDExtensionScriptInstanceInfo3>(),
+        8usize,
+        concat!("Alignment of ", stringify!(GDExtensionScriptInstanceInfo3))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).set_func) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(set_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_func) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_property_list_func) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_property_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_property_list_func) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(free_property_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_class_category_func) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_class_category_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).property_can_revert_func) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(property_can_revert_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).property_get_revert_func) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(property_get_revert_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_owner_func) as usize - ptr as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_owner_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_property_state_func) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_property_state_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_method_list_func) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_method_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_method_list_func) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(free_method_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_property_type_func) as usize - ptr as usize },
+        88usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_property_type_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).validate_property_func) as usize - ptr as usize },
+        96usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(validate_property_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).has_method_func) as usize - ptr as usize },
+        104usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(has_method_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).call_func) as usize - ptr as usize },
+        112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(call_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).notification_func) as usize - ptr as usize },
+        120usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(notification_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).to_string_func) as usize - ptr as usize },
+        128usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(to_string_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).refcount_incremented_func) as usize - ptr as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(refcount_incremented_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).refcount_decremented_func) as usize - ptr as usize },
+        144usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(refcount_decremented_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_script_func) as usize - ptr as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_script_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_placeholder_func) as usize - ptr as usize },
+        160usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(is_placeholder_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).set_fallback_func) as usize - ptr as usize },
+        168usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(set_fallback_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_fallback_func) as usize - ptr as usize },
+        176usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_fallback_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_language_func) as usize - ptr as usize },
+        184usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_language_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_func) as usize - ptr as usize },
+        192usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
             "::",
             stringify!(free_func)
         )
@@ -3880,17 +4189,24 @@ pub type GDExtensionInterfaceRefGetObject = ::std::option::Option<
 pub type GDExtensionInterfaceRefSetObject = ::std::option::Option<
     unsafe extern "C" fn(p_ref: GDExtensionRefPtr, p_object: GDExtensionObjectPtr),
 >;
-#[doc = " @name script_instance_create\n @since 4.1\n @deprecated in Godot 4.2. Use `script_instance_create2` instead.\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
+#[doc = " @name script_instance_create\n @since 4.1\n @deprecated in Godot 4.2. Use `script_instance_create3` instead.\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
 pub type GDExtensionInterfaceScriptInstanceCreate = ::std::option::Option<
     unsafe extern "C" fn(
         p_info: *const GDExtensionScriptInstanceInfo,
         p_instance_data: GDExtensionScriptInstanceDataPtr,
     ) -> GDExtensionScriptInstancePtr,
 >;
-#[doc = " @name script_instance_create2\n @since 4.2\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo2 struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
+#[doc = " @name script_instance_create2\n @since 4.2\n @deprecated in Godot 4.3. Use `script_instance_create3` instead.\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo2 struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
 pub type GDExtensionInterfaceScriptInstanceCreate2 = ::std::option::Option<
     unsafe extern "C" fn(
         p_info: *const GDExtensionScriptInstanceInfo2,
+        p_instance_data: GDExtensionScriptInstanceDataPtr,
+    ) -> GDExtensionScriptInstancePtr,
+>;
+#[doc = " @name script_instance_create3\n @since 4.3\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo3 struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
+pub type GDExtensionInterfaceScriptInstanceCreate3 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_info: *const GDExtensionScriptInstanceInfo3,
         p_instance_data: GDExtensionScriptInstanceDataPtr,
     ) -> GDExtensionScriptInstancePtr,
 >;
