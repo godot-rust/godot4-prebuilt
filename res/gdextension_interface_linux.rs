@@ -2027,6 +2027,12 @@ pub type GDExtensionCallableCustomToString = ::std::option::Option<
         r_out: GDExtensionStringPtr,
     ),
 >;
+pub type GDExtensionCallableCustomGetArgumentCount = ::std::option::Option<
+    unsafe extern "C" fn(
+        callable_userdata: *mut ::std::os::raw::c_void,
+        r_is_valid: *mut GDExtensionBool,
+    ) -> GDExtensionInt,
+>;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GDExtensionCallableCustomInfo {
@@ -2154,6 +2160,147 @@ fn bindgen_test_layout_GDExtensionCallableCustomInfo() {
             stringify!(GDExtensionCallableCustomInfo),
             "::",
             stringify!(to_string_func)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct GDExtensionCallableCustomInfo2 {
+    pub callable_userdata: *mut ::std::os::raw::c_void,
+    pub token: *mut ::std::os::raw::c_void,
+    pub object_id: GDObjectInstanceID,
+    pub call_func: GDExtensionCallableCustomCall,
+    pub is_valid_func: GDExtensionCallableCustomIsValid,
+    pub free_func: GDExtensionCallableCustomFree,
+    pub hash_func: GDExtensionCallableCustomHash,
+    pub equal_func: GDExtensionCallableCustomEqual,
+    pub less_than_func: GDExtensionCallableCustomLessThan,
+    pub to_string_func: GDExtensionCallableCustomToString,
+    pub get_argument_count_func: GDExtensionCallableCustomGetArgumentCount,
+}
+#[test]
+fn bindgen_test_layout_GDExtensionCallableCustomInfo2() {
+    const UNINIT: ::std::mem::MaybeUninit<GDExtensionCallableCustomInfo2> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<GDExtensionCallableCustomInfo2>(),
+        88usize,
+        concat!("Size of: ", stringify!(GDExtensionCallableCustomInfo2))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<GDExtensionCallableCustomInfo2>(),
+        8usize,
+        concat!("Alignment of ", stringify!(GDExtensionCallableCustomInfo2))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).callable_userdata) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(callable_userdata)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).token) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(token)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).object_id) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(object_id)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).call_func) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(call_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_valid_func) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(is_valid_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_func) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(free_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).hash_func) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(hash_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).equal_func) as usize - ptr as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(equal_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).less_than_func) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(less_than_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).to_string_func) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(to_string_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_argument_count_func) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(get_argument_count_func)
         )
     );
 }
@@ -4233,11 +4380,18 @@ pub type GDExtensionInterfaceObjectGetScriptInstance = ::std::option::Option<
         p_language: GDExtensionObjectPtr,
     ) -> GDExtensionScriptInstanceDataPtr,
 >;
-#[doc = " @name callable_custom_create\n @since 4.2\n\n Creates a custom Callable object from a function pointer.\n\n Provided struct can be safely freed once the function returns.\n\n @param r_callable A pointer that will receive the new Callable.\n @param p_callable_custom_info The info required to construct a Callable."]
+#[doc = " @name callable_custom_create\n @since 4.2\n @deprecated in Godot 4.3. Use `callable_custom_create2` instead.\n\n Creates a custom Callable object from a function pointer.\n\n Provided struct can be safely freed once the function returns.\n\n @param r_callable A pointer that will receive the new Callable.\n @param p_callable_custom_info The info required to construct a Callable."]
 pub type GDExtensionInterfaceCallableCustomCreate = ::std::option::Option<
     unsafe extern "C" fn(
         r_callable: GDExtensionUninitializedTypePtr,
         p_callable_custom_info: *mut GDExtensionCallableCustomInfo,
+    ),
+>;
+#[doc = " @name callable_custom_create2\n @since 4.3\n\n Creates a custom Callable object from a function pointer.\n\n Provided struct can be safely freed once the function returns.\n\n @param r_callable A pointer that will receive the new Callable.\n @param p_callable_custom_info The info required to construct a Callable."]
+pub type GDExtensionInterfaceCallableCustomCreate2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        r_callable: GDExtensionUninitializedTypePtr,
+        p_callable_custom_info: *mut GDExtensionCallableCustomInfo2,
     ),
 >;
 #[doc = " @name callable_custom_get_userdata\n @since 4.2\n\n Retrieves the userdata pointer from a custom Callable.\n\n If the Callable is not a custom Callable or the token does not match the one provided to callable_custom_create() via GDExtensionCallableCustomInfo then NULL will be returned.\n\n @param p_callable A pointer to a Callable.\n @param p_token A pointer to an address that uniquely identifies the GDExtension."]
