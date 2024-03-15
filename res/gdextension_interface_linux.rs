@@ -2417,6 +2417,13 @@ pub type GDExtensionScriptInstanceHasMethod = ::std::option::Option<
         p_name: GDExtensionConstStringNamePtr,
     ) -> GDExtensionBool,
 >;
+pub type GDExtensionScriptInstanceGetMethodArgumentCount = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_instance: GDExtensionScriptInstanceDataPtr,
+        p_name: GDExtensionConstStringNamePtr,
+        r_is_valid: *mut GDExtensionBool,
+    ) -> GDExtensionInt,
+>;
 pub type GDExtensionScriptInstanceCall = ::std::option::Option<
     unsafe extern "C" fn(
         p_self: GDExtensionScriptInstanceDataPtr,
@@ -3059,6 +3066,7 @@ pub struct GDExtensionScriptInstanceInfo3 {
     pub get_property_type_func: GDExtensionScriptInstanceGetPropertyType,
     pub validate_property_func: GDExtensionScriptInstanceValidateProperty,
     pub has_method_func: GDExtensionScriptInstanceHasMethod,
+    pub get_method_argument_count_func: GDExtensionScriptInstanceGetMethodArgumentCount,
     pub call_func: GDExtensionScriptInstanceCall,
     pub notification_func: GDExtensionScriptInstanceNotification2,
     pub to_string_func: GDExtensionScriptInstanceToString,
@@ -3078,7 +3086,7 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
     let ptr = UNINIT.as_ptr();
     assert_eq!(
         ::std::mem::size_of::<GDExtensionScriptInstanceInfo3>(),
-        200usize,
+        208usize,
         concat!("Size of: ", stringify!(GDExtensionScriptInstanceInfo3))
     );
     assert_eq!(
@@ -3227,8 +3235,20 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).call_func) as usize - ptr as usize },
+        unsafe {
+            ::std::ptr::addr_of!((*ptr).get_method_argument_count_func) as usize - ptr as usize
+        },
         112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_method_argument_count_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).call_func) as usize - ptr as usize },
+        120usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionScriptInstanceInfo3),
@@ -3238,7 +3258,7 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).notification_func) as usize - ptr as usize },
-        120usize,
+        128usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionScriptInstanceInfo3),
@@ -3248,7 +3268,7 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).to_string_func) as usize - ptr as usize },
-        128usize,
+        136usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionScriptInstanceInfo3),
@@ -3258,7 +3278,7 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).refcount_incremented_func) as usize - ptr as usize },
-        136usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionScriptInstanceInfo3),
@@ -3268,7 +3288,7 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).refcount_decremented_func) as usize - ptr as usize },
-        144usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionScriptInstanceInfo3),
@@ -3278,7 +3298,7 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).get_script_func) as usize - ptr as usize },
-        152usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionScriptInstanceInfo3),
@@ -3288,7 +3308,7 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).is_placeholder_func) as usize - ptr as usize },
-        160usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionScriptInstanceInfo3),
@@ -3298,7 +3318,7 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).set_fallback_func) as usize - ptr as usize },
-        168usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionScriptInstanceInfo3),
@@ -3308,7 +3328,7 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).get_fallback_func) as usize - ptr as usize },
-        176usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionScriptInstanceInfo3),
@@ -3318,7 +3338,7 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).get_language_func) as usize - ptr as usize },
-        184usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionScriptInstanceInfo3),
@@ -3328,7 +3348,7 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).free_func) as usize - ptr as usize },
-        192usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionScriptInstanceInfo3),
