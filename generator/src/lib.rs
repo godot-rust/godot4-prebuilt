@@ -7,7 +7,7 @@
 // Output of generated code. Mimics the file structure, symbols are re-exported.
 #[rustfmt::skip]
 #[allow(
-dead_code,
+    dead_code,
     deref_nullptr,
     non_camel_case_types,
     non_snake_case,
@@ -18,10 +18,11 @@ dead_code,
 mod gdextension_interface;
 
 
-// Sanity check, ensures that symbols are available
+// Sanity check, ensures that symbols are available.
+#[allow(dead_code)]
 trait Distinct {}
 
-// This only compiles if those are different types -- ensures type safety through patch
+// This only compiles if those are different types -- ensures type safety through patch.
 impl Distinct for gdextension_interface::GDExtensionVariantPtr {}
 impl Distinct for gdextension_interface::GDExtensionTypePtr {}
 impl Distinct for gdextension_interface::GDExtensionConstTypePtr {}

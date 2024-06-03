@@ -5,9 +5,6 @@ name = "prebuilt-generator"
 version = "0.0.0"
 edition = "2021"
 rust-version = "1.63"
-license = "MPL-2.0"
-keywords = ["gamedev", "godot", "engine", "ffi"]
-categories = ["game-engines", "graphics"]
 publish = false
 
 [dependencies]
@@ -15,6 +12,6 @@ publish = false
 [build-dependencies.godot-bindings]
 git = "https://github.com/godot-rust/gdext"
 #branch = "master"
-rev = "79568f680c6cb2449cdf39c507545fd580d39262"
+rev = "e1f1ce3a23db3b445be4adc504d63611a663b9a9"
 default-features = false
-features = ["custom-godot", "custom-godot-extheader"]
+features = ["api-custom", "api-custom-extheader"]
