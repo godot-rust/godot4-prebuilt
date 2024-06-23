@@ -1,14 +1,15 @@
+# Copyright (c) godot-rust; Bromeon and contributors.
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-name: "Build nightly Linux artifacts"
+name: "Nightly Linux artifacts"
 # Keep similar to build-artifacts.yml, to keep them in sync easier.
 # There is only 1 step here, because the header can be generated from Godot and doesn't need 3 different platforms.
 
 on:
   workflow_dispatch: # manual trigger
-  push:
+#  push:
   schedule:
     # Run at 05:17 UTC each morning, 2.5h after godot4-nightly (so good enough chances it has started and finished)
     - cron: "17 5 * * *"
@@ -37,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Replaces also backspaces on Windows, since they cause problems in Bash
       - name: "Store variable to Godot binary"
@@ -91,7 +92,7 @@ jobs:
       # Do not cache whole target directory, e.g. godot-gen should be excluded.
       - name: "Cache for Rust ${{ env.RUST_VER }}"
         id: cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.cargo/bin/
