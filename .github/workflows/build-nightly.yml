@@ -9,7 +9,7 @@ name: "Nightly Linux artifacts"
 
 on:
   workflow_dispatch: # manual trigger
-#  push:
+  push:
   schedule:
     # Run at 05:17 UTC each morning, 2.5h after godot4-nightly (so good enough chances it has started and finished)
     - cron: "17 5 * * *"
@@ -169,15 +169,10 @@ jobs:
           git fetch
           git switch $GODOT4_VER || git switch -c $GODOT4_VER origin/root
           (GLOBIGNORE='.git:output'; rm -rf *)
-          git restore --source origin/master -- prebuilt-template
+          git restore --source origin/master -- prebuilt-template res/substitute-nightly-lib.sh
           mv prebuilt-template/* .
-          
-          # Extract "major.minor[.patch]" from full version, write into GODOT4_VER (which is 'nightly', but lib.rs needs number)
-          export GODOT4_VER_NUMERIC="$(echo $GODOT4_FULL_VER | sed -E 's!([0-9]+\.[0-9]+(\.[0-9]+)?).*!\1!')"
-          
-          sed -i "s/%GODOT4_VER%/${GODOT4_VER_NUMERIC}/" src/lib.rs
-          sed -i "s/%RUST_VER%/${RUST_VER}/" src/lib.rs
-          sed -i "s/%BINDGEN_VER%/${BINDGEN_VER}/" src/lib.rs
+          res/substitute-nightly-lib.sh src/lib.rs
+          rm -rf res
           mv output res
           git add *
           git commit -m "Godot $GODOT4_UPSTREAM_VER artifact sync"
