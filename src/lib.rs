@@ -44,4 +44,18 @@ pub const fn load_gdextension_header_rs() -> &'static str {
 /// Returns the contents of the JSON API file `extension_api.json`.
 pub const fn load_gdextension_json() -> &'static str {
     include_str!("../res/extension_api.json")
+}pub mod version_4_2 {
+    pub use super::*;
+}
+pub mod version_4_3 {
+    pub use super::*;
+}
+pub mod version_4_4 {
+    pub use super::*;
+}
+pub mod version_4_5 {
+    pub use super::*;
+}
+pub mod version_4_6 {
+    pub use super::*;
 }
