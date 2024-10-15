@@ -54799,6 +54799,17 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "capture_aabb",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1068685055,
+					"return_value": {
+						"type": "AABB"
+					}
+				},
+				{
 					"name": "set_direction",
 					"is_const": false,
 					"is_vararg": false,
