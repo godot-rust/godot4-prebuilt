@@ -73110,7 +73110,7 @@
 							"value": 0
 						},
 						{
-							"name": "LAYOUT_DIRECTION_LOCALE",
+							"name": "LAYOUT_DIRECTION_APPLICATION_LOCALE",
 							"value": 1
 						},
 						{
@@ -73120,6 +73120,18 @@
 						{
 							"name": "LAYOUT_DIRECTION_RTL",
 							"value": 3
+						},
+						{
+							"name": "LAYOUT_DIRECTION_SYSTEM_LOCALE",
+							"value": 4
+						},
+						{
+							"name": "LAYOUT_DIRECTION_MAX",
+							"value": 5
+						},
+						{
+							"name": "LAYOUT_DIRECTION_LOCALE",
+							"value": 1
 						}
 					]
 				},
@@ -79972,8 +79984,12 @@
 							"value": 7
 						},
 						{
-							"name": "WINDOW_FLAG_MAX",
+							"name": "WINDOW_FLAG_SHARP_CORNERS",
 							"value": 8
+						},
+						{
+							"name": "WINDOW_FLAG_MAX",
+							"value": 9
 						}
 					]
 				},
@@ -238996,6 +239012,14 @@
 							"default_value": "false"
 						}
 					]
+				},
+				{
+					"name": "inspect_native_shader_code",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
 				}
 			],
 			"properties": [
@@ -304277,8 +304301,12 @@
 							"value": 7
 						},
 						{
-							"name": "FLAG_MAX",
+							"name": "FLAG_SHARP_CORNERS",
 							"value": 8
+						},
+						{
+							"name": "FLAG_MAX",
+							"value": 9
 						}
 					]
 				},
@@ -304349,7 +304377,7 @@
 							"value": 0
 						},
 						{
-							"name": "LAYOUT_DIRECTION_LOCALE",
+							"name": "LAYOUT_DIRECTION_APPLICATION_LOCALE",
 							"value": 1
 						},
 						{
@@ -304359,6 +304387,18 @@
 						{
 							"name": "LAYOUT_DIRECTION_RTL",
 							"value": 3
+						},
+						{
+							"name": "LAYOUT_DIRECTION_SYSTEM_LOCALE",
+							"value": 4
+						},
+						{
+							"name": "LAYOUT_DIRECTION_MAX",
+							"value": 5
+						},
+						{
+							"name": "LAYOUT_DIRECTION_LOCALE",
+							"value": 1
 						}
 					]
 				},
@@ -306325,6 +306365,13 @@
 					"setter": "set_flag",
 					"getter": "get_flag",
 					"index": 7
+				},
+				{
+					"type": "bool",
+					"name": "sharp_corners",
+					"setter": "set_flag",
+					"getter": "get_flag",
+					"index": 8
 				},
 				{
 					"type": "bool",
