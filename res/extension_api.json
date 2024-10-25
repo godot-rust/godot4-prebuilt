@@ -19432,6 +19432,16 @@
 					"name": ">=",
 					"right_type": "RID",
 					"return_type": "bool"
+				},
+				{
+					"name": "in",
+					"right_type": "Dictionary",
+					"return_type": "bool"
+				},
+				{
+					"name": "in",
+					"right_type": "Array",
+					"return_type": "bool"
 				}
 			],
 			"methods": [
@@ -44256,6 +44266,104 @@
 					"return_value": {
 						"type": "AudioSamplePlayback"
 					}
+				},
+				{
+					"name": "mix_audio",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341291446,
+					"return_value": {
+						"type": "PackedVector2Array"
+					},
+					"arguments": [
+						{
+							"name": "rate_scale",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "frames",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "start",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1958160172,
+					"arguments": [
+						{
+							"name": "from_pos",
+							"type": "float",
+							"meta": "double",
+							"default_value": "0.0"
+						}
+					]
+				},
+				{
+					"name": "seek",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1958160172,
+					"arguments": [
+						{
+							"name": "time",
+							"type": "float",
+							"meta": "double",
+							"default_value": "0.0"
+						}
+					]
+				},
+				{
+					"name": "stop",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "get_loop_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_playback_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "is_playing",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			]
 		},
@@ -62627,7 +62735,7 @@
 					},
 					"arguments": [
 						{
-							"name": "screen_point",
+							"name": "viewport_point",
 							"type": "Vector2"
 						}
 					]
@@ -135695,6 +135803,33 @@
 					}
 				},
 				{
+					"name": "set_shadow_caster_mask",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "caster_mask",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_shadow_caster_mask",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
 					"name": "set_bake_mode",
 					"is_const": false,
 					"is_vararg": false,
@@ -135922,6 +136057,12 @@
 					"setter": "set_param",
 					"getter": "get_param",
 					"index": 18
+				},
+				{
+					"type": "int",
+					"name": "shadow_caster_mask",
+					"setter": "set_shadow_caster_mask",
+					"getter": "get_shadow_caster_mask"
 				},
 				{
 					"type": "bool",
@@ -170281,15 +170422,28 @@
 					}
 				},
 				{
-					"name": "get_path_count",
+					"name": "set_binding_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "binding_path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_binding_path",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3905245786,
+					"hash": 201670096,
 					"return_value": {
-						"type": "int",
-						"meta": "int32"
+						"type": "String"
 					}
 				},
 				{
@@ -170315,6 +170469,18 @@
 					"hash": 1139954409,
 					"return_value": {
 						"type": "PackedStringArray"
+					}
+				},
+				{
+					"name": "get_path_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
 					}
 				},
 				{
@@ -170369,6 +170535,12 @@
 					"name": "action",
 					"setter": "set_action",
 					"getter": "get_action"
+				},
+				{
+					"type": "String",
+					"name": "binding_path",
+					"setter": "set_binding_path",
+					"getter": "get_binding_path"
 				},
 				{
 					"type": "PackedStringArray",
@@ -219847,6 +220019,25 @@
 						{
 							"name": "enabled",
 							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "light_set_shadow_caster_mask",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "light",
+							"type": "RID"
+						},
+						{
+							"name": "mask",
+							"type": "int",
+							"meta": "uint32"
 						}
 					]
 				},
