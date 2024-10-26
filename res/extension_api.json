@@ -42497,6 +42497,17 @@
 					}
 				},
 				{
+					"name": "get_driver_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
 					"name": "get_output_device_list",
 					"is_const": false,
 					"is_vararg": false,
@@ -80180,6 +80191,14 @@
 						{
 							"name": "OPENGL_CONTEXT",
 							"value": 3
+						},
+						{
+							"name": "EGL_DISPLAY",
+							"value": 4
+						},
+						{
+							"name": "EGL_CONFIG",
+							"value": 5
 						}
 					]
 				},
@@ -116244,6 +116263,27 @@
 						{
 							"name": "sizes",
 							"type": "PackedVector2Array"
+						}
+					]
+				},
+				{
+					"name": "bresenham_line",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1989391000,
+					"return_value": {
+						"type": "typedarray::Vector2i"
+					},
+					"arguments": [
+						{
+							"name": "from",
+							"type": "Vector2i"
+						},
+						{
+							"name": "to",
+							"type": "Vector2i"
 						}
 					]
 				}
