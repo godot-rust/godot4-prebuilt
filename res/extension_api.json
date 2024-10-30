@@ -31573,7 +31573,7 @@
 				},
 				{
 					"name": "_process",
-					"is_const": true,
+					"is_const": false,
 					"is_static": false,
 					"is_required": false,
 					"is_vararg": false,
@@ -42486,6 +42486,18 @@
 				},
 				{
 					"name": "get_mix_rate",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_input_mix_rate",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -214734,6 +214746,47 @@
 						},
 						{
 							"name": "procedural_vertex_count",
+							"type": "int",
+							"meta": "uint32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "draw_list_draw_indirect",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1092133571,
+					"arguments": [
+						{
+							"name": "draw_list",
+							"type": "int",
+							"meta": "int64"
+						},
+						{
+							"name": "use_indices",
+							"type": "bool"
+						},
+						{
+							"name": "buffer",
+							"type": "RID"
+						},
+						{
+							"name": "offset",
+							"type": "int",
+							"meta": "uint32",
+							"default_value": "0"
+						},
+						{
+							"name": "draw_count",
+							"type": "int",
+							"meta": "uint32",
+							"default_value": "1"
+						},
+						{
+							"name": "stride",
 							"type": "int",
 							"meta": "uint32",
 							"default_value": "0"
