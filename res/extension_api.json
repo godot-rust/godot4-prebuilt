@@ -66627,7 +66627,7 @@
 					]
 				},
 				{
-					"name": "class_call_static_method",
+					"name": "class_call_static",
 					"is_const": false,
 					"is_vararg": true,
 					"is_static": false,
@@ -79847,6 +79847,10 @@
 						{
 							"name": "FEATURE_NATIVE_DIALOG_FILE",
 							"value": 25
+						},
+						{
+							"name": "FEATURE_NATIVE_DIALOG_FILE_EXTRA",
+							"value": 26
 						}
 					]
 				},
@@ -87820,8 +87824,12 @@
 							"value": 7
 						},
 						{
-							"name": "FEATURE_MAX",
+							"name": "FEATURE_GAME",
 							"value": 8
+						},
+						{
+							"name": "FEATURE_MAX",
+							"value": 9
 						}
 					]
 				}
