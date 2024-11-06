@@ -60390,6 +60390,10 @@
 						{
 							"name": "FEED_YCBCR_SEP",
 							"value": 3
+						},
+						{
+							"name": "FEED_EXTERNAL",
+							"value": 4
 						}
 					]
 				},
@@ -60550,6 +60554,44 @@
 						{
 							"name": "ycbcr_image",
 							"type": "Image"
+						}
+					]
+				},
+				{
+					"name": "set_external",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "width",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "height",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_texture_tex_id",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1135699418,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "feed_image_type",
+							"type": "enum::CameraServer.FeedImage"
 						}
 					]
 				},
@@ -107050,6 +107092,60 @@
 							"value": 6
 						}
 					]
+				},
+				{
+					"name": "GLTFComponentType",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "COMPONENT_TYPE_NONE",
+							"value": 0
+						},
+						{
+							"name": "COMPONENT_TYPE_SIGNED_BYTE",
+							"value": 5120
+						},
+						{
+							"name": "COMPONENT_TYPE_UNSIGNED_BYTE",
+							"value": 5121
+						},
+						{
+							"name": "COMPONENT_TYPE_SIGNED_SHORT",
+							"value": 5122
+						},
+						{
+							"name": "COMPONENT_TYPE_UNSIGNED_SHORT",
+							"value": 5123
+						},
+						{
+							"name": "COMPONENT_TYPE_SIGNED_INT",
+							"value": 5124
+						},
+						{
+							"name": "COMPONENT_TYPE_UNSIGNED_INT",
+							"value": 5125
+						},
+						{
+							"name": "COMPONENT_TYPE_SINGLE_FLOAT",
+							"value": 5126
+						},
+						{
+							"name": "COMPONENT_TYPE_DOUBLE_FLOAT",
+							"value": 5130
+						},
+						{
+							"name": "COMPONENT_TYPE_HALF_FLOAT",
+							"value": 5131
+						},
+						{
+							"name": "COMPONENT_TYPE_SIGNED_LONG",
+							"value": 5134
+						},
+						{
+							"name": "COMPONENT_TYPE_UNSIGNED_LONG",
+							"value": 5135
+						}
+					]
 				}
 			],
 			"methods": [
@@ -108397,6 +108493,57 @@
 					]
 				},
 				{
+					"name": "import_object_model_property",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1206708632,
+					"return_value": {
+						"type": "GLTFObjectModelProperty"
+					},
+					"arguments": [
+						{
+							"name": "state",
+							"type": "GLTFState"
+						},
+						{
+							"name": "json_pointer",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "export_object_model_property",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 314209806,
+					"return_value": {
+						"type": "GLTFObjectModelProperty"
+					},
+					"arguments": [
+						{
+							"name": "state",
+							"type": "GLTFState"
+						},
+						{
+							"name": "node_path",
+							"type": "NodePath"
+						},
+						{
+							"name": "godot_node",
+							"type": "Node"
+						},
+						{
+							"name": "gltf_node_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "register_gltf_document_extension",
 					"is_const": false,
 					"is_vararg": false,
@@ -108592,6 +108739,31 @@
 					]
 				},
 				{
+					"name": "_import_object_model_property",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "GLTFObjectModelProperty"
+					},
+					"arguments": [
+						{
+							"name": "state",
+							"type": "GLTFState"
+						},
+						{
+							"name": "split_json_pointer",
+							"type": "PackedStringArray"
+						},
+						{
+							"name": "partial_paths",
+							"type": "typedarray::NodePath"
+						}
+					]
+				},
+				{
 					"name": "_import_post_parse",
 					"is_const": false,
 					"is_static": false,
@@ -108778,6 +108950,45 @@
 						{
 							"name": "state",
 							"type": "GLTFState"
+						}
+					]
+				},
+				{
+					"name": "_export_object_model_property",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "GLTFObjectModelProperty"
+					},
+					"arguments": [
+						{
+							"name": "state",
+							"type": "GLTFState"
+						},
+						{
+							"name": "node_path",
+							"type": "NodePath"
+						},
+						{
+							"name": "godot_node",
+							"type": "Node"
+						},
+						{
+							"name": "gltf_node_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "target_object",
+							"type": "Object"
+						},
+						{
+							"name": "target_depth",
+							"type": "int",
+							"meta": "int32"
 						}
 					]
 				},
@@ -109805,6 +110016,28 @@
 							"type": "Variant"
 						}
 					]
+				},
+				{
+					"name": "get_scene_node_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 573359477,
+					"return_value": {
+						"type": "NodePath"
+					},
+					"arguments": [
+						{
+							"name": "gltf_state",
+							"type": "GLTFState"
+						},
+						{
+							"name": "handle_skeletons",
+							"type": "bool",
+							"default_value": "true"
+						}
+					]
 				}
 			],
 			"properties": [
@@ -109885,6 +110118,338 @@
 					"name": "light",
 					"setter": "set_light",
 					"getter": "get_light"
+				}
+			]
+		},
+		{
+			"name": "GLTFObjectModelProperty",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "GLTFObjectModelType",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "GLTF_OBJECT_MODEL_TYPE_UNKNOWN",
+							"value": 0
+						},
+						{
+							"name": "GLTF_OBJECT_MODEL_TYPE_BOOL",
+							"value": 1
+						},
+						{
+							"name": "GLTF_OBJECT_MODEL_TYPE_FLOAT",
+							"value": 2
+						},
+						{
+							"name": "GLTF_OBJECT_MODEL_TYPE_FLOAT_ARRAY",
+							"value": 3
+						},
+						{
+							"name": "GLTF_OBJECT_MODEL_TYPE_FLOAT2",
+							"value": 4
+						},
+						{
+							"name": "GLTF_OBJECT_MODEL_TYPE_FLOAT3",
+							"value": 5
+						},
+						{
+							"name": "GLTF_OBJECT_MODEL_TYPE_FLOAT4",
+							"value": 6
+						},
+						{
+							"name": "GLTF_OBJECT_MODEL_TYPE_FLOAT2X2",
+							"value": 7
+						},
+						{
+							"name": "GLTF_OBJECT_MODEL_TYPE_FLOAT3X3",
+							"value": 8
+						},
+						{
+							"name": "GLTF_OBJECT_MODEL_TYPE_FLOAT4X4",
+							"value": 9
+						},
+						{
+							"name": "GLTF_OBJECT_MODEL_TYPE_INT",
+							"value": 10
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "append_node_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1348162250,
+					"arguments": [
+						{
+							"name": "node_path",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "append_path_to_property",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1331931644,
+					"arguments": [
+						{
+							"name": "node_path",
+							"type": "NodePath"
+						},
+						{
+							"name": "prop_name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_accessor_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1998183368,
+					"return_value": {
+						"type": "enum::GLTFAccessor.GLTFAccessorType"
+					}
+				},
+				{
+					"name": "get_gltf_to_godot_expression",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240072449,
+					"return_value": {
+						"type": "Expression"
+					}
+				},
+				{
+					"name": "set_gltf_to_godot_expression",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1815845073,
+					"arguments": [
+						{
+							"name": "gltf_to_godot_expr",
+							"type": "Expression"
+						}
+					]
+				},
+				{
+					"name": "get_godot_to_gltf_expression",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240072449,
+					"return_value": {
+						"type": "Expression"
+					}
+				},
+				{
+					"name": "set_godot_to_gltf_expression",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1815845073,
+					"arguments": [
+						{
+							"name": "godot_to_gltf_expr",
+							"type": "Expression"
+						}
+					]
+				},
+				{
+					"name": "get_node_paths",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::NodePath"
+					}
+				},
+				{
+					"name": "has_node_paths",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_node_paths",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "node_paths",
+							"type": "typedarray::NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_object_model_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1094778507,
+					"return_value": {
+						"type": "enum::GLTFObjectModelProperty.GLTFObjectModelType"
+					}
+				},
+				{
+					"name": "set_object_model_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4108684086,
+					"arguments": [
+						{
+							"name": "type",
+							"type": "enum::GLTFObjectModelProperty.GLTFObjectModelType"
+						}
+					]
+				},
+				{
+					"name": "get_json_pointers",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::PackedStringArray"
+					}
+				},
+				{
+					"name": "has_json_pointers",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_json_pointers",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "json_pointers",
+							"type": "typedarray::PackedStringArray"
+						}
+					]
+				},
+				{
+					"name": "get_variant_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3416842102,
+					"return_value": {
+						"type": "enum::Variant.Type"
+					}
+				},
+				{
+					"name": "set_variant_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2887708385,
+					"arguments": [
+						{
+							"name": "variant_type",
+							"type": "enum::Variant.Type"
+						}
+					]
+				},
+				{
+					"name": "set_types",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4150728237,
+					"arguments": [
+						{
+							"name": "variant_type",
+							"type": "enum::Variant.Type"
+						},
+						{
+							"name": "obj_model_type",
+							"type": "enum::GLTFObjectModelProperty.GLTFObjectModelType"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "Expression",
+					"name": "gltf_to_godot_expression",
+					"setter": "set_gltf_to_godot_expression",
+					"getter": "get_gltf_to_godot_expression"
+				},
+				{
+					"type": "Expression",
+					"name": "godot_to_gltf_expression",
+					"setter": "set_godot_to_gltf_expression",
+					"getter": "get_godot_to_gltf_expression"
+				},
+				{
+					"type": "Array",
+					"name": "node_paths",
+					"setter": "set_node_paths",
+					"getter": "get_node_paths"
+				},
+				{
+					"type": "int",
+					"name": "object_model_type",
+					"setter": "set_object_model_type",
+					"getter": "get_object_model_type"
+				},
+				{
+					"type": "PackedStringArray",
+					"name": "json_pointers",
+					"setter": "set_json_pointers",
+					"getter": "get_json_pointers"
+				},
+				{
+					"type": "int",
+					"name": "variant_type",
+					"setter": "set_variant_type",
+					"getter": "get_variant_type"
 				}
 			]
 		},
@@ -170016,6 +170581,34 @@
 					"is_virtual": true
 				},
 				{
+					"name": "_on_pre_draw_viewport",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"arguments": [
+						{
+							"name": "viewport",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "_on_post_draw_viewport",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"arguments": [
+						{
+							"name": "viewport",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "_on_session_destroyed",
 					"is_const": false,
 					"is_static": false,
@@ -223744,6 +224337,25 @@
 						{
 							"name": "bg",
 							"type": "enum::RenderingServer.EnvironmentBG"
+						}
+					]
+				},
+				{
+					"name": "environment_set_camera_id",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "env",
+							"type": "RID"
+						},
+						{
+							"name": "id",
+							"type": "int",
+							"meta": "int32"
 						}
 					]
 				},

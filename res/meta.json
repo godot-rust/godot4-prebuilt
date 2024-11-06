@@ -2,9 +2,9 @@
     "protocol": 1,
     "versions": {
         "godot": "nightly",
-        "godot_full": "4.4.dev.custom_build.1bffd6c73",
+        "godot_full": "4.4.dev.custom_build.87318a2fb",
         "rust": "1.82.0",
         "bindgen": "0.68.1"
     },
-    "created_ts": 1730784723
+    "created_ts": 1730871108
 }
