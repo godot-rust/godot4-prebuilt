@@ -262687,6 +262687,33 @@
 					}
 				},
 				{
+					"name": "set_line_spacing",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "line_spacing",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_line_spacing",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "get_line_objects",
 					"is_const": true,
 					"is_vararg": false,
@@ -263165,6 +263192,12 @@
 					"name": "max_lines_visible",
 					"setter": "set_max_lines_visible",
 					"getter": "get_max_lines_visible"
+				},
+				{
+					"type": "float",
+					"name": "line_spacing",
+					"setter": "set_line_spacing",
+					"getter": "get_line_spacing"
 				}
 			]
 		},
@@ -280617,6 +280650,45 @@
 					"return_value": {
 						"type": "int",
 						"meta": "uint32"
+					},
+					"arguments": [
+						{
+							"name": "layer_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_physics_layer_collision_priority",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "layer_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "priority",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_physics_layer_collision_priority",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
 					},
 					"arguments": [
 						{
