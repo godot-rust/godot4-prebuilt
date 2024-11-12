@@ -16397,6 +16397,18 @@
 				{
 					"name": "v",
 					"type": "float"
+				},
+				{
+					"name": "ok_hsl_h",
+					"type": "float"
+				},
+				{
+					"name": "ok_hsl_s",
+					"type": "float"
+				},
+				{
+					"name": "ok_hsl_l",
+					"type": "float"
 				}
 			],
 			"constants": [
@@ -90190,6 +90202,29 @@
 					]
 				},
 				{
+					"name": "popup_method_selector",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3585505226,
+					"arguments": [
+						{
+							"name": "object",
+							"type": "Object"
+						},
+						{
+							"name": "callback",
+							"type": "Callable"
+						},
+						{
+							"name": "current_value",
+							"type": "String",
+							"default_value": "\"\""
+						}
+					]
+				},
+				{
 					"name": "popup_quick_open",
 					"is_const": false,
 					"is_vararg": false,
@@ -93231,6 +93266,19 @@
 						},
 						{
 							"name": "checked",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "property_favorited",
+					"arguments": [
+						{
+							"name": "property",
+							"type": "StringName"
+						},
+						{
+							"name": "favorited",
 							"type": "bool"
 						}
 					]
@@ -172817,7 +172865,7 @@
 					},
 					"arguments": [
 						{
-							"name": "pck_path",
+							"name": "target_path",
 							"type": "String"
 						},
 						{
@@ -172828,6 +172876,23 @@
 							"name": "encrypt",
 							"type": "bool",
 							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "add_file_removal",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 166001499,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "target_path",
+							"type": "String"
 						}
 					]
 				},
@@ -228444,6 +228509,28 @@
 					}
 				},
 				{
+					"name": "get_current_rendering_driver_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "get_current_rendering_method",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
 					"name": "make_sphere_mesh",
 					"is_const": false,
 					"is_vararg": false,
@@ -229909,6 +229996,23 @@
 					"arguments": [
 						{
 							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "list_directory",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3538744774,
+					"return_value": {
+						"type": "PackedStringArray"
+					},
+					"arguments": [
+						{
+							"name": "directory_path",
 							"type": "String"
 						}
 					]
@@ -278885,6 +278989,24 @@
 						{
 							"name": "tile_data",
 							"type": "TileData"
+						}
+					]
+				},
+				{
+					"name": "_update_cells",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"arguments": [
+						{
+							"name": "coords",
+							"type": "typedarray::Vector2i"
+						},
+						{
+							"name": "forced_cleanup",
+							"type": "bool"
 						}
 					]
 				},
