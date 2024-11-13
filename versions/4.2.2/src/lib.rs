@@ -23,19 +23,19 @@ pub const GODOT_VERSION_STRING: &str = "4.2.2";
 
 /// Returns the contents of the header file `gdextension_interface.h`.
 pub const fn load_gdextension_header_h() -> CowStr {
-    CowStr::Borrowed(include_str!("../res/gdextension_interface.h"))
+    CowStr::Borrowed(include_str!("../../4.2/res/gdextension_interface.h"))
 }
 
 /// Returns the contents of the header file `gdextension_interface.rs`, generated for the corresponding platform.
 pub const fn load_gdextension_header_rs() -> CowStr {
     #[cfg(windows)]
-    let s = include_str!("../res/gdextension_interface_windows.rs");
+    let s = include_str!("../../4.2/res/gdextension_interface_windows.rs");
 
     #[cfg(target_os = "macos")]
-    let s = include_str!("../res/gdextension_interface_macos.rs");
+    let s = include_str!("../../4.2/res/gdextension_interface_macos.rs");
 
     #[cfg(all(unix, not(target_os = "macos")))]
-    let s = include_str!("../res/gdextension_interface_linux.rs");
+    let s = include_str!("../../4.2/res/gdextension_interface_linux.rs");
 
     CowStr::Borrowed(s)
 }
@@ -49,8 +49,8 @@ pub const fn load_gdextension_json() -> CowStr {
 pub fn get_package_property(key: &str) -> Option<CowStr> {
     let value = match key {
         "godot_version_string" => Cow::Borrowed(GODOT_VERSION_STRING),
-        "rust_version_string" => Cow::Borrowed("1.79.0"),
-        "bindgen_version_string" => Cow::Borrowed("0.68.1"),
+        "rust_version_string" => Cow::Borrowed(""),
+        "bindgen_version_string" => Cow::Borrowed(""),
         _ => return None,
     };
 
