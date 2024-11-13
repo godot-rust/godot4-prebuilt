@@ -19643,6 +19643,14 @@
 					"hash": 4144163970
 				},
 				{
+					"name": "get_unbound_arguments_count",
+					"return_type": "int",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3173160232
+				},
+				{
 					"name": "hash",
 					"return_type": "int",
 					"is_vararg": false,
@@ -89820,6 +89828,17 @@
 					}
 				},
 				{
+					"name": "get_editor_toaster",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3612675797,
+					"return_value": {
+						"type": "EditorToaster"
+					}
+				},
+				{
 					"name": "get_editor_undo_redo",
 					"is_const": true,
 					"is_vararg": false,
@@ -95074,6 +95093,59 @@
 					"return_value": {
 						"type": "PackedStringArray"
 					}
+				}
+			]
+		},
+		{
+			"name": "EditorToaster",
+			"is_refcounted": false,
+			"is_instantiable": false,
+			"inherits": "HBoxContainer",
+			"api_type": "editor",
+			"enums": [
+				{
+					"name": "Severity",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SEVERITY_INFO",
+							"value": 0
+						},
+						{
+							"name": "SEVERITY_WARNING",
+							"value": 1
+						},
+						{
+							"name": "SEVERITY_ERROR",
+							"value": 2
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "push_toast",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1813923476,
+					"arguments": [
+						{
+							"name": "message",
+							"type": "String"
+						},
+						{
+							"name": "severity",
+							"type": "enum::EditorToaster.Severity",
+							"default_value": "0"
+						},
+						{
+							"name": "tooltip",
+							"type": "String",
+							"default_value": "\"\""
+						}
+					]
 				}
 			]
 		},
@@ -140091,6 +140163,970 @@
 			]
 		},
 		{
+			"name": "LookAtModifier3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SkeletonModifier3D",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "BoneAxis",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "BONE_AXIS_PLUS_X",
+							"value": 0
+						},
+						{
+							"name": "BONE_AXIS_MINUS_X",
+							"value": 1
+						},
+						{
+							"name": "BONE_AXIS_PLUS_Y",
+							"value": 2
+						},
+						{
+							"name": "BONE_AXIS_MINUS_Y",
+							"value": 3
+						},
+						{
+							"name": "BONE_AXIS_PLUS_Z",
+							"value": 4
+						},
+						{
+							"name": "BONE_AXIS_MINUS_Z",
+							"value": 5
+						}
+					]
+				},
+				{
+					"name": "OriginFrom",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ORIGIN_FROM_SELF",
+							"value": 0
+						},
+						{
+							"name": "ORIGIN_FROM_SPECIFIC_BONE",
+							"value": 1
+						},
+						{
+							"name": "ORIGIN_FROM_EXTERNAL_NODE",
+							"value": 2
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_target_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1348162250,
+					"arguments": [
+						{
+							"name": "target_node",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_target_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4075236667,
+					"return_value": {
+						"type": "NodePath"
+					}
+				},
+				{
+					"name": "set_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_forward_axis",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1234919020,
+					"arguments": [
+						{
+							"name": "forward_axis",
+							"type": "enum::LookAtModifier3D.BoneAxis"
+						}
+					]
+				},
+				{
+					"name": "get_forward_axis",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1995032694,
+					"return_value": {
+						"type": "enum::LookAtModifier3D.BoneAxis"
+					}
+				},
+				{
+					"name": "set_primary_rotation_axis",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1144690656,
+					"arguments": [
+						{
+							"name": "axis",
+							"type": "enum::Vector3.Axis"
+						}
+					]
+				},
+				{
+					"name": "get_primary_rotation_axis",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3050976882,
+					"return_value": {
+						"type": "enum::Vector3.Axis"
+					}
+				},
+				{
+					"name": "set_use_secondary_rotation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_secondary_rotation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_origin_safe_margin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "margin",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_origin_safe_margin",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_origin_from",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4254695669,
+					"arguments": [
+						{
+							"name": "origin_from",
+							"type": "enum::LookAtModifier3D.OriginFrom"
+						}
+					]
+				},
+				{
+					"name": "get_origin_from",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4057166297,
+					"return_value": {
+						"type": "enum::LookAtModifier3D.OriginFrom"
+					}
+				},
+				{
+					"name": "set_origin_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_origin_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_origin_external_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1348162250,
+					"arguments": [
+						{
+							"name": "external_node",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_origin_external_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4075236667,
+					"return_value": {
+						"type": "NodePath"
+					}
+				},
+				{
+					"name": "set_origin_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_origin_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_duration",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "duration",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_duration",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_transition_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1058637742,
+					"arguments": [
+						{
+							"name": "transition_type",
+							"type": "enum::Tween.TransitionType"
+						}
+					]
+				},
+				{
+					"name": "get_transition_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3842314528,
+					"return_value": {
+						"type": "enum::Tween.TransitionType"
+					}
+				},
+				{
+					"name": "set_ease_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1208105857,
+					"arguments": [
+						{
+							"name": "ease_type",
+							"type": "enum::Tween.EaseType"
+						}
+					]
+				},
+				{
+					"name": "get_ease_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 631880200,
+					"return_value": {
+						"type": "enum::Tween.EaseType"
+					}
+				},
+				{
+					"name": "set_use_angle_limitation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_angle_limitation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_symmetry_limitation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_limitation_symmetry",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_primary_limit_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "angle",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_primary_limit_angle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_primary_damp_threshold",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "power",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_primary_damp_threshold",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_primary_positive_limit_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "angle",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_primary_positive_limit_angle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_primary_positive_damp_threshold",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "power",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_primary_positive_damp_threshold",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_primary_negative_limit_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "angle",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_primary_negative_limit_angle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_primary_negative_damp_threshold",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "power",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_primary_negative_damp_threshold",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_secondary_limit_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "angle",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_secondary_limit_angle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_secondary_damp_threshold",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "power",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_secondary_damp_threshold",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_secondary_positive_limit_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "angle",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_secondary_positive_limit_angle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_secondary_positive_damp_threshold",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "power",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_secondary_positive_damp_threshold",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_secondary_negative_limit_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "angle",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_secondary_negative_limit_angle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_secondary_negative_damp_threshold",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "power",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_secondary_negative_damp_threshold",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_interpolation_remaining",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "is_interpolating",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_target_within_limitation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "NodePath",
+					"name": "target_node",
+					"setter": "set_target_node",
+					"getter": "get_target_node"
+				},
+				{
+					"type": "int",
+					"name": "bone",
+					"setter": "set_bone",
+					"getter": "get_bone"
+				},
+				{
+					"type": "int",
+					"name": "forward_axis",
+					"setter": "set_forward_axis",
+					"getter": "get_forward_axis"
+				},
+				{
+					"type": "int",
+					"name": "primary_rotation_axis",
+					"setter": "set_primary_rotation_axis",
+					"getter": "get_primary_rotation_axis"
+				},
+				{
+					"type": "bool",
+					"name": "use_secondary_rotation",
+					"setter": "set_use_secondary_rotation",
+					"getter": "is_using_secondary_rotation"
+				},
+				{
+					"type": "int",
+					"name": "origin_from",
+					"setter": "set_origin_from",
+					"getter": "get_origin_from"
+				},
+				{
+					"type": "int",
+					"name": "origin_bone",
+					"setter": "set_origin_bone",
+					"getter": "get_origin_bone"
+				},
+				{
+					"type": "NodePath",
+					"name": "origin_external_node",
+					"setter": "set_origin_external_node",
+					"getter": "get_origin_external_node"
+				},
+				{
+					"type": "Vector3",
+					"name": "origin_offset",
+					"setter": "set_origin_offset",
+					"getter": "get_origin_offset"
+				},
+				{
+					"type": "float",
+					"name": "origin_safe_margin",
+					"setter": "set_origin_safe_margin",
+					"getter": "get_origin_safe_margin"
+				},
+				{
+					"type": "float",
+					"name": "duration",
+					"setter": "set_duration",
+					"getter": "get_duration"
+				},
+				{
+					"type": "int",
+					"name": "transition_type",
+					"setter": "set_transition_type",
+					"getter": "get_transition_type"
+				},
+				{
+					"type": "int",
+					"name": "ease_type",
+					"setter": "set_ease_type",
+					"getter": "get_ease_type"
+				},
+				{
+					"type": "bool",
+					"name": "use_angle_limitation",
+					"setter": "set_use_angle_limitation",
+					"getter": "is_using_angle_limitation"
+				},
+				{
+					"type": "bool",
+					"name": "symmetry_limitation",
+					"setter": "set_symmetry_limitation",
+					"getter": "is_limitation_symmetry"
+				},
+				{
+					"type": "float",
+					"name": "primary_limit_angle",
+					"setter": "set_primary_limit_angle",
+					"getter": "get_primary_limit_angle"
+				},
+				{
+					"type": "float",
+					"name": "primary_damp_threshold",
+					"setter": "set_primary_damp_threshold",
+					"getter": "get_primary_damp_threshold"
+				},
+				{
+					"type": "float",
+					"name": "primary_positive_limit_angle",
+					"setter": "set_primary_positive_limit_angle",
+					"getter": "get_primary_positive_limit_angle"
+				},
+				{
+					"type": "float",
+					"name": "primary_positive_damp_threshold",
+					"setter": "set_primary_positive_damp_threshold",
+					"getter": "get_primary_positive_damp_threshold"
+				},
+				{
+					"type": "float",
+					"name": "primary_negative_limit_angle",
+					"setter": "set_primary_negative_limit_angle",
+					"getter": "get_primary_negative_limit_angle"
+				},
+				{
+					"type": "float",
+					"name": "primary_negative_damp_threshold",
+					"setter": "set_primary_negative_damp_threshold",
+					"getter": "get_primary_negative_damp_threshold"
+				},
+				{
+					"type": "float",
+					"name": "secondary_limit_angle",
+					"setter": "set_secondary_limit_angle",
+					"getter": "get_secondary_limit_angle"
+				},
+				{
+					"type": "float",
+					"name": "secondary_damp_threshold",
+					"setter": "set_secondary_damp_threshold",
+					"getter": "get_secondary_damp_threshold"
+				},
+				{
+					"type": "float",
+					"name": "secondary_positive_limit_angle",
+					"setter": "set_secondary_positive_limit_angle",
+					"getter": "get_secondary_positive_limit_angle"
+				},
+				{
+					"type": "float",
+					"name": "secondary_positive_damp_threshold",
+					"setter": "set_secondary_positive_damp_threshold",
+					"getter": "get_secondary_positive_damp_threshold"
+				},
+				{
+					"type": "float",
+					"name": "secondary_negative_limit_angle",
+					"setter": "set_secondary_negative_limit_angle",
+					"getter": "get_secondary_negative_limit_angle"
+				},
+				{
+					"type": "float",
+					"name": "secondary_negative_damp_threshold",
+					"setter": "set_secondary_negative_damp_threshold",
+					"getter": "get_secondary_negative_damp_threshold"
+				}
+			]
+		},
+		{
 			"name": "MainLoop",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -166398,6 +167434,32 @@
 							"value": 7
 						}
 					]
+				},
+				{
+					"name": "StdHandleType",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "STD_HANDLE_INVALID",
+							"value": 0
+						},
+						{
+							"name": "STD_HANDLE_CONSOLE",
+							"value": 1
+						},
+						{
+							"name": "STD_HANDLE_FILE",
+							"value": 2
+						},
+						{
+							"name": "STD_HANDLE_PIPE",
+							"value": 3
+						},
+						{
+							"name": "STD_HANDLE_UNKNOWN",
+							"value": 4
+						}
+					]
 				}
 			],
 			"methods": [
@@ -166709,9 +167771,70 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2841200299,
+					"hash": 990163283,
+					"hash_compatibility": [
+						2841200299
+					],
 					"return_value": {
 						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "buffer_size",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "read_buffer_from_stdin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 47165747,
+					"return_value": {
+						"type": "PackedByteArray"
+					},
+					"arguments": [
+						{
+							"name": "buffer_size",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_stdin_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1704816237,
+					"return_value": {
+						"type": "enum::OS.StdHandleType"
+					}
+				},
+				{
+					"name": "get_stdout_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1704816237,
+					"return_value": {
+						"type": "enum::OS.StdHandleType"
+					}
+				},
+				{
+					"name": "get_stderr_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1704816237,
+					"return_value": {
+						"type": "enum::OS.StdHandleType"
 					}
 				},
 				{
@@ -304875,6 +305998,33 @@
 						"type": "int",
 						"meta": "int32"
 					}
+				},
+				{
+					"name": "set_heartbeat_interval",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "interval",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_heartbeat_interval",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
 				}
 			],
 			"properties": [
@@ -304907,6 +306057,12 @@
 					"name": "max_queued_packets",
 					"setter": "set_max_queued_packets",
 					"getter": "get_max_queued_packets"
+				},
+				{
+					"type": "int",
+					"name": "heartbeat_interval",
+					"setter": "set_heartbeat_interval",
+					"getter": "get_heartbeat_interval"
 				}
 			]
 		},
