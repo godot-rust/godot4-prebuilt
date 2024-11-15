@@ -32138,6 +32138,31 @@
 					}
 				},
 				{
+					"name": "set_advance_on_start",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "advance_on_start",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_advance_on_start",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_use_custom_timeline",
 					"is_const": false,
 					"is_vararg": false,
@@ -32279,6 +32304,12 @@
 					"name": "play_mode",
 					"setter": "set_play_mode",
 					"getter": "get_play_mode"
+				},
+				{
+					"type": "bool",
+					"name": "advance_on_start",
+					"setter": "set_advance_on_start",
+					"getter": "is_advance_on_start"
 				},
 				{
 					"type": "bool",
@@ -101450,7 +101481,10 @@
 					"is_vararg": false,
 					"is_static": true,
 					"is_virtual": false,
-					"hash": 1482131466,
+					"hash": 788003459,
+					"hash_compatibility": [
+						1482131466
+					],
 					"return_value": {
 						"type": "FileAccess"
 					},
@@ -101466,6 +101500,11 @@
 						{
 							"name": "key",
 							"type": "PackedByteArray"
+						},
+						{
+							"name": "iv",
+							"type": "PackedByteArray",
+							"default_value": "PackedByteArray()"
 						}
 					]
 				},
@@ -117830,6 +117869,33 @@
 					}
 				},
 				{
+					"name": "set_lightmap_texel_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "scale",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_lightmap_texel_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "set_lightmap_scale",
 					"is_const": false,
 					"is_vararg": false,
@@ -117984,6 +118050,12 @@
 					"name": "gi_mode",
 					"setter": "set_gi_mode",
 					"getter": "get_gi_mode"
+				},
+				{
+					"type": "float",
+					"name": "gi_lightmap_texel_scale",
+					"setter": "set_lightmap_texel_scale",
+					"getter": "get_lightmap_texel_scale"
 				},
 				{
 					"type": "int",
