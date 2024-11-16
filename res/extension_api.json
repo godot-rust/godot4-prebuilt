@@ -95210,6 +95210,24 @@
 					]
 				},
 				{
+					"name": "_get_comments",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"arguments": [
+						{
+							"name": "msgids_comment",
+							"type": "typedarray::String"
+						},
+						{
+							"name": "msgids_context_plural_comment",
+							"type": "typedarray::String"
+						}
+					]
+				},
+				{
 					"name": "_get_recognized_extensions",
 					"is_const": true,
 					"is_static": false,
