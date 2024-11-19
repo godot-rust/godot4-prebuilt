@@ -77475,6 +77475,31 @@
 					]
 				},
 				{
+					"name": "set_closed",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "closed",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_closed",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_bake_interval",
 					"is_const": false,
 					"is_vararg": false,
@@ -77734,6 +77759,12 @@
 				}
 			],
 			"properties": [
+				{
+					"type": "bool",
+					"name": "closed",
+					"setter": "set_closed",
+					"getter": "is_closed"
+				},
 				{
 					"type": "float",
 					"name": "bake_interval",
@@ -221538,6 +221569,23 @@
 						{
 							"name": "buffer",
 							"type": "PackedFloat32Array"
+						}
+					]
+				},
+				{
+					"name": "multimesh_get_buffer_rd_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3814569979,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "multimesh",
+							"type": "RID"
 						}
 					]
 				},
