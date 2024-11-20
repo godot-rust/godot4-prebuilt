@@ -95088,6 +95088,9 @@
 					"name": "ungrabbed"
 				},
 				{
+					"name": "updown_pressed"
+				},
+				{
 					"name": "value_focus_entered"
 				},
 				{
