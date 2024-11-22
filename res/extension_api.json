@@ -254532,6 +254532,31 @@
 						"type": "int",
 						"meta": "int32"
 					}
+				},
+				{
+					"name": "set_consume_drag_and_drop",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "amount",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_consume_drag_and_drop_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"properties": [
@@ -254546,6 +254571,12 @@
 					"name": "stretch_shrink",
 					"setter": "set_stretch_shrink",
 					"getter": "get_stretch_shrink"
+				},
+				{
+					"type": "bool",
+					"name": "consume_drag_and_drop",
+					"setter": "set_consume_drag_and_drop",
+					"getter": "is_consume_drag_and_drop_enabled"
 				}
 			]
 		},
@@ -286204,7 +286235,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3135753539,
+					"hash": 4216441673,
+					"hash_compatibility": [
+						3135753539
+					],
 					"return_value": {
 						"type": "String"
 					},
@@ -286212,6 +286246,11 @@
 						{
 							"name": "locale",
 							"type": "String"
+						},
+						{
+							"name": "add_defaults",
+							"type": "bool",
+							"default_value": "false"
 						}
 					]
 				},
