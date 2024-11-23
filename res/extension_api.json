@@ -3640,8 +3640,12 @@
 					"value": 39
 				},
 				{
-					"name": "PROPERTY_HINT_MAX",
+					"name": "PROPERTY_HINT_ONESHOT",
 					"value": 40
+				},
+				{
+					"name": "PROPERTY_HINT_MAX",
+					"value": 41
 				}
 			]
 		},
@@ -8919,16 +8923,6 @@
 			],
 			"constants": [
 				{
-					"name": "AXIS_X",
-					"type": "int",
-					"value": "0"
-				},
-				{
-					"name": "AXIS_Y",
-					"type": "int",
-					"value": "1"
-				},
-				{
 					"name": "ZERO",
 					"type": "Vector2",
 					"value": "Vector2(0, 0)"
@@ -9805,16 +9799,6 @@
 				}
 			],
 			"constants": [
-				{
-					"name": "AXIS_X",
-					"type": "int",
-					"value": "0"
-				},
-				{
-					"name": "AXIS_Y",
-					"type": "int",
-					"value": "1"
-				},
 				{
 					"name": "ZERO",
 					"type": "Vector2i",
@@ -10871,21 +10855,6 @@
 			],
 			"constants": [
 				{
-					"name": "AXIS_X",
-					"type": "int",
-					"value": "0"
-				},
-				{
-					"name": "AXIS_Y",
-					"type": "int",
-					"value": "1"
-				},
-				{
-					"name": "AXIS_Z",
-					"type": "int",
-					"value": "2"
-				},
-				{
 					"name": "ZERO",
 					"type": "Vector3",
 					"value": "Vector3(0, 0, 0)"
@@ -11839,21 +11808,6 @@
 			],
 			"constants": [
 				{
-					"name": "AXIS_X",
-					"type": "int",
-					"value": "0"
-				},
-				{
-					"name": "AXIS_Y",
-					"type": "int",
-					"value": "1"
-				},
-				{
-					"name": "AXIS_Z",
-					"type": "int",
-					"value": "2"
-				},
-				{
 					"name": "ZERO",
 					"type": "Vector3i",
 					"value": "Vector3i(0, 0, 0)"
@@ -12720,26 +12674,6 @@
 			],
 			"constants": [
 				{
-					"name": "AXIS_X",
-					"type": "int",
-					"value": "0"
-				},
-				{
-					"name": "AXIS_Y",
-					"type": "int",
-					"value": "1"
-				},
-				{
-					"name": "AXIS_Z",
-					"type": "int",
-					"value": "2"
-				},
-				{
-					"name": "AXIS_W",
-					"type": "int",
-					"value": "3"
-				},
-				{
 					"name": "ZERO",
 					"type": "Vector4",
 					"value": "Vector4(0, 0, 0, 0)"
@@ -13375,26 +13309,6 @@
 				}
 			],
 			"constants": [
-				{
-					"name": "AXIS_X",
-					"type": "int",
-					"value": "0"
-				},
-				{
-					"name": "AXIS_Y",
-					"type": "int",
-					"value": "1"
-				},
-				{
-					"name": "AXIS_Z",
-					"type": "int",
-					"value": "2"
-				},
-				{
-					"name": "AXIS_W",
-					"type": "int",
-					"value": "3"
-				},
 				{
 					"name": "ZERO",
 					"type": "Vector4i",
@@ -15730,36 +15644,6 @@
 				}
 			],
 			"constants": [
-				{
-					"name": "PLANE_NEAR",
-					"type": "int",
-					"value": "0"
-				},
-				{
-					"name": "PLANE_FAR",
-					"type": "int",
-					"value": "1"
-				},
-				{
-					"name": "PLANE_LEFT",
-					"type": "int",
-					"value": "2"
-				},
-				{
-					"name": "PLANE_TOP",
-					"type": "int",
-					"value": "3"
-				},
-				{
-					"name": "PLANE_RIGHT",
-					"type": "int",
-					"value": "4"
-				},
-				{
-					"name": "PLANE_BOTTOM",
-					"type": "int",
-					"value": "5"
-				},
 				{
 					"name": "IDENTITY",
 					"type": "Projection",
@@ -31218,6 +31102,31 @@
 					}
 				},
 				{
+					"name": "set_root_motion_local",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_root_motion_local",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "get_root_motion_position",
 					"is_const": true,
 					"is_vararg": false,
@@ -31460,6 +31369,12 @@
 					"name": "root_motion_track",
 					"setter": "set_root_motion_track",
 					"getter": "get_root_motion_track"
+				},
+				{
+					"type": "bool",
+					"name": "root_motion_local",
+					"setter": "set_root_motion_local",
+					"getter": "is_root_motion_local"
 				},
 				{
 					"type": "int",
@@ -34793,7 +34708,42 @@
 			"is_refcounted": true,
 			"is_instantiable": true,
 			"inherits": "AnimationNode",
-			"api_type": "core"
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_explicit_elapse",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_explicit_elapse",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "explicit_elapse",
+					"setter": "set_explicit_elapse",
+					"getter": "is_explicit_elapse"
+				}
+			]
 		},
 		{
 			"name": "AnimationNodeTransition",
@@ -101833,6 +101783,18 @@
 					}
 				},
 				{
+					"name": "get_half",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "get_float",
 					"is_const": true,
 					"is_vararg": false,
@@ -102078,6 +102040,21 @@
 							"name": "value",
 							"type": "int",
 							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "store_half",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "float",
+							"meta": "float"
 						}
 					]
 				},
@@ -251968,6 +251945,21 @@
 					]
 				},
 				{
+					"name": "put_half",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
 					"name": "put_float",
 					"is_const": false,
 					"is_vararg": false,
@@ -252138,6 +252130,18 @@
 					"return_value": {
 						"type": "int",
 						"meta": "uint64"
+					}
+				},
+				{
+					"name": "get_half",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 191475506,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
 					}
 				},
 				{
@@ -297368,8 +297372,16 @@
 							"value": 3
 						},
 						{
-							"name": "FUNC_MAX",
+							"name": "FUNC_LINEAR_TO_SRGB",
 							"value": 4
+						},
+						{
+							"name": "FUNC_SRGB_TO_LINEAR",
+							"value": 5
+						},
+						{
+							"name": "FUNC_MAX",
+							"value": 6
 						}
 					]
 				}
