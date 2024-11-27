@@ -466,6 +466,9 @@ pub type GDExtensionVariantFromTypeConstructorFunc = ::std::option::Option<
 pub type GDExtensionTypeFromVariantConstructorFunc = ::std::option::Option<
     unsafe extern "C" fn(arg1: GDExtensionUninitializedTypePtr, arg2: GDExtensionVariantPtr),
 >;
+pub type GDExtensionVariantGetInternalPtrFunc = ::std::option::Option<
+    unsafe extern "C" fn(arg1: GDExtensionVariantPtr) -> *mut ::std::os::raw::c_void,
+>;
 pub type GDExtensionPtrOperatorEvaluator = ::std::option::Option<
     unsafe extern "C" fn(
         p_left: GDExtensionConstTypePtr,
@@ -4115,6 +4118,10 @@ pub type GDExtensionInterfaceGetVariantToTypeConstructor = ::std::option::Option
     unsafe extern "C" fn(
         p_type: GDExtensionVariantType,
     ) -> GDExtensionTypeFromVariantConstructorFunc,
+>;
+#[doc = " @name variant_get_ptr_internal_getter\n @since 4.4\n\n Provides a function pointer for retrieving a pointer to a variant's internal value.\n Access to a variant's internal value can be used to modify it in-place, or to retrieve its value without the overhead of variant conversion functions.\n It is recommended to cache the getter for all variant types in a function table to avoid retrieval overhead upon use.\n\n @note Each function assumes the variant's type has already been determined and matches the function.\n Invoking the function with a variant of a mismatched type has undefined behavior, and may lead to a segmentation fault.\n\n @param p_type The Variant type.\n\n @return A pointer to a type-specific function that returns a pointer to the internal value of a variant. Check the implementation of this function (gdextension_variant_get_ptr_internal_getter) for pointee type info of each variant type."]
+pub type GDExtensionInterfaceGetVariantGetInternalPtrFunc = ::std::option::Option<
+    unsafe extern "C" fn(p_type: GDExtensionVariantType) -> GDExtensionVariantGetInternalPtrFunc,
 >;
 #[doc = " @name variant_get_ptr_operator_evaluator\n @since 4.1\n\n Gets a pointer to a function that can evaluate the given Variant operator on the given Variant types.\n\n @param p_operator The variant operator.\n @param p_type_a The type of the first Variant.\n @param p_type_b The type of the second Variant.\n\n @return A pointer to a function that can evaluate the given Variant operator on the given Variant types."]
 pub type GDExtensionInterfaceVariantGetPtrOperatorEvaluator = ::std::option::Option<

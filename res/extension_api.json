@@ -30616,6 +30616,18 @@
 					"return_value": {
 						"type": "typedarray::StringName"
 					}
+				},
+				{
+					"name": "get_animation_list_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
 				}
 			],
 			"signals": [
@@ -71134,6 +71146,56 @@
 					"is_static": false,
 					"is_virtual": false,
 					"hash": 3218959716
+				},
+				{
+					"name": "set_debug_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2920490490,
+					"arguments": [
+						{
+							"name": "color",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "get_debug_color",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3444240500,
+					"return_value": {
+						"type": "Color"
+					}
+				},
+				{
+					"name": "set_enable_debug_fill",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_enable_debug_fill",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"properties": [
@@ -71148,6 +71210,18 @@
 					"name": "disabled",
 					"setter": "set_disabled",
 					"getter": "is_disabled"
+				},
+				{
+					"type": "Color",
+					"name": "debug_color",
+					"setter": "set_debug_color",
+					"getter": "get_debug_color"
+				},
+				{
+					"type": "bool",
+					"name": "debug_fill",
+					"setter": "set_enable_debug_fill",
+					"getter": "get_enable_debug_fill"
 				}
 			]
 		},
@@ -140346,6 +140420,31 @@
 					}
 				},
 				{
+					"name": "set_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
 					"name": "set_bone",
 					"is_const": false,
 					"is_vararg": false,
@@ -140497,6 +140596,31 @@
 					"hash": 4057166297,
 					"return_value": {
 						"type": "enum::LookAtModifier3D.OriginFrom"
+					}
+				},
+				{
+					"name": "set_origin_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_origin_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
 					}
 				},
 				{
@@ -141070,6 +141194,12 @@
 					"getter": "get_target_node"
 				},
 				{
+					"type": "String",
+					"name": "bone_name",
+					"setter": "set_bone_name",
+					"getter": "get_bone_name"
+				},
+				{
 					"type": "int",
 					"name": "bone",
 					"setter": "set_bone",
@@ -141098,6 +141228,12 @@
 					"name": "origin_from",
 					"setter": "set_origin_from",
 					"getter": "get_origin_from"
+				},
+				{
+					"type": "String",
+					"name": "origin_bone_name",
+					"setter": "set_origin_bone_name",
+					"getter": "get_origin_bone_name"
 				},
 				{
 					"type": "int",
@@ -231677,6 +231813,172 @@
 			]
 		},
 		{
+			"name": "RetargetModifier3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SkeletonModifier3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_profile",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3870374136,
+					"arguments": [
+						{
+							"name": "profile",
+							"type": "SkeletonProfile"
+						}
+					]
+				},
+				{
+					"name": "get_profile",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4291782652,
+					"return_value": {
+						"type": "SkeletonProfile"
+					}
+				},
+				{
+					"name": "set_use_global_pose",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use_global_pose",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_global_pose",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_position_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_position_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_rotation_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_rotation_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_scale_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_scale_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "SkeletonProfile",
+					"name": "profile",
+					"setter": "set_profile",
+					"getter": "get_profile"
+				},
+				{
+					"type": "bool",
+					"name": "use_global_pose",
+					"setter": "set_use_global_pose",
+					"getter": "is_using_global_pose"
+				},
+				{
+					"type": "bool",
+					"name": "position_enabled",
+					"setter": "set_position_enabled",
+					"getter": "is_position_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "rotation_enabled",
+					"setter": "set_rotation_enabled",
+					"getter": "is_rotation_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "scale_enabled",
+					"setter": "set_scale_enabled",
+					"getter": "is_scale_enabled"
+				}
+			]
+		},
+		{
 			"name": "RibbonTrailMesh",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -243980,6 +244282,9 @@
 				}
 			],
 			"signals": [
+				{
+					"name": "rest_updated"
+				},
 				{
 					"name": "pose_updated"
 				},
@@ -314672,6 +314977,22 @@
 			"type": "Performance"
 		},
 		{
+			"name": "Engine",
+			"type": "Engine"
+		},
+		{
+			"name": "ProjectSettings",
+			"type": "ProjectSettings"
+		},
+		{
+			"name": "OS",
+			"type": "OS"
+		},
+		{
+			"name": "Time",
+			"type": "Time"
+		},
+		{
 			"name": "TextServerManager",
 			"type": "TextServerManager"
 		},
@@ -314686,10 +315007,6 @@
 		{
 			"name": "NavigationMeshGenerator",
 			"type": "NavigationMeshGenerator"
-		},
-		{
-			"name": "ProjectSettings",
-			"type": "ProjectSettings"
 		},
 		{
 			"name": "IP",
@@ -314710,14 +315027,6 @@
 		{
 			"name": "ResourceSaver",
 			"type": "ResourceSaver"
-		},
-		{
-			"name": "OS",
-			"type": "OS"
-		},
-		{
-			"name": "Engine",
-			"type": "Engine"
 		},
 		{
 			"name": "ClassDB",
@@ -314742,10 +315051,6 @@
 		{
 			"name": "EngineDebugger",
 			"type": "EngineDebugger"
-		},
-		{
-			"name": "Time",
-			"type": "Time"
 		},
 		{
 			"name": "GDExtensionManager",
