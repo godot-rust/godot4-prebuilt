@@ -144715,6 +144715,25 @@
 					]
 				},
 				{
+					"name": "set_item_mesh_cast_shadow",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3923400443,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "shadow_casting_setting",
+							"type": "enum::RenderingServer.ShadowCastingSetting"
+						}
+					]
+				},
+				{
 					"name": "set_item_navigation_mesh",
 					"is_const": false,
 					"is_vararg": false,
@@ -144855,6 +144874,24 @@
 					"hash": 1965739696,
 					"return_value": {
 						"type": "Transform3D"
+					},
+					"arguments": [
+						{
+							"name": "id",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_item_mesh_cast_shadow",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1841766007,
+					"return_value": {
+						"type": "enum::RenderingServer.ShadowCastingSetting"
 					},
 					"arguments": [
 						{
@@ -208149,6 +208186,56 @@
 					}
 				},
 				{
+					"name": "set_is_resolve_buffer",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_is_resolve_buffer",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_is_discardable",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_is_discardable",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "add_shareable_format",
 					"is_const": false,
 					"is_vararg": false,
@@ -208231,6 +208318,18 @@
 					"name": "usage_bits",
 					"setter": "set_usage_bits",
 					"getter": "get_usage_bits"
+				},
+				{
+					"type": "bool",
+					"name": "is_resolve_buffer",
+					"setter": "set_is_resolve_buffer",
+					"getter": "get_is_resolve_buffer"
+				},
+				{
+					"type": "bool",
+					"name": "is_discardable",
+					"setter": "set_is_discardable",
+					"getter": "get_is_discardable"
 				}
 			]
 		},
@@ -212117,7 +212216,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3559915770,
+					"hash": 2950875024,
+					"hash_compatibility": [
+						3559915770
+					],
 					"return_value": {
 						"type": "RID"
 					},
@@ -212159,6 +212261,10 @@
 						},
 						{
 							"name": "unique",
+							"type": "bool"
+						},
+						{
+							"name": "discardable",
 							"type": "bool"
 						}
 					]
@@ -215036,6 +215142,120 @@
 							"value": 786432
 						}
 					]
+				},
+				{
+					"name": "DrawFlags",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "DRAW_DEFAULT_ALL",
+							"value": 0
+						},
+						{
+							"name": "DRAW_CLEAR_COLOR_0",
+							"value": 1
+						},
+						{
+							"name": "DRAW_CLEAR_COLOR_1",
+							"value": 2
+						},
+						{
+							"name": "DRAW_CLEAR_COLOR_2",
+							"value": 4
+						},
+						{
+							"name": "DRAW_CLEAR_COLOR_3",
+							"value": 8
+						},
+						{
+							"name": "DRAW_CLEAR_COLOR_4",
+							"value": 16
+						},
+						{
+							"name": "DRAW_CLEAR_COLOR_5",
+							"value": 32
+						},
+						{
+							"name": "DRAW_CLEAR_COLOR_6",
+							"value": 64
+						},
+						{
+							"name": "DRAW_CLEAR_COLOR_7",
+							"value": 128
+						},
+						{
+							"name": "DRAW_CLEAR_COLOR_MASK",
+							"value": 255
+						},
+						{
+							"name": "DRAW_CLEAR_COLOR_ALL",
+							"value": 255
+						},
+						{
+							"name": "DRAW_IGNORE_COLOR_0",
+							"value": 256
+						},
+						{
+							"name": "DRAW_IGNORE_COLOR_1",
+							"value": 512
+						},
+						{
+							"name": "DRAW_IGNORE_COLOR_2",
+							"value": 1024
+						},
+						{
+							"name": "DRAW_IGNORE_COLOR_3",
+							"value": 2048
+						},
+						{
+							"name": "DRAW_IGNORE_COLOR_4",
+							"value": 4096
+						},
+						{
+							"name": "DRAW_IGNORE_COLOR_5",
+							"value": 8192
+						},
+						{
+							"name": "DRAW_IGNORE_COLOR_6",
+							"value": 16384
+						},
+						{
+							"name": "DRAW_IGNORE_COLOR_7",
+							"value": 32768
+						},
+						{
+							"name": "DRAW_IGNORE_COLOR_MASK",
+							"value": 65280
+						},
+						{
+							"name": "DRAW_IGNORE_COLOR_ALL",
+							"value": 65280
+						},
+						{
+							"name": "DRAW_CLEAR_DEPTH",
+							"value": 65536
+						},
+						{
+							"name": "DRAW_IGNORE_DEPTH",
+							"value": 131072
+						},
+						{
+							"name": "DRAW_CLEAR_STENCIL",
+							"value": 262144
+						},
+						{
+							"name": "DRAW_IGNORE_STENCIL",
+							"value": 524288
+						},
+						{
+							"name": "DRAW_CLEAR_ALL",
+							"value": 327935
+						},
+						{
+							"name": "DRAW_IGNORE_ALL",
+							"value": 720640
+						}
+					]
 				}
 			],
 			"methods": [
@@ -215280,6 +215500,41 @@
 				},
 				{
 					"name": "texture_is_valid",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3521089500,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "texture",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "texture_set_discardable",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "texture",
+							"type": "RID"
+						},
+						{
+							"name": "discardable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "texture_is_discardable",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -216492,10 +216747,11 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3140542288,
+					"hash": 1317926357,
 					"hash_compatibility": [
 						2468082605,
 						2686605154,
+						3140542288,
 						4252992020
 					],
 					"return_value": {
@@ -216508,20 +216764,9 @@
 							"type": "RID"
 						},
 						{
-							"name": "initial_color_action",
-							"type": "enum::RenderingDevice.InitialAction"
-						},
-						{
-							"name": "final_color_action",
-							"type": "enum::RenderingDevice.FinalAction"
-						},
-						{
-							"name": "initial_depth_action",
-							"type": "enum::RenderingDevice.InitialAction"
-						},
-						{
-							"name": "final_depth_action",
-							"type": "enum::RenderingDevice.FinalAction"
+							"name": "draw_flags",
+							"type": "bitfield::RenderingDevice.DrawFlags",
+							"default_value": "0"
 						},
 						{
 							"name": "clear_color_values",
@@ -216529,13 +216774,13 @@
 							"default_value": "PackedColorArray()"
 						},
 						{
-							"name": "clear_depth",
+							"name": "clear_depth_value",
 							"type": "float",
 							"meta": "float",
 							"default_value": "1.0"
 						},
 						{
-							"name": "clear_stencil",
+							"name": "clear_stencil_value",
 							"type": "int",
 							"meta": "uint32",
 							"default_value": "0"
@@ -294199,6 +294444,17 @@
 				},
 				{
 					"name": "get_global_canvas_transform",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3814499831,
+					"return_value": {
+						"type": "Transform2D"
+					}
+				},
+				{
+					"name": "get_stretch_transform",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
