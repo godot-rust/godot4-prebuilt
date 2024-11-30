@@ -76701,6 +76701,84 @@
 					]
 				},
 				{
+					"name": "get_value_range",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_min_domain",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_min_domain",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "min",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_max_domain",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_max_domain",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "max",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_domain_range",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "clean_dupes",
 					"is_const": false,
 					"is_vararg": false,
@@ -76747,9 +76825,24 @@
 			"signals": [
 				{
 					"name": "range_changed"
+				},
+				{
+					"name": "domain_changed"
 				}
 			],
 			"properties": [
+				{
+					"type": "float",
+					"name": "min_domain",
+					"setter": "set_min_domain",
+					"getter": "get_min_domain"
+				},
+				{
+					"type": "float",
+					"name": "max_domain",
+					"setter": "set_max_domain",
+					"getter": "get_max_domain"
+				},
 				{
 					"type": "float",
 					"name": "min_value",
@@ -88481,6 +88574,39 @@
 					}
 				},
 				{
+					"name": "clear_filename_filter",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "set_filename_filter",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "filter",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_filename_filter",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
 					"name": "get_current_dir",
 					"is_const": true,
 					"is_vararg": false,
@@ -88762,6 +88888,15 @@
 					"arguments": [
 						{
 							"name": "dir",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "filename_filter_changed",
+					"arguments": [
+						{
+							"name": "filter",
 							"type": "String"
 						}
 					]
@@ -102063,7 +102198,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1286410249,
+					"hash": 3067735520,
+					"hash_compatibility": [
+						1286410249
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "value",
@@ -102078,7 +102219,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1286410249,
+					"hash": 3067735520,
+					"hash_compatibility": [
+						1286410249
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "value",
@@ -102093,7 +102240,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1286410249,
+					"hash": 3067735520,
+					"hash_compatibility": [
+						1286410249
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "value",
@@ -102108,7 +102261,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1286410249,
+					"hash": 3067735520,
+					"hash_compatibility": [
+						1286410249
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "value",
@@ -102123,7 +102282,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 373806689,
+					"hash": 330693286,
+					"hash_compatibility": [
+						373806689
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "value",
@@ -102138,7 +102303,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 373806689,
+					"hash": 330693286,
+					"hash_compatibility": [
+						373806689
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "value",
@@ -102153,7 +102324,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 373806689,
+					"hash": 330693286,
+					"hash_compatibility": [
+						373806689
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "value",
@@ -102168,7 +102345,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 373806689,
+					"hash": 330693286,
+					"hash_compatibility": [
+						373806689
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "value",
@@ -102183,7 +102366,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2971499966,
+					"hash": 114037665,
+					"hash_compatibility": [
+						2971499966
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "buffer",
@@ -102197,7 +102386,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 83702148,
+					"hash": 2323990056,
+					"hash_compatibility": [
+						83702148
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "line",
@@ -102211,10 +102406,14 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2173791505,
+					"hash": 1611473434,
 					"hash_compatibility": [
+						2173791505,
 						2217842308
 					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "values",
@@ -102233,7 +102432,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 83702148,
+					"hash": 2323990056,
+					"hash_compatibility": [
+						83702148
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "string",
@@ -102247,7 +102452,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 738511890,
+					"hash": 117357437,
+					"hash_compatibility": [
+						738511890
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "value",
@@ -102266,7 +102477,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 83702148,
+					"hash": 2323990056,
+					"hash_compatibility": [
+						83702148
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "string",
@@ -133873,6 +134090,31 @@
 					}
 				},
 				{
+					"name": "set_paragraph_separator",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "paragraph_separator",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_paragraph_separator",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
 					"name": "set_autowrap_mode",
 					"is_const": false,
 					"is_vararg": false,
@@ -134341,6 +134583,12 @@
 					"name": "justification_flags",
 					"setter": "set_justification_flags",
 					"getter": "get_justification_flags"
+				},
+				{
+					"type": "String",
+					"name": "paragraph_separator",
+					"setter": "set_paragraph_separator",
+					"getter": "get_paragraph_separator"
 				},
 				{
 					"type": "bool",
@@ -135486,6 +135734,33 @@
 					}
 				},
 				{
+					"name": "set_paragraph_spacing",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "spacing",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_paragraph_spacing",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "set_font",
 					"is_const": false,
 					"is_vararg": false,
@@ -135698,6 +135973,12 @@
 					"name": "line_spacing",
 					"setter": "set_line_spacing",
 					"getter": "get_line_spacing"
+				},
+				{
+					"type": "float",
+					"name": "paragraph_spacing",
+					"setter": "set_paragraph_spacing",
+					"getter": "get_paragraph_spacing"
 				},
 				{
 					"type": "Font",
@@ -233460,6 +233741,31 @@
 					}
 				},
 				{
+					"name": "set_vertical_alignment",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1796458609,
+					"arguments": [
+						{
+							"name": "alignment",
+							"type": "enum::VerticalAlignment"
+						}
+					]
+				},
+				{
+					"name": "get_vertical_alignment",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3274884059,
+					"return_value": {
+						"type": "enum::VerticalAlignment"
+					}
+				},
+				{
 					"name": "set_justification_flags",
 					"is_const": false,
 					"is_vararg": false,
@@ -234474,6 +234780,12 @@
 					"name": "horizontal_alignment",
 					"setter": "set_horizontal_alignment",
 					"getter": "get_horizontal_alignment"
+				},
+				{
+					"type": "int",
+					"name": "vertical_alignment",
+					"setter": "set_vertical_alignment",
+					"getter": "get_vertical_alignment"
 				},
 				{
 					"type": "int",
@@ -241327,6 +241639,31 @@
 							"type": "Control"
 						}
 					]
+				},
+				{
+					"name": "set_draw_focus_border",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "draw",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_draw_focus_border",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"signals": [
@@ -241343,6 +241680,12 @@
 					"name": "follow_focus",
 					"setter": "set_follow_focus",
 					"getter": "is_following_focus"
+				},
+				{
+					"type": "bool",
+					"name": "draw_focus_border",
+					"setter": "set_draw_focus_border",
+					"getter": "get_draw_focus_border"
 				},
 				{
 					"type": "int",
@@ -255088,7 +255431,7 @@
 					}
 				},
 				{
-					"name": "set_consume_drag_and_drop",
+					"name": "set_mouse_target",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -255102,7 +255445,7 @@
 					]
 				},
 				{
-					"name": "is_consume_drag_and_drop_enabled",
+					"name": "is_mouse_target_enabled",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -255128,9 +255471,9 @@
 				},
 				{
 					"type": "bool",
-					"name": "consume_drag_and_drop",
-					"setter": "set_consume_drag_and_drop",
-					"getter": "is_consume_drag_and_drop_enabled"
+					"name": "mouse_target",
+					"setter": "set_mouse_target",
+					"getter": "is_mouse_target_enabled"
 				}
 			]
 		},

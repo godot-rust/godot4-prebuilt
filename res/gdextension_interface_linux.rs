@@ -3815,7 +3815,7 @@ pub type GDExtensionInterfaceMemRealloc = ::std::option::Option<
 #[doc = " @name mem_free\n @since 4.1\n\n Frees memory.\n\n @param p_ptr A pointer to the previously allocated memory."]
 pub type GDExtensionInterfaceMemFree =
     ::std::option::Option<unsafe extern "C" fn(p_ptr: *mut ::std::os::raw::c_void)>;
-#[doc = " @name print_error\n @since 4.1\n\n Logs an error to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code trigging the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
+#[doc = " @name print_error\n @since 4.1\n\n Logs an error to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code triggering the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
 pub type GDExtensionInterfacePrintError = ::std::option::Option<
     unsafe extern "C" fn(
         p_description: *const ::std::os::raw::c_char,
@@ -3825,7 +3825,7 @@ pub type GDExtensionInterfacePrintError = ::std::option::Option<
         p_editor_notify: GDExtensionBool,
     ),
 >;
-#[doc = " @name print_error_with_message\n @since 4.1\n\n Logs an error with a message to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code trigging the error.\n @param p_message The message to show along with the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
+#[doc = " @name print_error_with_message\n @since 4.1\n\n Logs an error with a message to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code triggering the error.\n @param p_message The message to show along with the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
 pub type GDExtensionInterfacePrintErrorWithMessage = ::std::option::Option<
     unsafe extern "C" fn(
         p_description: *const ::std::os::raw::c_char,
@@ -3836,7 +3836,7 @@ pub type GDExtensionInterfacePrintErrorWithMessage = ::std::option::Option<
         p_editor_notify: GDExtensionBool,
     ),
 >;
-#[doc = " @name print_warning\n @since 4.1\n\n Logs a warning to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code trigging the warning.\n @param p_function The function name where the warning occurred.\n @param p_file The file where the warning occurred.\n @param p_line The line where the warning occurred.\n @param p_editor_notify Whether or not to notify the editor."]
+#[doc = " @name print_warning\n @since 4.1\n\n Logs a warning to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code triggering the warning.\n @param p_function The function name where the warning occurred.\n @param p_file The file where the warning occurred.\n @param p_line The line where the warning occurred.\n @param p_editor_notify Whether or not to notify the editor."]
 pub type GDExtensionInterfacePrintWarning = ::std::option::Option<
     unsafe extern "C" fn(
         p_description: *const ::std::os::raw::c_char,
@@ -3846,7 +3846,7 @@ pub type GDExtensionInterfacePrintWarning = ::std::option::Option<
         p_editor_notify: GDExtensionBool,
     ),
 >;
-#[doc = " @name print_warning_with_message\n @since 4.1\n\n Logs a warning with a message to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code trigging the warning.\n @param p_message The message to show along with the warning.\n @param p_function The function name where the warning occurred.\n @param p_file The file where the warning occurred.\n @param p_line The line where the warning occurred.\n @param p_editor_notify Whether or not to notify the editor."]
+#[doc = " @name print_warning_with_message\n @since 4.1\n\n Logs a warning with a message to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code triggering the warning.\n @param p_message The message to show along with the warning.\n @param p_function The function name where the warning occurred.\n @param p_file The file where the warning occurred.\n @param p_line The line where the warning occurred.\n @param p_editor_notify Whether or not to notify the editor."]
 pub type GDExtensionInterfacePrintWarningWithMessage = ::std::option::Option<
     unsafe extern "C" fn(
         p_description: *const ::std::os::raw::c_char,
@@ -3857,7 +3857,7 @@ pub type GDExtensionInterfacePrintWarningWithMessage = ::std::option::Option<
         p_editor_notify: GDExtensionBool,
     ),
 >;
-#[doc = " @name print_script_error\n @since 4.1\n\n Logs a script error to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code trigging the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
+#[doc = " @name print_script_error\n @since 4.1\n\n Logs a script error to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code triggering the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
 pub type GDExtensionInterfacePrintScriptError = ::std::option::Option<
     unsafe extern "C" fn(
         p_description: *const ::std::os::raw::c_char,
@@ -3867,7 +3867,7 @@ pub type GDExtensionInterfacePrintScriptError = ::std::option::Option<
         p_editor_notify: GDExtensionBool,
     ),
 >;
-#[doc = " @name print_script_error_with_message\n @since 4.1\n\n Logs a script error with a message to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code trigging the error.\n @param p_message The message to show along with the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
+#[doc = " @name print_script_error_with_message\n @since 4.1\n\n Logs a script error with a message to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code triggering the error.\n @param p_message The message to show along with the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
 pub type GDExtensionInterfacePrintScriptErrorWithMessage = ::std::option::Option<
     unsafe extern "C" fn(
         p_description: *const ::std::os::raw::c_char,
