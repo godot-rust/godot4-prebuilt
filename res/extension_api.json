@@ -80092,6 +80092,10 @@
 						{
 							"name": "FEATURE_NATIVE_DIALOG_FILE_EXTRA",
 							"value": 26
+						},
+						{
+							"name": "FEATURE_WINDOW_DRAG",
+							"value": 27
 						}
 					]
 				},
@@ -83453,6 +83457,22 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "window_start_drag",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1995695955,
+					"arguments": [
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
 				},
 				{
 					"name": "ime_get_selection",
@@ -105375,6 +105395,31 @@
 					}
 				},
 				{
+					"name": "set_keep_rounding_remainders",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "keep_rounding_remainders",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_keep_rounding_remainders",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_oversampling",
 					"is_const": false,
 					"is_vararg": false,
@@ -106925,6 +106970,12 @@
 					"name": "subpixel_positioning",
 					"setter": "set_subpixel_positioning",
 					"getter": "get_subpixel_positioning"
+				},
+				{
+					"type": "bool",
+					"name": "keep_rounding_remainders",
+					"setter": "set_keep_rounding_remainders",
+					"getter": "get_keep_rounding_remainders"
 				},
 				{
 					"type": "bool",
@@ -233292,8 +233343,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2206155733,
+					"hash": 3765356747,
 					"hash_compatibility": [
+						2206155733,
 						1114965689
 					],
 					"arguments": [
@@ -233305,6 +233357,11 @@
 							"name": "underline_mode",
 							"type": "enum::RichTextLabel.MetaUnderline",
 							"default_value": "1"
+						},
+						{
+							"name": "tooltip",
+							"type": "String",
+							"default_value": "\"\""
 						}
 					]
 				},
@@ -256331,6 +256388,31 @@
 					}
 				},
 				{
+					"name": "set_keep_rounding_remainders",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "keep_rounding_remainders",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_keep_rounding_remainders",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_multichannel_signed_distance_field",
 					"is_const": false,
 					"is_vararg": false,
@@ -256583,6 +256665,12 @@
 					"name": "subpixel_positioning",
 					"setter": "set_subpixel_positioning",
 					"getter": "get_subpixel_positioning"
+				},
+				{
+					"type": "bool",
+					"name": "keep_rounding_remainders",
+					"setter": "set_keep_rounding_remainders",
+					"getter": "get_keep_rounding_remainders"
 				},
 				{
 					"type": "bool",
@@ -266964,6 +267052,41 @@
 					]
 				},
 				{
+					"name": "font_set_keep_rounding_remainders",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						},
+						{
+							"name": "keep_rounding_remainders",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "font_get_keep_rounding_remainders",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155700596,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "font_set_embolden",
 					"is_const": false,
 					"is_vararg": false,
@@ -271546,6 +271669,41 @@
 					"is_virtual": true,
 					"return_value": {
 						"type": "enum::TextServer.SubpixelPositioning"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "_font_set_keep_rounding_remainders",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						},
+						{
+							"name": "keep_rounding_remainders",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "_font_get_keep_rounding_remainders",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "bool"
 					},
 					"arguments": [
 						{
@@ -288446,6 +288604,31 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "set_auto_tooltip",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_auto_tooltip_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"signals": [
@@ -288657,6 +288840,12 @@
 					"name": "scroll_vertical_enabled",
 					"setter": "set_v_scroll_enabled",
 					"getter": "is_v_scroll_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "auto_tooltip",
+					"setter": "set_auto_tooltip",
+					"getter": "is_auto_tooltip_enabled"
 				}
 			]
 		},
