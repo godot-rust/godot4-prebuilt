@@ -47564,6 +47564,50 @@
 			],
 			"methods": [
 				{
+					"name": "load_from_file",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 4015802384,
+					"return_value": {
+						"type": "AudioStreamWAV"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						},
+						{
+							"name": "options",
+							"type": "Dictionary",
+							"default_value": "{}"
+						}
+					]
+				},
+				{
+					"name": "load_from_buffer",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 4266838938,
+					"return_value": {
+						"type": "AudioStreamWAV"
+					},
+					"arguments": [
+						{
+							"name": "buffer",
+							"type": "PackedByteArray"
+						},
+						{
+							"name": "options",
+							"type": "Dictionary",
+							"default_value": "{}"
+						}
+					]
+				},
+				{
 					"name": "set_data",
 					"is_const": false,
 					"is_vararg": false,
@@ -79133,6 +79177,29 @@
 					}
 				},
 				{
+					"name": "create_temp",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 812913566,
+					"return_value": {
+						"type": "DirAccess"
+					},
+					"arguments": [
+						{
+							"name": "prefix",
+							"type": "String",
+							"default_value": "\"\""
+						},
+						{
+							"name": "keep",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
 					"name": "list_dir_begin",
 					"is_const": false,
 					"is_vararg": false,
@@ -79627,6 +79694,23 @@
 						},
 						{
 							"name": "target",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "is_bundle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3927539163,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "path",
 							"type": "String"
 						}
 					]
@@ -83799,6 +83883,14 @@
 					]
 				},
 				{
+					"name": "beep",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051624405
+				},
+				{
 					"name": "keyboard_get_layout_count",
 					"is_const": true,
 					"is_vararg": false,
@@ -86361,6 +86453,17 @@
 					"hash": 2981934095,
 					"return_value": {
 						"type": "PackedStringArray"
+					}
+				},
+				{
+					"name": "get_internal_export_files",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2382534195,
+					"return_value": {
+						"type": "Dictionary"
 					}
 				}
 			]
@@ -101803,6 +101906,39 @@
 					"return_value": {
 						"type": "enum::Error"
 					}
+				},
+				{
+					"name": "create_temp",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 3075606245,
+					"return_value": {
+						"type": "FileAccess"
+					},
+					"arguments": [
+						{
+							"name": "mode_flags",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "prefix",
+							"type": "String",
+							"default_value": "\"\""
+						},
+						{
+							"name": "extension",
+							"type": "String",
+							"default_value": "\"\""
+						},
+						{
+							"name": "keep",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
 				},
 				{
 					"name": "get_file_as_bytes",
@@ -119432,6 +119568,29 @@
 					"return_value": {
 						"type": "typedarray::Dictionary"
 					}
+				},
+				{
+					"name": "get_connection_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 861718734,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "from_node",
+							"type": "StringName"
+						},
+						{
+							"name": "from_port",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
 				},
 				{
 					"name": "get_closest_connection_at_point",
@@ -169050,6 +169209,17 @@
 				},
 				{
 					"name": "get_cache_dir",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "get_temp_dir",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -266245,6 +266415,17 @@
 					]
 				},
 				{
+					"name": "get_support_data",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2362200018,
+					"return_value": {
+						"type": "PackedByteArray"
+					}
+				},
+				{
 					"name": "is_locale_right_to_left",
 					"is_const": true,
 					"is_vararg": false,
@@ -270877,6 +271058,17 @@
 							"type": "String"
 						}
 					]
+				},
+				{
+					"name": "_get_support_data",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "PackedByteArray"
+					}
 				},
 				{
 					"name": "_is_locale_right_to_left",
