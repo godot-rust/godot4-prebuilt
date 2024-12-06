@@ -242447,6 +242447,60 @@
 			]
 		},
 		{
+			"name": "ShaderIncludeDB",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Object",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "list_built_in_include_files",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2981934095,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
+				},
+				{
+					"name": "has_built_in_include_file",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2323990056,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "filename",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_built_in_include_file",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1703090593,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "filename",
+							"type": "String"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "ShaderMaterial",
 			"is_refcounted": true,
 			"is_instantiable": true,
