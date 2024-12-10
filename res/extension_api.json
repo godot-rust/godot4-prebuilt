@@ -71270,6 +71270,48 @@
 			]
 		},
 		{
+			"name": "ColorPalette",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_colors",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3546319833,
+					"arguments": [
+						{
+							"name": "colors",
+							"type": "PackedColorArray"
+						}
+					]
+				},
+				{
+					"name": "get_colors",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1392750486,
+					"return_value": {
+						"type": "PackedColorArray"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "PackedColorArray",
+					"name": "colors",
+					"setter": "set_colors",
+					"getter": "get_colors"
+				}
+			]
+		},
+		{
 			"name": "ColorPicker",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -75647,28 +75689,28 @@
 					"index": 3
 				},
 				{
-					"type": "int",
+					"type": "float",
 					"name": "offset_left",
 					"setter": "set_offset",
 					"getter": "get_offset",
 					"index": 0
 				},
 				{
-					"type": "int",
+					"type": "float",
 					"name": "offset_top",
 					"setter": "set_offset",
 					"getter": "get_offset",
 					"index": 1
 				},
 				{
-					"type": "int",
+					"type": "float",
 					"name": "offset_right",
 					"setter": "set_offset",
 					"getter": "get_offset",
 					"index": 2
 				},
 				{
-					"type": "int",
+					"type": "float",
 					"name": "offset_bottom",
 					"setter": "set_offset",
 					"getter": "get_offset",
@@ -89795,6 +89837,49 @@
 					"return_value": {
 						"type": "Object"
 					}
+				},
+				{
+					"name": "instantiate_property_editor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1429914152,
+					"return_value": {
+						"type": "EditorProperty"
+					},
+					"arguments": [
+						{
+							"name": "object",
+							"type": "Object"
+						},
+						{
+							"name": "type",
+							"type": "enum::Variant.Type"
+						},
+						{
+							"name": "path",
+							"type": "String"
+						},
+						{
+							"name": "hint",
+							"type": "enum::PropertyHint"
+						},
+						{
+							"name": "hint_text",
+							"type": "String"
+						},
+						{
+							"name": "usage",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "wide",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
 				}
 			],
 			"signals": [
@@ -93523,6 +93608,150 @@
 					]
 				},
 				{
+					"name": "set_selectable",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "selectable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_selectable",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_use_folding",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use_folding",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_folding",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_name_split_ratio",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "ratio",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_name_split_ratio",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "deselect",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "is_selected",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "select",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1025054187,
+					"arguments": [
+						{
+							"name": "focusable",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "-1"
+						}
+					]
+				},
+				{
+					"name": "set_object_and_property",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4157606280,
+					"arguments": [
+						{
+							"name": "object",
+							"type": "Object"
+						},
+						{
+							"name": "property",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "set_label_reference",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1496901182,
+					"arguments": [
+						{
+							"name": "control",
+							"type": "Control"
+						}
+					]
+				},
+				{
 					"name": "emit_changed",
 					"is_const": false,
 					"is_vararg": false,
@@ -93754,6 +93983,24 @@
 					"name": "deletable",
 					"setter": "set_deletable",
 					"getter": "is_deletable"
+				},
+				{
+					"type": "bool",
+					"name": "selectable",
+					"setter": "set_selectable",
+					"getter": "is_selectable"
+				},
+				{
+					"type": "bool",
+					"name": "use_folding",
+					"setter": "set_use_folding",
+					"getter": "is_using_folding"
+				},
+				{
+					"type": "float",
+					"name": "name_split_ratio",
+					"setter": "set_name_split_ratio",
+					"getter": "get_name_split_ratio"
 				}
 			]
 		},
