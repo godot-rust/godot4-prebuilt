@@ -44438,6 +44438,18 @@
 							"meta": "int32"
 						}
 					]
+				},
+				{
+					"name": "get_current_clip_index",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
 				}
 			]
 		},
@@ -80222,6 +80234,10 @@
 						{
 							"name": "FEATURE_WINDOW_DRAG",
 							"value": 27
+						},
+						{
+							"name": "FEATURE_SCREEN_EXCLUDE_FROM_CAPTURE",
+							"value": 28
 						}
 					]
 				},
@@ -80494,8 +80510,12 @@
 							"value": 8
 						},
 						{
-							"name": "WINDOW_FLAG_MAX",
+							"name": "WINDOW_FLAG_EXCLUDE_FROM_CAPTURE",
 							"value": 9
+						},
+						{
+							"name": "WINDOW_FLAG_MAX",
+							"value": 10
 						}
 					]
 				},
@@ -82580,6 +82600,23 @@
 							"type": "int",
 							"meta": "int32",
 							"default_value": "-1"
+						}
+					]
+				},
+				{
+					"name": "screen_get_image_rect",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2601441065,
+					"return_value": {
+						"type": "Image"
+					},
+					"arguments": [
+						{
+							"name": "rect",
+							"type": "Rect2i"
 						}
 					]
 				},
@@ -133154,39 +133191,12 @@
 					}
 				},
 				{
-					"name": "to_native",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 3194344696,
-					"return_value": {
-						"type": "Variant"
-					},
-					"arguments": [
-						{
-							"name": "json",
-							"type": "Variant"
-						},
-						{
-							"name": "allow_classes",
-							"type": "bool",
-							"default_value": "false"
-						},
-						{
-							"name": "allow_scripts",
-							"type": "bool",
-							"default_value": "false"
-						}
-					]
-				},
-				{
 					"name": "from_native",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": true,
 					"is_virtual": false,
-					"hash": 3194344696,
+					"hash": 2963479484,
 					"return_value": {
 						"type": "Variant"
 					},
@@ -133196,12 +133206,29 @@
 							"type": "Variant"
 						},
 						{
-							"name": "allow_classes",
+							"name": "full_objects",
 							"type": "bool",
 							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "to_native",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2963479484,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "json",
+							"type": "Variant"
 						},
 						{
-							"name": "allow_scripts",
+							"name": "allow_objects",
 							"type": "bool",
 							"default_value": "false"
 						}
@@ -308337,8 +308364,12 @@
 							"value": 8
 						},
 						{
-							"name": "FLAG_MAX",
+							"name": "FLAG_EXCLUDE_FROM_CAPTURE",
 							"value": 9
+						},
+						{
+							"name": "FLAG_MAX",
+							"value": 10
 						}
 					]
 				},
@@ -310404,6 +310435,13 @@
 					"setter": "set_flag",
 					"getter": "get_flag",
 					"index": 8
+				},
+				{
+					"type": "bool",
+					"name": "exclude_from_capture",
+					"setter": "set_flag",
+					"getter": "get_flag",
+					"index": 9
 				},
 				{
 					"type": "bool",
