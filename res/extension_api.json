@@ -42848,6 +42848,29 @@
 					}
 				},
 				{
+					"name": "_has_loop",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "_get_bar_beats",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
 					"name": "get_length",
 					"is_const": true,
 					"is_vararg": false,
@@ -155945,6 +155968,10 @@
 						{
 							"name": "PATH_POSTPROCESSING_EDGECENTERED",
 							"value": 1
+						},
+						{
+							"name": "PATH_POSTPROCESSING_NONE",
+							"value": 2
 						}
 					]
 				},
@@ -156291,6 +156318,10 @@
 						{
 							"name": "PATH_POSTPROCESSING_EDGECENTERED",
 							"value": 1
+						},
+						{
+							"name": "PATH_POSTPROCESSING_NONE",
+							"value": 2
 						}
 					]
 				},
@@ -158438,12 +158469,13 @@
 				},
 				{
 					"name": "map_get_path",
-					"is_const": true,
+					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3146466012,
+					"hash": 1279824844,
 					"hash_compatibility": [
+						3146466012,
 						56240621
 					],
 					"return_value": {
@@ -158644,11 +158676,14 @@
 				},
 				{
 					"name": "query_path",
-					"is_const": true,
+					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3394638789,
+					"hash": 1254915886,
+					"hash_compatibility": [
+						3394638789
+					],
 					"arguments": [
 						{
 							"name": "parameters",
@@ -158657,6 +158692,11 @@
 						{
 							"name": "result",
 							"type": "NavigationPathQueryResult2D"
+						},
+						{
+							"name": "callback",
+							"type": "Callable",
+							"default_value": "Callable()"
 						}
 					]
 				},
@@ -160899,12 +160939,13 @@
 				},
 				{
 					"name": "map_get_path",
-					"is_const": true,
+					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1187418690,
+					"hash": 276783190,
 					"hash_compatibility": [
+						1187418690,
 						2121045993
 					],
 					"return_value": {
@@ -161156,11 +161197,14 @@
 				},
 				{
 					"name": "query_path",
-					"is_const": true,
+					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3415008901,
+					"hash": 2146930868,
+					"hash_compatibility": [
+						3415008901
+					],
 					"arguments": [
 						{
 							"name": "parameters",
@@ -161169,6 +161213,11 @@
 						{
 							"name": "result",
 							"type": "NavigationPathQueryResult3D"
+						},
+						{
+							"name": "callback",
+							"type": "Callable",
+							"default_value": "Callable()"
 						}
 					]
 				},
@@ -216237,6 +216286,32 @@
 					]
 				},
 				{
+					"name": "texture_get_data_async",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 498832090,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "texture",
+							"type": "RID"
+						},
+						{
+							"name": "layer",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "callback",
+							"type": "Callable"
+						}
+					]
+				},
+				{
 					"name": "texture_is_format_supported_for_usage",
 					"is_const": true,
 					"is_vararg": false,
@@ -217289,6 +217364,39 @@
 						{
 							"name": "buffer",
 							"type": "RID"
+						},
+						{
+							"name": "offset_bytes",
+							"type": "int",
+							"meta": "uint32",
+							"default_value": "0"
+						},
+						{
+							"name": "size_bytes",
+							"type": "int",
+							"meta": "uint32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "buffer_get_data_async",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2370287848,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "buffer",
+							"type": "RID"
+						},
+						{
+							"name": "callback",
+							"type": "Callable"
 						},
 						{
 							"name": "offset_bytes",
