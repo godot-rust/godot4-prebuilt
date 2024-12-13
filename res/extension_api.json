@@ -89764,6 +89764,18 @@
 					}
 				},
 				{
+					"name": "_get_format_version",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
 					"name": "_get_option_visibility",
 					"is_const": true,
 					"is_static": false,
@@ -90748,6 +90760,45 @@
 							"name": "base_types",
 							"type": "typedarray::StringName",
 							"default_value": "Array[StringName]([])"
+						}
+					]
+				},
+				{
+					"name": "popup_create_dialog",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 680586781,
+					"arguments": [
+						{
+							"name": "callback",
+							"type": "Callable"
+						},
+						{
+							"name": "base_type",
+							"type": "StringName",
+							"default_value": "\"\""
+						},
+						{
+							"name": "current_type",
+							"type": "String",
+							"default_value": "\"\""
+						},
+						{
+							"name": "dialog_title",
+							"type": "String",
+							"default_value": "\"\""
+						},
+						{
+							"name": "type_blocklist",
+							"type": "typedarray::StringName",
+							"default_value": "Array[StringName]([])"
+						},
+						{
+							"name": "type_suffixes",
+							"type": "Dictionary",
+							"default_value": "{}"
 						}
 					]
 				},
@@ -138485,6 +138536,31 @@
 					}
 				},
 				{
+					"name": "set_shadowmask_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3451066572,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::LightmapGIData.ShadowmaskMode"
+						}
+					]
+				},
+				{
+					"name": "get_shadowmask_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 785478560,
+					"return_value": {
+						"type": "enum::LightmapGIData.ShadowmaskMode"
+					}
+				},
+				{
 					"name": "set_use_texture_for_bounces",
 					"is_const": false,
 					"is_vararg": false,
@@ -138559,6 +138635,12 @@
 					"name": "directional",
 					"setter": "set_directional",
 					"getter": "is_directional"
+				},
+				{
+					"type": "int",
+					"name": "shadowmask_mode",
+					"setter": "set_shadowmask_mode",
+					"getter": "get_shadowmask_mode"
 				},
 				{
 					"type": "bool",
@@ -138658,6 +138740,26 @@
 			"is_instantiable": true,
 			"inherits": "Resource",
 			"api_type": "core",
+			"enums": [
+				{
+					"name": "ShadowmaskMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SHADOWMASK_MODE_NONE",
+							"value": 0
+						},
+						{
+							"name": "SHADOWMASK_MODE_REPLACE",
+							"value": 1
+						},
+						{
+							"name": "SHADOWMASK_MODE_OVERLAY",
+							"value": 2
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "set_lightmap_textures",
@@ -138675,6 +138777,31 @@
 				},
 				{
 					"name": "get_lightmap_textures",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::TextureLayered"
+					}
+				},
+				{
+					"name": "set_shadowmask_textures",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "shadowmask_textures",
+							"type": "typedarray::TextureLayered"
+						}
+					]
+				},
+				{
+					"name": "get_shadowmask_textures",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -138807,6 +138934,12 @@
 					"name": "lightmap_textures",
 					"setter": "set_lightmap_textures",
 					"getter": "get_lightmap_textures"
+				},
+				{
+					"type": "typedarray::TextureLayered",
+					"name": "shadowmask_textures",
+					"setter": "set_shadowmask_textures",
+					"getter": "get_shadowmask_textures"
 				},
 				{
 					"type": "bool",
@@ -171464,6 +171597,242 @@
 					]
 				},
 				{
+					"name": "register_projection_views_extension",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1997997368,
+					"arguments": [
+						{
+							"name": "extension",
+							"type": "OpenXRExtensionWrapperExtension"
+						}
+					]
+				},
+				{
+					"name": "unregister_projection_views_extension",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1997997368,
+					"arguments": [
+						{
+							"name": "extension",
+							"type": "OpenXRExtensionWrapperExtension"
+						}
+					]
+				},
+				{
+					"name": "get_render_state_z_near",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 191475506,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "get_render_state_z_far",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 191475506,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_velocity_texture",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "render_target",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "set_velocity_depth_texture",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "render_target",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "set_velocity_target_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1130785943,
+					"arguments": [
+						{
+							"name": "target_size",
+							"type": "Vector2i"
+						}
+					]
+				},
+				{
+					"name": "get_supported_swapchain_formats",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3851388692,
+					"return_value": {
+						"type": "PackedInt64Array"
+					}
+				},
+				{
+					"name": "openxr_swapchain_create",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2162228999,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "create_flags",
+							"type": "int",
+							"meta": "uint64"
+						},
+						{
+							"name": "usage_flags",
+							"type": "int",
+							"meta": "uint64"
+						},
+						{
+							"name": "swapchain_format",
+							"type": "int",
+							"meta": "int64"
+						},
+						{
+							"name": "width",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "height",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "sample_count",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "array_size",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "openxr_swapchain_free",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "swapchain",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "openxr_swapchain_get_swapchain",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3744713108,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "swapchain",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "openxr_swapchain_acquire",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "swapchain",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "openxr_swapchain_get_image",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 937000113,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "swapchain",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "openxr_swapchain_release",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "swapchain",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
 					"name": "set_emulate_environment_blend_mode_alpha_blend",
 					"is_const": false,
 					"is_vararg": false,
@@ -171617,6 +171986,13 @@
 					"getter": "get_toplevel_paths"
 				}
 			]
+		},
+		{
+			"name": "OpenXRActionBindingModifier",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRBindingModifier",
+			"api_type": "core"
 		},
 		{
 			"name": "OpenXRActionMap",
@@ -171992,6 +172368,225 @@
 					"name": "actions",
 					"setter": "set_actions",
 					"getter": "get_actions"
+				}
+			]
+		},
+		{
+			"name": "OpenXRAnalogThresholdModifier",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRActionBindingModifier",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_on_threshold",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "on_threshold",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_on_threshold",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_off_threshold",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "off_threshold",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_off_threshold",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_on_haptic",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2998020150,
+					"arguments": [
+						{
+							"name": "haptic",
+							"type": "OpenXRHapticBase"
+						}
+					]
+				},
+				{
+					"name": "get_on_haptic",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 922310751,
+					"return_value": {
+						"type": "OpenXRHapticBase"
+					}
+				},
+				{
+					"name": "set_off_haptic",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2998020150,
+					"arguments": [
+						{
+							"name": "haptic",
+							"type": "OpenXRHapticBase"
+						}
+					]
+				},
+				{
+					"name": "get_off_haptic",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 922310751,
+					"return_value": {
+						"type": "OpenXRHapticBase"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "float",
+					"name": "on_threshold",
+					"setter": "set_on_threshold",
+					"getter": "get_on_threshold"
+				},
+				{
+					"type": "float",
+					"name": "off_threshold",
+					"setter": "set_off_threshold",
+					"getter": "get_off_threshold"
+				},
+				{
+					"type": "OpenXRHapticBase",
+					"name": "on_haptic",
+					"setter": "set_on_haptic",
+					"getter": "get_on_haptic"
+				},
+				{
+					"type": "OpenXRHapticBase",
+					"name": "off_haptic",
+					"setter": "set_off_haptic",
+					"getter": "get_off_haptic"
+				}
+			]
+		},
+		{
+			"name": "OpenXRBindingModifier",
+			"is_refcounted": true,
+			"is_instantiable": false,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "_get_description",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "_get_ip_modification",
+					"is_const": false,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "PackedByteArray"
+					}
+				}
+			]
+		},
+		{
+			"name": "OpenXRBindingModifierEditor",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "PanelContainer",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_binding_modifier",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2930765082,
+					"return_value": {
+						"type": "OpenXRBindingModifier"
+					}
+				},
+				{
+					"name": "setup",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1284787389,
+					"arguments": [
+						{
+							"name": "action_map",
+							"type": "OpenXRActionMap"
+						},
+						{
+							"name": "binding_modifier",
+							"type": "OpenXRBindingModifier"
+						}
+					]
+				}
+			],
+			"signals": [
+				{
+					"name": "binding_modifier_removed",
+					"arguments": [
+						{
+							"name": "binding_modifier_editor",
+							"type": "Object"
+						}
+					]
 				}
 			]
 		},
@@ -172599,6 +173194,304 @@
 			]
 		},
 		{
+			"name": "OpenXRDpadBindingModifier",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRIPBindingModifier",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_action_set",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2093310581,
+					"arguments": [
+						{
+							"name": "action_set",
+							"type": "OpenXRActionSet"
+						}
+					]
+				},
+				{
+					"name": "get_action_set",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 619941079,
+					"return_value": {
+						"type": "OpenXRActionSet"
+					}
+				},
+				{
+					"name": "set_input_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "input_path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_input_path",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_threshold",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "threshold",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_threshold",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_threshold_released",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "threshold_released",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_threshold_released",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_center_region",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "center_region",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_center_region",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_wedge_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "wedge_angle",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_wedge_angle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_is_sticky",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "is_sticky",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_is_sticky",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_on_haptic",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2998020150,
+					"arguments": [
+						{
+							"name": "haptic",
+							"type": "OpenXRHapticBase"
+						}
+					]
+				},
+				{
+					"name": "get_on_haptic",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 922310751,
+					"return_value": {
+						"type": "OpenXRHapticBase"
+					}
+				},
+				{
+					"name": "set_off_haptic",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2998020150,
+					"arguments": [
+						{
+							"name": "haptic",
+							"type": "OpenXRHapticBase"
+						}
+					]
+				},
+				{
+					"name": "get_off_haptic",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 922310751,
+					"return_value": {
+						"type": "OpenXRHapticBase"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "OpenXRActionSet",
+					"name": "action_set",
+					"setter": "set_action_set",
+					"getter": "get_action_set"
+				},
+				{
+					"type": "String",
+					"name": "input_path",
+					"setter": "set_input_path",
+					"getter": "get_input_path"
+				},
+				{
+					"type": "float",
+					"name": "threshold",
+					"setter": "set_threshold",
+					"getter": "get_threshold"
+				},
+				{
+					"type": "float",
+					"name": "threshold_released",
+					"setter": "set_threshold_released",
+					"getter": "get_threshold_released"
+				},
+				{
+					"type": "float",
+					"name": "center_region",
+					"setter": "set_center_region",
+					"getter": "get_center_region"
+				},
+				{
+					"type": "float",
+					"name": "wedge_angle",
+					"setter": "set_wedge_angle",
+					"getter": "get_wedge_angle"
+				},
+				{
+					"type": "bool",
+					"name": "is_sticky",
+					"setter": "set_is_sticky",
+					"getter": "get_is_sticky"
+				},
+				{
+					"type": "OpenXRHapticBase",
+					"name": "on_haptic",
+					"setter": "set_on_haptic",
+					"getter": "get_on_haptic"
+				},
+				{
+					"type": "OpenXRHapticBase",
+					"name": "off_haptic",
+					"setter": "set_off_haptic",
+					"getter": "get_off_haptic"
+				}
+			]
+		},
+		{
 			"name": "OpenXRExtensionWrapperExtension",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -172702,6 +173595,29 @@
 					"arguments": [
 						{
 							"name": "hand_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "next_pointer",
+							"type": "void*"
+						}
+					]
+				},
+				{
+					"name": "_set_projection_views_and_get_next_pointer",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "view_index",
 							"type": "int",
 							"meta": "int32"
 						},
@@ -173313,6 +174229,123 @@
 			]
 		},
 		{
+			"name": "OpenXRHapticBase",
+			"is_refcounted": true,
+			"is_instantiable": false,
+			"inherits": "Resource",
+			"api_type": "core"
+		},
+		{
+			"name": "OpenXRHapticVibration",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRHapticBase",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_duration",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "duration",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_duration",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					}
+				},
+				{
+					"name": "set_frequency",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "frequency",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_frequency",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_amplitude",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "amplitude",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_amplitude",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "duration",
+					"setter": "set_duration",
+					"getter": "get_duration"
+				},
+				{
+					"type": "float",
+					"name": "frequency",
+					"setter": "set_frequency",
+					"getter": "get_frequency"
+				},
+				{
+					"type": "float",
+					"name": "amplitude",
+					"setter": "set_amplitude",
+					"getter": "get_amplitude"
+				}
+			]
+		},
+		{
 			"name": "OpenXRIPBinding",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -173367,6 +174400,61 @@
 					"hash": 201670096,
 					"return_value": {
 						"type": "String"
+					}
+				},
+				{
+					"name": "get_binding_modifier_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_binding_modifier",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3538296211,
+					"return_value": {
+						"type": "OpenXRActionBindingModifier"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_binding_modifiers",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "binding_modifiers",
+							"type": "Array"
+						}
+					]
+				},
+				{
+					"name": "get_binding_modifiers",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "Array"
 					}
 				},
 				{
@@ -173466,12 +174554,25 @@
 					"getter": "get_binding_path"
 				},
 				{
+					"type": "OpenXRActionBindingModifier",
+					"name": "binding_modifiers",
+					"setter": "set_binding_modifiers",
+					"getter": "get_binding_modifiers"
+				},
+				{
 					"type": "PackedStringArray",
 					"name": "paths",
 					"setter": "set_paths",
 					"getter": "get_paths"
 				}
 			]
+		},
+		{
+			"name": "OpenXRIPBindingModifier",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRBindingModifier",
+			"api_type": "core"
 		},
 		{
 			"name": "OpenXRInteractionProfile",
@@ -173559,6 +174660,61 @@
 					"return_value": {
 						"type": "Array"
 					}
+				},
+				{
+					"name": "get_binding_modifier_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_binding_modifier",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2419896583,
+					"return_value": {
+						"type": "OpenXRIPBindingModifier"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_binding_modifiers",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "binding_modifiers",
+							"type": "Array"
+						}
+					]
+				},
+				{
+					"name": "get_binding_modifiers",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "Array"
+					}
 				}
 			],
 			"properties": [
@@ -173573,6 +174729,46 @@
 					"name": "bindings",
 					"setter": "set_bindings",
 					"getter": "get_bindings"
+				},
+				{
+					"type": "OpenXRIPBindingModifier",
+					"name": "binding_modifiers",
+					"setter": "set_binding_modifiers",
+					"getter": "get_binding_modifiers"
+				}
+			]
+		},
+		{
+			"name": "OpenXRInteractionProfileEditor",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRInteractionProfileEditorBase",
+			"api_type": "core"
+		},
+		{
+			"name": "OpenXRInteractionProfileEditorBase",
+			"is_refcounted": false,
+			"is_instantiable": false,
+			"inherits": "HBoxContainer",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "setup",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 421962938,
+					"arguments": [
+						{
+							"name": "action_map",
+							"type": "OpenXRActionMap"
+						},
+						{
+							"name": "interaction_profile",
+							"type": "OpenXRInteractionProfile"
+						}
+					]
 				}
 			]
 		},
@@ -211394,6 +212590,33 @@
 					}
 				},
 				{
+					"name": "set_blend_distance",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "blend_distance",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_blend_distance",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "set_ambient_mode",
 					"is_const": false,
 					"is_vararg": false,
@@ -211741,6 +212964,12 @@
 					"name": "intensity",
 					"setter": "set_intensity",
 					"getter": "get_intensity"
+				},
+				{
+					"type": "float",
+					"name": "blend_distance",
+					"setter": "set_blend_distance",
+					"getter": "get_blend_distance"
 				},
 				{
 					"type": "float",
@@ -223533,6 +224762,25 @@
 						},
 						{
 							"name": "intensity",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "reflection_probe_set_blend_distance",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "probe",
+							"type": "RID"
+						},
+						{
+							"name": "blend_distance",
 							"type": "float",
 							"meta": "float"
 						}
