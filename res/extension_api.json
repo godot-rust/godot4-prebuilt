@@ -91058,11 +91058,19 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 83702148,
+					"hash": 1168363258,
+					"hash_compatibility": [
+						83702148
+					],
 					"arguments": [
 						{
 							"name": "scene_filepath",
 							"type": "String"
+						},
+						{
+							"name": "set_inherited",
+							"type": "bool",
+							"default_value": "false"
 						}
 					]
 				},
@@ -131837,6 +131845,10 @@
 						{
 							"name": "SELECT_MULTI",
 							"value": 1
+						},
+						{
+							"name": "SELECT_TOGGLE",
+							"value": 2
 						}
 					]
 				}
@@ -317061,6 +317073,31 @@
 					}
 				},
 				{
+					"name": "set_camera_locked_to_origin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_camera_locked_to_origin",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "add_interface",
 					"is_const": false,
 					"is_vararg": false,
@@ -317318,6 +317355,12 @@
 					"name": "world_origin",
 					"setter": "set_world_origin",
 					"getter": "get_world_origin"
+				},
+				{
+					"type": "bool",
+					"name": "camera_locked_to_origin",
+					"setter": "set_camera_locked_to_origin",
+					"getter": "is_camera_locked_to_origin"
 				},
 				{
 					"type": "Object",
