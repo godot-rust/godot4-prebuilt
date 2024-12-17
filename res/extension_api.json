@@ -3645,7 +3645,7 @@
 				},
 				{
 					"name": "PROPERTY_HINT_MAX",
-					"value": 41
+					"value": 42
 				}
 			]
 		},
@@ -33420,7 +33420,7 @@
 			"api_type": "core",
 			"methods": [
 				{
-					"name": "_process",
+					"name": "_process_animation_node",
 					"is_const": false,
 					"is_static": false,
 					"is_required": true,
@@ -68700,6 +68700,31 @@
 					]
 				},
 				{
+					"name": "set_symbol_tooltip_on_hover_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_symbol_tooltip_on_hover_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "move_lines_up",
 					"is_const": false,
 					"is_vararg": false,
@@ -68778,6 +68803,23 @@
 							"type": "String"
 						}
 					]
+				},
+				{
+					"name": "symbol_hovered",
+					"arguments": [
+						{
+							"name": "symbol",
+							"type": "String"
+						},
+						{
+							"name": "line",
+							"type": "int"
+						},
+						{
+							"name": "column",
+							"type": "int"
+						}
+					]
 				}
 			],
 			"properties": [
@@ -68786,6 +68828,12 @@
 					"name": "symbol_lookup_on_click",
 					"setter": "set_symbol_lookup_on_click_enabled",
 					"getter": "is_symbol_lookup_on_click_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "symbol_tooltip_on_hover",
+					"setter": "set_symbol_tooltip_on_hover_enabled",
+					"getter": "is_symbol_tooltip_on_hover_enabled"
 				},
 				{
 					"type": "bool",
@@ -89980,6 +90028,20 @@
 			"inherits": "ScrollContainer",
 			"api_type": "editor",
 			"methods": [
+				{
+					"name": "edit",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3975164845,
+					"arguments": [
+						{
+							"name": "object",
+							"type": "Object"
+						}
+					]
+				},
 				{
 					"name": "get_selected_path",
 					"is_const": true,
@@ -119899,7 +119961,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 195065850,
+					"hash": 1376144231,
+					"hash_compatibility": [
+						195065850
+					],
 					"return_value": {
 						"type": "enum::Error"
 					},
@@ -119921,6 +119986,11 @@
 							"name": "to_port",
 							"type": "int",
 							"meta": "int32"
+						},
+						{
+							"name": "keep_alive",
+							"type": "bool",
+							"default_value": "false"
 						}
 					]
 				},
@@ -120013,6 +120083,20 @@
 							"name": "amount",
 							"type": "float",
 							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "set_connections",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "connections",
+							"type": "typedarray::Dictionary"
 						}
 					]
 				},
@@ -121191,6 +121275,12 @@
 					"name": "connection_lines_antialiased",
 					"setter": "set_connection_lines_antialiased",
 					"getter": "is_connection_lines_antialiased"
+				},
+				{
+					"type": "typedarray::27/0:",
+					"name": "connections",
+					"setter": "set_connections",
+					"getter": "get_connection_list"
 				},
 				{
 					"type": "float",
@@ -166022,6 +166112,9 @@
 							"type": "Node"
 						}
 					]
+				},
+				{
+					"name": "editor_state_changed"
 				}
 			],
 			"properties": [
@@ -169475,6 +169568,17 @@
 				},
 				{
 					"name": "get_version",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "get_version_alias",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -236458,6 +236562,24 @@
 					}
 				},
 				{
+					"name": "get_line_range",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3665014314,
+					"return_value": {
+						"type": "Vector2i"
+					},
+					"arguments": [
+						{
+							"name": "line",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "get_visible_line_count",
 					"is_const": true,
 					"is_vararg": false,
@@ -241872,6 +241994,17 @@
 					]
 				},
 				{
+					"name": "_get_doc_class_name",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
 					"name": "_get_documentation",
 					"is_const": true,
 					"is_static": false,
@@ -242240,8 +242373,16 @@
 							"value": 8
 						},
 						{
-							"name": "LOOKUP_RESULT_MAX",
+							"name": "LOOKUP_RESULT_LOCAL_CONSTANT",
 							"value": 9
+						},
+						{
+							"name": "LOOKUP_RESULT_LOCAL_VARIABLE",
+							"value": 10
+						},
+						{
+							"name": "LOOKUP_RESULT_MAX",
+							"value": 11
 						}
 					]
 				},
@@ -292215,6 +292356,14 @@
 							"meta": "int32"
 						}
 					]
+				},
+				{
+					"name": "clear_buttons",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
 				},
 				{
 					"name": "add_button",
