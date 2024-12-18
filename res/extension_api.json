@@ -33416,7 +33416,7 @@
 			"name": "AnimationNodeExtension",
 			"is_refcounted": true,
 			"is_instantiable": true,
-			"inherits": "AnimationRootNode",
+			"inherits": "AnimationNode",
 			"api_type": "core",
 			"methods": [
 				{
@@ -56686,7 +56686,7 @@
 			],
 			"properties": [
 				{
-					"type": "Mesh",
+					"type": "Mesh,-PlaneMesh,-PointMesh,-QuadMesh,-RibbonTrailMesh",
 					"name": "mesh",
 					"setter": "set_mesh",
 					"getter": "get_mesh"
@@ -60601,6 +60601,25 @@
 				}
 			],
 			"methods": [
+				{
+					"name": "_activate_feed",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "_deactivate_feed",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true
+				},
 				{
 					"name": "get_id",
 					"is_const": true,
@@ -79269,28 +79288,28 @@
 					"getter": "get_size"
 				},
 				{
-					"type": "Texture2D",
+					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture",
 					"name": "texture_albedo",
 					"setter": "set_texture",
 					"getter": "get_texture",
 					"index": 0
 				},
 				{
-					"type": "Texture2D",
+					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture",
 					"name": "texture_normal",
 					"setter": "set_texture",
 					"getter": "get_texture",
 					"index": 1
 				},
 				{
-					"type": "Texture2D",
+					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture",
 					"name": "texture_orm",
 					"setter": "set_texture",
 					"getter": "get_texture",
 					"index": 2
 				},
 				{
-					"type": "Texture2D",
+					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture",
 					"name": "texture_emission",
 					"setter": "set_texture",
 					"getter": "get_texture",
@@ -123334,6 +123353,112 @@
 			]
 		},
 		{
+			"name": "GridMapEditorPlugin",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "EditorPlugin",
+			"api_type": "editor",
+			"methods": [
+				{
+					"name": "get_current_grid_map",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1184264483,
+					"return_value": {
+						"type": "GridMap"
+					}
+				},
+				{
+					"name": "set_selection",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3659408297,
+					"arguments": [
+						{
+							"name": "begin",
+							"type": "Vector3i"
+						},
+						{
+							"name": "end",
+							"type": "Vector3i"
+						}
+					]
+				},
+				{
+					"name": "clear_selection",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "get_selection",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1068685055,
+					"return_value": {
+						"type": "AABB"
+					}
+				},
+				{
+					"name": "has_selection",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_selected_cells",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "Array"
+					}
+				},
+				{
+					"name": "set_selected_palette_item",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 998575451,
+					"arguments": [
+						{
+							"name": "item",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_selected_palette_item",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				}
+			]
+		},
+		{
 			"name": "GrooveJoint2D",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -137920,7 +138045,7 @@
 					"index": 2
 				},
 				{
-					"type": "Texture2D",
+					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture",
 					"name": "light_projector",
 					"setter": "set_projector",
 					"getter": "get_projector"
@@ -202923,7 +203048,7 @@
 			],
 			"properties": [
 				{
-					"type": "Texture2D",
+					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture",
 					"name": "texture",
 					"setter": "set_texture",
 					"getter": "get_texture"
@@ -214318,6 +214443,31 @@
 							"meta": "float"
 						}
 					]
+				},
+				{
+					"name": "get_anisotropic_filtering_level",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1617414954,
+					"return_value": {
+						"type": "enum::RenderingServer.ViewportAnisotropicFiltering"
+					}
+				},
+				{
+					"name": "set_anisotropic_filtering_level",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2559658741,
+					"arguments": [
+						{
+							"name": "anisotropic_filtering_level",
+							"type": "enum::RenderingServer.ViewportAnisotropicFiltering"
+						}
+					]
 				}
 			],
 			"properties": [
@@ -214374,6 +214524,12 @@
 					"name": "texture_mipmap_bias",
 					"setter": "set_texture_mipmap_bias",
 					"getter": "get_texture_mipmap_bias"
+				},
+				{
+					"type": "int",
+					"name": "anisotropic_filtering_level",
+					"setter": "set_anisotropic_filtering_level",
+					"getter": "get_anisotropic_filtering_level"
 				}
 			]
 		},
@@ -214425,6 +214581,21 @@
 							"name": "texture_mipmap_bias",
 							"type": "float",
 							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "_set_anisotropic_filtering_level",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"arguments": [
+						{
+							"name": "anisotropic_filtering_level",
+							"type": "int",
+							"meta": "int32"
 						}
 					]
 				},
@@ -221290,6 +221461,36 @@
 					]
 				},
 				{
+					"name": "ViewportAnisotropicFiltering",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "VIEWPORT_ANISOTROPY_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "VIEWPORT_ANISOTROPY_2X",
+							"value": 1
+						},
+						{
+							"name": "VIEWPORT_ANISOTROPY_4X",
+							"value": 2
+						},
+						{
+							"name": "VIEWPORT_ANISOTROPY_8X",
+							"value": 3
+						},
+						{
+							"name": "VIEWPORT_ANISOTROPY_16X",
+							"value": 4
+						},
+						{
+							"name": "VIEWPORT_ANISOTROPY_MAX",
+							"value": 5
+						}
+					]
+				},
+				{
 					"name": "ViewportScreenSpaceAA",
 					"is_bitfield": false,
 					"values": [
@@ -227389,6 +227590,24 @@
 							"name": "mipmap_bias",
 							"type": "float",
 							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "viewport_set_anisotropic_filtering_level",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3953214029,
+					"arguments": [
+						{
+							"name": "viewport",
+							"type": "RID"
+						},
+						{
+							"name": "anisotropic_filtering_level",
+							"type": "enum::RenderingServer.ViewportAnisotropicFiltering"
 						}
 					]
 				},
@@ -296711,6 +296930,36 @@
 					]
 				},
 				{
+					"name": "AnisotropicFiltering",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ANISOTROPY_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "ANISOTROPY_2X",
+							"value": 1
+						},
+						{
+							"name": "ANISOTROPY_4X",
+							"value": 2
+						},
+						{
+							"name": "ANISOTROPY_8X",
+							"value": 3
+						},
+						{
+							"name": "ANISOTROPY_16X",
+							"value": 4
+						},
+						{
+							"name": "ANISOTROPY_MAX",
+							"value": 5
+						}
+					]
+				},
+				{
 					"name": "ScreenSpaceAA",
 					"is_bitfield": false,
 					"values": [
@@ -298430,6 +298679,31 @@
 					}
 				},
 				{
+					"name": "set_anisotropic_filtering_level",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3445583046,
+					"arguments": [
+						{
+							"name": "anisotropic_filtering_level",
+							"type": "enum::Viewport.AnisotropicFiltering"
+						}
+					]
+				},
+				{
+					"name": "get_anisotropic_filtering_level",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3991528932,
+					"return_value": {
+						"type": "enum::Viewport.AnisotropicFiltering"
+					}
+				},
+				{
 					"name": "set_vrs_mode",
 					"is_const": false,
 					"is_vararg": false,
@@ -298645,6 +298919,12 @@
 					"name": "texture_mipmap_bias",
 					"setter": "set_texture_mipmap_bias",
 					"getter": "get_texture_mipmap_bias"
+				},
+				{
+					"type": "int",
+					"name": "anisotropic_filtering_level",
+					"setter": "set_anisotropic_filtering_level",
+					"getter": "get_anisotropic_filtering_level"
 				},
 				{
 					"type": "float",
