@@ -43779,15 +43779,15 @@
 			"properties": [
 				{
 					"type": "int",
-					"name": "initial_clip",
-					"setter": "set_initial_clip",
-					"getter": "get_initial_clip"
-				},
-				{
-					"type": "int",
 					"name": "clip_count",
 					"setter": "set_clip_count",
 					"getter": "get_clip_count"
+				},
+				{
+					"type": "int",
+					"name": "initial_clip",
+					"setter": "set_initial_clip",
+					"getter": "get_initial_clip"
 				}
 			]
 		},
