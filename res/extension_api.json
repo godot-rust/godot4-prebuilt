@@ -38082,6 +38082,21 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "surface_remove",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "surf_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "surface_update_vertex_region",
 					"is_const": false,
 					"is_vararg": false,
@@ -38827,6 +38842,33 @@
 						"type": "float",
 						"meta": "float"
 					}
+				},
+				{
+					"name": "set_volume_linear",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "volume",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_volume_linear",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
 				}
 			],
 			"properties": [
@@ -38835,6 +38877,12 @@
 					"name": "volume_db",
 					"setter": "set_volume_db",
 					"getter": "get_volume_db"
+				},
+				{
+					"type": "float",
+					"name": "volume_linear",
+					"setter": "set_volume_linear",
+					"getter": "get_volume_linear"
 				}
 			]
 		},
@@ -42146,6 +42194,45 @@
 					]
 				},
 				{
+					"name": "set_bus_volume_linear",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "bus_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "volume_linear",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_bus_volume_linear",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "bus_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "set_bus_send",
 					"is_const": false,
 					"is_vararg": false,
@@ -44859,6 +44946,33 @@
 					}
 				},
 				{
+					"name": "set_volume_linear",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "volume_linear",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_volume_linear",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "set_pitch_scale",
 					"is_const": false,
 					"is_vararg": false,
@@ -45159,6 +45273,12 @@
 				},
 				{
 					"type": "float",
+					"name": "volume_linear",
+					"setter": "set_volume_linear",
+					"getter": "get_volume_linear"
+				},
+				{
+					"type": "float",
 					"name": "pitch_scale",
 					"setter": "set_pitch_scale",
 					"getter": "get_pitch_scale"
@@ -45256,6 +45376,33 @@
 				},
 				{
 					"name": "get_volume_db",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_volume_linear",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "volume_linear",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_volume_linear",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -45650,6 +45797,12 @@
 				},
 				{
 					"type": "float",
+					"name": "volume_linear",
+					"setter": "set_volume_linear",
+					"getter": "get_volume_linear"
+				},
+				{
+					"type": "float",
 					"name": "pitch_scale",
 					"setter": "set_pitch_scale",
 					"getter": "get_pitch_scale"
@@ -45807,6 +45960,33 @@
 				},
 				{
 					"name": "get_volume_db",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_volume_linear",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "volume_linear",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_volume_linear",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -46414,6 +46594,12 @@
 					"name": "volume_db",
 					"setter": "set_volume_db",
 					"getter": "get_volume_db"
+				},
+				{
+					"type": "float",
+					"name": "volume_linear",
+					"setter": "set_volume_linear",
+					"getter": "get_volume_linear"
 				},
 				{
 					"type": "float",
@@ -62907,6 +63093,41 @@
 					"return_value": {
 						"type": "Material"
 					}
+				},
+				{
+					"name": "set_instance_shader_parameter",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3776071444,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						},
+						{
+							"name": "value",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "get_instance_shader_parameter",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2760726917,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
 				},
 				{
 					"name": "set_use_parent_material",
@@ -223956,6 +224177,25 @@
 					]
 				},
 				{
+					"name": "mesh_surface_remove",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "mesh",
+							"type": "RID"
+						},
+						{
+							"name": "surface",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "mesh_clear",
 					"is_const": false,
 					"is_vararg": false,
@@ -231721,6 +231961,87 @@
 						{
 							"name": "enabled",
 							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "canvas_item_set_instance_shader_parameter",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3477296213,
+					"arguments": [
+						{
+							"name": "instance",
+							"type": "RID"
+						},
+						{
+							"name": "parameter",
+							"type": "StringName"
+						},
+						{
+							"name": "value",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "canvas_item_get_instance_shader_parameter",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2621281810,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "instance",
+							"type": "RID"
+						},
+						{
+							"name": "parameter",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "canvas_item_get_instance_shader_parameter_default_value",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2621281810,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "instance",
+							"type": "RID"
+						},
+						{
+							"name": "parameter",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "canvas_item_get_instance_shader_parameter_list",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2684255073,
+					"return_value": {
+						"type": "typedarray::Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "instance",
+							"type": "RID"
 						}
 					]
 				},
