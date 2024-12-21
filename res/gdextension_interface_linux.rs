@@ -1690,6 +1690,7 @@ pub struct GDExtensionClassCreationInfo4 {
     pub is_abstract: GDExtensionBool,
     pub is_exposed: GDExtensionBool,
     pub is_runtime: GDExtensionBool,
+    pub icon_path: GDExtensionConstStringPtr,
     pub set_func: GDExtensionClassSet,
     pub get_func: GDExtensionClassGet,
     pub get_property_list_func: GDExtensionClassGetPropertyList,
@@ -1716,7 +1717,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     let ptr = UNINIT.as_ptr();
     assert_eq!(
         ::std::mem::size_of::<GDExtensionClassCreationInfo4>(),
-        152usize,
+        160usize,
         concat!("Size of: ", stringify!(GDExtensionClassCreationInfo4))
     );
     assert_eq!(
@@ -1765,8 +1766,18 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).set_func) as usize - ptr as usize },
+        unsafe { ::std::ptr::addr_of!((*ptr).icon_path) as usize - ptr as usize },
         8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(icon_path)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).set_func) as usize - ptr as usize },
+        16usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1776,7 +1787,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).get_func) as usize - ptr as usize },
-        16usize,
+        24usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1786,7 +1797,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).get_property_list_func) as usize - ptr as usize },
-        24usize,
+        32usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1796,7 +1807,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).free_property_list_func) as usize - ptr as usize },
-        32usize,
+        40usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1806,7 +1817,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).property_can_revert_func) as usize - ptr as usize },
-        40usize,
+        48usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1816,7 +1827,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).property_get_revert_func) as usize - ptr as usize },
-        48usize,
+        56usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1826,7 +1837,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).validate_property_func) as usize - ptr as usize },
-        56usize,
+        64usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1836,7 +1847,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).notification_func) as usize - ptr as usize },
-        64usize,
+        72usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1846,7 +1857,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).to_string_func) as usize - ptr as usize },
-        72usize,
+        80usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1856,7 +1867,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).reference_func) as usize - ptr as usize },
-        80usize,
+        88usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1866,7 +1877,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).unreference_func) as usize - ptr as usize },
-        88usize,
+        96usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1876,7 +1887,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).create_instance_func) as usize - ptr as usize },
-        96usize,
+        104usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1886,7 +1897,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).free_instance_func) as usize - ptr as usize },
-        104usize,
+        112usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1896,7 +1907,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).recreate_instance_func) as usize - ptr as usize },
-        112usize,
+        120usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1906,7 +1917,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).get_virtual_func) as usize - ptr as usize },
-        120usize,
+        128usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1916,7 +1927,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).get_virtual_call_data_func) as usize - ptr as usize },
-        128usize,
+        136usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1926,7 +1937,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).call_virtual_with_data_func) as usize - ptr as usize },
-        136usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),
@@ -1936,7 +1947,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).class_userdata) as usize - ptr as usize },
-        144usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(GDExtensionClassCreationInfo4),

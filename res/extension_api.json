@@ -80641,6 +80641,10 @@
 						{
 							"name": "FEATURE_SCREEN_EXCLUDE_FROM_CAPTURE",
 							"value": 28
+						},
+						{
+							"name": "FEATURE_WINDOW_EMBEDDING",
+							"value": 29
 						}
 					]
 				},
@@ -97685,6 +97689,17 @@
 				},
 				{
 					"name": "is_editor_hint",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_embedded_in_editor",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -288640,6 +288655,31 @@
 					}
 				},
 				{
+					"name": "set_ignore_time_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "ignore",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_ignore_time_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "is_stopped",
 					"is_const": true,
 					"is_vararg": false,
@@ -288723,6 +288763,12 @@
 					"name": "paused",
 					"setter": "set_paused",
 					"getter": "is_paused"
+				},
+				{
+					"type": "bool",
+					"name": "ignore_time_scale",
+					"setter": "set_ignore_time_scale",
+					"getter": "get_ignore_time_scale"
 				},
 				{
 					"type": "float",
@@ -312508,6 +312554,9 @@
 				},
 				{
 					"name": "titlebar_changed"
+				},
+				{
+					"name": "title_changed"
 				}
 			],
 			"properties": [
