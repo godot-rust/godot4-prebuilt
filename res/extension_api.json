@@ -159337,6 +159337,41 @@
 					]
 				},
 				{
+					"name": "map_set_use_async_iterations",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "map",
+							"type": "RID"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "map_get_use_async_iterations",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155700596,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "map",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "map_get_random_point",
 					"is_const": true,
 					"is_vararg": false,
@@ -161849,6 +161884,41 @@
 					"return_value": {
 						"type": "int",
 						"meta": "uint32"
+					},
+					"arguments": [
+						{
+							"name": "map",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "map_set_use_async_iterations",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "map",
+							"type": "RID"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "map_get_use_async_iterations",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155700596,
+					"return_value": {
+						"type": "bool"
 					},
 					"arguments": [
 						{
