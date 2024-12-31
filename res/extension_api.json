@@ -288739,7 +288739,7 @@
 					]
 				},
 				{
-					"name": "get_ignore_time_scale",
+					"name": "is_ignoring_time_scale",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -288838,7 +288838,7 @@
 					"type": "bool",
 					"name": "ignore_time_scale",
 					"setter": "set_ignore_time_scale",
-					"getter": "get_ignore_time_scale"
+					"getter": "is_ignoring_time_scale"
 				},
 				{
 					"type": "float",
@@ -294387,6 +294387,24 @@
 						{
 							"name": "mode",
 							"type": "enum::Tween.TweenPauseMode"
+						}
+					]
+				},
+				{
+					"name": "set_ignore_time_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1942052223,
+					"return_value": {
+						"type": "Tween"
+					},
+					"arguments": [
+						{
+							"name": "ignore",
+							"type": "bool",
+							"default_value": "true"
 						}
 					]
 				},
