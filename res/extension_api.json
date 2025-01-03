@@ -17447,6 +17447,33 @@
 							"type": "int"
 						}
 					]
+				},
+				{
+					"name": "from_rgba8",
+					"return_type": "Color",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": true,
+					"hash": 3072934735,
+					"arguments": [
+						{
+							"name": "r8",
+							"type": "int"
+						},
+						{
+							"name": "g8",
+							"type": "int"
+						},
+						{
+							"name": "b8",
+							"type": "int"
+						},
+						{
+							"name": "a8",
+							"type": "int",
+							"default_value": "255"
+						}
+					]
 				}
 			],
 			"constructors": [
@@ -91167,7 +91194,7 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 680586781,
+					"hash": 495277124,
 					"arguments": [
 						{
 							"name": "callback",
@@ -91192,11 +91219,6 @@
 							"name": "type_blocklist",
 							"type": "typedarray::StringName",
 							"default_value": "Array[StringName]([])"
-						},
-						{
-							"name": "type_suffixes",
-							"type": "Dictionary",
-							"default_value": "{}"
 						}
 					]
 				},
@@ -140408,6 +140430,31 @@
 					}
 				},
 				{
+					"name": "set_keep_editing_on_text_submit",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_editing_kept_on_text_submit",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "clear",
 					"is_const": false,
 					"is_vararg": false,
@@ -141412,6 +141459,12 @@
 					"name": "editable",
 					"setter": "set_editable",
 					"getter": "is_editable"
+				},
+				{
+					"type": "bool",
+					"name": "keep_editing_on_text_submit",
+					"setter": "set_keep_editing_on_text_submit",
+					"getter": "is_editing_kept_on_text_submit"
 				},
 				{
 					"type": "bool",
@@ -179962,6 +180015,11 @@
 						"type": "float",
 						"meta": "float"
 					}
+				}
+			],
+			"signals": [
+				{
+					"name": "emission_shape_changed"
 				}
 			],
 			"properties": [
@@ -235028,6 +235086,30 @@
 			"is_instantiable": true,
 			"inherits": "SkeletonModifier3D",
 			"api_type": "core",
+			"enums": [
+				{
+					"name": "TransformFlag",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "TRANSFORM_FLAG_POSITION",
+							"value": 1
+						},
+						{
+							"name": "TRANSFORM_FLAG_ROTATION",
+							"value": 2
+						},
+						{
+							"name": "TRANSFORM_FLAG_SCALE",
+							"value": 4
+						},
+						{
+							"name": "TRANSFORM_FLAG_ALL",
+							"value": 7
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "set_profile",
@@ -235077,6 +235159,31 @@
 					"hash": 36873697,
 					"return_value": {
 						"type": "bool"
+					}
+				},
+				{
+					"name": "set_enable_flags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2687954213,
+					"arguments": [
+						{
+							"name": "enable_flags",
+							"type": "bitfield::RetargetModifier3D.TransformFlag"
+						}
+					]
+				},
+				{
+					"name": "get_enable_flags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 358995420,
+					"return_value": {
+						"type": "bitfield::RetargetModifier3D.TransformFlag"
 					}
 				},
 				{
@@ -235169,22 +235276,10 @@
 					"getter": "is_using_global_pose"
 				},
 				{
-					"type": "bool",
-					"name": "position_enabled",
-					"setter": "set_position_enabled",
-					"getter": "is_position_enabled"
-				},
-				{
-					"type": "bool",
-					"name": "rotation_enabled",
-					"setter": "set_rotation_enabled",
-					"getter": "is_rotation_enabled"
-				},
-				{
-					"type": "bool",
-					"name": "scale_enabled",
-					"setter": "set_scale_enabled",
-					"getter": "is_scale_enabled"
+					"type": "int",
+					"name": "enable",
+					"setter": "set_enable_flags",
+					"getter": "get_enable_flags"
 				}
 			]
 		},
@@ -307287,6 +307382,12 @@
 					"name": "constant",
 					"setter": "set_constant",
 					"getter": "get_constant"
+				},
+				{
+					"type": "Vector4",
+					"name": "constant_v4",
+					"setter": "_set_constant_v4",
+					"getter": "_get_constant_v4"
 				}
 			]
 		},
