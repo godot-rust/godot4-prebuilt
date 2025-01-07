@@ -80672,6 +80672,10 @@
 						{
 							"name": "FEATURE_WINDOW_EMBEDDING",
 							"value": 29
+						},
+						{
+							"name": "FEATURE_NATIVE_DIALOG_FILE_MIME",
+							"value": 30
 						}
 					]
 				},
@@ -93964,6 +93968,56 @@
 					}
 				},
 				{
+					"name": "set_draw_label",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "draw_label",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_draw_label",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_draw_background",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "draw_background",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_draw_background",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_checkable",
 					"is_const": false,
 					"is_vararg": false,
@@ -94492,6 +94546,18 @@
 					"name": "read_only",
 					"setter": "set_read_only",
 					"getter": "is_read_only"
+				},
+				{
+					"type": "bool",
+					"name": "draw_label",
+					"setter": "set_draw_label",
+					"getter": "is_draw_label"
+				},
+				{
+					"type": "bool",
+					"name": "draw_background",
+					"setter": "set_draw_background",
+					"getter": "is_draw_background"
 				},
 				{
 					"type": "bool",
@@ -141874,36 +141940,6 @@
 			"api_type": "core",
 			"enums": [
 				{
-					"name": "BoneAxis",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "BONE_AXIS_PLUS_X",
-							"value": 0
-						},
-						{
-							"name": "BONE_AXIS_MINUS_X",
-							"value": 1
-						},
-						{
-							"name": "BONE_AXIS_PLUS_Y",
-							"value": 2
-						},
-						{
-							"name": "BONE_AXIS_MINUS_Y",
-							"value": 3
-						},
-						{
-							"name": "BONE_AXIS_PLUS_Z",
-							"value": 4
-						},
-						{
-							"name": "BONE_AXIS_MINUS_Z",
-							"value": 5
-						}
-					]
-				},
-				{
 					"name": "OriginFrom",
 					"is_bitfield": false,
 					"values": [
@@ -142006,11 +142042,11 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1234919020,
+					"hash": 3199955933,
 					"arguments": [
 						{
 							"name": "forward_axis",
-							"type": "enum::LookAtModifier3D.BoneAxis"
+							"type": "enum::SkeletonModifier3D.BoneAxis"
 						}
 					]
 				},
@@ -142020,9 +142056,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1995032694,
+					"hash": 4076020284,
 					"return_value": {
-						"type": "enum::LookAtModifier3D.BoneAxis"
+						"type": "enum::SkeletonModifier3D.BoneAxis"
 					}
 				},
 				{
@@ -217861,6 +217897,14 @@
 						{
 							"name": "LIMIT_MAX_VIEWPORT_DIMENSIONS_Y",
 							"value": 36
+						},
+						{
+							"name": "LIMIT_METALFX_TEMPORAL_SCALER_MIN_SCALE",
+							"value": 46
+						},
+						{
+							"name": "LIMIT_METALFX_TEMPORAL_SCALER_MAX_SCALE",
+							"value": 47
 						}
 					]
 				},
@@ -221679,8 +221723,16 @@
 							"value": 2
 						},
 						{
-							"name": "VIEWPORT_SCALING_3D_MODE_MAX",
+							"name": "VIEWPORT_SCALING_3D_MODE_METALFX_SPATIAL",
 							"value": 3
+						},
+						{
+							"name": "VIEWPORT_SCALING_3D_MODE_METALFX_TEMPORAL",
+							"value": 4
+						},
+						{
+							"name": "VIEWPORT_SCALING_3D_MODE_MAX",
+							"value": 5
 						}
 					]
 				},
@@ -236976,6 +237028,18 @@
 					}
 				},
 				{
+					"name": "get_selection_line_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "select_all",
 					"is_const": false,
 					"is_vararg": false,
@@ -250441,6 +250505,38 @@
 			"is_instantiable": true,
 			"inherits": "Node3D",
 			"api_type": "core",
+			"enums": [
+				{
+					"name": "BoneAxis",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "BONE_AXIS_PLUS_X",
+							"value": 0
+						},
+						{
+							"name": "BONE_AXIS_MINUS_X",
+							"value": 1
+						},
+						{
+							"name": "BONE_AXIS_PLUS_Y",
+							"value": 2
+						},
+						{
+							"name": "BONE_AXIS_MINUS_Y",
+							"value": 3
+						},
+						{
+							"name": "BONE_AXIS_PLUS_Z",
+							"value": 4
+						},
+						{
+							"name": "BONE_AXIS_MINUS_Z",
+							"value": 5
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "_process_modification",
@@ -258350,6 +258446,33 @@
 					"name": "mouse_target",
 					"setter": "set_mouse_target",
 					"getter": "is_mouse_target_enabled"
+				}
+			]
+		},
+		{
+			"name": "SubtweenTweener",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Tweener",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_delay",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 449181780,
+					"return_value": {
+						"type": "SubtweenTweener"
+					},
+					"arguments": [
+						{
+							"name": "delay",
+							"type": "float",
+							"meta": "double"
+						}
+					]
 				}
 			]
 		},
@@ -294351,6 +294474,23 @@
 					]
 				},
 				{
+					"name": "tween_subtween",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1567358477,
+					"return_value": {
+						"type": "SubtweenTweener"
+					},
+					"arguments": [
+						{
+							"name": "subtween",
+							"type": "Tween"
+						}
+					]
+				},
+				{
 					"name": "custom_step",
 					"is_const": false,
 					"is_vararg": false,
@@ -297448,8 +297588,16 @@
 							"value": 2
 						},
 						{
-							"name": "SCALING_3D_MODE_MAX",
+							"name": "SCALING_3D_MODE_METALFX_SPATIAL",
 							"value": 3
+						},
+						{
+							"name": "SCALING_3D_MODE_METALFX_TEMPORAL",
+							"value": 4
+						},
+						{
+							"name": "SCALING_3D_MODE_MAX",
+							"value": 5
 						}
 					]
 				},
