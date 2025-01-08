@@ -80996,6 +80996,48 @@
 					]
 				},
 				{
+					"name": "WindowResizeEdge",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "WINDOW_EDGE_TOP_LEFT",
+							"value": 0
+						},
+						{
+							"name": "WINDOW_EDGE_TOP",
+							"value": 1
+						},
+						{
+							"name": "WINDOW_EDGE_TOP_RIGHT",
+							"value": 2
+						},
+						{
+							"name": "WINDOW_EDGE_LEFT",
+							"value": 3
+						},
+						{
+							"name": "WINDOW_EDGE_RIGHT",
+							"value": 4
+						},
+						{
+							"name": "WINDOW_EDGE_BOTTOM_LEFT",
+							"value": 5
+						},
+						{
+							"name": "WINDOW_EDGE_BOTTOM",
+							"value": 6
+						},
+						{
+							"name": "WINDOW_EDGE_BOTTOM_RIGHT",
+							"value": 7
+						},
+						{
+							"name": "WINDOW_EDGE_MAX",
+							"value": 8
+						}
+					]
+				},
+				{
 					"name": "VSyncMode",
 					"is_bitfield": false,
 					"values": [
@@ -84076,6 +84118,26 @@
 					]
 				},
 				{
+					"name": "window_start_resize",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4009722312,
+					"arguments": [
+						{
+							"name": "edge",
+							"type": "enum::DisplayServer.WindowResizeEdge"
+						},
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
 					"name": "ime_get_selection",
 					"is_const": true,
 					"is_vararg": false,
@@ -85902,12 +85964,24 @@
 							"value": 1
 						},
 						{
+							"name": "CONTEXT_SLOT_SCRIPT_EDITOR",
+							"value": 2
+						},
+						{
 							"name": "CONTEXT_SLOT_FILESYSTEM_CREATE",
 							"value": 3
 						},
 						{
-							"name": "CONTEXT_SLOT_SCRIPT_EDITOR",
-							"value": 2
+							"name": "CONTEXT_SLOT_SCRIPT_EDITOR_CODE",
+							"value": 4
+						},
+						{
+							"name": "CONTEXT_SLOT_SCENE_TABS",
+							"value": 5
+						},
+						{
+							"name": "CONTEXT_SLOT_2D_EDITOR",
+							"value": 6
 						}
 					]
 				}
@@ -86962,6 +87036,27 @@
 					]
 				},
 				{
+					"name": "get_internal_export_files",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 89550086,
+					"return_value": {
+						"type": "Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "preset",
+							"type": "EditorExportPreset"
+						},
+						{
+							"name": "debug",
+							"type": "bool"
+						}
+					]
+				},
+				{
 					"name": "get_forced_export_files",
 					"is_const": false,
 					"is_vararg": false,
@@ -86970,17 +87065,6 @@
 					"hash": 2981934095,
 					"return_value": {
 						"type": "PackedStringArray"
-					}
-				},
-				{
-					"name": "get_internal_export_files",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 2382534195,
-					"return_value": {
-						"type": "Dictionary"
 					}
 				}
 			]
@@ -139050,6 +139134,58 @@
 					}
 				},
 				{
+					"name": "set_supersampling_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_supersampling_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_supersampling_factor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "factor",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_supersampling_factor",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "set_use_denoiser",
 					"is_const": false,
 					"is_vararg": false,
@@ -139260,6 +139396,18 @@
 					"name": "quality",
 					"setter": "set_bake_quality",
 					"getter": "get_bake_quality"
+				},
+				{
+					"type": "bool",
+					"name": "supersampling",
+					"setter": "set_supersampling_enabled",
+					"getter": "is_supersampling_enabled"
+				},
+				{
+					"type": "float",
+					"name": "supersampling_factor",
+					"setter": "set_supersampling_factor",
+					"getter": "get_supersampling_factor"
 				},
 				{
 					"type": "int",
@@ -272357,6 +272505,28 @@
 					]
 				},
 				{
+					"name": "shaped_get_span_embedded_object",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4069510997,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
 					"name": "shaped_set_span_update_font",
 					"is_const": false,
 					"is_vararg": false,
@@ -276938,6 +277108,28 @@
 				},
 				{
 					"name": "_shaped_get_span_meta",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "_shaped_get_span_embedded_object",
 					"is_const": true,
 					"is_static": false,
 					"is_required": true,
