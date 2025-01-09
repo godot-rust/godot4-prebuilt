@@ -98541,6 +98541,10 @@
 						{
 							"name": "TONE_MAPPER_ACES",
 							"value": 3
+						},
+						{
+							"name": "TONE_MAPPER_AGX",
+							"value": 4
 						}
 					]
 				},
@@ -222503,6 +222507,10 @@
 						{
 							"name": "ENV_TONE_MAPPER_ACES",
 							"value": 3
+						},
+						{
+							"name": "ENV_TONE_MAPPER_AGX",
+							"value": 4
 						}
 					]
 				},
@@ -229335,7 +229343,7 @@
 							"default_value": "1.0"
 						},
 						{
-							"name": "sky_contibution",
+							"name": "sky_contribution",
 							"type": "float",
 							"meta": "float",
 							"default_value": "0.0"
