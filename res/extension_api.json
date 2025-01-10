@@ -43913,6 +43913,40 @@
 			"api_type": "core",
 			"methods": [
 				{
+					"name": "load_from_buffer",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1674970313,
+					"return_value": {
+						"type": "AudioStreamMP3"
+					},
+					"arguments": [
+						{
+							"name": "stream_data",
+							"type": "PackedByteArray"
+						}
+					]
+				},
+				{
+					"name": "load_from_file",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 4238362998,
+					"return_value": {
+						"type": "AudioStreamMP3"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
 					"name": "set_data",
 					"is_const": false,
 					"is_vararg": false,
@@ -44136,7 +44170,7 @@
 					},
 					"arguments": [
 						{
-							"name": "buffer",
+							"name": "stream_data",
 							"type": "PackedByteArray"
 						}
 					]
@@ -47904,6 +47938,28 @@
 			],
 			"methods": [
 				{
+					"name": "load_from_buffer",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 4266838938,
+					"return_value": {
+						"type": "AudioStreamWAV"
+					},
+					"arguments": [
+						{
+							"name": "stream_data",
+							"type": "PackedByteArray"
+						},
+						{
+							"name": "options",
+							"type": "Dictionary",
+							"default_value": "{}"
+						}
+					]
+				},
+				{
 					"name": "load_from_file",
 					"is_const": false,
 					"is_vararg": false,
@@ -47917,28 +47973,6 @@
 						{
 							"name": "path",
 							"type": "String"
-						},
-						{
-							"name": "options",
-							"type": "Dictionary",
-							"default_value": "{}"
-						}
-					]
-				},
-				{
-					"name": "load_from_buffer",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 4266838938,
-					"return_value": {
-						"type": "AudioStreamWAV"
-					},
-					"arguments": [
-						{
-							"name": "buffer",
-							"type": "PackedByteArray"
 						},
 						{
 							"name": "options",
@@ -234472,7 +234506,7 @@
 					},
 					"arguments": [
 						{
-							"name": "buffer",
+							"name": "stream_data",
 							"type": "PackedByteArray"
 						}
 					]
@@ -311774,6 +311808,28 @@
 					"is_static": false,
 					"is_virtual": false,
 					"hash": 3218959716
+				},
+				{
+					"name": "start_drag",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "start_resize",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 122288853,
+					"arguments": [
+						{
+							"name": "edge",
+							"type": "enum::DisplayServer.WindowResizeEdge"
+						}
+					]
 				},
 				{
 					"name": "set_ime_active",
