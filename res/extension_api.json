@@ -80710,6 +80710,10 @@
 						{
 							"name": "FEATURE_NATIVE_DIALOG_FILE_MIME",
 							"value": 30
+						},
+						{
+							"name": "FEATURE_EMOJI_AND_SYMBOL_PICKER",
+							"value": 31
 						}
 					]
 				},
@@ -84611,6 +84615,14 @@
 							"type": "enum::Key"
 						}
 					]
+				},
+				{
+					"name": "show_emoji_and_symbol_picker",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051624405
 				},
 				{
 					"name": "process_events",
@@ -133693,6 +133705,17 @@
 					}
 				},
 				{
+					"name": "get_h_scroll_bar",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4004517983,
+					"return_value": {
+						"type": "HScrollBar"
+					}
+				},
+				{
 					"name": "set_text_overrun_behavior",
 					"is_const": false,
 					"is_vararg": false,
@@ -133715,6 +133738,31 @@
 					"hash": 3779142101,
 					"return_value": {
 						"type": "enum::TextServer.OverrunBehavior"
+					}
+				},
+				{
+					"name": "set_wraparound_items",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "has_wraparound_items",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
 					}
 				},
 				{
@@ -133837,6 +133885,12 @@
 					"name": "text_overrun_behavior",
 					"setter": "set_text_overrun_behavior",
 					"getter": "get_text_overrun_behavior"
+				},
+				{
+					"type": "bool",
+					"name": "wraparound_items",
+					"setter": "set_wraparound_items",
+					"getter": "has_wraparound_items"
 				},
 				{
 					"type": "int",
@@ -140557,8 +140611,12 @@
 							"value": 29
 						},
 						{
-							"name": "MENU_MAX",
+							"name": "MENU_EMOJI_AND_SYMBOL",
 							"value": 30
+						},
+						{
+							"name": "MENU_MAX",
+							"value": 31
 						}
 					]
 				},
@@ -141368,6 +141426,31 @@
 					}
 				},
 				{
+					"name": "set_emoji_menu_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_emoji_menu_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_virtual_keyboard_enabled",
 					"is_const": false,
 					"is_vararg": false,
@@ -141729,6 +141812,12 @@
 					"name": "context_menu_enabled",
 					"setter": "set_context_menu_enabled",
 					"getter": "is_context_menu_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "emoji_menu_enabled",
+					"setter": "set_emoji_menu_enabled",
+					"getter": "is_emoji_menu_enabled"
 				},
 				{
 					"type": "bool",
@@ -172743,6 +172832,32 @@
 							"name": "swapchain",
 							"type": "int",
 							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "get_projection_layer",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					}
+				},
+				{
+					"name": "set_render_region",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1763793166,
+					"arguments": [
+						{
+							"name": "render_region",
+							"type": "Rect2i"
 						}
 					]
 				},
@@ -262121,8 +262236,12 @@
 							"value": 29
 						},
 						{
-							"name": "MENU_MAX",
+							"name": "MENU_EMOJI_AND_SYMBOL",
 							"value": 30
+						},
+						{
+							"name": "MENU_MAX",
+							"value": 31
 						}
 					]
 				},
@@ -262580,6 +262699,31 @@
 				},
 				{
 					"name": "is_context_menu_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_emoji_menu_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_emoji_menu_enabled",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -266171,6 +266315,12 @@
 					"name": "context_menu_enabled",
 					"setter": "set_context_menu_enabled",
 					"getter": "is_context_menu_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "emoji_menu_enabled",
+					"setter": "set_emoji_menu_enabled",
+					"getter": "is_emoji_menu_enabled"
 				},
 				{
 					"type": "bool",
@@ -318928,6 +319078,31 @@
 					]
 				},
 				{
+					"name": "get_vrs_render_region",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 410525958,
+					"return_value": {
+						"type": "Rect2i"
+					}
+				},
+				{
+					"name": "set_vrs_render_region",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1763793166,
+					"arguments": [
+						{
+							"name": "render_region",
+							"type": "Rect2i"
+						}
+					]
+				},
+				{
 					"name": "make_vrs_texture",
 					"is_const": false,
 					"is_vararg": false,
@@ -318961,6 +319136,12 @@
 					"name": "vrs_strength",
 					"setter": "set_vrs_strength",
 					"getter": "get_vrs_strength"
+				},
+				{
+					"type": "Rect2i",
+					"name": "vrs_render_region",
+					"setter": "set_vrs_render_region",
+					"getter": "get_vrs_render_region"
 				}
 			]
 		},
