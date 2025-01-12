@@ -926,10 +926,24 @@ pub type GDExtensionClassGetVirtual = ::std::option::Option<
         p_name: GDExtensionConstStringNamePtr,
     ) -> GDExtensionClassCallVirtual,
 >;
+pub type GDExtensionClassGetVirtual2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_class_userdata: *mut ::std::os::raw::c_void,
+        p_name: GDExtensionConstStringNamePtr,
+        p_hash: u32,
+    ) -> GDExtensionClassCallVirtual,
+>;
 pub type GDExtensionClassGetVirtualCallData = ::std::option::Option<
     unsafe extern "C" fn(
         p_class_userdata: *mut ::std::os::raw::c_void,
         p_name: GDExtensionConstStringNamePtr,
+    ) -> *mut ::std::os::raw::c_void,
+>;
+pub type GDExtensionClassGetVirtualCallData2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_class_userdata: *mut ::std::os::raw::c_void,
+        p_name: GDExtensionConstStringNamePtr,
+        p_hash: u32,
     ) -> *mut ::std::os::raw::c_void,
 >;
 pub type GDExtensionClassCallVirtualWithData = ::std::option::Option<
@@ -1705,8 +1719,8 @@ pub struct GDExtensionClassCreationInfo4 {
     pub create_instance_func: GDExtensionClassCreateInstance2,
     pub free_instance_func: GDExtensionClassFreeInstance,
     pub recreate_instance_func: GDExtensionClassRecreateInstance,
-    pub get_virtual_func: GDExtensionClassGetVirtual,
-    pub get_virtual_call_data_func: GDExtensionClassGetVirtualCallData,
+    pub get_virtual_func: GDExtensionClassGetVirtual2,
+    pub get_virtual_call_data_func: GDExtensionClassGetVirtualCallData2,
     pub call_virtual_with_data_func: GDExtensionClassCallVirtualWithData,
     pub class_userdata: *mut ::std::os::raw::c_void,
 }
