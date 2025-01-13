@@ -79791,9 +79791,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2610976713,
+					"hash": 166280745,
 					"hash_compatibility": [
-						2018049411
+						2018049411,
+						2610976713
 					],
 					"return_value": {
 						"type": "enum::Error"
@@ -83113,9 +83114,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3323674545,
+					"hash": 36873697,
 					"hash_compatibility": [
-						4162880507
+						4162880507,
+						3323674545
 					],
 					"return_value": {
 						"type": "bool"
@@ -172681,7 +172683,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3255299855,
+					"hash": 2963875352,
+					"hash_compatibility": [
+						3255299855
+					],
 					"return_value": {
 						"type": "Transform3D"
 					},
@@ -286330,7 +286335,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2275361663
+					"hash": 3218959716,
+					"hash_compatibility": [
+						2275361663
+					]
 				},
 				{
 					"name": "map_pattern",
