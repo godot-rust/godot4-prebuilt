@@ -53689,6 +53689,21 @@
 					]
 				},
 				{
+					"name": "request_particles_process",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "process_time",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
 					"name": "is_emitting",
 					"is_const": true,
 					"is_vararg": false,
@@ -53829,6 +53844,58 @@
 					}
 				},
 				{
+					"name": "set_use_fixed_seed",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use_fixed_seed",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_use_fixed_seed",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_seed",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "seed",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_seed",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
 					"name": "set_draw_order",
 					"is_const": false,
 					"is_vararg": false,
@@ -53884,7 +53951,17 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3218959716
+					"hash": 107499316,
+					"hash_compatibility": [
+						3218959716
+					],
+					"arguments": [
+						{
+							"name": "keep_seed",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
 				},
 				{
 					"name": "set_direction",
@@ -54443,6 +54520,12 @@
 					"getter": "get_amount"
 				},
 				{
+					"type": "Texture2D",
+					"name": "texture",
+					"setter": "set_texture",
+					"getter": "get_texture"
+				},
+				{
 					"type": "float",
 					"name": "lifetime",
 					"setter": "set_lifetime",
@@ -54479,6 +54562,18 @@
 					"getter": "get_randomness_ratio"
 				},
 				{
+					"type": "bool",
+					"name": "use_fixed_seed",
+					"setter": "set_use_fixed_seed",
+					"getter": "get_use_fixed_seed"
+				},
+				{
+					"type": "int",
+					"name": "seed",
+					"setter": "set_seed",
+					"getter": "get_seed"
+				},
+				{
 					"type": "float",
 					"name": "lifetime_randomness",
 					"setter": "set_lifetime_randomness",
@@ -54507,12 +54602,6 @@
 					"name": "draw_order",
 					"setter": "set_draw_order",
 					"getter": "get_draw_order"
-				},
-				{
-					"type": "Texture2D",
-					"name": "texture",
-					"setter": "set_texture",
-					"getter": "get_texture"
 				},
 				{
 					"type": "int",
@@ -55395,12 +55484,89 @@
 					}
 				},
 				{
+					"name": "set_use_fixed_seed",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use_fixed_seed",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_use_fixed_seed",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_seed",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "seed",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_seed",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
 					"name": "restart",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3218959716
+					"hash": 107499316,
+					"hash_compatibility": [
+						3218959716
+					],
+					"arguments": [
+						{
+							"name": "keep_seed",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "request_particles_process",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "process_time",
+							"type": "float",
+							"meta": "float"
+						}
+					]
 				},
 				{
 					"name": "capture_aabb",
@@ -56189,6 +56355,18 @@
 					"name": "randomness",
 					"setter": "set_randomness_ratio",
 					"getter": "get_randomness_ratio"
+				},
+				{
+					"type": "bool",
+					"name": "use_fixed_seed",
+					"setter": "set_use_fixed_seed",
+					"getter": "get_use_fixed_seed"
+				},
+				{
+					"type": "int",
+					"name": "seed",
+					"setter": "set_seed",
+					"getter": "get_seed"
 				},
 				{
 					"type": "float",
@@ -95641,6 +95819,62 @@
 							"type": "String"
 						}
 					]
+				},
+				{
+					"name": "add_import_option",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 402577236,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						},
+						{
+							"name": "value",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "add_import_option_advanced",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3674075649,
+					"arguments": [
+						{
+							"name": "type",
+							"type": "enum::Variant.Type"
+						},
+						{
+							"name": "name",
+							"type": "String"
+						},
+						{
+							"name": "default_value",
+							"type": "Variant"
+						},
+						{
+							"name": "hint",
+							"type": "enum::PropertyHint",
+							"default_value": "0"
+						},
+						{
+							"name": "hint_string",
+							"type": "String",
+							"default_value": "\"\""
+						},
+						{
+							"name": "usage_flags",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "6"
+						}
+					]
 				}
 			]
 		},
@@ -115374,6 +115608,21 @@
 					]
 				},
 				{
+					"name": "request_particles_process",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "process_time",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
 					"name": "is_emitting",
 					"is_const": true,
 					"is_vararg": false,
@@ -115625,7 +115874,17 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3218959716
+					"hash": 107499316,
+					"hash_compatibility": [
+						3218959716
+					],
+					"arguments": [
+						{
+							"name": "keep_seed",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
 				},
 				{
 					"name": "set_sub_emitter",
@@ -115829,6 +116088,58 @@
 						"type": "float",
 						"meta": "float"
 					}
+				},
+				{
+					"name": "set_use_fixed_seed",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use_fixed_seed",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_use_fixed_seed",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_seed",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "seed",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_seed",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
 				}
 			],
 			"signals": [
@@ -115860,6 +116171,12 @@
 					"name": "sub_emitter",
 					"setter": "set_sub_emitter",
 					"getter": "get_sub_emitter"
+				},
+				{
+					"type": "Texture2D",
+					"name": "texture",
+					"setter": "set_texture",
+					"getter": "get_texture"
 				},
 				{
 					"type": "float",
@@ -115902,6 +116219,18 @@
 					"name": "randomness",
 					"setter": "set_randomness_ratio",
 					"getter": "get_randomness_ratio"
+				},
+				{
+					"type": "bool",
+					"name": "use_fixed_seed",
+					"setter": "set_use_fixed_seed",
+					"getter": "get_use_fixed_seed"
+				},
+				{
+					"type": "int",
+					"name": "seed",
+					"setter": "set_seed",
+					"getter": "get_seed"
 				},
 				{
 					"type": "int",
@@ -115968,12 +116297,6 @@
 					"name": "trail_section_subdivisions",
 					"setter": "set_trail_section_subdivisions",
 					"getter": "get_trail_section_subdivisions"
-				},
-				{
-					"type": "Texture2D",
-					"name": "texture",
-					"setter": "set_texture",
-					"getter": "get_texture"
 				},
 				{
 					"type": "ParticleProcessMaterial,ShaderMaterial",
@@ -116487,6 +116810,58 @@
 					}
 				},
 				{
+					"name": "set_use_fixed_seed",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use_fixed_seed",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_use_fixed_seed",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_seed",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "seed",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_seed",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
 					"name": "set_draw_order",
 					"is_const": false,
 					"is_vararg": false,
@@ -116606,7 +116981,17 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3218959716
+					"hash": 107499316,
+					"hash_compatibility": [
+						3218959716
+					],
+					"arguments": [
+						{
+							"name": "keep_seed",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
 				},
 				{
 					"name": "capture_aabb",
@@ -116792,6 +117177,21 @@
 						"type": "float",
 						"meta": "float"
 					}
+				},
+				{
+					"name": "request_particles_process",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "process_time",
+							"type": "float",
+							"meta": "float"
+						}
+					]
 				}
 			],
 			"signals": [
@@ -116865,6 +117265,18 @@
 					"name": "randomness",
 					"setter": "set_randomness_ratio",
 					"getter": "get_randomness_ratio"
+				},
+				{
+					"type": "bool",
+					"name": "use_fixed_seed",
+					"setter": "set_use_fixed_seed",
+					"getter": "get_use_fixed_seed"
+				},
+				{
+					"type": "int",
+					"name": "seed",
+					"setter": "set_seed",
+					"getter": "get_seed"
 				},
 				{
 					"type": "int",
@@ -172924,6 +173336,45 @@
 					}
 				},
 				{
+					"name": "find_action",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4106179378,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						},
+						{
+							"name": "action_set",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "action_get_handle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3917799429,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "action",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "get_hand_tracker",
 					"is_const": false,
 					"is_vararg": false,
@@ -227942,6 +228393,25 @@
 					]
 				},
 				{
+					"name": "particles_request_process_time",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "particles",
+							"type": "RID"
+						},
+						{
+							"name": "time",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
 					"name": "particles_set_explosiveness_ratio",
 					"is_const": false,
 					"is_vararg": false,
@@ -237460,10 +237930,11 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2185176273,
+					"hash": 117236061,
 					"hash_compatibility": [
 						4258957458,
-						4132157579
+						2185176273,
+						4258957458
 					],
 					"arguments": [
 						{
@@ -237480,6 +237951,11 @@
 							"type": "int",
 							"meta": "int32",
 							"default_value": "1"
+						},
+						{
+							"name": "shrink",
+							"type": "bool",
+							"default_value": "true"
 						}
 					]
 				},
@@ -254837,6 +255313,1944 @@
 					"name": "margin",
 					"setter": "set_margin",
 					"getter": "get_margin"
+				}
+			]
+		},
+		{
+			"name": "SpringBoneCollision3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Node3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_skeleton",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1488626673,
+					"return_value": {
+						"type": "Skeleton3D"
+					}
+				},
+				{
+					"name": "set_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_position_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_position_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_rotation_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1727505552,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "Quaternion"
+						}
+					]
+				},
+				{
+					"name": "get_rotation_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1222331677,
+					"return_value": {
+						"type": "Quaternion"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "StringName",
+					"name": "bone_name",
+					"setter": "set_bone_name",
+					"getter": "get_bone_name"
+				},
+				{
+					"type": "int",
+					"name": "bone",
+					"setter": "set_bone",
+					"getter": "get_bone"
+				},
+				{
+					"type": "Vector3",
+					"name": "position_offset",
+					"setter": "set_position_offset",
+					"getter": "get_position_offset"
+				},
+				{
+					"type": "Quaternion",
+					"name": "rotation_offset",
+					"setter": "set_rotation_offset",
+					"getter": "get_rotation_offset"
+				}
+			]
+		},
+		{
+			"name": "SpringBoneCollisionCapsule3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SpringBoneCollision3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_radius",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_radius",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_height",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "height",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_height",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_inside",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_inside",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "float",
+					"name": "radius",
+					"setter": "set_radius",
+					"getter": "get_radius"
+				},
+				{
+					"type": "float",
+					"name": "height",
+					"setter": "set_height",
+					"getter": "get_height"
+				},
+				{
+					"type": "bool",
+					"name": "inside",
+					"setter": "set_inside",
+					"getter": "is_inside"
+				}
+			]
+		},
+		{
+			"name": "SpringBoneCollisionPlane3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SpringBoneCollision3D",
+			"api_type": "core"
+		},
+		{
+			"name": "SpringBoneCollisionSphere3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SpringBoneCollision3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_radius",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_radius",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_inside",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_inside",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "float",
+					"name": "radius",
+					"setter": "set_radius",
+					"getter": "get_radius"
+				},
+				{
+					"type": "bool",
+					"name": "inside",
+					"setter": "set_inside",
+					"getter": "is_inside"
+				}
+			]
+		},
+		{
+			"name": "SpringBoneSimulator3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SkeletonModifier3D",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "BoneDirection",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "BONE_DIRECTION_PLUS_X",
+							"value": 0
+						},
+						{
+							"name": "BONE_DIRECTION_MINUS_X",
+							"value": 1
+						},
+						{
+							"name": "BONE_DIRECTION_PLUS_Y",
+							"value": 2
+						},
+						{
+							"name": "BONE_DIRECTION_MINUS_Y",
+							"value": 3
+						},
+						{
+							"name": "BONE_DIRECTION_PLUS_Z",
+							"value": 4
+						},
+						{
+							"name": "BONE_DIRECTION_MINUS_Z",
+							"value": 5
+						},
+						{
+							"name": "BONE_DIRECTION_FROM_PARENT",
+							"value": 6
+						}
+					]
+				},
+				{
+					"name": "CenterFrom",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "CENTER_FROM_WORLD_ORIGIN",
+							"value": 0
+						},
+						{
+							"name": "CENTER_FROM_NODE",
+							"value": 1
+						},
+						{
+							"name": "CENTER_FROM_BONE",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "RotationAxis",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ROTATION_AXIS_X",
+							"value": 0
+						},
+						{
+							"name": "ROTATION_AXIS_Y",
+							"value": 1
+						},
+						{
+							"name": "ROTATION_AXIS_Z",
+							"value": 2
+						},
+						{
+							"name": "ROTATION_AXIS_ALL",
+							"value": 3
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_root_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_root_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_root_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_root_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_extend_end_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_end_bone_extended",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone_direction",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 204796492,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_direction",
+							"type": "enum::SpringBoneSimulator3D.BoneDirection"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2438315700,
+					"return_value": {
+						"type": "enum::SpringBoneSimulator3D.BoneDirection"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "length",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone_tip_radius",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone_tip_radius",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_center_from",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2551505749,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "center_from",
+							"type": "enum::SpringBoneSimulator3D.CenterFrom"
+						}
+					]
+				},
+				{
+					"name": "get_center_from",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2721930813,
+					"return_value": {
+						"type": "enum::SpringBoneSimulator3D.CenterFrom"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_center_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2761262315,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "node_path",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_center_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 408788394,
+					"return_value": {
+						"type": "NodePath"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_center_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_center_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_center_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_center_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_radius",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_radius",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_rotation_axis",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3534169209,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "axis",
+							"type": "enum::SpringBoneSimulator3D.RotationAxis"
+						}
+					]
+				},
+				{
+					"name": "get_rotation_axis",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 748837671,
+					"return_value": {
+						"type": "enum::SpringBoneSimulator3D.RotationAxis"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_radius_damping_curve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1447180063,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "curve",
+							"type": "Curve"
+						}
+					]
+				},
+				{
+					"name": "get_radius_damping_curve",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 747537754,
+					"return_value": {
+						"type": "Curve"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_stiffness",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "stiffness",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_stiffness",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_stiffness_damping_curve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1447180063,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "curve",
+							"type": "Curve"
+						}
+					]
+				},
+				{
+					"name": "get_stiffness_damping_curve",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 747537754,
+					"return_value": {
+						"type": "Curve"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_drag",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "drag",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_drag",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_drag_damping_curve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1447180063,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "curve",
+							"type": "Curve"
+						}
+					]
+				},
+				{
+					"name": "get_drag_damping_curve",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 747537754,
+					"return_value": {
+						"type": "Curve"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_gravity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "gravity",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_gravity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_gravity_damping_curve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1447180063,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "curve",
+							"type": "Curve"
+						}
+					]
+				},
+				{
+					"name": "get_gravity_damping_curve",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 747537754,
+					"return_value": {
+						"type": "Curve"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_gravity_direction",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1530502735,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "gravity_direction",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_gravity_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 711720468,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_setting_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_setting_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "clear_settings",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "set_individual_config",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_config_individual",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joint_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1391810591,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joint_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3175239445,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_rotation_axis",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4224018032,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "axis",
+							"type": "enum::SpringBoneSimulator3D.RotationAxis"
+						}
+					]
+				},
+				{
+					"name": "get_joint_rotation_axis",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2488679199,
+					"return_value": {
+						"type": "enum::SpringBoneSimulator3D.RotationAxis"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_radius",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3506521499,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_joint_radius",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3085491603,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_stiffness",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3506521499,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "stiffness",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_joint_stiffness",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3085491603,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_drag",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3506521499,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "drag",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_joint_drag",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3085491603,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_gravity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3506521499,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "gravity",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_joint_gravity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3085491603,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_gravity_direction",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2866752138,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "gravity_direction",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_joint_gravity_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1592972041,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joint_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_enable_all_child_collisions",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "are_all_child_collisions_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_exclude_collision_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 132481804,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "collision",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "node_path",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_exclude_collision_path",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 464924783,
+					"return_value": {
+						"type": "NodePath"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "collision",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_exclude_collision_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_exclude_collision_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "clear_exclude_collisions",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_collision_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 132481804,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "collision",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "node_path",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_collision_path",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 464924783,
+					"return_value": {
+						"type": "NodePath"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "collision",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_collision_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collision_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "clear_collisions",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "reset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "setting_count",
+					"setter": "set_setting_count",
+					"getter": "get_setting_count"
 				}
 			]
 		},
@@ -284480,6 +286894,23 @@
 					]
 				},
 				{
+					"name": "has_custom_data",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3927539163,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "layer_name",
+							"type": "String"
+						}
+					]
+				},
+				{
 					"name": "set_custom_data_by_layer_id",
 					"is_const": false,
 					"is_vararg": false,
@@ -288335,6 +290766,23 @@
 							"type": "int",
 							"meta": "int32"
 						},
+						{
+							"name": "layer_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "has_custom_data_layer_by_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3927539163,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
 						{
 							"name": "layer_name",
 							"type": "String"
