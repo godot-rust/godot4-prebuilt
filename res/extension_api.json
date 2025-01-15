@@ -3,9 +3,9 @@
 		"version_major": 4,
 		"version_minor": 4,
 		"version_patch": 0,
-		"version_status": "dev",
+		"version_status": "beta",
 		"version_build": "custom_build",
-		"version_full_name": "Godot Engine v4.4.dev.custom_build"
+		"version_full_name": "Godot Engine v4.4.beta.custom_build"
 	},
 	"builtin_class_sizes": [
 		{
@@ -95728,19 +95728,6 @@
 			],
 			"methods": [
 				{
-					"name": "_get_import_flags",
-					"is_const": true,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "uint32"
-					}
-				},
-				{
 					"name": "_get_extensions",
 					"is_const": true,
 					"is_static": false,
@@ -159709,6 +159696,17 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "get_bounds",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1639390495,
+					"return_value": {
+						"type": "Rect2"
+					}
 				}
 			],
 			"signals": [
@@ -160029,6 +160027,17 @@
 					"hash": 36873697,
 					"return_value": {
 						"type": "bool"
+					}
+				},
+				{
+					"name": "get_bounds",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1068685055,
+					"return_value": {
+						"type": "AABB"
 					}
 				}
 			],
@@ -161001,6 +161010,23 @@
 						{
 							"name": "uniformly",
 							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "region_get_bounds",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1097232729,
+					"return_value": {
+						"type": "Rect2"
+					},
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
 						}
 					]
 				},
@@ -163626,6 +163652,23 @@
 						{
 							"name": "uniformly",
 							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "region_get_bounds",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 974181306,
+					"return_value": {
+						"type": "AABB"
+					},
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
 						}
 					]
 				},
@@ -179923,8 +179966,12 @@
 							"value": 3
 						},
 						{
-							"name": "SUB_EMITTER_MAX",
+							"name": "SUB_EMITTER_AT_START",
 							"value": 4
+						},
+						{
+							"name": "SUB_EMITTER_MAX",
+							"value": 5
 						}
 					]
 				},
@@ -181064,6 +181111,33 @@
 					]
 				},
 				{
+					"name": "get_sub_emitter_amount_at_start",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_sub_emitter_amount_at_start",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "amount",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "get_sub_emitter_keep_velocity",
 					"is_const": true,
 					"is_vararg": false,
@@ -181959,6 +182033,12 @@
 					"name": "sub_emitter_amount_at_collision",
 					"setter": "set_sub_emitter_amount_at_collision",
 					"getter": "get_sub_emitter_amount_at_collision"
+				},
+				{
+					"type": "int",
+					"name": "sub_emitter_amount_at_start",
+					"setter": "set_sub_emitter_amount_at_start",
+					"getter": "get_sub_emitter_amount_at_start"
 				},
 				{
 					"type": "bool",
@@ -218764,6 +218844,10 @@
 						{
 							"name": "STORAGE_BUFFER_USAGE_DISPATCH_INDIRECT",
 							"value": 1
+						},
+						{
+							"name": "STORAGE_BUFFER_USAGE_DEVICE_ADDRESS",
+							"value": 2
 						}
 					]
 				},
@@ -219358,6 +219442,16 @@
 						{
 							"name": "PIPELINE_SPECIALIZATION_CONSTANT_TYPE_FLOAT",
 							"value": 2
+						}
+					]
+				},
+				{
+					"name": "Features",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SUPPORTS_BUFFER_DEVICE_ADDRESS",
+							"value": 6
 						}
 					]
 				},
@@ -220476,8 +220570,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3410049843,
+					"hash": 76995708,
 					"hash_compatibility": [
+						3410049843,
 						3491282828
 					],
 					"return_value": {
@@ -220496,6 +220591,11 @@
 						},
 						{
 							"name": "use_as_storage",
+							"type": "bool",
+							"default_value": "false"
+						},
+						{
+							"name": "enable_device_address",
 							"type": "bool",
 							"default_value": "false"
 						}
@@ -220560,8 +220660,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3935920523,
+					"hash": 2360653086,
 					"hash_compatibility": [
+						3935920523,
 						975915977
 					],
 					"return_value": {
@@ -220584,6 +220685,11 @@
 						},
 						{
 							"name": "use_restart_indices",
+							"type": "bool",
+							"default_value": "false"
+						},
+						{
+							"name": "enable_device_address",
 							"type": "bool",
 							"default_value": "false"
 						}
@@ -220752,8 +220858,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 34556762,
+					"hash": 3410049843,
 					"hash_compatibility": [
+						34556762,
 						1453158401
 					],
 					"return_value": {
@@ -220769,6 +220876,11 @@
 							"name": "data",
 							"type": "PackedByteArray",
 							"default_value": "PackedByteArray()"
+						},
+						{
+							"name": "enable_device_address",
+							"type": "bool",
+							"default_value": "false"
 						}
 					]
 				},
@@ -221040,6 +221152,24 @@
 							"type": "int",
 							"meta": "uint32",
 							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "buffer_get_device_address",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3917799429,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "buffer",
+							"type": "RID"
 						}
 					]
 				},
@@ -221927,6 +222057,23 @@
 							"name": "index",
 							"type": "int",
 							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "has_feature",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1772728326,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "feature",
+							"type": "enum::RenderingDevice.Features"
 						}
 					]
 				},
@@ -226142,7 +226289,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 283685892,
+					"hash": 557240154,
+					"hash_compatibility": [
+						283685892
+					],
 					"arguments": [
 						{
 							"name": "multimesh",
@@ -226164,6 +226314,11 @@
 						},
 						{
 							"name": "custom_data_format",
+							"type": "bool",
+							"default_value": "false"
+						},
+						{
+							"name": "use_indirect",
 							"type": "bool",
 							"default_value": "false"
 						}
@@ -226506,6 +226661,23 @@
 						{
 							"name": "buffer",
 							"type": "PackedFloat32Array"
+						}
+					]
+				},
+				{
+					"name": "multimesh_get_command_buffer_rd_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3814569979,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "multimesh",
+							"type": "RID"
 						}
 					]
 				},
@@ -255985,45 +256157,6 @@
 				},
 				{
 					"name": "get_end_bone_length",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2339986948,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					},
-					"arguments": [
-						{
-							"name": "index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_end_bone_tip_radius",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1602489585,
-					"arguments": [
-						{
-							"name": "index",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "radius",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_end_bone_tip_radius",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
