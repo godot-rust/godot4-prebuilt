@@ -81080,6 +81080,10 @@
 						{
 							"name": "MOUSE_MODE_CONFINED_HIDDEN",
 							"value": 4
+						},
+						{
+							"name": "MOUSE_MODE_MAX",
+							"value": 5
 						}
 					]
 				},
@@ -129492,6 +129496,10 @@
 						{
 							"name": "MOUSE_MODE_CONFINED_HIDDEN",
 							"value": 4
+						},
+						{
+							"name": "MOUSE_MODE_MAX",
+							"value": 5
 						}
 					]
 				},
