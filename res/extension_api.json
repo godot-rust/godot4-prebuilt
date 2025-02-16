@@ -43184,6 +43184,30 @@
 			"is_instantiable": true,
 			"inherits": "AudioStream",
 			"api_type": "core",
+			"enums": [
+				{
+					"name": "AudioStreamGeneratorMixRate",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "MIX_RATE_OUTPUT",
+							"value": 0
+						},
+						{
+							"name": "MIX_RATE_INPUT",
+							"value": 1
+						},
+						{
+							"name": "MIX_RATE_CUSTOM",
+							"value": 2
+						},
+						{
+							"name": "MIX_RATE_MAX",
+							"value": 3
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "set_mix_rate",
@@ -43210,6 +43234,31 @@
 					"return_value": {
 						"type": "float",
 						"meta": "float"
+					}
+				},
+				{
+					"name": "set_mix_rate_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3354885803,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::AudioStreamGenerator.AudioStreamGeneratorMixRate"
+						}
+					]
+				},
+				{
+					"name": "get_mix_rate_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3537132591,
+					"return_value": {
+						"type": "enum::AudioStreamGenerator.AudioStreamGeneratorMixRate"
 					}
 				},
 				{
@@ -43241,6 +43290,12 @@
 				}
 			],
 			"properties": [
+				{
+					"type": "int",
+					"name": "mix_rate_mode",
+					"setter": "set_mix_rate_mode",
+					"getter": "get_mix_rate_mode"
+				},
 				{
 					"type": "float",
 					"name": "mix_rate",
@@ -118022,6 +118077,70 @@
 					}
 				},
 				{
+					"name": "set_heightfield_mask",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "heightfield_mask",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_heightfield_mask",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
+					"name": "set_heightfield_mask_value",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "layer_number",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "value",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_heightfield_mask_value",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "layer_number",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "set_follow_camera_enabled",
 					"is_const": false,
 					"is_vararg": false,
@@ -118071,6 +118190,12 @@
 					"name": "follow_camera_enabled",
 					"setter": "set_follow_camera_enabled",
 					"getter": "is_follow_camera_enabled"
+				},
+				{
+					"type": "int",
+					"name": "heightfield_mask",
+					"setter": "set_heightfield_mask",
+					"getter": "get_heightfield_mask"
 				}
 			]
 		},
@@ -122472,7 +122597,7 @@
 						},
 						{
 							"name": "new_rect",
-							"type": "Vector2"
+							"type": "Rect2"
 						}
 					]
 				},
@@ -135219,6 +135344,17 @@
 							"type": "String"
 						}
 					]
+				},
+				{
+					"name": "get_exception",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3277089691,
+					"return_value": {
+						"type": "JavaObject"
+					}
 				}
 			]
 		},
@@ -218976,9 +219112,19 @@
 						{
 							"name": "STORAGE_BUFFER_USAGE_DISPATCH_INDIRECT",
 							"value": 1
+						}
+					]
+				},
+				{
+					"name": "BufferCreationBits",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "BUFFER_CREATION_DEVICE_ADDRESS_BIT",
+							"value": 1
 						},
 						{
-							"name": "STORAGE_BUFFER_USAGE_DEVICE_ADDRESS",
+							"name": "BUFFER_CREATION_AS_STORAGE_BIT",
 							"value": 2
 						}
 					]
@@ -220702,7 +220848,7 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 76995708,
+					"hash": 2089548973,
 					"hash_compatibility": [
 						3410049843,
 						3491282828
@@ -220722,14 +220868,9 @@
 							"default_value": "PackedByteArray()"
 						},
 						{
-							"name": "use_as_storage",
-							"type": "bool",
-							"default_value": "false"
-						},
-						{
-							"name": "enable_device_address",
-							"type": "bool",
-							"default_value": "false"
+							"name": "creation_bits",
+							"type": "bitfield::RenderingDevice.BufferCreationBits",
+							"default_value": "0"
 						}
 					]
 				},
@@ -220792,7 +220933,7 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2360653086,
+					"hash": 2368684885,
 					"hash_compatibility": [
 						3935920523,
 						975915977
@@ -220821,9 +220962,9 @@
 							"default_value": "false"
 						},
 						{
-							"name": "enable_device_address",
-							"type": "bool",
-							"default_value": "false"
+							"name": "creation_bits",
+							"type": "bitfield::RenderingDevice.BufferCreationBits",
+							"default_value": "0"
 						}
 					]
 				},
@@ -220990,7 +221131,7 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3410049843,
+					"hash": 2089548973,
 					"hash_compatibility": [
 						34556762,
 						1453158401
@@ -221010,9 +221151,9 @@
 							"default_value": "PackedByteArray()"
 						},
 						{
-							"name": "enable_device_address",
-							"type": "bool",
-							"default_value": "false"
+							"name": "creation_bits",
+							"type": "bitfield::RenderingDevice.BufferCreationBits",
+							"default_value": "0"
 						}
 					]
 				},
@@ -221022,8 +221163,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2316365934,
+					"hash": 1609052553,
 					"hash_compatibility": [
+						2316365934,
 						1173156076
 					],
 					"return_value": {
@@ -221043,6 +221185,11 @@
 						{
 							"name": "usage",
 							"type": "bitfield::RenderingDevice.StorageBufferUsage",
+							"default_value": "0"
+						},
+						{
+							"name": "creation_bits",
+							"type": "bitfield::RenderingDevice.BufferCreationBits",
 							"default_value": "0"
 						}
 					]
@@ -229378,6 +229525,25 @@
 						{
 							"name": "resolution",
 							"type": "enum::RenderingServer.ParticlesCollisionHeightfieldResolution"
+						}
+					]
+				},
+				{
+					"name": "particles_collision_set_height_field_mask",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "particles_collision",
+							"type": "RID"
+						},
+						{
+							"name": "mask",
+							"type": "int",
+							"meta": "uint32"
 						}
 					]
 				},
@@ -266626,6 +266792,24 @@
 					]
 				},
 				{
+					"name": "get_line_with_ime",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "line",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "get_line_width",
 					"is_const": true,
 					"is_vararg": false,
@@ -267218,8 +267402,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 239517838,
+					"hash": 3472935744,
 					"hash_compatibility": [
+						239517838,
 						850652858
 					],
 					"return_value": {
@@ -267231,7 +267416,12 @@
 							"type": "Vector2i"
 						},
 						{
-							"name": "allow_out_of_bounds",
+							"name": "clamp_line",
+							"type": "bool",
+							"default_value": "true"
+						},
+						{
+							"name": "clamp_column",
 							"type": "bool",
 							"default_value": "true"
 						}
@@ -302868,6 +303058,22 @@
 							"default_value": "false"
 						}
 					]
+				},
+				{
+					"name": "notify_mouse_entered",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "notify_mouse_exited",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
 				},
 				{
 					"name": "get_mouse_position",
