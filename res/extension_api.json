@@ -3,9 +3,9 @@
 		"version_major": 4,
 		"version_minor": 4,
 		"version_patch": 0,
-		"version_status": "beta",
+		"version_status": "rc",
 		"version_build": "custom_build",
-		"version_full_name": "Godot Engine v4.4.beta.custom_build"
+		"version_full_name": "Godot Engine v4.4.rc.custom_build"
 	},
 	"builtin_class_sizes": [
 		{
@@ -97135,38 +97135,17 @@
 					"is_required": false,
 					"is_vararg": false,
 					"is_virtual": true,
-					"hash": 3567846260,
+					"hash": 1576865988,
+					"hash_compatibility": [
+						3567846260
+					],
+					"return_value": {
+						"type": "typedarray::PackedStringArray"
+					},
 					"arguments": [
 						{
 							"name": "path",
 							"type": "String"
-						},
-						{
-							"name": "msgids",
-							"type": "typedarray::String"
-						},
-						{
-							"name": "msgids_context_plural",
-							"type": "typedarray::Array"
-						}
-					]
-				},
-				{
-					"name": "_get_comments",
-					"is_const": false,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 3922387911,
-					"arguments": [
-						{
-							"name": "msgids_comment",
-							"type": "typedarray::String"
-						},
-						{
-							"name": "msgids_context_plural_comment",
-							"type": "typedarray::String"
 						}
 					]
 				},
