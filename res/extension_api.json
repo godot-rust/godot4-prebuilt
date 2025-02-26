@@ -3816,6 +3816,10 @@
 					"value": 64
 				},
 				{
+					"name": "METHOD_FLAG_VIRTUAL_REQUIRED",
+					"value": 128
+				},
+				{
 					"name": "METHOD_FLAGS_DEFAULT",
 					"value": 1
 				}
