@@ -22,3 +22,5 @@ pub mod version_4_2_1;
 pub mod version_4_2_2;
 #[path = "../versions/4.3/src/lib.rs"]
 pub mod version_4_3;
+#[path = "../versions/4.4/src/lib.rs"]
+pub mod version_4_4;

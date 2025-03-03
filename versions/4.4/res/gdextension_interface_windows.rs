@@ -94,7 +94,8 @@ pub const GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY: GDExtensionVariantType =
 pub const GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY: GDExtensionVariantType = 35;
 pub const GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY: GDExtensionVariantType = 36;
 pub const GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY: GDExtensionVariantType = 37;
-pub const GDEXTENSION_VARIANT_TYPE_VARIANT_MAX: GDExtensionVariantType = 38;
+pub const GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR4_ARRAY: GDExtensionVariantType = 38;
+pub const GDEXTENSION_VARIANT_TYPE_VARIANT_MAX: GDExtensionVariantType = 39;
 pub type GDExtensionVariantType = ::std::os::raw::c_int;
 pub const GDEXTENSION_VARIANT_OP_EQUAL: GDExtensionVariantOperator = 0;
 pub const GDEXTENSION_VARIANT_OP_NOT_EQUAL: GDExtensionVariantOperator = 1;
@@ -269,6 +270,9 @@ pub type GDExtensionVariantFromTypeConstructorFunc = ::std::option::Option<
 >;
 pub type GDExtensionTypeFromVariantConstructorFunc = ::std::option::Option<
     unsafe extern "C" fn(arg1: GDExtensionUninitializedTypePtr, arg2: GDExtensionVariantPtr),
+>;
+pub type GDExtensionVariantGetInternalPtrFunc = ::std::option::Option<
+    unsafe extern "C" fn(arg1: GDExtensionVariantPtr) -> *mut ::std::os::raw::c_void,
 >;
 pub type GDExtensionPtrOperatorEvaluator = ::std::option::Option<
     unsafe extern "C" fn(
@@ -646,6 +650,13 @@ pub type GDExtensionClassFreePropertyList = ::std::option::Option<
         p_list: *const GDExtensionPropertyInfo,
     ),
 >;
+pub type GDExtensionClassFreePropertyList2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_instance: GDExtensionClassInstancePtr,
+        p_list: *const GDExtensionPropertyInfo,
+        p_count: u32,
+    ),
+>;
 pub type GDExtensionClassPropertyCanRevert = ::std::option::Option<
     unsafe extern "C" fn(
         p_instance: GDExtensionClassInstancePtr,
@@ -696,6 +707,12 @@ pub type GDExtensionClassCallVirtual = ::std::option::Option<
 pub type GDExtensionClassCreateInstance = ::std::option::Option<
     unsafe extern "C" fn(p_class_userdata: *mut ::std::os::raw::c_void) -> GDExtensionObjectPtr,
 >;
+pub type GDExtensionClassCreateInstance2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_class_userdata: *mut ::std::os::raw::c_void,
+        p_notify_postinitialize: GDExtensionBool,
+    ) -> GDExtensionObjectPtr,
+>;
 pub type GDExtensionClassFreeInstance = ::std::option::Option<
     unsafe extern "C" fn(
         p_class_userdata: *mut ::std::os::raw::c_void,
@@ -714,10 +731,24 @@ pub type GDExtensionClassGetVirtual = ::std::option::Option<
         p_name: GDExtensionConstStringNamePtr,
     ) -> GDExtensionClassCallVirtual,
 >;
+pub type GDExtensionClassGetVirtual2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_class_userdata: *mut ::std::os::raw::c_void,
+        p_name: GDExtensionConstStringNamePtr,
+        p_hash: u32,
+    ) -> GDExtensionClassCallVirtual,
+>;
 pub type GDExtensionClassGetVirtualCallData = ::std::option::Option<
     unsafe extern "C" fn(
         p_class_userdata: *mut ::std::os::raw::c_void,
         p_name: GDExtensionConstStringNamePtr,
+    ) -> *mut ::std::os::raw::c_void,
+>;
+pub type GDExtensionClassGetVirtualCallData2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_class_userdata: *mut ::std::os::raw::c_void,
+        p_name: GDExtensionConstStringNamePtr,
+        p_hash: u32,
     ) -> *mut ::std::os::raw::c_void,
 >;
 pub type GDExtensionClassCallVirtualWithData = ::std::option::Option<
@@ -1200,6 +1231,552 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo2() {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+pub struct GDExtensionClassCreationInfo3 {
+    pub is_virtual: GDExtensionBool,
+    pub is_abstract: GDExtensionBool,
+    pub is_exposed: GDExtensionBool,
+    pub is_runtime: GDExtensionBool,
+    pub set_func: GDExtensionClassSet,
+    pub get_func: GDExtensionClassGet,
+    pub get_property_list_func: GDExtensionClassGetPropertyList,
+    pub free_property_list_func: GDExtensionClassFreePropertyList2,
+    pub property_can_revert_func: GDExtensionClassPropertyCanRevert,
+    pub property_get_revert_func: GDExtensionClassPropertyGetRevert,
+    pub validate_property_func: GDExtensionClassValidateProperty,
+    pub notification_func: GDExtensionClassNotification2,
+    pub to_string_func: GDExtensionClassToString,
+    pub reference_func: GDExtensionClassReference,
+    pub unreference_func: GDExtensionClassUnreference,
+    pub create_instance_func: GDExtensionClassCreateInstance,
+    pub free_instance_func: GDExtensionClassFreeInstance,
+    pub recreate_instance_func: GDExtensionClassRecreateInstance,
+    pub get_virtual_func: GDExtensionClassGetVirtual,
+    pub get_virtual_call_data_func: GDExtensionClassGetVirtualCallData,
+    pub call_virtual_with_data_func: GDExtensionClassCallVirtualWithData,
+    pub get_rid_func: GDExtensionClassGetRID,
+    pub class_userdata: *mut ::std::os::raw::c_void,
+}
+#[test]
+fn bindgen_test_layout_GDExtensionClassCreationInfo3() {
+    const UNINIT: ::std::mem::MaybeUninit<GDExtensionClassCreationInfo3> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<GDExtensionClassCreationInfo3>(),
+        160usize,
+        concat!("Size of: ", stringify!(GDExtensionClassCreationInfo3))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<GDExtensionClassCreationInfo3>(),
+        8usize,
+        concat!("Alignment of ", stringify!(GDExtensionClassCreationInfo3))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_virtual) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(is_virtual)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_abstract) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(is_abstract)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_exposed) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(is_exposed)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_runtime) as usize - ptr as usize },
+        3usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(is_runtime)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).set_func) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(set_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_func) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(get_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_property_list_func) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(get_property_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_property_list_func) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(free_property_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).property_can_revert_func) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(property_can_revert_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).property_get_revert_func) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(property_get_revert_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).validate_property_func) as usize - ptr as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(validate_property_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).notification_func) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(notification_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).to_string_func) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(to_string_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).reference_func) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(reference_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).unreference_func) as usize - ptr as usize },
+        88usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(unreference_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).create_instance_func) as usize - ptr as usize },
+        96usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(create_instance_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_instance_func) as usize - ptr as usize },
+        104usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(free_instance_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).recreate_instance_func) as usize - ptr as usize },
+        112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(recreate_instance_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_virtual_func) as usize - ptr as usize },
+        120usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(get_virtual_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_virtual_call_data_func) as usize - ptr as usize },
+        128usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(get_virtual_call_data_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).call_virtual_with_data_func) as usize - ptr as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(call_virtual_with_data_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_rid_func) as usize - ptr as usize },
+        144usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(get_rid_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).class_userdata) as usize - ptr as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo3),
+            "::",
+            stringify!(class_userdata)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct GDExtensionClassCreationInfo4 {
+    pub is_virtual: GDExtensionBool,
+    pub is_abstract: GDExtensionBool,
+    pub is_exposed: GDExtensionBool,
+    pub is_runtime: GDExtensionBool,
+    pub icon_path: GDExtensionConstStringPtr,
+    pub set_func: GDExtensionClassSet,
+    pub get_func: GDExtensionClassGet,
+    pub get_property_list_func: GDExtensionClassGetPropertyList,
+    pub free_property_list_func: GDExtensionClassFreePropertyList2,
+    pub property_can_revert_func: GDExtensionClassPropertyCanRevert,
+    pub property_get_revert_func: GDExtensionClassPropertyGetRevert,
+    pub validate_property_func: GDExtensionClassValidateProperty,
+    pub notification_func: GDExtensionClassNotification2,
+    pub to_string_func: GDExtensionClassToString,
+    pub reference_func: GDExtensionClassReference,
+    pub unreference_func: GDExtensionClassUnreference,
+    pub create_instance_func: GDExtensionClassCreateInstance2,
+    pub free_instance_func: GDExtensionClassFreeInstance,
+    pub recreate_instance_func: GDExtensionClassRecreateInstance,
+    pub get_virtual_func: GDExtensionClassGetVirtual2,
+    pub get_virtual_call_data_func: GDExtensionClassGetVirtualCallData2,
+    pub call_virtual_with_data_func: GDExtensionClassCallVirtualWithData,
+    pub class_userdata: *mut ::std::os::raw::c_void,
+}
+#[test]
+fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
+    const UNINIT: ::std::mem::MaybeUninit<GDExtensionClassCreationInfo4> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<GDExtensionClassCreationInfo4>(),
+        160usize,
+        concat!("Size of: ", stringify!(GDExtensionClassCreationInfo4))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<GDExtensionClassCreationInfo4>(),
+        8usize,
+        concat!("Alignment of ", stringify!(GDExtensionClassCreationInfo4))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_virtual) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(is_virtual)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_abstract) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(is_abstract)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_exposed) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(is_exposed)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_runtime) as usize - ptr as usize },
+        3usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(is_runtime)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).icon_path) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(icon_path)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).set_func) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(set_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_func) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(get_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_property_list_func) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(get_property_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_property_list_func) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(free_property_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).property_can_revert_func) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(property_can_revert_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).property_get_revert_func) as usize - ptr as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(property_get_revert_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).validate_property_func) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(validate_property_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).notification_func) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(notification_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).to_string_func) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(to_string_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).reference_func) as usize - ptr as usize },
+        88usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(reference_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).unreference_func) as usize - ptr as usize },
+        96usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(unreference_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).create_instance_func) as usize - ptr as usize },
+        104usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(create_instance_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_instance_func) as usize - ptr as usize },
+        112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(free_instance_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).recreate_instance_func) as usize - ptr as usize },
+        120usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(recreate_instance_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_virtual_func) as usize - ptr as usize },
+        128usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(get_virtual_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_virtual_call_data_func) as usize - ptr as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(get_virtual_call_data_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).call_virtual_with_data_func) as usize - ptr as usize },
+        144usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(call_virtual_with_data_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).class_userdata) as usize - ptr as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo4),
+            "::",
+            stringify!(class_userdata)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct __GdextClassLibrary {
     _unused: [u8; 0],
 }
@@ -1233,6 +1810,10 @@ pub const GDEXTENSION_METHOD_ARGUMENT_METADATA_REAL_IS_FLOAT:
     GDExtensionClassMethodArgumentMetadata = 9;
 pub const GDEXTENSION_METHOD_ARGUMENT_METADATA_REAL_IS_DOUBLE:
     GDExtensionClassMethodArgumentMetadata = 10;
+pub const GDEXTENSION_METHOD_ARGUMENT_METADATA_INT_IS_CHAR16:
+    GDExtensionClassMethodArgumentMetadata = 11;
+pub const GDEXTENSION_METHOD_ARGUMENT_METADATA_INT_IS_CHAR32:
+    GDExtensionClassMethodArgumentMetadata = 12;
 pub type GDExtensionClassMethodArgumentMetadata = ::std::os::raw::c_int;
 pub type GDExtensionClassMethodCall = ::std::option::Option<
     unsafe extern "C" fn(
@@ -1423,6 +2004,106 @@ fn bindgen_test_layout_GDExtensionClassMethodInfo() {
         )
     );
 }
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct GDExtensionClassVirtualMethodInfo {
+    pub name: GDExtensionStringNamePtr,
+    pub method_flags: u32,
+    pub return_value: GDExtensionPropertyInfo,
+    pub return_value_metadata: GDExtensionClassMethodArgumentMetadata,
+    pub argument_count: u32,
+    pub arguments: *mut GDExtensionPropertyInfo,
+    pub arguments_metadata: *mut GDExtensionClassMethodArgumentMetadata,
+}
+#[test]
+fn bindgen_test_layout_GDExtensionClassVirtualMethodInfo() {
+    const UNINIT: ::std::mem::MaybeUninit<GDExtensionClassVirtualMethodInfo> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<GDExtensionClassVirtualMethodInfo>(),
+        88usize,
+        concat!("Size of: ", stringify!(GDExtensionClassVirtualMethodInfo))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<GDExtensionClassVirtualMethodInfo>(),
+        8usize,
+        concat!(
+            "Alignment of ",
+            stringify!(GDExtensionClassVirtualMethodInfo)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(name)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).method_flags) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(method_flags)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).return_value) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(return_value)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).return_value_metadata) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(return_value_metadata)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).argument_count) as usize - ptr as usize },
+        68usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(argument_count)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).arguments) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(arguments)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).arguments_metadata) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassVirtualMethodInfo),
+            "::",
+            stringify!(arguments_metadata)
+        )
+    );
+}
 pub type GDExtensionCallableCustomCall = ::std::option::Option<
     unsafe extern "C" fn(
         callable_userdata: *mut ::std::os::raw::c_void,
@@ -1458,6 +2139,12 @@ pub type GDExtensionCallableCustomToString = ::std::option::Option<
         r_is_valid: *mut GDExtensionBool,
         r_out: GDExtensionStringPtr,
     ),
+>;
+pub type GDExtensionCallableCustomGetArgumentCount = ::std::option::Option<
+    unsafe extern "C" fn(
+        callable_userdata: *mut ::std::os::raw::c_void,
+        r_is_valid: *mut GDExtensionBool,
+    ) -> GDExtensionInt,
 >;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -1591,6 +2278,147 @@ fn bindgen_test_layout_GDExtensionCallableCustomInfo() {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+pub struct GDExtensionCallableCustomInfo2 {
+    pub callable_userdata: *mut ::std::os::raw::c_void,
+    pub token: *mut ::std::os::raw::c_void,
+    pub object_id: GDObjectInstanceID,
+    pub call_func: GDExtensionCallableCustomCall,
+    pub is_valid_func: GDExtensionCallableCustomIsValid,
+    pub free_func: GDExtensionCallableCustomFree,
+    pub hash_func: GDExtensionCallableCustomHash,
+    pub equal_func: GDExtensionCallableCustomEqual,
+    pub less_than_func: GDExtensionCallableCustomLessThan,
+    pub to_string_func: GDExtensionCallableCustomToString,
+    pub get_argument_count_func: GDExtensionCallableCustomGetArgumentCount,
+}
+#[test]
+fn bindgen_test_layout_GDExtensionCallableCustomInfo2() {
+    const UNINIT: ::std::mem::MaybeUninit<GDExtensionCallableCustomInfo2> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<GDExtensionCallableCustomInfo2>(),
+        88usize,
+        concat!("Size of: ", stringify!(GDExtensionCallableCustomInfo2))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<GDExtensionCallableCustomInfo2>(),
+        8usize,
+        concat!("Alignment of ", stringify!(GDExtensionCallableCustomInfo2))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).callable_userdata) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(callable_userdata)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).token) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(token)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).object_id) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(object_id)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).call_func) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(call_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_valid_func) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(is_valid_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_func) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(free_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).hash_func) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(hash_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).equal_func) as usize - ptr as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(equal_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).less_than_func) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(less_than_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).to_string_func) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(to_string_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_argument_count_func) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionCallableCustomInfo2),
+            "::",
+            stringify!(get_argument_count_func)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct __GdextScriptInstanceData {
     _unused: [u8; 0],
 }
@@ -1619,6 +2447,13 @@ pub type GDExtensionScriptInstanceFreePropertyList = ::std::option::Option<
     unsafe extern "C" fn(
         p_instance: GDExtensionScriptInstanceDataPtr,
         p_list: *const GDExtensionPropertyInfo,
+    ),
+>;
+pub type GDExtensionScriptInstanceFreePropertyList2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_instance: GDExtensionScriptInstanceDataPtr,
+        p_list: *const GDExtensionPropertyInfo,
+        p_count: u32,
     ),
 >;
 pub type GDExtensionScriptInstanceGetClassCategory = ::std::option::Option<
@@ -1682,11 +2517,25 @@ pub type GDExtensionScriptInstanceFreeMethodList = ::std::option::Option<
         p_list: *const GDExtensionMethodInfo,
     ),
 >;
+pub type GDExtensionScriptInstanceFreeMethodList2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_instance: GDExtensionScriptInstanceDataPtr,
+        p_list: *const GDExtensionMethodInfo,
+        p_count: u32,
+    ),
+>;
 pub type GDExtensionScriptInstanceHasMethod = ::std::option::Option<
     unsafe extern "C" fn(
         p_instance: GDExtensionScriptInstanceDataPtr,
         p_name: GDExtensionConstStringNamePtr,
     ) -> GDExtensionBool,
+>;
+pub type GDExtensionScriptInstanceGetMethodArgumentCount = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_instance: GDExtensionScriptInstanceDataPtr,
+        p_name: GDExtensionConstStringNamePtr,
+        r_is_valid: *mut GDExtensionBool,
+    ) -> GDExtensionInt,
 >;
 pub type GDExtensionScriptInstanceCall = ::std::option::Option<
     unsafe extern "C" fn(
@@ -2313,6 +3162,314 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo2() {
         )
     );
 }
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct GDExtensionScriptInstanceInfo3 {
+    pub set_func: GDExtensionScriptInstanceSet,
+    pub get_func: GDExtensionScriptInstanceGet,
+    pub get_property_list_func: GDExtensionScriptInstanceGetPropertyList,
+    pub free_property_list_func: GDExtensionScriptInstanceFreePropertyList2,
+    pub get_class_category_func: GDExtensionScriptInstanceGetClassCategory,
+    pub property_can_revert_func: GDExtensionScriptInstancePropertyCanRevert,
+    pub property_get_revert_func: GDExtensionScriptInstancePropertyGetRevert,
+    pub get_owner_func: GDExtensionScriptInstanceGetOwner,
+    pub get_property_state_func: GDExtensionScriptInstanceGetPropertyState,
+    pub get_method_list_func: GDExtensionScriptInstanceGetMethodList,
+    pub free_method_list_func: GDExtensionScriptInstanceFreeMethodList2,
+    pub get_property_type_func: GDExtensionScriptInstanceGetPropertyType,
+    pub validate_property_func: GDExtensionScriptInstanceValidateProperty,
+    pub has_method_func: GDExtensionScriptInstanceHasMethod,
+    pub get_method_argument_count_func: GDExtensionScriptInstanceGetMethodArgumentCount,
+    pub call_func: GDExtensionScriptInstanceCall,
+    pub notification_func: GDExtensionScriptInstanceNotification2,
+    pub to_string_func: GDExtensionScriptInstanceToString,
+    pub refcount_incremented_func: GDExtensionScriptInstanceRefCountIncremented,
+    pub refcount_decremented_func: GDExtensionScriptInstanceRefCountDecremented,
+    pub get_script_func: GDExtensionScriptInstanceGetScript,
+    pub is_placeholder_func: GDExtensionScriptInstanceIsPlaceholder,
+    pub set_fallback_func: GDExtensionScriptInstanceSet,
+    pub get_fallback_func: GDExtensionScriptInstanceGet,
+    pub get_language_func: GDExtensionScriptInstanceGetLanguage,
+    pub free_func: GDExtensionScriptInstanceFree,
+}
+#[test]
+fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
+    const UNINIT: ::std::mem::MaybeUninit<GDExtensionScriptInstanceInfo3> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<GDExtensionScriptInstanceInfo3>(),
+        208usize,
+        concat!("Size of: ", stringify!(GDExtensionScriptInstanceInfo3))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<GDExtensionScriptInstanceInfo3>(),
+        8usize,
+        concat!("Alignment of ", stringify!(GDExtensionScriptInstanceInfo3))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).set_func) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(set_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_func) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_property_list_func) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_property_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_property_list_func) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(free_property_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_class_category_func) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_class_category_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).property_can_revert_func) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(property_can_revert_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).property_get_revert_func) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(property_get_revert_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_owner_func) as usize - ptr as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_owner_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_property_state_func) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_property_state_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_method_list_func) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_method_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_method_list_func) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(free_method_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_property_type_func) as usize - ptr as usize },
+        88usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_property_type_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).validate_property_func) as usize - ptr as usize },
+        96usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(validate_property_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).has_method_func) as usize - ptr as usize },
+        104usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(has_method_func)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            ::std::ptr::addr_of!((*ptr).get_method_argument_count_func) as usize - ptr as usize
+        },
+        112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_method_argument_count_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).call_func) as usize - ptr as usize },
+        120usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(call_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).notification_func) as usize - ptr as usize },
+        128usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(notification_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).to_string_func) as usize - ptr as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(to_string_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).refcount_incremented_func) as usize - ptr as usize },
+        144usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(refcount_incremented_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).refcount_decremented_func) as usize - ptr as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(refcount_decremented_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_script_func) as usize - ptr as usize },
+        160usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_script_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_placeholder_func) as usize - ptr as usize },
+        168usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(is_placeholder_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).set_fallback_func) as usize - ptr as usize },
+        176usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(set_fallback_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_fallback_func) as usize - ptr as usize },
+        184usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_fallback_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_language_func) as usize - ptr as usize },
+        192usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(get_language_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_func) as usize - ptr as usize },
+        200usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionScriptInstanceInfo3),
+            "::",
+            stringify!(free_func)
+        )
+    );
+}
 pub const GDEXTENSION_INITIALIZATION_CORE: GDExtensionInitializationLevel = 0;
 pub const GDEXTENSION_INITIALIZATION_SERVERS: GDExtensionInitializationLevel = 1;
 pub const GDEXTENSION_INITIALIZATION_SCENE: GDExtensionInitializationLevel = 2;
@@ -2488,7 +3645,7 @@ pub type GDExtensionInterfaceMemRealloc = ::std::option::Option<
 #[doc = " @name mem_free\n @since 4.1\n\n Frees memory.\n\n @param p_ptr A pointer to the previously allocated memory."]
 pub type GDExtensionInterfaceMemFree =
     ::std::option::Option<unsafe extern "C" fn(p_ptr: *mut ::std::os::raw::c_void)>;
-#[doc = " @name print_error\n @since 4.1\n\n Logs an error to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code trigging the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
+#[doc = " @name print_error\n @since 4.1\n\n Logs an error to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code triggering the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
 pub type GDExtensionInterfacePrintError = ::std::option::Option<
     unsafe extern "C" fn(
         p_description: *const ::std::os::raw::c_char,
@@ -2498,7 +3655,7 @@ pub type GDExtensionInterfacePrintError = ::std::option::Option<
         p_editor_notify: GDExtensionBool,
     ),
 >;
-#[doc = " @name print_error_with_message\n @since 4.1\n\n Logs an error with a message to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code trigging the error.\n @param p_message The message to show along with the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
+#[doc = " @name print_error_with_message\n @since 4.1\n\n Logs an error with a message to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code triggering the error.\n @param p_message The message to show along with the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
 pub type GDExtensionInterfacePrintErrorWithMessage = ::std::option::Option<
     unsafe extern "C" fn(
         p_description: *const ::std::os::raw::c_char,
@@ -2509,7 +3666,7 @@ pub type GDExtensionInterfacePrintErrorWithMessage = ::std::option::Option<
         p_editor_notify: GDExtensionBool,
     ),
 >;
-#[doc = " @name print_warning\n @since 4.1\n\n Logs a warning to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code trigging the warning.\n @param p_function The function name where the warning occurred.\n @param p_file The file where the warning occurred.\n @param p_line The line where the warning occurred.\n @param p_editor_notify Whether or not to notify the editor."]
+#[doc = " @name print_warning\n @since 4.1\n\n Logs a warning to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code triggering the warning.\n @param p_function The function name where the warning occurred.\n @param p_file The file where the warning occurred.\n @param p_line The line where the warning occurred.\n @param p_editor_notify Whether or not to notify the editor."]
 pub type GDExtensionInterfacePrintWarning = ::std::option::Option<
     unsafe extern "C" fn(
         p_description: *const ::std::os::raw::c_char,
@@ -2519,7 +3676,7 @@ pub type GDExtensionInterfacePrintWarning = ::std::option::Option<
         p_editor_notify: GDExtensionBool,
     ),
 >;
-#[doc = " @name print_warning_with_message\n @since 4.1\n\n Logs a warning with a message to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code trigging the warning.\n @param p_message The message to show along with the warning.\n @param p_function The function name where the warning occurred.\n @param p_file The file where the warning occurred.\n @param p_line The line where the warning occurred.\n @param p_editor_notify Whether or not to notify the editor."]
+#[doc = " @name print_warning_with_message\n @since 4.1\n\n Logs a warning with a message to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code triggering the warning.\n @param p_message The message to show along with the warning.\n @param p_function The function name where the warning occurred.\n @param p_file The file where the warning occurred.\n @param p_line The line where the warning occurred.\n @param p_editor_notify Whether or not to notify the editor."]
 pub type GDExtensionInterfacePrintWarningWithMessage = ::std::option::Option<
     unsafe extern "C" fn(
         p_description: *const ::std::os::raw::c_char,
@@ -2530,7 +3687,7 @@ pub type GDExtensionInterfacePrintWarningWithMessage = ::std::option::Option<
         p_editor_notify: GDExtensionBool,
     ),
 >;
-#[doc = " @name print_script_error\n @since 4.1\n\n Logs a script error to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code trigging the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
+#[doc = " @name print_script_error\n @since 4.1\n\n Logs a script error to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code triggering the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
 pub type GDExtensionInterfacePrintScriptError = ::std::option::Option<
     unsafe extern "C" fn(
         p_description: *const ::std::os::raw::c_char,
@@ -2540,7 +3697,7 @@ pub type GDExtensionInterfacePrintScriptError = ::std::option::Option<
         p_editor_notify: GDExtensionBool,
     ),
 >;
-#[doc = " @name print_script_error_with_message\n @since 4.1\n\n Logs a script error with a message to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code trigging the error.\n @param p_message The message to show along with the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
+#[doc = " @name print_script_error_with_message\n @since 4.1\n\n Logs a script error with a message to Godot's built-in debugger and to the OS terminal.\n\n @param p_description The code triggering the error.\n @param p_message The message to show along with the error.\n @param p_function The function name where the error occurred.\n @param p_file The file where the error occurred.\n @param p_line The line where the error occurred.\n @param p_editor_notify Whether or not to notify the editor."]
 pub type GDExtensionInterfacePrintScriptErrorWithMessage = ::std::option::Option<
     unsafe extern "C" fn(
         p_description: *const ::std::os::raw::c_char,
@@ -2758,6 +3915,10 @@ pub type GDExtensionInterfaceVariantHasKey = ::std::option::Option<
         r_valid: *mut GDExtensionBool,
     ) -> GDExtensionBool,
 >;
+#[doc = " @name variant_get_object_instance_id\n @since 4.4\n\n Gets the object instance ID from a variant of type GDEXTENSION_VARIANT_TYPE_OBJECT.\n\n If the variant isn't of type GDEXTENSION_VARIANT_TYPE_OBJECT, then zero will be returned.\n The instance ID will be returned even if the object is no longer valid - use `object_get_instance_by_id()` to check if the object is still valid.\n\n @param p_self A pointer to the Variant.\n\n @return The instance ID for the contained object."]
+pub type GDExtensionInterfaceVariantGetObjectInstanceId = ::std::option::Option<
+    unsafe extern "C" fn(p_self: GDExtensionConstVariantPtr) -> GDObjectInstanceID,
+>;
 #[doc = " @name variant_get_type_name\n @since 4.1\n\n Gets the name of a Variant type.\n\n @param p_type The Variant type.\n @param r_name A pointer to a String to store the Variant type name."]
 pub type GDExtensionInterfaceVariantGetTypeName = ::std::option::Option<
     unsafe extern "C" fn(p_type: GDExtensionVariantType, r_name: GDExtensionUninitializedStringPtr),
@@ -2787,6 +3948,10 @@ pub type GDExtensionInterfaceGetVariantToTypeConstructor = ::std::option::Option
     unsafe extern "C" fn(
         p_type: GDExtensionVariantType,
     ) -> GDExtensionTypeFromVariantConstructorFunc,
+>;
+#[doc = " @name variant_get_ptr_internal_getter\n @since 4.4\n\n Provides a function pointer for retrieving a pointer to a variant's internal value.\n Access to a variant's internal value can be used to modify it in-place, or to retrieve its value without the overhead of variant conversion functions.\n It is recommended to cache the getter for all variant types in a function table to avoid retrieval overhead upon use.\n\n @note Each function assumes the variant's type has already been determined and matches the function.\n Invoking the function with a variant of a mismatched type has undefined behavior, and may lead to a segmentation fault.\n\n @param p_type The Variant type.\n\n @return A pointer to a type-specific function that returns a pointer to the internal value of a variant. Check the implementation of this function (gdextension_variant_get_ptr_internal_getter) for pointee type info of each variant type."]
+pub type GDExtensionInterfaceGetVariantGetInternalPtrFunc = ::std::option::Option<
+    unsafe extern "C" fn(p_type: GDExtensionVariantType) -> GDExtensionVariantGetInternalPtrFunc,
 >;
 #[doc = " @name variant_get_ptr_operator_evaluator\n @since 4.1\n\n Gets a pointer to a function that can evaluate the given Variant operator on the given Variant types.\n\n @param p_operator The variant operator.\n @param p_type_a The type of the first Variant.\n @param p_type_b The type of the second Variant.\n\n @return A pointer to a function that can evaluate the given Variant operator on the given Variant types."]
 pub type GDExtensionInterfaceVariantGetPtrOperatorEvaluator = ::std::option::Option<
@@ -2908,7 +4073,7 @@ pub type GDExtensionInterfaceStringNewWithLatin1CharsAndLen = ::std::option::Opt
         p_size: GDExtensionInt,
     ),
 >;
-#[doc = " @name string_new_with_utf8_chars_and_len\n @since 4.1\n\n Creates a String from a UTF-8 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-8 encoded C string.\n @param p_size The number of bytes (not code units)."]
+#[doc = " @name string_new_with_utf8_chars_and_len\n @since 4.1\n @deprecated in Godot 4.3. Use `string_new_with_utf8_chars_and_len2` instead.\n\n Creates a String from a UTF-8 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-8 encoded C string.\n @param p_size The number of bytes (not code units)."]
 pub type GDExtensionInterfaceStringNewWithUtf8CharsAndLen = ::std::option::Option<
     unsafe extern "C" fn(
         r_dest: GDExtensionUninitializedStringPtr,
@@ -2916,13 +4081,30 @@ pub type GDExtensionInterfaceStringNewWithUtf8CharsAndLen = ::std::option::Optio
         p_size: GDExtensionInt,
     ),
 >;
-#[doc = " @name string_new_with_utf16_chars_and_len\n @since 4.1\n\n Creates a String from a UTF-16 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-16 encoded C string.\n @param p_size The number of characters (not bytes)."]
+#[doc = " @name string_new_with_utf8_chars_and_len2\n @since 4.3\n\n Creates a String from a UTF-8 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-8 encoded C string.\n @param p_size The number of bytes (not code units).\n\n @return Error code signifying if the operation successful."]
+pub type GDExtensionInterfaceStringNewWithUtf8CharsAndLen2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        r_dest: GDExtensionUninitializedStringPtr,
+        p_contents: *const ::std::os::raw::c_char,
+        p_size: GDExtensionInt,
+    ) -> GDExtensionInt,
+>;
+#[doc = " @name string_new_with_utf16_chars_and_len\n @since 4.1\n @deprecated in Godot 4.3. Use `string_new_with_utf16_chars_and_len2` instead.\n\n Creates a String from a UTF-16 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-16 encoded C string.\n @param p_size The number of characters (not bytes)."]
 pub type GDExtensionInterfaceStringNewWithUtf16CharsAndLen = ::std::option::Option<
     unsafe extern "C" fn(
         r_dest: GDExtensionUninitializedStringPtr,
         p_contents: *const char16_t,
         p_char_count: GDExtensionInt,
     ),
+>;
+#[doc = " @name string_new_with_utf16_chars_and_len2\n @since 4.3\n\n Creates a String from a UTF-16 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-16 encoded C string.\n @param p_size The number of characters (not bytes).\n @param p_default_little_endian If true, UTF-16 use little endian.\n\n @return Error code signifying if the operation successful."]
+pub type GDExtensionInterfaceStringNewWithUtf16CharsAndLen2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        r_dest: GDExtensionUninitializedStringPtr,
+        p_contents: *const char16_t,
+        p_char_count: GDExtensionInt,
+        p_default_little_endian: GDExtensionBool,
+    ) -> GDExtensionInt,
 >;
 #[doc = " @name string_new_with_utf32_chars_and_len\n @since 4.1\n\n Creates a String from a UTF-32 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-32 encoded C string.\n @param p_size The number of characters (not bytes)."]
 pub type GDExtensionInterfaceStringNewWithUtf32CharsAndLen = ::std::option::Option<
@@ -3055,6 +4237,12 @@ pub type GDExtensionInterfaceFileAccessGetBuffer = ::std::option::Option<
         p_length: u64,
     ) -> u64,
 >;
+#[doc = " @name image_ptrw\n @since 4.3\n\n Returns writable pointer to internal Image buffer.\n\n @param p_instance A pointer to a Image object.\n\n @return Pointer to internal Image buffer.\n\n @see Image::ptrw()"]
+pub type GDExtensionInterfaceImagePtrw =
+    ::std::option::Option<unsafe extern "C" fn(p_instance: GDExtensionObjectPtr) -> *mut u8>;
+#[doc = " @name image_ptr\n @since 4.3\n\n Returns read only pointer to internal Image buffer.\n\n @param p_instance A pointer to a Image object.\n\n @return Pointer to internal Image buffer.\n\n @see Image::ptr()"]
+pub type GDExtensionInterfaceImagePtr =
+    ::std::option::Option<unsafe extern "C" fn(p_instance: GDExtensionObjectPtr) -> *const u8>;
 #[doc = " @name worker_thread_pool_add_native_group_task\n @since 4.1\n\n Adds a group task to an instance of WorkerThreadPool.\n\n @param p_instance A pointer to a WorkerThreadPool object.\n @param p_func A pointer to a function to run in the thread pool.\n @param p_userdata A pointer to arbitrary data which will be passed to p_func.\n @param p_tasks The number of tasks needed in the group.\n @param p_high_priority Whether or not this is a high priority task.\n @param p_description A pointer to a String with the task description.\n\n @return The task group ID.\n\n @see WorkerThreadPool::add_group_task()"]
 pub type GDExtensionInterfaceWorkerThreadPoolAddNativeGroupTask = ::std::option::Option<
     unsafe extern "C" fn(
@@ -3086,17 +4274,6 @@ pub type GDExtensionInterfacePackedByteArrayOperatorIndex = ::std::option::Optio
 #[doc = " @name packed_byte_array_operator_index_const\n @since 4.1\n\n Gets a const pointer to a byte in a PackedByteArray.\n\n @param p_self A const pointer to a PackedByteArray object.\n @param p_index The index of the byte to get.\n\n @return A const pointer to the requested byte."]
 pub type GDExtensionInterfacePackedByteArrayOperatorIndexConst = ::std::option::Option<
     unsafe extern "C" fn(p_self: GDExtensionConstTypePtr, p_index: GDExtensionInt) -> *const u8,
->;
-#[doc = " @name packed_color_array_operator_index\n @since 4.1\n\n Gets a pointer to a color in a PackedColorArray.\n\n @param p_self A pointer to a PackedColorArray object.\n @param p_index The index of the Color to get.\n\n @return A pointer to the requested Color."]
-pub type GDExtensionInterfacePackedColorArrayOperatorIndex = ::std::option::Option<
-    unsafe extern "C" fn(p_self: GDExtensionTypePtr, p_index: GDExtensionInt) -> GDExtensionTypePtr,
->;
-#[doc = " @name packed_color_array_operator_index_const\n @since 4.1\n\n Gets a const pointer to a color in a PackedColorArray.\n\n @param p_self A const pointer to a const PackedColorArray object.\n @param p_index The index of the Color to get.\n\n @return A const pointer to the requested Color."]
-pub type GDExtensionInterfacePackedColorArrayOperatorIndexConst = ::std::option::Option<
-    unsafe extern "C" fn(
-        p_self: GDExtensionConstTypePtr,
-        p_index: GDExtensionInt,
-    ) -> GDExtensionTypePtr,
 >;
 #[doc = " @name packed_float32_array_operator_index\n @since 4.1\n\n Gets a pointer to a 32-bit float in a PackedFloat32Array.\n\n @param p_self A pointer to a PackedFloat32Array object.\n @param p_index The index of the float to get.\n\n @return A pointer to the requested 32-bit float."]
 pub type GDExtensionInterfacePackedFloat32ArrayOperatorIndex = ::std::option::Option<
@@ -3166,6 +4343,28 @@ pub type GDExtensionInterfacePackedVector3ArrayOperatorIndexConst = ::std::optio
         p_index: GDExtensionInt,
     ) -> GDExtensionTypePtr,
 >;
+#[doc = " @name packed_vector4_array_operator_index\n @since 4.3\n\n Gets a pointer to a Vector4 in a PackedVector4Array.\n\n @param p_self A pointer to a PackedVector4Array object.\n @param p_index The index of the Vector4 to get.\n\n @return A pointer to the requested Vector4."]
+pub type GDExtensionInterfacePackedVector4ArrayOperatorIndex = ::std::option::Option<
+    unsafe extern "C" fn(p_self: GDExtensionTypePtr, p_index: GDExtensionInt) -> GDExtensionTypePtr,
+>;
+#[doc = " @name packed_vector4_array_operator_index_const\n @since 4.3\n\n Gets a const pointer to a Vector4 in a PackedVector4Array.\n\n @param p_self A const pointer to a PackedVector4Array object.\n @param p_index The index of the Vector4 to get.\n\n @return A const pointer to the requested Vector4."]
+pub type GDExtensionInterfacePackedVector4ArrayOperatorIndexConst = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_self: GDExtensionConstTypePtr,
+        p_index: GDExtensionInt,
+    ) -> GDExtensionTypePtr,
+>;
+#[doc = " @name packed_color_array_operator_index\n @since 4.1\n\n Gets a pointer to a color in a PackedColorArray.\n\n @param p_self A pointer to a PackedColorArray object.\n @param p_index The index of the Color to get.\n\n @return A pointer to the requested Color."]
+pub type GDExtensionInterfacePackedColorArrayOperatorIndex = ::std::option::Option<
+    unsafe extern "C" fn(p_self: GDExtensionTypePtr, p_index: GDExtensionInt) -> GDExtensionTypePtr,
+>;
+#[doc = " @name packed_color_array_operator_index_const\n @since 4.1\n\n Gets a const pointer to a color in a PackedColorArray.\n\n @param p_self A const pointer to a PackedColorArray object.\n @param p_index The index of the Color to get.\n\n @return A const pointer to the requested Color."]
+pub type GDExtensionInterfacePackedColorArrayOperatorIndexConst = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_self: GDExtensionConstTypePtr,
+        p_index: GDExtensionInt,
+    ) -> GDExtensionTypePtr,
+>;
 #[doc = " @name array_operator_index\n @since 4.1\n\n Gets a pointer to a Variant in an Array.\n\n @param p_self A pointer to an Array object.\n @param p_index The index of the Variant to get.\n\n @return A pointer to the requested Variant."]
 pub type GDExtensionInterfaceArrayOperatorIndex = ::std::option::Option<
     unsafe extern "C" fn(
@@ -3206,6 +4405,18 @@ pub type GDExtensionInterfaceDictionaryOperatorIndexConst = ::std::option::Optio
         p_self: GDExtensionConstTypePtr,
         p_key: GDExtensionConstVariantPtr,
     ) -> GDExtensionVariantPtr,
+>;
+#[doc = " @name dictionary_set_typed\n @since 4.4\n\n Makes a Dictionary into a typed Dictionary.\n\n @param p_self A pointer to the Dictionary.\n @param p_key_type The type of Variant the Dictionary key will store.\n @param p_key_class_name A pointer to a StringName with the name of the object (if p_key_type is GDEXTENSION_VARIANT_TYPE_OBJECT).\n @param p_key_script A pointer to a Script object (if p_key_type is GDEXTENSION_VARIANT_TYPE_OBJECT and the base class is extended by a script).\n @param p_value_type The type of Variant the Dictionary value will store.\n @param p_value_class_name A pointer to a StringName with the name of the object (if p_value_type is GDEXTENSION_VARIANT_TYPE_OBJECT).\n @param p_value_script A pointer to a Script object (if p_value_type is GDEXTENSION_VARIANT_TYPE_OBJECT and the base class is extended by a script)."]
+pub type GDExtensionInterfaceDictionarySetTyped = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_self: GDExtensionTypePtr,
+        p_key_type: GDExtensionVariantType,
+        p_key_class_name: GDExtensionConstStringNamePtr,
+        p_key_script: GDExtensionConstVariantPtr,
+        p_value_type: GDExtensionVariantType,
+        p_value_class_name: GDExtensionConstStringNamePtr,
+        p_value_script: GDExtensionConstVariantPtr,
+    ),
 >;
 #[doc = " @name object_method_bind_call\n @since 4.1\n\n Calls a method on an Object.\n\n @param p_method_bind A pointer to the MethodBind representing the method on the Object's class.\n @param p_instance A pointer to the Object.\n @param p_args A pointer to a C array of Variants representing the arguments.\n @param p_arg_count The number of arguments.\n @param r_ret A pointer to Variant which will receive the return value.\n @param r_error A pointer to a GDExtensionCallError struct that will receive error information."]
 pub type GDExtensionInterfaceObjectMethodBindCall = ::std::option::Option<
@@ -3263,7 +4474,7 @@ pub type GDExtensionInterfaceObjectSetInstance = ::std::option::Option<
         p_instance: GDExtensionClassInstancePtr,
     ),
 >;
-#[doc = " @name object_get_class_name\n @since 4.1\n\n Gets the class name of an Object.\n\n @param p_object A pointer to the Object.\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param r_class_name A pointer to a String to receive the class name.\n\n @return true if successful in getting the class name; otherwise false."]
+#[doc = " @name object_get_class_name\n @since 4.1\n\n Gets the class name of an Object.\n\n If the GDExtension wraps the Godot object in an abstraction specific to its class, this is the\n function that should be used to determine which wrapper to use.\n\n @param p_object A pointer to the Object.\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param r_class_name A pointer to a String to receive the class name.\n\n @return true if successful in getting the class name; otherwise false."]
 pub type GDExtensionInterfaceObjectGetClassName = ::std::option::Option<
     unsafe extern "C" fn(
         p_object: GDExtensionConstObjectPtr,
@@ -3286,6 +4497,24 @@ pub type GDExtensionInterfaceObjectGetInstanceFromId = ::std::option::Option<
 pub type GDExtensionInterfaceObjectGetInstanceId = ::std::option::Option<
     unsafe extern "C" fn(p_object: GDExtensionConstObjectPtr) -> GDObjectInstanceID,
 >;
+#[doc = " @name object_has_script_method\n @since 4.3\n\n Checks if this object has a script with the given method.\n\n @param p_object A pointer to the Object.\n @param p_method A pointer to a StringName identifying the method.\n\n @returns true if the object has a script and that script has a method with the given name. Returns false if the object has no script."]
+pub type GDExtensionInterfaceObjectHasScriptMethod = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_object: GDExtensionConstObjectPtr,
+        p_method: GDExtensionConstStringNamePtr,
+    ) -> GDExtensionBool,
+>;
+#[doc = " @name object_call_script_method\n @since 4.3\n\n Call the given script method on this object.\n\n @param p_object A pointer to the Object.\n @param p_method A pointer to a StringName identifying the method.\n @param p_args A pointer to a C array of Variant.\n @param p_argument_count The number of arguments.\n @param r_return A pointer a Variant which will be assigned the return value.\n @param r_error A pointer the structure which will hold error information."]
+pub type GDExtensionInterfaceObjectCallScriptMethod = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_object: GDExtensionObjectPtr,
+        p_method: GDExtensionConstStringNamePtr,
+        p_args: *const GDExtensionConstVariantPtr,
+        p_argument_count: GDExtensionInt,
+        r_return: GDExtensionUninitializedVariantPtr,
+        r_error: *mut GDExtensionCallError,
+    ),
+>;
 #[doc = " @name ref_get_object\n @since 4.1\n\n Gets the Object from a reference.\n\n @param p_ref A pointer to the reference.\n\n @return A pointer to the Object from the reference or NULL."]
 pub type GDExtensionInterfaceRefGetObject = ::std::option::Option<
     unsafe extern "C" fn(p_ref: GDExtensionConstRefPtr) -> GDExtensionObjectPtr,
@@ -3294,17 +4523,24 @@ pub type GDExtensionInterfaceRefGetObject = ::std::option::Option<
 pub type GDExtensionInterfaceRefSetObject = ::std::option::Option<
     unsafe extern "C" fn(p_ref: GDExtensionRefPtr, p_object: GDExtensionObjectPtr),
 >;
-#[doc = " @name script_instance_create\n @since 4.1\n @deprecated in Godot 4.2. Use `script_instance_create2` instead.\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
+#[doc = " @name script_instance_create\n @since 4.1\n @deprecated in Godot 4.2. Use `script_instance_create3` instead.\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
 pub type GDExtensionInterfaceScriptInstanceCreate = ::std::option::Option<
     unsafe extern "C" fn(
         p_info: *const GDExtensionScriptInstanceInfo,
         p_instance_data: GDExtensionScriptInstanceDataPtr,
     ) -> GDExtensionScriptInstancePtr,
 >;
-#[doc = " @name script_instance_create2\n @since 4.2\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo2 struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
+#[doc = " @name script_instance_create2\n @since 4.2\n @deprecated in Godot 4.3. Use `script_instance_create3` instead.\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo2 struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
 pub type GDExtensionInterfaceScriptInstanceCreate2 = ::std::option::Option<
     unsafe extern "C" fn(
         p_info: *const GDExtensionScriptInstanceInfo2,
+        p_instance_data: GDExtensionScriptInstanceDataPtr,
+    ) -> GDExtensionScriptInstancePtr,
+>;
+#[doc = " @name script_instance_create3\n @since 4.3\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo3 struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
+pub type GDExtensionInterfaceScriptInstanceCreate3 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_info: *const GDExtensionScriptInstanceInfo3,
         p_instance_data: GDExtensionScriptInstanceDataPtr,
     ) -> GDExtensionScriptInstancePtr,
 >;
@@ -3331,11 +4567,18 @@ pub type GDExtensionInterfaceObjectGetScriptInstance = ::std::option::Option<
         p_language: GDExtensionObjectPtr,
     ) -> GDExtensionScriptInstanceDataPtr,
 >;
-#[doc = " @name callable_custom_create\n @since 4.2\n\n Creates a custom Callable object from a function pointer.\n\n Provided struct can be safely freed once the function returns.\n\n @param r_callable A pointer that will receive the new Callable.\n @param p_callable_custom_info The info required to construct a Callable."]
+#[doc = " @name callable_custom_create\n @since 4.2\n @deprecated in Godot 4.3. Use `callable_custom_create2` instead.\n\n Creates a custom Callable object from a function pointer.\n\n Provided struct can be safely freed once the function returns.\n\n @param r_callable A pointer that will receive the new Callable.\n @param p_callable_custom_info The info required to construct a Callable."]
 pub type GDExtensionInterfaceCallableCustomCreate = ::std::option::Option<
     unsafe extern "C" fn(
         r_callable: GDExtensionUninitializedTypePtr,
         p_callable_custom_info: *mut GDExtensionCallableCustomInfo,
+    ),
+>;
+#[doc = " @name callable_custom_create2\n @since 4.3\n\n Creates a custom Callable object from a function pointer.\n\n Provided struct can be safely freed once the function returns.\n\n @param r_callable A pointer that will receive the new Callable.\n @param p_callable_custom_info The info required to construct a Callable."]
+pub type GDExtensionInterfaceCallableCustomCreate2 = ::std::option::Option<
+    unsafe extern "C" fn(
+        r_callable: GDExtensionUninitializedTypePtr,
+        p_callable_custom_info: *mut GDExtensionCallableCustomInfo2,
     ),
 >;
 #[doc = " @name callable_custom_get_userdata\n @since 4.2\n\n Retrieves the userdata pointer from a custom Callable.\n\n If the Callable is not a custom Callable or the token does not match the one provided to callable_custom_create() via GDExtensionCallableCustomInfo then NULL will be returned.\n\n @param p_callable A pointer to a Callable.\n @param p_token A pointer to an address that uniquely identifies the GDExtension."]
@@ -3345,8 +4588,12 @@ pub type GDExtensionInterfaceCallableCustomGetUserData = ::std::option::Option<
         p_token: *mut ::std::os::raw::c_void,
     ) -> *mut ::std::os::raw::c_void,
 >;
-#[doc = " @name classdb_construct_object\n @since 4.1\n\n Constructs an Object of the requested class.\n\n The passed class must be a built-in godot class, or an already-registered extension class. In both cases, object_set_instance() should be called to fully initialize the object.\n\n @param p_classname A pointer to a StringName with the class name.\n\n @return A pointer to the newly created Object."]
+#[doc = " @name classdb_construct_object\n @since 4.1\n @deprecated in Godot 4.4. Use `classdb_construct_object2` instead.\n\n Constructs an Object of the requested class.\n\n The passed class must be a built-in godot class, or an already-registered extension class. In both cases, object_set_instance() should be called to fully initialize the object.\n\n @param p_classname A pointer to a StringName with the class name.\n\n @return A pointer to the newly created Object."]
 pub type GDExtensionInterfaceClassdbConstructObject = ::std::option::Option<
+    unsafe extern "C" fn(p_classname: GDExtensionConstStringNamePtr) -> GDExtensionObjectPtr,
+>;
+#[doc = " @name classdb_construct_object2\n @since 4.4\n\n Constructs an Object of the requested class.\n\n The passed class must be a built-in godot class, or an already-registered extension class. In both cases, object_set_instance() should be called to fully initialize the object.\n\n \"NOTIFICATION_POSTINITIALIZE\" must be sent after construction.\n\n @param p_classname A pointer to a StringName with the class name.\n\n @return A pointer to the newly created Object."]
+pub type GDExtensionInterfaceClassdbConstructObject2 = ::std::option::Option<
     unsafe extern "C" fn(p_classname: GDExtensionConstStringNamePtr) -> GDExtensionObjectPtr,
 >;
 #[doc = " @name classdb_get_method_bind\n @since 4.1\n\n Gets a pointer to the MethodBind in ClassDB for the given class, method and hash.\n\n @param p_classname A pointer to a StringName with the class name.\n @param p_methodname A pointer to a StringName with the method name.\n @param p_hash A hash representing the function signature.\n\n @return A pointer to the MethodBind from ClassDB."]
@@ -3361,7 +4608,7 @@ pub type GDExtensionInterfaceClassdbGetMethodBind = ::std::option::Option<
 pub type GDExtensionInterfaceClassdbGetClassTag = ::std::option::Option<
     unsafe extern "C" fn(p_classname: GDExtensionConstStringNamePtr) -> *mut ::std::os::raw::c_void,
 >;
-#[doc = " @name classdb_register_extension_class\n @since 4.1\n @deprecated in Godot 4.2. Use `classdb_register_extension_class2` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo struct."]
+#[doc = " @name classdb_register_extension_class\n @since 4.1\n @deprecated in Godot 4.2. Use `classdb_register_extension_class4` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo struct."]
 pub type GDExtensionInterfaceClassdbRegisterExtensionClass = ::std::option::Option<
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,
@@ -3370,13 +4617,31 @@ pub type GDExtensionInterfaceClassdbRegisterExtensionClass = ::std::option::Opti
         p_extension_funcs: *const GDExtensionClassCreationInfo,
     ),
 >;
-#[doc = " @name classdb_register_extension_class2\n @since 4.2\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo2 struct."]
+#[doc = " @name classdb_register_extension_class2\n @since 4.2\n @deprecated in Godot 4.3. Use `classdb_register_extension_class4` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo2 struct."]
 pub type GDExtensionInterfaceClassdbRegisterExtensionClass2 = ::std::option::Option<
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,
         p_class_name: GDExtensionConstStringNamePtr,
         p_parent_class_name: GDExtensionConstStringNamePtr,
         p_extension_funcs: *const GDExtensionClassCreationInfo2,
+    ),
+>;
+#[doc = " @name classdb_register_extension_class3\n @since 4.3\n @deprecated in Godot 4.4. Use `classdb_register_extension_class4` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo2 struct."]
+pub type GDExtensionInterfaceClassdbRegisterExtensionClass3 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_library: GDExtensionClassLibraryPtr,
+        p_class_name: GDExtensionConstStringNamePtr,
+        p_parent_class_name: GDExtensionConstStringNamePtr,
+        p_extension_funcs: *const GDExtensionClassCreationInfo3,
+    ),
+>;
+#[doc = " @name classdb_register_extension_class4\n @since 4.4\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo2 struct."]
+pub type GDExtensionInterfaceClassdbRegisterExtensionClass4 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_library: GDExtensionClassLibraryPtr,
+        p_class_name: GDExtensionConstStringNamePtr,
+        p_parent_class_name: GDExtensionConstStringNamePtr,
+        p_extension_funcs: *const GDExtensionClassCreationInfo4,
     ),
 >;
 #[doc = " @name classdb_register_extension_class_method\n @since 4.1\n\n Registers a method on an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_method_info A pointer to a GDExtensionClassMethodInfo struct."]
@@ -3387,7 +4652,15 @@ pub type GDExtensionInterfaceClassdbRegisterExtensionClassMethod = ::std::option
         p_method_info: *const GDExtensionClassMethodInfo,
     ),
 >;
-#[doc = " @name classdb_register_extension_class_integer_constant\n @since 4.1\n\n Registers an integer constant on an extension class in the ClassDB.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_enum_name A pointer to a StringName with the enum name.\n @param p_constant_name A pointer to a StringName with the constant name.\n @param p_constant_value The constant value.\n @param p_is_bitfield Whether or not this is a bit field."]
+#[doc = " @name classdb_register_extension_class_virtual_method\n @since 4.3\n\n Registers a virtual method on an extension class in ClassDB, that can be implemented by scripts or other extensions.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_method_info A pointer to a GDExtensionClassMethodInfo struct."]
+pub type GDExtensionInterfaceClassdbRegisterExtensionClassVirtualMethod = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_library: GDExtensionClassLibraryPtr,
+        p_class_name: GDExtensionConstStringNamePtr,
+        p_method_info: *const GDExtensionClassVirtualMethodInfo,
+    ),
+>;
+#[doc = " @name classdb_register_extension_class_integer_constant\n @since 4.1\n\n Registers an integer constant on an extension class in the ClassDB.\n\n Note about registering bitfield values (if p_is_bitfield is true): even though p_constant_value is signed, language bindings are\n advised to treat bitfields as uint64_t, since this is generally clearer and can prevent mistakes like using -1 for setting all bits.\n Language APIs should thus provide an abstraction that registers bitfields (uint64_t) separately from regular constants (int64_t).\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_enum_name A pointer to a StringName with the enum name.\n @param p_constant_name A pointer to a StringName with the constant name.\n @param p_constant_value The constant value.\n @param p_is_bitfield Whether or not this constant is part of a bitfield."]
 pub type GDExtensionInterfaceClassdbRegisterExtensionClassIntegerConstant = ::std::option::Option<
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,
@@ -3467,3 +4740,10 @@ pub type GDExtensionInterfaceEditorAddPlugin =
 #[doc = " @name editor_remove_plugin\n @since 4.1\n\n Removes an editor plugin.\n\n @param p_class_name A pointer to a StringName with the name of a class that was previously added as an editor plugin."]
 pub type GDExtensionInterfaceEditorRemovePlugin =
     ::std::option::Option<unsafe extern "C" fn(p_class_name: GDExtensionConstStringNamePtr)>;
+#[doc = " @name editor_help_load_xml_from_utf8_chars\n @since 4.3\n\n Loads new XML-formatted documentation data in the editor.\n\n The provided pointer can be immediately freed once the function returns.\n\n @param p_data A pointer to a UTF-8 encoded C string (null terminated)."]
+pub type GDExtensionsInterfaceEditorHelpLoadXmlFromUtf8Chars =
+    ::std::option::Option<unsafe extern "C" fn(p_data: *const ::std::os::raw::c_char)>;
+#[doc = " @name editor_help_load_xml_from_utf8_chars_and_len\n @since 4.3\n\n Loads new XML-formatted documentation data in the editor.\n\n The provided pointer can be immediately freed once the function returns.\n\n @param p_data A pointer to a UTF-8 encoded C string.\n @param p_size The number of bytes (not code units)."]
+pub type GDExtensionsInterfaceEditorHelpLoadXmlFromUtf8CharsAndLen = ::std::option::Option<
+    unsafe extern "C" fn(p_data: *const ::std::os::raw::c_char, p_size: GDExtensionInt),
+>;
