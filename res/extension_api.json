@@ -171058,8 +171058,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 990163283,
+					"hash": 723587915,
 					"hash_compatibility": [
+						990163283,
 						2841200299
 					],
 					"return_value": {
@@ -171069,7 +171070,8 @@
 						{
 							"name": "buffer_size",
 							"type": "int",
-							"meta": "int64"
+							"meta": "int64",
+							"default_value": "1024"
 						}
 					]
 				},
@@ -171079,7 +171081,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 47165747,
+					"hash": 3249455752,
+					"hash_compatibility": [
+						47165747
+					],
 					"return_value": {
 						"type": "PackedByteArray"
 					},
@@ -171087,7 +171092,8 @@
 						{
 							"name": "buffer_size",
 							"type": "int",
-							"meta": "int64"
+							"meta": "int64",
+							"default_value": "1024"
 						}
 					]
 				},
@@ -272963,6 +272969,14 @@
 						{
 							"name": "OVERRUN_TRIM_WORD_ELLIPSIS",
 							"value": 4
+						},
+						{
+							"name": "OVERRUN_TRIM_ELLIPSIS_FORCE",
+							"value": 5
+						},
+						{
+							"name": "OVERRUN_TRIM_WORD_ELLIPSIS_FORCE",
+							"value": 6
 						}
 					]
 				},
