@@ -84819,7 +84819,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1531299078,
+					"hash": 1386825884,
+					"hash_compatibility": [
+						1531299078
+					],
 					"return_value": {
 						"type": "enum::Error"
 					},
@@ -84851,6 +84854,12 @@
 						{
 							"name": "callback",
 							"type": "Callable"
+						},
+						{
+							"name": "parent_window_id",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
 						}
 					]
 				},
@@ -84860,7 +84869,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1305318754,
+					"hash": 1448789813,
+					"hash_compatibility": [
+						1305318754
+					],
 					"return_value": {
 						"type": "enum::Error"
 					},
@@ -84900,6 +84912,12 @@
 						{
 							"name": "callback",
 							"type": "Callable"
+						},
+						{
+							"name": "parent_window_id",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
 						}
 					]
 				},
@@ -218771,8 +218789,64 @@
 							"value": 217
 						},
 						{
-							"name": "DATA_FORMAT_MAX",
+							"name": "DATA_FORMAT_ASTC_4x4_SFLOAT_BLOCK",
 							"value": 218
+						},
+						{
+							"name": "DATA_FORMAT_ASTC_5x4_SFLOAT_BLOCK",
+							"value": 219
+						},
+						{
+							"name": "DATA_FORMAT_ASTC_5x5_SFLOAT_BLOCK",
+							"value": 220
+						},
+						{
+							"name": "DATA_FORMAT_ASTC_6x5_SFLOAT_BLOCK",
+							"value": 221
+						},
+						{
+							"name": "DATA_FORMAT_ASTC_6x6_SFLOAT_BLOCK",
+							"value": 222
+						},
+						{
+							"name": "DATA_FORMAT_ASTC_8x5_SFLOAT_BLOCK",
+							"value": 223
+						},
+						{
+							"name": "DATA_FORMAT_ASTC_8x6_SFLOAT_BLOCK",
+							"value": 224
+						},
+						{
+							"name": "DATA_FORMAT_ASTC_8x8_SFLOAT_BLOCK",
+							"value": 225
+						},
+						{
+							"name": "DATA_FORMAT_ASTC_10x5_SFLOAT_BLOCK",
+							"value": 226
+						},
+						{
+							"name": "DATA_FORMAT_ASTC_10x6_SFLOAT_BLOCK",
+							"value": 227
+						},
+						{
+							"name": "DATA_FORMAT_ASTC_10x8_SFLOAT_BLOCK",
+							"value": 228
+						},
+						{
+							"name": "DATA_FORMAT_ASTC_10x10_SFLOAT_BLOCK",
+							"value": 229
+						},
+						{
+							"name": "DATA_FORMAT_ASTC_12x10_SFLOAT_BLOCK",
+							"value": 230
+						},
+						{
+							"name": "DATA_FORMAT_ASTC_12x12_SFLOAT_BLOCK",
+							"value": 231
+						},
+						{
+							"name": "DATA_FORMAT_MAX",
+							"value": 232
 						}
 					]
 				},
