@@ -3826,9 +3826,131 @@ fn bindgen_test_layout_GDExtensionGodotVersion() {
         )
     );
 }
-#[doc = " @name get_godot_version\n @since 4.1\n\n Gets the Godot version that the GDExtension was loaded into.\n\n @param r_godot_version A pointer to the structure to write the version information into."]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct GDExtensionGodotVersion2 {
+    pub major: u32,
+    pub minor: u32,
+    pub patch: u32,
+    pub hex: u32,
+    pub status: *const ::std::os::raw::c_char,
+    pub build: *const ::std::os::raw::c_char,
+    pub hash: *const ::std::os::raw::c_char,
+    pub timestamp: u64,
+    pub string: *const ::std::os::raw::c_char,
+}
+#[test]
+fn bindgen_test_layout_GDExtensionGodotVersion2() {
+    const UNINIT: ::std::mem::MaybeUninit<GDExtensionGodotVersion2> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<GDExtensionGodotVersion2>(),
+        56usize,
+        concat!("Size of: ", stringify!(GDExtensionGodotVersion2))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<GDExtensionGodotVersion2>(),
+        8usize,
+        concat!("Alignment of ", stringify!(GDExtensionGodotVersion2))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).major) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionGodotVersion2),
+            "::",
+            stringify!(major)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).minor) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionGodotVersion2),
+            "::",
+            stringify!(minor)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).patch) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionGodotVersion2),
+            "::",
+            stringify!(patch)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).hex) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionGodotVersion2),
+            "::",
+            stringify!(hex)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).status) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionGodotVersion2),
+            "::",
+            stringify!(status)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).build) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionGodotVersion2),
+            "::",
+            stringify!(build)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).hash) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionGodotVersion2),
+            "::",
+            stringify!(hash)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).timestamp) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionGodotVersion2),
+            "::",
+            stringify!(timestamp)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).string) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionGodotVersion2),
+            "::",
+            stringify!(string)
+        )
+    );
+}
+#[doc = " @name get_godot_version\n @since 4.1\n @deprecated in Godot 4.5. Use `get_godot_version2` instead.\n\n Gets the Godot version that the GDExtension was loaded into.\n\n @param r_godot_version A pointer to the structure to write the version information into."]
 pub type GDExtensionInterfaceGetGodotVersion =
     ::std::option::Option<unsafe extern "C" fn(r_godot_version: *mut GDExtensionGodotVersion)>;
+#[doc = " @name get_godot_version2\n @since 4.5\n\n Gets the Godot version that the GDExtension was loaded into.\n\n @param r_godot_version A pointer to the structure to write the version information into."]
+pub type GDExtensionInterfaceGetGodotVersion2 =
+    ::std::option::Option<unsafe extern "C" fn(r_godot_version: *mut GDExtensionGodotVersion2)>;
 #[doc = " @name mem_alloc\n @since 4.1\n\n Allocates memory.\n\n @param p_bytes The amount of memory to allocate in bytes.\n\n @return A pointer to the allocated memory, or NULL if unsuccessful."]
 pub type GDExtensionInterfaceMemAlloc =
     ::std::option::Option<unsafe extern "C" fn(p_bytes: usize) -> *mut ::std::os::raw::c_void>;

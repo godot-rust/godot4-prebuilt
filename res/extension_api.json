@@ -5,7 +5,8 @@
 		"version_patch": 0,
 		"version_status": "dev",
 		"version_build": "custom_build",
-		"version_full_name": "Godot Engine v4.5.dev.custom_build"
+		"version_full_name": "Godot Engine v4.5.dev.custom_build",
+		"precision": "single"
 	},
 	"builtin_class_sizes": [
 		{
@@ -244028,6 +244029,31 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "set_licenses_dialog_visible",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "visible",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_licenses_dialog_visible",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"signals": [
@@ -244145,6 +244171,12 @@
 					"name": "physics_interpolation",
 					"setter": "set_physics_interpolation_enabled",
 					"getter": "is_physics_interpolation_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "licenses_dialog_visible",
+					"setter": "set_licenses_dialog_visible",
+					"getter": "is_licenses_dialog_visible"
 				}
 			]
 		},
