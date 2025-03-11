@@ -7965,6 +7965,34 @@
 					]
 				},
 				{
+					"name": "remove_char",
+					"return_type": "String",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 2162347432,
+					"arguments": [
+						{
+							"name": "what",
+							"type": "int"
+						}
+					]
+				},
+				{
+					"name": "remove_chars",
+					"return_type": "String",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3134094431,
+					"arguments": [
+						{
+							"name": "chars",
+							"type": "String"
+						}
+					]
+				},
+				{
 					"name": "repeat",
 					"return_type": "String",
 					"is_vararg": false,
@@ -18307,6 +18335,34 @@
 					]
 				},
 				{
+					"name": "remove_char",
+					"return_type": "String",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 2162347432,
+					"arguments": [
+						{
+							"name": "what",
+							"type": "int"
+						}
+					]
+				},
+				{
+					"name": "remove_chars",
+					"return_type": "String",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3134094431,
+					"arguments": [
+						{
+							"name": "chars",
+							"type": "String"
+						}
+					]
+				},
+				{
 					"name": "repeat",
 					"return_type": "String",
 					"is_vararg": false,
@@ -21463,6 +21519,20 @@
 					]
 				},
 				{
+					"name": "erase",
+					"return_type": "bool",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 694024632,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "int"
+						}
+					]
+				},
+				{
 					"name": "get_string_from_ascii",
 					"return_type": "String",
 					"is_vararg": false,
@@ -22374,6 +22444,20 @@
 							"type": "int"
 						}
 					]
+				},
+				{
+					"name": "erase",
+					"return_type": "bool",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 694024632,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "int"
+						}
+					]
 				}
 			],
 			"constructors": [
@@ -22727,6 +22811,20 @@
 					"is_const": true,
 					"is_static": false,
 					"hash": 4103005248,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "int"
+						}
+					]
+				},
+				{
+					"name": "erase",
+					"return_type": "bool",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 694024632,
 					"arguments": [
 						{
 							"name": "value",
@@ -23092,6 +23190,20 @@
 							"type": "float"
 						}
 					]
+				},
+				{
+					"name": "erase",
+					"return_type": "bool",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 4094791666,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "float"
+						}
+					]
 				}
 			],
 			"constructors": [
@@ -23451,6 +23563,20 @@
 							"type": "float"
 						}
 					]
+				},
+				{
+					"name": "erase",
+					"return_type": "bool",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 4094791666,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "float"
+						}
+					]
 				}
 			],
 			"constructors": [
@@ -23804,6 +23930,20 @@
 					"is_const": true,
 					"is_static": false,
 					"hash": 2920860731,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "erase",
+					"return_type": "bool",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 816187996,
 					"arguments": [
 						{
 							"name": "value",
@@ -24174,6 +24314,20 @@
 							"type": "Vector2"
 						}
 					]
+				},
+				{
+					"name": "erase",
+					"return_type": "bool",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 4188891560,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "Vector2"
+						}
+					]
 				}
 			],
 			"constructors": [
@@ -24532,6 +24686,20 @@
 					"is_const": true,
 					"is_static": false,
 					"hash": 194580386,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "erase",
+					"return_type": "bool",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 3295363524,
 					"arguments": [
 						{
 							"name": "value",
@@ -24897,6 +25065,20 @@
 							"type": "Color"
 						}
 					]
+				},
+				{
+					"name": "erase",
+					"return_type": "bool",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 1007858200,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "Color"
+						}
+					]
 				}
 			],
 			"constructors": [
@@ -25250,6 +25432,20 @@
 					"is_const": true,
 					"is_static": false,
 					"hash": 3956594488,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "Vector4"
+						}
+					]
+				},
+				{
+					"name": "erase",
+					"return_type": "bool",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 3289167688,
 					"arguments": [
 						{
 							"name": "value",
@@ -244029,31 +244225,6 @@
 					"return_value": {
 						"type": "bool"
 					}
-				},
-				{
-					"name": "set_licenses_dialog_visible",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "visible",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_licenses_dialog_visible",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
 				}
 			],
 			"signals": [
@@ -244171,12 +244342,6 @@
 					"name": "physics_interpolation",
 					"setter": "set_physics_interpolation_enabled",
 					"getter": "is_physics_interpolation_enabled"
-				},
-				{
-					"type": "bool",
-					"name": "licenses_dialog_visible",
-					"setter": "set_licenses_dialog_visible",
-					"getter": "is_licenses_dialog_visible"
 				}
 			]
 		},
