@@ -92265,6 +92265,17 @@
 					}
 				},
 				{
+					"name": "get_open_scene_roots",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::Node"
+					}
+				},
+				{
 					"name": "get_edited_scene_root",
 					"is_const": true,
 					"is_vararg": false,
@@ -104560,6 +104571,42 @@
 					"return_value": {
 						"type": "int",
 						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "file",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_access_time",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1597066294,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "file",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1597066294,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
 					},
 					"arguments": [
 						{
@@ -121776,6 +121823,23 @@
 							"type": "float",
 							"meta": "float",
 							"default_value": "4.0"
+						}
+					]
+				},
+				{
+					"name": "get_connection_list_from_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3147814860,
+					"return_value": {
+						"type": "typedarray::Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "node",
+							"type": "StringName"
 						}
 					]
 				},
@@ -158506,6 +158570,56 @@
 						"type": "float",
 						"meta": "float"
 					}
+				},
+				{
+					"name": "set_included_regions",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "regions",
+							"type": "typedarray::RID"
+						}
+					]
+				},
+				{
+					"name": "get_included_regions",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::RID"
+					}
+				},
+				{
+					"name": "set_excluded_regions",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "regions",
+							"type": "typedarray::RID"
+						}
+					]
+				},
+				{
+					"name": "get_excluded_regions",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::RID"
+					}
 				}
 			],
 			"properties": [
@@ -158562,6 +158676,18 @@
 					"name": "simplify_epsilon",
 					"setter": "set_simplify_epsilon",
 					"getter": "get_simplify_epsilon"
+				},
+				{
+					"type": "typedarray::RID",
+					"name": "excluded_regions",
+					"setter": "set_excluded_regions",
+					"getter": "get_excluded_regions"
+				},
+				{
+					"type": "typedarray::RID",
+					"name": "included_regions",
+					"setter": "set_included_regions",
+					"getter": "get_included_regions"
 				}
 			]
 		},
@@ -158856,6 +158982,56 @@
 						"type": "float",
 						"meta": "float"
 					}
+				},
+				{
+					"name": "set_included_regions",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "regions",
+							"type": "typedarray::RID"
+						}
+					]
+				},
+				{
+					"name": "get_included_regions",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::RID"
+					}
+				},
+				{
+					"name": "set_excluded_regions",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "regions",
+							"type": "typedarray::RID"
+						}
+					]
+				},
+				{
+					"name": "get_excluded_regions",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::RID"
+					}
 				}
 			],
 			"properties": [
@@ -158912,6 +159088,18 @@
 					"name": "simplify_epsilon",
 					"setter": "set_simplify_epsilon",
 					"getter": "get_simplify_epsilon"
+				},
+				{
+					"type": "typedarray::RID",
+					"name": "excluded_regions",
+					"setter": "set_excluded_regions",
+					"getter": "get_excluded_regions"
+				},
+				{
+					"type": "typedarray::RID",
+					"name": "included_regions",
+					"setter": "set_included_regions",
+					"getter": "get_included_regions"
 				}
 			]
 		},
@@ -231864,6 +232052,35 @@
 							"name": "fog_mode",
 							"type": "enum::RenderingServer.EnvironmentFogMode",
 							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "environment_set_fog_depth",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 157498339,
+					"arguments": [
+						{
+							"name": "env",
+							"type": "RID"
+						},
+						{
+							"name": "curve",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "begin",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "end",
+							"type": "float",
+							"meta": "float"
 						}
 					]
 				},
