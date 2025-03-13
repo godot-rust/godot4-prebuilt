@@ -59026,6 +59026,31 @@
 					}
 				},
 				{
+					"name": "set_limit_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "limit_enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_limit_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_limit",
 					"is_const": false,
 					"is_vararg": false,
@@ -59546,6 +59571,12 @@
 					"name": "process_callback",
 					"setter": "set_process_callback",
 					"getter": "get_process_callback"
+				},
+				{
+					"type": "bool",
+					"name": "limit_enabled",
+					"setter": "set_limit_enabled",
+					"getter": "is_limit_enabled"
 				},
 				{
 					"type": "int",
@@ -175102,7 +175133,7 @@
 			"is_refcounted": false,
 			"is_instantiable": true,
 			"inherits": "PanelContainer",
-			"api_type": "core",
+			"api_type": "editor",
 			"methods": [
 				{
 					"name": "get_binding_modifier",
@@ -175152,6 +175183,100 @@
 			"is_instantiable": false,
 			"inherits": "Node3D",
 			"api_type": "core",
+			"enums": [
+				{
+					"name": "Filter",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "FILTER_NEAREST",
+							"value": 0
+						},
+						{
+							"name": "FILTER_LINEAR",
+							"value": 1
+						},
+						{
+							"name": "FILTER_CUBIC",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "MipmapMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "MIPMAP_MODE_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "MIPMAP_MODE_NEAREST",
+							"value": 1
+						},
+						{
+							"name": "MIPMAP_MODE_LINEAR",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "Wrap",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "WRAP_CLAMP_TO_BORDER",
+							"value": 0
+						},
+						{
+							"name": "WRAP_CLAMP_TO_EDGE",
+							"value": 1
+						},
+						{
+							"name": "WRAP_REPEAT",
+							"value": 2
+						},
+						{
+							"name": "WRAP_MIRRORED_REPEAT",
+							"value": 3
+						},
+						{
+							"name": "WRAP_MIRROR_CLAMP_TO_EDGE",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "Swizzle",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SWIZZLE_RED",
+							"value": 0
+						},
+						{
+							"name": "SWIZZLE_GREEN",
+							"value": 1
+						},
+						{
+							"name": "SWIZZLE_BLUE",
+							"value": 2
+						},
+						{
+							"name": "SWIZZLE_ALPHA",
+							"value": 3
+						},
+						{
+							"name": "SWIZZLE_ZERO",
+							"value": 4
+						},
+						{
+							"name": "SWIZZLE_ONE",
+							"value": 5
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "set_layer_viewport",
@@ -175328,6 +175453,283 @@
 					}
 				},
 				{
+					"name": "set_min_filter",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3653437593,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::OpenXRCompositionLayer.Filter"
+						}
+					]
+				},
+				{
+					"name": "get_min_filter",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 845677307,
+					"return_value": {
+						"type": "enum::OpenXRCompositionLayer.Filter"
+					}
+				},
+				{
+					"name": "set_mag_filter",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3653437593,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::OpenXRCompositionLayer.Filter"
+						}
+					]
+				},
+				{
+					"name": "get_mag_filter",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 845677307,
+					"return_value": {
+						"type": "enum::OpenXRCompositionLayer.Filter"
+					}
+				},
+				{
+					"name": "set_mipmap_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3271133183,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::OpenXRCompositionLayer.MipmapMode"
+						}
+					]
+				},
+				{
+					"name": "get_mipmap_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3962697095,
+					"return_value": {
+						"type": "enum::OpenXRCompositionLayer.MipmapMode"
+					}
+				},
+				{
+					"name": "set_horizontal_wrap",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 15634990,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::OpenXRCompositionLayer.Wrap"
+						}
+					]
+				},
+				{
+					"name": "get_horizontal_wrap",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2798816834,
+					"return_value": {
+						"type": "enum::OpenXRCompositionLayer.Wrap"
+					}
+				},
+				{
+					"name": "set_vertical_wrap",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 15634990,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::OpenXRCompositionLayer.Wrap"
+						}
+					]
+				},
+				{
+					"name": "get_vertical_wrap",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2798816834,
+					"return_value": {
+						"type": "enum::OpenXRCompositionLayer.Wrap"
+					}
+				},
+				{
+					"name": "set_red_swizzle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 741598951,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::OpenXRCompositionLayer.Swizzle"
+						}
+					]
+				},
+				{
+					"name": "get_red_swizzle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2334776767,
+					"return_value": {
+						"type": "enum::OpenXRCompositionLayer.Swizzle"
+					}
+				},
+				{
+					"name": "set_green_swizzle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 741598951,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::OpenXRCompositionLayer.Swizzle"
+						}
+					]
+				},
+				{
+					"name": "get_green_swizzle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2334776767,
+					"return_value": {
+						"type": "enum::OpenXRCompositionLayer.Swizzle"
+					}
+				},
+				{
+					"name": "set_blue_swizzle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 741598951,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::OpenXRCompositionLayer.Swizzle"
+						}
+					]
+				},
+				{
+					"name": "get_blue_swizzle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2334776767,
+					"return_value": {
+						"type": "enum::OpenXRCompositionLayer.Swizzle"
+					}
+				},
+				{
+					"name": "set_alpha_swizzle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 741598951,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::OpenXRCompositionLayer.Swizzle"
+						}
+					]
+				},
+				{
+					"name": "get_alpha_swizzle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2334776767,
+					"return_value": {
+						"type": "enum::OpenXRCompositionLayer.Swizzle"
+					}
+				},
+				{
+					"name": "set_max_anisotropy",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_max_anisotropy",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_border_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2920490490,
+					"arguments": [
+						{
+							"name": "color",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "get_border_color",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3444240500,
+					"return_value": {
+						"type": "Color"
+					}
+				},
+				{
 					"name": "intersects_ray",
 					"is_const": true,
 					"is_vararg": false,
@@ -175385,6 +175787,72 @@
 					"name": "enable_hole_punch",
 					"setter": "set_enable_hole_punch",
 					"getter": "get_enable_hole_punch"
+				},
+				{
+					"type": "int",
+					"name": "swapchain_state_min_filter",
+					"setter": "set_min_filter",
+					"getter": "get_min_filter"
+				},
+				{
+					"type": "int",
+					"name": "swapchain_state_mag_filter",
+					"setter": "set_mag_filter",
+					"getter": "get_mag_filter"
+				},
+				{
+					"type": "int",
+					"name": "swapchain_state_mipmap_mode",
+					"setter": "set_mipmap_mode",
+					"getter": "get_mipmap_mode"
+				},
+				{
+					"type": "int",
+					"name": "swapchain_state_horizontal_wrap",
+					"setter": "set_horizontal_wrap",
+					"getter": "get_horizontal_wrap"
+				},
+				{
+					"type": "int",
+					"name": "swapchain_state_vertical_wrap",
+					"setter": "set_vertical_wrap",
+					"getter": "get_vertical_wrap"
+				},
+				{
+					"type": "int",
+					"name": "swapchain_state_red_swizzle",
+					"setter": "set_red_swizzle",
+					"getter": "get_red_swizzle"
+				},
+				{
+					"type": "int",
+					"name": "swapchain_state_green_swizzle",
+					"setter": "set_green_swizzle",
+					"getter": "get_green_swizzle"
+				},
+				{
+					"type": "int",
+					"name": "swapchain_state_blue_swizzle",
+					"setter": "set_blue_swizzle",
+					"getter": "get_blue_swizzle"
+				},
+				{
+					"type": "int",
+					"name": "swapchain_state_alpha_swizzle",
+					"setter": "set_alpha_swizzle",
+					"getter": "get_alpha_swizzle"
+				},
+				{
+					"type": "float",
+					"name": "swapchain_state_max_anisotropy",
+					"setter": "set_max_anisotropy",
+					"getter": "get_max_anisotropy"
+				},
+				{
+					"type": "Color",
+					"name": "swapchain_state_border_color",
+					"setter": "set_border_color",
+					"getter": "get_border_color"
 				}
 			]
 		},
@@ -177335,14 +177803,14 @@
 			"is_refcounted": false,
 			"is_instantiable": true,
 			"inherits": "OpenXRInteractionProfileEditorBase",
-			"api_type": "core"
+			"api_type": "editor"
 		},
 		{
 			"name": "OpenXRInteractionProfileEditorBase",
 			"is_refcounted": false,
 			"is_instantiable": false,
 			"inherits": "HBoxContainer",
-			"api_type": "core",
+			"api_type": "editor",
 			"methods": [
 				{
 					"name": "setup",
@@ -177645,6 +178113,64 @@
 						{
 							"name": "HAND_JOINT_MAX",
 							"value": 26
+						}
+					]
+				},
+				{
+					"name": "PerfSettingsLevel",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "PERF_SETTINGS_LEVEL_POWER_SAVINGS",
+							"value": 0
+						},
+						{
+							"name": "PERF_SETTINGS_LEVEL_SUSTAINED_LOW",
+							"value": 1
+						},
+						{
+							"name": "PERF_SETTINGS_LEVEL_SUSTAINED_HIGH",
+							"value": 2
+						},
+						{
+							"name": "PERF_SETTINGS_LEVEL_BOOST",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "PerfSettingsSubDomain",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "PERF_SETTINGS_SUB_DOMAIN_COMPOSITING",
+							"value": 0
+						},
+						{
+							"name": "PERF_SETTINGS_SUB_DOMAIN_RENDERING",
+							"value": 1
+						},
+						{
+							"name": "PERF_SETTINGS_SUB_DOMAIN_THERMAL",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "PerfSettingsNotificationLevel",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "PERF_SETTINGS_NOTIF_LEVEL_NORMAL",
+							"value": 0
+						},
+						{
+							"name": "PERF_SETTINGS_NOTIF_LEVEL_WARNING",
+							"value": 1
+						},
+						{
+							"name": "PERF_SETTINGS_NOTIF_LEVEL_IMPAIRED",
+							"value": 2
 						}
 					]
 				},
@@ -178123,6 +178649,34 @@
 							"meta": "float"
 						}
 					]
+				},
+				{
+					"name": "set_cpu_level",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2940842095,
+					"arguments": [
+						{
+							"name": "level",
+							"type": "enum::OpenXRInterface.PerfSettingsLevel"
+						}
+					]
+				},
+				{
+					"name": "set_gpu_level",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2940842095,
+					"arguments": [
+						{
+							"name": "level",
+							"type": "enum::OpenXRInterface.PerfSettingsLevel"
+						}
+					]
 				}
 			],
 			"signals": [
@@ -178153,6 +178707,40 @@
 						{
 							"name": "refresh_rate",
 							"type": "float"
+						}
+					]
+				},
+				{
+					"name": "cpu_level_changed",
+					"arguments": [
+						{
+							"name": "sub_domain",
+							"type": "int"
+						},
+						{
+							"name": "from_level",
+							"type": "int"
+						},
+						{
+							"name": "to_level",
+							"type": "int"
+						}
+					]
+				},
+				{
+					"name": "gpu_level_changed",
+					"arguments": [
+						{
+							"name": "sub_domain",
+							"type": "int"
+						},
+						{
+							"name": "from_level",
+							"type": "int"
+						},
+						{
+							"name": "to_level",
+							"type": "int"
 						}
 					]
 				}
