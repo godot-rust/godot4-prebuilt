@@ -166358,6 +166358,10 @@
 					"value": 1011
 				},
 				{
+					"name": "NOTIFICATION_WM_POSITION_CHANGED",
+					"value": 1012
+				},
+				{
 					"name": "NOTIFICATION_OS_MEMORY_WARNING",
 					"value": 2009
 				},
@@ -245037,6 +245041,9 @@
 					"name": "tree_changed"
 				},
 				{
+					"name": "scene_changed"
+				},
+				{
 					"name": "tree_process_mode_changed"
 				},
 				{
@@ -258733,6 +258740,31 @@
 					]
 				},
 				{
+					"name": "set_external_force",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "force",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_external_force",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
 					"name": "reset",
 					"is_const": false,
 					"is_vararg": false,
@@ -258742,6 +258774,12 @@
 				}
 			],
 			"properties": [
+				{
+					"type": "Vector3",
+					"name": "external_force",
+					"setter": "set_external_force",
+					"getter": "get_external_force"
+				},
 				{
 					"type": "int",
 					"name": "setting_count",
