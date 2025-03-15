@@ -240722,6 +240722,14 @@
 					]
 				},
 				{
+					"name": "reload_effects",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
 					"name": "get_menu",
 					"is_const": true,
 					"is_vararg": false,
