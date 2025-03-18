@@ -81341,6 +81341,10 @@
 						{
 							"name": "FEATURE_EMOJI_AND_SYMBOL_PICKER",
 							"value": 31
+						},
+						{
+							"name": "FEATURE_NATIVE_COLOR_PICKER",
+							"value": 32
 						}
 					]
 				},
@@ -85273,6 +85277,23 @@
 					"is_static": false,
 					"is_virtual": false,
 					"hash": 4051624405
+				},
+				{
+					"name": "color_picker",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 151643214,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "callback",
+							"type": "Callable"
+						}
+					]
 				},
 				{
 					"name": "process_events",
@@ -128001,6 +128022,34 @@
 					]
 				},
 				{
+					"name": "save_dds",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2113323047,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "save_dds_to_buffer",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2362200018,
+					"return_value": {
+						"type": "PackedByteArray"
+					}
+				},
+				{
 					"name": "save_webp",
 					"is_const": true,
 					"is_vararg": false,
@@ -128650,6 +128699,23 @@
 				},
 				{
 					"name": "load_ktx_from_buffer",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 680677267,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "buffer",
+							"type": "PackedByteArray"
+						}
+					]
+				},
+				{
+					"name": "load_dds_from_buffer",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -178991,6 +179057,25 @@
 					]
 				},
 				{
+					"name": "set_item_auto_translate_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 287402019,
+					"arguments": [
+						{
+							"name": "idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "mode",
+							"type": "enum::Node.AutoTranslateMode"
+						}
+					]
+				},
+				{
 					"name": "get_item_text",
 					"is_const": true,
 					"is_vararg": false,
@@ -179091,6 +179176,24 @@
 					"hash": 844755477,
 					"return_value": {
 						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_item_auto_translate_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 906302372,
+					"return_value": {
+						"type": "enum::Node.AutoTranslateMode"
 					},
 					"arguments": [
 						{
@@ -207827,6 +207930,25 @@
 					]
 				},
 				{
+					"name": "set_item_auto_translate_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 287402019,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "mode",
+							"type": "enum::Node.AutoTranslateMode"
+						}
+					]
+				},
+				{
 					"name": "set_item_icon",
 					"is_const": false,
 					"is_vararg": false,
@@ -208272,6 +208394,24 @@
 					"hash": 844755477,
 					"return_value": {
 						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_item_auto_translate_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 906302372,
+					"return_value": {
+						"type": "enum::Node.AutoTranslateMode"
 					},
 					"arguments": [
 						{
@@ -290672,6 +290812,33 @@
 					}
 				},
 				{
+					"name": "set_physics_quadrant_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "size",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_physics_quadrant_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
 					"name": "set_occlusion_enabled",
 					"is_const": false,
 					"is_vararg": false,
@@ -290837,6 +291004,12 @@
 					"name": "collision_visibility_mode",
 					"setter": "set_collision_visibility_mode",
 					"getter": "get_collision_visibility_mode"
+				},
+				{
+					"type": "int",
+					"name": "physics_quadrant_size",
+					"setter": "set_physics_quadrant_size",
+					"getter": "get_physics_quadrant_size"
 				},
 				{
 					"type": "bool",

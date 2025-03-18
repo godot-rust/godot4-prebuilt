@@ -1978,6 +1978,8 @@ pub struct __GdextClassLibrary {
     _unused: [u8; 0],
 }
 pub type GDExtensionClassLibraryPtr = *mut __GdextClassLibrary;
+pub type GDExtensionEditorGetClassesUsedCallback =
+    ::std::option::Option<unsafe extern "C" fn(p_packed_string_array: GDExtensionTypePtr)>;
 pub const GDEXTENSION_METHOD_FLAG_NORMAL: GDExtensionClassMethodFlags = 1;
 pub const GDEXTENSION_METHOD_FLAG_EDITOR: GDExtensionClassMethodFlags = 2;
 pub const GDEXTENSION_METHOD_FLAG_CONST: GDExtensionClassMethodFlags = 4;
@@ -5072,4 +5074,11 @@ pub type GDExtensionsInterfaceEditorHelpLoadXmlFromUtf8Chars =
 #[doc = " @name editor_help_load_xml_from_utf8_chars_and_len\n @since 4.3\n\n Loads new XML-formatted documentation data in the editor.\n\n The provided pointer can be immediately freed once the function returns.\n\n @param p_data A pointer to a UTF-8 encoded C string.\n @param p_size The number of bytes (not code units)."]
 pub type GDExtensionsInterfaceEditorHelpLoadXmlFromUtf8CharsAndLen = ::std::option::Option<
     unsafe extern "C" fn(p_data: *const ::std::os::raw::c_char, p_size: GDExtensionInt),
+>;
+#[doc = " @name editor_register_get_classes_used_callback\n @since 4.5\n\n Registers a callback that Godot can call to get the list of all classes (from ClassDB) that may be used by the calling GDExtension.\n\n This is used by the editor to generate a build profile (in \"Tools\" > \"Engine Compilation Configuration Editor...\" > \"Detect from project\"),\n in order to recompile Godot with only the classes used.\n In the provided callback, the GDExtension should provide the list of classes that _may_ be used statically, thus the time of invocation shouldn't matter.\n If a GDExtension doesn't register a callback, Godot will assume that it could be using any classes.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_callback The callback to retrieve the list of classes used."]
+pub type GDExtensionInterfaceEditorRegisterGetClassesUsedCallback = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_library: GDExtensionClassLibraryPtr,
+        p_callback: GDExtensionEditorGetClassesUsedCallback,
+    ),
 >;
