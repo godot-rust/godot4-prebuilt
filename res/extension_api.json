@@ -53256,6 +53256,31 @@
 					}
 				},
 				{
+					"name": "set_autowrap_trim_flags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2809697122,
+					"arguments": [
+						{
+							"name": "autowrap_trim_flags",
+							"type": "bitfield::TextServer.LineBreakFlag"
+						}
+					]
+				},
+				{
+					"name": "get_autowrap_trim_flags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2340632602,
+					"return_value": {
+						"type": "bitfield::TextServer.LineBreakFlag"
+					}
+				},
+				{
 					"name": "set_text_direction",
 					"is_const": false,
 					"is_vararg": false,
@@ -53517,6 +53542,12 @@
 					"name": "autowrap_mode",
 					"setter": "set_autowrap_mode",
 					"getter": "get_autowrap_mode"
+				},
+				{
+					"type": "int",
+					"name": "autowrap_trim_flags",
+					"setter": "set_autowrap_trim_flags",
+					"getter": "get_autowrap_trim_flags"
 				},
 				{
 					"type": "bool",
@@ -136841,6 +136872,31 @@
 					}
 				},
 				{
+					"name": "set_autowrap_trim_flags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2809697122,
+					"arguments": [
+						{
+							"name": "autowrap_trim_flags",
+							"type": "bitfield::TextServer.LineBreakFlag"
+						}
+					]
+				},
+				{
+					"name": "get_autowrap_trim_flags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2340632602,
+					"return_value": {
+						"type": "bitfield::TextServer.LineBreakFlag"
+					}
+				},
+				{
 					"name": "set_justification_flags",
 					"is_const": false,
 					"is_vararg": false,
@@ -137278,6 +137334,12 @@
 					"name": "autowrap_mode",
 					"setter": "set_autowrap_mode",
 					"getter": "get_autowrap_mode"
+				},
+				{
+					"type": "int",
+					"name": "autowrap_trim_flags",
+					"setter": "set_autowrap_trim_flags",
+					"getter": "get_autowrap_trim_flags"
 				},
 				{
 					"type": "int",
@@ -137870,6 +137932,31 @@
 					}
 				},
 				{
+					"name": "set_autowrap_trim_flags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2809697122,
+					"arguments": [
+						{
+							"name": "autowrap_trim_flags",
+							"type": "bitfield::TextServer.LineBreakFlag"
+						}
+					]
+				},
+				{
+					"name": "get_autowrap_trim_flags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2340632602,
+					"return_value": {
+						"type": "bitfield::TextServer.LineBreakFlag"
+					}
+				},
+				{
 					"name": "set_justification_flags",
 					"is_const": false,
 					"is_vararg": false,
@@ -138361,6 +138448,12 @@
 					"name": "autowrap_mode",
 					"setter": "set_autowrap_mode",
 					"getter": "get_autowrap_mode"
+				},
+				{
+					"type": "int",
+					"name": "autowrap_trim_flags",
+					"setter": "set_autowrap_trim_flags",
+					"getter": "get_autowrap_trim_flags"
 				},
 				{
 					"type": "int",
@@ -240022,6 +240115,31 @@
 					}
 				},
 				{
+					"name": "set_autowrap_trim_flags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2809697122,
+					"arguments": [
+						{
+							"name": "autowrap_trim_flags",
+							"type": "bitfield::TextServer.LineBreakFlag"
+						}
+					]
+				},
+				{
+					"name": "get_autowrap_trim_flags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2340632602,
+					"return_value": {
+						"type": "bitfield::TextServer.LineBreakFlag"
+					}
+				},
+				{
 					"name": "set_meta_underline",
 					"is_const": false,
 					"is_vararg": false,
@@ -240975,6 +241093,12 @@
 					"name": "autowrap_mode",
 					"setter": "set_autowrap_mode",
 					"getter": "get_autowrap_mode"
+				},
+				{
+					"type": "int",
+					"name": "autowrap_trim_flags",
+					"setter": "set_autowrap_trim_flags",
+					"getter": "get_autowrap_trim_flags"
 				},
 				{
 					"type": "int",
@@ -274179,6 +274303,14 @@
 						{
 							"name": "BREAK_TRIM_INDENT",
 							"value": 32
+						},
+						{
+							"name": "BREAK_TRIM_START_EDGE_SPACES",
+							"value": 64
+						},
+						{
+							"name": "BREAK_TRIM_END_EDGE_SPACES",
+							"value": 128
 						}
 					]
 				},
