@@ -74314,6 +74314,24 @@
 					]
 				},
 				{
+					"name": "RecursiveBehavior",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "RECURSIVE_BEHAVIOR_INHERITED",
+							"value": 0
+						},
+						{
+							"name": "RECURSIVE_BEHAVIOR_DISABLED",
+							"value": 1
+						},
+						{
+							"name": "RECURSIVE_BEHAVIOR_ENABLED",
+							"value": 2
+						}
+					]
+				},
+				{
 					"name": "CursorShape",
 					"is_bitfield": false,
 					"values": [
@@ -75344,6 +75362,42 @@
 					"hash": 2132829277,
 					"return_value": {
 						"type": "enum::Control.FocusMode"
+					}
+				},
+				{
+					"name": "get_focus_mode_with_recursive",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2132829277,
+					"return_value": {
+						"type": "enum::Control.FocusMode"
+					}
+				},
+				{
+					"name": "set_focus_recursive_behavior",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1478462572,
+					"arguments": [
+						{
+							"name": "focus_recursive_behavior",
+							"type": "enum::Control.RecursiveBehavior"
+						}
+					]
+				},
+				{
+					"name": "get_focus_recursive_behavior",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2347495201,
+					"return_value": {
+						"type": "enum::Control.RecursiveBehavior"
 					}
 				},
 				{
@@ -76489,6 +76543,42 @@
 					}
 				},
 				{
+					"name": "get_mouse_filter_with_recursive",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1572545674,
+					"return_value": {
+						"type": "enum::Control.MouseFilter"
+					}
+				},
+				{
+					"name": "set_mouse_recursive_behavior",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1478462572,
+					"arguments": [
+						{
+							"name": "mouse_recursive_behavior",
+							"type": "enum::Control.RecursiveBehavior"
+						}
+					]
+				},
+				{
+					"name": "get_mouse_recursive_behavior",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2347495201,
+					"return_value": {
+						"type": "enum::Control.RecursiveBehavior"
+					}
+				},
+				{
 					"name": "set_force_pass_scroll_events",
 					"is_const": false,
 					"is_vararg": false,
@@ -76993,9 +77083,21 @@
 				},
 				{
 					"type": "int",
+					"name": "focus_recursive_behavior",
+					"setter": "set_focus_recursive_behavior",
+					"getter": "get_focus_recursive_behavior"
+				},
+				{
+					"type": "int",
 					"name": "mouse_filter",
 					"setter": "set_mouse_filter",
 					"getter": "get_mouse_filter"
+				},
+				{
+					"type": "int",
+					"name": "mouse_recursive_behavior",
+					"setter": "set_mouse_recursive_behavior",
+					"getter": "get_mouse_recursive_behavior"
 				},
 				{
 					"type": "bool",
@@ -176679,10 +176781,17 @@
 			]
 		},
 		{
+			"name": "OpenXRExtensionWrapper",
+			"is_refcounted": false,
+			"is_instantiable": false,
+			"inherits": "Object",
+			"api_type": "core"
+		},
+		{
 			"name": "OpenXRExtensionWrapperExtension",
 			"is_refcounted": false,
 			"is_instantiable": true,
-			"inherits": "Object",
+			"inherits": "OpenXRExtensionWrapper",
 			"api_type": "core",
 			"methods": [
 				{
@@ -177208,6 +177317,135 @@
 					"is_static": false,
 					"is_virtual": false,
 					"hash": 3218959716
+				}
+			]
+		},
+		{
+			"name": "OpenXRFutureExtension",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRExtensionWrapper",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "is_active",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "register_future",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1038012256,
+					"return_value": {
+						"type": "OpenXRFutureResult"
+					},
+					"arguments": [
+						{
+							"name": "future",
+							"type": "int",
+							"meta": "uint64"
+						},
+						{
+							"name": "on_success",
+							"type": "Callable",
+							"default_value": "Callable()"
+						}
+					]
+				},
+				{
+					"name": "cancel_future",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "future",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRFutureResult",
+			"is_refcounted": true,
+			"is_instantiable": false,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "ResultStatus",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "RESULT_RUNNING",
+							"value": 0
+						},
+						{
+							"name": "RESULT_FINISHED",
+							"value": 1
+						},
+						{
+							"name": "RESULT_CANCELLED",
+							"value": 2
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "get_status",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2023607463,
+					"return_value": {
+						"type": "enum::OpenXRFutureResult.ResultStatus"
+					}
+				},
+				{
+					"name": "get_future",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					}
+				},
+				{
+					"name": "cancel_future",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				}
+			],
+			"signals": [
+				{
+					"name": "completed",
+					"arguments": [
+						{
+							"name": "result",
+							"type": "OpenXRFutureResult"
+						}
+					]
 				}
 			]
 		},
