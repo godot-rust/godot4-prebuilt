@@ -61721,6 +61721,31 @@
 			],
 			"methods": [
 				{
+					"name": "set_monitoring_feeds",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "is_monitoring_feeds",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_monitoring_feeds",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "get_feed",
 					"is_const": false,
 					"is_vararg": false,
@@ -61808,6 +61833,14 @@
 							"type": "int"
 						}
 					]
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "monitoring_feeds",
+					"setter": "set_monitoring_feeds",
+					"getter": "is_monitoring_feeds"
 				}
 			]
 		},
@@ -174398,11 +174431,14 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1997997368,
+					"hash": 1477360496,
+					"hash_compatibility": [
+						1997997368
+					],
 					"arguments": [
 						{
 							"name": "extension",
-							"type": "OpenXRExtensionWrapperExtension"
+							"type": "OpenXRExtensionWrapper"
 						}
 					]
 				},
@@ -174412,11 +174448,14 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1997997368,
+					"hash": 1477360496,
+					"hash_compatibility": [
+						1997997368
+					],
 					"arguments": [
 						{
 							"name": "extension",
-							"type": "OpenXRExtensionWrapperExtension"
+							"type": "OpenXRExtensionWrapper"
 						}
 					]
 				},
@@ -174426,11 +174465,14 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1997997368,
+					"hash": 1477360496,
+					"hash_compatibility": [
+						1997997368
+					],
 					"arguments": [
 						{
 							"name": "extension",
-							"type": "OpenXRExtensionWrapperExtension"
+							"type": "OpenXRExtensionWrapper"
 						}
 					]
 				},
@@ -174440,11 +174482,14 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1997997368,
+					"hash": 1477360496,
+					"hash_compatibility": [
+						1997997368
+					],
 					"arguments": [
 						{
 							"name": "extension",
-							"type": "OpenXRExtensionWrapperExtension"
+							"type": "OpenXRExtensionWrapper"
 						}
 					]
 				},
@@ -176783,15 +176828,8 @@
 		{
 			"name": "OpenXRExtensionWrapper",
 			"is_refcounted": false,
-			"is_instantiable": false,
-			"inherits": "Object",
-			"api_type": "core"
-		},
-		{
-			"name": "OpenXRExtensionWrapperExtension",
-			"is_refcounted": false,
 			"is_instantiable": true,
-			"inherits": "OpenXRExtensionWrapper",
+			"inherits": "Object",
 			"api_type": "core",
 			"methods": [
 				{
@@ -177319,6 +177357,13 @@
 					"hash": 3218959716
 				}
 			]
+		},
+		{
+			"name": "OpenXRExtensionWrapperExtension",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRExtensionWrapper",
+			"api_type": "core"
 		},
 		{
 			"name": "OpenXRFutureExtension",
@@ -183807,11 +183852,39 @@
 					"return_value": {
 						"type": "Curve3D"
 					}
+				},
+				{
+					"name": "set_debug_custom_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2920490490,
+					"arguments": [
+						{
+							"name": "debug_custom_color",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "get_debug_custom_color",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3444240500,
+					"return_value": {
+						"type": "Color"
+					}
 				}
 			],
 			"signals": [
 				{
 					"name": "curve_changed"
+				},
+				{
+					"name": "debug_color_changed"
 				}
 			],
 			"properties": [
@@ -183820,6 +183893,12 @@
 					"name": "curve",
 					"setter": "set_curve",
 					"getter": "get_curve"
+				},
+				{
+					"type": "Color",
+					"name": "debug_custom_color",
+					"setter": "set_debug_custom_color",
+					"getter": "get_debug_custom_color"
 				}
 			]
 		},
@@ -221238,6 +221317,14 @@
 					"name": "Features",
 					"is_bitfield": false,
 					"values": [
+						{
+							"name": "SUPPORTS_METALFX_SPATIAL",
+							"value": 3
+						},
+						{
+							"name": "SUPPORTS_METALFX_TEMPORAL",
+							"value": 4
+						},
 						{
 							"name": "SUPPORTS_BUFFER_DEVICE_ADDRESS",
 							"value": 6
@@ -306277,6 +306364,31 @@
 					}
 				},
 				{
+					"name": "set_show_rect",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "show_rect",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_showing_rect",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "is_on_screen",
 					"is_const": true,
 					"is_vararg": false,
@@ -306302,6 +306414,12 @@
 					"name": "rect",
 					"setter": "set_rect",
 					"getter": "get_rect"
+				},
+				{
+					"type": "bool",
+					"name": "show_rect",
+					"setter": "set_show_rect",
+					"getter": "is_showing_rect"
 				}
 			]
 		},
