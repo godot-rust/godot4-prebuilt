@@ -244551,6 +244551,28 @@
 			],
 			"methods": [
 				{
+					"name": "get_path",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "get_base_scene_state",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3479783971,
+					"return_value": {
+						"type": "SceneState"
+					}
+				},
+				{
 					"name": "get_node_count",
 					"is_const": true,
 					"is_vararg": false,
