@@ -8781,7 +8781,7 @@
 					"hash": 247621236
 				},
 				{
-					"name": "hex_decode",
+					"name": "to_wchar_buffer",
 					"return_type": "PackedByteArray",
 					"is_vararg": false,
 					"is_const": true,
@@ -8789,7 +8789,22 @@
 					"hash": 247621236
 				},
 				{
-					"name": "to_wchar_buffer",
+					"name": "to_multibyte_char_buffer",
+					"return_type": "PackedByteArray",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3055765187,
+					"arguments": [
+						{
+							"name": "encoding",
+							"type": "String",
+							"default_value": "\"\""
+						}
+					]
+				},
+				{
+					"name": "hex_decode",
 					"return_type": "PackedByteArray",
 					"is_vararg": false,
 					"is_const": true,
@@ -19143,7 +19158,7 @@
 					"hash": 247621236
 				},
 				{
-					"name": "hex_decode",
+					"name": "to_wchar_buffer",
 					"return_type": "PackedByteArray",
 					"is_vararg": false,
 					"is_const": true,
@@ -19151,7 +19166,22 @@
 					"hash": 247621236
 				},
 				{
-					"name": "to_wchar_buffer",
+					"name": "to_multibyte_char_buffer",
+					"return_type": "PackedByteArray",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3055765187,
+					"arguments": [
+						{
+							"name": "encoding",
+							"type": "String",
+							"default_value": "\"\""
+						}
+					]
+				},
+				{
+					"name": "hex_decode",
 					"return_type": "PackedByteArray",
 					"is_vararg": false,
 					"is_const": true,
@@ -21571,6 +21601,21 @@
 					"is_const": true,
 					"is_static": false,
 					"hash": 3942272618
+				},
+				{
+					"name": "get_string_from_multibyte_char",
+					"return_type": "String",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3134094431,
+					"arguments": [
+						{
+							"name": "encoding",
+							"type": "String",
+							"default_value": "\"\""
+						}
+					]
 				},
 				{
 					"name": "hex_encode",
@@ -58368,6 +58413,17 @@
 					}
 				},
 				{
+					"name": "bake_collision_shape",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36102322,
+					"return_value": {
+						"type": "ConcavePolygonShape3D"
+					}
+				},
+				{
 					"name": "set_calculate_tangents",
 					"is_const": false,
 					"is_vararg": false,
@@ -58412,17 +58468,6 @@
 					"hash": 1605880883,
 					"return_value": {
 						"type": "ArrayMesh"
-					}
-				},
-				{
-					"name": "bake_collision_shape",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36102322,
-					"return_value": {
-						"type": "ConcavePolygonShape3D"
 					}
 				}
 			],
@@ -81092,6 +81137,27 @@
 							"type": "String"
 						}
 					]
+				},
+				{
+					"name": "is_equivalent",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 820780508,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "path_a",
+							"type": "String"
+						},
+						{
+							"name": "path_b",
+							"type": "String"
+						}
+					]
 				}
 			],
 			"properties": [
@@ -89099,6 +89165,28 @@
 					]
 				},
 				{
+					"name": "_update_android_prebuilt_manifest",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3304965187,
+					"return_value": {
+						"type": "PackedByteArray"
+					},
+					"arguments": [
+						{
+							"name": "platform",
+							"type": "EditorExportPlatform"
+						},
+						{
+							"name": "manifest_data",
+							"type": "PackedByteArray"
+						}
+					]
+				},
+				{
 					"name": "add_shared_object",
 					"is_const": false,
 					"is_vararg": false,
@@ -96962,6 +97050,17 @@
 				},
 				{
 					"name": "get_selected_nodes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2915620761,
+					"return_value": {
+						"type": "typedarray::Node"
+					}
+				},
+				{
+					"name": "get_top_selected_nodes",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -174321,6 +174420,20 @@
 					}
 				},
 				{
+					"name": "set_custom_play_space",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "space",
+							"type": "const void*"
+						}
+					]
+				},
+				{
 					"name": "get_play_space",
 					"is_const": false,
 					"is_vararg": false,
@@ -174486,6 +174599,34 @@
 					"hash_compatibility": [
 						1997997368
 					],
+					"arguments": [
+						{
+							"name": "extension",
+							"type": "OpenXRExtensionWrapper"
+						}
+					]
+				},
+				{
+					"name": "register_frame_info_extension",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1477360496,
+					"arguments": [
+						{
+							"name": "extension",
+							"type": "OpenXRExtensionWrapper"
+						}
+					]
+				},
+				{
+					"name": "unregister_frame_info_extension",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1477360496,
 					"arguments": [
 						{
 							"name": "extension",
@@ -176959,6 +177100,87 @@
 					"arguments": [
 						{
 							"name": "view_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "next_pointer",
+							"type": "void*"
+						}
+					]
+				},
+				{
+					"name": "_set_frame_wait_info_and_get_next_pointer",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3744713108,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "next_pointer",
+							"type": "void*"
+						}
+					]
+				},
+				{
+					"name": "_set_frame_end_info_and_get_next_pointer",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3744713108,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "next_pointer",
+							"type": "void*"
+						}
+					]
+				},
+				{
+					"name": "_set_view_locate_info_and_get_next_pointer",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3744713108,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "next_pointer",
+							"type": "void*"
+						}
+					]
+				},
+				{
+					"name": "_set_reference_space_create_info_and_get_next_pointer",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 50157827,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "reference_space_type",
 							"type": "int",
 							"meta": "int32"
 						},
@@ -319752,7 +319974,7 @@
 					}
 				},
 				{
-					"name": "get_space",
+					"name": "get_navigation_map",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -319763,7 +319985,7 @@
 					}
 				},
 				{
-					"name": "get_navigation_map",
+					"name": "get_space",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -319793,13 +320015,13 @@
 				},
 				{
 					"type": "RID",
-					"name": "space",
-					"getter": "get_space"
+					"name": "navigation_map",
+					"getter": "get_navigation_map"
 				},
 				{
 					"type": "RID",
-					"name": "navigation_map",
-					"getter": "get_navigation_map"
+					"name": "space",
+					"getter": "get_space"
 				},
 				{
 					"type": "PhysicsDirectSpaceState2D",
@@ -322722,6 +322944,10 @@
 						{
 							"name": "XR_PLAY_AREA_STAGE",
 							"value": 4
+						},
+						{
+							"name": "XR_PLAY_AREA_CUSTOM",
+							"value": 2147483647
 						}
 					]
 				},
