@@ -161172,6 +161172,54 @@
 			"is_instantiable": false,
 			"inherits": "Object",
 			"api_type": "core",
+			"enums": [
+				{
+					"name": "ProcessInfo",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "INFO_ACTIVE_MAPS",
+							"value": 0
+						},
+						{
+							"name": "INFO_REGION_COUNT",
+							"value": 1
+						},
+						{
+							"name": "INFO_AGENT_COUNT",
+							"value": 2
+						},
+						{
+							"name": "INFO_LINK_COUNT",
+							"value": 3
+						},
+						{
+							"name": "INFO_POLYGON_COUNT",
+							"value": 4
+						},
+						{
+							"name": "INFO_EDGE_COUNT",
+							"value": 5
+						},
+						{
+							"name": "INFO_EDGE_MERGE_COUNT",
+							"value": 6
+						},
+						{
+							"name": "INFO_EDGE_CONNECTION_COUNT",
+							"value": 7
+						},
+						{
+							"name": "INFO_EDGE_FREE_COUNT",
+							"value": 8
+						},
+						{
+							"name": "INFO_OBSTACLE_COUNT",
+							"value": 9
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "get_maps",
@@ -163491,6 +163539,20 @@
 					]
 				},
 				{
+					"name": "set_active",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "active",
+							"type": "bool"
+						}
+					]
+				},
+				{
 					"name": "set_debug_enabled",
 					"is_const": false,
 					"is_vararg": false,
@@ -163514,6 +163576,24 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "get_process_info",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1640219858,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "process_info",
+							"type": "enum::NavigationServer2D.ProcessInfo"
+						}
+					]
 				}
 			],
 			"signals": [
@@ -163528,6 +163608,9 @@
 				},
 				{
 					"name": "navigation_debug_changed"
+				},
+				{
+					"name": "avoidance_debug_changed"
 				}
 			]
 		},
@@ -184875,8 +184958,88 @@
 							"value": 38
 						},
 						{
-							"name": "MONITOR_MAX",
+							"name": "NAVIGATION_2D_ACTIVE_MAPS",
 							"value": 39
+						},
+						{
+							"name": "NAVIGATION_2D_REGION_COUNT",
+							"value": 40
+						},
+						{
+							"name": "NAVIGATION_2D_AGENT_COUNT",
+							"value": 41
+						},
+						{
+							"name": "NAVIGATION_2D_LINK_COUNT",
+							"value": 42
+						},
+						{
+							"name": "NAVIGATION_2D_POLYGON_COUNT",
+							"value": 43
+						},
+						{
+							"name": "NAVIGATION_2D_EDGE_COUNT",
+							"value": 44
+						},
+						{
+							"name": "NAVIGATION_2D_EDGE_MERGE_COUNT",
+							"value": 45
+						},
+						{
+							"name": "NAVIGATION_2D_EDGE_CONNECTION_COUNT",
+							"value": 46
+						},
+						{
+							"name": "NAVIGATION_2D_EDGE_FREE_COUNT",
+							"value": 47
+						},
+						{
+							"name": "NAVIGATION_2D_OBSTACLE_COUNT",
+							"value": 48
+						},
+						{
+							"name": "NAVIGATION_3D_ACTIVE_MAPS",
+							"value": 49
+						},
+						{
+							"name": "NAVIGATION_3D_REGION_COUNT",
+							"value": 50
+						},
+						{
+							"name": "NAVIGATION_3D_AGENT_COUNT",
+							"value": 51
+						},
+						{
+							"name": "NAVIGATION_3D_LINK_COUNT",
+							"value": 52
+						},
+						{
+							"name": "NAVIGATION_3D_POLYGON_COUNT",
+							"value": 53
+						},
+						{
+							"name": "NAVIGATION_3D_EDGE_COUNT",
+							"value": 54
+						},
+						{
+							"name": "NAVIGATION_3D_EDGE_MERGE_COUNT",
+							"value": 55
+						},
+						{
+							"name": "NAVIGATION_3D_EDGE_CONNECTION_COUNT",
+							"value": 56
+						},
+						{
+							"name": "NAVIGATION_3D_EDGE_FREE_COUNT",
+							"value": 57
+						},
+						{
+							"name": "NAVIGATION_3D_OBSTACLE_COUNT",
+							"value": 58
+						},
+						{
+							"name": "MONITOR_MAX",
+							"value": 59
 						}
 					]
 				}
