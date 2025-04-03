@@ -300824,7 +300824,79 @@
 			"is_refcounted": true,
 			"is_instantiable": true,
 			"inherits": "RefCounted",
-			"api_type": "core"
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "create_from_faces",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2637816732,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "faces",
+							"type": "PackedVector3Array"
+						}
+					]
+				},
+				{
+					"name": "get_faces",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 497664490,
+					"return_value": {
+						"type": "PackedVector3Array"
+					}
+				},
+				{
+					"name": "intersect_segment",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3648293151,
+					"return_value": {
+						"type": "Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "begin",
+							"type": "Vector3"
+						},
+						{
+							"name": "end",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "intersect_ray",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3648293151,
+					"return_value": {
+						"type": "Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "begin",
+							"type": "Vector3"
+						},
+						{
+							"name": "dir",
+							"type": "Vector3"
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "TubeTrailMesh",
