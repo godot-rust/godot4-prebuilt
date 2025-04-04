@@ -135782,20 +135782,20 @@
 			],
 			"methods": [
 				{
-					"name": "set_scope",
+					"name": "set_method",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2572618360,
+					"hash": 2137474292,
 					"arguments": [
 						{
-							"name": "scope",
+							"name": "name",
 							"type": "String"
 						},
 						{
-							"name": "target",
-							"type": "Object"
+							"name": "callback",
+							"type": "Callable"
 						}
 					]
 				},
@@ -251268,6 +251268,10 @@
 						{
 							"name": "MODIFIER_CALLBACK_MODE_PROCESS_IDLE",
 							"value": 1
+						},
+						{
+							"name": "MODIFIER_CALLBACK_MODE_PROCESS_MANUAL",
+							"value": 2
 						}
 					]
 				}
@@ -251999,6 +252003,21 @@
 					"return_value": {
 						"type": "enum::Skeleton3D.ModifierCallbackModeProcess"
 					}
+				},
+				{
+					"name": "advance",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "delta",
+							"type": "float",
+							"meta": "double"
+						}
+					]
 				},
 				{
 					"name": "clear_bones_global_pose_override",
@@ -254882,6 +254901,22 @@
 				}
 			],
 			"methods": [
+				{
+					"name": "_process_modification_with_delta",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "delta",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
 				{
 					"name": "_process_modification",
 					"is_const": false,
@@ -326150,16 +326185,16 @@
 			"type": "NativeMenu"
 		},
 		{
+			"name": "RenderingServer",
+			"type": "RenderingServer"
+		},
+		{
 			"name": "NavigationServer2D",
 			"type": "NavigationServer2D"
 		},
 		{
 			"name": "NavigationServer3D",
 			"type": "NavigationServer3D"
-		},
-		{
-			"name": "RenderingServer",
-			"type": "RenderingServer"
 		},
 		{
 			"name": "PhysicsServer2D",
