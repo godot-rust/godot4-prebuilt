@@ -81577,6 +81577,10 @@
 						{
 							"name": "FEATURE_NATIVE_COLOR_PICKER",
 							"value": 32
+						},
+						{
+							"name": "FEATURE_SELF_FITTING_WINDOWS",
+							"value": 33
 						}
 					]
 				},
@@ -81857,8 +81861,12 @@
 							"value": 9
 						},
 						{
-							"name": "WINDOW_FLAG_MAX",
+							"name": "WINDOW_FLAG_POPUP_WM_HINT",
 							"value": 10
+						},
+						{
+							"name": "WINDOW_FLAG_MAX",
+							"value": 11
 						}
 					]
 				},
@@ -81897,6 +81905,10 @@
 						{
 							"name": "WINDOW_EVENT_TITLEBAR_CHANGE",
 							"value": 7
+						},
+						{
+							"name": "WINDOW_EVENT_FORCE_CLOSE",
+							"value": 8
 						}
 					]
 				},
@@ -318014,8 +318026,12 @@
 							"value": 9
 						},
 						{
-							"name": "FLAG_MAX",
+							"name": "FLAG_POPUP_WM_HINT",
 							"value": 10
+						},
+						{
+							"name": "FLAG_MAX",
+							"value": 11
 						}
 					]
 				},
@@ -320114,6 +320130,13 @@
 					"setter": "set_flag",
 					"getter": "get_flag",
 					"index": 9
+				},
+				{
+					"type": "bool",
+					"name": "popup_wm_hint",
+					"setter": "set_flag",
+					"getter": "get_flag",
+					"index": 10
 				},
 				{
 					"type": "bool",
