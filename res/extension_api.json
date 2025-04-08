@@ -85154,6 +85154,20 @@
 					}
 				},
 				{
+					"name": "set_hardware_keyboard_connection_change_callback",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1611583062,
+					"arguments": [
+						{
+							"name": "callable",
+							"type": "Callable"
+						}
+					]
+				},
+				{
 					"name": "cursor_set_shape",
 					"is_const": false,
 					"is_vararg": false,
@@ -210036,6 +210050,10 @@
 						{
 							"name": "COMPRESSION_MODE_BPTC",
 							"value": 5
+						},
+						{
+							"name": "COMPRESSION_MODE_ASTC",
+							"value": 6
 						}
 					]
 				}
