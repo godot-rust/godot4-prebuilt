@@ -74388,6 +74388,10 @@
 						{
 							"name": "FOCUS_ALL",
 							"value": 2
+						},
+						{
+							"name": "FOCUS_ACCESSIBILITY",
+							"value": 3
 						}
 					]
 				},
@@ -74859,6 +74863,18 @@
 							"type": "String"
 						}
 					]
+				},
+				{
+					"name": "_accessibility_get_contextual_info",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
 				},
 				{
 					"name": "_gui_input",
@@ -76594,6 +76610,22 @@
 							"type": "Control"
 						}
 					]
+				},
+				{
+					"name": "accessibility_drag",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "accessibility_drop",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
 				},
 				{
 					"name": "set_mouse_filter",
@@ -81581,6 +81613,392 @@
 						{
 							"name": "FEATURE_SELF_FITTING_WINDOWS",
 							"value": 33
+						},
+						{
+							"name": "FEATURE_ACCESSIBILITY_SCREEN_READER",
+							"value": 34
+						}
+					]
+				},
+				{
+					"name": "AccessibilityRole",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ROLE_UNKNOWN",
+							"value": 0
+						},
+						{
+							"name": "ROLE_DEFAULT_BUTTON",
+							"value": 1
+						},
+						{
+							"name": "ROLE_AUDIO",
+							"value": 2
+						},
+						{
+							"name": "ROLE_VIDEO",
+							"value": 3
+						},
+						{
+							"name": "ROLE_STATIC_TEXT",
+							"value": 4
+						},
+						{
+							"name": "ROLE_CONTAINER",
+							"value": 5
+						},
+						{
+							"name": "ROLE_PANEL",
+							"value": 6
+						},
+						{
+							"name": "ROLE_BUTTON",
+							"value": 7
+						},
+						{
+							"name": "ROLE_LINK",
+							"value": 8
+						},
+						{
+							"name": "ROLE_CHECK_BOX",
+							"value": 9
+						},
+						{
+							"name": "ROLE_RADIO_BUTTON",
+							"value": 10
+						},
+						{
+							"name": "ROLE_CHECK_BUTTON",
+							"value": 11
+						},
+						{
+							"name": "ROLE_SCROLL_BAR",
+							"value": 12
+						},
+						{
+							"name": "ROLE_SCROLL_VIEW",
+							"value": 13
+						},
+						{
+							"name": "ROLE_SPLITTER",
+							"value": 14
+						},
+						{
+							"name": "ROLE_SLIDER",
+							"value": 15
+						},
+						{
+							"name": "ROLE_SPIN_BUTTON",
+							"value": 16
+						},
+						{
+							"name": "ROLE_PROGRESS_INDICATOR",
+							"value": 17
+						},
+						{
+							"name": "ROLE_TEXT_FIELD",
+							"value": 18
+						},
+						{
+							"name": "ROLE_MULTILINE_TEXT_FIELD",
+							"value": 19
+						},
+						{
+							"name": "ROLE_COLOR_PICKER",
+							"value": 20
+						},
+						{
+							"name": "ROLE_TABLE",
+							"value": 21
+						},
+						{
+							"name": "ROLE_CELL",
+							"value": 22
+						},
+						{
+							"name": "ROLE_ROW",
+							"value": 23
+						},
+						{
+							"name": "ROLE_ROW_GROUP",
+							"value": 24
+						},
+						{
+							"name": "ROLE_ROW_HEADER",
+							"value": 25
+						},
+						{
+							"name": "ROLE_COLUMN_HEADER",
+							"value": 26
+						},
+						{
+							"name": "ROLE_TREE",
+							"value": 27
+						},
+						{
+							"name": "ROLE_TREE_ITEM",
+							"value": 28
+						},
+						{
+							"name": "ROLE_LIST",
+							"value": 29
+						},
+						{
+							"name": "ROLE_LIST_ITEM",
+							"value": 30
+						},
+						{
+							"name": "ROLE_LIST_BOX",
+							"value": 31
+						},
+						{
+							"name": "ROLE_LIST_BOX_OPTION",
+							"value": 32
+						},
+						{
+							"name": "ROLE_TAB_BAR",
+							"value": 33
+						},
+						{
+							"name": "ROLE_TAB",
+							"value": 34
+						},
+						{
+							"name": "ROLE_TAB_PANEL",
+							"value": 35
+						},
+						{
+							"name": "ROLE_MENU_BAR",
+							"value": 36
+						},
+						{
+							"name": "ROLE_MENU",
+							"value": 37
+						},
+						{
+							"name": "ROLE_MENU_ITEM",
+							"value": 38
+						},
+						{
+							"name": "ROLE_MENU_ITEM_CHECK_BOX",
+							"value": 39
+						},
+						{
+							"name": "ROLE_MENU_ITEM_RADIO",
+							"value": 40
+						},
+						{
+							"name": "ROLE_IMAGE",
+							"value": 41
+						},
+						{
+							"name": "ROLE_WINDOW",
+							"value": 42
+						},
+						{
+							"name": "ROLE_TITLE_BAR",
+							"value": 43
+						},
+						{
+							"name": "ROLE_DIALOG",
+							"value": 44
+						},
+						{
+							"name": "ROLE_TOOLTIP",
+							"value": 45
+						}
+					]
+				},
+				{
+					"name": "AccessibilityPopupType",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "POPUP_UNKNOWN",
+							"value": 0
+						},
+						{
+							"name": "POPUP_MENU",
+							"value": 1
+						},
+						{
+							"name": "POPUP_LIST",
+							"value": 2
+						},
+						{
+							"name": "POPUP_TREE",
+							"value": 3
+						},
+						{
+							"name": "POPUP_DIALOG",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "AccessibilityFlags",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "FLAG_HIDDEN",
+							"value": 0
+						},
+						{
+							"name": "FLAG_LINKED",
+							"value": 1
+						},
+						{
+							"name": "FLAG_MULTISELECTABLE",
+							"value": 2
+						},
+						{
+							"name": "FLAG_REQUIRED",
+							"value": 3
+						},
+						{
+							"name": "FLAG_VISITED",
+							"value": 4
+						},
+						{
+							"name": "FLAG_BUSY",
+							"value": 5
+						},
+						{
+							"name": "FLAG_MODAL",
+							"value": 6
+						},
+						{
+							"name": "FLAG_TOUCH_PASSTHROUGH",
+							"value": 7
+						},
+						{
+							"name": "FLAG_READONLY",
+							"value": 8
+						},
+						{
+							"name": "FLAG_DISABLED",
+							"value": 9
+						},
+						{
+							"name": "FLAG_CLIPS_CHILDREN",
+							"value": 10
+						}
+					]
+				},
+				{
+					"name": "AccessibilityAction",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ACTION_CLICK",
+							"value": 0
+						},
+						{
+							"name": "ACTION_FOCUS",
+							"value": 1
+						},
+						{
+							"name": "ACTION_BLUR",
+							"value": 2
+						},
+						{
+							"name": "ACTION_COLLAPSE",
+							"value": 3
+						},
+						{
+							"name": "ACTION_EXPAND",
+							"value": 4
+						},
+						{
+							"name": "ACTION_DECREMENT",
+							"value": 5
+						},
+						{
+							"name": "ACTION_INCREMENT",
+							"value": 6
+						},
+						{
+							"name": "ACTION_HIDE_TOOLTIP",
+							"value": 7
+						},
+						{
+							"name": "ACTION_SHOW_TOOLTIP",
+							"value": 8
+						},
+						{
+							"name": "ACTION_SET_TEXT_SELECTION",
+							"value": 9
+						},
+						{
+							"name": "ACTION_REPLACE_SELECTED_TEXT",
+							"value": 10
+						},
+						{
+							"name": "ACTION_SCROLL_BACKWARD",
+							"value": 11
+						},
+						{
+							"name": "ACTION_SCROLL_DOWN",
+							"value": 12
+						},
+						{
+							"name": "ACTION_SCROLL_FORWARD",
+							"value": 13
+						},
+						{
+							"name": "ACTION_SCROLL_LEFT",
+							"value": 14
+						},
+						{
+							"name": "ACTION_SCROLL_RIGHT",
+							"value": 15
+						},
+						{
+							"name": "ACTION_SCROLL_UP",
+							"value": 16
+						},
+						{
+							"name": "ACTION_SCROLL_INTO_VIEW",
+							"value": 17
+						},
+						{
+							"name": "ACTION_SCROLL_TO_POINT",
+							"value": 18
+						},
+						{
+							"name": "ACTION_SET_SCROLL_OFFSET",
+							"value": 19
+						},
+						{
+							"name": "ACTION_SET_VALUE",
+							"value": 20
+						},
+						{
+							"name": "ACTION_SHOW_CONTEXT_MENU",
+							"value": 21
+						},
+						{
+							"name": "ACTION_CUSTOM",
+							"value": 22
+						}
+					]
+				},
+				{
+					"name": "AccessibilityLiveMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "LIVE_OFF",
+							"value": 0
+						},
+						{
+							"name": "LIVE_POLITE",
+							"value": 1
+						},
+						{
+							"name": "LIVE_ASSERTIVE",
+							"value": 2
 						}
 					]
 				},
@@ -81865,8 +82283,16 @@
 							"value": 10
 						},
 						{
-							"name": "WINDOW_FLAG_MAX",
+							"name": "WINDOW_FLAG_MINIMIZE_DISABLED",
 							"value": 11
+						},
+						{
+							"name": "WINDOW_FLAG_MAXIMIZE_DISABLED",
+							"value": 12
+						},
+						{
+							"name": "WINDOW_FLAG_MAX",
+							"value": 13
 						}
 					]
 				},
@@ -85052,6 +85478,1450 @@
 							"type": "int",
 							"meta": "int32",
 							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "accessibility_should_increase_contrast",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "accessibility_should_reduce_animation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "accessibility_should_reduce_transparency",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "accessibility_screen_reader_active",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "accessibility_create_element",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2968347744,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "role",
+							"type": "enum::DisplayServer.AccessibilityRole"
+						}
+					]
+				},
+				{
+					"name": "accessibility_create_sub_element",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1949948826,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "parent_rid",
+							"type": "RID"
+						},
+						{
+							"name": "role",
+							"type": "enum::DisplayServer.AccessibilityRole"
+						},
+						{
+							"name": "insert_pos",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "-1"
+						}
+					]
+				},
+				{
+					"name": "accessibility_create_sub_text_edit_elements",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3328635351,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "parent_rid",
+							"type": "RID"
+						},
+						{
+							"name": "shaped_text",
+							"type": "RID"
+						},
+						{
+							"name": "min_height",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "insert_pos",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "-1"
+						}
+					]
+				},
+				{
+					"name": "accessibility_has_element",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155700596,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_free_element",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_element_set_meta",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3175752987,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "meta",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "accessibility_element_get_meta",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4171304767,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_set_window_rect",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2386961724,
+					"arguments": [
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "rect_out",
+							"type": "Rect2"
+						},
+						{
+							"name": "rect_in",
+							"type": "Rect2"
+						}
+					]
+				},
+				{
+					"name": "accessibility_set_window_focused",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "focused",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_focus",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_get_window_root",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 495598643,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_role",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3352768215,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "role",
+							"type": "enum::DisplayServer.AccessibilityRole"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_extra_info",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_description",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "description",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_value",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "value",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_tooltip",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "tooltip",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_bounds",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1378122625,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "p_rect",
+							"type": "Rect2"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_transform",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1246044741,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "transform",
+							"type": "Transform2D"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_add_child",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "child_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_add_related_controls",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "related_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_add_related_details",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "related_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_add_related_described_by",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "related_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_add_related_flow_to",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "related_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_add_related_labeled_by",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "related_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_add_related_radio_group",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "related_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_active_descendant",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "other_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_next_on_line",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "other_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_previous_on_line",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "other_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_member_of",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "group_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_in_page_link_target",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "other_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_error_message",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "other_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_live",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2683302212,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "live",
+							"type": "enum::DisplayServer.AccessibilityLiveMode"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_add_action",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2898696987,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "action",
+							"type": "enum::DisplayServer.AccessibilityAction"
+						},
+						{
+							"name": "callable",
+							"type": "Callable"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_add_custom_action",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4153150897,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "action_id",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "action_description",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_table_row_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_table_column_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_table_row_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_table_column_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_table_cell_position",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4288446313,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "row_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "column_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_table_cell_span",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4288446313,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "row_span",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "column_span",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_list_item_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "size",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_list_item_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_list_item_level",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "level",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_list_item_selected",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "selected",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_list_item_expanded",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "expanded",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_popup_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2040885448,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "popup",
+							"type": "enum::DisplayServer.AccessibilityPopupType"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_checked",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "checekd",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_num_value",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "position",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_num_range",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2513314492,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "min",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "max",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_num_step",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "step",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_num_jump",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "jump",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_scroll_x",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "position",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_scroll_x_range",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2513314492,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "min",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "max",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_scroll_y",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "position",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_scroll_y_range",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2513314492,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "min",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "max",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_text_decorations",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1672422386,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "underline",
+							"type": "bool"
+						},
+						{
+							"name": "strikethrough",
+							"type": "bool"
+						},
+						{
+							"name": "overline",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_text_align",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3725995085,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "align",
+							"type": "enum::HorizontalAlignment"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_text_selection",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3119144029,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "text_start_id",
+							"type": "RID"
+						},
+						{
+							"name": "start_char",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "text_end_id",
+							"type": "RID"
+						},
+						{
+							"name": "end_char",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_flag",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3758675396,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "flag",
+							"type": "enum::DisplayServer.AccessibilityFlags"
+						},
+						{
+							"name": "value",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_classname",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "classname",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_placeholder",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "placeholder",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_language",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "language",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_text_orientation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "vertical",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_list_orientation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "vertical",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_shortcut",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "shortcut",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_url",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "url",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_role_description",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "description",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_state_description",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "description",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_color_value",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2948539648,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "color",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_background_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2948539648,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "color",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "accessibility_update_set_foreground_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2948539648,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "color",
+							"type": "Color"
 						}
 					]
 				},
@@ -123055,6 +124925,31 @@
 					}
 				},
 				{
+					"name": "set_type_names",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155329257,
+					"arguments": [
+						{
+							"name": "type_names",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "get_type_names",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3102165223,
+					"return_value": {
+						"type": "Dictionary"
+					}
+				},
+				{
 					"name": "get_menu_hbox",
 					"is_const": false,
 					"is_vararg": false,
@@ -123317,6 +125212,12 @@
 					"name": "right_disconnects",
 					"setter": "set_right_disconnects",
 					"getter": "is_right_disconnects_enabled"
+				},
+				{
+					"type": "typeddictionary::int;String",
+					"name": "type_names",
+					"setter": "set_type_names",
+					"getter": "get_type_names"
 				},
 				{
 					"type": "float",
@@ -133885,6 +135786,23 @@
 					"is_static": false,
 					"is_virtual": false,
 					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "action",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_action_description",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 957595536,
+					"return_value": {
+						"type": "String"
+					},
 					"arguments": [
 						{
 							"name": "action",
@@ -166933,6 +168851,14 @@
 				{
 					"name": "NOTIFICATION_TEXT_SERVER_CHANGED",
 					"value": 2018
+				},
+				{
+					"name": "NOTIFICATION_ACCESSIBILITY_UPDATE",
+					"value": 3000
+				},
+				{
+					"name": "NOTIFICATION_ACCESSIBILITY_INVALIDATE",
+					"value": 3001
 				}
 			],
 			"enums": [
@@ -167148,6 +169074,18 @@
 					}
 				},
 				{
+					"name": "_get_accessibility_configuration_warnings",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1139954409,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
+				},
+				{
 					"name": "_input",
 					"is_const": false,
 					"is_static": false,
@@ -167204,6 +169142,36 @@
 						{
 							"name": "event",
 							"type": "InputEvent"
+						}
+					]
+				},
+				{
+					"name": "_get_focused_accessibility_element",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "_get_accessibility_container_name",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2174079723,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "node",
+							"type": "Node"
 						}
 					]
 				},
@@ -168220,6 +170188,200 @@
 					}
 				},
 				{
+					"name": "set_accessibility_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_accessibility_description",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "description",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_description",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_accessibility_live",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1720261470,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::DisplayServer.AccessibilityLiveMode"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_live",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3311037003,
+					"return_value": {
+						"type": "enum::DisplayServer.AccessibilityLiveMode"
+					}
+				},
+				{
+					"name": "set_accessibility_controls_nodes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "node_path",
+							"type": "typedarray::NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_controls_nodes",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::NodePath"
+					}
+				},
+				{
+					"name": "set_accessibility_described_by_nodes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "node_path",
+							"type": "typedarray::NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_described_by_nodes",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::NodePath"
+					}
+				},
+				{
+					"name": "set_accessibility_labeled_by_nodes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "node_path",
+							"type": "typedarray::NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_labeled_by_nodes",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::NodePath"
+					}
+				},
+				{
+					"name": "set_accessibility_flow_to_nodes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "node_path",
+							"type": "typedarray::NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_flow_to_nodes",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::NodePath"
+					}
+				},
+				{
+					"name": "queue_accessibility_update",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "get_accessibility_element",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
 					"name": "set_display_folded",
 					"is_const": false,
 					"is_vararg": false,
@@ -169040,6 +171202,48 @@
 					"name": "editor_description",
 					"setter": "set_editor_description",
 					"getter": "get_editor_description"
+				},
+				{
+					"type": "String",
+					"name": "accessibility_name",
+					"setter": "set_accessibility_name",
+					"getter": "get_accessibility_name"
+				},
+				{
+					"type": "String",
+					"name": "accessibility_description",
+					"setter": "set_accessibility_description",
+					"getter": "get_accessibility_description"
+				},
+				{
+					"type": "int",
+					"name": "accessibility_live",
+					"setter": "set_accessibility_live",
+					"getter": "get_accessibility_live"
+				},
+				{
+					"type": "typedarray::NodePath",
+					"name": "accessibility_controls_nodes",
+					"setter": "set_accessibility_controls_nodes",
+					"getter": "get_accessibility_controls_nodes"
+				},
+				{
+					"type": "typedarray::NodePath",
+					"name": "accessibility_described_by_nodes",
+					"setter": "set_accessibility_described_by_nodes",
+					"getter": "get_accessibility_described_by_nodes"
+				},
+				{
+					"type": "typedarray::NodePath",
+					"name": "accessibility_labeled_by_nodes",
+					"setter": "set_accessibility_labeled_by_nodes",
+					"getter": "get_accessibility_labeled_by_nodes"
+				},
+				{
+					"type": "typedarray::NodePath",
+					"name": "accessibility_flow_to_nodes",
+					"setter": "set_accessibility_flow_to_nodes",
+					"getter": "get_accessibility_flow_to_nodes"
 				}
 			]
 		},
@@ -239934,9 +242138,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3017663154,
+					"hash": 1389823276,
 					"hash_compatibility": [
 						3580801207,
+						3017663154,
 						3346058748
 					],
 					"arguments": [
@@ -239990,6 +242195,11 @@
 							"name": "size_in_percent",
 							"type": "bool",
 							"default_value": "false"
+						},
+						{
+							"name": "alt_text",
+							"type": "String",
+							"default_value": "\"\""
 						}
 					]
 				},
@@ -240397,8 +242607,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2623499273,
+					"hash": 3426862026,
 					"hash_compatibility": [
+						2623499273,
 						1125058220
 					],
 					"arguments": [
@@ -240417,6 +242628,11 @@
 							"type": "int",
 							"meta": "int32",
 							"default_value": "-1"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"default_value": "\"\""
 						}
 					]
 				},
@@ -240499,6 +242715,25 @@
 							"name": "shrink",
 							"type": "bool",
 							"default_value": "true"
+						}
+					]
+				},
+				{
+					"name": "set_table_column_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "name",
+							"type": "String"
 						}
 					]
 				},
@@ -245463,6 +247698,28 @@
 							"type": "StringName"
 						}
 					]
+				},
+				{
+					"name": "is_accessibility_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_accessibility_supported",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				},
 				{
 					"name": "is_auto_accept_quit",
@@ -268744,6 +271001,31 @@
 					}
 				},
 				{
+					"name": "set_tab_input_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_tab_input_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_overtype_mode_enabled",
 					"is_const": false,
 					"is_vararg": false,
@@ -272493,6 +274775,12 @@
 				},
 				{
 					"type": "bool",
+					"name": "tab_input_mode",
+					"setter": "set_tab_input_mode",
+					"getter": "get_tab_input_mode"
+				},
+				{
+					"type": "bool",
 					"name": "scroll_smooth",
 					"setter": "set_smooth_scroll_enabled",
 					"getter": "is_smooth_scroll_enabled"
@@ -272698,6 +274986,17 @@
 				},
 				{
 					"name": "get_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2516697328,
+					"return_value": {
+						"type": "enum::TextServer.Direction"
+					}
+				},
+				{
+					"name": "get_inferred_direction",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -273919,6 +276218,17 @@
 					}
 				},
 				{
+					"name": "get_inferred_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2516697328,
+					"return_value": {
+						"type": "enum::TextServer.Direction"
+					}
+				},
+				{
 					"name": "set_custom_punctuation",
 					"is_const": false,
 					"is_vararg": false,
@@ -274420,6 +276730,17 @@
 					"hash": 2944877500,
 					"return_value": {
 						"type": "RID"
+					}
+				},
+				{
+					"name": "get_range",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3690982128,
+					"return_value": {
+						"type": "Vector2i"
 					}
 				},
 				{
@@ -278817,6 +281138,23 @@
 					]
 				},
 				{
+					"name": "shaped_get_text",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 642473191,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "shaped_get_span_count",
 					"is_const": true,
 					"is_vararg": false,
@@ -278879,6 +281217,50 @@
 					]
 				},
 				{
+					"name": "shaped_get_span_text",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1464764419,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "shaped_get_span_object",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4069510997,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
 					"name": "shaped_set_span_update_font",
 					"is_const": false,
 					"is_vararg": false,
@@ -278911,6 +281293,179 @@
 							"name": "opentype_features",
 							"type": "Dictionary",
 							"default_value": "{}"
+						}
+					]
+				},
+				{
+					"name": "shaped_get_run_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2198884583,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "shaped_get_run_text",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1464764419,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "shaped_get_run_range",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4069534484,
+					"return_value": {
+						"type": "Vector2i"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "shaped_get_run_font_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1066463050,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "shaped_get_run_font_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1120910005,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "shaped_get_run_language",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1464764419,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "shaped_get_run_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2413896864,
+					"return_value": {
+						"type": "enum::TextServer.Direction"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "shaped_get_run_object",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4069510997,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
 						}
 					]
 				},
@@ -283636,6 +286191,24 @@
 					]
 				},
 				{
+					"name": "_shaped_get_text",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 642473191,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "_shaped_get_span_count",
 					"is_const": true,
 					"is_static": false,
@@ -283701,6 +286274,52 @@
 					]
 				},
 				{
+					"name": "_shaped_get_span_text",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1464764419,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "_shaped_get_span_object",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 4069510997,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
 					"name": "_shaped_set_span_update_font",
 					"is_const": false,
 					"is_static": false,
@@ -283730,6 +286349,187 @@
 						{
 							"name": "opentype_features",
 							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "_shaped_get_run_count",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2198884583,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "_shaped_get_run_text",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1464764419,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "_shaped_get_run_range",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 4069534484,
+					"return_value": {
+						"type": "Vector2i"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "_shaped_get_run_font_rid",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1066463050,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "_shaped_get_run_font_size",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1120910005,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "_shaped_get_run_language",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1464764419,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "_shaped_get_run_direction",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2413896864,
+					"return_value": {
+						"type": "enum::TextServer.Direction"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "_shaped_get_run_object",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 4069510997,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
 						}
 					]
 				},
@@ -299024,6 +301824,43 @@
 					]
 				},
 				{
+					"name": "set_alt_text",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "text",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_alt_text",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "set_text_direction",
 					"is_const": false,
 					"is_vararg": false,
@@ -300144,8 +302981,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1688223362,
+					"hash": 973481897,
 					"hash_compatibility": [
+						1688223362,
 						1507727907
 					],
 					"arguments": [
@@ -300171,6 +303009,11 @@
 						},
 						{
 							"name": "tooltip_text",
+							"type": "String",
+							"default_value": "\"\""
+						},
+						{
+							"name": "alt_text",
 							"type": "String",
 							"default_value": "\"\""
 						}
@@ -300377,6 +303220,30 @@
 							"name": "button_index",
 							"type": "int",
 							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_button_alt_text",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2285447957,
+					"arguments": [
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "button_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "alt_text",
+							"type": "String"
 						}
 					]
 				},
@@ -305553,6 +308420,31 @@
 					"return_value": {
 						"type": "Variant"
 					}
+				},
+				{
+					"name": "gui_get_drag_description",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "gui_set_drag_description",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "description",
+							"type": "String"
+						}
+					]
 				},
 				{
 					"name": "gui_is_dragging",
@@ -318048,8 +320940,16 @@
 							"value": 10
 						},
 						{
-							"name": "FLAG_MAX",
+							"name": "FLAG_MINIMIZE_DISABLED",
 							"value": 11
+						},
+						{
+							"name": "FLAG_MAXIMIZE_DISABLED",
+							"value": 12
+						},
+						{
+							"name": "FLAG_MAX",
+							"value": 13
 						}
 					]
 				},
@@ -318212,18 +321112,6 @@
 					"hash": 201670096,
 					"return_value": {
 						"type": "String"
-					}
-				},
-				{
-					"name": "get_window_id",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
 					}
 				},
 				{
@@ -319695,6 +322583,29 @@
 					}
 				},
 				{
+					"name": "get_window_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_focused_window",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1835468782,
+					"return_value": {
+						"type": "Window"
+					}
+				},
+				{
 					"name": "set_layout_direction",
 					"is_const": false,
 					"is_vararg": false,
@@ -320155,6 +323066,20 @@
 					"setter": "set_flag",
 					"getter": "get_flag",
 					"index": 10
+				},
+				{
+					"type": "bool",
+					"name": "minimize_disabled",
+					"setter": "set_flag",
+					"getter": "get_flag",
+					"index": 11
+				},
+				{
+					"type": "bool",
+					"name": "maximize_disabled",
+					"setter": "set_flag",
+					"getter": "get_flag",
+					"index": 12
 				},
 				{
 					"type": "bool",
