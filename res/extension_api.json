@@ -8504,6 +8504,14 @@
 					"hash": 3942272618
 				},
 				{
+					"name": "uri_file_decode",
+					"return_type": "String",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3942272618
+				},
+				{
 					"name": "c_escape",
 					"return_type": "String",
 					"is_vararg": false,
@@ -18874,6 +18882,14 @@
 				},
 				{
 					"name": "uri_decode",
+					"return_type": "String",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3942272618
+				},
+				{
+					"name": "uri_file_decode",
 					"return_type": "String",
 					"is_vararg": false,
 					"is_const": true,
@@ -89914,10 +89930,19 @@
 					"is_vararg": false,
 					"is_static": true,
 					"is_virtual": false,
-					"hash": 2981934095,
+					"hash": 3424652832,
+					"hash_compatibility": [
+						2981934095
+					],
 					"return_value": {
 						"type": "PackedStringArray"
-					}
+					},
+					"arguments": [
+						{
+							"name": "preset",
+							"type": "EditorExportPreset"
+						}
+					]
 				}
 			]
 		},
@@ -91449,6 +91474,23 @@
 							"name": "default",
 							"type": "enum::EditorExportPreset.FileExportMode",
 							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "get_project_setting",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2138907829,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
 						}
 					]
 				},
@@ -108267,6 +108309,411 @@
 					"name": "material",
 					"setter": "set_material",
 					"getter": "get_material"
+				}
+			]
+		},
+		{
+			"name": "FoldableContainer",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Container",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "TitlePosition",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "POSITION_TOP",
+							"value": 0
+						},
+						{
+							"name": "POSITION_BOTTOM",
+							"value": 1
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "fold",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "expand",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "set_folded",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "folded",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_folded",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_foldable_group",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3001390597,
+					"arguments": [
+						{
+							"name": "button_group",
+							"type": "FoldableGroup"
+						}
+					]
+				},
+				{
+					"name": "get_foldable_group",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 66499518,
+					"return_value": {
+						"type": "FoldableGroup"
+					}
+				},
+				{
+					"name": "set_text",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "text",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_text",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_title_alignment",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2312603777,
+					"arguments": [
+						{
+							"name": "alignment",
+							"type": "enum::HorizontalAlignment"
+						}
+					]
+				},
+				{
+					"name": "get_title_alignment",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 341400642,
+					"return_value": {
+						"type": "enum::HorizontalAlignment"
+					}
+				},
+				{
+					"name": "set_language",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "language",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_language",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_text_direction",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 119160795,
+					"arguments": [
+						{
+							"name": "text_direction",
+							"type": "enum::Control.TextDirection"
+						}
+					]
+				},
+				{
+					"name": "get_text_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 797257663,
+					"return_value": {
+						"type": "enum::Control.TextDirection"
+					}
+				},
+				{
+					"name": "set_text_overrun_behavior",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1008890932,
+					"arguments": [
+						{
+							"name": "overrun_behavior",
+							"type": "enum::TextServer.OverrunBehavior"
+						}
+					]
+				},
+				{
+					"name": "get_text_overrun_behavior",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3779142101,
+					"return_value": {
+						"type": "enum::TextServer.OverrunBehavior"
+					}
+				},
+				{
+					"name": "set_title_position",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2276829442,
+					"arguments": [
+						{
+							"name": "title_position",
+							"type": "enum::FoldableContainer.TitlePosition"
+						}
+					]
+				},
+				{
+					"name": "get_title_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3028840207,
+					"return_value": {
+						"type": "enum::FoldableContainer.TitlePosition"
+					}
+				},
+				{
+					"name": "add_title_bar_control",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1496901182,
+					"arguments": [
+						{
+							"name": "control",
+							"type": "Control"
+						}
+					]
+				},
+				{
+					"name": "remove_title_bar_control",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1496901182,
+					"arguments": [
+						{
+							"name": "control",
+							"type": "Control"
+						}
+					]
+				}
+			],
+			"signals": [
+				{
+					"name": "folding_changed",
+					"arguments": [
+						{
+							"name": "is_folded",
+							"type": "bool"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "folded",
+					"setter": "set_folded",
+					"getter": "is_folded"
+				},
+				{
+					"type": "String",
+					"name": "text",
+					"setter": "set_text",
+					"getter": "get_text"
+				},
+				{
+					"type": "int",
+					"name": "title_alignment",
+					"setter": "set_title_alignment",
+					"getter": "get_title_alignment"
+				},
+				{
+					"type": "int",
+					"name": "title_position",
+					"setter": "set_title_position",
+					"getter": "get_title_position"
+				},
+				{
+					"type": "int",
+					"name": "text_overrun_behavior",
+					"setter": "set_text_overrun_behavior",
+					"getter": "get_text_overrun_behavior"
+				},
+				{
+					"type": "FoldableGroup",
+					"name": "foldable_group",
+					"setter": "set_foldable_group",
+					"getter": "get_foldable_group"
+				},
+				{
+					"type": "int",
+					"name": "text_direction",
+					"setter": "set_text_direction",
+					"getter": "get_text_direction"
+				},
+				{
+					"type": "String",
+					"name": "language",
+					"setter": "set_language",
+					"getter": "get_language"
+				}
+			]
+		},
+		{
+			"name": "FoldableGroup",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_expanded_container",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1427441056,
+					"return_value": {
+						"type": "FoldableContainer"
+					}
+				},
+				{
+					"name": "get_containers",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::FoldableContainer"
+					}
+				},
+				{
+					"name": "set_allow_folding_all",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_allow_folding_all",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"signals": [
+				{
+					"name": "expanded",
+					"arguments": [
+						{
+							"name": "container",
+							"type": "FoldableContainer"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "allow_folding_all",
+					"setter": "set_allow_folding_all",
+					"getter": "is_allow_folding_all"
 				}
 			]
 		},
@@ -213492,6 +213939,27 @@
 					"return_value": {
 						"type": "typedarray::Dictionary"
 					}
+				},
+				{
+					"name": "get_setting_with_override_and_custom_features",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2434817427,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						},
+						{
+							"name": "features",
+							"type": "PackedStringArray"
+						}
+					]
 				},
 				{
 					"name": "set_order",
