@@ -7965,6 +7965,42 @@
 					]
 				},
 				{
+					"name": "replace_char",
+					"return_type": "String",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 787537301,
+					"arguments": [
+						{
+							"name": "key",
+							"type": "int"
+						},
+						{
+							"name": "with",
+							"type": "int"
+						}
+					]
+				},
+				{
+					"name": "replace_chars",
+					"return_type": "String",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3535100402,
+					"arguments": [
+						{
+							"name": "keys",
+							"type": "String"
+						},
+						{
+							"name": "with",
+							"type": "int"
+						}
+					]
+				},
+				{
 					"name": "remove_char",
 					"return_type": "String",
 					"is_vararg": false,
@@ -8077,6 +8113,14 @@
 				},
 				{
 					"name": "to_snake_case",
+					"return_type": "String",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3942272618
+				},
+				{
+					"name": "to_kebab_case",
 					"return_type": "String",
 					"is_vararg": false,
 					"is_const": true,
@@ -18358,6 +18402,42 @@
 					]
 				},
 				{
+					"name": "replace_char",
+					"return_type": "String",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 787537301,
+					"arguments": [
+						{
+							"name": "key",
+							"type": "int"
+						},
+						{
+							"name": "with",
+							"type": "int"
+						}
+					]
+				},
+				{
+					"name": "replace_chars",
+					"return_type": "String",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3535100402,
+					"arguments": [
+						{
+							"name": "keys",
+							"type": "String"
+						},
+						{
+							"name": "with",
+							"type": "int"
+						}
+					]
+				},
+				{
 					"name": "remove_char",
 					"return_type": "String",
 					"is_vararg": false,
@@ -18470,6 +18550,14 @@
 				},
 				{
 					"name": "to_snake_case",
+					"return_type": "String",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3942272618
+				},
+				{
+					"name": "to_kebab_case",
 					"return_type": "String",
 					"is_vararg": false,
 					"is_const": true,
@@ -21936,6 +22024,63 @@
 					"is_const": true,
 					"is_static": false,
 					"hash": 1627308337
+				},
+				{
+					"name": "bswap16",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 3638975848,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "int",
+							"default_value": "0"
+						},
+						{
+							"name": "count",
+							"type": "int",
+							"default_value": "-1"
+						}
+					]
+				},
+				{
+					"name": "bswap32",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 3638975848,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "int",
+							"default_value": "0"
+						},
+						{
+							"name": "count",
+							"type": "int",
+							"default_value": "-1"
+						}
+					]
+				},
+				{
+					"name": "bswap64",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 3638975848,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "int",
+							"default_value": "0"
+						},
+						{
+							"name": "count",
+							"type": "int",
+							"default_value": "-1"
+						}
+					]
 				},
 				{
 					"name": "encode_u8",
@@ -250140,6 +250285,10 @@
 						{
 							"name": "SCRIPT_NAME_CASING_KEBAB_CASE",
 							"value": 3
+						},
+						{
+							"name": "SCRIPT_NAME_CASING_CAMEL_CASE",
+							"value": 4
 						}
 					]
 				}
@@ -269667,6 +269816,31 @@
 					]
 				},
 				{
+					"name": "set_close_with_middle_mouse",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_close_with_middle_mouse",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_tab_close_display_policy",
 					"is_const": false,
 					"is_vararg": false,
@@ -269971,6 +270145,12 @@
 					"name": "clip_tabs",
 					"setter": "set_clip_tabs",
 					"getter": "get_clip_tabs"
+				},
+				{
+					"type": "bool",
+					"name": "close_with_middle_mouse",
+					"setter": "set_close_with_middle_mouse",
+					"getter": "get_close_with_middle_mouse"
 				},
 				{
 					"type": "int",
