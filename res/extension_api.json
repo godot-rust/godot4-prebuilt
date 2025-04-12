@@ -242060,6 +242060,24 @@
 					}
 				},
 				{
+					"name": "create_id_for_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1597066294,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
 					"name": "has_id",
 					"is_const": true,
 					"is_vararg": false,
