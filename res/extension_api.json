@@ -7423,6 +7423,11 @@
 				},
 				{
 					"name": "%",
+					"right_type": "RID",
+					"return_type": "String"
+				},
+				{
+					"name": "%",
 					"right_type": "Object",
 					"return_type": "String"
 				},
@@ -17856,6 +17861,11 @@
 				{
 					"name": "%",
 					"right_type": "NodePath",
+					"return_type": "String"
+				},
+				{
+					"name": "%",
+					"right_type": "RID",
 					"return_type": "String"
 				},
 				{
@@ -63322,8 +63332,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 728290553,
+					"hash": 719605945,
 					"hash_compatibility": [
+						728290553,
 						2552080639
 					],
 					"arguments": [
@@ -63375,6 +63386,12 @@
 							"name": "orientation",
 							"type": "enum::TextServer.Orientation",
 							"default_value": "0"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -63384,8 +63401,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1927038192,
+					"hash": 2341488182,
 					"hash_compatibility": [
+						1927038192,
 						4002645436
 					],
 					"arguments": [
@@ -63448,6 +63466,12 @@
 							"name": "orientation",
 							"type": "enum::TextServer.Orientation",
 							"default_value": "0"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -63457,8 +63481,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 340562381,
+					"hash": 707403449,
 					"hash_compatibility": [
+						340562381,
 						850005221
 					],
 					"arguments": [
@@ -63516,6 +63541,12 @@
 							"name": "orientation",
 							"type": "enum::TextServer.Orientation",
 							"default_value": "0"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -63525,8 +63556,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1912318525,
+					"hash": 3050414441,
 					"hash_compatibility": [
+						1912318525,
 						3717870722
 					],
 					"arguments": [
@@ -63595,6 +63627,12 @@
 							"name": "orientation",
 							"type": "enum::TextServer.Orientation",
 							"default_value": "0"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -63604,8 +63642,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3339793283,
+					"hash": 1336210142,
 					"hash_compatibility": [
+						3339793283,
 						2329089032
 					],
 					"arguments": [
@@ -63631,6 +63670,12 @@
 							"name": "modulate",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -63640,8 +63685,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3302344391,
+					"hash": 1846384149,
 					"hash_compatibility": [
+						3302344391,
 						419453826
 					],
 					"arguments": [
@@ -63673,6 +63719,12 @@
 							"name": "modulate",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -109313,8 +109365,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1983721962,
+					"hash": 1976686372,
 					"hash_compatibility": [
+						1983721962,
 						2565402639
 					],
 					"arguments": [
@@ -109366,6 +109419,12 @@
 							"name": "orientation",
 							"type": "enum::TextServer.Orientation",
 							"default_value": "0"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -109375,8 +109434,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1171506176,
+					"hash": 2686601589,
 					"hash_compatibility": [
+						1171506176,
 						348869189
 					],
 					"arguments": [
@@ -109439,6 +109499,12 @@
 							"name": "orientation",
 							"type": "enum::TextServer.Orientation",
 							"default_value": "0"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -109448,8 +109514,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 623754045,
+					"hash": 701417663,
 					"hash_compatibility": [
+						623754045,
 						657875837
 					],
 					"arguments": [
@@ -109507,6 +109574,12 @@
 							"name": "orientation",
 							"type": "enum::TextServer.Orientation",
 							"default_value": "0"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -109516,8 +109589,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3206388178,
+					"hash": 4147839237,
 					"hash_compatibility": [
+						3206388178,
 						1649790182
 					],
 					"arguments": [
@@ -109586,6 +109660,12 @@
 							"name": "orientation",
 							"type": "enum::TextServer.Orientation",
 							"default_value": "0"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -109618,8 +109698,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3815617597,
+					"hash": 3500170256,
 					"hash_compatibility": [
+						3815617597,
 						1462476057
 					],
 					"return_value": {
@@ -109649,6 +109730,12 @@
 							"name": "modulate",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -109658,8 +109745,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 209525354,
+					"hash": 1684114874,
 					"hash_compatibility": [
+						209525354,
 						4161008124
 					],
 					"return_value": {
@@ -109695,6 +109783,12 @@
 							"name": "modulate",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -111792,6 +111886,12 @@
 			],
 			"properties": [
 				{
+					"type": "float",
+					"name": "oversampling",
+					"setter": "set_oversampling",
+					"getter": "get_oversampling"
+				},
+				{
 					"type": "PackedByteArray",
 					"name": "data",
 					"setter": "set_data",
@@ -111898,12 +111998,6 @@
 					"name": "hinting",
 					"setter": "set_hinting",
 					"getter": "get_hinting"
-				},
-				{
-					"type": "float",
-					"name": "oversampling",
-					"setter": "set_oversampling",
-					"getter": "get_oversampling"
 				},
 				{
 					"type": "int",
@@ -268813,6 +268907,12 @@
 			],
 			"properties": [
 				{
+					"type": "float",
+					"name": "oversampling",
+					"setter": "set_oversampling",
+					"getter": "get_oversampling"
+				},
+				{
 					"type": "PackedStringArray",
 					"name": "font_names",
 					"setter": "set_font_names",
@@ -268907,12 +269007,6 @@
 					"name": "msdf_size",
 					"setter": "set_msdf_size",
 					"getter": "get_msdf_size"
-				},
-				{
-					"type": "float",
-					"name": "oversampling",
-					"setter": "set_oversampling",
-					"getter": "get_oversampling"
 				}
 			]
 		},
@@ -276133,8 +276227,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 856975658,
+					"hash": 3625105422,
 					"hash_compatibility": [
+						856975658,
 						1164457837
 					],
 					"arguments": [
@@ -276150,6 +276245,12 @@
 							"name": "color",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -276159,8 +276260,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1343401456,
+					"hash": 2592177763,
 					"hash_compatibility": [
+						1343401456,
 						1364491366
 					],
 					"arguments": [
@@ -276182,6 +276284,12 @@
 							"name": "color",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -277675,8 +277783,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1567802413,
+					"hash": 1492808103,
 					"hash_compatibility": [
+						1567802413,
 						367324453
 					],
 					"arguments": [
@@ -277697,6 +277806,12 @@
 							"name": "dc_color",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -277706,8 +277821,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1893131224,
+					"hash": 3820500590,
 					"hash_compatibility": [
+						1893131224,
 						2159523405
 					],
 					"arguments": [
@@ -277734,6 +277850,12 @@
 							"name": "dc_color",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -277743,8 +277865,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1242169894,
+					"hash": 828033758,
 					"hash_compatibility": [
+						1242169894,
 						3963848920
 					],
 					"arguments": [
@@ -277765,6 +277888,12 @@
 							"name": "color",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -277774,8 +277903,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2664926980,
+					"hash": 2822696703,
 					"hash_compatibility": [
+						2664926980,
 						1814903311
 					],
 					"arguments": [
@@ -277802,6 +277932,12 @@
 							"name": "color",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -277811,8 +277947,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 856975658,
+					"hash": 3625105422,
 					"hash_compatibility": [
+						856975658,
 						1164457837
 					],
 					"arguments": [
@@ -277828,6 +277965,12 @@
 							"name": "color",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -277837,8 +277980,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1343401456,
+					"hash": 2592177763,
 					"hash_compatibility": [
+						1343401456,
 						1364491366
 					],
 					"arguments": [
@@ -277860,6 +278004,12 @@
 							"name": "color",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -279352,6 +279502,14 @@
 					]
 				},
 				{
+					"name": "font_clear_system_fallback_cache",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
 					"name": "font_set_force_autohinter",
 					"is_const": false,
 					"is_vararg": false,
@@ -279798,6 +279956,23 @@
 						{
 							"name": "size",
 							"type": "Vector2i"
+						}
+					]
+				},
+				{
+					"name": "font_get_size_cache_info",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2684255073,
+					"return_value": {
+						"type": "typedarray::Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
 						}
 					]
 				},
@@ -280906,8 +281081,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1339057948,
+					"hash": 3103234926,
 					"hash_compatibility": [
+						1339057948,
 						1821196351
 					],
 					"arguments": [
@@ -280937,6 +281113,12 @@
 							"name": "color",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -280946,8 +281128,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2626165733,
+					"hash": 1976041553,
 					"hash_compatibility": [
+						2626165733,
 						1124898203
 					],
 					"arguments": [
@@ -280982,6 +281165,12 @@
 							"name": "color",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -283001,8 +283190,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 880389142,
+					"hash": 1647687596,
 					"hash_compatibility": [
+						880389142,
 						70679950
 					],
 					"arguments": [
@@ -283034,6 +283224,12 @@
 							"name": "color",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -283043,8 +283239,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2559184194,
+					"hash": 1217146601,
 					"hash_compatibility": [
+						2559184194,
 						2673671346
 					],
 					"arguments": [
@@ -283082,6 +283279,12 @@
 							"name": "color",
 							"type": "Color",
 							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -284329,6 +284532,15 @@
 					]
 				},
 				{
+					"name": "_font_clear_system_fallback_cache",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3218959716
+				},
+				{
 					"name": "_font_set_force_autohinter",
 					"is_const": false,
 					"is_static": false,
@@ -284800,6 +285012,24 @@
 						{
 							"name": "size",
 							"type": "Vector2i"
+						}
+					]
+				},
+				{
+					"name": "_font_get_size_cache_info",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2684255073,
+					"return_value": {
+						"type": "typedarray::Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
 						}
 					]
 				},
@@ -285954,7 +286184,10 @@
 					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
-					"hash": 309868464,
+					"hash": 404525066,
+					"hash_compatibility": [
+						309868464
+					],
 					"arguments": [
 						{
 							"name": "font_rid",
@@ -285981,6 +286214,11 @@
 						{
 							"name": "color",
 							"type": "Color"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float"
 						}
 					]
 				},
@@ -285991,7 +286229,10 @@
 					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
-					"hash": 3090733778,
+					"hash": 940535541,
+					"hash_compatibility": [
+						3090733778
+					],
 					"arguments": [
 						{
 							"name": "font_rid",
@@ -286023,6 +286264,11 @@
 						{
 							"name": "color",
 							"type": "Color"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float"
 						}
 					]
 				},
@@ -286322,6 +286568,38 @@
 				},
 				{
 					"name": "_font_set_global_oversampling",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "_reference_oversampling_level",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "_unreference_oversampling_level",
 					"is_const": false,
 					"is_static": false,
 					"is_required": false,
@@ -287967,7 +288245,10 @@
 					"is_required": false,
 					"is_vararg": false,
 					"is_virtual": true,
-					"hash": 2453262187,
+					"hash": 2079930245,
+					"hash_compatibility": [
+						2453262187
+					],
 					"arguments": [
 						{
 							"name": "shaped",
@@ -287994,6 +288275,11 @@
 						{
 							"name": "color",
 							"type": "Color"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float"
 						}
 					]
 				},
@@ -288004,7 +288290,10 @@
 					"is_required": false,
 					"is_vararg": false,
 					"is_virtual": true,
-					"hash": 1686767567,
+					"hash": 601976754,
+					"hash_compatibility": [
+						1686767567
+					],
 					"arguments": [
 						{
 							"name": "shaped",
@@ -288036,6 +288325,11 @@
 						{
 							"name": "color",
 							"type": "Color"
+						},
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float"
 						}
 					]
 				},
@@ -308849,6 +309143,70 @@
 					}
 				},
 				{
+					"name": "set_use_oversampling",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_oversampling",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_oversampling_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_oversampling_override",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_oversampling",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "get_render_info",
 					"is_const": false,
 					"is_vararg": false,
@@ -310336,6 +310694,18 @@
 					"name": "canvas_cull_mask",
 					"setter": "set_canvas_cull_mask",
 					"getter": "get_canvas_cull_mask"
+				},
+				{
+					"type": "bool",
+					"name": "oversampling",
+					"setter": "set_use_oversampling",
+					"getter": "is_using_oversampling"
+				},
+				{
+					"type": "float",
+					"name": "oversampling_override",
+					"setter": "set_oversampling_override",
+					"getter": "get_oversampling_override"
 				}
 			]
 		},
@@ -322467,31 +322837,6 @@
 					}
 				},
 				{
-					"name": "set_use_font_oversampling",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_font_oversampling",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
 					"name": "set_mouse_passthrough_polygon",
 					"is_const": false,
 					"is_vararg": false,
@@ -323323,6 +323668,31 @@
 				},
 				{
 					"name": "is_auto_translating",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_use_font_oversampling",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_font_oversampling",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
