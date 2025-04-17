@@ -74609,19 +74609,37 @@
 					]
 				},
 				{
-					"name": "RecursiveBehavior",
+					"name": "FocusBehaviorRecursive",
 					"is_bitfield": false,
 					"values": [
 						{
-							"name": "RECURSIVE_BEHAVIOR_INHERITED",
+							"name": "FOCUS_BEHAVIOR_INHERITED",
 							"value": 0
 						},
 						{
-							"name": "RECURSIVE_BEHAVIOR_DISABLED",
+							"name": "FOCUS_BEHAVIOR_DISABLED",
 							"value": 1
 						},
 						{
-							"name": "RECURSIVE_BEHAVIOR_ENABLED",
+							"name": "FOCUS_BEHAVIOR_ENABLED",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "MouseBehaviorRecursive",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "MOUSE_BEHAVIOR_INHERITED",
+							"value": 0
+						},
+						{
+							"name": "MOUSE_BEHAVIOR_DISABLED",
+							"value": 1
+						},
+						{
+							"name": "MOUSE_BEHAVIOR_ENABLED",
 							"value": 2
 						}
 					]
@@ -75672,7 +75690,7 @@
 					}
 				},
 				{
-					"name": "get_focus_mode_with_recursive",
+					"name": "get_focus_mode_with_override",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -75683,28 +75701,28 @@
 					}
 				},
 				{
-					"name": "set_focus_recursive_behavior",
+					"name": "set_focus_behavior_recursive",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1478462572,
+					"hash": 4256832521,
 					"arguments": [
 						{
-							"name": "focus_recursive_behavior",
-							"type": "enum::Control.RecursiveBehavior"
+							"name": "focus_behavior_recursive",
+							"type": "enum::Control.FocusBehaviorRecursive"
 						}
 					]
 				},
 				{
-					"name": "get_focus_recursive_behavior",
+					"name": "get_focus_behavior_recursive",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2347495201,
+					"hash": 2435707181,
 					"return_value": {
-						"type": "enum::Control.RecursiveBehavior"
+						"type": "enum::Control.FocusBehaviorRecursive"
 					}
 				},
 				{
@@ -76866,7 +76884,7 @@
 					}
 				},
 				{
-					"name": "get_mouse_filter_with_recursive",
+					"name": "get_mouse_filter_with_override",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -76877,28 +76895,28 @@
 					}
 				},
 				{
-					"name": "set_mouse_recursive_behavior",
+					"name": "set_mouse_behavior_recursive",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1478462572,
+					"hash": 849284636,
 					"arguments": [
 						{
-							"name": "mouse_recursive_behavior",
-							"type": "enum::Control.RecursiveBehavior"
+							"name": "mouse_behavior_recursive",
+							"type": "enum::Control.MouseBehaviorRecursive"
 						}
 					]
 				},
 				{
-					"name": "get_mouse_recursive_behavior",
+					"name": "get_mouse_behavior_recursive",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2347495201,
+					"hash": 3779367402,
 					"return_value": {
-						"type": "enum::Control.RecursiveBehavior"
+						"type": "enum::Control.MouseBehaviorRecursive"
 					}
 				},
 				{
@@ -77406,9 +77424,9 @@
 				},
 				{
 					"type": "int",
-					"name": "focus_recursive_behavior",
-					"setter": "set_focus_recursive_behavior",
-					"getter": "get_focus_recursive_behavior"
+					"name": "focus_behavior_recursive",
+					"setter": "set_focus_behavior_recursive",
+					"getter": "get_focus_behavior_recursive"
 				},
 				{
 					"type": "int",
@@ -77418,9 +77436,9 @@
 				},
 				{
 					"type": "int",
-					"name": "mouse_recursive_behavior",
-					"setter": "set_mouse_recursive_behavior",
-					"getter": "get_mouse_recursive_behavior"
+					"name": "mouse_behavior_recursive",
+					"setter": "set_mouse_behavior_recursive",
+					"getter": "get_mouse_behavior_recursive"
 				},
 				{
 					"type": "bool",
@@ -164365,6 +164383,24 @@
 					}
 				},
 				{
+					"name": "region_get_iteration_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2198884583,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					},
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "region_set_enabled",
 					"is_const": false,
 					"is_vararg": false,
@@ -166971,6 +167007,24 @@
 					"return_value": {
 						"type": "RID"
 					}
+				},
+				{
+					"name": "region_get_iteration_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2198884583,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					},
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						}
+					]
 				},
 				{
 					"name": "region_set_enabled",
