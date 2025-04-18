@@ -327428,6 +327428,24 @@
 							"value": 2
 						}
 					]
+				},
+				{
+					"name": "VRSTextureFormat",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "XR_VRS_TEXTURE_FORMAT_UNIFIED",
+							"value": 0
+						},
+						{
+							"name": "XR_VRS_TEXTURE_FORMAT_FRAGMENT_SHADING_RATE",
+							"value": 1
+						},
+						{
+							"name": "XR_VRS_TEXTURE_FORMAT_FRAGMENT_DENSITY_MAP",
+							"value": 2
+						}
+					]
 				}
 			],
 			"methods": [
@@ -328100,6 +328118,18 @@
 					"hash": 529393457,
 					"return_value": {
 						"type": "RID"
+					}
+				},
+				{
+					"name": "_get_vrs_texture_format",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1500923256,
+					"return_value": {
+						"type": "enum::XRInterface.VRSTextureFormat"
 					}
 				},
 				{
