@@ -101258,6 +101258,24 @@
 					]
 				},
 				{
+					"name": "capture_script_backtraces",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 873284517,
+					"return_value": {
+						"type": "typedarray::ScriptBacktrace"
+					},
+					"arguments": [
+						{
+							"name": "include_variables",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
 					"name": "is_editor_hint",
 					"is_const": true,
 					"is_vararg": false,
@@ -113771,6 +113789,24 @@
 							"value": 2
 						}
 					]
+				},
+				{
+					"name": "VisibilityMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "VISIBILITY_MODE_INCLUDE_REQUIRED",
+							"value": 0
+						},
+						{
+							"name": "VISIBILITY_MODE_INCLUDE_OPTIONAL",
+							"value": 1
+						},
+						{
+							"name": "VISIBILITY_MODE_EXCLUDE",
+							"value": 2
+						}
+					]
 				}
 			],
 			"methods": [
@@ -113827,6 +113863,58 @@
 					}
 				},
 				{
+					"name": "set_fallback_image_format",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "fallback_image_format",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_fallback_image_format",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_fallback_image_quality",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "fallback_image_quality",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_fallback_image_quality",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "set_root_node_mode",
 					"is_const": false,
 					"is_vararg": false,
@@ -113849,6 +113937,31 @@
 					"hash": 948057992,
 					"return_value": {
 						"type": "enum::GLTFDocument.RootNodeMode"
+					}
+				},
+				{
+					"name": "set_visibility_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2803579218,
+					"arguments": [
+						{
+							"name": "visibility_mode",
+							"type": "enum::GLTFDocument.VisibilityMode"
+						}
+					]
+				},
+				{
+					"name": "get_visibility_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3885445962,
+					"return_value": {
+						"type": "enum::GLTFDocument.VisibilityMode"
 					}
 				},
 				{
@@ -114134,10 +114247,28 @@
 					"getter": "get_lossy_quality"
 				},
 				{
+					"type": "String",
+					"name": "fallback_image_format",
+					"setter": "set_fallback_image_format",
+					"getter": "get_fallback_image_format"
+				},
+				{
+					"type": "float",
+					"name": "fallback_image_quality",
+					"setter": "set_fallback_image_quality",
+					"getter": "get_fallback_image_quality"
+				},
+				{
 					"type": "int",
 					"name": "root_node_mode",
 					"setter": "set_root_node_mode",
 					"getter": "get_root_node_mode"
+				},
+				{
+					"type": "int",
+					"name": "visibility_mode",
+					"setter": "set_visibility_mode",
+					"getter": "get_visibility_mode"
 				}
 			]
 		},
@@ -115538,6 +115669,31 @@
 					]
 				},
 				{
+					"name": "get_visible",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_visible",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "visible",
+							"type": "bool"
+						}
+					]
+				},
+				{
 					"name": "get_additional_data",
 					"is_const": false,
 					"is_vararg": false,
@@ -115673,6 +115829,12 @@
 					"name": "light",
 					"setter": "set_light",
 					"getter": "get_light"
+				},
+				{
+					"type": "bool",
+					"name": "visible",
+					"setter": "set_visible",
+					"getter": "get_visible"
 				}
 			]
 		},
@@ -145418,6 +145580,44 @@
 					}
 				},
 				{
+					"name": "get_next_composite_character_column",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_previous_composite_character_column",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "get_scroll_offset",
 					"is_const": true,
 					"is_vararg": false,
@@ -145778,6 +145978,31 @@
 				},
 				{
 					"name": "is_emoji_menu_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_backspace_deletes_composite_character_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_backspace_deletes_composite_character_enabled",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -146155,6 +146380,12 @@
 					"name": "emoji_menu_enabled",
 					"setter": "set_emoji_menu_enabled",
 					"getter": "is_emoji_menu_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "backspace_deletes_composite_character_enabled",
+					"setter": "set_backspace_deletes_composite_character_enabled",
+					"getter": "is_backspace_deletes_composite_character_enabled"
 				},
 				{
 					"type": "bool",
@@ -146541,6 +146772,103 @@
 					"name": "structured_text_bidi_override_options",
 					"setter": "set_structured_text_bidi_override_options",
 					"getter": "get_structured_text_bidi_override_options"
+				}
+			]
+		},
+		{
+			"name": "Logger",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "ErrorType",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ERROR_TYPE_ERROR",
+							"value": 0
+						},
+						{
+							"name": "ERROR_TYPE_WARNING",
+							"value": 1
+						},
+						{
+							"name": "ERROR_TYPE_SCRIPT",
+							"value": 2
+						},
+						{
+							"name": "ERROR_TYPE_SHADER",
+							"value": 3
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "_log_error",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 27079556,
+					"arguments": [
+						{
+							"name": "function",
+							"type": "String"
+						},
+						{
+							"name": "file",
+							"type": "String"
+						},
+						{
+							"name": "line",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "code",
+							"type": "String"
+						},
+						{
+							"name": "rationale",
+							"type": "String"
+						},
+						{
+							"name": "editor_notify",
+							"type": "bool"
+						},
+						{
+							"name": "error_type",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "script_backtraces",
+							"type": "typedarray::ScriptBacktrace"
+						}
+					]
+				},
+				{
+					"name": "_log_message",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2678287736,
+					"arguments": [
+						{
+							"name": "message",
+							"type": "String"
+						},
+						{
+							"name": "error",
+							"type": "bool"
+						}
+					]
 				}
 			]
 		},
@@ -175882,6 +176210,34 @@
 					"is_static": false,
 					"is_virtual": false,
 					"hash": 3218959716
+				},
+				{
+					"name": "add_logger",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4261188958,
+					"arguments": [
+						{
+							"name": "logger",
+							"type": "Logger"
+						}
+					]
+				},
+				{
+					"name": "remove_logger",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4261188958,
+					"arguments": [
+						{
+							"name": "logger",
+							"type": "Logger"
+						}
+					]
 				}
 			],
 			"properties": [
@@ -249745,6 +250101,296 @@
 			]
 		},
 		{
+			"name": "ScriptBacktrace",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_language_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "get_frame_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_frame_function",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_frame_file",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_frame_line",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_global_variable_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_global_variable_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "variable_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_global_variable_value",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4227898402,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "variable_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_local_variable_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "frame_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_local_variable_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1391810591,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "frame_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "variable_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_local_variable_value",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 678354945,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "frame_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "variable_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_member_variable_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "frame_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_member_variable_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1391810591,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "frame_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "variable_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_member_variable_value",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 678354945,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "frame_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "variable_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "format",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3464456933,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "indent_all",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						},
+						{
+							"name": "indent_frames",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "4"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "ScriptCreateDialog",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -272109,6 +272755,31 @@
 					}
 				},
 				{
+					"name": "set_backspace_deletes_composite_character_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_backspace_deletes_composite_character_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_shortcut_keys_enabled",
 					"is_const": false,
 					"is_vararg": false,
@@ -273552,6 +274223,54 @@
 							"type": "int",
 							"meta": "int32",
 							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "get_next_composite_character_column",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3175239445,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "line",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_previous_composite_character_column",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3175239445,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "line",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
 						}
 					]
 				},
@@ -275720,6 +276439,12 @@
 					"name": "emoji_menu_enabled",
 					"setter": "set_emoji_menu_enabled",
 					"getter": "is_emoji_menu_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "backspace_deletes_composite_character_enabled",
+					"setter": "set_backspace_deletes_composite_character_enabled",
+					"getter": "is_backspace_deletes_composite_character_enabled"
 				},
 				{
 					"type": "bool",
