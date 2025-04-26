@@ -237905,6 +237905,20 @@
 					]
 				},
 				{
+					"name": "instance_teleport",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "instance",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "instance_set_custom_aabb",
 					"is_const": false,
 					"is_vararg": false,
@@ -241868,6 +241882,13 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "ResourceImporterSVG",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "ResourceImporter",
+			"api_type": "editor"
 		},
 		{
 			"name": "ResourceImporterScene",
@@ -247842,12 +247863,6 @@
 				}
 			],
 			"properties": [
-				{
-					"type": "String",
-					"name": "source",
-					"setter": "set_source",
-					"getter": "get_source"
-				},
 				{
 					"type": "float",
 					"name": "base_scale",
