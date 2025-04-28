@@ -33795,6 +33795,17 @@
 					]
 				},
 				{
+					"name": "get_node_list",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::StringName"
+					}
+				},
+				{
 					"name": "set_node_position",
 					"is_const": false,
 					"is_vararg": false,
@@ -34441,6 +34452,17 @@
 							"type": "AnimationNode"
 						}
 					]
+				},
+				{
+					"name": "get_node_list",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::StringName"
+					}
 				},
 				{
 					"name": "set_node_position",
@@ -245053,6 +245075,44 @@
 						"type": "int",
 						"meta": "int32"
 					}
+				},
+				{
+					"name": "get_line_height",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "line",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_line_width",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "line",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
 				},
 				{
 					"name": "get_line_offset",
