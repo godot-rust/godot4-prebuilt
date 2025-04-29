@@ -108661,7 +108661,7 @@
 					}
 				},
 				{
-					"name": "set_text",
+					"name": "set_title",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -108675,7 +108675,7 @@
 					]
 				},
 				{
-					"name": "get_text",
+					"name": "get_title",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -108736,7 +108736,7 @@
 					}
 				},
 				{
-					"name": "set_text_direction",
+					"name": "set_title_text_direction",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -108750,7 +108750,7 @@
 					]
 				},
 				{
-					"name": "get_text_direction",
+					"name": "get_title_text_direction",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -108761,7 +108761,7 @@
 					}
 				},
 				{
-					"name": "set_text_overrun_behavior",
+					"name": "set_title_text_overrun_behavior",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -108775,7 +108775,7 @@
 					]
 				},
 				{
-					"name": "get_text_overrun_behavior",
+					"name": "get_title_text_overrun_behavior",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -108859,9 +108859,9 @@
 				},
 				{
 					"type": "String",
-					"name": "text",
-					"setter": "set_text",
-					"getter": "get_text"
+					"name": "title",
+					"setter": "set_title",
+					"getter": "get_title"
 				},
 				{
 					"type": "int",
@@ -108877,9 +108877,9 @@
 				},
 				{
 					"type": "int",
-					"name": "text_overrun_behavior",
-					"setter": "set_text_overrun_behavior",
-					"getter": "get_text_overrun_behavior"
+					"name": "title_text_overrun_behavior",
+					"setter": "set_title_text_overrun_behavior",
+					"getter": "get_title_text_overrun_behavior"
 				},
 				{
 					"type": "FoldableGroup",
@@ -108889,9 +108889,9 @@
 				},
 				{
 					"type": "int",
-					"name": "text_direction",
-					"setter": "set_text_direction",
-					"getter": "get_text_direction"
+					"name": "title_text_direction",
+					"setter": "set_title_text_direction",
+					"getter": "get_title_text_direction"
 				},
 				{
 					"type": "String",
@@ -237792,38 +237792,6 @@
 					]
 				},
 				{
-					"name": "instance_set_interpolated",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1265174801,
-					"arguments": [
-						{
-							"name": "instance",
-							"type": "RID"
-						},
-						{
-							"name": "interpolated",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "instance_reset_physics_interpolation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2722037293,
-					"arguments": [
-						{
-							"name": "instance",
-							"type": "RID"
-						}
-					]
-				},
-				{
 					"name": "instance_attach_object_instance_id",
 					"is_const": false,
 					"is_vararg": false,
@@ -242474,6 +242442,28 @@
 							"name": "flags",
 							"type": "bitfield::ResourceSaver.SaverFlags",
 							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "set_uid",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 993915709,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "resource",
+							"type": "String"
+						},
+						{
+							"name": "uid",
+							"type": "int",
+							"meta": "int64"
 						}
 					]
 				},
