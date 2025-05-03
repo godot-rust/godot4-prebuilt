@@ -170673,11 +170673,14 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 83702148,
+					"hash": 3304788590,
+					"hash_compatibility": [
+						83702148
+					],
 					"arguments": [
 						{
 							"name": "name",
-							"type": "String"
+							"type": "StringName"
 						}
 					]
 				},
