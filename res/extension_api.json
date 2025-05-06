@@ -213864,6 +213864,26 @@
 					}
 				},
 				{
+					"name": "set_basisu_compressor_params",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "uastc_level",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "rdo_quality_loss",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
 					"name": "set_keep_all_compressed_buffers",
 					"is_const": false,
 					"is_vararg": false,
@@ -248297,7 +248317,7 @@
 					"getter": "get_saturation"
 				},
 				{
-					"type": "Dictionary",
+					"type": "typeddictionary::Color;Color",
 					"name": "color_map",
 					"setter": "set_color_map",
 					"getter": "get_color_map"
