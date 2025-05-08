@@ -8344,7 +8344,7 @@
 					"hash": 3134094431,
 					"arguments": [
 						{
-							"name": "file",
+							"name": "path",
 							"type": "String"
 						}
 					]
@@ -18786,7 +18786,7 @@
 					"hash": 3134094431,
 					"arguments": [
 						{
-							"name": "file",
+							"name": "path",
 							"type": "String"
 						}
 					]
