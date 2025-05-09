@@ -226040,7 +226040,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1397171480,
+					"hash": 3732868568,
+					"hash_compatibility": [
+						1397171480
+					],
 					"return_value": {
 						"type": "RID"
 					},
@@ -226085,6 +226088,12 @@
 							"name": "layers",
 							"type": "int",
 							"meta": "uint64"
+						},
+						{
+							"name": "mipmaps",
+							"type": "int",
+							"meta": "uint64",
+							"default_value": "1"
 						}
 					]
 				},
