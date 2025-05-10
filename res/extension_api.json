@@ -49719,8 +49719,12 @@
 							"value": 21
 						},
 						{
-							"name": "FLAG_MAX",
+							"name": "FLAG_DISABLE_SPECULAR_OCCLUSION",
 							"value": 22
+						},
+						{
+							"name": "FLAG_MAX",
+							"value": 23
 						}
 					]
 				},
@@ -51734,6 +51738,13 @@
 					"setter": "set_flag",
 					"getter": "get_flag",
 					"index": 21
+				},
+				{
+					"type": "bool",
+					"name": "disable_specular_occlusion",
+					"setter": "set_flag",
+					"getter": "get_flag",
+					"index": 22
 				},
 				{
 					"type": "bool",
