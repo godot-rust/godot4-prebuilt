@@ -4700,7 +4700,7 @@ pub type GDExtensionInterfaceArrayOperatorIndexConst = ::std::option::Option<
         p_index: GDExtensionInt,
     ) -> GDExtensionVariantPtr,
 >;
-#[doc = " @name array_ref\n @since 4.1\n\n Sets an Array to be a reference to another Array object.\n\n @param p_self A pointer to the Array object to update.\n @param p_from A pointer to the Array object to reference."]
+#[doc = " @name array_ref\n @since 4.1\n @deprecated in Godot 4.5. use `Array::operator=` instead.\n\n Sets an Array to be a reference to another Array object.\n\n @param p_self A pointer to the Array object to update.\n @param p_from A pointer to the Array object to reference."]
 pub type GDExtensionInterfaceArrayRef = ::std::option::Option<
     unsafe extern "C" fn(p_self: GDExtensionTypePtr, p_from: GDExtensionConstTypePtr),
 >;

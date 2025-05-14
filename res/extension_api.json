@@ -3649,8 +3649,12 @@
 					"value": 42
 				},
 				{
-					"name": "PROPERTY_HINT_MAX",
+					"name": "PROPERTY_HINT_INPUT_NAME",
 					"value": 43
+				},
+				{
+					"name": "PROPERTY_HINT_MAX",
+					"value": 44
 				}
 			]
 		},
