@@ -49335,6 +49335,10 @@
 							"value": 4
 						},
 						{
+							"name": "TEXTURE_BENT_NORMAL",
+							"value": 18
+						},
+						{
 							"name": "TEXTURE_RIM",
 							"value": 5
 						},
@@ -49388,7 +49392,7 @@
 						},
 						{
 							"name": "TEXTURE_MAX",
-							"value": 18
+							"value": 19
 						}
 					]
 				},
@@ -49545,8 +49549,12 @@
 							"value": 11
 						},
 						{
-							"name": "FEATURE_MAX",
+							"name": "FEATURE_BENT_NORMAL_MAPPING",
 							"value": 12
+						},
+						{
+							"name": "FEATURE_MAX",
+							"value": 13
 						}
 					]
 				},
@@ -51906,6 +51914,20 @@
 					"setter": "set_texture",
 					"getter": "get_texture",
 					"index": 4
+				},
+				{
+					"type": "bool",
+					"name": "bent_normal_enabled",
+					"setter": "set_feature",
+					"getter": "get_feature",
+					"index": 12
+				},
+				{
+					"type": "Texture2D",
+					"name": "bent_normal_texture",
+					"setter": "set_texture",
+					"getter": "get_texture",
+					"index": 18
 				},
 				{
 					"type": "bool",
@@ -99937,8 +99959,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2107025470,
+					"hash": 796197507,
 					"hash_compatibility": [
+						2107025470,
 						3577985681
 					],
 					"arguments": [
@@ -99960,6 +99983,11 @@
 							"name": "backward_undo_ops",
 							"type": "bool",
 							"default_value": "false"
+						},
+						{
+							"name": "mark_unsaved",
+							"type": "bool",
+							"default_value": "true"
 						}
 					]
 				},
