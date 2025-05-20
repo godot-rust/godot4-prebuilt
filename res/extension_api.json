@@ -259423,6 +259423,34 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "_skeleton_changed",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2926744397,
+					"arguments": [
+						{
+							"name": "old_skeleton",
+							"type": "Skeleton3D"
+						},
+						{
+							"name": "new_skeleton",
+							"type": "Skeleton3D"
+						}
+					]
+				},
+				{
+					"name": "_validate_bone_names",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3218959716
+				},
+				{
 					"name": "get_skeleton",
 					"is_const": true,
 					"is_vararg": false,
