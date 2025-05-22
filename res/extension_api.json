@@ -90232,6 +90232,13 @@
 			"api_type": "editor"
 		},
 		{
+			"name": "EditorExportPlatformAppleEmbedded",
+			"is_refcounted": true,
+			"is_instantiable": false,
+			"inherits": "EditorExportPlatform",
+			"api_type": "editor"
+		},
+		{
 			"name": "EditorExportPlatformExtension",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -90857,7 +90864,7 @@
 			"name": "EditorExportPlatformIOS",
 			"is_refcounted": true,
 			"is_instantiable": true,
-			"inherits": "EditorExportPlatform",
+			"inherits": "EditorExportPlatformAppleEmbedded",
 			"api_type": "editor"
 		},
 		{
@@ -90879,6 +90886,13 @@
 			"is_refcounted": true,
 			"is_instantiable": false,
 			"inherits": "EditorExportPlatform",
+			"api_type": "editor"
+		},
+		{
+			"name": "EditorExportPlatformVisionOS",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "EditorExportPlatformAppleEmbedded",
 			"api_type": "editor"
 		},
 		{
@@ -91408,20 +91422,6 @@
 					]
 				},
 				{
-					"name": "add_ios_project_static_lib",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
 					"name": "add_file",
 					"is_const": false,
 					"is_vararg": false,
@@ -91440,6 +91440,118 @@
 						{
 							"name": "remap",
 							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "add_apple_embedded_platform_project_static_lib",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "add_apple_embedded_platform_framework",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "add_apple_embedded_platform_embedded_framework",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "add_apple_embedded_platform_plist_content",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "plist_content",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "add_apple_embedded_platform_linker_flags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "flags",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "add_apple_embedded_platform_bundle_file",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "add_apple_embedded_platform_cpp_code",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "code",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "add_ios_project_static_lib",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
 						}
 					]
 				},
