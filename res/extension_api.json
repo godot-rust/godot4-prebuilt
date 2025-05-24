@@ -65629,6 +65629,33 @@
 						"type": "float",
 						"meta": "float"
 					}
+				},
+				{
+					"name": "set_mid_height",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "mid_height",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_mid_height",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
 				}
 			],
 			"properties": [
@@ -65643,6 +65670,12 @@
 					"name": "height",
 					"setter": "set_height",
 					"getter": "get_height"
+				},
+				{
+					"type": "float",
+					"name": "mid_height",
+					"setter": "set_mid_height",
+					"getter": "get_mid_height"
 				}
 			]
 		},
@@ -65706,6 +65739,33 @@
 						"type": "float",
 						"meta": "float"
 					}
+				},
+				{
+					"name": "set_mid_height",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "mid_height",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_mid_height",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
 				}
 			],
 			"properties": [
@@ -65720,6 +65780,12 @@
 					"name": "height",
 					"setter": "set_height",
 					"getter": "get_height"
+				},
+				{
+					"type": "float",
+					"name": "mid_height",
+					"setter": "set_mid_height",
+					"getter": "get_mid_height"
 				}
 			]
 		},
@@ -262862,6 +262928,33 @@
 					}
 				},
 				{
+					"name": "set_mid_height",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "mid_height",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_mid_height",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "set_inside",
 					"is_const": false,
 					"is_vararg": false,
@@ -262899,6 +262992,12 @@
 					"name": "height",
 					"setter": "set_height",
 					"getter": "get_height"
+				},
+				{
+					"type": "float",
+					"name": "mid_height",
+					"setter": "set_mid_height",
+					"getter": "get_mid_height"
 				},
 				{
 					"type": "bool",
