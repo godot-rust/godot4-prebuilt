@@ -81602,6 +81602,17 @@
 					}
 				},
 				{
+					"name": "get_filesystem_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
 					"name": "is_case_sensitive",
 					"is_const": true,
 					"is_vararg": false,
@@ -181918,6 +181929,31 @@
 					"is_static": false,
 					"is_virtual": false,
 					"hash": 3218959716
+				},
+				{
+					"name": "set_result_value",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1114965689,
+					"arguments": [
+						{
+							"name": "result_value",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "get_result_value",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1214101251,
+					"return_value": {
+						"type": "Variant"
+					}
 				}
 			],
 			"signals": [
@@ -204566,6 +204602,88 @@
 					]
 				},
 				{
+					"name": "soft_body_apply_point_impulse",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 831953689,
+					"arguments": [
+						{
+							"name": "body",
+							"type": "RID"
+						},
+						{
+							"name": "point_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "impulse",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "soft_body_apply_point_force",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 831953689,
+					"arguments": [
+						{
+							"name": "body",
+							"type": "RID"
+						},
+						{
+							"name": "point_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "force",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "soft_body_apply_central_impulse",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3227306858,
+					"arguments": [
+						{
+							"name": "body",
+							"type": "RID"
+						},
+						{
+							"name": "impulse",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "soft_body_apply_central_force",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3227306858,
+					"arguments": [
+						{
+							"name": "body",
+							"type": "RID"
+						},
+						{
+							"name": "force",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
 					"name": "joint_create",
 					"is_const": false,
 					"is_vararg": false,
@@ -208131,6 +208249,92 @@
 							"name": "point_index",
 							"type": "int",
 							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "_soft_body_apply_point_impulse",
+					"is_const": false,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 831953689,
+					"arguments": [
+						{
+							"name": "body",
+							"type": "RID"
+						},
+						{
+							"name": "point_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "impulse",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "_soft_body_apply_point_force",
+					"is_const": false,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 831953689,
+					"arguments": [
+						{
+							"name": "body",
+							"type": "RID"
+						},
+						{
+							"name": "point_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "force",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "_soft_body_apply_central_impulse",
+					"is_const": false,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3227306858,
+					"arguments": [
+						{
+							"name": "body",
+							"type": "RID"
+						},
+						{
+							"name": "impulse",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "_soft_body_apply_central_force",
+					"is_const": false,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3227306858,
+					"arguments": [
+						{
+							"name": "body",
+							"type": "RID"
+						},
+						{
+							"name": "force",
+							"type": "Vector3"
 						}
 					]
 				},
@@ -230130,8 +230334,12 @@
 							"value": 1
 						},
 						{
-							"name": "VIEWPORT_SCREEN_SPACE_AA_MAX",
+							"name": "VIEWPORT_SCREEN_SPACE_AA_SMAA",
 							"value": 2
+						},
+						{
+							"name": "VIEWPORT_SCREEN_SPACE_AA_MAX",
+							"value": 3
 						}
 					]
 				},
@@ -243483,6 +243691,57 @@
 							"name": "id",
 							"type": "int",
 							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "uid_to_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1703090593,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "uid",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "path_to_uid",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1703090593,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "ensure_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1703090593,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "path_or_uid",
+							"type": "String"
 						}
 					]
 				}
@@ -261475,6 +261734,72 @@
 							"name": "point_index",
 							"type": "int",
 							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "apply_impulse",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1530502735,
+					"arguments": [
+						{
+							"name": "point_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "impulse",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "apply_force",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1530502735,
+					"arguments": [
+						{
+							"name": "point_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "force",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "apply_central_impulse",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "impulse",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "apply_central_force",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "force",
+							"type": "Vector3"
 						}
 					]
 				},
@@ -310399,8 +310724,12 @@
 							"value": 1
 						},
 						{
-							"name": "SCREEN_SPACE_AA_MAX",
+							"name": "SCREEN_SPACE_AA_SMAA",
 							"value": 2
+						},
+						{
+							"name": "SCREEN_SPACE_AA_MAX",
+							"value": 3
 						}
 					]
 				},
