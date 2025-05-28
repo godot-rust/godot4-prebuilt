@@ -20271,6 +20271,21 @@
 					]
 				},
 				{
+					"name": "duplicate_deep",
+					"return_type": "Dictionary",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 2160600714,
+					"arguments": [
+						{
+							"name": "deep_subresources_mode",
+							"type": "int",
+							"default_value": "1"
+						}
+					]
+				},
+				{
 					"name": "get",
 					"return_type": "Variant",
 					"is_vararg": false,
@@ -21033,6 +21048,21 @@
 							"name": "deep",
 							"type": "bool",
 							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "duplicate_deep",
+					"return_type": "Array",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 1949240801,
+					"arguments": [
+						{
+							"name": "deep_subresources_mode",
+							"type": "int",
+							"default_value": "1"
 						}
 					]
 				},
@@ -72964,6 +72994,10 @@
 							"value": 2
 						},
 						{
+							"name": "MODE_LINEAR",
+							"value": 2
+						},
+						{
 							"name": "MODE_OKHSL",
 							"value": 3
 						}
@@ -73088,6 +73122,31 @@
 				},
 				{
 					"name": "is_editing_alpha",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_edit_intensity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "show",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_editing_intensity",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -73394,6 +73453,12 @@
 					"getter": "is_editing_alpha"
 				},
 				{
+					"type": "bool",
+					"name": "edit_intensity",
+					"setter": "set_edit_intensity",
+					"getter": "is_editing_intensity"
+				},
+				{
 					"type": "int",
 					"name": "color_mode",
 					"setter": "set_color_mode",
@@ -73527,6 +73592,31 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "set_edit_intensity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "show",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_editing_intensity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"signals": [
@@ -73558,6 +73648,12 @@
 					"name": "edit_alpha",
 					"setter": "set_edit_alpha",
 					"getter": "is_editing_alpha"
+				},
+				{
+					"type": "bool",
+					"name": "edit_intensity",
+					"setter": "set_edit_intensity",
+					"getter": "is_editing_intensity"
 				}
 			]
 		},
@@ -172655,7 +172751,7 @@
 					]
 				},
 				{
-					"name": "get_rpc_config",
+					"name": "get_node_rpc_config",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -177080,6 +177176,10 @@
 						{
 							"name": "CONNECT_REFERENCE_COUNTED",
 							"value": 8
+						},
+						{
+							"name": "CONNECT_APPEND_SOURCE_OBJECT",
+							"value": 16
 						}
 					]
 				}
@@ -204387,6 +204487,43 @@
 					]
 				},
 				{
+					"name": "soft_body_set_shrinking_factor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "body",
+							"type": "RID"
+						},
+						{
+							"name": "shrinking_factor",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "soft_body_get_shrinking_factor",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 866169185,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "body",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "soft_body_set_pressure_coefficient",
 					"is_const": false,
 					"is_vararg": false,
@@ -207972,6 +208109,45 @@
 				},
 				{
 					"name": "_soft_body_get_linear_stiffness",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 866169185,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "body",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "_soft_body_set_shrinking_factor",
+					"is_const": false,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "body",
+							"type": "RID"
+						},
+						{
+							"name": "shrinking_factor",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "_soft_body_get_shrinking_factor",
 					"is_const": true,
 					"is_static": false,
 					"is_required": true,
@@ -242025,6 +242201,26 @@
 			"is_instantiable": true,
 			"inherits": "RefCounted",
 			"api_type": "core",
+			"enums": [
+				{
+					"name": "ResourceDeepDuplicateMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "RESOURCE_DEEP_DUPLICATE_NONE",
+							"value": 0
+						},
+						{
+							"name": "RESOURCE_DEEP_DUPLICATE_INTERNAL",
+							"value": 1
+						},
+						{
+							"name": "RESOURCE_DEEP_DUPLICATE_ALL",
+							"value": 2
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "_setup_local_to_scene",
@@ -242314,9 +242510,27 @@
 					},
 					"arguments": [
 						{
-							"name": "subresources",
+							"name": "deep",
 							"type": "bool",
 							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "duplicate_deep",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1807532819,
+					"return_value": {
+						"type": "Resource"
+					},
+					"arguments": [
+						{
+							"name": "deep_subresources_mode",
+							"type": "enum::ResourceDeepDuplicateMode",
+							"default_value": "1"
 						}
 					]
 				}
@@ -261639,6 +261853,33 @@
 					}
 				},
 				{
+					"name": "set_shrinking_factor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "shrinking_factor",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_shrinking_factor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 191475506,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "set_pressure_coefficient",
 					"is_const": false,
 					"is_vararg": false,
@@ -261916,6 +262157,12 @@
 					"name": "linear_stiffness",
 					"setter": "set_linear_stiffness",
 					"getter": "get_linear_stiffness"
+				},
+				{
+					"type": "float",
+					"name": "shrinking_factor",
+					"setter": "set_shrinking_factor",
+					"getter": "get_shrinking_factor"
 				},
 				{
 					"type": "float",
@@ -302814,6 +303061,56 @@
 					]
 				},
 				{
+					"name": "get_locale_override",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_locale_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "locale",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "is_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
 					"name": "is_pseudolocalization_enabled",
 					"is_const": true,
 					"is_vararg": false,
@@ -303059,6 +303356,12 @@
 				}
 			],
 			"properties": [
+				{
+					"type": "bool",
+					"name": "enabled",
+					"setter": "set_enabled",
+					"getter": "is_enabled"
+				},
 				{
 					"type": "bool",
 					"name": "pseudolocalization_enabled",
