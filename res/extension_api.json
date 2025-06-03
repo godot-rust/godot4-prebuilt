@@ -27840,6 +27840,171 @@
 			]
 		},
 		{
+			"name": "AimModifier3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "BoneConstraint3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_forward_axis",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2496831085,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "axis",
+							"type": "enum::SkeletonModifier3D.BoneAxis"
+						}
+					]
+				},
+				{
+					"name": "get_forward_axis",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3949866735,
+					"return_value": {
+						"type": "enum::SkeletonModifier3D.BoneAxis"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_use_euler",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_euler",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_primary_rotation_axis",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 776736805,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "axis",
+							"type": "enum::Vector3.Axis"
+						}
+					]
+				},
+				{
+					"name": "get_primary_rotation_axis",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4131134770,
+					"return_value": {
+						"type": "enum::Vector3.Axis"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_use_secondary_rotation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_secondary_rotation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "setting_count",
+					"setter": "set_setting_count",
+					"getter": "get_setting_count"
+				}
+			]
+		},
+		{
 			"name": "AnimatableBody2D",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -53134,6 +53299,241 @@
 			]
 		},
 		{
+			"name": "BoneConstraint3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SkeletonModifier3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_amount",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "amount",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_amount",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_apply_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_apply_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_apply_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_apply_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_reference_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_reference_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_reference_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_reference_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_setting_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_setting_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "clear_setting",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				}
+			]
+		},
+		{
 			"name": "BoneMap",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -77786,6 +78186,421 @@
 			]
 		},
 		{
+			"name": "ConvertTransformModifier3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "BoneConstraint3D",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "TransformMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "TRANSFORM_MODE_POSITION",
+							"value": 0
+						},
+						{
+							"name": "TRANSFORM_MODE_ROTATION",
+							"value": 1
+						},
+						{
+							"name": "TRANSFORM_MODE_SCALE",
+							"value": 2
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_apply_transform_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1386463405,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "transform_mode",
+							"type": "enum::ConvertTransformModifier3D.TransformMode"
+						}
+					]
+				},
+				{
+					"name": "get_apply_transform_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3234663511,
+					"return_value": {
+						"type": "enum::ConvertTransformModifier3D.TransformMode"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_apply_axis",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 776736805,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "axis",
+							"type": "enum::Vector3.Axis"
+						}
+					]
+				},
+				{
+					"name": "get_apply_axis",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4131134770,
+					"return_value": {
+						"type": "enum::Vector3.Axis"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_apply_range_min",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "range_min",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_apply_range_min",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_apply_range_max",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "range_max",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_apply_range_max",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_reference_transform_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1386463405,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "transform_mode",
+							"type": "enum::ConvertTransformModifier3D.TransformMode"
+						}
+					]
+				},
+				{
+					"name": "get_reference_transform_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3234663511,
+					"return_value": {
+						"type": "enum::ConvertTransformModifier3D.TransformMode"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_reference_axis",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 776736805,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "axis",
+							"type": "enum::Vector3.Axis"
+						}
+					]
+				},
+				{
+					"name": "get_reference_axis",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4131134770,
+					"return_value": {
+						"type": "enum::Vector3.Axis"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_reference_range_min",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "range_min",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_reference_range_min",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_reference_range_max",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "range_max",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_reference_range_max",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_relative",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_relative",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_additive",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_additive",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "setting_count",
+					"setter": "set_setting_count",
+					"getter": "get_setting_count"
+				}
+			]
+		},
+		{
 			"name": "ConvexPolygonShape2D",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -77880,6 +78695,587 @@
 					"name": "points",
 					"setter": "set_points",
 					"getter": "get_points"
+				}
+			]
+		},
+		{
+			"name": "CopyTransformModifier3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "BoneConstraint3D",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "TransformFlag",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "TRANSFORM_FLAG_POSITION",
+							"value": 1
+						},
+						{
+							"name": "TRANSFORM_FLAG_ROTATION",
+							"value": 2
+						},
+						{
+							"name": "TRANSFORM_FLAG_SCALE",
+							"value": 4
+						},
+						{
+							"name": "TRANSFORM_FLAG_ALL",
+							"value": 7
+						}
+					]
+				},
+				{
+					"name": "AxisFlag",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "AXIS_FLAG_X",
+							"value": 1
+						},
+						{
+							"name": "AXIS_FLAG_Y",
+							"value": 2
+						},
+						{
+							"name": "AXIS_FLAG_Z",
+							"value": 4
+						},
+						{
+							"name": "AXIS_FLAG_ALL",
+							"value": 7
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_copy_flags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2252507859,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "copy_flags",
+							"type": "bitfield::CopyTransformModifier3D.TransformFlag"
+						}
+					]
+				},
+				{
+					"name": "get_copy_flags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1685185931,
+					"return_value": {
+						"type": "bitfield::CopyTransformModifier3D.TransformFlag"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_axis_flags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2044211897,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "axis_flags",
+							"type": "bitfield::CopyTransformModifier3D.AxisFlag"
+						}
+					]
+				},
+				{
+					"name": "get_axis_flags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 992162046,
+					"return_value": {
+						"type": "bitfield::CopyTransformModifier3D.AxisFlag"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_invert_flags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2044211897,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "axis_flags",
+							"type": "bitfield::CopyTransformModifier3D.AxisFlag"
+						}
+					]
+				},
+				{
+					"name": "get_invert_flags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 992162046,
+					"return_value": {
+						"type": "bitfield::CopyTransformModifier3D.AxisFlag"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_copy_position",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_position_copying",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_copy_rotation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_rotation_copying",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_copy_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_scale_copying",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_axis_x_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_axis_x_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_axis_y_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_axis_y_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_axis_z_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_axis_z_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_axis_x_inverted",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_axis_x_inverted",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_axis_y_inverted",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_axis_y_inverted",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_axis_z_inverted",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_axis_z_inverted",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_relative",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_relative",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_additive",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_additive",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "setting_count",
+					"setter": "set_setting_count",
+					"getter": "get_setting_count"
 				}
 			]
 		},
@@ -82003,6 +83399,10 @@
 			"inherits": "Object",
 			"api_type": "core",
 			"constants": [
+				{
+					"name": "INVALID_SCREEN",
+					"value": -1
+				},
 				{
 					"name": "SCREEN_WITH_MOUSE_FOCUS",
 					"value": -4
@@ -95223,6 +96623,17 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "close_scene",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 166280745,
+					"return_value": {
+						"type": "enum::Error"
+					}
+				},
+				{
 					"name": "mark_scene_as_unsaved",
 					"is_const": false,
 					"is_vararg": false,
@@ -98249,6 +99660,9 @@
 							"type": "bool"
 						}
 					]
+				},
+				{
+					"name": "property_overridden"
 				},
 				{
 					"name": "property_favorited",
@@ -294629,6 +296043,24 @@
 					"is_virtual": false,
 					"hash": 3304788590,
 					"arguments": [
+						{
+							"name": "theme_type",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "rename_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3740211285,
+					"arguments": [
+						{
+							"name": "old_theme_type",
+							"type": "StringName"
+						},
 						{
 							"name": "theme_type",
 							"type": "StringName"
