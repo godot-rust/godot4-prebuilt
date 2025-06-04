@@ -83770,24 +83770,20 @@
 					"is_bitfield": false,
 					"values": [
 						{
-							"name": "POPUP_UNKNOWN",
+							"name": "POPUP_MENU",
 							"value": 0
 						},
 						{
-							"name": "POPUP_MENU",
+							"name": "POPUP_LIST",
 							"value": 1
 						},
 						{
-							"name": "POPUP_LIST",
+							"name": "POPUP_TREE",
 							"value": 2
 						},
 						{
-							"name": "POPUP_TREE",
-							"value": 3
-						},
-						{
 							"name": "POPUP_DIALOG",
-							"value": 4
+							"value": 3
 						}
 					]
 				},
@@ -83800,44 +83796,40 @@
 							"value": 0
 						},
 						{
-							"name": "FLAG_LINKED",
+							"name": "FLAG_MULTISELECTABLE",
 							"value": 1
 						},
 						{
-							"name": "FLAG_MULTISELECTABLE",
+							"name": "FLAG_REQUIRED",
 							"value": 2
 						},
 						{
-							"name": "FLAG_REQUIRED",
+							"name": "FLAG_VISITED",
 							"value": 3
 						},
 						{
-							"name": "FLAG_VISITED",
+							"name": "FLAG_BUSY",
 							"value": 4
 						},
 						{
-							"name": "FLAG_BUSY",
+							"name": "FLAG_MODAL",
 							"value": 5
 						},
 						{
-							"name": "FLAG_MODAL",
+							"name": "FLAG_TOUCH_PASSTHROUGH",
 							"value": 6
 						},
 						{
-							"name": "FLAG_TOUCH_PASSTHROUGH",
+							"name": "FLAG_READONLY",
 							"value": 7
 						},
 						{
-							"name": "FLAG_READONLY",
+							"name": "FLAG_DISABLED",
 							"value": 8
 						},
 						{
-							"name": "FLAG_DISABLED",
-							"value": 9
-						},
-						{
 							"name": "FLAG_CLIPS_CHILDREN",
-							"value": 10
+							"value": 9
 						}
 					]
 				},
@@ -109133,6 +109125,20 @@
 							"value": 2
 						}
 					]
+				},
+				{
+					"name": "DisplayMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "DISPLAY_THUMBNAILS",
+							"value": 0
+						},
+						{
+							"name": "DISPLAY_LIST",
+							"value": 1
+						}
+					]
 				}
 			],
 			"methods": [
@@ -109524,6 +109530,31 @@
 					}
 				},
 				{
+					"name": "set_display_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2692197101,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::FileDialog.DisplayMode"
+						}
+					]
+				},
+				{
+					"name": "get_display_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1092104624,
+					"return_value": {
+						"type": "enum::FileDialog.DisplayMode"
+					}
+				},
+				{
 					"name": "get_vbox",
 					"is_const": false,
 					"is_vararg": false,
@@ -109712,6 +109743,12 @@
 					"name": "file_mode",
 					"setter": "set_file_mode",
 					"getter": "get_file_mode"
+				},
+				{
+					"type": "int",
+					"name": "display_mode",
+					"setter": "set_display_mode",
+					"getter": "get_display_mode"
 				},
 				{
 					"type": "int",
@@ -244377,6 +244414,26 @@
 						}
 					]
 				}
+			],
+			"methods": [
+				{
+					"name": "_get_build_dependencies",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 4291131558,
+					"return_value": {
+						"type": "PackedStringArray"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				}
 			]
 		},
 		{
@@ -312044,6 +312101,33 @@
 					}
 				},
 				{
+					"name": "set_speed_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "speed_scale",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_speed_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "set_audio_track",
 					"is_const": false,
 					"is_vararg": false,
@@ -312263,6 +312347,12 @@
 					"name": "volume",
 					"setter": "set_volume",
 					"getter": "get_volume"
+				},
+				{
+					"type": "float",
+					"name": "speed_scale",
+					"setter": "set_speed_scale",
+					"getter": "get_speed_scale"
 				},
 				{
 					"type": "bool",
