@@ -43710,6 +43710,18 @@
 					}
 				},
 				{
+					"name": "_get_tags",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3102165223,
+					"return_value": {
+						"type": "Dictionary"
+					}
+				},
+				{
 					"name": "_get_parameter_list",
 					"is_const": true,
 					"is_static": false,
@@ -45074,6 +45086,31 @@
 						"type": "int",
 						"meta": "int32"
 					}
+				},
+				{
+					"name": "set_tags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155329257,
+					"arguments": [
+						{
+							"name": "tags",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "get_tags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3102165223,
+					"return_value": {
+						"type": "Dictionary"
+					}
 				}
 			],
 			"properties": [
@@ -45100,6 +45137,12 @@
 					"name": "bar_beats",
 					"setter": "set_bar_beats",
 					"getter": "get_bar_beats"
+				},
+				{
+					"type": "Dictionary",
+					"name": "tags",
+					"setter": "set_tags",
+					"getter": "get_tags"
 				},
 				{
 					"type": "bool",
@@ -48900,6 +48943,31 @@
 					}
 				},
 				{
+					"name": "set_tags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155329257,
+					"arguments": [
+						{
+							"name": "tags",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "get_tags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3102165223,
+					"return_value": {
+						"type": "Dictionary"
+					}
+				},
+				{
 					"name": "save_to_wav",
 					"is_const": false,
 					"is_vararg": false,
@@ -48959,6 +49027,12 @@
 					"name": "stereo",
 					"setter": "set_stereo",
 					"getter": "is_stereo"
+				},
+				{
+					"type": "Dictionary",
+					"name": "tags",
+					"setter": "set_tags",
+					"getter": "get_tags"
 				}
 			]
 		},
@@ -53295,6 +53369,18 @@
 					"name": "override_pose",
 					"setter": "set_override_pose",
 					"getter": "get_override_pose"
+				},
+				{
+					"type": "bool",
+					"name": "use_external_skeleton",
+					"setter": "set_use_external_skeleton",
+					"getter": "get_use_external_skeleton"
+				},
+				{
+					"type": "NodePath",
+					"name": "external_skeleton",
+					"setter": "set_external_skeleton",
+					"getter": "get_external_skeleton"
 				}
 			]
 		},
@@ -60101,6 +60187,18 @@
 					"hash": 3341600327,
 					"return_value": {
 						"type": "Vector2"
+					}
+				},
+				{
+					"name": "get_screen_rotation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
 					}
 				},
 				{
@@ -177822,6 +177920,27 @@
 					]
 				},
 				{
+					"name": "open_with_program",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2848259907,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "program_path",
+							"type": "String"
+						},
+						{
+							"name": "paths",
+							"type": "PackedStringArray"
+						}
+					]
+				},
+				{
 					"name": "kill",
 					"is_const": false,
 					"is_vararg": false,
@@ -230787,6 +230906,14 @@
 					"value": 4096
 				},
 				{
+					"name": "CANVAS_LAYER_MIN",
+					"value": -2147483648
+				},
+				{
+					"name": "CANVAS_LAYER_MAX",
+					"value": 2147483647
+				},
+				{
 					"name": "MAX_GLOW_LEVELS",
 					"value": 7
 				},
@@ -234147,6 +234274,29 @@
 					]
 				},
 				{
+					"name": "mesh_surface_get_format_index_stride",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3188363337,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					},
+					"arguments": [
+						{
+							"name": "format",
+							"type": "bitfield::RenderingServer.ArrayFormat"
+						},
+						{
+							"name": "vertex_count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "mesh_add_surface",
 					"is_const": false,
 					"is_vararg": false,
@@ -234512,6 +234662,34 @@
 				},
 				{
 					"name": "mesh_surface_update_skin_region",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2900195149,
+					"arguments": [
+						{
+							"name": "mesh",
+							"type": "RID"
+						},
+						{
+							"name": "surface",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "offset",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "data",
+							"type": "PackedByteArray"
+						}
+					]
+				},
+				{
+					"name": "mesh_surface_update_index_region",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -246486,7 +246664,17 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3218959716
+					"hash": 1458098034,
+					"hash_compatibility": [
+						3218959716
+					],
+					"arguments": [
+						{
+							"name": "color",
+							"type": "Color",
+							"default_value": "Color(0, 0, 0, 0)"
+						}
+					]
 				},
 				{
 					"name": "push_strikethrough",
@@ -246494,7 +246682,17 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3218959716
+					"hash": 1458098034,
+					"hash_compatibility": [
+						3218959716
+					],
+					"arguments": [
+						{
+							"name": "color",
+							"type": "Color",
+							"default_value": "Color(0, 0, 0, 0)"
+						}
+					]
 				},
 				{
 					"name": "push_table",
@@ -264456,6 +264654,31 @@
 					"return_value": {
 						"type": "Control"
 					}
+				},
+				{
+					"name": "set_touch_dragger_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_touch_dragger_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"signals": [
@@ -264505,6 +264728,12 @@
 					"name": "vertical",
 					"setter": "set_vertical",
 					"getter": "is_vertical"
+				},
+				{
+					"type": "bool",
+					"name": "touch_dragger_enabled",
+					"setter": "set_touch_dragger_enabled",
+					"getter": "is_touch_dragger_enabled"
 				},
 				{
 					"type": "int",
@@ -265210,6 +265439,10 @@
 						{
 							"name": "ROTATION_AXIS_ALL",
 							"value": 3
+						},
+						{
+							"name": "ROTATION_AXIS_CUSTOM",
+							"value": 4
 						}
 					]
 				}
@@ -265707,6 +265940,43 @@
 					]
 				},
 				{
+					"name": "set_rotation_axis_vector",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1530502735,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "vector",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_rotation_axis_vector",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 711720468,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "set_radius_damping_curve",
 					"is_const": false,
 					"is_vararg": false,
@@ -266160,6 +266430,53 @@
 					"hash": 2488679199,
 					"return_value": {
 						"type": "enum::SpringBoneSimulator3D.RotationAxis"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_rotation_axis_vector",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2866752138,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "vector",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_joint_rotation_axis_vector",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1592972041,
+					"return_value": {
+						"type": "Vector3"
 					},
 					"arguments": [
 						{
@@ -328337,6 +328654,18 @@
 					]
 				},
 				{
+					"name": "get_caller_task_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					}
+				},
+				{
 					"name": "add_group_task",
 					"is_const": false,
 					"is_vararg": false,
@@ -328429,6 +328758,18 @@
 							"meta": "int64"
 						}
 					]
+				},
+				{
+					"name": "get_caller_group_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					}
 				}
 			]
 		},
