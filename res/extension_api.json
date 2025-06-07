@@ -35097,6 +35097,26 @@
 						"type": "typedarray::StringName"
 					}
 				}
+			],
+			"signals": [
+				{
+					"name": "state_started",
+					"arguments": [
+						{
+							"name": "state",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "state_finished",
+					"arguments": [
+						{
+							"name": "state",
+							"type": "StringName"
+						}
+					]
+				}
 			]
 		},
 		{
@@ -154638,6 +154658,81 @@
 					"name": "vrs_strength",
 					"setter": "set_vrs_strength",
 					"getter": "get_vrs_strength"
+				}
+			]
+		},
+		{
+			"name": "ModifierBoneTarget3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SkeletonModifier3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "bone_name",
+					"setter": "set_bone_name",
+					"getter": "get_bone_name"
+				},
+				{
+					"type": "int",
+					"name": "bone",
+					"setter": "set_bone",
+					"getter": "get_bone"
 				}
 			]
 		},
@@ -330098,8 +330193,52 @@
 							"value": 75
 						},
 						{
-							"name": "JOINT_MAX",
+							"name": "JOINT_LOWER_CHEST",
 							"value": 76
+						},
+						{
+							"name": "JOINT_LEFT_SCAPULA",
+							"value": 77
+						},
+						{
+							"name": "JOINT_LEFT_WRIST_TWIST",
+							"value": 78
+						},
+						{
+							"name": "JOINT_RIGHT_SCAPULA",
+							"value": 79
+						},
+						{
+							"name": "JOINT_RIGHT_WRIST_TWIST",
+							"value": 80
+						},
+						{
+							"name": "JOINT_LEFT_ANKLE_TWIST",
+							"value": 81
+						},
+						{
+							"name": "JOINT_LEFT_ANKLE",
+							"value": 82
+						},
+						{
+							"name": "JOINT_LEFT_MIDDLE_FOOT",
+							"value": 83
+						},
+						{
+							"name": "JOINT_RIGHT_ANKLE_TWIST",
+							"value": 84
+						},
+						{
+							"name": "JOINT_RIGHT_ANKLE",
+							"value": 85
+						},
+						{
+							"name": "JOINT_RIGHT_MIDDLE_FOOT",
+							"value": 86
+						},
+						{
+							"name": "JOINT_MAX",
+							"value": 87
 						}
 					]
 				},
