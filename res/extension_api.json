@@ -15144,6 +15144,20 @@
 					]
 				},
 				{
+					"name": "scaled_local",
+					"return_type": "Basis",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3934786792,
+					"arguments": [
+						{
+							"name": "scale",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
 					"name": "get_scale",
 					"return_type": "Vector3",
 					"is_vararg": false,
@@ -73544,6 +73558,14 @@
 						{
 							"name": "SHAPE_NONE",
 							"value": 4
+						},
+						{
+							"name": "SHAPE_OK_HS_RECTANGLE",
+							"value": 5
+						},
+						{
+							"name": "SHAPE_OK_HL_RECTANGLE",
+							"value": 6
 						}
 					]
 				}
@@ -114708,11 +114730,14 @@
 			"methods": [
 				{
 					"name": "get_buffer_view",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
 						"type": "int",
 						"meta": "int32"
@@ -114735,14 +114760,17 @@
 				},
 				{
 					"name": "get_byte_offset",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
 						"type": "int",
-						"meta": "int32"
+						"meta": "int64"
 					}
 				},
 				{
@@ -114756,20 +114784,22 @@
 						{
 							"name": "byte_offset",
 							"type": "int",
-							"meta": "int32"
+							"meta": "int64"
 						}
 					]
 				},
 				{
 					"name": "get_component_type",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 852227802,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
-						"type": "int",
-						"meta": "int32"
+						"type": "enum::GLTFAccessor.GLTFComponentType"
 					}
 				},
 				{
@@ -114778,22 +114808,27 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1286410249,
+					"hash": 1780020221,
+					"hash_compatibility": [
+						1286410249
+					],
 					"arguments": [
 						{
 							"name": "component_type",
-							"type": "int",
-							"meta": "int32"
+							"type": "enum::GLTFAccessor.GLTFComponentType"
 						}
 					]
 				},
 				{
 					"name": "get_normalized",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2240911060,
+					"hash": 36873697,
+					"hash_compatibility": [
+						2240911060
+					],
 					"return_value": {
 						"type": "bool"
 					}
@@ -114814,14 +114849,17 @@
 				},
 				{
 					"name": "get_count",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
 						"type": "int",
-						"meta": "int32"
+						"meta": "int64"
 					}
 				},
 				{
@@ -114835,17 +114873,20 @@
 						{
 							"name": "count",
 							"type": "int",
-							"meta": "int32"
+							"meta": "int64"
 						}
 					]
 				},
 				{
 					"name": "get_accessor_type",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 679305214,
+					"hash": 1998183368,
+					"hash_compatibility": [
+						679305214
+					],
 					"return_value": {
 						"type": "enum::GLTFAccessor.GLTFAccessorType"
 					}
@@ -114866,11 +114907,14 @@
 				},
 				{
 					"name": "get_type",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
 						"type": "int",
 						"meta": "int32"
@@ -114893,11 +114937,14 @@
 				},
 				{
 					"name": "get_min",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 148677866,
+					"hash": 547233126,
+					"hash_compatibility": [
+						148677866
+					],
 					"return_value": {
 						"type": "PackedFloat64Array"
 					}
@@ -114918,11 +114965,14 @@
 				},
 				{
 					"name": "get_max",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 148677866,
+					"hash": 547233126,
+					"hash_compatibility": [
+						148677866
+					],
 					"return_value": {
 						"type": "PackedFloat64Array"
 					}
@@ -114943,14 +114993,17 @@
 				},
 				{
 					"name": "get_sparse_count",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
 						"type": "int",
-						"meta": "int32"
+						"meta": "int64"
 					}
 				},
 				{
@@ -114964,17 +115017,20 @@
 						{
 							"name": "sparse_count",
 							"type": "int",
-							"meta": "int32"
+							"meta": "int64"
 						}
 					]
 				},
 				{
 					"name": "get_sparse_indices_buffer_view",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
 						"type": "int",
 						"meta": "int32"
@@ -114997,14 +115053,17 @@
 				},
 				{
 					"name": "get_sparse_indices_byte_offset",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
 						"type": "int",
-						"meta": "int32"
+						"meta": "int64"
 					}
 				},
 				{
@@ -115018,20 +115077,22 @@
 						{
 							"name": "sparse_indices_byte_offset",
 							"type": "int",
-							"meta": "int32"
+							"meta": "int64"
 						}
 					]
 				},
 				{
 					"name": "get_sparse_indices_component_type",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 852227802,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
-						"type": "int",
-						"meta": "int32"
+						"type": "enum::GLTFAccessor.GLTFComponentType"
 					}
 				},
 				{
@@ -115040,22 +115101,27 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1286410249,
+					"hash": 1780020221,
+					"hash_compatibility": [
+						1286410249
+					],
 					"arguments": [
 						{
 							"name": "sparse_indices_component_type",
-							"type": "int",
-							"meta": "int32"
+							"type": "enum::GLTFAccessor.GLTFComponentType"
 						}
 					]
 				},
 				{
 					"name": "get_sparse_values_buffer_view",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
 						"type": "int",
 						"meta": "int32"
@@ -115078,14 +115144,17 @@
 				},
 				{
 					"name": "get_sparse_values_byte_offset",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
 						"type": "int",
-						"meta": "int32"
+						"meta": "int64"
 					}
 				},
 				{
@@ -115099,7 +115168,7 @@
 						{
 							"name": "sparse_values_byte_offset",
 							"type": "int",
-							"meta": "int32"
+							"meta": "int64"
 						}
 					]
 				}
@@ -115371,7 +115440,7 @@
 					],
 					"return_value": {
 						"type": "int",
-						"meta": "int32"
+						"meta": "int64"
 					}
 				},
 				{
@@ -115385,7 +115454,7 @@
 						{
 							"name": "byte_offset",
 							"type": "int",
-							"meta": "int32"
+							"meta": "int64"
 						}
 					]
 				},
@@ -115401,7 +115470,7 @@
 					],
 					"return_value": {
 						"type": "int",
-						"meta": "int32"
+						"meta": "int64"
 					}
 				},
 				{
@@ -115415,7 +115484,7 @@
 						{
 							"name": "byte_length",
 							"type": "int",
-							"meta": "int32"
+							"meta": "int64"
 						}
 					]
 				},
@@ -115431,7 +115500,7 @@
 					],
 					"return_value": {
 						"type": "int",
-						"meta": "int32"
+						"meta": "int64"
 					}
 				},
 				{
@@ -115445,7 +115514,7 @@
 						{
 							"name": "byte_stride",
 							"type": "int",
-							"meta": "int32"
+							"meta": "int64"
 						}
 					]
 				},
