@@ -75961,6 +75961,24 @@
 					}
 				},
 				{
+					"name": "_get_accessibility_container_name",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2174079723,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "node",
+							"type": "Node"
+						}
+					]
+				},
+				{
 					"name": "_gui_input",
 					"is_const": false,
 					"is_static": false,
@@ -77712,6 +77730,181 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "set_accessibility_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_accessibility_description",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "description",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_description",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_accessibility_live",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1720261470,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::DisplayServer.AccessibilityLiveMode"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_live",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3311037003,
+					"return_value": {
+						"type": "enum::DisplayServer.AccessibilityLiveMode"
+					}
+				},
+				{
+					"name": "set_accessibility_controls_nodes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "node_path",
+							"type": "typedarray::NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_controls_nodes",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::NodePath"
+					}
+				},
+				{
+					"name": "set_accessibility_described_by_nodes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "node_path",
+							"type": "typedarray::NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_described_by_nodes",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::NodePath"
+					}
+				},
+				{
+					"name": "set_accessibility_labeled_by_nodes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "node_path",
+							"type": "typedarray::NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_labeled_by_nodes",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::NodePath"
+					}
+				},
+				{
+					"name": "set_accessibility_flow_to_nodes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "node_path",
+							"type": "typedarray::NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_flow_to_nodes",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::NodePath"
+					}
+				},
+				{
 					"name": "set_mouse_filter",
 					"is_const": false,
 					"is_vararg": false,
@@ -78310,6 +78503,48 @@
 					"name": "shortcut_context",
 					"setter": "set_shortcut_context",
 					"getter": "get_shortcut_context"
+				},
+				{
+					"type": "String",
+					"name": "accessibility_name",
+					"setter": "set_accessibility_name",
+					"getter": "get_accessibility_name"
+				},
+				{
+					"type": "String",
+					"name": "accessibility_description",
+					"setter": "set_accessibility_description",
+					"getter": "get_accessibility_description"
+				},
+				{
+					"type": "int",
+					"name": "accessibility_live",
+					"setter": "set_accessibility_live",
+					"getter": "get_accessibility_live"
+				},
+				{
+					"type": "typedarray::NodePath",
+					"name": "accessibility_controls_nodes",
+					"setter": "set_accessibility_controls_nodes",
+					"getter": "get_accessibility_controls_nodes"
+				},
+				{
+					"type": "typedarray::NodePath",
+					"name": "accessibility_described_by_nodes",
+					"setter": "set_accessibility_described_by_nodes",
+					"getter": "get_accessibility_described_by_nodes"
+				},
+				{
+					"type": "typedarray::NodePath",
+					"name": "accessibility_labeled_by_nodes",
+					"setter": "set_accessibility_labeled_by_nodes",
+					"getter": "get_accessibility_labeled_by_nodes"
+				},
+				{
+					"type": "typedarray::NodePath",
+					"name": "accessibility_flow_to_nodes",
+					"setter": "set_accessibility_flow_to_nodes",
+					"getter": "get_accessibility_flow_to_nodes"
 				},
 				{
 					"type": "Theme",
@@ -172808,24 +173043,6 @@
 					}
 				},
 				{
-					"name": "_get_accessibility_container_name",
-					"is_const": true,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 2174079723,
-					"return_value": {
-						"type": "String"
-					},
-					"arguments": [
-						{
-							"name": "node",
-							"type": "Node"
-						}
-					]
-				},
-				{
 					"name": "print_orphan_nodes",
 					"is_const": false,
 					"is_vararg": false,
@@ -173852,181 +174069,6 @@
 					}
 				},
 				{
-					"name": "set_accessibility_name",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "name",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_accessibility_name",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "set_accessibility_description",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "description",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_accessibility_description",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "set_accessibility_live",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1720261470,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::DisplayServer.AccessibilityLiveMode"
-						}
-					]
-				},
-				{
-					"name": "get_accessibility_live",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3311037003,
-					"return_value": {
-						"type": "enum::DisplayServer.AccessibilityLiveMode"
-					}
-				},
-				{
-					"name": "set_accessibility_controls_nodes",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 381264803,
-					"arguments": [
-						{
-							"name": "node_path",
-							"type": "typedarray::NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_accessibility_controls_nodes",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3995934104,
-					"return_value": {
-						"type": "typedarray::NodePath"
-					}
-				},
-				{
-					"name": "set_accessibility_described_by_nodes",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 381264803,
-					"arguments": [
-						{
-							"name": "node_path",
-							"type": "typedarray::NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_accessibility_described_by_nodes",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3995934104,
-					"return_value": {
-						"type": "typedarray::NodePath"
-					}
-				},
-				{
-					"name": "set_accessibility_labeled_by_nodes",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 381264803,
-					"arguments": [
-						{
-							"name": "node_path",
-							"type": "typedarray::NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_accessibility_labeled_by_nodes",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3995934104,
-					"return_value": {
-						"type": "typedarray::NodePath"
-					}
-				},
-				{
-					"name": "set_accessibility_flow_to_nodes",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 381264803,
-					"arguments": [
-						{
-							"name": "node_path",
-							"type": "typedarray::NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_accessibility_flow_to_nodes",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3995934104,
-					"return_value": {
-						"type": "typedarray::NodePath"
-					}
-				},
-				{
 					"name": "queue_accessibility_update",
 					"is_const": false,
 					"is_vararg": false,
@@ -174866,48 +174908,6 @@
 					"name": "editor_description",
 					"setter": "set_editor_description",
 					"getter": "get_editor_description"
-				},
-				{
-					"type": "String",
-					"name": "accessibility_name",
-					"setter": "set_accessibility_name",
-					"getter": "get_accessibility_name"
-				},
-				{
-					"type": "String",
-					"name": "accessibility_description",
-					"setter": "set_accessibility_description",
-					"getter": "get_accessibility_description"
-				},
-				{
-					"type": "int",
-					"name": "accessibility_live",
-					"setter": "set_accessibility_live",
-					"getter": "get_accessibility_live"
-				},
-				{
-					"type": "typedarray::NodePath",
-					"name": "accessibility_controls_nodes",
-					"setter": "set_accessibility_controls_nodes",
-					"getter": "get_accessibility_controls_nodes"
-				},
-				{
-					"type": "typedarray::NodePath",
-					"name": "accessibility_described_by_nodes",
-					"setter": "set_accessibility_described_by_nodes",
-					"getter": "get_accessibility_described_by_nodes"
-				},
-				{
-					"type": "typedarray::NodePath",
-					"name": "accessibility_labeled_by_nodes",
-					"setter": "set_accessibility_labeled_by_nodes",
-					"getter": "get_accessibility_labeled_by_nodes"
-				},
-				{
-					"type": "typedarray::NodePath",
-					"name": "accessibility_flow_to_nodes",
-					"setter": "set_accessibility_flow_to_nodes",
-					"getter": "get_accessibility_flow_to_nodes"
 				}
 			]
 		},
@@ -328158,6 +328158,56 @@
 					}
 				},
 				{
+					"name": "set_accessibility_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_accessibility_description",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "description",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_accessibility_description",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
 					"name": "get_focused_window",
 					"is_const": false,
 					"is_vararg": false,
@@ -328728,6 +328778,18 @@
 					"name": "auto_translate",
 					"setter": "set_auto_translate",
 					"getter": "is_auto_translating"
+				},
+				{
+					"type": "String",
+					"name": "accessibility_name",
+					"setter": "set_accessibility_name",
+					"getter": "get_accessibility_name"
+				},
+				{
+					"type": "String",
+					"name": "accessibility_description",
+					"setter": "set_accessibility_description",
+					"getter": "get_accessibility_description"
 				},
 				{
 					"type": "Theme",
