@@ -101982,6 +101982,18 @@
 					"return_value": {
 						"type": "PackedStringArray"
 					}
+				},
+				{
+					"name": "_create",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3789807118,
+					"return_value": {
+						"type": "EditorSyntaxHighlighter"
+					}
 				}
 			]
 		},
@@ -170145,6 +170157,41 @@
 					"return_value": {
 						"type": "int",
 						"meta": "uint32"
+					},
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "region_set_use_async_iterations",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "region_get_use_async_iterations",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155700596,
+					"return_value": {
+						"type": "bool"
 					},
 					"arguments": [
 						{

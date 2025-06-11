@@ -3947,6 +3947,62 @@ fn bindgen_test_layout_GDExtensionGodotVersion2() {
         )
     );
 }
+pub type GDExtensionMainLoopStartupCallback = ::std::option::Option<unsafe extern "C" fn()>;
+pub type GDExtensionMainLoopShutdownCallback = ::std::option::Option<unsafe extern "C" fn()>;
+pub type GDExtensionMainLoopFrameCallback = ::std::option::Option<unsafe extern "C" fn()>;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct GDExtensionMainLoopCallbacks {
+    pub startup_func: GDExtensionMainLoopStartupCallback,
+    pub shutdown_func: GDExtensionMainLoopShutdownCallback,
+    pub frame_func: GDExtensionMainLoopFrameCallback,
+}
+#[test]
+fn bindgen_test_layout_GDExtensionMainLoopCallbacks() {
+    const UNINIT: ::std::mem::MaybeUninit<GDExtensionMainLoopCallbacks> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<GDExtensionMainLoopCallbacks>(),
+        24usize,
+        concat!("Size of: ", stringify!(GDExtensionMainLoopCallbacks))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<GDExtensionMainLoopCallbacks>(),
+        8usize,
+        concat!("Alignment of ", stringify!(GDExtensionMainLoopCallbacks))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).startup_func) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionMainLoopCallbacks),
+            "::",
+            stringify!(startup_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).shutdown_func) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionMainLoopCallbacks),
+            "::",
+            stringify!(shutdown_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).frame_func) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionMainLoopCallbacks),
+            "::",
+            stringify!(frame_func)
+        )
+    );
+}
 #[doc = " @name get_godot_version\n @since 4.1\n @deprecated in Godot 4.5. Use `get_godot_version2` instead.\n\n Gets the Godot version that the GDExtension was loaded into.\n\n @param r_godot_version A pointer to the structure to write the version information into."]
 pub type GDExtensionInterfaceGetGodotVersion =
     ::std::option::Option<unsafe extern "C" fn(r_godot_version: *mut GDExtensionGodotVersion)>;
@@ -5080,5 +5136,12 @@ pub type GDExtensionInterfaceEditorRegisterGetClassesUsedCallback = ::std::optio
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,
         p_callback: GDExtensionEditorGetClassesUsedCallback,
+    ),
+>;
+#[doc = " @name register_main_loop_callbacks\n @since 4.5\n\n Registers callbacks to be called at different phases of the main loop.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_callback A pointer to the structure that contains the callbacks."]
+pub type GDExtensionInterfaceRegisterMainLoopCallbacks = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_library: GDExtensionClassLibraryPtr,
+        p_callbacks: *const GDExtensionMainLoopCallbacks,
     ),
 >;
