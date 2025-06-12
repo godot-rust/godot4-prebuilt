@@ -8966,7 +8966,7 @@
 					"hash": 897497541,
 					"arguments": [
 						{
-							"name": "char",
+							"name": "code",
 							"type": "int"
 						}
 					]
@@ -49924,6 +49924,20 @@
 					]
 				},
 				{
+					"name": "DepthTest",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "DEPTH_TEST_DEFAULT",
+							"value": 0
+						},
+						{
+							"name": "DEPTH_TEST_INVERTED",
+							"value": 1
+						}
+					]
+				},
+				{
 					"name": "CullMode",
 					"is_bitfield": false,
 					"values": [
@@ -50172,6 +50186,80 @@
 						{
 							"name": "DISTANCE_FADE_OBJECT_DITHER",
 							"value": 3
+						}
+					]
+				},
+				{
+					"name": "StencilMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "STENCIL_MODE_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "STENCIL_MODE_OUTLINE",
+							"value": 1
+						},
+						{
+							"name": "STENCIL_MODE_XRAY",
+							"value": 2
+						},
+						{
+							"name": "STENCIL_MODE_CUSTOM",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "StencilFlags",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "STENCIL_FLAG_READ",
+							"value": 1
+						},
+						{
+							"name": "STENCIL_FLAG_WRITE",
+							"value": 2
+						},
+						{
+							"name": "STENCIL_FLAG_WRITE_DEPTH_FAIL",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "StencilCompare",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "STENCIL_COMPARE_ALWAYS",
+							"value": 0
+						},
+						{
+							"name": "STENCIL_COMPARE_LESS",
+							"value": 1
+						},
+						{
+							"name": "STENCIL_COMPARE_EQUAL",
+							"value": 2
+						},
+						{
+							"name": "STENCIL_COMPARE_LESS_OR_EQUAL",
+							"value": 3
+						},
+						{
+							"name": "STENCIL_COMPARE_GREATER",
+							"value": 4
+						},
+						{
+							"name": "STENCIL_COMPARE_NOT_EQUAL",
+							"value": 5
+						},
+						{
+							"name": "STENCIL_COMPARE_GREATER_OR_EQUAL",
+							"value": 6
 						}
 					]
 				}
@@ -50911,6 +50999,31 @@
 					"hash": 2578197639,
 					"return_value": {
 						"type": "enum::BaseMaterial3D.DepthDrawMode"
+					}
+				},
+				{
+					"name": "set_depth_test",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3918692338,
+					"arguments": [
+						{
+							"name": "depth_test",
+							"type": "enum::BaseMaterial3D.DepthTest"
+						}
+					]
+				},
+				{
+					"name": "get_depth_test",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3434785811,
+					"return_value": {
+						"type": "enum::BaseMaterial3D.DepthTest"
 					}
 				},
 				{
@@ -52026,6 +52139,162 @@
 						"type": "float",
 						"meta": "float"
 					}
+				},
+				{
+					"name": "set_stencil_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2272367200,
+					"arguments": [
+						{
+							"name": "stencil_mode",
+							"type": "enum::BaseMaterial3D.StencilMode"
+						}
+					]
+				},
+				{
+					"name": "get_stencil_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2908443456,
+					"return_value": {
+						"type": "enum::BaseMaterial3D.StencilMode"
+					}
+				},
+				{
+					"name": "set_stencil_flags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "stencil_flags",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_stencil_flags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_stencil_compare",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3741726481,
+					"arguments": [
+						{
+							"name": "stencil_compare",
+							"type": "enum::BaseMaterial3D.StencilCompare"
+						}
+					]
+				},
+				{
+					"name": "get_stencil_compare",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2824600492,
+					"return_value": {
+						"type": "enum::BaseMaterial3D.StencilCompare"
+					}
+				},
+				{
+					"name": "set_stencil_reference",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "stencil_reference",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_stencil_reference",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_stencil_effect_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2920490490,
+					"arguments": [
+						{
+							"name": "stencil_color",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "get_stencil_effect_color",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3444240500,
+					"return_value": {
+						"type": "Color"
+					}
+				},
+				{
+					"name": "set_stencil_effect_outline_thickness",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "stencil_outline_thickness",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_stencil_effect_outline_thickness",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
 				}
 			],
 			"properties": [
@@ -52083,6 +52352,12 @@
 					"setter": "set_flag",
 					"getter": "get_flag",
 					"index": 0
+				},
+				{
+					"type": "int",
+					"name": "depth_test",
+					"setter": "set_depth_test",
+					"getter": "get_depth_test"
 				},
 				{
 					"type": "int",
@@ -52829,6 +53104,42 @@
 					"name": "distance_fade_max_distance",
 					"setter": "set_distance_fade_max_distance",
 					"getter": "get_distance_fade_max_distance"
+				},
+				{
+					"type": "int",
+					"name": "stencil_mode",
+					"setter": "set_stencil_mode",
+					"getter": "get_stencil_mode"
+				},
+				{
+					"type": "int",
+					"name": "stencil_flags",
+					"setter": "set_stencil_flags",
+					"getter": "get_stencil_flags"
+				},
+				{
+					"type": "int",
+					"name": "stencil_compare",
+					"setter": "set_stencil_compare",
+					"getter": "get_stencil_compare"
+				},
+				{
+					"type": "int",
+					"name": "stencil_reference",
+					"setter": "set_stencil_reference",
+					"getter": "get_stencil_reference"
+				},
+				{
+					"type": "Color",
+					"name": "stencil_color",
+					"setter": "set_stencil_effect_color",
+					"getter": "get_stencil_effect_color"
+				},
+				{
+					"type": "float",
+					"name": "stencil_outline_thickness",
+					"setter": "set_stencil_effect_outline_thickness",
+					"getter": "get_stencil_effect_outline_thickness"
 				}
 			]
 		},
@@ -109526,6 +109837,40 @@
 							"value": 1
 						}
 					]
+				},
+				{
+					"name": "Customization",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "CUSTOMIZATION_HIDDEN_FILES",
+							"value": 0
+						},
+						{
+							"name": "CUSTOMIZATION_CREATE_FOLDER",
+							"value": 1
+						},
+						{
+							"name": "CUSTOMIZATION_FILE_FILTER",
+							"value": 2
+						},
+						{
+							"name": "CUSTOMIZATION_FILE_SORT",
+							"value": 3
+						},
+						{
+							"name": "CUSTOMIZATION_FAVORITES",
+							"value": 4
+						},
+						{
+							"name": "CUSTOMIZATION_RECENT",
+							"value": 5
+						},
+						{
+							"name": "CUSTOMIZATION_LAYOUT",
+							"value": 6
+						}
+					]
 				}
 			],
 			"methods": [
@@ -110064,6 +110409,41 @@
 					}
 				},
 				{
+					"name": "set_customization_flag_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3849177100,
+					"arguments": [
+						{
+							"name": "flag",
+							"type": "enum::FileDialog.Customization"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_customization_flag_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3722277863,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "flag",
+							"type": "enum::FileDialog.Customization"
+						}
+					]
+				},
+				{
 					"name": "deselect_all",
 					"is_const": false,
 					"is_vararg": false,
@@ -110162,12 +110542,6 @@
 					"getter": "get_filename_filter"
 				},
 				{
-					"type": "int",
-					"name": "option_count",
-					"setter": "set_option_count",
-					"getter": "get_option_count"
-				},
-				{
 					"type": "bool",
 					"name": "show_hidden_files",
 					"setter": "set_show_hidden_files",
@@ -110178,6 +110552,61 @@
 					"name": "use_native_dialog",
 					"setter": "set_use_native_dialog",
 					"getter": "get_use_native_dialog"
+				},
+				{
+					"type": "int",
+					"name": "option_count",
+					"setter": "set_option_count",
+					"getter": "get_option_count"
+				},
+				{
+					"type": "bool",
+					"name": "hidden_files_toggle_enabled",
+					"setter": "set_customization_flag_enabled",
+					"getter": "is_customization_flag_enabled",
+					"index": 0
+				},
+				{
+					"type": "bool",
+					"name": "file_filter_toggle_enabled",
+					"setter": "set_customization_flag_enabled",
+					"getter": "is_customization_flag_enabled",
+					"index": 2
+				},
+				{
+					"type": "bool",
+					"name": "file_sort_options_enabled",
+					"setter": "set_customization_flag_enabled",
+					"getter": "is_customization_flag_enabled",
+					"index": 3
+				},
+				{
+					"type": "bool",
+					"name": "folder_creation_enabled",
+					"setter": "set_customization_flag_enabled",
+					"getter": "is_customization_flag_enabled",
+					"index": 1
+				},
+				{
+					"type": "bool",
+					"name": "favorites_enabled",
+					"setter": "set_customization_flag_enabled",
+					"getter": "is_customization_flag_enabled",
+					"index": 4
+				},
+				{
+					"type": "bool",
+					"name": "recent_list_enabled",
+					"setter": "set_customization_flag_enabled",
+					"getter": "is_customization_flag_enabled",
+					"index": 5
+				},
+				{
+					"type": "bool",
+					"name": "layout_toggle_enabled",
+					"setter": "set_customization_flag_enabled",
+					"getter": "is_customization_flag_enabled",
+					"index": 6
 				},
 				{
 					"type": "String",
@@ -174287,6 +174716,17 @@
 					"hash": 2498906432,
 					"return_value": {
 						"type": "enum::Node.AutoTranslateMode"
+					}
+				},
+				{
+					"name": "can_auto_translate",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
 					}
 				},
 				{
@@ -263109,6 +263549,30 @@
 			"is_instantiable": false,
 			"inherits": "Range",
 			"api_type": "core",
+			"enums": [
+				{
+					"name": "TickPosition",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "TICK_POSITION_BOTTOM_RIGHT",
+							"value": 0
+						},
+						{
+							"name": "TICK_POSITION_TOP_LEFT",
+							"value": 1
+						},
+						{
+							"name": "TICK_POSITION_BOTH",
+							"value": 2
+						},
+						{
+							"name": "TICK_POSITION_CENTER",
+							"value": 3
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "set_ticks",
@@ -263159,6 +263623,31 @@
 						{
 							"name": "ticks_on_border",
 							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_ticks_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3567635531,
+					"return_value": {
+						"type": "enum::Slider.TickPosition"
+					}
+				},
+				{
+					"name": "set_ticks_position",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2952822224,
+					"arguments": [
+						{
+							"name": "ticks_on_border",
+							"type": "enum::Slider.TickPosition"
 						}
 					]
 				},
@@ -263251,6 +263740,12 @@
 					"name": "ticks_on_borders",
 					"setter": "set_ticks_on_borders",
 					"getter": "get_ticks_on_borders"
+				},
+				{
+					"type": "int",
+					"name": "ticks_position",
+					"setter": "set_ticks_position",
+					"getter": "get_ticks_position"
 				}
 			]
 		},
