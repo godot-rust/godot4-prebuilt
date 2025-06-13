@@ -3653,8 +3653,12 @@
 					"value": 43
 				},
 				{
-					"name": "PROPERTY_HINT_MAX",
+					"name": "PROPERTY_HINT_FILE_PATH",
 					"value": 44
+				},
+				{
+					"name": "PROPERTY_HINT_MAX",
+					"value": 45
 				}
 			]
 		},
@@ -22086,6 +22090,38 @@
 					"is_const": true,
 					"is_static": false,
 					"hash": 1627308337
+				},
+				{
+					"name": "to_vector2_array",
+					"return_type": "PackedVector2Array",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 1660374357
+				},
+				{
+					"name": "to_vector3_array",
+					"return_type": "PackedVector3Array",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 4171207452
+				},
+				{
+					"name": "to_vector4_array",
+					"return_type": "PackedVector4Array",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 146203628
+				},
+				{
+					"name": "to_color_array",
+					"return_type": "PackedColorArray",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3072026941
 				},
 				{
 					"name": "bswap16",
@@ -167951,6 +167987,41 @@
 					]
 				},
 				{
+					"name": "region_set_use_async_iterations",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "region_get_use_async_iterations",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155700596,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "region_set_enabled",
 					"is_const": false,
 					"is_vararg": false,
@@ -246857,15 +246928,58 @@
 					]
 				},
 				{
+					"name": "add_hr",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 16816895,
+					"arguments": [
+						{
+							"name": "width",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "90"
+						},
+						{
+							"name": "height",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "2"
+						},
+						{
+							"name": "color",
+							"type": "Color",
+							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "alignment",
+							"type": "enum::HorizontalAlignment",
+							"default_value": "1"
+						},
+						{
+							"name": "width_in_percent",
+							"type": "bool",
+							"default_value": "true"
+						},
+						{
+							"name": "height_in_percent",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
 					"name": "add_image",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1389823276,
+					"hash": 1390915033,
 					"hash_compatibility": [
 						3580801207,
 						3017663154,
+						1389823276,
 						3346058748
 					],
 					"arguments": [
@@ -246916,7 +247030,12 @@
 							"default_value": "\"\""
 						},
 						{
-							"name": "size_in_percent",
+							"name": "width_in_percent",
+							"type": "bool",
+							"default_value": "false"
+						},
+						{
+							"name": "height_in_percent",
 							"type": "bool",
 							"default_value": "false"
 						},
@@ -246933,7 +247052,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 815048486,
+					"hash": 6389170,
+					"hash_compatibility": [
+						815048486
+					],
 					"arguments": [
 						{
 							"name": "key",
@@ -246985,7 +247107,12 @@
 							"default_value": "\"\""
 						},
 						{
-							"name": "size_in_percent",
+							"name": "width_in_percent",
+							"type": "bool",
+							"default_value": "false"
+						},
+						{
+							"name": "height_in_percent",
 							"type": "bool",
 							"default_value": "false"
 						}
