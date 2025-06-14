@@ -160129,6 +160129,126 @@
 					}
 				},
 				{
+					"name": "set_path_return_max_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "length",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_return_max_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_path_return_max_radius",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_return_max_radius",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_path_search_max_polygons",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_polygons",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_path_search_max_polygons",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_path_search_max_distance",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "distance",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_search_max_distance",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_path_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "get_next_path_position",
 					"is_const": false,
 					"is_vararg": false,
@@ -160651,6 +160771,30 @@
 					"name": "simplify_epsilon",
 					"setter": "set_simplify_epsilon",
 					"getter": "get_simplify_epsilon"
+				},
+				{
+					"type": "float",
+					"name": "path_return_max_length",
+					"setter": "set_path_return_max_length",
+					"getter": "get_path_return_max_length"
+				},
+				{
+					"type": "float",
+					"name": "path_return_max_radius",
+					"setter": "set_path_return_max_radius",
+					"getter": "get_path_return_max_radius"
+				},
+				{
+					"type": "int",
+					"name": "path_search_max_polygons",
+					"setter": "set_path_search_max_polygons",
+					"getter": "get_path_search_max_polygons"
+				},
+				{
+					"type": "float",
+					"name": "path_search_max_distance",
+					"setter": "set_path_search_max_distance",
+					"getter": "get_path_search_max_distance"
 				},
 				{
 					"type": "bool",
@@ -161382,6 +161526,126 @@
 					}
 				},
 				{
+					"name": "set_path_return_max_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "length",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_return_max_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_path_return_max_radius",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_return_max_radius",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_path_search_max_polygons",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_polygons",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_path_search_max_polygons",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_path_search_max_distance",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "distance",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_search_max_distance",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_path_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "get_next_path_position",
 					"is_const": false,
 					"is_vararg": false,
@@ -161883,6 +162147,30 @@
 					"name": "simplify_epsilon",
 					"setter": "set_simplify_epsilon",
 					"getter": "get_simplify_epsilon"
+				},
+				{
+					"type": "float",
+					"name": "path_return_max_length",
+					"setter": "set_path_return_max_length",
+					"getter": "get_path_return_max_length"
+				},
+				{
+					"type": "float",
+					"name": "path_return_max_radius",
+					"setter": "set_path_return_max_radius",
+					"getter": "get_path_return_max_radius"
+				},
+				{
+					"type": "int",
+					"name": "path_search_max_polygons",
+					"setter": "set_path_search_max_polygons",
+					"getter": "get_path_search_max_polygons"
+				},
+				{
+					"type": "float",
+					"name": "path_search_max_distance",
+					"setter": "set_path_search_max_distance",
+					"getter": "get_path_search_max_distance"
 				},
 				{
 					"type": "bool",
@@ -165309,6 +165597,114 @@
 					"return_value": {
 						"type": "typedarray::RID"
 					}
+				},
+				{
+					"name": "set_path_return_max_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "length",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_return_max_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_path_return_max_radius",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_return_max_radius",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_path_search_max_polygons",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_polygons",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_path_search_max_polygons",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_path_search_max_distance",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "distance",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_search_max_distance",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
 				}
 			],
 			"properties": [
@@ -165377,6 +165773,30 @@
 					"name": "included_regions",
 					"setter": "set_included_regions",
 					"getter": "get_included_regions"
+				},
+				{
+					"type": "float",
+					"name": "path_return_max_length",
+					"setter": "set_path_return_max_length",
+					"getter": "get_path_return_max_length"
+				},
+				{
+					"type": "float",
+					"name": "path_return_max_radius",
+					"setter": "set_path_return_max_radius",
+					"getter": "get_path_return_max_radius"
+				},
+				{
+					"type": "int",
+					"name": "path_search_max_polygons",
+					"setter": "set_path_search_max_polygons",
+					"getter": "get_path_search_max_polygons"
+				},
+				{
+					"type": "float",
+					"name": "path_search_max_distance",
+					"setter": "set_path_search_max_distance",
+					"getter": "get_path_search_max_distance"
 				}
 			]
 		},
@@ -165721,6 +166141,114 @@
 					"return_value": {
 						"type": "typedarray::RID"
 					}
+				},
+				{
+					"name": "set_path_return_max_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "length",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_return_max_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_path_return_max_radius",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_return_max_radius",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_path_search_max_polygons",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_polygons",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_path_search_max_polygons",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_path_search_max_distance",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "distance",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_search_max_distance",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
 				}
 			],
 			"properties": [
@@ -165789,6 +166317,30 @@
 					"name": "included_regions",
 					"setter": "set_included_regions",
 					"getter": "get_included_regions"
+				},
+				{
+					"type": "float",
+					"name": "path_return_max_length",
+					"setter": "set_path_return_max_length",
+					"getter": "get_path_return_max_length"
+				},
+				{
+					"type": "float",
+					"name": "path_return_max_radius",
+					"setter": "set_path_return_max_radius",
+					"getter": "get_path_return_max_radius"
+				},
+				{
+					"type": "int",
+					"name": "path_search_max_polygons",
+					"setter": "set_path_search_max_polygons",
+					"getter": "get_path_search_max_polygons"
+				},
+				{
+					"type": "float",
+					"name": "path_search_max_distance",
+					"setter": "set_path_search_max_distance",
+					"getter": "get_path_search_max_distance"
 				}
 			]
 		},
@@ -165916,6 +166468,33 @@
 					}
 				},
 				{
+					"name": "set_path_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "length",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "reset",
 					"is_const": false,
 					"is_vararg": false,
@@ -165948,6 +166527,12 @@
 					"name": "path_owner_ids",
 					"setter": "set_path_owner_ids",
 					"getter": "get_path_owner_ids"
+				},
+				{
+					"type": "float",
+					"name": "path_length",
+					"setter": "set_path_length",
+					"getter": "get_path_length"
 				}
 			]
 		},
@@ -166075,6 +166660,33 @@
 					}
 				},
 				{
+					"name": "set_path_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "length",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_path_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "reset",
 					"is_const": false,
 					"is_vararg": false,
@@ -166107,6 +166719,12 @@
 					"name": "path_owner_ids",
 					"setter": "set_path_owner_ids",
 					"getter": "get_path_owner_ids"
+				},
+				{
+					"type": "float",
+					"name": "path_length",
+					"setter": "set_path_length",
+					"getter": "get_path_length"
 				}
 			]
 		},
