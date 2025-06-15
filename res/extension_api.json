@@ -308586,7 +308586,7 @@
 					]
 				},
 				{
-					"name": "set_alt_text",
+					"name": "set_description",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -308599,13 +308599,13 @@
 							"meta": "int32"
 						},
 						{
-							"name": "text",
+							"name": "description",
 							"type": "String"
 						}
 					]
 				},
 				{
-					"name": "get_alt_text",
+					"name": "get_description",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -309775,7 +309775,7 @@
 							"default_value": "\"\""
 						},
 						{
-							"name": "alt_text",
+							"name": "description",
 							"type": "String",
 							"default_value": "\"\""
 						}
@@ -309986,7 +309986,7 @@
 					]
 				},
 				{
-					"name": "set_button_alt_text",
+					"name": "set_button_description",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -310004,7 +310004,7 @@
 							"meta": "int32"
 						},
 						{
-							"name": "alt_text",
+							"name": "description",
 							"type": "String"
 						}
 					]
