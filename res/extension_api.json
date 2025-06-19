@@ -178072,6 +178072,106 @@
 					]
 				},
 				{
+					"name": "set_generate_mipmaps",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "invert",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_generating_mipmaps",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_noise",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4135492439,
+					"arguments": [
+						{
+							"name": "noise",
+							"type": "Noise"
+						}
+					]
+				},
+				{
+					"name": "get_noise",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 185851837,
+					"return_value": {
+						"type": "Noise"
+					}
+				},
+				{
+					"name": "set_color_ramp",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2756054477,
+					"arguments": [
+						{
+							"name": "gradient",
+							"type": "Gradient"
+						}
+					]
+				},
+				{
+					"name": "get_color_ramp",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 132272999,
+					"return_value": {
+						"type": "Gradient"
+					}
+				},
+				{
+					"name": "set_seamless",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "seamless",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_seamless",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_invert",
 					"is_const": false,
 					"is_vararg": false,
@@ -178122,7 +178222,7 @@
 					}
 				},
 				{
-					"name": "set_generate_mipmaps",
+					"name": "set_as_normal_map",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -178130,43 +178230,43 @@
 					"hash": 2586408642,
 					"arguments": [
 						{
-							"name": "invert",
+							"name": "as_normal_map",
 							"type": "bool"
 						}
 					]
 				},
 				{
-					"name": "is_generating_mipmaps",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_seamless",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "seamless",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_seamless",
+					"name": "is_normal_map",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
 					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_normalize",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "normalize",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_normalized",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
 					"return_value": {
 						"type": "bool"
 					}
@@ -178199,31 +178299,6 @@
 					}
 				},
 				{
-					"name": "set_as_normal_map",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "as_normal_map",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_normal_map",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2240911060,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
 					"name": "set_bump_strength",
 					"is_const": false,
 					"is_vararg": false,
@@ -178249,81 +178324,6 @@
 						"type": "float",
 						"meta": "float"
 					}
-				},
-				{
-					"name": "set_normalize",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "normalize",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_normalized",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_color_ramp",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2756054477,
-					"arguments": [
-						{
-							"name": "gradient",
-							"type": "Gradient"
-						}
-					]
-				},
-				{
-					"name": "get_color_ramp",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 132272999,
-					"return_value": {
-						"type": "Gradient"
-					}
-				},
-				{
-					"name": "set_noise",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4135492439,
-					"arguments": [
-						{
-							"name": "noise",
-							"type": "Noise"
-						}
-					]
-				},
-				{
-					"name": "get_noise",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 185851837,
-					"return_value": {
-						"type": "Noise"
-					}
 				}
 			],
 			"properties": [
@@ -178341,6 +178341,30 @@
 				},
 				{
 					"type": "bool",
+					"name": "generate_mipmaps",
+					"setter": "set_generate_mipmaps",
+					"getter": "is_generating_mipmaps"
+				},
+				{
+					"type": "Noise",
+					"name": "noise",
+					"setter": "set_noise",
+					"getter": "get_noise"
+				},
+				{
+					"type": "Gradient",
+					"name": "color_ramp",
+					"setter": "set_color_ramp",
+					"getter": "get_color_ramp"
+				},
+				{
+					"type": "bool",
+					"name": "seamless",
+					"setter": "set_seamless",
+					"getter": "get_seamless"
+				},
+				{
+					"type": "bool",
 					"name": "invert",
 					"setter": "set_invert",
 					"getter": "get_invert"
@@ -178353,33 +178377,9 @@
 				},
 				{
 					"type": "bool",
-					"name": "generate_mipmaps",
-					"setter": "set_generate_mipmaps",
-					"getter": "is_generating_mipmaps"
-				},
-				{
-					"type": "bool",
-					"name": "seamless",
-					"setter": "set_seamless",
-					"getter": "get_seamless"
-				},
-				{
-					"type": "float",
-					"name": "seamless_blend_skirt",
-					"setter": "set_seamless_blend_skirt",
-					"getter": "get_seamless_blend_skirt"
-				},
-				{
-					"type": "bool",
 					"name": "as_normal_map",
 					"setter": "set_as_normal_map",
 					"getter": "is_normal_map"
-				},
-				{
-					"type": "float",
-					"name": "bump_strength",
-					"setter": "set_bump_strength",
-					"getter": "get_bump_strength"
 				},
 				{
 					"type": "bool",
@@ -178388,16 +178388,16 @@
 					"getter": "is_normalized"
 				},
 				{
-					"type": "Gradient",
-					"name": "color_ramp",
-					"setter": "set_color_ramp",
-					"getter": "get_color_ramp"
+					"type": "float",
+					"name": "seamless_blend_skirt",
+					"setter": "set_seamless_blend_skirt",
+					"getter": "get_seamless_blend_skirt"
 				},
 				{
-					"type": "Noise",
-					"name": "noise",
-					"setter": "set_noise",
-					"getter": "get_noise"
+					"type": "float",
+					"name": "bump_strength",
+					"setter": "set_bump_strength",
+					"getter": "get_bump_strength"
 				}
 			]
 		},
@@ -178454,6 +178454,81 @@
 					]
 				},
 				{
+					"name": "set_noise",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4135492439,
+					"arguments": [
+						{
+							"name": "noise",
+							"type": "Noise"
+						}
+					]
+				},
+				{
+					"name": "get_noise",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 185851837,
+					"return_value": {
+						"type": "Noise"
+					}
+				},
+				{
+					"name": "set_color_ramp",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2756054477,
+					"arguments": [
+						{
+							"name": "gradient",
+							"type": "Gradient"
+						}
+					]
+				},
+				{
+					"name": "get_color_ramp",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 132272999,
+					"return_value": {
+						"type": "Gradient"
+					}
+				},
+				{
+					"name": "set_seamless",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "seamless",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_seamless",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_invert",
 					"is_const": false,
 					"is_vararg": false,
@@ -178479,7 +178554,7 @@
 					}
 				},
 				{
-					"name": "set_seamless",
+					"name": "set_normalize",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -178487,18 +178562,18 @@
 					"hash": 2586408642,
 					"arguments": [
 						{
-							"name": "seamless",
+							"name": "normalize",
 							"type": "bool"
 						}
 					]
 				},
 				{
-					"name": "get_seamless",
-					"is_const": false,
+					"name": "is_normalized",
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2240911060,
+					"hash": 36873697,
 					"return_value": {
 						"type": "bool"
 					}
@@ -178529,81 +178604,6 @@
 						"type": "float",
 						"meta": "float"
 					}
-				},
-				{
-					"name": "set_normalize",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "normalize",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_normalized",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_color_ramp",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2756054477,
-					"arguments": [
-						{
-							"name": "gradient",
-							"type": "Gradient"
-						}
-					]
-				},
-				{
-					"name": "get_color_ramp",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 132272999,
-					"return_value": {
-						"type": "Gradient"
-					}
-				},
-				{
-					"name": "set_noise",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4135492439,
-					"arguments": [
-						{
-							"name": "noise",
-							"type": "Noise"
-						}
-					]
-				},
-				{
-					"name": "get_noise",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 185851837,
-					"return_value": {
-						"type": "Noise"
-					}
 				}
 			],
 			"properties": [
@@ -178626,28 +178626,10 @@
 					"getter": "get_depth"
 				},
 				{
-					"type": "bool",
-					"name": "invert",
-					"setter": "set_invert",
-					"getter": "get_invert"
-				},
-				{
-					"type": "bool",
-					"name": "seamless",
-					"setter": "set_seamless",
-					"getter": "get_seamless"
-				},
-				{
-					"type": "float",
-					"name": "seamless_blend_skirt",
-					"setter": "set_seamless_blend_skirt",
-					"getter": "get_seamless_blend_skirt"
-				},
-				{
-					"type": "bool",
-					"name": "normalize",
-					"setter": "set_normalize",
-					"getter": "is_normalized"
+					"type": "Noise",
+					"name": "noise",
+					"setter": "set_noise",
+					"getter": "get_noise"
 				},
 				{
 					"type": "Gradient",
@@ -178656,10 +178638,28 @@
 					"getter": "get_color_ramp"
 				},
 				{
-					"type": "Noise",
-					"name": "noise",
-					"setter": "set_noise",
-					"getter": "get_noise"
+					"type": "bool",
+					"name": "seamless",
+					"setter": "set_seamless",
+					"getter": "get_seamless"
+				},
+				{
+					"type": "bool",
+					"name": "invert",
+					"setter": "set_invert",
+					"getter": "get_invert"
+				},
+				{
+					"type": "bool",
+					"name": "normalize",
+					"setter": "set_normalize",
+					"getter": "is_normalized"
+				},
+				{
+					"type": "float",
+					"name": "seamless_blend_skirt",
+					"setter": "set_seamless_blend_skirt",
+					"getter": "get_seamless_blend_skirt"
 				}
 			]
 		},
@@ -185875,6 +185875,48 @@
 			"api_type": "core",
 			"enums": [
 				{
+					"name": "OpenXrSessionState",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "OPENXR_SESSION_STATE_UNKNOWN",
+							"value": 0
+						},
+						{
+							"name": "OPENXR_SESSION_STATE_IDLE",
+							"value": 1
+						},
+						{
+							"name": "OPENXR_SESSION_STATE_READY",
+							"value": 2
+						},
+						{
+							"name": "OPENXR_SESSION_STATE_SYNCHRONIZED",
+							"value": 3
+						},
+						{
+							"name": "OPENXR_SESSION_STATE_VISIBLE",
+							"value": 4
+						},
+						{
+							"name": "OPENXR_SESSION_STATE_FOCUSED",
+							"value": 5
+						},
+						{
+							"name": "OPENXR_SESSION_STATE_STOPPING",
+							"value": 6
+						},
+						{
+							"name": "OPENXR_SESSION_STATE_LOSS_PENDING",
+							"value": 7
+						},
+						{
+							"name": "OPENXR_SESSION_STATE_EXITING",
+							"value": 8
+						}
+					]
+				},
+				{
 					"name": "Hand",
 					"is_bitfield": false,
 					"values": [
@@ -186140,6 +186182,17 @@
 				}
 			],
 			"methods": [
+				{
+					"name": "get_session_state",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2252327012,
+					"return_value": {
+						"type": "enum::OpenXRInterface.OpenXrSessionState"
+					}
+				},
 				{
 					"name": "get_display_refresh_rate",
 					"is_const": true,
@@ -186615,6 +186668,9 @@
 				},
 				{
 					"name": "session_stopping"
+				},
+				{
+					"name": "session_synchronized"
 				},
 				{
 					"name": "session_focussed"
@@ -317633,31 +317689,6 @@
 					]
 				},
 				{
-					"name": "set_graph_offset",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "offset",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_graph_offset",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
 					"name": "attach_node_to_frame",
 					"is_const": false,
 					"is_vararg": false,
@@ -317752,14 +317783,6 @@
 							"type": "String"
 						}
 					]
-				}
-			],
-			"properties": [
-				{
-					"type": "Vector2",
-					"name": "graph_offset",
-					"setter": "set_graph_offset",
-					"getter": "get_graph_offset"
 				}
 			]
 		},
