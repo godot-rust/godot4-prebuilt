@@ -331654,11 +331654,11 @@
 							"value": 80
 						},
 						{
-							"name": "JOINT_LEFT_ANKLE_TWIST",
+							"name": "JOINT_LEFT_FOOT_TWIST",
 							"value": 81
 						},
 						{
-							"name": "JOINT_LEFT_ANKLE",
+							"name": "JOINT_LEFT_HEEL",
 							"value": 82
 						},
 						{
@@ -331666,11 +331666,11 @@
 							"value": 83
 						},
 						{
-							"name": "JOINT_RIGHT_ANKLE_TWIST",
+							"name": "JOINT_RIGHT_FOOT_TWIST",
 							"value": 84
 						},
 						{
-							"name": "JOINT_RIGHT_ANKLE",
+							"name": "JOINT_RIGHT_HEEL",
 							"value": 85
 						},
 						{
