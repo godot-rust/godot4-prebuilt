@@ -114667,12 +114667,6 @@
 			],
 			"properties": [
 				{
-					"type": "float",
-					"name": "oversampling",
-					"setter": "set_oversampling",
-					"getter": "get_oversampling"
-				},
-				{
 					"type": "PackedByteArray",
 					"name": "data",
 					"setter": "set_data",
@@ -114797,6 +114791,12 @@
 					"name": "opentype_feature_overrides",
 					"setter": "set_opentype_feature_overrides",
 					"getter": "get_opentype_feature_overrides"
+				},
+				{
+					"type": "float",
+					"name": "oversampling",
+					"setter": "set_oversampling",
+					"getter": "get_oversampling"
 				}
 			]
 		},
@@ -184561,6 +184561,15 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "_on_sync_actions",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3218959716
+				},
+				{
 					"name": "_on_pre_render",
 					"is_const": false,
 					"is_static": false,
@@ -185875,43 +185884,43 @@
 			"api_type": "core",
 			"enums": [
 				{
-					"name": "OpenXrSessionState",
+					"name": "SessionState",
 					"is_bitfield": false,
 					"values": [
 						{
-							"name": "OPENXR_SESSION_STATE_UNKNOWN",
+							"name": "SESSION_STATE_UNKNOWN",
 							"value": 0
 						},
 						{
-							"name": "OPENXR_SESSION_STATE_IDLE",
+							"name": "SESSION_STATE_IDLE",
 							"value": 1
 						},
 						{
-							"name": "OPENXR_SESSION_STATE_READY",
+							"name": "SESSION_STATE_READY",
 							"value": 2
 						},
 						{
-							"name": "OPENXR_SESSION_STATE_SYNCHRONIZED",
+							"name": "SESSION_STATE_SYNCHRONIZED",
 							"value": 3
 						},
 						{
-							"name": "OPENXR_SESSION_STATE_VISIBLE",
+							"name": "SESSION_STATE_VISIBLE",
 							"value": 4
 						},
 						{
-							"name": "OPENXR_SESSION_STATE_FOCUSED",
+							"name": "SESSION_STATE_FOCUSED",
 							"value": 5
 						},
 						{
-							"name": "OPENXR_SESSION_STATE_STOPPING",
+							"name": "SESSION_STATE_STOPPING",
 							"value": 6
 						},
 						{
-							"name": "OPENXR_SESSION_STATE_LOSS_PENDING",
+							"name": "SESSION_STATE_LOSS_PENDING",
 							"value": 7
 						},
 						{
-							"name": "OPENXR_SESSION_STATE_EXITING",
+							"name": "SESSION_STATE_EXITING",
 							"value": 8
 						}
 					]
@@ -186188,9 +186197,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2252327012,
+					"hash": 896364779,
 					"return_value": {
-						"type": "enum::OpenXRInterface.OpenXrSessionState"
+						"type": "enum::OpenXRInterface.SessionState"
 					}
 				},
 				{
@@ -186767,6 +186776,442 @@
 					"name": "vrs_strength",
 					"setter": "set_vrs_strength",
 					"getter": "get_vrs_strength"
+				}
+			]
+		},
+		{
+			"name": "OpenXRRenderModel",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Node3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_top_level_path",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "get_render_model",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "set_render_model",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						}
+					]
+				}
+			],
+			"signals": [
+				{
+					"name": "render_model_top_level_path_changed"
+				}
+			],
+			"properties": [
+				{
+					"type": "RID",
+					"name": "render_model",
+					"setter": "set_render_model",
+					"getter": "get_render_model"
+				}
+			]
+		},
+		{
+			"name": "OpenXRRenderModelExtension",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRExtensionWrapper",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "is_active",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "render_model_create",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 937000113,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "render_model_id",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "render_model_destroy",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "render_model_get_all",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2915620761,
+					"return_value": {
+						"type": "typedarray::RID"
+					}
+				},
+				{
+					"name": "render_model_new_scene_instance",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 788010739,
+					"return_value": {
+						"type": "Node3D"
+					},
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "render_model_get_subaction_paths",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2801473409,
+					"return_value": {
+						"type": "PackedStringArray"
+					},
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "render_model_get_top_level_path",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 642473191,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "render_model_get_confidence",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2350330949,
+					"return_value": {
+						"type": "enum::XRPose.TrackingConfidence"
+					},
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "render_model_get_root_transform",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1128465797,
+					"return_value": {
+						"type": "Transform3D"
+					},
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "render_model_get_animatable_node_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2198884583,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					},
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "render_model_get_animatable_node_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1464764419,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "render_model_is_animatable_node_visible",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3120086654,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "render_model_get_animatable_node_transform",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1050775521,
+					"return_value": {
+						"type": "Transform3D"
+					},
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				}
+			],
+			"signals": [
+				{
+					"name": "render_model_added",
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "render_model_removed",
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "render_model_top_level_path_changed",
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "RID"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRRenderModelManager",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Node3D",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "RenderModelTracker",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "RENDER_MODEL_TRACKER_ANY",
+							"value": 0
+						},
+						{
+							"name": "RENDER_MODEL_TRACKER_NONE_SET",
+							"value": 1
+						},
+						{
+							"name": "RENDER_MODEL_TRACKER_LEFT_HAND",
+							"value": 2
+						},
+						{
+							"name": "RENDER_MODEL_TRACKER_RIGHT_HAND",
+							"value": 3
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "get_tracker",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2456466356,
+					"return_value": {
+						"type": "enum::OpenXRRenderModelManager.RenderModelTracker"
+					}
+				},
+				{
+					"name": "set_tracker",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2814627380,
+					"arguments": [
+						{
+							"name": "tracker",
+							"type": "enum::OpenXRRenderModelManager.RenderModelTracker"
+						}
+					]
+				},
+				{
+					"name": "get_make_local_to_pose",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_make_local_to_pose",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "make_local_to_pose",
+							"type": "String"
+						}
+					]
+				}
+			],
+			"signals": [
+				{
+					"name": "render_model_added",
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "OpenXRRenderModel"
+						}
+					]
+				},
+				{
+					"name": "render_model_removed",
+					"arguments": [
+						{
+							"name": "render_model",
+							"type": "OpenXRRenderModel"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "tracker",
+					"setter": "set_tracker",
+					"getter": "get_tracker"
+				},
+				{
+					"type": "String",
+					"name": "make_local_to_pose",
+					"setter": "set_make_local_to_pose",
+					"getter": "get_make_local_to_pose"
 				}
 			]
 		},
@@ -274581,12 +275026,6 @@
 			],
 			"properties": [
 				{
-					"type": "float",
-					"name": "oversampling",
-					"setter": "set_oversampling",
-					"getter": "get_oversampling"
-				},
-				{
 					"type": "PackedStringArray",
 					"name": "font_names",
 					"setter": "set_font_names",
@@ -274681,6 +275120,12 @@
 					"name": "msdf_size",
 					"setter": "set_msdf_size",
 					"getter": "get_msdf_size"
+				},
+				{
+					"type": "float",
+					"name": "oversampling",
+					"setter": "set_oversampling",
+					"getter": "get_oversampling"
 				}
 			]
 		},
