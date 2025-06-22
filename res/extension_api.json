@@ -245673,19 +245673,19 @@
 			"api_type": "core",
 			"enums": [
 				{
-					"name": "ResourceDeepDuplicateMode",
+					"name": "DeepDuplicateMode",
 					"is_bitfield": false,
 					"values": [
 						{
-							"name": "RESOURCE_DEEP_DUPLICATE_NONE",
+							"name": "DEEP_DUPLICATE_NONE",
 							"value": 0
 						},
 						{
-							"name": "RESOURCE_DEEP_DUPLICATE_INTERNAL",
+							"name": "DEEP_DUPLICATE_INTERNAL",
 							"value": 1
 						},
 						{
-							"name": "RESOURCE_DEEP_DUPLICATE_ALL",
+							"name": "DEEP_DUPLICATE_ALL",
 							"value": 2
 						}
 					]
@@ -245992,14 +245992,14 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1807532819,
+					"hash": 905779109,
 					"return_value": {
 						"type": "Resource"
 					},
 					"arguments": [
 						{
 							"name": "deep_subresources_mode",
-							"type": "enum::ResourceDeepDuplicateMode",
+							"type": "enum::Resource.DeepDuplicateMode",
 							"default_value": "1"
 						}
 					]
