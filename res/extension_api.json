@@ -129928,6 +129928,31 @@
 					}
 				},
 				{
+					"name": "set_slots_focus_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3232914922,
+					"arguments": [
+						{
+							"name": "focus_mode",
+							"type": "enum::Control.FocusMode"
+						}
+					]
+				},
+				{
+					"name": "get_slots_focus_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2132829277,
+					"return_value": {
+						"type": "enum::Control.FocusMode"
+					}
+				},
+				{
 					"name": "get_input_port_count",
 					"is_const": false,
 					"is_vararg": false,
@@ -130126,6 +130151,12 @@
 					"name": "ignore_invalid_connection_type",
 					"setter": "set_ignore_invalid_connection_type",
 					"getter": "is_ignoring_valid_connection_type"
+				},
+				{
+					"type": "int",
+					"name": "slots_focus_mode",
+					"setter": "set_slots_focus_mode",
+					"getter": "get_slots_focus_mode"
 				}
 			]
 		},
@@ -168182,6 +168213,43 @@
 				},
 				{
 					"name": "map_get_cell_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 866169185,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "map",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "map_set_merge_rasterizer_cell_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "map",
+							"type": "RID"
+						},
+						{
+							"name": "scale",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "map_get_merge_rasterizer_cell_scale",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
