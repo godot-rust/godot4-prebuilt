@@ -3669,29 +3669,35 @@ fn bindgen_test_layout_GDExtensionScriptInstanceInfo3() {
         )
     );
 }
+pub type GDExtensionWorkerThreadPoolGroupTask =
+    ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void, arg2: u32)>;
+pub type GDExtensionWorkerThreadPoolTask =
+    ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>;
 pub const GDEXTENSION_INITIALIZATION_CORE: GDExtensionInitializationLevel = 0;
 pub const GDEXTENSION_INITIALIZATION_SERVERS: GDExtensionInitializationLevel = 1;
 pub const GDEXTENSION_INITIALIZATION_SCENE: GDExtensionInitializationLevel = 2;
 pub const GDEXTENSION_INITIALIZATION_EDITOR: GDExtensionInitializationLevel = 3;
 pub const GDEXTENSION_MAX_INITIALIZATION_LEVEL: GDExtensionInitializationLevel = 4;
 pub type GDExtensionInitializationLevel = ::std::os::raw::c_uint;
+pub type GDExtensionInitializeCallback = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_userdata: *mut ::std::os::raw::c_void,
+        p_level: GDExtensionInitializationLevel,
+    ),
+>;
+pub type GDExtensionDeinitializeCallback = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_userdata: *mut ::std::os::raw::c_void,
+        p_level: GDExtensionInitializationLevel,
+    ),
+>;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GDExtensionInitialization {
     pub minimum_initialization_level: GDExtensionInitializationLevel,
     pub userdata: *mut ::std::os::raw::c_void,
-    pub initialize: ::std::option::Option<
-        unsafe extern "C" fn(
-            userdata: *mut ::std::os::raw::c_void,
-            p_level: GDExtensionInitializationLevel,
-        ),
-    >,
-    pub deinitialize: ::std::option::Option<
-        unsafe extern "C" fn(
-            userdata: *mut ::std::os::raw::c_void,
-            p_level: GDExtensionInitializationLevel,
-        ),
-    >,
+    pub initialize: GDExtensionInitializeCallback,
+    pub deinitialize: GDExtensionDeinitializeCallback,
 }
 #[test]
 fn bindgen_test_layout_GDExtensionInitialization() {
@@ -4112,7 +4118,7 @@ pub type GDExtensionInterfaceVariantCall = ::std::option::Option<
         r_error: *mut GDExtensionCallError,
     ),
 >;
-#[doc = " @name variant_call_static\n @since 4.1\n\n Calls a static method on a Variant.\n\n @param p_self A pointer to the Variant.\n @param p_method A pointer to a StringName identifying the method.\n @param p_args A pointer to a C array of Variant.\n @param p_argument_count The number of arguments.\n @param r_return A pointer a Variant which will be assigned the return value.\n @param r_error A pointer the structure which will be updated with error information.\n\n @see Variant::call_static()"]
+#[doc = " @name variant_call_static\n @since 4.1\n\n Calls a static method on a Variant.\n\n @param p_type The variant type.\n @param p_method A pointer to a StringName identifying the method.\n @param p_args A pointer to a C array of Variant.\n @param p_argument_count The number of arguments.\n @param r_return A pointer a Variant which will be assigned the return value.\n @param r_error A pointer the structure which will be updated with error information.\n\n @see Variant::call_static()"]
 pub type GDExtensionInterfaceVariantCallStatic = ::std::option::Option<
     unsafe extern "C" fn(
         p_type: GDExtensionVariantType,
@@ -4270,14 +4276,14 @@ pub type GDExtensionInterfaceVariantStringify = ::std::option::Option<
 pub type GDExtensionInterfaceVariantGetType = ::std::option::Option<
     unsafe extern "C" fn(p_self: GDExtensionConstVariantPtr) -> GDExtensionVariantType,
 >;
-#[doc = " @name variant_has_method\n @since 4.1\n\n Checks if a Variant has the given method.\n\n @param p_self A pointer to the Variant.\n @param p_method A pointer to a StringName with the method name.\n\n @return"]
+#[doc = " @name variant_has_method\n @since 4.1\n\n Checks if a Variant has the given method.\n\n @param p_self A pointer to the Variant.\n @param p_method A pointer to a StringName with the method name.\n\n @return true if the variant has the given method; otherwise false."]
 pub type GDExtensionInterfaceVariantHasMethod = ::std::option::Option<
     unsafe extern "C" fn(
         p_self: GDExtensionConstVariantPtr,
         p_method: GDExtensionConstStringNamePtr,
     ) -> GDExtensionBool,
 >;
-#[doc = " @name variant_has_member\n @since 4.1\n\n Checks if a type of Variant has the given member.\n\n @param p_type The Variant type.\n @param p_member A pointer to a StringName with the member name.\n\n @return"]
+#[doc = " @name variant_has_member\n @since 4.1\n\n Checks if a type of Variant has the given member.\n\n @param p_type The Variant type.\n @param p_member A pointer to a StringName with the member name.\n\n @return true if the variant has the given method; otherwise false."]
 pub type GDExtensionInterfaceVariantHasMember = ::std::option::Option<
     unsafe extern "C" fn(
         p_type: GDExtensionVariantType,
@@ -4357,7 +4363,7 @@ pub type GDExtensionInterfaceVariantGetPtrConstructor = ::std::option::Option<
 pub type GDExtensionInterfaceVariantGetPtrDestructor = ::std::option::Option<
     unsafe extern "C" fn(p_type: GDExtensionVariantType) -> GDExtensionPtrDestructor,
 >;
-#[doc = " @name variant_construct\n @since 4.1\n\n Constructs a Variant of the given type, using the first constructor that matches the given arguments.\n\n @param p_type The Variant type.\n @param p_base A pointer to a Variant to store the constructed value.\n @param p_args A pointer to a C array of Variant pointers representing the arguments for the constructor.\n @param p_argument_count The number of arguments to pass to the constructor.\n @param r_error A pointer the structure which will be updated with error information."]
+#[doc = " @name variant_construct\n @since 4.1\n\n Constructs a Variant of the given type, using the first constructor that matches the given arguments.\n\n @param p_type The Variant type.\n @param r_base A pointer to a Variant to store the constructed value.\n @param p_args A pointer to a C array of Variant pointers representing the arguments for the constructor.\n @param p_argument_count The number of arguments to pass to the constructor.\n @param r_error A pointer the structure which will be updated with error information."]
 pub type GDExtensionInterfaceVariantConstruct = ::std::option::Option<
     unsafe extern "C" fn(
         p_type: GDExtensionVariantType,
@@ -4466,7 +4472,7 @@ pub type GDExtensionInterfaceStringNewWithUtf8CharsAndLen2 = ::std::option::Opti
         p_size: GDExtensionInt,
     ) -> GDExtensionInt,
 >;
-#[doc = " @name string_new_with_utf16_chars_and_len\n @since 4.1\n @deprecated in Godot 4.3. Use `string_new_with_utf16_chars_and_len2` instead.\n\n Creates a String from a UTF-16 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-16 encoded C string.\n @param p_size The number of characters (not bytes)."]
+#[doc = " @name string_new_with_utf16_chars_and_len\n @since 4.1\n @deprecated in Godot 4.3. Use `string_new_with_utf16_chars_and_len2` instead.\n\n Creates a String from a UTF-16 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-16 encoded C string.\n @param p_char_count The number of characters (not bytes)."]
 pub type GDExtensionInterfaceStringNewWithUtf16CharsAndLen = ::std::option::Option<
     unsafe extern "C" fn(
         r_dest: GDExtensionUninitializedStringPtr,
@@ -4474,7 +4480,7 @@ pub type GDExtensionInterfaceStringNewWithUtf16CharsAndLen = ::std::option::Opti
         p_char_count: GDExtensionInt,
     ),
 >;
-#[doc = " @name string_new_with_utf16_chars_and_len2\n @since 4.3\n\n Creates a String from a UTF-16 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-16 encoded C string.\n @param p_size The number of characters (not bytes).\n @param p_default_little_endian If true, UTF-16 use little endian.\n\n @return Error code signifying if the operation successful."]
+#[doc = " @name string_new_with_utf16_chars_and_len2\n @since 4.3\n\n Creates a String from a UTF-16 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-16 encoded C string.\n @param p_char_count The number of characters (not bytes).\n @param p_default_little_endian If true, UTF-16 use little endian.\n\n @return Error code signifying if the operation successful."]
 pub type GDExtensionInterfaceStringNewWithUtf16CharsAndLen2 = ::std::option::Option<
     unsafe extern "C" fn(
         r_dest: GDExtensionUninitializedStringPtr,
@@ -4483,7 +4489,7 @@ pub type GDExtensionInterfaceStringNewWithUtf16CharsAndLen2 = ::std::option::Opt
         p_default_little_endian: GDExtensionBool,
     ) -> GDExtensionInt,
 >;
-#[doc = " @name string_new_with_utf32_chars_and_len\n @since 4.1\n\n Creates a String from a UTF-32 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-32 encoded C string.\n @param p_size The number of characters (not bytes)."]
+#[doc = " @name string_new_with_utf32_chars_and_len\n @since 4.1\n\n Creates a String from a UTF-32 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-32 encoded C string.\n @param p_char_count The number of characters (not bytes)."]
 pub type GDExtensionInterfaceStringNewWithUtf32CharsAndLen = ::std::option::Option<
     unsafe extern "C" fn(
         r_dest: GDExtensionUninitializedStringPtr,
@@ -4491,7 +4497,7 @@ pub type GDExtensionInterfaceStringNewWithUtf32CharsAndLen = ::std::option::Opti
         p_char_count: GDExtensionInt,
     ),
 >;
-#[doc = " @name string_new_with_wide_chars_and_len\n @since 4.1\n\n Creates a String from a wide C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a wide C string.\n @param p_size The number of characters (not bytes)."]
+#[doc = " @name string_new_with_wide_chars_and_len\n @since 4.1\n\n Creates a String from a wide C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a wide C string.\n @param p_char_count The number of characters (not bytes)."]
 pub type GDExtensionInterfaceStringNewWithWideCharsAndLen = ::std::option::Option<
     unsafe extern "C" fn(
         r_dest: GDExtensionUninitializedStringPtr,
@@ -4620,13 +4626,11 @@ pub type GDExtensionInterfaceImagePtrw =
 #[doc = " @name image_ptr\n @since 4.3\n\n Returns read only pointer to internal Image buffer.\n\n @param p_instance A pointer to a Image object.\n\n @return Pointer to internal Image buffer.\n\n @see Image::ptr()"]
 pub type GDExtensionInterfaceImagePtr =
     ::std::option::Option<unsafe extern "C" fn(p_instance: GDExtensionObjectPtr) -> *const u8>;
-#[doc = " @name worker_thread_pool_add_native_group_task\n @since 4.1\n\n Adds a group task to an instance of WorkerThreadPool.\n\n @param p_instance A pointer to a WorkerThreadPool object.\n @param p_func A pointer to a function to run in the thread pool.\n @param p_userdata A pointer to arbitrary data which will be passed to p_func.\n @param p_tasks The number of tasks needed in the group.\n @param p_high_priority Whether or not this is a high priority task.\n @param p_description A pointer to a String with the task description.\n\n @return The task group ID.\n\n @see WorkerThreadPool::add_group_task()"]
+#[doc = " @name worker_thread_pool_add_native_group_task\n @since 4.1\n\n Adds a group task to an instance of WorkerThreadPool.\n\n @param p_instance A pointer to a WorkerThreadPool object.\n @param p_func A pointer to a function to run in the thread pool.\n @param p_userdata A pointer to arbitrary data which will be passed to p_func.\n @param p_elements The number of element needed in the group.\n @param p_tasks The number of tasks needed in the group.\n @param p_high_priority Whether or not this is a high priority task.\n @param p_description A pointer to a String with the task description.\n\n @return The task group ID.\n\n @see WorkerThreadPool::add_group_task()"]
 pub type GDExtensionInterfaceWorkerThreadPoolAddNativeGroupTask = ::std::option::Option<
     unsafe extern "C" fn(
         p_instance: GDExtensionObjectPtr,
-        p_func: ::std::option::Option<
-            unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void, arg2: u32),
-        >,
+        p_func: GDExtensionWorkerThreadPoolGroupTask,
         p_userdata: *mut ::std::os::raw::c_void,
         p_elements: ::std::os::raw::c_int,
         p_tasks: ::std::os::raw::c_int,
@@ -4638,7 +4642,7 @@ pub type GDExtensionInterfaceWorkerThreadPoolAddNativeGroupTask = ::std::option:
 pub type GDExtensionInterfaceWorkerThreadPoolAddNativeTask = ::std::option::Option<
     unsafe extern "C" fn(
         p_instance: GDExtensionObjectPtr,
-        p_func: ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>,
+        p_func: GDExtensionWorkerThreadPoolTask,
         p_userdata: *mut ::std::os::raw::c_void,
         p_high_priority: GDExtensionBool,
         p_description: GDExtensionConstStringPtr,
@@ -4822,7 +4826,7 @@ pub type GDExtensionInterfaceObjectDestroy =
 pub type GDExtensionInterfaceGlobalGetSingleton = ::std::option::Option<
     unsafe extern "C" fn(p_name: GDExtensionConstStringNamePtr) -> GDExtensionObjectPtr,
 >;
-#[doc = " @name object_get_instance_binding\n @since 4.1\n\n Gets a pointer representing an Object's instance binding.\n\n @param p_o A pointer to the Object.\n @param p_library A token the library received by the GDExtension's entry point function.\n @param p_callbacks A pointer to a GDExtensionInstanceBindingCallbacks struct.\n\n @return"]
+#[doc = " @name object_get_instance_binding\n @since 4.1\n\n Gets a pointer representing an Object's instance binding.\n\n @param p_o A pointer to the Object.\n @param p_token A token the library received by the GDExtension's entry point function.\n @param p_callbacks A pointer to a GDExtensionInstanceBindingCallbacks struct.\n\n @return A pointer to the instance binding."]
 pub type GDExtensionInterfaceObjectGetInstanceBinding = ::std::option::Option<
     unsafe extern "C" fn(
         p_o: GDExtensionObjectPtr,
@@ -4830,7 +4834,7 @@ pub type GDExtensionInterfaceObjectGetInstanceBinding = ::std::option::Option<
         p_callbacks: *const GDExtensionInstanceBindingCallbacks,
     ) -> *mut ::std::os::raw::c_void,
 >;
-#[doc = " @name object_set_instance_binding\n @since 4.1\n\n Sets an Object's instance binding.\n\n @param p_o A pointer to the Object.\n @param p_library A token the library received by the GDExtension's entry point function.\n @param p_binding A pointer to the instance binding.\n @param p_callbacks A pointer to a GDExtensionInstanceBindingCallbacks struct."]
+#[doc = " @name object_set_instance_binding\n @since 4.1\n\n Sets an Object's instance binding.\n\n @param p_o A pointer to the Object.\n @param p_token A token the library received by the GDExtension's entry point function.\n @param p_binding A pointer to the instance binding.\n @param p_callbacks A pointer to a GDExtensionInstanceBindingCallbacks struct."]
 pub type GDExtensionInterfaceObjectSetInstanceBinding = ::std::option::Option<
     unsafe extern "C" fn(
         p_o: GDExtensionObjectPtr,
@@ -4839,11 +4843,11 @@ pub type GDExtensionInterfaceObjectSetInstanceBinding = ::std::option::Option<
         p_callbacks: *const GDExtensionInstanceBindingCallbacks,
     ),
 >;
-#[doc = " @name object_free_instance_binding\n @since 4.2\n\n Free an Object's instance binding.\n\n @param p_o A pointer to the Object.\n @param p_library A token the library received by the GDExtension's entry point function."]
+#[doc = " @name object_free_instance_binding\n @since 4.2\n\n Free an Object's instance binding.\n\n @param p_o A pointer to the Object.\n @param p_token A token the library received by the GDExtension's entry point function."]
 pub type GDExtensionInterfaceObjectFreeInstanceBinding = ::std::option::Option<
     unsafe extern "C" fn(p_o: GDExtensionObjectPtr, p_token: *mut ::std::os::raw::c_void),
 >;
-#[doc = " @name object_set_instance\n @since 4.1\n\n Sets an extension class instance on a Object.\n\n @param p_o A pointer to the Object.\n @param p_classname A pointer to a StringName with the registered extension class's name.\n @param p_instance A pointer to the extension class instance."]
+#[doc = " @name object_set_instance\n @since 4.1\n\n Sets an extension class instance on a Object.\n\n `p_classname` should be a registered extension class and should extend the `p_o` Object's class.\n\n @param p_o A pointer to the Object.\n @param p_classname A pointer to a StringName with the registered extension class's name.\n @param p_instance A pointer to the extension class instance."]
 pub type GDExtensionInterfaceObjectSetInstance = ::std::option::Option<
     unsafe extern "C" fn(
         p_o: GDExtensionObjectPtr,
@@ -4874,7 +4878,7 @@ pub type GDExtensionInterfaceObjectGetInstanceFromId = ::std::option::Option<
 pub type GDExtensionInterfaceObjectGetInstanceId = ::std::option::Option<
     unsafe extern "C" fn(p_object: GDExtensionConstObjectPtr) -> GDObjectInstanceID,
 >;
-#[doc = " @name object_has_script_method\n @since 4.3\n\n Checks if this object has a script with the given method.\n\n @param p_object A pointer to the Object.\n @param p_method A pointer to a StringName identifying the method.\n\n @returns true if the object has a script and that script has a method with the given name. Returns false if the object has no script."]
+#[doc = " @name object_has_script_method\n @since 4.3\n\n Checks if this object has a script with the given method.\n\n @param p_object A pointer to the Object.\n @param p_method A pointer to a StringName identifying the method.\n\n @return true if the object has a script and that script has a method with the given name. Returns false if the object has no script."]
 pub type GDExtensionInterfaceObjectHasScriptMethod = ::std::option::Option<
     unsafe extern "C" fn(
         p_object: GDExtensionConstObjectPtr,
@@ -4965,7 +4969,7 @@ pub type GDExtensionInterfaceCallableCustomCreate2 = ::std::option::Option<
         p_callable_custom_info: *mut GDExtensionCallableCustomInfo2,
     ),
 >;
-#[doc = " @name callable_custom_get_userdata\n @since 4.2\n\n Retrieves the userdata pointer from a custom Callable.\n\n If the Callable is not a custom Callable or the token does not match the one provided to callable_custom_create() via GDExtensionCallableCustomInfo then NULL will be returned.\n\n @param p_callable A pointer to a Callable.\n @param p_token A pointer to an address that uniquely identifies the GDExtension."]
+#[doc = " @name callable_custom_get_userdata\n @since 4.2\n\n Retrieves the userdata pointer from a custom Callable.\n\n If the Callable is not a custom Callable or the token does not match the one provided to callable_custom_create() via GDExtensionCallableCustomInfo then NULL will be returned.\n\n @param p_callable A pointer to a Callable.\n @param p_token A pointer to an address that uniquely identifies the GDExtension.\n\n @return The userdata pointer given when creating this custom Callable."]
 pub type GDExtensionInterfaceCallableCustomGetUserData = ::std::option::Option<
     unsafe extern "C" fn(
         p_callable: GDExtensionConstTypePtr,
@@ -5104,7 +5108,7 @@ pub type GDExtensionInterfaceClassdbRegisterExtensionClassSignal = ::std::option
         p_argument_count: GDExtensionInt,
     ),
 >;
-#[doc = " @name classdb_unregister_extension_class\n @since 4.1\n\n Unregisters an extension class in the ClassDB.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name."]
+#[doc = " @name classdb_unregister_extension_class\n @since 4.1\n\n Unregisters an extension class in the ClassDB.\n\n Unregistering a parent class before a class that inherits it will result in failure. Inheritors must be unregistered first.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name."]
 pub type GDExtensionInterfaceClassdbUnregisterExtensionClass = ::std::option::Option<
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,
@@ -5138,7 +5142,7 @@ pub type GDExtensionInterfaceEditorRegisterGetClassesUsedCallback = ::std::optio
         p_callback: GDExtensionEditorGetClassesUsedCallback,
     ),
 >;
-#[doc = " @name register_main_loop_callbacks\n @since 4.5\n\n Registers callbacks to be called at different phases of the main loop.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_callback A pointer to the structure that contains the callbacks."]
+#[doc = " @name register_main_loop_callbacks\n @since 4.5\n\n Registers callbacks to be called at different phases of the main loop.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_callbacks A pointer to the structure that contains the callbacks."]
 pub type GDExtensionInterfaceRegisterMainLoopCallbacks = ::std::option::Option<
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,
