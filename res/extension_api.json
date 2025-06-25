@@ -255550,6 +255550,20 @@
 							"type": "Script"
 						}
 					]
+				},
+				{
+					"name": "clear_docs_from_script",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3657522847,
+					"arguments": [
+						{
+							"name": "script",
+							"type": "Script"
+						}
+					]
 				}
 			],
 			"signals": [
