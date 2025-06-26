@@ -318310,6 +318310,39 @@
 							"type": "String"
 						}
 					]
+				},
+				{
+					"name": "set_graph_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_graph_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "Vector2",
+					"name": "graph_offset",
+					"setter": "set_graph_offset",
+					"getter": "get_graph_offset"
 				}
 			]
 		},
