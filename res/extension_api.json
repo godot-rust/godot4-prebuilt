@@ -249283,6 +249283,31 @@
 					}
 				},
 				{
+					"name": "set_scroll_follow_visible_characters",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "follow",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_scroll_following_visible_characters",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_scroll_follow",
 					"is_const": false,
 					"is_vararg": false,
@@ -249992,6 +250017,17 @@
 					]
 				},
 				{
+					"name": "get_visible_content_rect",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 410525958,
+					"return_value": {
+						"type": "Rect2i"
+					}
+				},
+				{
 					"name": "get_line_offset",
 					"is_const": false,
 					"is_vararg": false,
@@ -250193,6 +250229,12 @@
 					"name": "scroll_following",
 					"setter": "set_scroll_follow",
 					"getter": "is_scroll_following"
+				},
+				{
+					"type": "bool",
+					"name": "scroll_following_visible_characters",
+					"setter": "set_scroll_follow_visible_characters",
+					"getter": "is_scroll_following_visible_characters"
 				},
 				{
 					"type": "int",
