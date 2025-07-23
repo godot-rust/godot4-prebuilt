@@ -92804,9 +92804,12 @@
 					"is_required": false,
 					"is_vararg": false,
 					"is_virtual": true,
-					"hash": 3991065292,
+					"hash": 3536238170,
+					"hash_compatibility": [
+						3991065292
+					],
 					"return_value": {
-						"type": "ImageTexture"
+						"type": "Texture2D"
 					},
 					"arguments": [
 						{
