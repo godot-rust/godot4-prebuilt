@@ -1972,6 +1972,7 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
         )
     );
 }
+pub type GDExtensionClassCreationInfo5 = GDExtensionClassCreationInfo4;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __GdextClassLibrary {
@@ -5023,13 +5024,22 @@ pub type GDExtensionInterfaceClassdbRegisterExtensionClass3 = ::std::option::Opt
         p_extension_funcs: *const GDExtensionClassCreationInfo3,
     ),
 >;
-#[doc = " @name classdb_register_extension_class4\n @since 4.4\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo2 struct."]
+#[doc = " @name classdb_register_extension_class4\n @since 4.4\n @deprecated in Godot 4.5. Use `classdb_register_extension_class5` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo2 struct."]
 pub type GDExtensionInterfaceClassdbRegisterExtensionClass4 = ::std::option::Option<
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,
         p_class_name: GDExtensionConstStringNamePtr,
         p_parent_class_name: GDExtensionConstStringNamePtr,
         p_extension_funcs: *const GDExtensionClassCreationInfo4,
+    ),
+>;
+#[doc = " @name classdb_register_extension_class5\n @since 4.5\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo2 struct."]
+pub type GDExtensionInterfaceClassdbRegisterExtensionClass5 = ::std::option::Option<
+    unsafe extern "C" fn(
+        p_library: GDExtensionClassLibraryPtr,
+        p_class_name: GDExtensionConstStringNamePtr,
+        p_parent_class_name: GDExtensionConstStringNamePtr,
+        p_extension_funcs: *const GDExtensionClassCreationInfo5,
     ),
 >;
 #[doc = " @name classdb_register_extension_class_method\n @since 4.1\n\n Registers a method on an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_method_info A pointer to a GDExtensionClassMethodInfo struct."]
