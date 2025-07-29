@@ -25895,6 +25895,30 @@
 			"api_type": "core",
 			"methods": [
 				{
+					"name": "_filter_neighbor",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2522259332,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "from_id",
+							"type": "int",
+							"meta": "int64"
+						},
+						{
+							"name": "neighbor_id",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
 					"name": "_estimate_cost",
 					"is_const": true,
 					"is_static": false,
@@ -26120,6 +26144,31 @@
 					"hash": 3851388692,
 					"return_value": {
 						"type": "PackedInt64Array"
+					}
+				},
+				{
+					"name": "set_neighbor_filter_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_neighbor_filter_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
 					}
 				},
 				{
@@ -26399,6 +26448,14 @@
 						}
 					]
 				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "neighbor_filter_enabled",
+					"setter": "set_neighbor_filter_enabled",
+					"getter": "is_neighbor_filter_enabled"
+				}
 			]
 		},
 		{
@@ -26408,6 +26465,30 @@
 			"inherits": "RefCounted",
 			"api_type": "core",
 			"methods": [
+				{
+					"name": "_filter_neighbor",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2522259332,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "from_id",
+							"type": "int",
+							"meta": "int64"
+						},
+						{
+							"name": "neighbor_id",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
 				{
 					"name": "_estimate_cost",
 					"is_const": true,
@@ -26678,6 +26759,31 @@
 					]
 				},
 				{
+					"name": "set_neighbor_filter_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_neighbor_filter_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "connect_points",
 					"is_const": false,
 					"is_vararg": false,
@@ -26912,6 +27018,14 @@
 							"default_value": "false"
 						}
 					]
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "neighbor_filter_enabled",
+					"setter": "set_neighbor_filter_enabled",
+					"getter": "is_neighbor_filter_enabled"
 				}
 			]
 		},
