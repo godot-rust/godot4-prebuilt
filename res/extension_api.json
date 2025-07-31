@@ -42766,6 +42766,26 @@
 			"is_instantiable": true,
 			"inherits": "Node3D",
 			"api_type": "core",
+			"enums": [
+				{
+					"name": "DopplerTracking",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "DOPPLER_TRACKING_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "DOPPLER_TRACKING_IDLE_STEP",
+							"value": 1
+						},
+						{
+							"name": "DOPPLER_TRACKING_PHYSICS_STEP",
+							"value": 2
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "make_current",
@@ -42804,6 +42824,39 @@
 					"return_value": {
 						"type": "Transform3D"
 					}
+				},
+				{
+					"name": "set_doppler_tracking",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2365921740,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::AudioListener3D.DopplerTracking"
+						}
+					]
+				},
+				{
+					"name": "get_doppler_tracking",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 550229039,
+					"return_value": {
+						"type": "enum::AudioListener3D.DopplerTracking"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "doppler_tracking",
+					"setter": "set_doppler_tracking",
+					"getter": "get_doppler_tracking"
 				}
 			]
 		},
