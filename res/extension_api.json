@@ -60835,7 +60835,7 @@
 					"hash": 2586408642,
 					"arguments": [
 						{
-							"name": "position_smoothing_speed",
+							"name": "enabled",
 							"type": "bool"
 						}
 					]
@@ -84835,6 +84835,50 @@
 						{
 							"name": "LIVE_ASSERTIVE",
 							"value": 2
+						}
+					]
+				},
+				{
+					"name": "AccessibilityScrollUnit",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SCROLL_UNIT_ITEM",
+							"value": 0
+						},
+						{
+							"name": "SCROLL_UNIT_PAGE",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "AccessibilityScrollHint",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SCROLL_HINT_TOP_LEFT",
+							"value": 0
+						},
+						{
+							"name": "SCROLL_HINT_BOTTOM_RIGHT",
+							"value": 1
+						},
+						{
+							"name": "SCROLL_HINT_TOP_EDGE",
+							"value": 2
+						},
+						{
+							"name": "SCROLL_HINT_BOTTOM_EDGE",
+							"value": 3
+						},
+						{
+							"name": "SCROLL_HINT_LEFT_EDGE",
+							"value": 4
+						},
+						{
+							"name": "SCROLL_HINT_RIGHT_EDGE",
+							"value": 5
 						}
 					]
 				},
