@@ -253053,6 +253053,17 @@
 							"type": "Vector2i"
 						}
 					]
+				},
+				{
+					"name": "get_scaled_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
 				}
 			],
 			"properties": [
