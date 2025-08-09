@@ -63276,6 +63276,9 @@
 							"type": "int"
 						}
 					]
+				},
+				{
+					"name": "camera_feeds_updated"
 				}
 			],
 			"properties": [
