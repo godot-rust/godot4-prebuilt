@@ -136394,6 +136394,58 @@
 					]
 				},
 				{
+					"name": "is_action_just_pressed_by_event",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 551972873,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "action",
+							"type": "StringName"
+						},
+						{
+							"name": "event",
+							"type": "InputEvent"
+						},
+						{
+							"name": "exact_match",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "is_action_just_released_by_event",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 551972873,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "action",
+							"type": "StringName"
+						},
+						{
+							"name": "event",
+							"type": "InputEvent"
+						},
+						{
+							"name": "exact_match",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
 					"name": "get_action_strength",
 					"is_const": true,
 					"is_vararg": false,
