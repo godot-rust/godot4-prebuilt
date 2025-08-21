@@ -92797,7 +92797,7 @@
 					"is_vararg": false,
 					"is_static": true,
 					"is_virtual": false,
-					"hash": 3424652832,
+					"hash": 1939331020,
 					"hash_compatibility": [
 						2981934095
 					],
@@ -92807,7 +92807,8 @@
 					"arguments": [
 						{
 							"name": "preset",
-							"type": "EditorExportPreset"
+							"type": "EditorExportPreset",
+							"default_value": "null"
 						}
 					]
 				}
