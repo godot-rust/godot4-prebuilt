@@ -82716,6 +82716,198 @@
 			]
 		},
 		{
+			"name": "DPITexture",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Texture2D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "create_from_string",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 755140520,
+					"return_value": {
+						"type": "DPITexture"
+					},
+					"arguments": [
+						{
+							"name": "source",
+							"type": "String"
+						},
+						{
+							"name": "scale",
+							"type": "float",
+							"meta": "float",
+							"default_value": "1.0"
+						},
+						{
+							"name": "saturation",
+							"type": "float",
+							"meta": "float",
+							"default_value": "1.0"
+						},
+						{
+							"name": "color_map",
+							"type": "Dictionary",
+							"default_value": "{}"
+						}
+					]
+				},
+				{
+					"name": "set_source",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "source",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_source",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_base_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "base_scale",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_base_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_saturation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "saturation",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_saturation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_color_map",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155329257,
+					"arguments": [
+						{
+							"name": "color_map",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "get_color_map",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3102165223,
+					"return_value": {
+						"type": "Dictionary"
+					}
+				},
+				{
+					"name": "set_size_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1130785943,
+					"arguments": [
+						{
+							"name": "size",
+							"type": "Vector2i"
+						}
+					]
+				},
+				{
+					"name": "get_scaled_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "float",
+					"name": "base_scale",
+					"setter": "set_base_scale",
+					"getter": "get_base_scale"
+				},
+				{
+					"type": "float",
+					"name": "saturation",
+					"setter": "set_saturation",
+					"getter": "get_saturation"
+				},
+				{
+					"type": "typeddictionary::Color;Color",
+					"name": "color_map",
+					"setter": "set_color_map",
+					"getter": "get_color_map"
+				}
+			]
+		},
+		{
 			"name": "DTLSServer",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -253196,198 +253388,6 @@
 					"name": "zero_y",
 					"setter": "set_zero_y",
 					"getter": "get_zero_y"
-				}
-			]
-		},
-		{
-			"name": "SVGTexture",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Texture2D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "create_from_string",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 2404345842,
-					"return_value": {
-						"type": "SVGTexture"
-					},
-					"arguments": [
-						{
-							"name": "source",
-							"type": "String"
-						},
-						{
-							"name": "scale",
-							"type": "float",
-							"meta": "float",
-							"default_value": "1.0"
-						},
-						{
-							"name": "saturation",
-							"type": "float",
-							"meta": "float",
-							"default_value": "1.0"
-						},
-						{
-							"name": "color_map",
-							"type": "Dictionary",
-							"default_value": "{}"
-						}
-					]
-				},
-				{
-					"name": "set_source",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "source",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_source",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "set_base_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "base_scale",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_base_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_saturation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "saturation",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_saturation",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_color_map",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4155329257,
-					"arguments": [
-						{
-							"name": "color_map",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
-					"name": "get_color_map",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3102165223,
-					"return_value": {
-						"type": "Dictionary"
-					}
-				},
-				{
-					"name": "set_size_override",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1130785943,
-					"arguments": [
-						{
-							"name": "size",
-							"type": "Vector2i"
-						}
-					]
-				},
-				{
-					"name": "get_scaled_rid",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2944877500,
-					"return_value": {
-						"type": "RID"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "float",
-					"name": "base_scale",
-					"setter": "set_base_scale",
-					"getter": "get_base_scale"
-				},
-				{
-					"type": "float",
-					"name": "saturation",
-					"setter": "set_saturation",
-					"getter": "get_saturation"
-				},
-				{
-					"type": "typeddictionary::Color;Color",
-					"name": "color_map",
-					"setter": "set_color_map",
-					"getter": "get_color_map"
 				}
 			]
 		},
