@@ -1,11 +1,11 @@
 {
 	"header": {
 		"version_major": 4,
-		"version_minor": 5,
+		"version_minor": 6,
 		"version_patch": 0,
-		"version_status": "rc",
+		"version_status": "dev",
 		"version_build": "custom_build",
-		"version_full_name": "Godot Engine v4.5.rc.custom_build",
+		"version_full_name": "Godot Engine v4.6.dev.custom_build",
 		"precision": "single"
 	},
 	"builtin_class_sizes": [
