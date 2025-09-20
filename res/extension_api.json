@@ -43875,7 +43875,7 @@
 					"name": "_instantiate_playback",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 3093715447,
@@ -45406,7 +45406,7 @@
 					"name": "_start",
 					"is_const": false,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 373806689,
@@ -45422,7 +45422,7 @@
 					"name": "_stop",
 					"is_const": false,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 3218959716
@@ -45431,7 +45431,7 @@
 					"name": "_is_playing",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 36873697,
@@ -45456,7 +45456,7 @@
 					"name": "_get_playback_position",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 1740695150,
@@ -97225,6 +97225,53 @@
 					}
 				},
 				{
+					"name": "is_node_3d_snap_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_node_3d_translate_snap",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_node_3d_rotate_snap",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_node_3d_scale_snap",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "popup_dialog",
 					"is_const": false,
 					"is_vararg": false,
@@ -101342,7 +101389,7 @@
 					"name": "_handles",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 3927539163,
@@ -101360,7 +101407,7 @@
 					"name": "_generate",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 255939159,
@@ -101546,7 +101593,7 @@
 					"name": "_get_extensions",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 1139954409,
@@ -101558,7 +101605,7 @@
 					"name": "_import_scene",
 					"is_const": false,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 3749238728,
@@ -247048,7 +247095,7 @@
 					"name": "_load",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 2885906527,
@@ -314609,7 +314656,7 @@
 					"name": "_instantiate_playback",
 					"is_const": false,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 294648086,
