@@ -1,0 +1,10 @@
+{
+    "protocol": 1,
+    "versions": {
+        "godot": "4.4.1",
+        "godot_full": "4.4.1.stable.official.49a5bc7b6",
+        "rust": "",
+        "bindgen": ""
+    },
+    "created_ts": 1758491885
+}
