@@ -77119,10 +77119,20 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 36873697,
+					"hash": 3302206351,
+					"hash_compatibility": [
+						36873697
+					],
 					"return_value": {
 						"type": "bool"
-					}
+					},
+					"arguments": [
+						{
+							"name": "ignore_hidden_focus",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
 				},
 				{
 					"name": "grab_focus",
@@ -77130,7 +77140,17 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3218959716
+					"hash": 107499316,
+					"hash_compatibility": [
+						3218959716
+					],
+					"arguments": [
+						{
+							"name": "hide_focus",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
 				},
 				{
 					"name": "release_focus",
@@ -102548,6 +102568,26 @@
 			"is_instantiable": true,
 			"inherits": "Range",
 			"api_type": "editor",
+			"enums": [
+				{
+					"name": "ControlState",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "CONTROL_STATE_DEFAULT",
+							"value": 0
+						},
+						{
+							"name": "CONTROL_STATE_PREFER_SLIDER",
+							"value": 1
+						},
+						{
+							"name": "CONTROL_STATE_HIDE",
+							"value": 2
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "set_label",
@@ -102650,6 +102690,31 @@
 					}
 				},
 				{
+					"name": "set_control_state",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1324557109,
+					"arguments": [
+						{
+							"name": "state",
+							"type": "enum::EditorSpinSlider.ControlState"
+						}
+					]
+				},
+				{
+					"name": "get_control_state",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3406006200,
+					"return_value": {
+						"type": "enum::EditorSpinSlider.ControlState"
+					}
+				},
+				{
 					"name": "set_hide_slider",
 					"is_const": false,
 					"is_vararg": false,
@@ -102741,6 +102806,12 @@
 					"name": "flat",
 					"setter": "set_flat",
 					"getter": "is_flat"
+				},
+				{
+					"type": "bool",
+					"name": "control_state",
+					"setter": "set_control_state",
+					"getter": "get_control_state"
 				},
 				{
 					"type": "bool",
