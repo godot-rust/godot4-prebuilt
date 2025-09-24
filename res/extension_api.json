@@ -64070,6 +64070,60 @@
 					]
 				},
 				{
+					"name": "draw_ellipse_arc",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 936174114,
+					"arguments": [
+						{
+							"name": "center",
+							"type": "Vector2"
+						},
+						{
+							"name": "major",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "minor",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "start_angle",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "end_angle",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "point_count",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "color",
+							"type": "Color"
+						},
+						{
+							"name": "width",
+							"type": "float",
+							"meta": "float",
+							"default_value": "-1.0"
+						},
+						{
+							"name": "antialiased",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
 					"name": "draw_arc",
 					"is_const": false,
 					"is_vararg": false,
@@ -64242,6 +64296,50 @@
 						},
 						{
 							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "color",
+							"type": "Color"
+						},
+						{
+							"name": "filled",
+							"type": "bool",
+							"default_value": "true"
+						},
+						{
+							"name": "width",
+							"type": "float",
+							"meta": "float",
+							"default_value": "-1.0"
+						},
+						{
+							"name": "antialiased",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "draw_ellipse",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3790774806,
+					"arguments": [
+						{
+							"name": "position",
+							"type": "Vector2"
+						},
+						{
+							"name": "major",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "minor",
 							"type": "float",
 							"meta": "float"
 						},
@@ -133791,8 +133889,40 @@
 							"value": 38
 						},
 						{
-							"name": "FORMAT_MAX",
+							"name": "FORMAT_R16",
 							"value": 39
+						},
+						{
+							"name": "FORMAT_RG16",
+							"value": 40
+						},
+						{
+							"name": "FORMAT_RGB16",
+							"value": 41
+						},
+						{
+							"name": "FORMAT_RGBA16",
+							"value": 42
+						},
+						{
+							"name": "FORMAT_R16I",
+							"value": 43
+						},
+						{
+							"name": "FORMAT_RG16I",
+							"value": 44
+						},
+						{
+							"name": "FORMAT_RGB16I",
+							"value": 45
+						},
+						{
+							"name": "FORMAT_RGBA16I",
+							"value": 46
+						},
+						{
+							"name": "FORMAT_MAX",
+							"value": 47
 						}
 					]
 				},
@@ -244523,6 +244653,43 @@
 						},
 						{
 							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "color",
+							"type": "Color"
+						},
+						{
+							"name": "antialiased",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "canvas_item_add_ellipse",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4188642757,
+					"arguments": [
+						{
+							"name": "item",
+							"type": "RID"
+						},
+						{
+							"name": "pos",
+							"type": "Vector2"
+						},
+						{
+							"name": "major",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "minor",
 							"type": "float",
 							"meta": "float"
 						},
