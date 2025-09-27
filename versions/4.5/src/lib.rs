@@ -8,7 +8,7 @@
 // Since this lib.rs is repurposed as a module file, avoid crate-level attributes such as
 // #![doc(html_logo_url)] here.
 
-//! # GDExtension API for Godot 4.1.1
+//! # GDExtension API for Godot 4.5
 
 use std::borrow::Cow;
 
@@ -19,23 +19,23 @@ pub type CowStr = Cow<'static, str>;
 ///
 /// Note that this currently only contains the `major.minor[.patch]` part, so even `4.2-rc1` would be `4.2` (although pre-releases are currently
 /// not published).
-pub const GODOT_VERSION_STRING: &str = "4.1.1";
+pub const GODOT_VERSION_STRING: &str = "4.5";
 
 /// Returns the contents of the header file `gdextension_interface.h`.
 pub const fn load_gdextension_header_h() -> CowStr {
-    CowStr::Borrowed(include_str!("../../4.1/res/gdextension_interface.h"))
+    CowStr::Borrowed(include_str!("../../4.5/res/gdextension_interface.h"))
 }
 
 /// Returns the contents of the header file `gdextension_interface.rs`, generated for the corresponding platform.
 pub const fn load_gdextension_header_rs() -> CowStr {
     #[cfg(windows)]
-    let s = include_str!("../../4.1/res/gdextension_interface_windows.rs");
+    let s = include_str!("../../4.5/res/gdextension_interface_windows.rs");
 
     #[cfg(target_os = "macos")]
-    let s = include_str!("../../4.1/res/gdextension_interface_macos.rs");
+    let s = include_str!("../../4.5/res/gdextension_interface_macos.rs");
 
     #[cfg(all(unix, not(target_os = "macos")))]
-    let s = include_str!("../../4.1/res/gdextension_interface_linux.rs");
+    let s = include_str!("../../4.5/res/gdextension_interface_linux.rs");
 
     CowStr::Borrowed(s)
 }
@@ -49,8 +49,8 @@ pub const fn load_gdextension_json() -> CowStr {
 pub fn get_package_property(key: &str) -> Option<CowStr> {
     let value = match key {
         "godot_version_string" => Cow::Borrowed(GODOT_VERSION_STRING),
-        "rust_version_string" => Cow::Borrowed(""),
-        "bindgen_version_string" => Cow::Borrowed(""),
+        "rust_version_string" => Cow::Borrowed("1.90.0"),
+        "bindgen_version_string" => Cow::Borrowed("0.71.1"),
         _ => return None,
     };
 

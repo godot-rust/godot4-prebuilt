@@ -4,16 +4,6 @@
 //! We do not offer any guarantees for the provided API.
 
 #![doc(html_logo_url = "https://godotengine.org/assets/press/icon_color.svg")]
-#[path = "../versions/4.1/src/lib.rs"]
-pub mod version_4_1;
-#[path = "../versions/4.1.1/src/lib.rs"]
-pub mod version_4_1_1;
-#[path = "../versions/4.1.2/src/lib.rs"]
-pub mod version_4_1_2;
-#[path = "../versions/4.1.3/src/lib.rs"]
-pub mod version_4_1_3;
-#[path = "../versions/4.1.4/src/lib.rs"]
-pub mod version_4_1_4;
 #[path = "../versions/4.2/src/lib.rs"]
 pub mod version_4_2;
 #[path = "../versions/4.2.1/src/lib.rs"]
@@ -24,3 +14,7 @@ pub mod version_4_2_2;
 pub mod version_4_3;
 #[path = "../versions/4.4/src/lib.rs"]
 pub mod version_4_4;
+#[path = "../versions/4.4.1/src/lib.rs"]
+pub mod version_4_4_1;
+#[path = "../versions/4.5/src/lib.rs"]
+pub mod version_4_5;
