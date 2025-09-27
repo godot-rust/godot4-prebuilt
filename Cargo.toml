@@ -1,7 +1,7 @@
 [package]
 name = "gdextension-api"
-version = "0.2.2"
-edition = "2021"
+version = "0.3.0"
+edition = "2024"
 license = "MPL-2.0"
 description = "Godot GDExtension API; used by godot-rust."
 repository = "https://github.com/godot-rust/gdext"
