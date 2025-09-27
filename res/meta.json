@@ -3,8 +3,8 @@
     "versions": {
         "godot": "4.3",
         "godot_full": "4.3.stable.official.77dcf97d8",
-        "rust": "1.85.0",
-        "bindgen": "0.68.1"
+        "rust": "1.90.0",
+        "bindgen": "0.71.1"
     },
-    "created_ts": 1741030952
+    "created_ts": 1758964713
 }
