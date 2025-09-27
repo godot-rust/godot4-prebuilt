@@ -88675,6 +88675,20 @@
 					]
 				},
 				{
+					"name": "window_set_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2920490490,
+					"arguments": [
+						{
+							"name": "color",
+							"type": "Color"
+						}
+					]
+				},
+				{
 					"name": "accessibility_should_increase_contrast",
 					"is_const": true,
 					"is_vararg": false,
@@ -141896,7 +141910,26 @@
 			"is_refcounted": false,
 			"is_instantiable": true,
 			"inherits": "Object",
-			"api_type": "core"
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "has_java_method",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2619796661,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "method",
+							"type": "StringName"
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "JSON",
@@ -142319,6 +142352,23 @@
 					"return_value": {
 						"type": "JavaClass"
 					}
+				},
+				{
+					"name": "has_java_method",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2619796661,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "method",
+							"type": "StringName"
+						}
+					]
 				}
 			]
 		},
@@ -142376,6 +142426,23 @@
 					"return_value": {
 						"type": "JavaClass"
 					}
+				},
+				{
+					"name": "has_java_method",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2619796661,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "method",
+							"type": "StringName"
+						}
+					]
 				}
 			]
 		},
