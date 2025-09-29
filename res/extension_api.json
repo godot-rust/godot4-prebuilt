@@ -109836,17 +109836,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1162154673,
+					"hash": 201670096,
+					"hash_compatibility": [
+						1162154673
+					],
 					"return_value": {
 						"type": "String"
-					},
-					"arguments": [
-						{
-							"name": "skip_cr",
-							"type": "bool",
-							"default_value": "false"
-						}
-					]
+					}
 				},
 				{
 					"name": "get_md5",
@@ -183629,6 +183625,64 @@
 			]
 		},
 		{
+			"name": "OpenXRAnchorTracker",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialEntityTracker",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "has_uuid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_uuid",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "uuid",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_uuid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				}
+			],
+			"signals": [
+				{
+					"name": "uuid_changed"
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "uuid",
+					"setter": "set_uuid",
+					"getter": "get_uuid"
+				}
+			]
+		},
+		{
 			"name": "OpenXRBindingModifier",
 			"is_refcounted": true,
 			"is_instantiable": false,
@@ -187625,6 +187679,318 @@
 			]
 		},
 		{
+			"name": "OpenXRMarkerTracker",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialEntityTracker",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_bounds_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "bounds_size",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_bounds_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_marker_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2156241362,
+					"arguments": [
+						{
+							"name": "marker_type",
+							"type": "enum::OpenXRSpatialComponentMarkerList.MarkerType"
+						}
+					]
+				},
+				{
+					"name": "get_marker_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 612702862,
+					"return_value": {
+						"type": "enum::OpenXRSpatialComponentMarkerList.MarkerType"
+					}
+				},
+				{
+					"name": "set_marker_id",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "marker_id",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_marker_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
+					"name": "set_marker_data",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1114965689,
+					"arguments": [
+						{
+							"name": "marker_data",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "get_marker_data",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1214101251,
+					"return_value": {
+						"type": "Variant"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "bounds_size",
+					"setter": "set_bounds_size",
+					"getter": "get_bounds_size"
+				},
+				{
+					"type": "int",
+					"name": "marker_type",
+					"setter": "set_marker_type",
+					"getter": "get_marker_type"
+				},
+				{
+					"type": "int",
+					"name": "marker_id",
+					"setter": "set_marker_id",
+					"getter": "get_marker_id"
+				}
+			]
+		},
+		{
+			"name": "OpenXRPlaneTracker",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialEntityTracker",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_bounds_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "bounds_size",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_bounds_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_plane_alignment",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1214382230,
+					"arguments": [
+						{
+							"name": "plane_alignment",
+							"type": "enum::OpenXRSpatialComponentPlaneAlignmentList.PlaneAlignment"
+						}
+					]
+				},
+				{
+					"name": "get_plane_alignment",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 845541441,
+					"return_value": {
+						"type": "enum::OpenXRSpatialComponentPlaneAlignmentList.PlaneAlignment"
+					}
+				},
+				{
+					"name": "set_plane_label",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "plane_label",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_plane_label",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_mesh_data",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1877193149,
+					"arguments": [
+						{
+							"name": "origin",
+							"type": "Transform3D"
+						},
+						{
+							"name": "vertices",
+							"type": "PackedVector2Array"
+						},
+						{
+							"name": "indices",
+							"type": "PackedInt32Array",
+							"default_value": "PackedInt32Array()"
+						}
+					]
+				},
+				{
+					"name": "clear_mesh_data",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "get_mesh_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3229777777,
+					"return_value": {
+						"type": "Transform3D"
+					}
+				},
+				{
+					"name": "get_mesh",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4081188045,
+					"return_value": {
+						"type": "Mesh"
+					}
+				},
+				{
+					"name": "get_shape",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3358509884,
+					"return_value": {
+						"type": "Shape3D"
+					},
+					"arguments": [
+						{
+							"name": "thickness",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.01"
+						}
+					]
+				}
+			],
+			"signals": [
+				{
+					"name": "mesh_changed"
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "bounds_size",
+					"setter": "set_bounds_size",
+					"getter": "get_bounds_size"
+				},
+				{
+					"type": "int",
+					"name": "plane_alignment",
+					"setter": "set_plane_alignment",
+					"getter": "get_plane_alignment"
+				},
+				{
+					"type": "String",
+					"name": "plane_label",
+					"setter": "set_plane_label",
+					"getter": "get_plane_label"
+				}
+			]
+		},
+		{
 			"name": "OpenXRRenderModel",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -188057,6 +188423,2176 @@
 					"name": "make_local_to_pose",
 					"setter": "set_make_local_to_pose",
 					"getter": "get_make_local_to_pose"
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialAnchorCapability",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRExtensionWrapper",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "PersistenceScope",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "PERSISTENCE_SCOPE_SYSTEM_MANAGED",
+							"value": 1
+						},
+						{
+							"name": "PERSISTENCE_SCOPE_LOCAL_ANCHORS",
+							"value": 1000781000
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "is_spatial_anchor_supported",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_spatial_persistence_supported",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_persistence_scope_supported",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3651771626,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "scope",
+							"type": "enum::OpenXRSpatialAnchorCapability.PersistenceScope"
+						}
+					]
+				},
+				{
+					"name": "create_persistence_context",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 856276630,
+					"return_value": {
+						"type": "OpenXRFutureResult"
+					},
+					"arguments": [
+						{
+							"name": "scope",
+							"type": "enum::OpenXRSpatialAnchorCapability.PersistenceScope"
+						},
+						{
+							"name": "user_callback",
+							"type": "Callable",
+							"default_value": "Callable()"
+						}
+					]
+				},
+				{
+					"name": "get_persistence_context_handle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2198884583,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "persistence_context",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "free_persistence_context",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "persistence_context",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "create_new_anchor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 607100373,
+					"return_value": {
+						"type": "OpenXRAnchorTracker"
+					},
+					"arguments": [
+						{
+							"name": "transform",
+							"type": "Transform3D"
+						},
+						{
+							"name": "spatial_context",
+							"type": "RID",
+							"default_value": "RID()"
+						}
+					]
+				},
+				{
+					"name": "remove_anchor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3579451518,
+					"arguments": [
+						{
+							"name": "anchor_tracker",
+							"type": "OpenXRAnchorTracker"
+						}
+					]
+				},
+				{
+					"name": "persist_anchor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4244202513,
+					"return_value": {
+						"type": "OpenXRFutureResult"
+					},
+					"arguments": [
+						{
+							"name": "anchor_tracker",
+							"type": "OpenXRAnchorTracker"
+						},
+						{
+							"name": "persistence_context",
+							"type": "RID",
+							"default_value": "RID()"
+						},
+						{
+							"name": "user_callback",
+							"type": "Callable",
+							"default_value": "Callable()"
+						}
+					]
+				},
+				{
+					"name": "unpersist_anchor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4244202513,
+					"return_value": {
+						"type": "OpenXRFutureResult"
+					},
+					"arguments": [
+						{
+							"name": "anchor_tracker",
+							"type": "OpenXRAnchorTracker"
+						},
+						{
+							"name": "persistence_context",
+							"type": "RID",
+							"default_value": "RID()"
+						},
+						{
+							"name": "user_callback",
+							"type": "Callable",
+							"default_value": "Callable()"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialCapabilityConfigurationAnchor",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialCapabilityConfigurationBaseHeader",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_enabled_components",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 235988956,
+					"return_value": {
+						"type": "PackedInt64Array"
+					}
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialCapabilityConfigurationAprilTag",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialCapabilityConfigurationBaseHeader",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "AprilTagDict",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "APRIL_TAG_DICT_16H5",
+							"value": 1
+						},
+						{
+							"name": "APRIL_TAG_DICT_25H9",
+							"value": 2
+						},
+						{
+							"name": "APRIL_TAG_DICT_36H10",
+							"value": 3
+						},
+						{
+							"name": "APRIL_TAG_DICT_36H11",
+							"value": 4
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "get_enabled_components",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 235988956,
+					"return_value": {
+						"type": "PackedInt64Array"
+					}
+				},
+				{
+					"name": "set_april_dict",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3902905799,
+					"arguments": [
+						{
+							"name": "april_dict",
+							"type": "enum::OpenXRSpatialCapabilityConfigurationAprilTag.AprilTagDict"
+						}
+					]
+				},
+				{
+					"name": "get_april_dict",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 440273016,
+					"return_value": {
+						"type": "enum::OpenXRSpatialCapabilityConfigurationAprilTag.AprilTagDict"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "april_dict",
+					"setter": "set_april_dict",
+					"getter": "get_april_dict"
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialCapabilityConfigurationAruco",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialCapabilityConfigurationBaseHeader",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "ArucoDict",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ARUCO_DICT_4X4_50",
+							"value": 1
+						},
+						{
+							"name": "ARUCO_DICT_4X4_100",
+							"value": 2
+						},
+						{
+							"name": "ARUCO_DICT_4X4_250",
+							"value": 3
+						},
+						{
+							"name": "ARUCO_DICT_4X4_1000",
+							"value": 4
+						},
+						{
+							"name": "ARUCO_DICT_5X5_50",
+							"value": 5
+						},
+						{
+							"name": "ARUCO_DICT_5X5_100",
+							"value": 6
+						},
+						{
+							"name": "ARUCO_DICT_5X5_250",
+							"value": 7
+						},
+						{
+							"name": "ARUCO_DICT_5X5_1000",
+							"value": 8
+						},
+						{
+							"name": "ARUCO_DICT_6X6_50",
+							"value": 9
+						},
+						{
+							"name": "ARUCO_DICT_6X6_100",
+							"value": 10
+						},
+						{
+							"name": "ARUCO_DICT_6X6_250",
+							"value": 11
+						},
+						{
+							"name": "ARUCO_DICT_6X6_1000",
+							"value": 12
+						},
+						{
+							"name": "ARUCO_DICT_7X7_50",
+							"value": 13
+						},
+						{
+							"name": "ARUCO_DICT_7X7_100",
+							"value": 14
+						},
+						{
+							"name": "ARUCO_DICT_7X7_250",
+							"value": 15
+						},
+						{
+							"name": "ARUCO_DICT_7X7_1000",
+							"value": 16
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "get_enabled_components",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 235988956,
+					"return_value": {
+						"type": "PackedInt64Array"
+					}
+				},
+				{
+					"name": "set_aruco_dict",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2268055963,
+					"arguments": [
+						{
+							"name": "aruco_dict",
+							"type": "enum::OpenXRSpatialCapabilityConfigurationAruco.ArucoDict"
+						}
+					]
+				},
+				{
+					"name": "get_aruco_dict",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1080386209,
+					"return_value": {
+						"type": "enum::OpenXRSpatialCapabilityConfigurationAruco.ArucoDict"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "aruco_dict",
+					"setter": "set_aruco_dict",
+					"getter": "get_aruco_dict"
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialCapabilityConfigurationBaseHeader",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "_has_valid_configuration",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "_get_configuration",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					}
+				},
+				{
+					"name": "has_valid_configuration",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialCapabilityConfigurationMicroQrCode",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialCapabilityConfigurationBaseHeader",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_enabled_components",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 235988956,
+					"return_value": {
+						"type": "PackedInt64Array"
+					}
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialCapabilityConfigurationPlaneTracking",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialCapabilityConfigurationBaseHeader",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "supports_mesh_2d",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "supports_polygons",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "supports_labels",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_enabled_components",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 235988956,
+					"return_value": {
+						"type": "PackedInt64Array"
+					}
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialCapabilityConfigurationQrCode",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialCapabilityConfigurationBaseHeader",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_enabled_components",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 235988956,
+					"return_value": {
+						"type": "PackedInt64Array"
+					}
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialComponentAnchorList",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialComponentData",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_entity_pose",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1965739696,
+					"return_value": {
+						"type": "Transform3D"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialComponentBounded2DList",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialComponentData",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_center_pose",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1965739696,
+					"return_value": {
+						"type": "Transform3D"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2299179447,
+					"return_value": {
+						"type": "Vector2"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialComponentBounded3DList",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialComponentData",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_center_pose",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1965739696,
+					"return_value": {
+						"type": "Transform3D"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 711720468,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialComponentData",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "_set_capacity",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "capacity",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "_get_component_type",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					}
+				},
+				{
+					"name": "_get_structure_data",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "next",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "set_capacity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "capacity",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialComponentMarkerList",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialComponentData",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "MarkerType",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "MARKER_TYPE_UNKNOWN",
+							"value": 0
+						},
+						{
+							"name": "MARKER_TYPE_QRCODE",
+							"value": 1
+						},
+						{
+							"name": "MARKER_TYPE_MICRO_QRCODE",
+							"value": 2
+						},
+						{
+							"name": "MARKER_TYPE_ARUCO",
+							"value": 3
+						},
+						{
+							"name": "MARKER_TYPE_APRIL_TAG",
+							"value": 4
+						},
+						{
+							"name": "MARKER_TYPE_MAX",
+							"value": 5
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "get_marker_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2627847866,
+					"return_value": {
+						"type": "enum::OpenXRSpatialComponentMarkerList.MarkerType"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_marker_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_marker_data",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4069510997,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "snapshot",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialComponentMesh2DList",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialComponentData",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_transform",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1965739696,
+					"return_value": {
+						"type": "Transform3D"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_vertices",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 110850971,
+					"return_value": {
+						"type": "PackedVector2Array"
+					},
+					"arguments": [
+						{
+							"name": "snapshot",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_indices",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3393655756,
+					"return_value": {
+						"type": "PackedInt32Array"
+					},
+					"arguments": [
+						{
+							"name": "snapshot",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialComponentMesh3DList",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialComponentData",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_transform",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1965739696,
+					"return_value": {
+						"type": "Transform3D"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_mesh",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1576363275,
+					"return_value": {
+						"type": "Mesh"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialComponentParentList",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialComponentData",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_parent",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 495598643,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialComponentPersistenceList",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialComponentData",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_persistent_uuid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_persistent_state",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialComponentPlaneAlignmentList",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialComponentData",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "PlaneAlignment",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "PLANE_ALIGNMENT_HORIZONTAL_UPWARD",
+							"value": 0
+						},
+						{
+							"name": "PLANE_ALIGNMENT_HORIZONTAL_DOWNWARD",
+							"value": 1
+						},
+						{
+							"name": "PLANE_ALIGNMENT_VERTICAL",
+							"value": 2
+						},
+						{
+							"name": "PLANE_ALIGNMENT_ARBITRARY",
+							"value": 3
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "get_plane_alignment",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3340200270,
+					"return_value": {
+						"type": "enum::OpenXRSpatialComponentPlaneAlignmentList.PlaneAlignment"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialComponentPlaneSemanticLabelList",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialComponentData",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "PlaneSemanticLabel",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "PLANE_SEMANTIC_LABEL_UNCATEGORIZED",
+							"value": 1
+						},
+						{
+							"name": "PLANE_SEMANTIC_LABEL_FLOOR",
+							"value": 2
+						},
+						{
+							"name": "PLANE_SEMANTIC_LABEL_WALL",
+							"value": 3
+						},
+						{
+							"name": "PLANE_SEMANTIC_LABEL_CEILING",
+							"value": 4
+						},
+						{
+							"name": "PLANE_SEMANTIC_LABEL_TABLE",
+							"value": 5
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "get_plane_semantic_label",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1889332427,
+					"return_value": {
+						"type": "enum::OpenXRSpatialComponentPlaneSemanticLabelList.PlaneSemanticLabel"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialComponentPolygon2DList",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialComponentData",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_transform",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1965739696,
+					"return_value": {
+						"type": "Transform3D"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_vertices",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 110850971,
+					"return_value": {
+						"type": "PackedVector2Array"
+					},
+					"arguments": [
+						{
+							"name": "snapshot",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialContextPersistenceConfig",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRStructureBase",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "add_persistence_context",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "persistence_context",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "remove_persistence_context",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "persistence_context",
+							"type": "RID"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialEntityExtension",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRExtensionWrapper",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "Capability",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "CAPABILITY_PLANE_TRACKING",
+							"value": 1000741000
+						},
+						{
+							"name": "CAPABILITY_MARKER_TRACKING_QR_CODE",
+							"value": 1000743000
+						},
+						{
+							"name": "CAPABILITY_MARKER_TRACKING_MICRO_QR_CODE",
+							"value": 1000743001
+						},
+						{
+							"name": "CAPABILITY_MARKER_TRACKING_ARUCO_MARKER",
+							"value": 1000743002
+						},
+						{
+							"name": "CAPABILITY_MARKER_TRACKING_APRIL_TAG",
+							"value": 1000743003
+						},
+						{
+							"name": "CAPABILITY_ANCHOR",
+							"value": 1000762000
+						}
+					]
+				},
+				{
+					"name": "ComponentType",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "COMPONENT_TYPE_BOUNDED_2D",
+							"value": 1
+						},
+						{
+							"name": "COMPONENT_TYPE_BOUNDED_3D",
+							"value": 2
+						},
+						{
+							"name": "COMPONENT_TYPE_PARENT",
+							"value": 3
+						},
+						{
+							"name": "COMPONENT_TYPE_MESH_3D",
+							"value": 4
+						},
+						{
+							"name": "COMPONENT_TYPE_PLANE_ALIGNMENT",
+							"value": 1000741000
+						},
+						{
+							"name": "COMPONENT_TYPE_MESH_2D",
+							"value": 1000741001
+						},
+						{
+							"name": "COMPONENT_TYPE_POLYGON_2D",
+							"value": 1000741002
+						},
+						{
+							"name": "COMPONENT_TYPE_PLANE_SEMANTIC_LABEL",
+							"value": 1000741003
+						},
+						{
+							"name": "COMPONENT_TYPE_MARKER",
+							"value": 1000743000
+						},
+						{
+							"name": "COMPONENT_TYPE_ANCHOR",
+							"value": 1000762000
+						},
+						{
+							"name": "COMPONENT_TYPE_PERSISTENCE",
+							"value": 1000763000
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "supports_capability",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1940837202,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "capability",
+							"type": "enum::OpenXRSpatialEntityExtension.Capability"
+						}
+					]
+				},
+				{
+					"name": "supports_component_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 26842779,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "capability",
+							"type": "enum::OpenXRSpatialEntityExtension.Capability"
+						},
+						{
+							"name": "component_type",
+							"type": "enum::OpenXRSpatialEntityExtension.ComponentType"
+						}
+					]
+				},
+				{
+					"name": "create_spatial_context",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1874506473,
+					"return_value": {
+						"type": "OpenXRFutureResult"
+					},
+					"arguments": [
+						{
+							"name": "capability_configurations",
+							"type": "typedarray::OpenXRSpatialCapabilityConfigurationBaseHeader"
+						},
+						{
+							"name": "next",
+							"type": "OpenXRStructureBase",
+							"default_value": "null"
+						},
+						{
+							"name": "user_callback",
+							"type": "Callable",
+							"default_value": "Callable()"
+						}
+					]
+				},
+				{
+					"name": "get_spatial_context_ready",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155700596,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "spatial_context",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "free_spatial_context",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "spatial_context",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "get_spatial_context_handle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2198884583,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "spatial_context",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "discover_spatial_entities",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2252833536,
+					"return_value": {
+						"type": "OpenXRFutureResult"
+					},
+					"arguments": [
+						{
+							"name": "spatial_context",
+							"type": "RID"
+						},
+						{
+							"name": "component_types",
+							"type": "PackedInt64Array"
+						},
+						{
+							"name": "next",
+							"type": "OpenXRStructureBase",
+							"default_value": "null"
+						},
+						{
+							"name": "user_callback",
+							"type": "Callable",
+							"default_value": "Callable()"
+						}
+					]
+				},
+				{
+					"name": "update_spatial_entities",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3446086438,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "spatial_context",
+							"type": "RID"
+						},
+						{
+							"name": "entities",
+							"type": "typedarray::RID"
+						},
+						{
+							"name": "component_types",
+							"type": "PackedInt64Array"
+						},
+						{
+							"name": "next",
+							"type": "OpenXRStructureBase",
+							"default_value": "null"
+						}
+					]
+				},
+				{
+					"name": "free_spatial_snapshot",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "spatial_snapshot",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "get_spatial_snapshot_handle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2198884583,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "spatial_snapshot",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "get_spatial_snapshot_context",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3814569979,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "spatial_snapshot",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "query_snapshot",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 641015484,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "spatial_snapshot",
+							"type": "RID"
+						},
+						{
+							"name": "component_data",
+							"type": "typedarray::OpenXRSpatialComponentData"
+						},
+						{
+							"name": "next",
+							"type": "OpenXRStructureBase",
+							"default_value": "null"
+						}
+					]
+				},
+				{
+					"name": "get_string",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1464764419,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "spatial_snapshot",
+							"type": "RID"
+						},
+						{
+							"name": "buffer_id",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "get_uint8_buffer",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3570600051,
+					"return_value": {
+						"type": "PackedByteArray"
+					},
+					"arguments": [
+						{
+							"name": "spatial_snapshot",
+							"type": "RID"
+						},
+						{
+							"name": "buffer_id",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "get_uint16_buffer",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3393655756,
+					"return_value": {
+						"type": "PackedInt32Array"
+					},
+					"arguments": [
+						{
+							"name": "spatial_snapshot",
+							"type": "RID"
+						},
+						{
+							"name": "buffer_id",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "get_uint32_buffer",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3393655756,
+					"return_value": {
+						"type": "PackedInt32Array"
+					},
+					"arguments": [
+						{
+							"name": "spatial_snapshot",
+							"type": "RID"
+						},
+						{
+							"name": "buffer_id",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "get_float_buffer",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2313216651,
+					"return_value": {
+						"type": "PackedFloat32Array"
+					},
+					"arguments": [
+						{
+							"name": "spatial_snapshot",
+							"type": "RID"
+						},
+						{
+							"name": "buffer_id",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "get_vector2_buffer",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 110850971,
+					"return_value": {
+						"type": "PackedVector2Array"
+					},
+					"arguments": [
+						{
+							"name": "spatial_snapshot",
+							"type": "RID"
+						},
+						{
+							"name": "buffer_id",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "get_vector3_buffer",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1166453791,
+					"return_value": {
+						"type": "PackedVector3Array"
+					},
+					"arguments": [
+						{
+							"name": "spatial_snapshot",
+							"type": "RID"
+						},
+						{
+							"name": "buffer_id",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "find_spatial_entity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 937000113,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "entity_id",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "add_spatial_entity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2256026069,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "spatial_context",
+							"type": "RID"
+						},
+						{
+							"name": "entity_id",
+							"type": "int",
+							"meta": "uint64"
+						},
+						{
+							"name": "entity",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "make_spatial_entity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2233757277,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "spatial_context",
+							"type": "RID"
+						},
+						{
+							"name": "entity_id",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "get_spatial_entity_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2198884583,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "entity",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "get_spatial_entity_context",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3814569979,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "entity",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "free_spatial_entity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "entity",
+							"type": "RID"
+						}
+					]
+				}
+			],
+			"signals": [
+				{
+					"name": "spatial_discovery_recommended",
+					"arguments": [
+						{
+							"name": "spatial_context",
+							"type": "RID"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialEntityTracker",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "XRPositionalTracker",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "EntityTrackingState",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ENTITY_TRACKING_STATE_STOPPED",
+							"value": 1
+						},
+						{
+							"name": "ENTITY_TRACKING_STATE_PAUSED",
+							"value": 2
+						},
+						{
+							"name": "ENTITY_TRACKING_STATE_TRACKING",
+							"value": 3
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_entity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "entity",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "get_entity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "set_spatial_tracking_state",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2170234447,
+					"arguments": [
+						{
+							"name": "spatial_tracking_state",
+							"type": "enum::OpenXRSpatialEntityTracker.EntityTrackingState"
+						}
+					]
+				},
+				{
+					"name": "get_spatial_tracking_state",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3351876560,
+					"return_value": {
+						"type": "enum::OpenXRSpatialEntityTracker.EntityTrackingState"
+					}
+				}
+			],
+			"signals": [
+				{
+					"name": "spatial_tracking_state_changed",
+					"arguments": [
+						{
+							"name": "spatial_tracking_state",
+							"type": "int"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "RID",
+					"name": "entity",
+					"setter": "set_entity",
+					"getter": "get_entity"
+				},
+				{
+					"type": "int",
+					"name": "spatial_tracking_state",
+					"setter": "set_spatial_tracking_state",
+					"getter": "get_spatial_tracking_state"
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialMarkerTrackingCapability",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRExtensionWrapper",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "is_qrcode_supported",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_micro_qrcode_supported",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_aruco_supported",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_april_tag_supported",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialPlaneTrackingCapability",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRExtensionWrapper",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "is_supported",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialQueryResultData",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRSpatialComponentData",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_capacity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					}
+				},
+				{
+					"name": "get_entity_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_entity_state",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1411962015,
+					"return_value": {
+						"type": "enum::OpenXRSpatialEntityTracker.EntityTrackingState"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRStructureBase",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "_get_header",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3744713108,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "next",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
+				},
+				{
+					"name": "get_structure_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					}
+				},
+				{
+					"name": "set_next",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 334698771,
+					"arguments": [
+						{
+							"name": "entity",
+							"type": "OpenXRStructureBase"
+						}
+					]
+				},
+				{
+					"name": "get_next",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2798796760,
+					"return_value": {
+						"type": "OpenXRStructureBase"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "OpenXRStructureBase",
+					"name": "next",
+					"setter": "set_next",
+					"getter": "get_next"
 				}
 			]
 		},
