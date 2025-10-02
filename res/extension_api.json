@@ -145924,7 +145924,7 @@
 			"name": "FileSystemDock",
 			"is_refcounted": false,
 			"is_instantiable": false,
-			"inherits": "VBoxContainer",
+			"inherits": "EditorDock",
 			"api_type": "editor",
 			"methods": [
 				{
@@ -151564,6 +151564,304 @@
 			]
 		},
 		{
+			"name": "EditorDock",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "MarginContainer",
+			"api_type": "editor",
+			"enums": [
+				{
+					"name": "DockLayout",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "DOCK_LAYOUT_VERTICAL",
+							"value": 1
+						},
+						{
+							"name": "DOCK_LAYOUT_HORIZONTAL",
+							"value": 2
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "_update_layout",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "layout",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "_save_layout_to_config",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3076455711,
+					"arguments": [
+						{
+							"name": "config",
+							"type": "ConfigFile"
+						},
+						{
+							"name": "section",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "_load_layout_from_config",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2838822993,
+					"arguments": [
+						{
+							"name": "config",
+							"type": "ConfigFile"
+						},
+						{
+							"name": "section",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "set_title",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "title",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_title",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_layout_key",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "layout_key",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_layout_key",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_icon_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "icon_name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_icon_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_dock_icon",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "icon",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_dock_icon",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
+				},
+				{
+					"name": "set_dock_shortcut",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 857163497,
+					"arguments": [
+						{
+							"name": "shortcut",
+							"type": "Shortcut"
+						}
+					]
+				},
+				{
+					"name": "get_dock_shortcut",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3415666916,
+					"return_value": {
+						"type": "Shortcut"
+					}
+				},
+				{
+					"name": "set_default_slot",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 543848026,
+					"arguments": [
+						{
+							"name": "slot",
+							"type": "enum::EditorPlugin.DockSlot"
+						}
+					]
+				},
+				{
+					"name": "get_default_slot",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4189888328,
+					"return_value": {
+						"type": "enum::EditorPlugin.DockSlot"
+					}
+				},
+				{
+					"name": "set_available_layouts",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3440531249,
+					"arguments": [
+						{
+							"name": "layouts",
+							"type": "bitfield::EditorDock.DockLayout"
+						}
+					]
+				},
+				{
+					"name": "get_available_layouts",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 495015512,
+					"return_value": {
+						"type": "bitfield::EditorDock.DockLayout"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "title",
+					"setter": "set_title",
+					"getter": "get_title"
+				},
+				{
+					"type": "String",
+					"name": "layout_key",
+					"setter": "set_layout_key",
+					"getter": "get_layout_key"
+				},
+				{
+					"type": "StringName",
+					"name": "icon_name",
+					"setter": "set_icon_name",
+					"getter": "get_icon_name"
+				},
+				{
+					"type": "Texture2D",
+					"name": "dock_icon",
+					"setter": "set_dock_icon",
+					"getter": "get_dock_icon"
+				},
+				{
+					"type": "ShortCut",
+					"name": "dock_shortcut",
+					"setter": "set_dock_shortcut",
+					"getter": "get_dock_shortcut"
+				},
+				{
+					"type": "int",
+					"name": "default_slot",
+					"setter": "set_default_slot",
+					"getter": "get_default_slot"
+				},
+				{
+					"type": "int",
+					"name": "available_layouts",
+					"setter": "set_available_layouts",
+					"getter": "get_available_layouts"
+				}
+			]
+		},
+		{
 			"name": "EditorScript",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -151682,6 +151980,10 @@
 					"name": "DockSlot",
 					"is_bitfield": false,
 					"values": [
+						{
+							"name": "DOCK_SLOT_NONE",
+							"value": -1
+						},
 						{
 							"name": "DOCK_SLOT_LEFT_UL",
 							"value": 0
@@ -152070,6 +152372,34 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "add_dock",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 158651717,
+					"arguments": [
+						{
+							"name": "dock",
+							"type": "EditorDock"
+						}
+					]
+				},
+				{
+					"name": "remove_dock",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 158651717,
+					"arguments": [
+						{
+							"name": "dock",
+							"type": "EditorDock"
+						}
+					]
+				},
+				{
 					"name": "add_control_to_container",
 					"is_const": false,
 					"is_vararg": false,
@@ -152117,46 +152447,6 @@
 					]
 				},
 				{
-					"name": "add_control_to_dock",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2994930786,
-					"hash_compatibility": [
-						3354871258
-					],
-					"arguments": [
-						{
-							"name": "slot",
-							"type": "enum::EditorPlugin.DockSlot"
-						},
-						{
-							"name": "control",
-							"type": "Control"
-						},
-						{
-							"name": "shortcut",
-							"type": "Shortcut",
-							"default_value": "null"
-						}
-					]
-				},
-				{
-					"name": "remove_control_from_docks",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1496901182,
-					"arguments": [
-						{
-							"name": "control",
-							"type": "Control"
-						}
-					]
-				},
-				{
 					"name": "remove_control_from_bottom_panel",
 					"is_const": false,
 					"is_vararg": false,
@@ -152185,24 +152475,6 @@
 						{
 							"name": "control",
 							"type": "Control"
-						}
-					]
-				},
-				{
-					"name": "set_dock_tab_icon",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3450529724,
-					"arguments": [
-						{
-							"name": "control",
-							"type": "Control"
-						},
-						{
-							"name": "icon",
-							"type": "Texture2D"
 						}
 					]
 				},
@@ -152304,6 +152576,64 @@
 						{
 							"name": "type",
 							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "add_control_to_dock",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2994930786,
+					"hash_compatibility": [
+						3354871258
+					],
+					"arguments": [
+						{
+							"name": "slot",
+							"type": "enum::EditorPlugin.DockSlot"
+						},
+						{
+							"name": "control",
+							"type": "Control"
+						},
+						{
+							"name": "shortcut",
+							"type": "Shortcut",
+							"default_value": "null"
+						}
+					]
+				},
+				{
+					"name": "remove_control_from_docks",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1496901182,
+					"arguments": [
+						{
+							"name": "control",
+							"type": "Control"
+						}
+					]
+				},
+				{
+					"name": "set_dock_tab_icon",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3450529724,
+					"arguments": [
+						{
+							"name": "control",
+							"type": "Control"
+						},
+						{
+							"name": "icon",
+							"type": "Texture2D"
 						}
 					]
 				},
@@ -290097,6 +290427,34 @@
 					}
 				},
 				{
+					"name": "set_get_icon_callback",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1611583062,
+					"arguments": [
+						{
+							"name": "callback",
+							"type": "Callable"
+						}
+					]
+				},
+				{
+					"name": "set_get_thumbnail_callback",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1611583062,
+					"arguments": [
+						{
+							"name": "callback",
+							"type": "Callable"
+						}
+					]
+				},
+				{
 					"name": "invalidate",
 					"is_const": false,
 					"is_vararg": false,
@@ -293184,6 +293542,20 @@
 					}
 				},
 				{
+					"name": "add_root_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1078189570,
+					"arguments": [
+						{
+							"name": "node",
+							"type": "Node"
+						}
+					]
+				},
+				{
 					"name": "save_scene",
 					"is_const": false,
 					"is_vararg": false,
@@ -293355,7 +293727,7 @@
 					"name": "_get_importer_name",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 201670096,
@@ -293367,7 +293739,7 @@
 					"name": "_get_visible_name",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 201670096,
@@ -293392,7 +293764,7 @@
 					"name": "_get_preset_name",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 844755477,
@@ -293411,7 +293783,7 @@
 					"name": "_get_recognized_extensions",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 1139954409,
@@ -293423,7 +293795,7 @@
 					"name": "_get_import_options",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 520498173,
@@ -293446,7 +293818,7 @@
 					"name": "_get_save_extension",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 201670096,
@@ -293458,7 +293830,7 @@
 					"name": "_get_resource_type",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 201670096,
@@ -293535,7 +293907,7 @@
 					"name": "_import",
 					"is_const": true,
 					"is_static": false,
-					"is_required": false,
+					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 4108152118,
