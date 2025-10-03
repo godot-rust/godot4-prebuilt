@@ -289794,6 +289794,10 @@
 						{
 							"name": "CUSTOMIZATION_LAYOUT",
 							"value": 6
+						},
+						{
+							"name": "CUSTOMIZATION_OVERWRITE_WARNING",
+							"value": 7
 						}
 					]
 				}
@@ -290610,6 +290614,13 @@
 					"setter": "set_customization_flag_enabled",
 					"getter": "is_customization_flag_enabled",
 					"index": 6
+				},
+				{
+					"type": "bool",
+					"name": "overwrite_warning_enabled",
+					"setter": "set_customization_flag_enabled",
+					"getter": "is_customization_flag_enabled",
+					"index": 7
 				},
 				{
 					"type": "String",
