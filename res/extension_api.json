@@ -208356,6 +208356,43 @@
 					]
 				},
 				{
+					"name": "set_column_title_tooltip_text",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "tooltip_text",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_column_title_tooltip_text",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "set_column_title_alignment",
 					"is_const": false,
 					"is_vararg": false,
