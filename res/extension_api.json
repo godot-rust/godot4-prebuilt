@@ -315037,16 +315037,30 @@
 					}
 				},
 				{
+					"name": "is_animation_active",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_current_animation",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 83702148,
+					"hash": 3304788590,
+					"hash_compatibility": [
+						83702148
+					],
 					"arguments": [
 						{
 							"name": "animation",
-							"type": "String"
+							"type": "StringName"
 						}
 					]
 				},
@@ -315056,9 +315070,12 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 201670096,
+					"hash": 2002593661,
+					"hash_compatibility": [
+						201670096
+					],
 					"return_value": {
-						"type": "String"
+						"type": "StringName"
 					}
 				},
 				{
@@ -315067,11 +315084,14 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 83702148,
+					"hash": 3304788590,
+					"hash_compatibility": [
+						83702148
+					],
 					"arguments": [
 						{
 							"name": "animation",
-							"type": "String"
+							"type": "StringName"
 						}
 					]
 				},
@@ -315081,9 +315101,12 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 201670096,
+					"hash": 2002593661,
+					"hash_compatibility": [
+						201670096
+					],
 					"return_value": {
-						"type": "String"
+						"type": "StringName"
 					}
 				},
 				{
@@ -315106,9 +315129,12 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2981934095,
+					"hash": 2915620761,
+					"hash_compatibility": [
+						2981934095
+					],
 					"return_value": {
-						"type": "PackedStringArray"
+						"type": "typedarray::StringName"
 					}
 				},
 				{
@@ -315164,11 +315190,14 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 83702148,
+					"hash": 3304788590,
+					"hash_compatibility": [
+						83702148
+					],
 					"arguments": [
 						{
 							"name": "name",
-							"type": "String"
+							"type": "StringName"
 						}
 					]
 				},
@@ -315178,9 +315207,12 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 201670096,
+					"hash": 2002593661,
+					"hash_compatibility": [
+						201670096
+					],
 					"return_value": {
-						"type": "String"
+						"type": "StringName"
 					}
 				},
 				{
@@ -315427,7 +315459,7 @@
 					"arguments": [
 						{
 							"name": "name",
-							"type": "String"
+							"type": "StringName"
 						}
 					]
 				},
@@ -336458,26 +336490,6 @@
 			]
 		},
 		{
-			"name": "WeakRef",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "RefCounted",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "get_ref",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1214101251,
-					"return_value": {
-						"type": "Variant"
-					}
-				}
-			]
-		},
-		{
 			"name": "ScriptLanguageExtension",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -338739,381 +338751,6 @@
 			]
 		},
 		{
-			"name": "Resource",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "RefCounted",
-			"api_type": "core",
-			"enums": [
-				{
-					"name": "DeepDuplicateMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "DEEP_DUPLICATE_NONE",
-							"value": 0
-						},
-						{
-							"name": "DEEP_DUPLICATE_INTERNAL",
-							"value": 1
-						},
-						{
-							"name": "DEEP_DUPLICATE_ALL",
-							"value": 2
-						}
-					]
-				}
-			],
-			"methods": [
-				{
-					"name": "_setup_local_to_scene",
-					"is_const": false,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 3218959716
-				},
-				{
-					"name": "_get_rid",
-					"is_const": true,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 2944877500,
-					"return_value": {
-						"type": "RID"
-					}
-				},
-				{
-					"name": "_reset_state",
-					"is_const": false,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 3218959716
-				},
-				{
-					"name": "_set_path_cache",
-					"is_const": true,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 3089850668,
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "set_path",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "take_over_path",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_path",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "set_path_cache",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "set_name",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "name",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_name",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "get_rid",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2944877500,
-					"return_value": {
-						"type": "RID"
-					}
-				},
-				{
-					"name": "set_local_to_scene",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_local_to_scene",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "get_local_scene",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3160264692,
-					"return_value": {
-						"type": "Node"
-					}
-				},
-				{
-					"name": "setup_local_to_scene",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "reset_state",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "set_id_for_path",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3186203200,
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						},
-						{
-							"name": "id",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_id_for_path",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3135753539,
-					"return_value": {
-						"type": "String"
-					},
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "is_built_in",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "generate_scene_unique_id",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 2841200299,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "set_scene_unique_id",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "id",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_scene_unique_id",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "emit_changed",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "duplicate",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 482882304,
-					"return_value": {
-						"type": "Resource"
-					},
-					"arguments": [
-						{
-							"name": "deep",
-							"type": "bool",
-							"default_value": "false"
-						}
-					]
-				},
-				{
-					"name": "duplicate_deep",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 905779109,
-					"return_value": {
-						"type": "Resource"
-					},
-					"arguments": [
-						{
-							"name": "deep_subresources_mode",
-							"type": "enum::Resource.DeepDuplicateMode",
-							"default_value": "1"
-						}
-					]
-				}
-			],
-			"signals": [
-				{
-					"name": "changed"
-				},
-				{
-					"name": "setup_local_to_scene_requested"
-				}
-			],
-			"properties": [
-				{
-					"type": "bool",
-					"name": "resource_local_to_scene",
-					"setter": "set_local_to_scene",
-					"getter": "is_local_to_scene"
-				},
-				{
-					"type": "String",
-					"name": "resource_path",
-					"setter": "set_path",
-					"getter": "get_path"
-				},
-				{
-					"type": "String",
-					"name": "resource_name",
-					"setter": "set_name",
-					"getter": "get_name"
-				},
-				{
-					"type": "String",
-					"name": "resource_scene_unique_id",
-					"setter": "set_scene_unique_id",
-					"getter": "get_scene_unique_id"
-				}
-			]
-		},
-		{
 			"name": "ResourceFormatSaver",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -339482,60 +339119,6 @@
 							"meta": "int32"
 						}
 					]
-				}
-			]
-		},
-		{
-			"name": "RefCounted",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Object",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "init_ref",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2240911060,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "reference",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2240911060,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "unreference",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2240911060,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "get_reference_count",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
 				}
 			]
 		},
@@ -340003,6 +339586,455 @@
 					"return_value": {
 						"type": "int",
 						"meta": "uint64"
+					}
+				}
+			]
+		},
+		{
+			"name": "Resource",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "DeepDuplicateMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "DEEP_DUPLICATE_NONE",
+							"value": 0
+						},
+						{
+							"name": "DEEP_DUPLICATE_INTERNAL",
+							"value": 1
+						},
+						{
+							"name": "DEEP_DUPLICATE_ALL",
+							"value": 2
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "_setup_local_to_scene",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3218959716
+				},
+				{
+					"name": "_get_rid",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "_reset_state",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3218959716
+				},
+				{
+					"name": "_set_path_cache",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3089850668,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "set_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "take_over_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_path",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_path_cache",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "set_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "get_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "set_local_to_scene",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_local_to_scene",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_local_scene",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3160264692,
+					"return_value": {
+						"type": "Node"
+					}
+				},
+				{
+					"name": "setup_local_to_scene",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "reset_state",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "set_id_for_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3186203200,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						},
+						{
+							"name": "id",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_id_for_path",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3135753539,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "is_built_in",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "generate_scene_unique_id",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2841200299,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_scene_unique_id",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_scene_unique_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "emit_changed",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "duplicate",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 482882304,
+					"return_value": {
+						"type": "Resource"
+					},
+					"arguments": [
+						{
+							"name": "deep",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "duplicate_deep",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 905779109,
+					"return_value": {
+						"type": "Resource"
+					},
+					"arguments": [
+						{
+							"name": "deep_subresources_mode",
+							"type": "enum::Resource.DeepDuplicateMode",
+							"default_value": "1"
+						}
+					]
+				}
+			],
+			"signals": [
+				{
+					"name": "changed"
+				},
+				{
+					"name": "setup_local_to_scene_requested"
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "resource_local_to_scene",
+					"setter": "set_local_to_scene",
+					"getter": "is_local_to_scene"
+				},
+				{
+					"type": "String",
+					"name": "resource_path",
+					"setter": "set_path",
+					"getter": "get_path"
+				},
+				{
+					"type": "String",
+					"name": "resource_name",
+					"setter": "set_name",
+					"getter": "get_name"
+				},
+				{
+					"type": "String",
+					"name": "resource_scene_unique_id",
+					"setter": "set_scene_unique_id",
+					"getter": "get_scene_unique_id"
+				}
+			]
+		},
+		{
+			"name": "WeakRef",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_ref",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1214101251,
+					"return_value": {
+						"type": "Variant"
+					}
+				}
+			]
+		},
+		{
+			"name": "RefCounted",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Object",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "init_ref",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "reference",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "unreference",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_reference_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
 					}
 				}
 			]
