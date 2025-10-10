@@ -25786,6 +25786,285 @@
 	],
 	"classes": [
 		{
+			"name": "AnimationNodeAnimation",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "AnimationRootNode",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "PlayMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "PLAY_MODE_FORWARD",
+							"value": 0
+						},
+						{
+							"name": "PLAY_MODE_BACKWARD",
+							"value": 1
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_animation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_animation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_play_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3347718873,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::AnimationNodeAnimation.PlayMode"
+						}
+					]
+				},
+				{
+					"name": "get_play_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2061244637,
+					"return_value": {
+						"type": "enum::AnimationNodeAnimation.PlayMode"
+					}
+				},
+				{
+					"name": "set_advance_on_start",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "advance_on_start",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_advance_on_start",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_use_custom_timeline",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use_custom_timeline",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_custom_timeline",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_timeline_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "timeline_length",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_timeline_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_stretch_time_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "stretch_time_scale",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_stretching_time_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_start_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "start_offset",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_start_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_loop_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3155355575,
+					"arguments": [
+						{
+							"name": "loop_mode",
+							"type": "enum::Animation.LoopMode"
+						}
+					]
+				},
+				{
+					"name": "get_loop_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1988889481,
+					"return_value": {
+						"type": "enum::Animation.LoopMode"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "StringName",
+					"name": "animation",
+					"setter": "set_animation",
+					"getter": "get_animation"
+				},
+				{
+					"type": "int",
+					"name": "play_mode",
+					"setter": "set_play_mode",
+					"getter": "get_play_mode"
+				},
+				{
+					"type": "bool",
+					"name": "advance_on_start",
+					"setter": "set_advance_on_start",
+					"getter": "is_advance_on_start"
+				},
+				{
+					"type": "bool",
+					"name": "use_custom_timeline",
+					"setter": "set_use_custom_timeline",
+					"getter": "is_using_custom_timeline"
+				},
+				{
+					"type": "float",
+					"name": "timeline_length",
+					"setter": "set_timeline_length",
+					"getter": "get_timeline_length"
+				},
+				{
+					"type": "bool",
+					"name": "stretch_time_scale",
+					"setter": "set_stretch_time_scale",
+					"getter": "is_stretching_time_scale"
+				},
+				{
+					"type": "float",
+					"name": "start_offset",
+					"setter": "set_start_offset",
+					"getter": "get_start_offset"
+				},
+				{
+					"type": "int",
+					"name": "loop_mode",
+					"setter": "set_loop_mode",
+					"getter": "get_loop_mode"
+				}
+			]
+		},
+		{
 			"name": "AnimationNodeOneShot",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -39686,83 +39965,6 @@
 			]
 		},
 		{
-			"name": "Container",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "Control",
-			"api_type": "core",
-			"constants": [
-				{
-					"name": "NOTIFICATION_PRE_SORT_CHILDREN",
-					"value": 50
-				},
-				{
-					"name": "NOTIFICATION_SORT_CHILDREN",
-					"value": 51
-				}
-			],
-			"methods": [
-				{
-					"name": "_get_allowed_size_flags_horizontal",
-					"is_const": true,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 1930428628,
-					"return_value": {
-						"type": "PackedInt32Array"
-					}
-				},
-				{
-					"name": "_get_allowed_size_flags_vertical",
-					"is_const": true,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 1930428628,
-					"return_value": {
-						"type": "PackedInt32Array"
-					}
-				},
-				{
-					"name": "queue_sort",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "fit_child_in_rect",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1993438598,
-					"arguments": [
-						{
-							"name": "child",
-							"type": "Control"
-						},
-						{
-							"name": "rect",
-							"type": "Rect2"
-						}
-					]
-				}
-			],
-			"signals": [
-				{
-					"name": "pre_sort_children"
-				},
-				{
-					"name": "sort_children"
-				}
-			]
-		},
-		{
 			"name": "ReferenceRect",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -40395,6 +40597,83 @@
 					"name": "flip_v",
 					"setter": "set_flip_v",
 					"getter": "is_flipped_v"
+				}
+			]
+		},
+		{
+			"name": "Container",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Control",
+			"api_type": "core",
+			"constants": [
+				{
+					"name": "NOTIFICATION_PRE_SORT_CHILDREN",
+					"value": 50
+				},
+				{
+					"name": "NOTIFICATION_SORT_CHILDREN",
+					"value": 51
+				}
+			],
+			"methods": [
+				{
+					"name": "_get_allowed_size_flags_horizontal",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1930428628,
+					"return_value": {
+						"type": "PackedInt32Array"
+					}
+				},
+				{
+					"name": "_get_allowed_size_flags_vertical",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1930428628,
+					"return_value": {
+						"type": "PackedInt32Array"
+					}
+				},
+				{
+					"name": "queue_sort",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "fit_child_in_rect",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1993438598,
+					"arguments": [
+						{
+							"name": "child",
+							"type": "Control"
+						},
+						{
+							"name": "rect",
+							"type": "Rect2"
+						}
+					]
+				}
+			],
+			"signals": [
+				{
+					"name": "pre_sort_children"
+				},
+				{
+					"name": "sort_children"
 				}
 			]
 		},
@@ -43408,6 +43687,81 @@
 			]
 		},
 		{
+			"name": "ButtonGroup",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_pressed_button",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3886434893,
+					"return_value": {
+						"type": "BaseButton"
+					}
+				},
+				{
+					"name": "get_buttons",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2915620761,
+					"return_value": {
+						"type": "typedarray::BaseButton"
+					}
+				},
+				{
+					"name": "set_allow_unpress",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_allow_unpress",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"signals": [
+				{
+					"name": "pressed",
+					"arguments": [
+						{
+							"name": "button",
+							"type": "BaseButton"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "allow_unpress",
+					"setter": "set_allow_unpress",
+					"getter": "is_allow_unpress"
+				}
+			]
+		},
+		{
 			"name": "BaseButton",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -43847,81 +44201,6 @@
 					"name": "shortcut_in_tooltip",
 					"setter": "set_shortcut_in_tooltip",
 					"getter": "is_shortcut_in_tooltip_enabled"
-				}
-			]
-		},
-		{
-			"name": "ButtonGroup",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "get_pressed_button",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3886434893,
-					"return_value": {
-						"type": "BaseButton"
-					}
-				},
-				{
-					"name": "get_buttons",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2915620761,
-					"return_value": {
-						"type": "typedarray::BaseButton"
-					}
-				},
-				{
-					"name": "set_allow_unpress",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enabled",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_allow_unpress",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2240911060,
-					"return_value": {
-						"type": "bool"
-					}
-				}
-			],
-			"signals": [
-				{
-					"name": "pressed",
-					"arguments": [
-						{
-							"name": "button",
-							"type": "BaseButton"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "bool",
-					"name": "allow_unpress",
-					"setter": "set_allow_unpress",
-					"getter": "is_allow_unpress"
 				}
 			]
 		},
@@ -45500,601 +45779,6 @@
 			]
 		},
 		{
-			"name": "CanvasModulate",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "Node2D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_color",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2920490490,
-					"arguments": [
-						{
-							"name": "color",
-							"type": "Color"
-						}
-					]
-				},
-				{
-					"name": "get_color",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3444240500,
-					"return_value": {
-						"type": "Color"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "Color",
-					"name": "color",
-					"setter": "set_color",
-					"getter": "get_color"
-				}
-			]
-		},
-		{
-			"name": "Node2D",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "CanvasItem",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_position",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "position",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "set_rotation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "radians",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "set_rotation_degrees",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "degrees",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "set_skew",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "radians",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "set_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "scale",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_position",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
-					"name": "get_rotation",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "get_rotation_degrees",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "get_skew",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "get_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
-					"name": "rotate",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "radians",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "move_local_x",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2087892650,
-					"arguments": [
-						{
-							"name": "delta",
-							"type": "float",
-							"meta": "float"
-						},
-						{
-							"name": "scaled",
-							"type": "bool",
-							"default_value": "false"
-						}
-					]
-				},
-				{
-					"name": "move_local_y",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2087892650,
-					"arguments": [
-						{
-							"name": "delta",
-							"type": "float",
-							"meta": "float"
-						},
-						{
-							"name": "scaled",
-							"type": "bool",
-							"default_value": "false"
-						}
-					]
-				},
-				{
-					"name": "translate",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "offset",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "global_translate",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "offset",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "apply_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "ratio",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "set_global_position",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "position",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_global_position",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
-					"name": "set_global_rotation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "radians",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "set_global_rotation_degrees",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "degrees",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_global_rotation",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "get_global_rotation_degrees",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_global_skew",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "radians",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_global_skew",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_global_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "scale",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_global_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
-					"name": "set_transform",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2761652528,
-					"arguments": [
-						{
-							"name": "xform",
-							"type": "Transform2D"
-						}
-					]
-				},
-				{
-					"name": "set_global_transform",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2761652528,
-					"arguments": [
-						{
-							"name": "xform",
-							"type": "Transform2D"
-						}
-					]
-				},
-				{
-					"name": "look_at",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "point",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_angle_to",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2276447920,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					},
-					"arguments": [
-						{
-							"name": "point",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "to_local",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2656412154,
-					"return_value": {
-						"type": "Vector2"
-					},
-					"arguments": [
-						{
-							"name": "global_point",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "to_global",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2656412154,
-					"return_value": {
-						"type": "Vector2"
-					},
-					"arguments": [
-						{
-							"name": "local_point",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_relative_transform_to_parent",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 904556875,
-					"return_value": {
-						"type": "Transform2D"
-					},
-					"arguments": [
-						{
-							"name": "parent",
-							"type": "Node"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "Vector2",
-					"name": "position",
-					"setter": "set_position",
-					"getter": "get_position"
-				},
-				{
-					"type": "float",
-					"name": "rotation",
-					"setter": "set_rotation",
-					"getter": "get_rotation"
-				},
-				{
-					"type": "float",
-					"name": "rotation_degrees",
-					"setter": "set_rotation_degrees",
-					"getter": "get_rotation_degrees"
-				},
-				{
-					"type": "Vector2",
-					"name": "scale",
-					"setter": "set_scale",
-					"getter": "get_scale"
-				},
-				{
-					"type": "float",
-					"name": "skew",
-					"setter": "set_skew",
-					"getter": "get_skew"
-				},
-				{
-					"type": "Transform2D",
-					"name": "transform",
-					"setter": "set_transform",
-					"getter": "get_transform"
-				},
-				{
-					"type": "Vector2",
-					"name": "global_position",
-					"setter": "set_global_position",
-					"getter": "get_global_position"
-				},
-				{
-					"type": "float",
-					"name": "global_rotation",
-					"setter": "set_global_rotation",
-					"getter": "get_global_rotation"
-				},
-				{
-					"type": "float",
-					"name": "global_rotation_degrees",
-					"setter": "set_global_rotation_degrees",
-					"getter": "get_global_rotation_degrees"
-				},
-				{
-					"type": "Vector2",
-					"name": "global_scale",
-					"setter": "set_global_scale",
-					"getter": "get_global_scale"
-				},
-				{
-					"type": "float",
-					"name": "global_skew",
-					"setter": "set_global_skew",
-					"getter": "get_global_skew"
-				},
-				{
-					"type": "Transform2D",
-					"name": "global_transform",
-					"setter": "set_global_transform",
-					"getter": "get_global_transform"
-				}
-			]
-		},
-		{
 			"name": "CanvasLayer",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -47523,13 +47207,6 @@
 			]
 		},
 		{
-			"name": "Texture",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core"
-		},
-		{
 			"name": "SubViewport",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -47738,6 +47415,249 @@
 					"name": "render_target_update_mode",
 					"setter": "set_update_mode",
 					"getter": "get_update_mode"
+				}
+			]
+		},
+		{
+			"name": "World2D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_canvas",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "get_navigation_map",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "get_space",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "get_direct_space_state",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2506717822,
+					"return_value": {
+						"type": "PhysicsDirectSpaceState2D"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "RID",
+					"name": "canvas",
+					"getter": "get_canvas"
+				},
+				{
+					"type": "RID",
+					"name": "navigation_map",
+					"getter": "get_navigation_map"
+				},
+				{
+					"type": "RID",
+					"name": "space",
+					"getter": "get_space"
+				},
+				{
+					"type": "PhysicsDirectSpaceState2D",
+					"name": "direct_space_state",
+					"getter": "get_direct_space_state"
+				}
+			]
+		},
+		{
+			"name": "World3D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_space",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "get_navigation_map",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "get_scenario",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "set_environment",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4143518816,
+					"arguments": [
+						{
+							"name": "env",
+							"type": "Environment"
+						}
+					]
+				},
+				{
+					"name": "get_environment",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3082064660,
+					"return_value": {
+						"type": "Environment"
+					}
+				},
+				{
+					"name": "set_fallback_environment",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4143518816,
+					"arguments": [
+						{
+							"name": "env",
+							"type": "Environment"
+						}
+					]
+				},
+				{
+					"name": "get_fallback_environment",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3082064660,
+					"return_value": {
+						"type": "Environment"
+					}
+				},
+				{
+					"name": "set_camera_attributes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2817810567,
+					"arguments": [
+						{
+							"name": "attributes",
+							"type": "CameraAttributes"
+						}
+					]
+				},
+				{
+					"name": "get_camera_attributes",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3921283215,
+					"return_value": {
+						"type": "CameraAttributes"
+					}
+				},
+				{
+					"name": "get_direct_space_state",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2069328350,
+					"return_value": {
+						"type": "PhysicsDirectSpaceState3D"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "Environment",
+					"name": "environment",
+					"setter": "set_environment",
+					"getter": "get_environment"
+				},
+				{
+					"type": "Environment",
+					"name": "fallback_environment",
+					"setter": "set_fallback_environment",
+					"getter": "get_fallback_environment"
+				},
+				{
+					"type": "CameraAttributesPractical,CameraAttributesPhysical",
+					"name": "camera_attributes",
+					"setter": "set_camera_attributes",
+					"getter": "get_camera_attributes"
+				},
+				{
+					"type": "RID",
+					"name": "space",
+					"getter": "get_space"
+				},
+				{
+					"type": "RID",
+					"name": "navigation_map",
+					"getter": "get_navigation_map"
+				},
+				{
+					"type": "RID",
+					"name": "scenario",
+					"getter": "get_scenario"
+				},
+				{
+					"type": "PhysicsDirectSpaceState3D",
+					"name": "direct_space_state",
+					"getter": "get_direct_space_state"
 				}
 			]
 		},
@@ -56322,6 +56242,48 @@
 					"name": "editor_draw_drag_margin",
 					"setter": "set_margin_drawing_enabled",
 					"getter": "is_margin_drawing_enabled"
+				}
+			]
+		},
+		{
+			"name": "CanvasModulate",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Node2D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2920490490,
+					"arguments": [
+						{
+							"name": "color",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "get_color",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3444240500,
+					"return_value": {
+						"type": "Color"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "Color",
+					"name": "color",
+					"setter": "set_color",
+					"getter": "get_color"
 				}
 			]
 		},
@@ -65578,6 +65540,559 @@
 			]
 		},
 		{
+			"name": "Node2D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "CanvasItem",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_position",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "position",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "set_rotation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radians",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "set_rotation_degrees",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "degrees",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "set_skew",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radians",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "set_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "scale",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "get_rotation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_rotation_degrees",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_skew",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "rotate",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radians",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "move_local_x",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2087892650,
+					"arguments": [
+						{
+							"name": "delta",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "scaled",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "move_local_y",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2087892650,
+					"arguments": [
+						{
+							"name": "delta",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "scaled",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "translate",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "global_translate",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "apply_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "ratio",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "set_global_position",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "position",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_global_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_global_rotation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radians",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "set_global_rotation_degrees",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "degrees",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_global_rotation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_global_rotation_degrees",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_global_skew",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radians",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_global_skew",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_global_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "scale",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_global_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_transform",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2761652528,
+					"arguments": [
+						{
+							"name": "xform",
+							"type": "Transform2D"
+						}
+					]
+				},
+				{
+					"name": "set_global_transform",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2761652528,
+					"arguments": [
+						{
+							"name": "xform",
+							"type": "Transform2D"
+						}
+					]
+				},
+				{
+					"name": "look_at",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "point",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_angle_to",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2276447920,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "point",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "to_local",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2656412154,
+					"return_value": {
+						"type": "Vector2"
+					},
+					"arguments": [
+						{
+							"name": "global_point",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "to_global",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2656412154,
+					"return_value": {
+						"type": "Vector2"
+					},
+					"arguments": [
+						{
+							"name": "local_point",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_relative_transform_to_parent",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 904556875,
+					"return_value": {
+						"type": "Transform2D"
+					},
+					"arguments": [
+						{
+							"name": "parent",
+							"type": "Node"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "Vector2",
+					"name": "position",
+					"setter": "set_position",
+					"getter": "get_position"
+				},
+				{
+					"type": "float",
+					"name": "rotation",
+					"setter": "set_rotation",
+					"getter": "get_rotation"
+				},
+				{
+					"type": "float",
+					"name": "rotation_degrees",
+					"setter": "set_rotation_degrees",
+					"getter": "get_rotation_degrees"
+				},
+				{
+					"type": "Vector2",
+					"name": "scale",
+					"setter": "set_scale",
+					"getter": "get_scale"
+				},
+				{
+					"type": "float",
+					"name": "skew",
+					"setter": "set_skew",
+					"getter": "get_skew"
+				},
+				{
+					"type": "Transform2D",
+					"name": "transform",
+					"setter": "set_transform",
+					"getter": "get_transform"
+				},
+				{
+					"type": "Vector2",
+					"name": "global_position",
+					"setter": "set_global_position",
+					"getter": "get_global_position"
+				},
+				{
+					"type": "float",
+					"name": "global_rotation",
+					"setter": "set_global_rotation",
+					"getter": "get_global_rotation"
+				},
+				{
+					"type": "float",
+					"name": "global_rotation_degrees",
+					"setter": "set_global_rotation_degrees",
+					"getter": "get_global_rotation_degrees"
+				},
+				{
+					"type": "Vector2",
+					"name": "global_scale",
+					"setter": "set_global_scale",
+					"getter": "get_global_scale"
+				},
+				{
+					"type": "float",
+					"name": "global_skew",
+					"setter": "set_global_skew",
+					"getter": "get_global_skew"
+				},
+				{
+					"type": "Transform2D",
+					"name": "global_transform",
+					"setter": "set_global_transform",
+					"getter": "get_global_transform"
+				}
+			]
+		},
+		{
 			"name": "CanvasItemMaterial",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -66130,13 +66645,6 @@
 					"getter": "get_shader"
 				}
 			]
-		},
-		{
-			"name": "PlaceholderMaterial",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Material",
-			"api_type": "core"
 		},
 		{
 			"name": "VisualShaderNodeParticleEmit",
@@ -79180,158 +79688,6 @@
 			]
 		},
 		{
-			"name": "Material",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"constants": [
-				{
-					"name": "RENDER_PRIORITY_MAX",
-					"value": 127
-				},
-				{
-					"name": "RENDER_PRIORITY_MIN",
-					"value": -128
-				}
-			],
-			"methods": [
-				{
-					"name": "_get_shader_rid",
-					"is_const": true,
-					"is_static": false,
-					"is_required": true,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 2944877500,
-					"return_value": {
-						"type": "RID"
-					}
-				},
-				{
-					"name": "_get_shader_mode",
-					"is_const": true,
-					"is_static": false,
-					"is_required": true,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 3392948163,
-					"return_value": {
-						"type": "enum::Shader.Mode"
-					}
-				},
-				{
-					"name": "_can_do_next_pass",
-					"is_const": true,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "_can_use_render_priority",
-					"is_const": true,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_next_pass",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2757459619,
-					"arguments": [
-						{
-							"name": "next_pass",
-							"type": "Material"
-						}
-					]
-				},
-				{
-					"name": "get_next_pass",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 5934680,
-					"return_value": {
-						"type": "Material"
-					}
-				},
-				{
-					"name": "set_render_priority",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "priority",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_render_priority",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "inspect_native_shader_code",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "create_placeholder",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 121922552,
-					"return_value": {
-						"type": "Resource"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "int",
-					"name": "render_priority",
-					"setter": "set_render_priority",
-					"getter": "get_render_priority"
-				},
-				{
-					"type": "Material",
-					"name": "next_pass",
-					"setter": "set_next_pass",
-					"getter": "get_next_pass"
-				}
-			]
-		},
-		{
 			"name": "FogVolume",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -88198,6 +88554,753 @@
 			]
 		},
 		{
+			"name": "XRFaceModifier3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Node3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_face_tracker",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "tracker_name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_face_tracker",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_target",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1348162250,
+					"arguments": [
+						{
+							"name": "target",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_target",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4075236667,
+					"return_value": {
+						"type": "NodePath"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "face_tracker",
+					"setter": "set_face_tracker",
+					"getter": "get_face_tracker"
+				},
+				{
+					"type": "NodePath",
+					"name": "target",
+					"setter": "set_target",
+					"getter": "get_target"
+				}
+			]
+		},
+		{
+			"name": "XRHandModifier3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SkeletonModifier3D",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "BoneUpdate",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "BONE_UPDATE_FULL",
+							"value": 0
+						},
+						{
+							"name": "BONE_UPDATE_ROTATION_ONLY",
+							"value": 1
+						},
+						{
+							"name": "BONE_UPDATE_MAX",
+							"value": 2
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_hand_tracker",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "tracker_name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_hand_tracker",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_bone_update",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635701455,
+					"arguments": [
+						{
+							"name": "bone_update",
+							"type": "enum::XRHandModifier3D.BoneUpdate"
+						}
+					]
+				},
+				{
+					"name": "get_bone_update",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2873665691,
+					"return_value": {
+						"type": "enum::XRHandModifier3D.BoneUpdate"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "hand_tracker",
+					"setter": "set_hand_tracker",
+					"getter": "get_hand_tracker"
+				},
+				{
+					"type": "int",
+					"name": "bone_update",
+					"setter": "set_bone_update",
+					"getter": "get_bone_update"
+				}
+			]
+		},
+		{
+			"name": "XRBodyModifier3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SkeletonModifier3D",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "BodyUpdate",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "BODY_UPDATE_UPPER_BODY",
+							"value": 1
+						},
+						{
+							"name": "BODY_UPDATE_LOWER_BODY",
+							"value": 2
+						},
+						{
+							"name": "BODY_UPDATE_HANDS",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "BoneUpdate",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "BONE_UPDATE_FULL",
+							"value": 0
+						},
+						{
+							"name": "BONE_UPDATE_ROTATION_ONLY",
+							"value": 1
+						},
+						{
+							"name": "BONE_UPDATE_MAX",
+							"value": 2
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_body_tracker",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "tracker_name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_body_tracker",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_body_update",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2211199417,
+					"arguments": [
+						{
+							"name": "body_update",
+							"type": "bitfield::XRBodyModifier3D.BodyUpdate"
+						}
+					]
+				},
+				{
+					"name": "get_body_update",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2642335328,
+					"return_value": {
+						"type": "bitfield::XRBodyModifier3D.BodyUpdate"
+					}
+				},
+				{
+					"name": "set_bone_update",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3356796943,
+					"arguments": [
+						{
+							"name": "bone_update",
+							"type": "enum::XRBodyModifier3D.BoneUpdate"
+						}
+					]
+				},
+				{
+					"name": "get_bone_update",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1309305964,
+					"return_value": {
+						"type": "enum::XRBodyModifier3D.BoneUpdate"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "body_tracker",
+					"setter": "set_body_tracker",
+					"getter": "get_body_tracker"
+				},
+				{
+					"type": "int",
+					"name": "body_update",
+					"setter": "set_body_update",
+					"getter": "get_body_update"
+				},
+				{
+					"type": "int",
+					"name": "bone_update",
+					"setter": "set_bone_update",
+					"getter": "get_bone_update"
+				}
+			]
+		},
+		{
+			"name": "XROrigin3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Node3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_world_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "world_scale",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_world_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_current",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_current",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "float",
+					"name": "world_scale",
+					"setter": "set_world_scale",
+					"getter": "get_world_scale"
+				},
+				{
+					"type": "bool",
+					"name": "current",
+					"setter": "set_current",
+					"getter": "is_current"
+				}
+			]
+		},
+		{
+			"name": "XRAnchor3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "XRNode3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "get_plane",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2753500971,
+					"return_value": {
+						"type": "Plane"
+					}
+				}
+			]
+		},
+		{
+			"name": "XRController3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "XRNode3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "is_button_pressed",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2619796661,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_input",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2760726917,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_float",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2349060816,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_vector2",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3100822709,
+					"return_value": {
+						"type": "Vector2"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_tracker_hand",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4181770860,
+					"return_value": {
+						"type": "enum::XRPositionalTracker.TrackerHand"
+					}
+				}
+			],
+			"signals": [
+				{
+					"name": "button_pressed",
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "button_released",
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "input_float_changed",
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						},
+						{
+							"name": "value",
+							"type": "float"
+						}
+					]
+				},
+				{
+					"name": "input_vector2_changed",
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						},
+						{
+							"name": "value",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "profile_changed",
+					"arguments": [
+						{
+							"name": "role",
+							"type": "String"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "XRNode3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Node3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_tracker",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "tracker_name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_tracker",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_pose_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "pose",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_pose_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_show_when_tracked",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "show",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_show_when_tracked",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_is_active",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_has_tracking_data",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_pose",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2806551826,
+					"return_value": {
+						"type": "XRPose"
+					}
+				},
+				{
+					"name": "trigger_haptic_pulse",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 508576839,
+					"arguments": [
+						{
+							"name": "action_name",
+							"type": "String"
+						},
+						{
+							"name": "frequency",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "amplitude",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "duration_sec",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "delay_sec",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				}
+			],
+			"signals": [
+				{
+					"name": "tracking_changed",
+					"arguments": [
+						{
+							"name": "tracking",
+							"type": "bool"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "tracker",
+					"setter": "set_tracker",
+					"getter": "get_tracker"
+				},
+				{
+					"type": "String",
+					"name": "pose",
+					"setter": "set_pose_name",
+					"getter": "get_pose_name"
+				},
+				{
+					"type": "bool",
+					"name": "show_when_tracked",
+					"setter": "set_show_when_tracked",
+					"getter": "get_show_when_tracked"
+				}
+			]
+		},
+		{
+			"name": "XRCamera3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Camera3D",
+			"api_type": "core"
+		},
+		{
 			"name": "AimModifier3D",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -92400,6 +93503,257 @@
 			]
 		},
 		{
+			"name": "ModifierBoneTarget3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SkeletonModifier3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "bone_name",
+					"setter": "set_bone_name",
+					"getter": "get_bone_name"
+				},
+				{
+					"type": "int",
+					"name": "bone",
+					"setter": "set_bone",
+					"getter": "get_bone"
+				}
+			]
+		},
+		{
+			"name": "SkeletonModifier3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Node3D",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "BoneAxis",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "BONE_AXIS_PLUS_X",
+							"value": 0
+						},
+						{
+							"name": "BONE_AXIS_MINUS_X",
+							"value": 1
+						},
+						{
+							"name": "BONE_AXIS_PLUS_Y",
+							"value": 2
+						},
+						{
+							"name": "BONE_AXIS_MINUS_Y",
+							"value": 3
+						},
+						{
+							"name": "BONE_AXIS_PLUS_Z",
+							"value": 4
+						},
+						{
+							"name": "BONE_AXIS_MINUS_Z",
+							"value": 5
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "_process_modification_with_delta",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "delta",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "_process_modification",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3218959716
+				},
+				{
+					"name": "_skeleton_changed",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2926744397,
+					"arguments": [
+						{
+							"name": "old_skeleton",
+							"type": "Skeleton3D"
+						},
+						{
+							"name": "new_skeleton",
+							"type": "Skeleton3D"
+						}
+					]
+				},
+				{
+					"name": "_validate_bone_names",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3218959716
+				},
+				{
+					"name": "get_skeleton",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1488626673,
+					"return_value": {
+						"type": "Skeleton3D"
+					}
+				},
+				{
+					"name": "set_active",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "active",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_active",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_influence",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "influence",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_influence",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				}
+			],
+			"signals": [
+				{
+					"name": "modification_processed"
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "active",
+					"setter": "set_active",
+					"getter": "is_active"
+				},
+				{
+					"type": "float",
+					"name": "influence",
+					"setter": "set_influence",
+					"getter": "get_influence"
+				}
+			]
+		},
+		{
 			"name": "RootMotionView",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -92566,81 +93920,6 @@
 					"name": "zero_y",
 					"setter": "set_zero_y",
 					"getter": "get_zero_y"
-				}
-			]
-		},
-		{
-			"name": "ModifierBoneTarget3D",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "SkeletonModifier3D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_bone_name",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "bone_name",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_bone_name",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "set_bone",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "bone",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_bone",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "String",
-					"name": "bone_name",
-					"setter": "set_bone_name",
-					"getter": "get_bone_name"
-				},
-				{
-					"type": "int",
-					"name": "bone",
-					"setter": "set_bone",
-					"getter": "get_bone"
 				}
 			]
 		},
@@ -104450,929 +105729,6 @@
 			]
 		},
 		{
-			"name": "XRFaceModifier3D",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "Node3D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_face_tracker",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3304788590,
-					"arguments": [
-						{
-							"name": "tracker_name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_face_tracker",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2002593661,
-					"return_value": {
-						"type": "StringName"
-					}
-				},
-				{
-					"name": "set_target",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1348162250,
-					"arguments": [
-						{
-							"name": "target",
-							"type": "NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_target",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4075236667,
-					"return_value": {
-						"type": "NodePath"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "String",
-					"name": "face_tracker",
-					"setter": "set_face_tracker",
-					"getter": "get_face_tracker"
-				},
-				{
-					"type": "NodePath",
-					"name": "target",
-					"setter": "set_target",
-					"getter": "get_target"
-				}
-			]
-		},
-		{
-			"name": "XRHandModifier3D",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "SkeletonModifier3D",
-			"api_type": "core",
-			"enums": [
-				{
-					"name": "BoneUpdate",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "BONE_UPDATE_FULL",
-							"value": 0
-						},
-						{
-							"name": "BONE_UPDATE_ROTATION_ONLY",
-							"value": 1
-						},
-						{
-							"name": "BONE_UPDATE_MAX",
-							"value": 2
-						}
-					]
-				}
-			],
-			"methods": [
-				{
-					"name": "set_hand_tracker",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3304788590,
-					"arguments": [
-						{
-							"name": "tracker_name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_hand_tracker",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2002593661,
-					"return_value": {
-						"type": "StringName"
-					}
-				},
-				{
-					"name": "set_bone_update",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3635701455,
-					"arguments": [
-						{
-							"name": "bone_update",
-							"type": "enum::XRHandModifier3D.BoneUpdate"
-						}
-					]
-				},
-				{
-					"name": "get_bone_update",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2873665691,
-					"return_value": {
-						"type": "enum::XRHandModifier3D.BoneUpdate"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "String",
-					"name": "hand_tracker",
-					"setter": "set_hand_tracker",
-					"getter": "get_hand_tracker"
-				},
-				{
-					"type": "int",
-					"name": "bone_update",
-					"setter": "set_bone_update",
-					"getter": "get_bone_update"
-				}
-			]
-		},
-		{
-			"name": "XRBodyModifier3D",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "SkeletonModifier3D",
-			"api_type": "core",
-			"enums": [
-				{
-					"name": "BodyUpdate",
-					"is_bitfield": true,
-					"values": [
-						{
-							"name": "BODY_UPDATE_UPPER_BODY",
-							"value": 1
-						},
-						{
-							"name": "BODY_UPDATE_LOWER_BODY",
-							"value": 2
-						},
-						{
-							"name": "BODY_UPDATE_HANDS",
-							"value": 4
-						}
-					]
-				},
-				{
-					"name": "BoneUpdate",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "BONE_UPDATE_FULL",
-							"value": 0
-						},
-						{
-							"name": "BONE_UPDATE_ROTATION_ONLY",
-							"value": 1
-						},
-						{
-							"name": "BONE_UPDATE_MAX",
-							"value": 2
-						}
-					]
-				}
-			],
-			"methods": [
-				{
-					"name": "set_body_tracker",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3304788590,
-					"arguments": [
-						{
-							"name": "tracker_name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_body_tracker",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2002593661,
-					"return_value": {
-						"type": "StringName"
-					}
-				},
-				{
-					"name": "set_body_update",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2211199417,
-					"arguments": [
-						{
-							"name": "body_update",
-							"type": "bitfield::XRBodyModifier3D.BodyUpdate"
-						}
-					]
-				},
-				{
-					"name": "get_body_update",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2642335328,
-					"return_value": {
-						"type": "bitfield::XRBodyModifier3D.BodyUpdate"
-					}
-				},
-				{
-					"name": "set_bone_update",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3356796943,
-					"arguments": [
-						{
-							"name": "bone_update",
-							"type": "enum::XRBodyModifier3D.BoneUpdate"
-						}
-					]
-				},
-				{
-					"name": "get_bone_update",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1309305964,
-					"return_value": {
-						"type": "enum::XRBodyModifier3D.BoneUpdate"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "String",
-					"name": "body_tracker",
-					"setter": "set_body_tracker",
-					"getter": "get_body_tracker"
-				},
-				{
-					"type": "int",
-					"name": "body_update",
-					"setter": "set_body_update",
-					"getter": "get_body_update"
-				},
-				{
-					"type": "int",
-					"name": "bone_update",
-					"setter": "set_bone_update",
-					"getter": "get_bone_update"
-				}
-			]
-		},
-		{
-			"name": "SkeletonModifier3D",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "Node3D",
-			"api_type": "core",
-			"enums": [
-				{
-					"name": "BoneAxis",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "BONE_AXIS_PLUS_X",
-							"value": 0
-						},
-						{
-							"name": "BONE_AXIS_MINUS_X",
-							"value": 1
-						},
-						{
-							"name": "BONE_AXIS_PLUS_Y",
-							"value": 2
-						},
-						{
-							"name": "BONE_AXIS_MINUS_Y",
-							"value": 3
-						},
-						{
-							"name": "BONE_AXIS_PLUS_Z",
-							"value": 4
-						},
-						{
-							"name": "BONE_AXIS_MINUS_Z",
-							"value": 5
-						}
-					]
-				}
-			],
-			"methods": [
-				{
-					"name": "_process_modification_with_delta",
-					"is_const": false,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "delta",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "_process_modification",
-					"is_const": false,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 3218959716
-				},
-				{
-					"name": "_skeleton_changed",
-					"is_const": false,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 2926744397,
-					"arguments": [
-						{
-							"name": "old_skeleton",
-							"type": "Skeleton3D"
-						},
-						{
-							"name": "new_skeleton",
-							"type": "Skeleton3D"
-						}
-					]
-				},
-				{
-					"name": "_validate_bone_names",
-					"is_const": false,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 3218959716
-				},
-				{
-					"name": "get_skeleton",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1488626673,
-					"return_value": {
-						"type": "Skeleton3D"
-					}
-				},
-				{
-					"name": "set_active",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "active",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_active",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_influence",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "influence",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_influence",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				}
-			],
-			"signals": [
-				{
-					"name": "modification_processed"
-				}
-			],
-			"properties": [
-				{
-					"type": "bool",
-					"name": "active",
-					"setter": "set_active",
-					"getter": "is_active"
-				},
-				{
-					"type": "float",
-					"name": "influence",
-					"setter": "set_influence",
-					"getter": "get_influence"
-				}
-			]
-		},
-		{
-			"name": "XROrigin3D",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "Node3D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_world_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "world_scale",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_world_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_current",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enabled",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_current",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "float",
-					"name": "world_scale",
-					"setter": "set_world_scale",
-					"getter": "get_world_scale"
-				},
-				{
-					"type": "bool",
-					"name": "current",
-					"setter": "set_current",
-					"getter": "is_current"
-				}
-			]
-		},
-		{
-			"name": "XRAnchor3D",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "XRNode3D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "get_size",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3360562783,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "get_plane",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2753500971,
-					"return_value": {
-						"type": "Plane"
-					}
-				}
-			]
-		},
-		{
-			"name": "XRController3D",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "XRNode3D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "is_button_pressed",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2619796661,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_input",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2760726917,
-					"return_value": {
-						"type": "Variant"
-					},
-					"arguments": [
-						{
-							"name": "name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_float",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2349060816,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					},
-					"arguments": [
-						{
-							"name": "name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_vector2",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3100822709,
-					"return_value": {
-						"type": "Vector2"
-					},
-					"arguments": [
-						{
-							"name": "name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_tracker_hand",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4181770860,
-					"return_value": {
-						"type": "enum::XRPositionalTracker.TrackerHand"
-					}
-				}
-			],
-			"signals": [
-				{
-					"name": "button_pressed",
-					"arguments": [
-						{
-							"name": "name",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "button_released",
-					"arguments": [
-						{
-							"name": "name",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "input_float_changed",
-					"arguments": [
-						{
-							"name": "name",
-							"type": "String"
-						},
-						{
-							"name": "value",
-							"type": "float"
-						}
-					]
-				},
-				{
-					"name": "input_vector2_changed",
-					"arguments": [
-						{
-							"name": "name",
-							"type": "String"
-						},
-						{
-							"name": "value",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "profile_changed",
-					"arguments": [
-						{
-							"name": "role",
-							"type": "String"
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "XRNode3D",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "Node3D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_tracker",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3304788590,
-					"arguments": [
-						{
-							"name": "tracker_name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_tracker",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2002593661,
-					"return_value": {
-						"type": "StringName"
-					}
-				},
-				{
-					"name": "set_pose_name",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3304788590,
-					"arguments": [
-						{
-							"name": "pose",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_pose_name",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2002593661,
-					"return_value": {
-						"type": "StringName"
-					}
-				},
-				{
-					"name": "set_show_when_tracked",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "show",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_show_when_tracked",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "get_is_active",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "get_has_tracking_data",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "get_pose",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2806551826,
-					"return_value": {
-						"type": "XRPose"
-					}
-				},
-				{
-					"name": "trigger_haptic_pulse",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 508576839,
-					"arguments": [
-						{
-							"name": "action_name",
-							"type": "String"
-						},
-						{
-							"name": "frequency",
-							"type": "float",
-							"meta": "double"
-						},
-						{
-							"name": "amplitude",
-							"type": "float",
-							"meta": "double"
-						},
-						{
-							"name": "duration_sec",
-							"type": "float",
-							"meta": "double"
-						},
-						{
-							"name": "delay_sec",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				}
-			],
-			"signals": [
-				{
-					"name": "tracking_changed",
-					"arguments": [
-						{
-							"name": "tracking",
-							"type": "bool"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "String",
-					"name": "tracker",
-					"setter": "set_tracker",
-					"getter": "get_tracker"
-				},
-				{
-					"type": "String",
-					"name": "pose",
-					"setter": "set_pose_name",
-					"getter": "get_pose_name"
-				},
-				{
-					"type": "bool",
-					"name": "show_when_tracked",
-					"setter": "set_show_when_tracked",
-					"getter": "get_show_when_tracked"
-				}
-			]
-		},
-		{
-			"name": "XRCamera3D",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "Camera3D",
-			"api_type": "core"
-		},
-		{
 			"name": "AudioListener3D",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -111270,285 +111626,6 @@
 			"is_instantiable": true,
 			"inherits": "AnimationNodeSync",
 			"api_type": "core"
-		},
-		{
-			"name": "AnimationNodeAnimation",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "AnimationRootNode",
-			"api_type": "core",
-			"enums": [
-				{
-					"name": "PlayMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "PLAY_MODE_FORWARD",
-							"value": 0
-						},
-						{
-							"name": "PLAY_MODE_BACKWARD",
-							"value": 1
-						}
-					]
-				}
-			],
-			"methods": [
-				{
-					"name": "set_animation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3304788590,
-					"arguments": [
-						{
-							"name": "name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_animation",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2002593661,
-					"return_value": {
-						"type": "StringName"
-					}
-				},
-				{
-					"name": "set_play_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3347718873,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::AnimationNodeAnimation.PlayMode"
-						}
-					]
-				},
-				{
-					"name": "get_play_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2061244637,
-					"return_value": {
-						"type": "enum::AnimationNodeAnimation.PlayMode"
-					}
-				},
-				{
-					"name": "set_advance_on_start",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "advance_on_start",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_advance_on_start",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_use_custom_timeline",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "use_custom_timeline",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_custom_timeline",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_timeline_length",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "timeline_length",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_timeline_length",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_stretch_time_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "stretch_time_scale",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_stretching_time_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_start_offset",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "start_offset",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_start_offset",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_loop_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3155355575,
-					"arguments": [
-						{
-							"name": "loop_mode",
-							"type": "enum::Animation.LoopMode"
-						}
-					]
-				},
-				{
-					"name": "get_loop_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1988889481,
-					"return_value": {
-						"type": "enum::Animation.LoopMode"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "StringName",
-					"name": "animation",
-					"setter": "set_animation",
-					"getter": "get_animation"
-				},
-				{
-					"type": "int",
-					"name": "play_mode",
-					"setter": "set_play_mode",
-					"getter": "get_play_mode"
-				},
-				{
-					"type": "bool",
-					"name": "advance_on_start",
-					"setter": "set_advance_on_start",
-					"getter": "is_advance_on_start"
-				},
-				{
-					"type": "bool",
-					"name": "use_custom_timeline",
-					"setter": "set_use_custom_timeline",
-					"getter": "is_using_custom_timeline"
-				},
-				{
-					"type": "float",
-					"name": "timeline_length",
-					"setter": "set_timeline_length",
-					"getter": "get_timeline_length"
-				},
-				{
-					"type": "bool",
-					"name": "stretch_time_scale",
-					"setter": "set_stretch_time_scale",
-					"getter": "is_stretching_time_scale"
-				},
-				{
-					"type": "float",
-					"name": "start_offset",
-					"setter": "set_start_offset",
-					"getter": "get_start_offset"
-				},
-				{
-					"type": "int",
-					"name": "loop_mode",
-					"setter": "set_loop_mode",
-					"getter": "get_loop_mode"
-				}
-			]
 		},
 		{
 			"name": "AudioStreamInteractive",
@@ -163040,249 +163117,6 @@
 			]
 		},
 		{
-			"name": "World2D",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "get_canvas",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2944877500,
-					"return_value": {
-						"type": "RID"
-					}
-				},
-				{
-					"name": "get_navigation_map",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2944877500,
-					"return_value": {
-						"type": "RID"
-					}
-				},
-				{
-					"name": "get_space",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2944877500,
-					"return_value": {
-						"type": "RID"
-					}
-				},
-				{
-					"name": "get_direct_space_state",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2506717822,
-					"return_value": {
-						"type": "PhysicsDirectSpaceState2D"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "RID",
-					"name": "canvas",
-					"getter": "get_canvas"
-				},
-				{
-					"type": "RID",
-					"name": "navigation_map",
-					"getter": "get_navigation_map"
-				},
-				{
-					"type": "RID",
-					"name": "space",
-					"getter": "get_space"
-				},
-				{
-					"type": "PhysicsDirectSpaceState2D",
-					"name": "direct_space_state",
-					"getter": "get_direct_space_state"
-				}
-			]
-		},
-		{
-			"name": "World3D",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "get_space",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2944877500,
-					"return_value": {
-						"type": "RID"
-					}
-				},
-				{
-					"name": "get_navigation_map",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2944877500,
-					"return_value": {
-						"type": "RID"
-					}
-				},
-				{
-					"name": "get_scenario",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2944877500,
-					"return_value": {
-						"type": "RID"
-					}
-				},
-				{
-					"name": "set_environment",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4143518816,
-					"arguments": [
-						{
-							"name": "env",
-							"type": "Environment"
-						}
-					]
-				},
-				{
-					"name": "get_environment",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3082064660,
-					"return_value": {
-						"type": "Environment"
-					}
-				},
-				{
-					"name": "set_fallback_environment",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4143518816,
-					"arguments": [
-						{
-							"name": "env",
-							"type": "Environment"
-						}
-					]
-				},
-				{
-					"name": "get_fallback_environment",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3082064660,
-					"return_value": {
-						"type": "Environment"
-					}
-				},
-				{
-					"name": "set_camera_attributes",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2817810567,
-					"arguments": [
-						{
-							"name": "attributes",
-							"type": "CameraAttributes"
-						}
-					]
-				},
-				{
-					"name": "get_camera_attributes",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3921283215,
-					"return_value": {
-						"type": "CameraAttributes"
-					}
-				},
-				{
-					"name": "get_direct_space_state",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2069328350,
-					"return_value": {
-						"type": "PhysicsDirectSpaceState3D"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "Environment",
-					"name": "environment",
-					"setter": "set_environment",
-					"getter": "get_environment"
-				},
-				{
-					"type": "Environment",
-					"name": "fallback_environment",
-					"setter": "set_fallback_environment",
-					"getter": "get_fallback_environment"
-				},
-				{
-					"type": "CameraAttributesPractical,CameraAttributesPhysical",
-					"name": "camera_attributes",
-					"setter": "set_camera_attributes",
-					"getter": "get_camera_attributes"
-				},
-				{
-					"type": "RID",
-					"name": "space",
-					"getter": "get_space"
-				},
-				{
-					"type": "RID",
-					"name": "navigation_map",
-					"getter": "get_navigation_map"
-				},
-				{
-					"type": "RID",
-					"name": "scenario",
-					"getter": "get_scenario"
-				},
-				{
-					"type": "PhysicsDirectSpaceState3D",
-					"name": "direct_space_state",
-					"getter": "get_direct_space_state"
-				}
-			]
-		},
-		{
 			"name": "Viewport",
 			"is_refcounted": false,
 			"is_instantiable": false,
@@ -165656,6 +165490,172 @@
 					"getter": "get_oversampling_override"
 				}
 			]
+		},
+		{
+			"name": "PlaceholderMaterial",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Material",
+			"api_type": "core"
+		},
+		{
+			"name": "Material",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"constants": [
+				{
+					"name": "RENDER_PRIORITY_MAX",
+					"value": 127
+				},
+				{
+					"name": "RENDER_PRIORITY_MIN",
+					"value": -128
+				}
+			],
+			"methods": [
+				{
+					"name": "_get_shader_rid",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "_get_shader_mode",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3392948163,
+					"return_value": {
+						"type": "enum::Shader.Mode"
+					}
+				},
+				{
+					"name": "_can_do_next_pass",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "_can_use_render_priority",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_next_pass",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2757459619,
+					"arguments": [
+						{
+							"name": "next_pass",
+							"type": "Material"
+						}
+					]
+				},
+				{
+					"name": "get_next_pass",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 5934680,
+					"return_value": {
+						"type": "Material"
+					}
+				},
+				{
+					"name": "set_render_priority",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "priority",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_render_priority",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "inspect_native_shader_code",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "create_placeholder",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 121922552,
+					"return_value": {
+						"type": "Resource"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "render_priority",
+					"setter": "set_render_priority",
+					"getter": "get_render_priority"
+				},
+				{
+					"type": "Material",
+					"name": "next_pass",
+					"setter": "set_next_pass",
+					"getter": "get_next_pass"
+				}
+			]
+		},
+		{
+			"name": "Texture",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core"
 		},
 		{
 			"name": "InstancePlaceholder",
@@ -169545,110 +169545,6 @@
 			]
 		},
 		{
-			"name": "XRTracker",
-			"is_refcounted": true,
-			"is_instantiable": false,
-			"inherits": "RefCounted",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "get_tracker_type",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2784508102,
-					"return_value": {
-						"type": "enum::XRServer.TrackerType"
-					}
-				},
-				{
-					"name": "set_tracker_type",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3055763575,
-					"arguments": [
-						{
-							"name": "type",
-							"type": "enum::XRServer.TrackerType"
-						}
-					]
-				},
-				{
-					"name": "get_tracker_name",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2002593661,
-					"return_value": {
-						"type": "StringName"
-					}
-				},
-				{
-					"name": "set_tracker_name",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3304788590,
-					"arguments": [
-						{
-							"name": "name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_tracker_desc",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "set_tracker_desc",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "description",
-							"type": "String"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "int",
-					"name": "type",
-					"setter": "set_tracker_type",
-					"getter": "get_tracker_type"
-				},
-				{
-					"type": "String",
-					"name": "name",
-					"setter": "set_tracker_name",
-					"getter": "get_tracker_name"
-				},
-				{
-					"type": "String",
-					"name": "description",
-					"setter": "set_tracker_desc",
-					"getter": "get_tracker_desc"
-				}
-			]
-		},
-		{
 			"name": "XRVRS",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -169774,6 +169670,110 @@
 					"name": "vrs_render_region",
 					"setter": "set_vrs_render_region",
 					"getter": "get_vrs_render_region"
+				}
+			]
+		},
+		{
+			"name": "XRTracker",
+			"is_refcounted": true,
+			"is_instantiable": false,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_tracker_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2784508102,
+					"return_value": {
+						"type": "enum::XRServer.TrackerType"
+					}
+				},
+				{
+					"name": "set_tracker_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3055763575,
+					"arguments": [
+						{
+							"name": "type",
+							"type": "enum::XRServer.TrackerType"
+						}
+					]
+				},
+				{
+					"name": "get_tracker_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_tracker_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_tracker_desc",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_tracker_desc",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "description",
+							"type": "String"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "type",
+					"setter": "set_tracker_type",
+					"getter": "get_tracker_type"
+				},
+				{
+					"type": "String",
+					"name": "name",
+					"setter": "set_tracker_name",
+					"getter": "get_tracker_name"
+				},
+				{
+					"type": "String",
+					"name": "description",
+					"setter": "set_tracker_desc",
+					"getter": "get_tracker_desc"
 				}
 			]
 		},
@@ -238949,6 +238949,20 @@
 						{
 							"name": "next_material",
 							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "material_set_use_debanding",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
 						}
 					]
 				},
