@@ -25786,285 +25786,6 @@
 	],
 	"classes": [
 		{
-			"name": "AnimationNodeAnimation",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "AnimationRootNode",
-			"api_type": "core",
-			"enums": [
-				{
-					"name": "PlayMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "PLAY_MODE_FORWARD",
-							"value": 0
-						},
-						{
-							"name": "PLAY_MODE_BACKWARD",
-							"value": 1
-						}
-					]
-				}
-			],
-			"methods": [
-				{
-					"name": "set_animation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3304788590,
-					"arguments": [
-						{
-							"name": "name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_animation",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2002593661,
-					"return_value": {
-						"type": "StringName"
-					}
-				},
-				{
-					"name": "set_play_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3347718873,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::AnimationNodeAnimation.PlayMode"
-						}
-					]
-				},
-				{
-					"name": "get_play_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2061244637,
-					"return_value": {
-						"type": "enum::AnimationNodeAnimation.PlayMode"
-					}
-				},
-				{
-					"name": "set_advance_on_start",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "advance_on_start",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_advance_on_start",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_use_custom_timeline",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "use_custom_timeline",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_custom_timeline",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_timeline_length",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "timeline_length",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_timeline_length",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_stretch_time_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "stretch_time_scale",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_stretching_time_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_start_offset",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "start_offset",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_start_offset",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_loop_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3155355575,
-					"arguments": [
-						{
-							"name": "loop_mode",
-							"type": "enum::Animation.LoopMode"
-						}
-					]
-				},
-				{
-					"name": "get_loop_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1988889481,
-					"return_value": {
-						"type": "enum::Animation.LoopMode"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "StringName",
-					"name": "animation",
-					"setter": "set_animation",
-					"getter": "get_animation"
-				},
-				{
-					"type": "int",
-					"name": "play_mode",
-					"setter": "set_play_mode",
-					"getter": "get_play_mode"
-				},
-				{
-					"type": "bool",
-					"name": "advance_on_start",
-					"setter": "set_advance_on_start",
-					"getter": "is_advance_on_start"
-				},
-				{
-					"type": "bool",
-					"name": "use_custom_timeline",
-					"setter": "set_use_custom_timeline",
-					"getter": "is_using_custom_timeline"
-				},
-				{
-					"type": "float",
-					"name": "timeline_length",
-					"setter": "set_timeline_length",
-					"getter": "get_timeline_length"
-				},
-				{
-					"type": "bool",
-					"name": "stretch_time_scale",
-					"setter": "set_stretch_time_scale",
-					"getter": "is_stretching_time_scale"
-				},
-				{
-					"type": "float",
-					"name": "start_offset",
-					"setter": "set_start_offset",
-					"getter": "get_start_offset"
-				},
-				{
-					"type": "int",
-					"name": "loop_mode",
-					"setter": "set_loop_mode",
-					"getter": "get_loop_mode"
-				}
-			]
-		},
-		{
 			"name": "AnimationNodeOneShot",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -111628,6 +111349,285 @@
 			"api_type": "core"
 		},
 		{
+			"name": "AnimationNodeAnimation",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "AnimationRootNode",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "PlayMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "PLAY_MODE_FORWARD",
+							"value": 0
+						},
+						{
+							"name": "PLAY_MODE_BACKWARD",
+							"value": 1
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_animation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_animation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_play_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3347718873,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::AnimationNodeAnimation.PlayMode"
+						}
+					]
+				},
+				{
+					"name": "get_play_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2061244637,
+					"return_value": {
+						"type": "enum::AnimationNodeAnimation.PlayMode"
+					}
+				},
+				{
+					"name": "set_advance_on_start",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "advance_on_start",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_advance_on_start",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_use_custom_timeline",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use_custom_timeline",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_custom_timeline",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_timeline_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "timeline_length",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_timeline_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_stretch_time_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "stretch_time_scale",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_stretching_time_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_start_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "start_offset",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_start_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_loop_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3155355575,
+					"arguments": [
+						{
+							"name": "loop_mode",
+							"type": "enum::Animation.LoopMode"
+						}
+					]
+				},
+				{
+					"name": "get_loop_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1988889481,
+					"return_value": {
+						"type": "enum::Animation.LoopMode"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "StringName",
+					"name": "animation",
+					"setter": "set_animation",
+					"getter": "get_animation"
+				},
+				{
+					"type": "int",
+					"name": "play_mode",
+					"setter": "set_play_mode",
+					"getter": "get_play_mode"
+				},
+				{
+					"type": "bool",
+					"name": "advance_on_start",
+					"setter": "set_advance_on_start",
+					"getter": "is_advance_on_start"
+				},
+				{
+					"type": "bool",
+					"name": "use_custom_timeline",
+					"setter": "set_use_custom_timeline",
+					"getter": "is_using_custom_timeline"
+				},
+				{
+					"type": "float",
+					"name": "timeline_length",
+					"setter": "set_timeline_length",
+					"getter": "get_timeline_length"
+				},
+				{
+					"type": "bool",
+					"name": "stretch_time_scale",
+					"setter": "set_stretch_time_scale",
+					"getter": "is_stretching_time_scale"
+				},
+				{
+					"type": "float",
+					"name": "start_offset",
+					"setter": "set_start_offset",
+					"getter": "get_start_offset"
+				},
+				{
+					"type": "int",
+					"name": "loop_mode",
+					"setter": "set_loop_mode",
+					"getter": "get_loop_mode"
+				}
+			]
+		},
+		{
 			"name": "AudioStreamInteractive",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -165799,6 +165799,31 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "set_recording_signals",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_recording_signals",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"properties": [
@@ -165819,6 +165844,12 @@
 					"name": "recording_properties",
 					"setter": "set_recording_properties",
 					"getter": "is_recording_properties"
+				},
+				{
+					"type": "bool",
+					"name": "recording_signals",
+					"setter": "set_recording_signals",
+					"getter": "is_recording_signals"
 				}
 			]
 		},
