@@ -23,19 +23,19 @@ pub const GODOT_VERSION_STRING: &str = "4.5";
 
 /// Returns the contents of the header file `gdextension_interface.h`.
 pub const fn load_gdextension_header_h() -> CowStr {
-    CowStr::Borrowed(include_str!("../../4.5/res/gdextension_interface.h"))
+    CowStr::Borrowed(include_str!("../res/gdextension_interface.h"))
 }
 
 /// Returns the contents of the header file `gdextension_interface.rs`, generated for the corresponding platform.
 pub const fn load_gdextension_header_rs() -> CowStr {
     #[cfg(windows)]
-    let s = include_str!("../../4.5/res/gdextension_interface_windows.rs");
+    let s = include_str!("../res/gdextension_interface_windows.rs");
 
     #[cfg(target_os = "macos")]
-    let s = include_str!("../../4.5/res/gdextension_interface_macos.rs");
+    let s = include_str!("../res/gdextension_interface_macos.rs");
 
     #[cfg(all(unix, not(target_os = "macos")))]
-    let s = include_str!("../../4.5/res/gdextension_interface_linux.rs");
+    let s = include_str!("../res/gdextension_interface_linux.rs");
 
     CowStr::Borrowed(s)
 }
