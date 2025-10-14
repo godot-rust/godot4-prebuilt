@@ -306275,6 +306275,20 @@
 					]
 				},
 				{
+					"name": "set_pivot_offset_ratio",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "ratio",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
 					"name": "get_begin",
 					"is_const": true,
 					"is_vararg": false,
@@ -306355,6 +306369,28 @@
 				},
 				{
 					"name": "get_pivot_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "get_pivot_offset_ratio",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "get_combined_pivot_offset",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -308294,6 +308330,12 @@
 					"name": "pivot_offset",
 					"setter": "set_pivot_offset",
 					"getter": "get_pivot_offset"
+				},
+				{
+					"type": "Vector2",
+					"name": "pivot_offset_ratio",
+					"setter": "set_pivot_offset_ratio",
+					"getter": "get_pivot_offset_ratio"
 				},
 				{
 					"type": "int",
