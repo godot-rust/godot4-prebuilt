@@ -209243,6 +209243,23 @@
 					]
 				},
 				{
+					"name": "get_plural_rules",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3135753539,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "locale",
+							"type": "String"
+						}
+					]
+				},
+				{
 					"name": "translate",
 					"is_const": true,
 					"is_vararg": false,
@@ -328448,6 +328465,31 @@
 						"type": "int",
 						"meta": "int32"
 					}
+				},
+				{
+					"name": "set_plural_rules_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "rules",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_plural_rules_override",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
 				}
 			],
 			"properties": [
@@ -328462,6 +328504,12 @@
 					"name": "locale",
 					"setter": "set_locale",
 					"getter": "get_locale"
+				},
+				{
+					"type": "String",
+					"name": "plural_rules_override",
+					"setter": "set_plural_rules_override",
+					"getter": "get_plural_rules_override"
 				}
 			]
 		},
