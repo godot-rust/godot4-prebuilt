@@ -35722,24 +35722,6 @@
 				},
 				{
 					"type": "bool",
-					"name": "virtual_keyboard_enabled",
-					"setter": "set_virtual_keyboard_enabled",
-					"getter": "is_virtual_keyboard_enabled"
-				},
-				{
-					"type": "bool",
-					"name": "virtual_keyboard_show_on_focus",
-					"setter": "set_virtual_keyboard_show_on_focus",
-					"getter": "get_virtual_keyboard_show_on_focus"
-				},
-				{
-					"type": "int",
-					"name": "virtual_keyboard_type",
-					"setter": "set_virtual_keyboard_type",
-					"getter": "get_virtual_keyboard_type"
-				},
-				{
-					"type": "bool",
 					"name": "clear_button_enabled",
 					"setter": "set_clear_button_enabled",
 					"getter": "is_clear_button_enabled"
@@ -35797,6 +35779,24 @@
 					"name": "select_all_on_focus",
 					"setter": "set_select_all_on_focus",
 					"getter": "is_select_all_on_focus"
+				},
+				{
+					"type": "bool",
+					"name": "virtual_keyboard_enabled",
+					"setter": "set_virtual_keyboard_enabled",
+					"getter": "is_virtual_keyboard_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "virtual_keyboard_show_on_focus",
+					"setter": "set_virtual_keyboard_show_on_focus",
+					"getter": "get_virtual_keyboard_show_on_focus"
+				},
+				{
+					"type": "int",
+					"name": "virtual_keyboard_type",
+					"setter": "set_virtual_keyboard_type",
+					"getter": "get_virtual_keyboard_type"
 				},
 				{
 					"type": "bool",
@@ -152441,6 +152441,28 @@
 					}
 				},
 				{
+					"name": "_run_scene",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3911848509,
+					"return_value": {
+						"type": "PackedStringArray"
+					},
+					"arguments": [
+						{
+							"name": "scene",
+							"type": "String"
+						},
+						{
+							"name": "args",
+							"type": "PackedStringArray"
+						}
+					]
+				},
+				{
 					"name": "_enable_plugin",
 					"is_const": false,
 					"is_static": false,
@@ -226868,18 +226890,6 @@
 				},
 				{
 					"type": "bool",
-					"name": "virtual_keyboard_enabled",
-					"setter": "set_virtual_keyboard_enabled",
-					"getter": "is_virtual_keyboard_enabled"
-				},
-				{
-					"type": "bool",
-					"name": "virtual_keyboard_show_on_focus",
-					"setter": "set_virtual_keyboard_show_on_focus",
-					"getter": "get_virtual_keyboard_show_on_focus"
-				},
-				{
-					"type": "bool",
 					"name": "middle_mouse_paste_enabled",
 					"setter": "set_middle_mouse_paste_enabled",
 					"getter": "is_middle_mouse_paste_enabled"
@@ -226913,6 +226923,18 @@
 					"name": "tab_input_mode",
 					"setter": "set_tab_input_mode",
 					"getter": "get_tab_input_mode"
+				},
+				{
+					"type": "bool",
+					"name": "virtual_keyboard_enabled",
+					"setter": "set_virtual_keyboard_enabled",
+					"getter": "is_virtual_keyboard_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "virtual_keyboard_show_on_focus",
+					"setter": "set_virtual_keyboard_show_on_focus",
+					"getter": "get_virtual_keyboard_show_on_focus"
 				},
 				{
 					"type": "bool",
