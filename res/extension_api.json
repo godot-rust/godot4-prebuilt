@@ -25786,349 +25786,6 @@
 	],
 	"classes": [
 		{
-			"name": "AnimationNodeOneShot",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "AnimationNodeSync",
-			"api_type": "core",
-			"enums": [
-				{
-					"name": "OneShotRequest",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "ONE_SHOT_REQUEST_NONE",
-							"value": 0
-						},
-						{
-							"name": "ONE_SHOT_REQUEST_FIRE",
-							"value": 1
-						},
-						{
-							"name": "ONE_SHOT_REQUEST_ABORT",
-							"value": 2
-						},
-						{
-							"name": "ONE_SHOT_REQUEST_FADE_OUT",
-							"value": 3
-						}
-					]
-				},
-				{
-					"name": "MixMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "MIX_MODE_BLEND",
-							"value": 0
-						},
-						{
-							"name": "MIX_MODE_ADD",
-							"value": 1
-						}
-					]
-				}
-			],
-			"methods": [
-				{
-					"name": "set_fadein_time",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "time",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_fadein_time",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_fadein_curve",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 270443179,
-					"arguments": [
-						{
-							"name": "curve",
-							"type": "Curve"
-						}
-					]
-				},
-				{
-					"name": "get_fadein_curve",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2460114913,
-					"return_value": {
-						"type": "Curve"
-					}
-				},
-				{
-					"name": "set_fadeout_time",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "time",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_fadeout_time",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_fadeout_curve",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 270443179,
-					"arguments": [
-						{
-							"name": "curve",
-							"type": "Curve"
-						}
-					]
-				},
-				{
-					"name": "get_fadeout_curve",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2460114913,
-					"return_value": {
-						"type": "Curve"
-					}
-				},
-				{
-					"name": "set_break_loop_at_end",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_loop_broken_at_end",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_autorestart",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "active",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "has_autorestart",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_autorestart_delay",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "time",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_autorestart_delay",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_autorestart_random_delay",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "time",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_autorestart_random_delay",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_mix_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1018899799,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::AnimationNodeOneShot.MixMode"
-						}
-					]
-				},
-				{
-					"name": "get_mix_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3076550526,
-					"return_value": {
-						"type": "enum::AnimationNodeOneShot.MixMode"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "int",
-					"name": "mix_mode",
-					"setter": "set_mix_mode",
-					"getter": "get_mix_mode"
-				},
-				{
-					"type": "float",
-					"name": "fadein_time",
-					"setter": "set_fadein_time",
-					"getter": "get_fadein_time"
-				},
-				{
-					"type": "Curve",
-					"name": "fadein_curve",
-					"setter": "set_fadein_curve",
-					"getter": "get_fadein_curve"
-				},
-				{
-					"type": "float",
-					"name": "fadeout_time",
-					"setter": "set_fadeout_time",
-					"getter": "get_fadeout_time"
-				},
-				{
-					"type": "Curve",
-					"name": "fadeout_curve",
-					"setter": "set_fadeout_curve",
-					"getter": "get_fadeout_curve"
-				},
-				{
-					"type": "bool",
-					"name": "break_loop_at_end",
-					"setter": "set_break_loop_at_end",
-					"getter": "is_loop_broken_at_end"
-				},
-				{
-					"type": "bool",
-					"name": "autorestart",
-					"setter": "set_autorestart",
-					"getter": "has_autorestart"
-				},
-				{
-					"type": "float",
-					"name": "autorestart_delay",
-					"setter": "set_autorestart_delay",
-					"getter": "get_autorestart_delay"
-				},
-				{
-					"type": "float",
-					"name": "autorestart_random_delay",
-					"setter": "set_autorestart_random_delay",
-					"getter": "get_autorestart_random_delay"
-				}
-			]
-		},
-		{
-			"name": "AnimationNodeOutput",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "AnimationNode",
-			"api_type": "core"
-		},
-		{
 			"name": "AnimationNodeStateMachineTransition",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -38361,6 +38018,31 @@
 					}
 				},
 				{
+					"name": "set_switch_on_drag_hover",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_switch_on_drag_hover",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_tabs_rearrange_group",
 					"is_const": false,
 					"is_vararg": false,
@@ -38593,6 +38275,12 @@
 					"name": "drag_to_rearrange_enabled",
 					"setter": "set_drag_to_rearrange_enabled",
 					"getter": "get_drag_to_rearrange_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "switch_on_drag_hover",
+					"setter": "set_switch_on_drag_hover",
+					"getter": "get_switch_on_drag_hover"
 				},
 				{
 					"type": "int",
@@ -39251,6 +38939,31 @@
 					}
 				},
 				{
+					"name": "set_switch_on_drag_hover",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_switch_on_drag_hover",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_drag_to_rearrange_enabled",
 					"is_const": false,
 					"is_vararg": false,
@@ -39473,6 +39186,12 @@
 					"name": "all_tabs_in_front",
 					"setter": "set_all_tabs_in_front",
 					"getter": "is_all_tabs_in_front"
+				},
+				{
+					"type": "bool",
+					"name": "switch_on_drag_hover",
+					"setter": "set_switch_on_drag_hover",
+					"getter": "get_switch_on_drag_hover"
 				},
 				{
 					"type": "bool",
@@ -47379,100 +47098,6 @@
 					"type": "PhysicsDirectSpaceState3D",
 					"name": "direct_space_state",
 					"getter": "get_direct_space_state"
-				}
-			]
-		},
-		{
-			"name": "GradientTexture1D",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Texture2D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_gradient",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2756054477,
-					"arguments": [
-						{
-							"name": "gradient",
-							"type": "Gradient"
-						}
-					]
-				},
-				{
-					"name": "get_gradient",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 132272999,
-					"return_value": {
-						"type": "Gradient"
-					}
-				},
-				{
-					"name": "set_width",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "width",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_use_hdr",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enabled",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_hdr",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "Gradient",
-					"name": "gradient",
-					"setter": "set_gradient",
-					"getter": "get_gradient"
-				},
-				{
-					"type": "int",
-					"name": "width",
-					"setter": "set_width",
-					"getter": "get_width"
-				},
-				{
-					"type": "bool",
-					"name": "use_hdr",
-					"setter": "set_use_hdr",
-					"getter": "is_using_hdr"
 				}
 			]
 		},
@@ -111628,6 +111253,349 @@
 			]
 		},
 		{
+			"name": "AnimationNodeOneShot",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "AnimationNodeSync",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "OneShotRequest",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ONE_SHOT_REQUEST_NONE",
+							"value": 0
+						},
+						{
+							"name": "ONE_SHOT_REQUEST_FIRE",
+							"value": 1
+						},
+						{
+							"name": "ONE_SHOT_REQUEST_ABORT",
+							"value": 2
+						},
+						{
+							"name": "ONE_SHOT_REQUEST_FADE_OUT",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "MixMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "MIX_MODE_BLEND",
+							"value": 0
+						},
+						{
+							"name": "MIX_MODE_ADD",
+							"value": 1
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_fadein_time",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "time",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_fadein_time",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_fadein_curve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 270443179,
+					"arguments": [
+						{
+							"name": "curve",
+							"type": "Curve"
+						}
+					]
+				},
+				{
+					"name": "get_fadein_curve",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2460114913,
+					"return_value": {
+						"type": "Curve"
+					}
+				},
+				{
+					"name": "set_fadeout_time",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "time",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_fadeout_time",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_fadeout_curve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 270443179,
+					"arguments": [
+						{
+							"name": "curve",
+							"type": "Curve"
+						}
+					]
+				},
+				{
+					"name": "get_fadeout_curve",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2460114913,
+					"return_value": {
+						"type": "Curve"
+					}
+				},
+				{
+					"name": "set_break_loop_at_end",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_loop_broken_at_end",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_autorestart",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "active",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "has_autorestart",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_autorestart_delay",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "time",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_autorestart_delay",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_autorestart_random_delay",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "time",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_autorestart_random_delay",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_mix_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1018899799,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::AnimationNodeOneShot.MixMode"
+						}
+					]
+				},
+				{
+					"name": "get_mix_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3076550526,
+					"return_value": {
+						"type": "enum::AnimationNodeOneShot.MixMode"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "mix_mode",
+					"setter": "set_mix_mode",
+					"getter": "get_mix_mode"
+				},
+				{
+					"type": "float",
+					"name": "fadein_time",
+					"setter": "set_fadein_time",
+					"getter": "get_fadein_time"
+				},
+				{
+					"type": "Curve",
+					"name": "fadein_curve",
+					"setter": "set_fadein_curve",
+					"getter": "get_fadein_curve"
+				},
+				{
+					"type": "float",
+					"name": "fadeout_time",
+					"setter": "set_fadeout_time",
+					"getter": "get_fadeout_time"
+				},
+				{
+					"type": "Curve",
+					"name": "fadeout_curve",
+					"setter": "set_fadeout_curve",
+					"getter": "get_fadeout_curve"
+				},
+				{
+					"type": "bool",
+					"name": "break_loop_at_end",
+					"setter": "set_break_loop_at_end",
+					"getter": "is_loop_broken_at_end"
+				},
+				{
+					"type": "bool",
+					"name": "autorestart",
+					"setter": "set_autorestart",
+					"getter": "has_autorestart"
+				},
+				{
+					"type": "float",
+					"name": "autorestart_delay",
+					"setter": "set_autorestart_delay",
+					"getter": "get_autorestart_delay"
+				},
+				{
+					"type": "float",
+					"name": "autorestart_random_delay",
+					"setter": "set_autorestart_random_delay",
+					"getter": "get_autorestart_random_delay"
+				}
+			]
+		},
+		{
+			"name": "AnimationNodeOutput",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "AnimationNode",
+			"api_type": "core"
+		},
+		{
 			"name": "AudioStreamInteractive",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -115043,6 +115011,34 @@
 					]
 				},
 				{
+					"name": "from_dictionary",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2594413512,
+					"return_value": {
+						"type": "GLTFBufferView"
+					},
+					"arguments": [
+						{
+							"name": "dictionary",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "to_dictionary",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3102165223,
+					"return_value": {
+						"type": "Dictionary"
+					}
+				},
+				{
 					"name": "get_buffer",
 					"is_const": true,
 					"is_vararg": false,
@@ -115460,6 +115456,34 @@
 				}
 			],
 			"methods": [
+				{
+					"name": "from_dictionary",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 3495091019,
+					"return_value": {
+						"type": "GLTFAccessor"
+					},
+					"arguments": [
+						{
+							"name": "dictionary",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "to_dictionary",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3102165223,
+					"return_value": {
+						"type": "Dictionary"
+					}
+				},
 				{
 					"name": "get_buffer_view",
 					"is_const": true,
@@ -145231,6 +145255,100 @@
 					"name": "project_hull_vertices",
 					"setter": "set_project_hull_vertices",
 					"getter": "get_project_hull_vertices"
+				}
+			]
+		},
+		{
+			"name": "GradientTexture1D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Texture2D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_gradient",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2756054477,
+					"arguments": [
+						{
+							"name": "gradient",
+							"type": "Gradient"
+						}
+					]
+				},
+				{
+					"name": "get_gradient",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 132272999,
+					"return_value": {
+						"type": "Gradient"
+					}
+				},
+				{
+					"name": "set_width",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "width",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_use_hdr",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_hdr",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "Gradient",
+					"name": "gradient",
+					"setter": "set_gradient",
+					"getter": "get_gradient"
+				},
+				{
+					"type": "int",
+					"name": "width",
+					"setter": "set_width",
+					"getter": "get_width"
+				},
+				{
+					"type": "bool",
+					"name": "use_hdr",
+					"setter": "set_use_hdr",
+					"getter": "is_using_hdr"
 				}
 			]
 		},
@@ -208728,6 +208846,31 @@
 					}
 				},
 				{
+					"name": "set_enable_drag_unfolding",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_drag_unfolding_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_drop_mode_flags",
 					"is_const": false,
 					"is_vararg": false,
@@ -209034,6 +209177,12 @@
 					"name": "enable_recursive_folding",
 					"setter": "set_enable_recursive_folding",
 					"getter": "is_recursive_folding_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "enable_drag_unfolding",
+					"setter": "set_enable_drag_unfolding",
+					"getter": "is_drag_unfolding_enabled"
 				},
 				{
 					"type": "bool",
@@ -238252,6 +238401,36 @@
 					]
 				},
 				{
+					"name": "SplashStretchMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SPLASH_STRETCH_MODE_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "SPLASH_STRETCH_MODE_KEEP",
+							"value": 1
+						},
+						{
+							"name": "SPLASH_STRETCH_MODE_KEEP_WIDTH",
+							"value": 2
+						},
+						{
+							"name": "SPLASH_STRETCH_MODE_KEEP_HEIGHT",
+							"value": 3
+						},
+						{
+							"name": "SPLASH_STRETCH_MODE_COVER",
+							"value": 4
+						},
+						{
+							"name": "SPLASH_STRETCH_MODE_IGNORE",
+							"value": 5
+						}
+					]
+				},
+				{
 					"name": "Features",
 					"is_bitfield": false,
 					"values": [
@@ -244889,6 +245068,20 @@
 					]
 				},
 				{
+					"name": "environment_set_ssr_half_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "half_size",
+							"type": "bool"
+						}
+					]
+				},
+				{
 					"name": "environment_set_ssr_roughness_quality",
 					"is_const": false,
 					"is_vararg": false,
@@ -248546,6 +248739,33 @@
 					"return_value": {
 						"type": "RID"
 					}
+				},
+				{
+					"name": "set_boot_image_with_stretch",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1104470771,
+					"arguments": [
+						{
+							"name": "image",
+							"type": "Image"
+						},
+						{
+							"name": "color",
+							"type": "Color"
+						},
+						{
+							"name": "stretch_mode",
+							"type": "enum::RenderingServer.SplashStretchMode"
+						},
+						{
+							"name": "use_filter",
+							"type": "bool",
+							"default_value": "true"
+						}
+					]
 				},
 				{
 					"name": "set_boot_image",
@@ -290230,8 +290450,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3388804757,
+					"hash": 914921954,
 					"hash_compatibility": [
+						3388804757,
 						233059325
 					],
 					"arguments": [
@@ -290241,6 +290462,11 @@
 						},
 						{
 							"name": "description",
+							"type": "String",
+							"default_value": "\"\""
+						},
+						{
+							"name": "mime_type",
 							"type": "String",
 							"default_value": "\"\""
 						}
