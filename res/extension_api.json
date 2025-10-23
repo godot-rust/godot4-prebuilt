@@ -111596,598 +111596,6 @@
 			"api_type": "core"
 		},
 		{
-			"name": "AudioStreamInteractive",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "AudioStream",
-			"api_type": "core",
-			"constants": [
-				{
-					"name": "CLIP_ANY",
-					"value": -1
-				}
-			],
-			"enums": [
-				{
-					"name": "TransitionFromTime",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "TRANSITION_FROM_TIME_IMMEDIATE",
-							"value": 0
-						},
-						{
-							"name": "TRANSITION_FROM_TIME_NEXT_BEAT",
-							"value": 1
-						},
-						{
-							"name": "TRANSITION_FROM_TIME_NEXT_BAR",
-							"value": 2
-						},
-						{
-							"name": "TRANSITION_FROM_TIME_END",
-							"value": 3
-						}
-					]
-				},
-				{
-					"name": "TransitionToTime",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "TRANSITION_TO_TIME_SAME_POSITION",
-							"value": 0
-						},
-						{
-							"name": "TRANSITION_TO_TIME_START",
-							"value": 1
-						}
-					]
-				},
-				{
-					"name": "FadeMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "FADE_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "FADE_IN",
-							"value": 1
-						},
-						{
-							"name": "FADE_OUT",
-							"value": 2
-						},
-						{
-							"name": "FADE_CROSS",
-							"value": 3
-						},
-						{
-							"name": "FADE_AUTOMATIC",
-							"value": 4
-						}
-					]
-				},
-				{
-					"name": "AutoAdvanceMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "AUTO_ADVANCE_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "AUTO_ADVANCE_ENABLED",
-							"value": 1
-						},
-						{
-							"name": "AUTO_ADVANCE_RETURN_TO_HOLD",
-							"value": 2
-						}
-					]
-				}
-			],
-			"methods": [
-				{
-					"name": "set_clip_count",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "clip_count",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_clip_count",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_initial_clip",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "clip_index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_initial_clip",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_clip_name",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3780747571,
-					"arguments": [
-						{
-							"name": "clip_index",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_clip_name",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 659327637,
-					"return_value": {
-						"type": "StringName"
-					},
-					"arguments": [
-						{
-							"name": "clip_index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_clip_stream",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 111075094,
-					"arguments": [
-						{
-							"name": "clip_index",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "stream",
-							"type": "AudioStream"
-						}
-					]
-				},
-				{
-					"name": "get_clip_stream",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2739380747,
-					"return_value": {
-						"type": "AudioStream"
-					},
-					"arguments": [
-						{
-							"name": "clip_index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_clip_auto_advance",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 57217598,
-					"arguments": [
-						{
-							"name": "clip_index",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "mode",
-							"type": "enum::AudioStreamInteractive.AutoAdvanceMode"
-						}
-					]
-				},
-				{
-					"name": "get_clip_auto_advance",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1778634807,
-					"return_value": {
-						"type": "enum::AudioStreamInteractive.AutoAdvanceMode"
-					},
-					"arguments": [
-						{
-							"name": "clip_index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_clip_auto_advance_next_clip",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3937882851,
-					"arguments": [
-						{
-							"name": "clip_index",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "auto_advance_next_clip",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_clip_auto_advance_next_clip",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 923996154,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					},
-					"arguments": [
-						{
-							"name": "clip_index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "add_transition",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1630280552,
-					"arguments": [
-						{
-							"name": "from_clip",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "to_clip",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "from_time",
-							"type": "enum::AudioStreamInteractive.TransitionFromTime"
-						},
-						{
-							"name": "to_time",
-							"type": "enum::AudioStreamInteractive.TransitionToTime"
-						},
-						{
-							"name": "fade_mode",
-							"type": "enum::AudioStreamInteractive.FadeMode"
-						},
-						{
-							"name": "fade_beats",
-							"type": "float",
-							"meta": "float"
-						},
-						{
-							"name": "use_filler_clip",
-							"type": "bool",
-							"default_value": "false"
-						},
-						{
-							"name": "filler_clip",
-							"type": "int",
-							"meta": "int32",
-							"default_value": "-1"
-						},
-						{
-							"name": "hold_previous",
-							"type": "bool",
-							"default_value": "false"
-						}
-					]
-				},
-				{
-					"name": "has_transition",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2522259332,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "from_clip",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "to_clip",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "erase_transition",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3937882851,
-					"arguments": [
-						{
-							"name": "from_clip",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "to_clip",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_transition_list",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1930428628,
-					"return_value": {
-						"type": "PackedInt32Array"
-					}
-				},
-				{
-					"name": "get_transition_from_time",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3453338158,
-					"return_value": {
-						"type": "enum::AudioStreamInteractive.TransitionFromTime"
-					},
-					"arguments": [
-						{
-							"name": "from_clip",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "to_clip",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_transition_to_time",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1369651373,
-					"return_value": {
-						"type": "enum::AudioStreamInteractive.TransitionToTime"
-					},
-					"arguments": [
-						{
-							"name": "from_clip",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "to_clip",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_transition_fade_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4065396087,
-					"return_value": {
-						"type": "enum::AudioStreamInteractive.FadeMode"
-					},
-					"arguments": [
-						{
-							"name": "from_clip",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "to_clip",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_transition_fade_beats",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3085491603,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					},
-					"arguments": [
-						{
-							"name": "from_clip",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "to_clip",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "is_transition_using_filler_clip",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2522259332,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "from_clip",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "to_clip",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_transition_filler_clip",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3175239445,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					},
-					"arguments": [
-						{
-							"name": "from_clip",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "to_clip",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "is_transition_holding_previous",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2522259332,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "from_clip",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "to_clip",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "int",
-					"name": "clip_count",
-					"setter": "set_clip_count",
-					"getter": "get_clip_count"
-				},
-				{
-					"type": "int",
-					"name": "initial_clip",
-					"setter": "set_initial_clip",
-					"getter": "get_initial_clip"
-				}
-			]
-		},
-		{
-			"name": "AudioStreamPlaybackPlaylist",
-			"is_refcounted": true,
-			"is_instantiable": false,
-			"inherits": "AudioStreamPlayback",
-			"api_type": "core"
-		},
-		{
 			"name": "AudioStreamPlaylist",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -163255,6 +162663,598 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "AudioStreamInteractive",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "AudioStream",
+			"api_type": "core",
+			"constants": [
+				{
+					"name": "CLIP_ANY",
+					"value": -1
+				}
+			],
+			"enums": [
+				{
+					"name": "TransitionFromTime",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "TRANSITION_FROM_TIME_IMMEDIATE",
+							"value": 0
+						},
+						{
+							"name": "TRANSITION_FROM_TIME_NEXT_BEAT",
+							"value": 1
+						},
+						{
+							"name": "TRANSITION_FROM_TIME_NEXT_BAR",
+							"value": 2
+						},
+						{
+							"name": "TRANSITION_FROM_TIME_END",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "TransitionToTime",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "TRANSITION_TO_TIME_SAME_POSITION",
+							"value": 0
+						},
+						{
+							"name": "TRANSITION_TO_TIME_START",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "FadeMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "FADE_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "FADE_IN",
+							"value": 1
+						},
+						{
+							"name": "FADE_OUT",
+							"value": 2
+						},
+						{
+							"name": "FADE_CROSS",
+							"value": 3
+						},
+						{
+							"name": "FADE_AUTOMATIC",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "AutoAdvanceMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "AUTO_ADVANCE_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "AUTO_ADVANCE_ENABLED",
+							"value": 1
+						},
+						{
+							"name": "AUTO_ADVANCE_RETURN_TO_HOLD",
+							"value": 2
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_clip_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "clip_count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_clip_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_initial_clip",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "clip_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_initial_clip",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_clip_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3780747571,
+					"arguments": [
+						{
+							"name": "clip_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_clip_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 659327637,
+					"return_value": {
+						"type": "StringName"
+					},
+					"arguments": [
+						{
+							"name": "clip_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_clip_stream",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 111075094,
+					"arguments": [
+						{
+							"name": "clip_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "stream",
+							"type": "AudioStream"
+						}
+					]
+				},
+				{
+					"name": "get_clip_stream",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2739380747,
+					"return_value": {
+						"type": "AudioStream"
+					},
+					"arguments": [
+						{
+							"name": "clip_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_clip_auto_advance",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 57217598,
+					"arguments": [
+						{
+							"name": "clip_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "mode",
+							"type": "enum::AudioStreamInteractive.AutoAdvanceMode"
+						}
+					]
+				},
+				{
+					"name": "get_clip_auto_advance",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1778634807,
+					"return_value": {
+						"type": "enum::AudioStreamInteractive.AutoAdvanceMode"
+					},
+					"arguments": [
+						{
+							"name": "clip_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_clip_auto_advance_next_clip",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "clip_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "auto_advance_next_clip",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_clip_auto_advance_next_clip",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "clip_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "add_transition",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1630280552,
+					"arguments": [
+						{
+							"name": "from_clip",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "to_clip",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "from_time",
+							"type": "enum::AudioStreamInteractive.TransitionFromTime"
+						},
+						{
+							"name": "to_time",
+							"type": "enum::AudioStreamInteractive.TransitionToTime"
+						},
+						{
+							"name": "fade_mode",
+							"type": "enum::AudioStreamInteractive.FadeMode"
+						},
+						{
+							"name": "fade_beats",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "use_filler_clip",
+							"type": "bool",
+							"default_value": "false"
+						},
+						{
+							"name": "filler_clip",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "-1"
+						},
+						{
+							"name": "hold_previous",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "has_transition",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2522259332,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "from_clip",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "to_clip",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "erase_transition",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "from_clip",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "to_clip",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_transition_list",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1930428628,
+					"return_value": {
+						"type": "PackedInt32Array"
+					}
+				},
+				{
+					"name": "get_transition_from_time",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3453338158,
+					"return_value": {
+						"type": "enum::AudioStreamInteractive.TransitionFromTime"
+					},
+					"arguments": [
+						{
+							"name": "from_clip",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "to_clip",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_transition_to_time",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1369651373,
+					"return_value": {
+						"type": "enum::AudioStreamInteractive.TransitionToTime"
+					},
+					"arguments": [
+						{
+							"name": "from_clip",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "to_clip",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_transition_fade_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4065396087,
+					"return_value": {
+						"type": "enum::AudioStreamInteractive.FadeMode"
+					},
+					"arguments": [
+						{
+							"name": "from_clip",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "to_clip",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_transition_fade_beats",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3085491603,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "from_clip",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "to_clip",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "is_transition_using_filler_clip",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2522259332,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "from_clip",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "to_clip",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_transition_filler_clip",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3175239445,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "from_clip",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "to_clip",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "is_transition_holding_previous",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2522259332,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "from_clip",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "to_clip",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "clip_count",
+					"setter": "set_clip_count",
+					"getter": "get_clip_count"
+				},
+				{
+					"type": "int",
+					"name": "initial_clip",
+					"setter": "set_initial_clip",
+					"getter": "get_initial_clip"
+				}
+			]
+		},
+		{
+			"name": "AudioStreamPlaybackPlaylist",
+			"is_refcounted": true,
+			"is_instantiable": false,
+			"inherits": "AudioStreamPlayback",
+			"api_type": "core"
 		},
 		{
 			"name": "Viewport",
@@ -230022,6 +230022,23 @@
 					]
 				},
 				{
+					"name": "change_scene_to_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2584678054,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "node",
+							"type": "Node"
+						}
+					]
+				},
+				{
 					"name": "reload_current_scene",
 					"is_const": false,
 					"is_vararg": false,
@@ -267229,6 +267246,28 @@
 							"value": 59
 						}
 					]
+				},
+				{
+					"name": "MonitorType",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "MONITOR_TYPE_QUANTITY",
+							"value": 0
+						},
+						{
+							"name": "MONITOR_TYPE_MEMORY",
+							"value": 1
+						},
+						{
+							"name": "MONITOR_TYPE_TIME",
+							"value": 2
+						},
+						{
+							"name": "MONITOR_TYPE_PERCENTAGE",
+							"value": 3
+						}
+					]
 				}
 			],
 			"methods": [
@@ -267256,8 +267295,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 4099036814,
+					"hash": 3655788610,
 					"hash_compatibility": [
+						4099036814,
 						2865980031
 					],
 					"arguments": [
@@ -267273,6 +267313,11 @@
 							"name": "arguments",
 							"type": "Array",
 							"default_value": "[]"
+						},
+						{
+							"name": "type",
+							"type": "enum::Performance.MonitorType",
+							"default_value": "0"
 						}
 					]
 				},
@@ -267345,6 +267390,17 @@
 					"hash": 2915620761,
 					"return_value": {
 						"type": "typedarray::StringName"
+					}
+				},
+				{
+					"name": "get_custom_monitor_types",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 969006518,
+					"return_value": {
+						"type": "PackedInt32Array"
 					}
 				}
 			]
@@ -295195,6 +295251,14 @@
 					}
 				},
 				{
+					"name": "popup_file_dialog",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
 					"name": "add_side_menu",
 					"is_const": false,
 					"is_vararg": false,
@@ -295212,14 +295276,6 @@
 							"default_value": "\"\""
 						}
 					]
-				},
-				{
-					"name": "popup_file_dialog",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
 				},
 				{
 					"name": "invalidate",
