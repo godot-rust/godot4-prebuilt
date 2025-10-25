@@ -80192,6 +80192,14 @@
 					]
 				},
 				{
+					"name": "reset_instances_physics_interpolation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
 					"name": "set_custom_aabb",
 					"is_const": false,
 					"is_vararg": false,
@@ -145659,6 +145667,9 @@
 					"name": "folder_color_changed"
 				},
 				{
+					"name": "selection_changed"
+				},
+				{
 					"name": "display_mode_changed"
 				}
 			]
@@ -183401,6 +183412,24 @@
 					"arguments": [
 						{
 							"name": "ycbcr_image",
+							"type": "Image"
+						}
+					]
+				},
+				{
+					"name": "set_ycbcr_images",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1986484629,
+					"arguments": [
+						{
+							"name": "y_image",
+							"type": "Image"
+						},
+						{
+							"name": "cbcr_image",
 							"type": "Image"
 						}
 					]
@@ -240371,6 +240400,20 @@
 					]
 				},
 				{
+					"name": "multimesh_instances_reset_physics_interpolation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "multimesh",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "skeleton_create",
 					"is_const": false,
 					"is_vararg": false,
@@ -250500,8 +250543,16 @@
 							"value": 9
 						},
 						{
-							"name": "UNIFORM_TYPE_MAX",
+							"name": "UNIFORM_TYPE_UNIFORM_BUFFER_DYNAMIC",
 							"value": 10
+						},
+						{
+							"name": "UNIFORM_TYPE_STORAGE_BUFFER_DYNAMIC",
+							"value": 11
+						},
+						{
+							"name": "UNIFORM_TYPE_MAX",
+							"value": 12
 						}
 					]
 				},
