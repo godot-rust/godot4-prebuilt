@@ -40177,6 +40177,31 @@
 					}
 				},
 				{
+					"name": "set_text_overrun_behavior",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1008890932,
+					"arguments": [
+						{
+							"name": "overrun_behavior",
+							"type": "enum::TextServer.OverrunBehavior"
+						}
+					]
+				},
+				{
+					"name": "get_text_overrun_behavior",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3779142101,
+					"return_value": {
+						"type": "enum::TextServer.OverrunBehavior"
+					}
+				},
+				{
 					"name": "set_text_direction",
 					"is_const": false,
 					"is_vararg": false,
@@ -40345,6 +40370,12 @@
 					"name": "uri",
 					"setter": "set_uri",
 					"getter": "get_uri"
+				},
+				{
+					"type": "int",
+					"name": "text_overrun_behavior",
+					"setter": "set_text_overrun_behavior",
+					"getter": "get_text_overrun_behavior"
 				},
 				{
 					"type": "int",
@@ -164750,6 +164781,33 @@
 					}
 				},
 				{
+					"name": "set_drag_threshold",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "threshold",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_drag_threshold",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
 					"name": "set_canvas_cull_mask",
 					"is_const": false,
 					"is_vararg": false,
@@ -165557,6 +165615,12 @@
 					"name": "gui_embed_subwindows",
 					"setter": "set_embedding_subwindows",
 					"getter": "is_embedding_subwindows"
+				},
+				{
+					"type": "int",
+					"name": "gui_drag_threshold",
+					"setter": "set_drag_threshold",
+					"getter": "get_drag_threshold"
 				},
 				{
 					"type": "int",
