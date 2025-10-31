@@ -192702,6 +192702,98 @@
 			]
 		},
 		{
+			"name": "NavigationServer3DManager",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Object",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "register_server",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2137474292,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						},
+						{
+							"name": "create_callback",
+							"type": "Callable"
+						}
+					]
+				},
+				{
+					"name": "set_default_server",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2956805083,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						},
+						{
+							"name": "priority",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "NavigationServer2DManager",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Object",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "register_server",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2137474292,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						},
+						{
+							"name": "create_callback",
+							"type": "Callable"
+						}
+					]
+				},
+				{
+					"name": "set_default_server",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2956805083,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						},
+						{
+							"name": "priority",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "PhysicsServer2DManager",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -313533,6 +313625,33 @@
 					}
 				},
 				{
+					"name": "set_random_pitch_semitones",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "semitones",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_random_pitch_semitones",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "set_random_volume_offset_db",
 					"is_const": false,
 					"is_vararg": false,
@@ -313597,6 +313716,12 @@
 					"name": "random_pitch",
 					"setter": "set_random_pitch",
 					"getter": "get_random_pitch"
+				},
+				{
+					"type": "float",
+					"name": "random_pitch_semitones",
+					"setter": "set_random_pitch_semitones",
+					"getter": "get_random_pitch_semitones"
 				},
 				{
 					"type": "float",
@@ -316442,6 +316567,54 @@
 					"hash": 2002593661,
 					"return_value": {
 						"type": "StringName"
+					}
+				},
+				{
+					"name": "get_fading_from_play_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_fading_from_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_fading_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_fading_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
 					}
 				},
 				{
@@ -341558,8 +341731,16 @@
 			"type": "TextServerManager"
 		},
 		{
+			"name": "NavigationServer2DManager",
+			"type": "NavigationServer2DManager"
+		},
+		{
 			"name": "PhysicsServer2DManager",
 			"type": "PhysicsServer2DManager"
+		},
+		{
+			"name": "NavigationServer3DManager",
+			"type": "NavigationServer3DManager"
 		},
 		{
 			"name": "PhysicsServer3DManager",
