@@ -40202,6 +40202,31 @@
 					}
 				},
 				{
+					"name": "set_ellipsis_char",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "char",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_ellipsis_char",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
 					"name": "set_text_direction",
 					"is_const": false,
 					"is_vararg": false,
@@ -40376,6 +40401,12 @@
 					"name": "text_overrun_behavior",
 					"setter": "set_text_overrun_behavior",
 					"getter": "get_text_overrun_behavior"
+				},
+				{
+					"type": "String",
+					"name": "ellipsis_char",
+					"setter": "set_ellipsis_char",
+					"getter": "get_ellipsis_char"
 				},
 				{
 					"type": "int",
