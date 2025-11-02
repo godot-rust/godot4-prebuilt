@@ -25786,343 +25786,6 @@
 	],
 	"classes": [
 		{
-			"name": "AnimationNodeStateMachineTransition",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"enums": [
-				{
-					"name": "SwitchMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "SWITCH_MODE_IMMEDIATE",
-							"value": 0
-						},
-						{
-							"name": "SWITCH_MODE_SYNC",
-							"value": 1
-						},
-						{
-							"name": "SWITCH_MODE_AT_END",
-							"value": 2
-						}
-					]
-				},
-				{
-					"name": "AdvanceMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "ADVANCE_MODE_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "ADVANCE_MODE_ENABLED",
-							"value": 1
-						},
-						{
-							"name": "ADVANCE_MODE_AUTO",
-							"value": 2
-						}
-					]
-				}
-			],
-			"methods": [
-				{
-					"name": "set_switch_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2074906633,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::AnimationNodeStateMachineTransition.SwitchMode"
-						}
-					]
-				},
-				{
-					"name": "get_switch_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2138562085,
-					"return_value": {
-						"type": "enum::AnimationNodeStateMachineTransition.SwitchMode"
-					}
-				},
-				{
-					"name": "set_advance_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1210869868,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::AnimationNodeStateMachineTransition.AdvanceMode"
-						}
-					]
-				},
-				{
-					"name": "get_advance_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 61101689,
-					"return_value": {
-						"type": "enum::AnimationNodeStateMachineTransition.AdvanceMode"
-					}
-				},
-				{
-					"name": "set_advance_condition",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3304788590,
-					"arguments": [
-						{
-							"name": "name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_advance_condition",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2002593661,
-					"return_value": {
-						"type": "StringName"
-					}
-				},
-				{
-					"name": "set_xfade_time",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "secs",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_xfade_time",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_xfade_curve",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 270443179,
-					"arguments": [
-						{
-							"name": "curve",
-							"type": "Curve"
-						}
-					]
-				},
-				{
-					"name": "get_xfade_curve",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2460114913,
-					"return_value": {
-						"type": "Curve"
-					}
-				},
-				{
-					"name": "set_break_loop_at_end",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_loop_broken_at_end",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_reset",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "reset",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_reset",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_priority",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "priority",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_priority",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_advance_expression",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "text",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_advance_expression",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				}
-			],
-			"signals": [
-				{
-					"name": "advance_condition_changed"
-				}
-			],
-			"properties": [
-				{
-					"type": "float",
-					"name": "xfade_time",
-					"setter": "set_xfade_time",
-					"getter": "get_xfade_time"
-				},
-				{
-					"type": "Curve",
-					"name": "xfade_curve",
-					"setter": "set_xfade_curve",
-					"getter": "get_xfade_curve"
-				},
-				{
-					"type": "bool",
-					"name": "break_loop_at_end",
-					"setter": "set_break_loop_at_end",
-					"getter": "is_loop_broken_at_end"
-				},
-				{
-					"type": "bool",
-					"name": "reset",
-					"setter": "set_reset",
-					"getter": "is_reset"
-				},
-				{
-					"type": "int",
-					"name": "priority",
-					"setter": "set_priority",
-					"getter": "get_priority"
-				},
-				{
-					"type": "int",
-					"name": "switch_mode",
-					"setter": "set_switch_mode",
-					"getter": "get_switch_mode"
-				},
-				{
-					"type": "int",
-					"name": "advance_mode",
-					"setter": "set_advance_mode",
-					"getter": "get_advance_mode"
-				},
-				{
-					"type": "StringName",
-					"name": "advance_condition",
-					"setter": "set_advance_condition",
-					"getter": "get_advance_condition"
-				},
-				{
-					"type": "String",
-					"name": "advance_expression",
-					"setter": "set_advance_expression",
-					"getter": "get_advance_expression"
-				}
-			]
-		},
-		{
 			"name": "AnimationNodeSync",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -111664,6 +111327,343 @@
 			"is_instantiable": true,
 			"inherits": "AnimationNode",
 			"api_type": "core"
+		},
+		{
+			"name": "AnimationNodeStateMachineTransition",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "SwitchMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SWITCH_MODE_IMMEDIATE",
+							"value": 0
+						},
+						{
+							"name": "SWITCH_MODE_SYNC",
+							"value": 1
+						},
+						{
+							"name": "SWITCH_MODE_AT_END",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "AdvanceMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ADVANCE_MODE_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "ADVANCE_MODE_ENABLED",
+							"value": 1
+						},
+						{
+							"name": "ADVANCE_MODE_AUTO",
+							"value": 2
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_switch_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2074906633,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::AnimationNodeStateMachineTransition.SwitchMode"
+						}
+					]
+				},
+				{
+					"name": "get_switch_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2138562085,
+					"return_value": {
+						"type": "enum::AnimationNodeStateMachineTransition.SwitchMode"
+					}
+				},
+				{
+					"name": "set_advance_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1210869868,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::AnimationNodeStateMachineTransition.AdvanceMode"
+						}
+					]
+				},
+				{
+					"name": "get_advance_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 61101689,
+					"return_value": {
+						"type": "enum::AnimationNodeStateMachineTransition.AdvanceMode"
+					}
+				},
+				{
+					"name": "set_advance_condition",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_advance_condition",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_xfade_time",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "secs",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_xfade_time",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_xfade_curve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 270443179,
+					"arguments": [
+						{
+							"name": "curve",
+							"type": "Curve"
+						}
+					]
+				},
+				{
+					"name": "get_xfade_curve",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2460114913,
+					"return_value": {
+						"type": "Curve"
+					}
+				},
+				{
+					"name": "set_break_loop_at_end",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_loop_broken_at_end",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_reset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "reset",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_reset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_priority",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "priority",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_priority",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_advance_expression",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "text",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_advance_expression",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				}
+			],
+			"signals": [
+				{
+					"name": "advance_condition_changed"
+				}
+			],
+			"properties": [
+				{
+					"type": "float",
+					"name": "xfade_time",
+					"setter": "set_xfade_time",
+					"getter": "get_xfade_time"
+				},
+				{
+					"type": "Curve",
+					"name": "xfade_curve",
+					"setter": "set_xfade_curve",
+					"getter": "get_xfade_curve"
+				},
+				{
+					"type": "bool",
+					"name": "break_loop_at_end",
+					"setter": "set_break_loop_at_end",
+					"getter": "is_loop_broken_at_end"
+				},
+				{
+					"type": "bool",
+					"name": "reset",
+					"setter": "set_reset",
+					"getter": "is_reset"
+				},
+				{
+					"type": "int",
+					"name": "priority",
+					"setter": "set_priority",
+					"getter": "get_priority"
+				},
+				{
+					"type": "int",
+					"name": "switch_mode",
+					"setter": "set_switch_mode",
+					"getter": "get_switch_mode"
+				},
+				{
+					"type": "int",
+					"name": "advance_mode",
+					"setter": "set_advance_mode",
+					"getter": "get_advance_mode"
+				},
+				{
+					"type": "StringName",
+					"name": "advance_condition",
+					"setter": "set_advance_condition",
+					"getter": "get_advance_condition"
+				},
+				{
+					"type": "String",
+					"name": "advance_expression",
+					"setter": "set_advance_expression",
+					"getter": "get_advance_expression"
+				}
+			]
 		},
 		{
 			"name": "AudioStreamPlaylist",
