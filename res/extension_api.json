@@ -25786,48 +25786,6 @@
 	],
 	"classes": [
 		{
-			"name": "AnimationNodeSync",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "AnimationNode",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_use_sync",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_sync",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "bool",
-					"name": "sync",
-					"setter": "set_use_sync",
-					"getter": "is_using_sync"
-				}
-			]
-		},
-		{
 			"name": "AnimationNodeExtension",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -111662,6 +111620,48 @@
 					"name": "advance_expression",
 					"setter": "set_advance_expression",
 					"getter": "get_advance_expression"
+				}
+			]
+		},
+		{
+			"name": "AnimationNodeSync",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "AnimationNode",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_use_sync",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_sync",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "sync",
+					"setter": "set_use_sync",
+					"getter": "is_using_sync"
 				}
 			]
 		},
@@ -309787,6 +309787,33 @@
 					}
 				},
 				{
+					"name": "set_line_numbers_min_digits",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_line_numbers_min_digits",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
 					"name": "set_draw_fold_gutter",
 					"is_const": false,
 					"is_vararg": false,
@@ -310872,6 +310899,12 @@
 					"name": "gutters_zero_pad_line_numbers",
 					"setter": "set_line_numbers_zero_padded",
 					"getter": "is_line_numbers_zero_padded"
+				},
+				{
+					"type": "int",
+					"name": "gutters_line_numbers_min_digits",
+					"setter": "set_line_numbers_min_digits",
+					"getter": "get_line_numbers_min_digits"
 				},
 				{
 					"type": "bool",
