@@ -1987,6 +1987,7 @@ pub const GDEXTENSION_METHOD_FLAG_CONST: GDExtensionClassMethodFlags = 4;
 pub const GDEXTENSION_METHOD_FLAG_VIRTUAL: GDExtensionClassMethodFlags = 8;
 pub const GDEXTENSION_METHOD_FLAG_VARARG: GDExtensionClassMethodFlags = 16;
 pub const GDEXTENSION_METHOD_FLAG_STATIC: GDExtensionClassMethodFlags = 32;
+pub const GDEXTENSION_METHOD_FLAG_VIRTUAL_REQUIRED: GDExtensionClassMethodFlags = 128;
 pub const GDEXTENSION_METHOD_FLAGS_DEFAULT: GDExtensionClassMethodFlags = 1;
 pub type GDExtensionClassMethodFlags = ::std::os::raw::c_uint;
 pub const GDEXTENSION_METHOD_ARGUMENT_METADATA_NONE: GDExtensionClassMethodArgumentMetadata = 0;

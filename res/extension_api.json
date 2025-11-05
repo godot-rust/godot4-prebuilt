@@ -21662,9 +21662,12 @@
 					"name": "duplicate",
 					"return_type": "PackedByteArray",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 851781288
+					"hash": 247621236,
+					"hash_compatibility": [
+						851781288
+					]
 				},
 				{
 					"name": "find",
@@ -22693,9 +22696,12 @@
 					"name": "duplicate",
 					"return_type": "PackedInt32Array",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 1997843129
+					"hash": 3158844420,
+					"hash_compatibility": [
+						1997843129
+					]
 				},
 				{
 					"name": "find",
@@ -23066,9 +23072,12 @@
 					"name": "duplicate",
 					"return_type": "PackedInt64Array",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 2376370016
+					"hash": 1961294120,
+					"hash_compatibility": [
+						2376370016
+					]
 				},
 				{
 					"name": "find",
@@ -23439,9 +23448,12 @@
 					"name": "duplicate",
 					"return_type": "PackedFloat32Array",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 831114784
+					"hash": 3575107827,
+					"hash_compatibility": [
+						831114784
+					]
 				},
 				{
 					"name": "find",
@@ -23812,9 +23824,12 @@
 					"name": "duplicate",
 					"return_type": "PackedFloat64Array",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 949266573
+					"hash": 1627308337,
+					"hash_compatibility": [
+						949266573
+					]
 				},
 				{
 					"name": "find",
@@ -24185,9 +24200,12 @@
 					"name": "duplicate",
 					"return_type": "PackedStringArray",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 2991231410
+					"hash": 747180633,
+					"hash_compatibility": [
+						2991231410
+					]
 				},
 				{
 					"name": "find",
@@ -24563,9 +24581,12 @@
 					"name": "duplicate",
 					"return_type": "PackedVector2Array",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 3763646812
+					"hash": 1660374357,
+					"hash_compatibility": [
+						3763646812
+					]
 				},
 				{
 					"name": "find",
@@ -24941,9 +24962,12 @@
 					"name": "duplicate",
 					"return_type": "PackedVector3Array",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 2754175465
+					"hash": 4171207452,
+					"hash_compatibility": [
+						2754175465
+					]
 				},
 				{
 					"name": "find",
@@ -25314,9 +25338,12 @@
 					"name": "duplicate",
 					"return_type": "PackedColorArray",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 1011903421
+					"hash": 3072026941,
+					"hash_compatibility": [
+						1011903421
+					]
 				},
 				{
 					"name": "find",
@@ -25687,9 +25714,12 @@
 					"name": "duplicate",
 					"return_type": "PackedVector4Array",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 3186305013
+					"hash": 146203628,
+					"hash_compatibility": [
+						3186305013
+					]
 				},
 				{
 					"name": "find",
@@ -88338,6 +88368,1566 @@
 			"api_type": "core"
 		},
 		{
+			"name": "JacobianIK3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "IterateIK3D",
+			"api_type": "core"
+		},
+		{
+			"name": "CCDIK3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "IterateIK3D",
+			"api_type": "core"
+		},
+		{
+			"name": "FABRIK3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "IterateIK3D",
+			"api_type": "core"
+		},
+		{
+			"name": "IterateIK3D",
+			"is_refcounted": false,
+			"is_instantiable": false,
+			"inherits": "ChainIK3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_max_iterations",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_iterations",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_max_iterations",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_min_distance",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "min_distance",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_min_distance",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_angular_delta_limit",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "angular_delta_limit",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_angular_delta_limit",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_target_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2761262315,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "target_node",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_target_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 408788394,
+					"return_value": {
+						"type": "NodePath"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_rotation_axis",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1391134969,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "axis",
+							"type": "enum::SkeletonModifier3D.RotationAxis"
+						}
+					]
+				},
+				{
+					"name": "get_joint_rotation_axis",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3312594080,
+					"return_value": {
+						"type": "enum::SkeletonModifier3D.RotationAxis"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_rotation_axis_vector",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2866752138,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "axis_vector",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_joint_rotation_axis_vector",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1592972041,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_limitation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1194636955,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "limitation",
+							"type": "JointLimitation3D"
+						}
+					]
+				},
+				{
+					"name": "get_joint_limitation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 91665146,
+					"return_value": {
+						"type": "JointLimitation3D"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_limitation_right_axis",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3838967147,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "direction",
+							"type": "enum::SkeletonModifier3D.SecondaryDirection"
+						}
+					]
+				},
+				{
+					"name": "get_joint_limitation_right_axis",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 623936134,
+					"return_value": {
+						"type": "enum::SkeletonModifier3D.SecondaryDirection"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_limitation_right_axis_vector",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2866752138,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "vector",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_joint_limitation_right_axis_vector",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1592972041,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_limitation_rotation_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4188936002,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "offset",
+							"type": "Quaternion"
+						}
+					]
+				},
+				{
+					"name": "get_joint_limitation_rotation_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722473700,
+					"return_value": {
+						"type": "Quaternion"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "max_iterations",
+					"setter": "set_max_iterations",
+					"getter": "get_max_iterations"
+				},
+				{
+					"type": "float",
+					"name": "min_distance",
+					"setter": "set_min_distance",
+					"getter": "get_min_distance"
+				},
+				{
+					"type": "float",
+					"name": "angular_delta_limit",
+					"setter": "set_angular_delta_limit",
+					"getter": "get_angular_delta_limit"
+				},
+				{
+					"type": "int",
+					"name": "setting_count",
+					"setter": "set_setting_count",
+					"getter": "get_setting_count"
+				}
+			]
+		},
+		{
+			"name": "SplineIK3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "ChainIK3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_path_3d",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2761262315,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "path_3d",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_path_3d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 408788394,
+					"return_value": {
+						"type": "NodePath"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_tilt_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_tilt_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_tilt_fade_in",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "size",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_tilt_fade_in",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_tilt_fade_out",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "size",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_tilt_fade_out",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "setting_count",
+					"setter": "set_setting_count",
+					"getter": "get_setting_count"
+				}
+			]
+		},
+		{
+			"name": "ChainIK3D",
+			"is_refcounted": false,
+			"is_instantiable": false,
+			"inherits": "IKModifier3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_root_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_root_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_root_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_root_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_extend_end_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_end_bone_extended",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone_direction",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2838484201,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_direction",
+							"type": "enum::SkeletonModifier3D.BoneDirection"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1843036459,
+					"return_value": {
+						"type": "enum::SkeletonModifier3D.BoneDirection"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "length",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joint_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1391810591,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joint_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3175239445,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joint_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "TwoBoneIK3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "IKModifier3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_target_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2761262315,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "target_node",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_target_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 408788394,
+					"return_value": {
+						"type": "NodePath"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_pole_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2761262315,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "pole_node",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_pole_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 408788394,
+					"return_value": {
+						"type": "NodePath"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_root_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_root_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_root_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_root_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_middle_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_middle_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_middle_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_middle_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_pole_direction",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 258741388,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "direction",
+							"type": "enum::SkeletonModifier3D.SecondaryDirection"
+						}
+					]
+				},
+				{
+					"name": "get_pole_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 377522128,
+					"return_value": {
+						"type": "enum::SkeletonModifier3D.SecondaryDirection"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_pole_direction_vector",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1530502735,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "vector",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_pole_direction_vector",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 711720468,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_use_virtual_end",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_virtual_end",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_extend_end_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_end_bone_extended",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone_direction",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2838484201,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_direction",
+							"type": "enum::SkeletonModifier3D.BoneDirection"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1843036459,
+					"return_value": {
+						"type": "enum::SkeletonModifier3D.BoneDirection"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "length",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "setting_count",
+					"setter": "set_setting_count",
+					"getter": "get_setting_count"
+				}
+			]
+		},
+		{
+			"name": "IKModifier3D",
+			"is_refcounted": false,
+			"is_instantiable": false,
+			"inherits": "SkeletonModifier3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_setting_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_setting_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "clear_settings",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "reset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				}
+			]
+		},
+		{
 			"name": "AimModifier3D",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -90112,40 +91702,6 @@
 			"api_type": "core",
 			"enums": [
 				{
-					"name": "BoneDirection",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "BONE_DIRECTION_PLUS_X",
-							"value": 0
-						},
-						{
-							"name": "BONE_DIRECTION_MINUS_X",
-							"value": 1
-						},
-						{
-							"name": "BONE_DIRECTION_PLUS_Y",
-							"value": 2
-						},
-						{
-							"name": "BONE_DIRECTION_MINUS_Y",
-							"value": 3
-						},
-						{
-							"name": "BONE_DIRECTION_PLUS_Z",
-							"value": 4
-						},
-						{
-							"name": "BONE_DIRECTION_MINUS_Z",
-							"value": 5
-						},
-						{
-							"name": "BONE_DIRECTION_FROM_PARENT",
-							"value": 6
-						}
-					]
-				},
-				{
 					"name": "CenterFrom",
 					"is_bitfield": false,
 					"values": [
@@ -90160,32 +91716,6 @@
 						{
 							"name": "CENTER_FROM_BONE",
 							"value": 2
-						}
-					]
-				},
-				{
-					"name": "RotationAxis",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "ROTATION_AXIS_X",
-							"value": 0
-						},
-						{
-							"name": "ROTATION_AXIS_Y",
-							"value": 1
-						},
-						{
-							"name": "ROTATION_AXIS_Z",
-							"value": 2
-						},
-						{
-							"name": "ROTATION_AXIS_ALL",
-							"value": 3
-						},
-						{
-							"name": "ROTATION_AXIS_CUSTOM",
-							"value": 4
 						}
 					]
 				}
@@ -90386,7 +91916,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 204796492,
+					"hash": 2838484201,
+					"hash_compatibility": [
+						204796492
+					],
 					"arguments": [
 						{
 							"name": "index",
@@ -90395,7 +91928,7 @@
 						},
 						{
 							"name": "bone_direction",
-							"type": "enum::SpringBoneSimulator3D.BoneDirection"
+							"type": "enum::SkeletonModifier3D.BoneDirection"
 						}
 					]
 				},
@@ -90405,9 +91938,12 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2438315700,
+					"hash": 1843036459,
+					"hash_compatibility": [
+						2438315700
+					],
 					"return_value": {
-						"type": "enum::SpringBoneSimulator3D.BoneDirection"
+						"type": "enum::SkeletonModifier3D.BoneDirection"
 					},
 					"arguments": [
 						{
@@ -90651,7 +92187,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3534169209,
+					"hash": 1539703856,
+					"hash_compatibility": [
+						3534169209
+					],
 					"arguments": [
 						{
 							"name": "index",
@@ -90660,7 +92199,7 @@
 						},
 						{
 							"name": "axis",
-							"type": "enum::SpringBoneSimulator3D.RotationAxis"
+							"type": "enum::SkeletonModifier3D.RotationAxis"
 						}
 					]
 				},
@@ -90670,9 +92209,12 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 748837671,
+					"hash": 2844851118,
+					"hash_compatibility": [
+						748837671
+					],
 					"return_value": {
-						"type": "enum::SpringBoneSimulator3D.RotationAxis"
+						"type": "enum::SkeletonModifier3D.RotationAxis"
 					},
 					"arguments": [
 						{
@@ -91146,7 +92688,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 4224018032,
+					"hash": 1391134969,
+					"hash_compatibility": [
+						4224018032
+					],
 					"arguments": [
 						{
 							"name": "index",
@@ -91160,7 +92705,7 @@
 						},
 						{
 							"name": "axis",
-							"type": "enum::SpringBoneSimulator3D.RotationAxis"
+							"type": "enum::SkeletonModifier3D.RotationAxis"
 						}
 					]
 				},
@@ -91170,9 +92715,12 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2488679199,
+					"hash": 3312594080,
+					"hash_compatibility": [
+						2488679199
+					],
 					"return_value": {
-						"type": "enum::SpringBoneSimulator3D.RotationAxis"
+						"type": "enum::SkeletonModifier3D.RotationAxis"
 					},
 					"arguments": [
 						{
@@ -91783,6 +93331,57 @@
 					"getter": "get_setting_count"
 				}
 			]
+		},
+		{
+			"name": "JointLimitationCone3D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "JointLimitation3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_radius_range",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radius_range",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_radius_range",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "float",
+					"name": "radius_range",
+					"setter": "set_radius_range",
+					"getter": "get_radius_range"
+				}
+			]
+		},
+		{
+			"name": "JointLimitation3D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core"
 		},
 		{
 			"name": "SkeletonProfile",
@@ -92648,6 +94247,104 @@
 						{
 							"name": "BONE_AXIS_MINUS_Z",
 							"value": 5
+						}
+					]
+				},
+				{
+					"name": "BoneDirection",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "BONE_DIRECTION_PLUS_X",
+							"value": 0
+						},
+						{
+							"name": "BONE_DIRECTION_MINUS_X",
+							"value": 1
+						},
+						{
+							"name": "BONE_DIRECTION_PLUS_Y",
+							"value": 2
+						},
+						{
+							"name": "BONE_DIRECTION_MINUS_Y",
+							"value": 3
+						},
+						{
+							"name": "BONE_DIRECTION_PLUS_Z",
+							"value": 4
+						},
+						{
+							"name": "BONE_DIRECTION_MINUS_Z",
+							"value": 5
+						},
+						{
+							"name": "BONE_DIRECTION_FROM_PARENT",
+							"value": 6
+						}
+					]
+				},
+				{
+					"name": "SecondaryDirection",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SECONDARY_DIRECTION_NONE",
+							"value": 0
+						},
+						{
+							"name": "SECONDARY_DIRECTION_PLUS_X",
+							"value": 1
+						},
+						{
+							"name": "SECONDARY_DIRECTION_MINUS_X",
+							"value": 2
+						},
+						{
+							"name": "SECONDARY_DIRECTION_PLUS_Y",
+							"value": 3
+						},
+						{
+							"name": "SECONDARY_DIRECTION_MINUS_Y",
+							"value": 4
+						},
+						{
+							"name": "SECONDARY_DIRECTION_PLUS_Z",
+							"value": 5
+						},
+						{
+							"name": "SECONDARY_DIRECTION_MINUS_Z",
+							"value": 6
+						},
+						{
+							"name": "SECONDARY_DIRECTION_CUSTOM",
+							"value": 7
+						}
+					]
+				},
+				{
+					"name": "RotationAxis",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ROTATION_AXIS_X",
+							"value": 0
+						},
+						{
+							"name": "ROTATION_AXIS_Y",
+							"value": 1
+						},
+						{
+							"name": "ROTATION_AXIS_Z",
+							"value": 2
+						},
+						{
+							"name": "ROTATION_AXIS_ALL",
+							"value": 3
+						},
+						{
+							"name": "ROTATION_AXIS_CUSTOM",
+							"value": 4
 						}
 					]
 				}
@@ -111662,648 +113359,6 @@
 					"name": "sync",
 					"setter": "set_use_sync",
 					"getter": "is_using_sync"
-				}
-			]
-		},
-		{
-			"name": "AudioStreamPlaylist",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "AudioStream",
-			"api_type": "core",
-			"constants": [
-				{
-					"name": "MAX_STREAMS",
-					"value": 64
-				}
-			],
-			"methods": [
-				{
-					"name": "set_stream_count",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "stream_count",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_stream_count",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "get_bpm",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_list_stream",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 111075094,
-					"arguments": [
-						{
-							"name": "stream_index",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "audio_stream",
-							"type": "AudioStream"
-						}
-					]
-				},
-				{
-					"name": "get_list_stream",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2739380747,
-					"return_value": {
-						"type": "AudioStream"
-					},
-					"arguments": [
-						{
-							"name": "stream_index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_shuffle",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "shuffle",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_shuffle",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_fade_time",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "dec",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_fade_time",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_loop",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "loop",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "has_loop",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "bool",
-					"name": "shuffle",
-					"setter": "set_shuffle",
-					"getter": "get_shuffle"
-				},
-				{
-					"type": "bool",
-					"name": "loop",
-					"setter": "set_loop",
-					"getter": "has_loop"
-				},
-				{
-					"type": "float",
-					"name": "fade_time",
-					"setter": "set_fade_time",
-					"getter": "get_fade_time"
-				},
-				{
-					"type": "int",
-					"name": "stream_count",
-					"setter": "set_stream_count",
-					"getter": "get_stream_count"
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_0",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 0
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_1",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 1
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_2",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 2
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_3",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 3
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_4",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 4
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_5",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 5
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_6",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 6
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_7",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 7
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_8",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 8
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_9",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 9
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_10",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 10
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_11",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 11
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_12",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 12
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_13",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 13
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_14",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 14
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_15",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 15
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_16",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 16
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_17",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 17
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_18",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 18
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_19",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 19
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_20",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 20
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_21",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 21
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_22",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 22
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_23",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 23
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_24",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 24
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_25",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 25
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_26",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 26
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_27",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 27
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_28",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 28
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_29",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 29
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_30",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 30
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_31",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 31
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_32",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 32
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_33",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 33
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_34",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 34
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_35",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 35
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_36",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 36
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_37",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 37
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_38",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 38
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_39",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 39
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_40",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 40
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_41",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 41
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_42",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 42
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_43",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 43
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_44",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 44
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_45",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 45
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_46",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 46
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_47",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 47
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_48",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 48
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_49",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 49
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_50",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 50
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_51",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 51
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_52",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 52
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_53",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 53
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_54",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 54
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_55",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 55
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_56",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 56
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_57",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 57
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_58",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 58
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_59",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 59
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_60",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 60
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_61",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 61
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_62",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 62
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_63",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 63
 				}
 			]
 		},
@@ -163328,6 +164383,648 @@
 			"is_instantiable": false,
 			"inherits": "AudioStreamPlayback",
 			"api_type": "core"
+		},
+		{
+			"name": "AudioStreamPlaylist",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "AudioStream",
+			"api_type": "core",
+			"constants": [
+				{
+					"name": "MAX_STREAMS",
+					"value": 64
+				}
+			],
+			"methods": [
+				{
+					"name": "set_stream_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "stream_count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_stream_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_bpm",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_list_stream",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 111075094,
+					"arguments": [
+						{
+							"name": "stream_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "audio_stream",
+							"type": "AudioStream"
+						}
+					]
+				},
+				{
+					"name": "get_list_stream",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2739380747,
+					"return_value": {
+						"type": "AudioStream"
+					},
+					"arguments": [
+						{
+							"name": "stream_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_shuffle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "shuffle",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_shuffle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_fade_time",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "dec",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_fade_time",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_loop",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "loop",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "has_loop",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "shuffle",
+					"setter": "set_shuffle",
+					"getter": "get_shuffle"
+				},
+				{
+					"type": "bool",
+					"name": "loop",
+					"setter": "set_loop",
+					"getter": "has_loop"
+				},
+				{
+					"type": "float",
+					"name": "fade_time",
+					"setter": "set_fade_time",
+					"getter": "get_fade_time"
+				},
+				{
+					"type": "int",
+					"name": "stream_count",
+					"setter": "set_stream_count",
+					"getter": "get_stream_count"
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_0",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 0
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_1",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 1
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_2",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 2
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_3",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 3
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_4",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 4
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_5",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 5
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_6",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 6
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_7",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 7
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_8",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 8
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_9",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 9
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_10",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 10
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_11",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 11
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_12",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 12
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_13",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 13
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_14",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 14
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_15",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 15
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_16",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 16
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_17",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 17
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_18",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 18
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_19",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 19
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_20",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 20
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_21",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 21
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_22",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 22
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_23",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 23
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_24",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 24
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_25",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 25
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_26",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 26
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_27",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 27
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_28",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 28
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_29",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 29
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_30",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 30
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_31",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 31
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_32",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 32
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_33",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 33
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_34",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 34
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_35",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 35
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_36",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 36
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_37",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 37
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_38",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 38
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_39",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 39
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_40",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 40
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_41",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 41
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_42",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 42
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_43",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 43
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_44",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 44
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_45",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 45
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_46",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 46
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_47",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 47
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_48",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 48
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_49",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 49
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_50",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 50
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_51",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 51
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_52",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 52
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_53",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 53
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_54",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 54
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_55",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 55
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_56",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 56
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_57",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 57
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_58",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 58
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_59",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 59
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_60",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 60
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_61",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 61
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_62",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 62
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_63",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 63
+				}
+			]
 		},
 		{
 			"name": "Viewport",
@@ -293962,6 +295659,17 @@
 					"return_value": {
 						"type": "float",
 						"meta": "float"
+					}
+				},
+				{
+					"name": "get_editor_language",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
 					}
 				},
 				{
