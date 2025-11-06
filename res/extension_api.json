@@ -25816,76 +25816,6 @@
 	],
 	"classes": [
 		{
-			"name": "AnimationNodeExtension",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "AnimationNode",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "_process_animation_node",
-					"is_const": false,
-					"is_static": false,
-					"is_required": true,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 912931771,
-					"return_value": {
-						"type": "PackedFloat32Array"
-					},
-					"arguments": [
-						{
-							"name": "playback_info",
-							"type": "PackedFloat64Array"
-						},
-						{
-							"name": "test_only",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_looping",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 2035584311,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "node_info",
-							"type": "PackedFloat32Array"
-						}
-					]
-				},
-				{
-					"name": "get_remaining_time",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 2851904656,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					},
-					"arguments": [
-						{
-							"name": "node_info",
-							"type": "PackedFloat32Array"
-						},
-						{
-							"name": "break_loop",
-							"type": "bool"
-						}
-					]
-				}
-			]
-		},
-		{
 			"name": "AnimationRootNode",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -46811,2262 +46741,6 @@
 					"type": "PhysicsDirectSpaceState3D",
 					"name": "direct_space_state",
 					"getter": "get_direct_space_state"
-				}
-			]
-		},
-		{
-			"name": "ParticleProcessMaterial",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Material",
-			"api_type": "core",
-			"enums": [
-				{
-					"name": "Parameter",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "PARAM_INITIAL_LINEAR_VELOCITY",
-							"value": 0
-						},
-						{
-							"name": "PARAM_ANGULAR_VELOCITY",
-							"value": 1
-						},
-						{
-							"name": "PARAM_ORBIT_VELOCITY",
-							"value": 2
-						},
-						{
-							"name": "PARAM_LINEAR_ACCEL",
-							"value": 3
-						},
-						{
-							"name": "PARAM_RADIAL_ACCEL",
-							"value": 4
-						},
-						{
-							"name": "PARAM_TANGENTIAL_ACCEL",
-							"value": 5
-						},
-						{
-							"name": "PARAM_DAMPING",
-							"value": 6
-						},
-						{
-							"name": "PARAM_ANGLE",
-							"value": 7
-						},
-						{
-							"name": "PARAM_SCALE",
-							"value": 8
-						},
-						{
-							"name": "PARAM_HUE_VARIATION",
-							"value": 9
-						},
-						{
-							"name": "PARAM_ANIM_SPEED",
-							"value": 10
-						},
-						{
-							"name": "PARAM_ANIM_OFFSET",
-							"value": 11
-						},
-						{
-							"name": "PARAM_RADIAL_VELOCITY",
-							"value": 15
-						},
-						{
-							"name": "PARAM_DIRECTIONAL_VELOCITY",
-							"value": 16
-						},
-						{
-							"name": "PARAM_SCALE_OVER_VELOCITY",
-							"value": 17
-						},
-						{
-							"name": "PARAM_MAX",
-							"value": 18
-						},
-						{
-							"name": "PARAM_TURB_VEL_INFLUENCE",
-							"value": 13
-						},
-						{
-							"name": "PARAM_TURB_INIT_DISPLACEMENT",
-							"value": 14
-						},
-						{
-							"name": "PARAM_TURB_INFLUENCE_OVER_LIFE",
-							"value": 12
-						}
-					]
-				},
-				{
-					"name": "ParticleFlags",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY",
-							"value": 0
-						},
-						{
-							"name": "PARTICLE_FLAG_ROTATE_Y",
-							"value": 1
-						},
-						{
-							"name": "PARTICLE_FLAG_DISABLE_Z",
-							"value": 2
-						},
-						{
-							"name": "PARTICLE_FLAG_DAMPING_AS_FRICTION",
-							"value": 3
-						},
-						{
-							"name": "PARTICLE_FLAG_MAX",
-							"value": 4
-						}
-					]
-				},
-				{
-					"name": "EmissionShape",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "EMISSION_SHAPE_POINT",
-							"value": 0
-						},
-						{
-							"name": "EMISSION_SHAPE_SPHERE",
-							"value": 1
-						},
-						{
-							"name": "EMISSION_SHAPE_SPHERE_SURFACE",
-							"value": 2
-						},
-						{
-							"name": "EMISSION_SHAPE_BOX",
-							"value": 3
-						},
-						{
-							"name": "EMISSION_SHAPE_POINTS",
-							"value": 4
-						},
-						{
-							"name": "EMISSION_SHAPE_DIRECTED_POINTS",
-							"value": 5
-						},
-						{
-							"name": "EMISSION_SHAPE_RING",
-							"value": 6
-						},
-						{
-							"name": "EMISSION_SHAPE_MAX",
-							"value": 7
-						}
-					]
-				},
-				{
-					"name": "SubEmitterMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "SUB_EMITTER_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "SUB_EMITTER_CONSTANT",
-							"value": 1
-						},
-						{
-							"name": "SUB_EMITTER_AT_END",
-							"value": 2
-						},
-						{
-							"name": "SUB_EMITTER_AT_COLLISION",
-							"value": 3
-						},
-						{
-							"name": "SUB_EMITTER_AT_START",
-							"value": 4
-						},
-						{
-							"name": "SUB_EMITTER_MAX",
-							"value": 5
-						}
-					]
-				},
-				{
-					"name": "CollisionMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "COLLISION_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "COLLISION_RIGID",
-							"value": 1
-						},
-						{
-							"name": "COLLISION_HIDE_ON_CONTACT",
-							"value": 2
-						},
-						{
-							"name": "COLLISION_MAX",
-							"value": 3
-						}
-					]
-				}
-			],
-			"methods": [
-				{
-					"name": "set_direction",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3460891852,
-					"arguments": [
-						{
-							"name": "degrees",
-							"type": "Vector3"
-						}
-					]
-				},
-				{
-					"name": "get_direction",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3360562783,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "set_inherit_velocity_ratio",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "ratio",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_inherit_velocity_ratio",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 191475506,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_spread",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "degrees",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_spread",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_flatness",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "amount",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_flatness",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_param",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 676779352,
-					"arguments": [
-						{
-							"name": "param",
-							"type": "enum::ParticleProcessMaterial.Parameter"
-						},
-						{
-							"name": "value",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_param",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2623708480,
-					"return_value": {
-						"type": "Vector2"
-					},
-					"arguments": [
-						{
-							"name": "param",
-							"type": "enum::ParticleProcessMaterial.Parameter"
-						}
-					]
-				},
-				{
-					"name": "set_param_min",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2295964248,
-					"arguments": [
-						{
-							"name": "param",
-							"type": "enum::ParticleProcessMaterial.Parameter"
-						},
-						{
-							"name": "value",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_param_min",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3903786503,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					},
-					"arguments": [
-						{
-							"name": "param",
-							"type": "enum::ParticleProcessMaterial.Parameter"
-						}
-					]
-				},
-				{
-					"name": "set_param_max",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2295964248,
-					"arguments": [
-						{
-							"name": "param",
-							"type": "enum::ParticleProcessMaterial.Parameter"
-						},
-						{
-							"name": "value",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_param_max",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3903786503,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					},
-					"arguments": [
-						{
-							"name": "param",
-							"type": "enum::ParticleProcessMaterial.Parameter"
-						}
-					]
-				},
-				{
-					"name": "set_param_texture",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 526976089,
-					"arguments": [
-						{
-							"name": "param",
-							"type": "enum::ParticleProcessMaterial.Parameter"
-						},
-						{
-							"name": "texture",
-							"type": "Texture2D"
-						}
-					]
-				},
-				{
-					"name": "get_param_texture",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3489372978,
-					"return_value": {
-						"type": "Texture2D"
-					},
-					"arguments": [
-						{
-							"name": "param",
-							"type": "enum::ParticleProcessMaterial.Parameter"
-						}
-					]
-				},
-				{
-					"name": "set_color",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2920490490,
-					"arguments": [
-						{
-							"name": "color",
-							"type": "Color"
-						}
-					]
-				},
-				{
-					"name": "get_color",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3444240500,
-					"return_value": {
-						"type": "Color"
-					}
-				},
-				{
-					"name": "set_color_ramp",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4051416890,
-					"arguments": [
-						{
-							"name": "ramp",
-							"type": "Texture2D"
-						}
-					]
-				},
-				{
-					"name": "get_color_ramp",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3635182373,
-					"return_value": {
-						"type": "Texture2D"
-					}
-				},
-				{
-					"name": "set_alpha_curve",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4051416890,
-					"arguments": [
-						{
-							"name": "curve",
-							"type": "Texture2D"
-						}
-					]
-				},
-				{
-					"name": "get_alpha_curve",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3635182373,
-					"return_value": {
-						"type": "Texture2D"
-					}
-				},
-				{
-					"name": "set_emission_curve",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4051416890,
-					"arguments": [
-						{
-							"name": "curve",
-							"type": "Texture2D"
-						}
-					]
-				},
-				{
-					"name": "get_emission_curve",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3635182373,
-					"return_value": {
-						"type": "Texture2D"
-					}
-				},
-				{
-					"name": "set_color_initial_ramp",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4051416890,
-					"arguments": [
-						{
-							"name": "ramp",
-							"type": "Texture2D"
-						}
-					]
-				},
-				{
-					"name": "get_color_initial_ramp",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3635182373,
-					"return_value": {
-						"type": "Texture2D"
-					}
-				},
-				{
-					"name": "set_velocity_limit_curve",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4051416890,
-					"arguments": [
-						{
-							"name": "curve",
-							"type": "Texture2D"
-						}
-					]
-				},
-				{
-					"name": "get_velocity_limit_curve",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3635182373,
-					"return_value": {
-						"type": "Texture2D"
-					}
-				},
-				{
-					"name": "set_particle_flag",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1711815571,
-					"arguments": [
-						{
-							"name": "particle_flag",
-							"type": "enum::ParticleProcessMaterial.ParticleFlags"
-						},
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_particle_flag",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3895316907,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "particle_flag",
-							"type": "enum::ParticleProcessMaterial.ParticleFlags"
-						}
-					]
-				},
-				{
-					"name": "set_velocity_pivot",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3460891852,
-					"arguments": [
-						{
-							"name": "pivot",
-							"type": "Vector3"
-						}
-					]
-				},
-				{
-					"name": "get_velocity_pivot",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3783033775,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "set_emission_shape",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 461501442,
-					"arguments": [
-						{
-							"name": "shape",
-							"type": "enum::ParticleProcessMaterial.EmissionShape"
-						}
-					]
-				},
-				{
-					"name": "get_emission_shape",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3719733018,
-					"return_value": {
-						"type": "enum::ParticleProcessMaterial.EmissionShape"
-					}
-				},
-				{
-					"name": "set_emission_sphere_radius",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "radius",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_emission_sphere_radius",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_emission_box_extents",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3460891852,
-					"arguments": [
-						{
-							"name": "extents",
-							"type": "Vector3"
-						}
-					]
-				},
-				{
-					"name": "get_emission_box_extents",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3360562783,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "set_emission_point_texture",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4051416890,
-					"arguments": [
-						{
-							"name": "texture",
-							"type": "Texture2D"
-						}
-					]
-				},
-				{
-					"name": "get_emission_point_texture",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3635182373,
-					"return_value": {
-						"type": "Texture2D"
-					}
-				},
-				{
-					"name": "set_emission_normal_texture",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4051416890,
-					"arguments": [
-						{
-							"name": "texture",
-							"type": "Texture2D"
-						}
-					]
-				},
-				{
-					"name": "get_emission_normal_texture",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3635182373,
-					"return_value": {
-						"type": "Texture2D"
-					}
-				},
-				{
-					"name": "set_emission_color_texture",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4051416890,
-					"arguments": [
-						{
-							"name": "texture",
-							"type": "Texture2D"
-						}
-					]
-				},
-				{
-					"name": "get_emission_color_texture",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3635182373,
-					"return_value": {
-						"type": "Texture2D"
-					}
-				},
-				{
-					"name": "set_emission_point_count",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "point_count",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_emission_point_count",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_emission_ring_axis",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3460891852,
-					"arguments": [
-						{
-							"name": "axis",
-							"type": "Vector3"
-						}
-					]
-				},
-				{
-					"name": "get_emission_ring_axis",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3360562783,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "set_emission_ring_height",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "height",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_emission_ring_height",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_emission_ring_radius",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "radius",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_emission_ring_radius",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_emission_ring_inner_radius",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "inner_radius",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_emission_ring_inner_radius",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_emission_ring_cone_angle",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "cone_angle",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_emission_ring_cone_angle",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_emission_shape_offset",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3460891852,
-					"arguments": [
-						{
-							"name": "emission_shape_offset",
-							"type": "Vector3"
-						}
-					]
-				},
-				{
-					"name": "get_emission_shape_offset",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3360562783,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "set_emission_shape_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3460891852,
-					"arguments": [
-						{
-							"name": "emission_shape_scale",
-							"type": "Vector3"
-						}
-					]
-				},
-				{
-					"name": "get_emission_shape_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3360562783,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "get_turbulence_enabled",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_turbulence_enabled",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "turbulence_enabled",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_turbulence_noise_strength",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_turbulence_noise_strength",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "turbulence_noise_strength",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_turbulence_noise_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_turbulence_noise_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "turbulence_noise_scale",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_turbulence_noise_speed_random",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_turbulence_noise_speed_random",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "turbulence_noise_speed_random",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_turbulence_noise_speed",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3360562783,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "set_turbulence_noise_speed",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3460891852,
-					"arguments": [
-						{
-							"name": "turbulence_noise_speed",
-							"type": "Vector3"
-						}
-					]
-				},
-				{
-					"name": "get_gravity",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3360562783,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "set_gravity",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3460891852,
-					"arguments": [
-						{
-							"name": "accel_vec",
-							"type": "Vector3"
-						}
-					]
-				},
-				{
-					"name": "set_lifetime_randomness",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "randomness",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_lifetime_randomness",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "get_sub_emitter_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2399052877,
-					"return_value": {
-						"type": "enum::ParticleProcessMaterial.SubEmitterMode"
-					}
-				},
-				{
-					"name": "set_sub_emitter_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2161806672,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::ParticleProcessMaterial.SubEmitterMode"
-						}
-					]
-				},
-				{
-					"name": "get_sub_emitter_frequency",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_sub_emitter_frequency",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "hz",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_sub_emitter_amount_at_end",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_sub_emitter_amount_at_end",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "amount",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_sub_emitter_amount_at_collision",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_sub_emitter_amount_at_collision",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "amount",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_sub_emitter_amount_at_start",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_sub_emitter_amount_at_start",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "amount",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_sub_emitter_keep_velocity",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_sub_emitter_keep_velocity",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "set_attractor_interaction_enabled",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enabled",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_attractor_interaction_enabled",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_collision_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 653804659,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::ParticleProcessMaterial.CollisionMode"
-						}
-					]
-				},
-				{
-					"name": "get_collision_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 139371864,
-					"return_value": {
-						"type": "enum::ParticleProcessMaterial.CollisionMode"
-					}
-				},
-				{
-					"name": "set_collision_use_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "radius",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_collision_using_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_collision_friction",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "friction",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_collision_friction",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_collision_bounce",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "bounce",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_collision_bounce",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				}
-			],
-			"signals": [
-				{
-					"name": "emission_shape_changed"
-				}
-			],
-			"properties": [
-				{
-					"type": "float",
-					"name": "lifetime_randomness",
-					"setter": "set_lifetime_randomness",
-					"getter": "get_lifetime_randomness"
-				},
-				{
-					"type": "bool",
-					"name": "particle_flag_align_y",
-					"setter": "set_particle_flag",
-					"getter": "get_particle_flag",
-					"index": 0
-				},
-				{
-					"type": "bool",
-					"name": "particle_flag_rotate_y",
-					"setter": "set_particle_flag",
-					"getter": "get_particle_flag",
-					"index": 1
-				},
-				{
-					"type": "bool",
-					"name": "particle_flag_disable_z",
-					"setter": "set_particle_flag",
-					"getter": "get_particle_flag",
-					"index": 2
-				},
-				{
-					"type": "bool",
-					"name": "particle_flag_damping_as_friction",
-					"setter": "set_particle_flag",
-					"getter": "get_particle_flag",
-					"index": 3
-				},
-				{
-					"type": "Vector3",
-					"name": "emission_shape_offset",
-					"setter": "set_emission_shape_offset",
-					"getter": "get_emission_shape_offset"
-				},
-				{
-					"type": "Vector3",
-					"name": "emission_shape_scale",
-					"setter": "set_emission_shape_scale",
-					"getter": "get_emission_shape_scale"
-				},
-				{
-					"type": "int",
-					"name": "emission_shape",
-					"setter": "set_emission_shape",
-					"getter": "get_emission_shape"
-				},
-				{
-					"type": "float",
-					"name": "emission_sphere_radius",
-					"setter": "set_emission_sphere_radius",
-					"getter": "get_emission_sphere_radius"
-				},
-				{
-					"type": "Vector3",
-					"name": "emission_box_extents",
-					"setter": "set_emission_box_extents",
-					"getter": "get_emission_box_extents"
-				},
-				{
-					"type": "Texture2D",
-					"name": "emission_point_texture",
-					"setter": "set_emission_point_texture",
-					"getter": "get_emission_point_texture"
-				},
-				{
-					"type": "Texture2D",
-					"name": "emission_normal_texture",
-					"setter": "set_emission_normal_texture",
-					"getter": "get_emission_normal_texture"
-				},
-				{
-					"type": "Texture2D",
-					"name": "emission_color_texture",
-					"setter": "set_emission_color_texture",
-					"getter": "get_emission_color_texture"
-				},
-				{
-					"type": "int",
-					"name": "emission_point_count",
-					"setter": "set_emission_point_count",
-					"getter": "get_emission_point_count"
-				},
-				{
-					"type": "Vector3",
-					"name": "emission_ring_axis",
-					"setter": "set_emission_ring_axis",
-					"getter": "get_emission_ring_axis"
-				},
-				{
-					"type": "float",
-					"name": "emission_ring_height",
-					"setter": "set_emission_ring_height",
-					"getter": "get_emission_ring_height"
-				},
-				{
-					"type": "float",
-					"name": "emission_ring_radius",
-					"setter": "set_emission_ring_radius",
-					"getter": "get_emission_ring_radius"
-				},
-				{
-					"type": "float",
-					"name": "emission_ring_inner_radius",
-					"setter": "set_emission_ring_inner_radius",
-					"getter": "get_emission_ring_inner_radius"
-				},
-				{
-					"type": "float",
-					"name": "emission_ring_cone_angle",
-					"setter": "set_emission_ring_cone_angle",
-					"getter": "get_emission_ring_cone_angle"
-				},
-				{
-					"type": "Vector2",
-					"name": "angle",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 7
-				},
-				{
-					"type": "float",
-					"name": "angle_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 7
-				},
-				{
-					"type": "float",
-					"name": "angle_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 7
-				},
-				{
-					"type": "CurveTexture",
-					"name": "angle_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 7
-				},
-				{
-					"type": "float",
-					"name": "inherit_velocity_ratio",
-					"setter": "set_inherit_velocity_ratio",
-					"getter": "get_inherit_velocity_ratio"
-				},
-				{
-					"type": "Vector3",
-					"name": "velocity_pivot",
-					"setter": "set_velocity_pivot",
-					"getter": "get_velocity_pivot"
-				},
-				{
-					"type": "Vector3",
-					"name": "direction",
-					"setter": "set_direction",
-					"getter": "get_direction"
-				},
-				{
-					"type": "float",
-					"name": "spread",
-					"setter": "set_spread",
-					"getter": "get_spread"
-				},
-				{
-					"type": "float",
-					"name": "flatness",
-					"setter": "set_flatness",
-					"getter": "get_flatness"
-				},
-				{
-					"type": "Vector2",
-					"name": "initial_velocity",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 0
-				},
-				{
-					"type": "float",
-					"name": "initial_velocity_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 0
-				},
-				{
-					"type": "float",
-					"name": "initial_velocity_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 0
-				},
-				{
-					"type": "Vector2",
-					"name": "angular_velocity",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 1
-				},
-				{
-					"type": "float",
-					"name": "angular_velocity_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 1
-				},
-				{
-					"type": "float",
-					"name": "angular_velocity_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 1
-				},
-				{
-					"type": "CurveTexture",
-					"name": "angular_velocity_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 1
-				},
-				{
-					"type": "Vector2",
-					"name": "directional_velocity",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 16
-				},
-				{
-					"type": "float",
-					"name": "directional_velocity_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 16
-				},
-				{
-					"type": "float",
-					"name": "directional_velocity_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 16
-				},
-				{
-					"type": "CurveXYZTexture",
-					"name": "directional_velocity_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 16
-				},
-				{
-					"type": "Vector2",
-					"name": "orbit_velocity",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 2
-				},
-				{
-					"type": "float",
-					"name": "orbit_velocity_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 2
-				},
-				{
-					"type": "float",
-					"name": "orbit_velocity_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 2
-				},
-				{
-					"type": "CurveTexture,CurveXYZTexture",
-					"name": "orbit_velocity_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 2
-				},
-				{
-					"type": "Vector2",
-					"name": "radial_velocity",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 15
-				},
-				{
-					"type": "float",
-					"name": "radial_velocity_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 15
-				},
-				{
-					"type": "float",
-					"name": "radial_velocity_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 15
-				},
-				{
-					"type": "CurveTexture",
-					"name": "radial_velocity_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 15
-				},
-				{
-					"type": "CurveTexture",
-					"name": "velocity_limit_curve",
-					"setter": "set_velocity_limit_curve",
-					"getter": "get_velocity_limit_curve"
-				},
-				{
-					"type": "Vector3",
-					"name": "gravity",
-					"setter": "set_gravity",
-					"getter": "get_gravity"
-				},
-				{
-					"type": "Vector2",
-					"name": "linear_accel",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 3
-				},
-				{
-					"type": "float",
-					"name": "linear_accel_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 3
-				},
-				{
-					"type": "float",
-					"name": "linear_accel_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 3
-				},
-				{
-					"type": "CurveTexture",
-					"name": "linear_accel_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 3
-				},
-				{
-					"type": "Vector2",
-					"name": "radial_accel",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 4
-				},
-				{
-					"type": "float",
-					"name": "radial_accel_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 4
-				},
-				{
-					"type": "float",
-					"name": "radial_accel_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 4
-				},
-				{
-					"type": "CurveTexture",
-					"name": "radial_accel_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 4
-				},
-				{
-					"type": "Vector2",
-					"name": "tangential_accel",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 5
-				},
-				{
-					"type": "float",
-					"name": "tangential_accel_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 5
-				},
-				{
-					"type": "float",
-					"name": "tangential_accel_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 5
-				},
-				{
-					"type": "CurveTexture",
-					"name": "tangential_accel_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 5
-				},
-				{
-					"type": "Vector2",
-					"name": "damping",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 6
-				},
-				{
-					"type": "float",
-					"name": "damping_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 6
-				},
-				{
-					"type": "float",
-					"name": "damping_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 6
-				},
-				{
-					"type": "CurveTexture",
-					"name": "damping_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 6
-				},
-				{
-					"type": "bool",
-					"name": "attractor_interaction_enabled",
-					"setter": "set_attractor_interaction_enabled",
-					"getter": "is_attractor_interaction_enabled"
-				},
-				{
-					"type": "Vector2",
-					"name": "scale",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 8
-				},
-				{
-					"type": "float",
-					"name": "scale_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 8
-				},
-				{
-					"type": "float",
-					"name": "scale_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 8
-				},
-				{
-					"type": "CurveTexture,CurveXYZTexture",
-					"name": "scale_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 8
-				},
-				{
-					"type": "Vector2",
-					"name": "scale_over_velocity",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 17
-				},
-				{
-					"type": "float",
-					"name": "scale_over_velocity_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 17
-				},
-				{
-					"type": "float",
-					"name": "scale_over_velocity_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 17
-				},
-				{
-					"type": "CurveTexture,CurveXYZTexture",
-					"name": "scale_over_velocity_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 17
-				},
-				{
-					"type": "Color",
-					"name": "color",
-					"setter": "set_color",
-					"getter": "get_color"
-				},
-				{
-					"type": "GradientTexture1D",
-					"name": "color_ramp",
-					"setter": "set_color_ramp",
-					"getter": "get_color_ramp"
-				},
-				{
-					"type": "GradientTexture1D",
-					"name": "color_initial_ramp",
-					"setter": "set_color_initial_ramp",
-					"getter": "get_color_initial_ramp"
-				},
-				{
-					"type": "CurveTexture",
-					"name": "alpha_curve",
-					"setter": "set_alpha_curve",
-					"getter": "get_alpha_curve"
-				},
-				{
-					"type": "CurveTexture",
-					"name": "emission_curve",
-					"setter": "set_emission_curve",
-					"getter": "get_emission_curve"
-				},
-				{
-					"type": "Vector2",
-					"name": "hue_variation",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 9
-				},
-				{
-					"type": "float",
-					"name": "hue_variation_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 9
-				},
-				{
-					"type": "float",
-					"name": "hue_variation_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 9
-				},
-				{
-					"type": "CurveTexture",
-					"name": "hue_variation_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 9
-				},
-				{
-					"type": "Vector2",
-					"name": "anim_speed",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 10
-				},
-				{
-					"type": "float",
-					"name": "anim_speed_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 10
-				},
-				{
-					"type": "float",
-					"name": "anim_speed_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 10
-				},
-				{
-					"type": "CurveTexture",
-					"name": "anim_speed_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 10
-				},
-				{
-					"type": "Vector2",
-					"name": "anim_offset",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 11
-				},
-				{
-					"type": "float",
-					"name": "anim_offset_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 11
-				},
-				{
-					"type": "float",
-					"name": "anim_offset_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 11
-				},
-				{
-					"type": "CurveTexture",
-					"name": "anim_offset_curve",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 11
-				},
-				{
-					"type": "bool",
-					"name": "turbulence_enabled",
-					"setter": "set_turbulence_enabled",
-					"getter": "get_turbulence_enabled"
-				},
-				{
-					"type": "float",
-					"name": "turbulence_noise_strength",
-					"setter": "set_turbulence_noise_strength",
-					"getter": "get_turbulence_noise_strength"
-				},
-				{
-					"type": "float",
-					"name": "turbulence_noise_scale",
-					"setter": "set_turbulence_noise_scale",
-					"getter": "get_turbulence_noise_scale"
-				},
-				{
-					"type": "Vector3",
-					"name": "turbulence_noise_speed",
-					"setter": "set_turbulence_noise_speed",
-					"getter": "get_turbulence_noise_speed"
-				},
-				{
-					"type": "float",
-					"name": "turbulence_noise_speed_random",
-					"setter": "set_turbulence_noise_speed_random",
-					"getter": "get_turbulence_noise_speed_random"
-				},
-				{
-					"type": "Vector2",
-					"name": "turbulence_influence",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 13
-				},
-				{
-					"type": "float",
-					"name": "turbulence_influence_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 13
-				},
-				{
-					"type": "float",
-					"name": "turbulence_influence_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 13
-				},
-				{
-					"type": "Vector2",
-					"name": "turbulence_initial_displacement",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 14
-				},
-				{
-					"type": "float",
-					"name": "turbulence_initial_displacement_min",
-					"setter": "set_param_min",
-					"getter": "get_param_min",
-					"index": 14
-				},
-				{
-					"type": "float",
-					"name": "turbulence_initial_displacement_max",
-					"setter": "set_param_max",
-					"getter": "get_param_max",
-					"index": 14
-				},
-				{
-					"type": "CurveTexture",
-					"name": "turbulence_influence_over_life",
-					"setter": "set_param_texture",
-					"getter": "get_param_texture",
-					"index": 12
-				},
-				{
-					"type": "int",
-					"name": "collision_mode",
-					"setter": "set_collision_mode",
-					"getter": "get_collision_mode"
-				},
-				{
-					"type": "float",
-					"name": "collision_friction",
-					"setter": "set_collision_friction",
-					"getter": "get_collision_friction"
-				},
-				{
-					"type": "float",
-					"name": "collision_bounce",
-					"setter": "set_collision_bounce",
-					"getter": "get_collision_bounce"
-				},
-				{
-					"type": "bool",
-					"name": "collision_use_scale",
-					"setter": "set_collision_use_scale",
-					"getter": "is_collision_using_scale"
-				},
-				{
-					"type": "int",
-					"name": "sub_emitter_mode",
-					"setter": "set_sub_emitter_mode",
-					"getter": "get_sub_emitter_mode"
-				},
-				{
-					"type": "float",
-					"name": "sub_emitter_frequency",
-					"setter": "set_sub_emitter_frequency",
-					"getter": "get_sub_emitter_frequency"
-				},
-				{
-					"type": "int",
-					"name": "sub_emitter_amount_at_end",
-					"setter": "set_sub_emitter_amount_at_end",
-					"getter": "get_sub_emitter_amount_at_end"
-				},
-				{
-					"type": "int",
-					"name": "sub_emitter_amount_at_collision",
-					"setter": "set_sub_emitter_amount_at_collision",
-					"getter": "get_sub_emitter_amount_at_collision"
-				},
-				{
-					"type": "int",
-					"name": "sub_emitter_amount_at_start",
-					"setter": "set_sub_emitter_amount_at_start",
-					"getter": "get_sub_emitter_amount_at_start"
-				},
-				{
-					"type": "bool",
-					"name": "sub_emitter_keep_velocity",
-					"setter": "set_sub_emitter_keep_velocity",
-					"getter": "get_sub_emitter_keep_velocity"
 				}
 			]
 		},
@@ -113363,6 +111037,76 @@
 			]
 		},
 		{
+			"name": "AnimationNodeExtension",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "AnimationNode",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "_process_animation_node",
+					"is_const": false,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 912931771,
+					"return_value": {
+						"type": "PackedFloat32Array"
+					},
+					"arguments": [
+						{
+							"name": "playback_info",
+							"type": "PackedFloat64Array"
+						},
+						{
+							"name": "test_only",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_looping",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2035584311,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "node_info",
+							"type": "PackedFloat32Array"
+						}
+					]
+				},
+				{
+					"name": "get_remaining_time",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2851904656,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					},
+					"arguments": [
+						{
+							"name": "node_info",
+							"type": "PackedFloat32Array"
+						},
+						{
+							"name": "break_loop",
+							"type": "bool"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "GLTFTextureSampler",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -145882,6 +143626,2262 @@
 					"name": "use_hdr",
 					"setter": "set_use_hdr",
 					"getter": "is_using_hdr"
+				}
+			]
+		},
+		{
+			"name": "ParticleProcessMaterial",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Material",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "Parameter",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "PARAM_INITIAL_LINEAR_VELOCITY",
+							"value": 0
+						},
+						{
+							"name": "PARAM_ANGULAR_VELOCITY",
+							"value": 1
+						},
+						{
+							"name": "PARAM_ORBIT_VELOCITY",
+							"value": 2
+						},
+						{
+							"name": "PARAM_LINEAR_ACCEL",
+							"value": 3
+						},
+						{
+							"name": "PARAM_RADIAL_ACCEL",
+							"value": 4
+						},
+						{
+							"name": "PARAM_TANGENTIAL_ACCEL",
+							"value": 5
+						},
+						{
+							"name": "PARAM_DAMPING",
+							"value": 6
+						},
+						{
+							"name": "PARAM_ANGLE",
+							"value": 7
+						},
+						{
+							"name": "PARAM_SCALE",
+							"value": 8
+						},
+						{
+							"name": "PARAM_HUE_VARIATION",
+							"value": 9
+						},
+						{
+							"name": "PARAM_ANIM_SPEED",
+							"value": 10
+						},
+						{
+							"name": "PARAM_ANIM_OFFSET",
+							"value": 11
+						},
+						{
+							"name": "PARAM_RADIAL_VELOCITY",
+							"value": 15
+						},
+						{
+							"name": "PARAM_DIRECTIONAL_VELOCITY",
+							"value": 16
+						},
+						{
+							"name": "PARAM_SCALE_OVER_VELOCITY",
+							"value": 17
+						},
+						{
+							"name": "PARAM_MAX",
+							"value": 18
+						},
+						{
+							"name": "PARAM_TURB_VEL_INFLUENCE",
+							"value": 13
+						},
+						{
+							"name": "PARAM_TURB_INIT_DISPLACEMENT",
+							"value": 14
+						},
+						{
+							"name": "PARAM_TURB_INFLUENCE_OVER_LIFE",
+							"value": 12
+						}
+					]
+				},
+				{
+					"name": "ParticleFlags",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "PARTICLE_FLAG_ALIGN_Y_TO_VELOCITY",
+							"value": 0
+						},
+						{
+							"name": "PARTICLE_FLAG_ROTATE_Y",
+							"value": 1
+						},
+						{
+							"name": "PARTICLE_FLAG_DISABLE_Z",
+							"value": 2
+						},
+						{
+							"name": "PARTICLE_FLAG_DAMPING_AS_FRICTION",
+							"value": 3
+						},
+						{
+							"name": "PARTICLE_FLAG_MAX",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "EmissionShape",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "EMISSION_SHAPE_POINT",
+							"value": 0
+						},
+						{
+							"name": "EMISSION_SHAPE_SPHERE",
+							"value": 1
+						},
+						{
+							"name": "EMISSION_SHAPE_SPHERE_SURFACE",
+							"value": 2
+						},
+						{
+							"name": "EMISSION_SHAPE_BOX",
+							"value": 3
+						},
+						{
+							"name": "EMISSION_SHAPE_POINTS",
+							"value": 4
+						},
+						{
+							"name": "EMISSION_SHAPE_DIRECTED_POINTS",
+							"value": 5
+						},
+						{
+							"name": "EMISSION_SHAPE_RING",
+							"value": 6
+						},
+						{
+							"name": "EMISSION_SHAPE_MAX",
+							"value": 7
+						}
+					]
+				},
+				{
+					"name": "SubEmitterMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SUB_EMITTER_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "SUB_EMITTER_CONSTANT",
+							"value": 1
+						},
+						{
+							"name": "SUB_EMITTER_AT_END",
+							"value": 2
+						},
+						{
+							"name": "SUB_EMITTER_AT_COLLISION",
+							"value": 3
+						},
+						{
+							"name": "SUB_EMITTER_AT_START",
+							"value": 4
+						},
+						{
+							"name": "SUB_EMITTER_MAX",
+							"value": 5
+						}
+					]
+				},
+				{
+					"name": "CollisionMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "COLLISION_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "COLLISION_RIGID",
+							"value": 1
+						},
+						{
+							"name": "COLLISION_HIDE_ON_CONTACT",
+							"value": 2
+						},
+						{
+							"name": "COLLISION_MAX",
+							"value": 3
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_direction",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "degrees",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_inherit_velocity_ratio",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "ratio",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_inherit_velocity_ratio",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 191475506,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_spread",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "degrees",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_spread",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_flatness",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "amount",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_flatness",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_param",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 676779352,
+					"arguments": [
+						{
+							"name": "param",
+							"type": "enum::ParticleProcessMaterial.Parameter"
+						},
+						{
+							"name": "value",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_param",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2623708480,
+					"return_value": {
+						"type": "Vector2"
+					},
+					"arguments": [
+						{
+							"name": "param",
+							"type": "enum::ParticleProcessMaterial.Parameter"
+						}
+					]
+				},
+				{
+					"name": "set_param_min",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2295964248,
+					"arguments": [
+						{
+							"name": "param",
+							"type": "enum::ParticleProcessMaterial.Parameter"
+						},
+						{
+							"name": "value",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_param_min",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3903786503,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "param",
+							"type": "enum::ParticleProcessMaterial.Parameter"
+						}
+					]
+				},
+				{
+					"name": "set_param_max",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2295964248,
+					"arguments": [
+						{
+							"name": "param",
+							"type": "enum::ParticleProcessMaterial.Parameter"
+						},
+						{
+							"name": "value",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_param_max",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3903786503,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "param",
+							"type": "enum::ParticleProcessMaterial.Parameter"
+						}
+					]
+				},
+				{
+					"name": "set_param_texture",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 526976089,
+					"arguments": [
+						{
+							"name": "param",
+							"type": "enum::ParticleProcessMaterial.Parameter"
+						},
+						{
+							"name": "texture",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_param_texture",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3489372978,
+					"return_value": {
+						"type": "Texture2D"
+					},
+					"arguments": [
+						{
+							"name": "param",
+							"type": "enum::ParticleProcessMaterial.Parameter"
+						}
+					]
+				},
+				{
+					"name": "set_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2920490490,
+					"arguments": [
+						{
+							"name": "color",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "get_color",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3444240500,
+					"return_value": {
+						"type": "Color"
+					}
+				},
+				{
+					"name": "set_color_ramp",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "ramp",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_color_ramp",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
+				},
+				{
+					"name": "set_alpha_curve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "curve",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_alpha_curve",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
+				},
+				{
+					"name": "set_emission_curve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "curve",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_emission_curve",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
+				},
+				{
+					"name": "set_color_initial_ramp",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "ramp",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_color_initial_ramp",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
+				},
+				{
+					"name": "set_velocity_limit_curve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "curve",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_velocity_limit_curve",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
+				},
+				{
+					"name": "set_particle_flag",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1711815571,
+					"arguments": [
+						{
+							"name": "particle_flag",
+							"type": "enum::ParticleProcessMaterial.ParticleFlags"
+						},
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_particle_flag",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3895316907,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "particle_flag",
+							"type": "enum::ParticleProcessMaterial.ParticleFlags"
+						}
+					]
+				},
+				{
+					"name": "set_velocity_pivot",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "pivot",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_velocity_pivot",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3783033775,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_emission_shape",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 461501442,
+					"arguments": [
+						{
+							"name": "shape",
+							"type": "enum::ParticleProcessMaterial.EmissionShape"
+						}
+					]
+				},
+				{
+					"name": "get_emission_shape",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3719733018,
+					"return_value": {
+						"type": "enum::ParticleProcessMaterial.EmissionShape"
+					}
+				},
+				{
+					"name": "set_emission_sphere_radius",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_emission_sphere_radius",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_emission_box_extents",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "extents",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_emission_box_extents",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_emission_point_texture",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "texture",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_emission_point_texture",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
+				},
+				{
+					"name": "set_emission_normal_texture",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "texture",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_emission_normal_texture",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
+				},
+				{
+					"name": "set_emission_color_texture",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "texture",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_emission_color_texture",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
+				},
+				{
+					"name": "set_emission_point_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "point_count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_emission_point_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_emission_ring_axis",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "axis",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_emission_ring_axis",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_emission_ring_height",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "height",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_emission_ring_height",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_emission_ring_radius",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_emission_ring_radius",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_emission_ring_inner_radius",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "inner_radius",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_emission_ring_inner_radius",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_emission_ring_cone_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "cone_angle",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_emission_ring_cone_angle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_emission_shape_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "emission_shape_offset",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_emission_shape_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_emission_shape_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "emission_shape_scale",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_emission_shape_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "get_turbulence_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_turbulence_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "turbulence_enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_turbulence_noise_strength",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_turbulence_noise_strength",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "turbulence_noise_strength",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_turbulence_noise_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_turbulence_noise_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "turbulence_noise_scale",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_turbulence_noise_speed_random",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_turbulence_noise_speed_random",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "turbulence_noise_speed_random",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_turbulence_noise_speed",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_turbulence_noise_speed",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "turbulence_noise_speed",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_gravity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_gravity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "accel_vec",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "set_lifetime_randomness",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "randomness",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_lifetime_randomness",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "get_sub_emitter_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2399052877,
+					"return_value": {
+						"type": "enum::ParticleProcessMaterial.SubEmitterMode"
+					}
+				},
+				{
+					"name": "set_sub_emitter_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2161806672,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::ParticleProcessMaterial.SubEmitterMode"
+						}
+					]
+				},
+				{
+					"name": "get_sub_emitter_frequency",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_sub_emitter_frequency",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "hz",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_sub_emitter_amount_at_end",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_sub_emitter_amount_at_end",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "amount",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_sub_emitter_amount_at_collision",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_sub_emitter_amount_at_collision",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "amount",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_sub_emitter_amount_at_start",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_sub_emitter_amount_at_start",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "amount",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_sub_emitter_keep_velocity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_sub_emitter_keep_velocity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "set_attractor_interaction_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_attractor_interaction_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_collision_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 653804659,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::ParticleProcessMaterial.CollisionMode"
+						}
+					]
+				},
+				{
+					"name": "get_collision_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 139371864,
+					"return_value": {
+						"type": "enum::ParticleProcessMaterial.CollisionMode"
+					}
+				},
+				{
+					"name": "set_collision_use_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "radius",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_collision_using_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_collision_friction",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "friction",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_collision_friction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_collision_bounce",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "bounce",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_collision_bounce",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				}
+			],
+			"signals": [
+				{
+					"name": "emission_shape_changed"
+				}
+			],
+			"properties": [
+				{
+					"type": "float",
+					"name": "lifetime_randomness",
+					"setter": "set_lifetime_randomness",
+					"getter": "get_lifetime_randomness"
+				},
+				{
+					"type": "bool",
+					"name": "particle_flag_align_y",
+					"setter": "set_particle_flag",
+					"getter": "get_particle_flag",
+					"index": 0
+				},
+				{
+					"type": "bool",
+					"name": "particle_flag_rotate_y",
+					"setter": "set_particle_flag",
+					"getter": "get_particle_flag",
+					"index": 1
+				},
+				{
+					"type": "bool",
+					"name": "particle_flag_disable_z",
+					"setter": "set_particle_flag",
+					"getter": "get_particle_flag",
+					"index": 2
+				},
+				{
+					"type": "bool",
+					"name": "particle_flag_damping_as_friction",
+					"setter": "set_particle_flag",
+					"getter": "get_particle_flag",
+					"index": 3
+				},
+				{
+					"type": "Vector3",
+					"name": "emission_shape_offset",
+					"setter": "set_emission_shape_offset",
+					"getter": "get_emission_shape_offset"
+				},
+				{
+					"type": "Vector3",
+					"name": "emission_shape_scale",
+					"setter": "set_emission_shape_scale",
+					"getter": "get_emission_shape_scale"
+				},
+				{
+					"type": "int",
+					"name": "emission_shape",
+					"setter": "set_emission_shape",
+					"getter": "get_emission_shape"
+				},
+				{
+					"type": "float",
+					"name": "emission_sphere_radius",
+					"setter": "set_emission_sphere_radius",
+					"getter": "get_emission_sphere_radius"
+				},
+				{
+					"type": "Vector3",
+					"name": "emission_box_extents",
+					"setter": "set_emission_box_extents",
+					"getter": "get_emission_box_extents"
+				},
+				{
+					"type": "Texture2D",
+					"name": "emission_point_texture",
+					"setter": "set_emission_point_texture",
+					"getter": "get_emission_point_texture"
+				},
+				{
+					"type": "Texture2D",
+					"name": "emission_normal_texture",
+					"setter": "set_emission_normal_texture",
+					"getter": "get_emission_normal_texture"
+				},
+				{
+					"type": "Texture2D",
+					"name": "emission_color_texture",
+					"setter": "set_emission_color_texture",
+					"getter": "get_emission_color_texture"
+				},
+				{
+					"type": "int",
+					"name": "emission_point_count",
+					"setter": "set_emission_point_count",
+					"getter": "get_emission_point_count"
+				},
+				{
+					"type": "Vector3",
+					"name": "emission_ring_axis",
+					"setter": "set_emission_ring_axis",
+					"getter": "get_emission_ring_axis"
+				},
+				{
+					"type": "float",
+					"name": "emission_ring_height",
+					"setter": "set_emission_ring_height",
+					"getter": "get_emission_ring_height"
+				},
+				{
+					"type": "float",
+					"name": "emission_ring_radius",
+					"setter": "set_emission_ring_radius",
+					"getter": "get_emission_ring_radius"
+				},
+				{
+					"type": "float",
+					"name": "emission_ring_inner_radius",
+					"setter": "set_emission_ring_inner_radius",
+					"getter": "get_emission_ring_inner_radius"
+				},
+				{
+					"type": "float",
+					"name": "emission_ring_cone_angle",
+					"setter": "set_emission_ring_cone_angle",
+					"getter": "get_emission_ring_cone_angle"
+				},
+				{
+					"type": "Vector2",
+					"name": "angle",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 7
+				},
+				{
+					"type": "float",
+					"name": "angle_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 7
+				},
+				{
+					"type": "float",
+					"name": "angle_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 7
+				},
+				{
+					"type": "CurveTexture",
+					"name": "angle_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 7
+				},
+				{
+					"type": "float",
+					"name": "inherit_velocity_ratio",
+					"setter": "set_inherit_velocity_ratio",
+					"getter": "get_inherit_velocity_ratio"
+				},
+				{
+					"type": "Vector3",
+					"name": "velocity_pivot",
+					"setter": "set_velocity_pivot",
+					"getter": "get_velocity_pivot"
+				},
+				{
+					"type": "Vector3",
+					"name": "direction",
+					"setter": "set_direction",
+					"getter": "get_direction"
+				},
+				{
+					"type": "float",
+					"name": "spread",
+					"setter": "set_spread",
+					"getter": "get_spread"
+				},
+				{
+					"type": "float",
+					"name": "flatness",
+					"setter": "set_flatness",
+					"getter": "get_flatness"
+				},
+				{
+					"type": "Vector2",
+					"name": "initial_velocity",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 0
+				},
+				{
+					"type": "float",
+					"name": "initial_velocity_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 0
+				},
+				{
+					"type": "float",
+					"name": "initial_velocity_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 0
+				},
+				{
+					"type": "Vector2",
+					"name": "angular_velocity",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 1
+				},
+				{
+					"type": "float",
+					"name": "angular_velocity_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 1
+				},
+				{
+					"type": "float",
+					"name": "angular_velocity_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 1
+				},
+				{
+					"type": "CurveTexture",
+					"name": "angular_velocity_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 1
+				},
+				{
+					"type": "Vector2",
+					"name": "directional_velocity",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 16
+				},
+				{
+					"type": "float",
+					"name": "directional_velocity_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 16
+				},
+				{
+					"type": "float",
+					"name": "directional_velocity_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 16
+				},
+				{
+					"type": "CurveXYZTexture",
+					"name": "directional_velocity_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 16
+				},
+				{
+					"type": "Vector2",
+					"name": "orbit_velocity",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 2
+				},
+				{
+					"type": "float",
+					"name": "orbit_velocity_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 2
+				},
+				{
+					"type": "float",
+					"name": "orbit_velocity_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 2
+				},
+				{
+					"type": "CurveTexture,CurveXYZTexture",
+					"name": "orbit_velocity_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 2
+				},
+				{
+					"type": "Vector2",
+					"name": "radial_velocity",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 15
+				},
+				{
+					"type": "float",
+					"name": "radial_velocity_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 15
+				},
+				{
+					"type": "float",
+					"name": "radial_velocity_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 15
+				},
+				{
+					"type": "CurveTexture",
+					"name": "radial_velocity_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 15
+				},
+				{
+					"type": "CurveTexture",
+					"name": "velocity_limit_curve",
+					"setter": "set_velocity_limit_curve",
+					"getter": "get_velocity_limit_curve"
+				},
+				{
+					"type": "Vector3",
+					"name": "gravity",
+					"setter": "set_gravity",
+					"getter": "get_gravity"
+				},
+				{
+					"type": "Vector2",
+					"name": "linear_accel",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 3
+				},
+				{
+					"type": "float",
+					"name": "linear_accel_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 3
+				},
+				{
+					"type": "float",
+					"name": "linear_accel_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 3
+				},
+				{
+					"type": "CurveTexture",
+					"name": "linear_accel_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 3
+				},
+				{
+					"type": "Vector2",
+					"name": "radial_accel",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 4
+				},
+				{
+					"type": "float",
+					"name": "radial_accel_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 4
+				},
+				{
+					"type": "float",
+					"name": "radial_accel_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 4
+				},
+				{
+					"type": "CurveTexture",
+					"name": "radial_accel_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 4
+				},
+				{
+					"type": "Vector2",
+					"name": "tangential_accel",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 5
+				},
+				{
+					"type": "float",
+					"name": "tangential_accel_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 5
+				},
+				{
+					"type": "float",
+					"name": "tangential_accel_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 5
+				},
+				{
+					"type": "CurveTexture",
+					"name": "tangential_accel_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 5
+				},
+				{
+					"type": "Vector2",
+					"name": "damping",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 6
+				},
+				{
+					"type": "float",
+					"name": "damping_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 6
+				},
+				{
+					"type": "float",
+					"name": "damping_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 6
+				},
+				{
+					"type": "CurveTexture",
+					"name": "damping_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 6
+				},
+				{
+					"type": "bool",
+					"name": "attractor_interaction_enabled",
+					"setter": "set_attractor_interaction_enabled",
+					"getter": "is_attractor_interaction_enabled"
+				},
+				{
+					"type": "Vector2",
+					"name": "scale",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 8
+				},
+				{
+					"type": "float",
+					"name": "scale_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 8
+				},
+				{
+					"type": "float",
+					"name": "scale_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 8
+				},
+				{
+					"type": "CurveTexture,CurveXYZTexture",
+					"name": "scale_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 8
+				},
+				{
+					"type": "Vector2",
+					"name": "scale_over_velocity",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 17
+				},
+				{
+					"type": "float",
+					"name": "scale_over_velocity_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 17
+				},
+				{
+					"type": "float",
+					"name": "scale_over_velocity_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 17
+				},
+				{
+					"type": "CurveTexture,CurveXYZTexture",
+					"name": "scale_over_velocity_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 17
+				},
+				{
+					"type": "Color",
+					"name": "color",
+					"setter": "set_color",
+					"getter": "get_color"
+				},
+				{
+					"type": "GradientTexture1D",
+					"name": "color_ramp",
+					"setter": "set_color_ramp",
+					"getter": "get_color_ramp"
+				},
+				{
+					"type": "GradientTexture1D",
+					"name": "color_initial_ramp",
+					"setter": "set_color_initial_ramp",
+					"getter": "get_color_initial_ramp"
+				},
+				{
+					"type": "CurveTexture",
+					"name": "alpha_curve",
+					"setter": "set_alpha_curve",
+					"getter": "get_alpha_curve"
+				},
+				{
+					"type": "CurveTexture",
+					"name": "emission_curve",
+					"setter": "set_emission_curve",
+					"getter": "get_emission_curve"
+				},
+				{
+					"type": "Vector2",
+					"name": "hue_variation",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 9
+				},
+				{
+					"type": "float",
+					"name": "hue_variation_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 9
+				},
+				{
+					"type": "float",
+					"name": "hue_variation_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 9
+				},
+				{
+					"type": "CurveTexture",
+					"name": "hue_variation_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 9
+				},
+				{
+					"type": "Vector2",
+					"name": "anim_speed",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 10
+				},
+				{
+					"type": "float",
+					"name": "anim_speed_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 10
+				},
+				{
+					"type": "float",
+					"name": "anim_speed_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 10
+				},
+				{
+					"type": "CurveTexture",
+					"name": "anim_speed_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 10
+				},
+				{
+					"type": "Vector2",
+					"name": "anim_offset",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 11
+				},
+				{
+					"type": "float",
+					"name": "anim_offset_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 11
+				},
+				{
+					"type": "float",
+					"name": "anim_offset_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 11
+				},
+				{
+					"type": "CurveTexture",
+					"name": "anim_offset_curve",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 11
+				},
+				{
+					"type": "bool",
+					"name": "turbulence_enabled",
+					"setter": "set_turbulence_enabled",
+					"getter": "get_turbulence_enabled"
+				},
+				{
+					"type": "float",
+					"name": "turbulence_noise_strength",
+					"setter": "set_turbulence_noise_strength",
+					"getter": "get_turbulence_noise_strength"
+				},
+				{
+					"type": "float",
+					"name": "turbulence_noise_scale",
+					"setter": "set_turbulence_noise_scale",
+					"getter": "get_turbulence_noise_scale"
+				},
+				{
+					"type": "Vector3",
+					"name": "turbulence_noise_speed",
+					"setter": "set_turbulence_noise_speed",
+					"getter": "get_turbulence_noise_speed"
+				},
+				{
+					"type": "float",
+					"name": "turbulence_noise_speed_random",
+					"setter": "set_turbulence_noise_speed_random",
+					"getter": "get_turbulence_noise_speed_random"
+				},
+				{
+					"type": "Vector2",
+					"name": "turbulence_influence",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 13
+				},
+				{
+					"type": "float",
+					"name": "turbulence_influence_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 13
+				},
+				{
+					"type": "float",
+					"name": "turbulence_influence_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 13
+				},
+				{
+					"type": "Vector2",
+					"name": "turbulence_initial_displacement",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 14
+				},
+				{
+					"type": "float",
+					"name": "turbulence_initial_displacement_min",
+					"setter": "set_param_min",
+					"getter": "get_param_min",
+					"index": 14
+				},
+				{
+					"type": "float",
+					"name": "turbulence_initial_displacement_max",
+					"setter": "set_param_max",
+					"getter": "get_param_max",
+					"index": 14
+				},
+				{
+					"type": "CurveTexture",
+					"name": "turbulence_influence_over_life",
+					"setter": "set_param_texture",
+					"getter": "get_param_texture",
+					"index": 12
+				},
+				{
+					"type": "int",
+					"name": "collision_mode",
+					"setter": "set_collision_mode",
+					"getter": "get_collision_mode"
+				},
+				{
+					"type": "float",
+					"name": "collision_friction",
+					"setter": "set_collision_friction",
+					"getter": "get_collision_friction"
+				},
+				{
+					"type": "float",
+					"name": "collision_bounce",
+					"setter": "set_collision_bounce",
+					"getter": "get_collision_bounce"
+				},
+				{
+					"type": "bool",
+					"name": "collision_use_scale",
+					"setter": "set_collision_use_scale",
+					"getter": "is_collision_using_scale"
+				},
+				{
+					"type": "int",
+					"name": "sub_emitter_mode",
+					"setter": "set_sub_emitter_mode",
+					"getter": "get_sub_emitter_mode"
+				},
+				{
+					"type": "float",
+					"name": "sub_emitter_frequency",
+					"setter": "set_sub_emitter_frequency",
+					"getter": "get_sub_emitter_frequency"
+				},
+				{
+					"type": "int",
+					"name": "sub_emitter_amount_at_end",
+					"setter": "set_sub_emitter_amount_at_end",
+					"getter": "get_sub_emitter_amount_at_end"
+				},
+				{
+					"type": "int",
+					"name": "sub_emitter_amount_at_collision",
+					"setter": "set_sub_emitter_amount_at_collision",
+					"getter": "get_sub_emitter_amount_at_collision"
+				},
+				{
+					"type": "int",
+					"name": "sub_emitter_amount_at_start",
+					"setter": "set_sub_emitter_amount_at_start",
+					"getter": "get_sub_emitter_amount_at_start"
+				},
+				{
+					"type": "bool",
+					"name": "sub_emitter_keep_velocity",
+					"setter": "set_sub_emitter_keep_velocity",
+					"getter": "get_sub_emitter_keep_velocity"
 				}
 			]
 		},
@@ -203916,6 +203916,31 @@
 					}
 				},
 				{
+					"name": "set_nonclient_area",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1763793166,
+					"arguments": [
+						{
+							"name": "area",
+							"type": "Rect2i"
+						}
+					]
+				},
+				{
+					"name": "get_nonclient_area",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 410525958,
+					"return_value": {
+						"type": "Rect2i"
+					}
+				},
+				{
 					"name": "set_keep_title_visible",
 					"is_const": false,
 					"is_vararg": false,
@@ -205089,6 +205114,15 @@
 					]
 				},
 				{
+					"name": "nonclient_window_input",
+					"arguments": [
+						{
+							"name": "event",
+							"type": "InputEvent"
+						}
+					]
+				},
+				{
 					"name": "files_dropped",
 					"arguments": [
 						{
@@ -205170,6 +205204,12 @@
 					"name": "current_screen",
 					"setter": "set_current_screen",
 					"getter": "get_current_screen"
+				},
+				{
+					"type": "Rect2i",
+					"name": "nonclient_area",
+					"setter": "set_nonclient_area",
+					"getter": "get_nonclient_area"
 				},
 				{
 					"type": "PackedVector2Array",
@@ -208594,6 +208634,43 @@
 					"hash": 1317077508,
 					"return_value": {
 						"type": "Callable"
+					},
+					"arguments": [
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_custom_stylebox",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1433009359,
+					"arguments": [
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "stylebox",
+							"type": "StyleBox"
+						}
+					]
+				},
+				{
+					"name": "get_custom_stylebox",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3362509644,
+					"return_value": {
+						"type": "StyleBox"
 					},
 					"arguments": [
 						{
