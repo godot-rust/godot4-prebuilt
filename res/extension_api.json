@@ -118842,6 +118842,30 @@
 					"value": 3
 				}
 			],
+			"enums": [
+				{
+					"name": "HandleBinaryImageMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "HANDLE_BINARY_IMAGE_MODE_DISCARD_TEXTURES",
+							"value": 0
+						},
+						{
+							"name": "HANDLE_BINARY_IMAGE_MODE_EXTRACT_TEXTURES",
+							"value": 1
+						},
+						{
+							"name": "HANDLE_BINARY_IMAGE_MODE_EMBED_AS_BASISU",
+							"value": 2
+						},
+						{
+							"name": "HANDLE_BINARY_IMAGE_MODE_EMBED_AS_UNCOMPRESSED",
+							"value": 3
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "add_used_extension",
@@ -119723,29 +119747,27 @@
 					]
 				},
 				{
-					"name": "get_handle_binary_image",
+					"name": "get_handle_binary_image_mode",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 2681185834,
 					"return_value": {
-						"type": "int",
-						"meta": "int32"
+						"type": "enum::GLTFState.HandleBinaryImageMode"
 					}
 				},
 				{
-					"name": "set_handle_binary_image",
+					"name": "set_handle_binary_image_mode",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1286410249,
+					"hash": 854676334,
 					"arguments": [
 						{
 							"name": "method",
-							"type": "int",
-							"meta": "int32"
+							"type": "enum::GLTFState.HandleBinaryImageMode"
 						}
 					]
 				},
@@ -119775,6 +119797,33 @@
 						"type": "float",
 						"meta": "double"
 					}
+				},
+				{
+					"name": "get_handle_binary_image",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_handle_binary_image",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "method",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
 				}
 			],
 			"properties": [
@@ -119948,15 +119997,21 @@
 				},
 				{
 					"type": "int",
-					"name": "handle_binary_image",
-					"setter": "set_handle_binary_image",
-					"getter": "get_handle_binary_image"
+					"name": "handle_binary_image_mode",
+					"setter": "set_handle_binary_image_mode",
+					"getter": "get_handle_binary_image_mode"
 				},
 				{
 					"type": "float",
 					"name": "bake_fps",
 					"setter": "set_bake_fps",
 					"getter": "get_bake_fps"
+				},
+				{
+					"type": "int",
+					"name": "handle_binary_image",
+					"setter": "set_handle_binary_image",
+					"getter": "get_handle_binary_image"
 				}
 			]
 		},
