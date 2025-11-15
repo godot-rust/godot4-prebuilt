@@ -89160,6 +89160,287 @@
 			"api_type": "core"
 		},
 		{
+			"name": "LimitAngularVelocityModifier3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SkeletonModifier3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_root_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_root_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_root_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_root_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_chain_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_chain_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "clear_chains",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "set_max_angular_velocity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "angular_velocity",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_max_angular_velocity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_exclude",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "exclude",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_exclude",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "reset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				}
+			],
+			"properties": [
+				{
+					"type": "float",
+					"name": "max_angular_velocity",
+					"setter": "set_max_angular_velocity",
+					"getter": "get_max_angular_velocity"
+				},
+				{
+					"type": "bool",
+					"name": "exclude",
+					"setter": "set_exclude",
+					"getter": "is_exclude"
+				},
+				{
+					"type": "int",
+					"name": "chain_count",
+					"setter": "set_chain_count",
+					"getter": "get_chain_count"
+				},
+				{
+					"type": "int",
+					"name": "joint_count",
+					"getter": "_get_joint_count"
+				}
+			]
+		},
+		{
 			"name": "JacobianIK3D",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -91886,6 +92167,22 @@
 			"is_instantiable": true,
 			"inherits": "SkeletonModifier3D",
 			"api_type": "core",
+			"enums": [
+				{
+					"name": "ReferenceType",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "REFERENCE_TYPE_BONE",
+							"value": 0
+						},
+						{
+							"name": "REFERENCE_TYPE_NODE",
+							"value": 1
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "set_amount",
@@ -92003,6 +92300,43 @@
 					]
 				},
 				{
+					"name": "set_reference_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1830520418,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "type",
+							"type": "enum::BoneConstraint3D.ReferenceType"
+						}
+					]
+				},
+				{
+					"name": "get_reference_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3456416152,
+					"return_value": {
+						"type": "enum::BoneConstraint3D.ReferenceType"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "set_reference_bone_name",
 					"is_const": false,
 					"is_vararg": false,
@@ -92069,6 +92403,43 @@
 					"return_value": {
 						"type": "int",
 						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_reference_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2761262315,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "node",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_reference_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 408788394,
+					"return_value": {
+						"type": "NodePath"
 					},
 					"arguments": [
 						{
@@ -152940,6 +153311,104 @@
 					]
 				},
 				{
+					"name": "add_shortcut",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4124020929,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						},
+						{
+							"name": "shortcut",
+							"type": "Shortcut"
+						}
+					]
+				},
+				{
+					"name": "remove_shortcut",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "is_shortcut",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 699917945,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						},
+						{
+							"name": "event",
+							"type": "InputEvent"
+						}
+					]
+				},
+				{
+					"name": "has_shortcut",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3927539163,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_shortcut",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1149070301,
+					"return_value": {
+						"type": "Shortcut"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_shortcut_list",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2981934095,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
+				},
+				{
 					"name": "check_changed_settings_in_group",
 					"is_const": true,
 					"is_vararg": false,
@@ -188975,6 +189444,33 @@
 			"api_type": "core",
 			"methods": [
 				{
+					"name": "set_binding",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_binding",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
 					"name": "set_location",
 					"is_const": false,
 					"is_vararg": false,
@@ -189107,6 +189603,12 @@
 				}
 			],
 			"properties": [
+				{
+					"type": "int",
+					"name": "binding",
+					"setter": "set_binding",
+					"getter": "get_binding"
+				},
 				{
 					"type": "int",
 					"name": "location",
@@ -255697,6 +256199,40 @@
 					]
 				},
 				{
+					"name": "draw_list_bind_vertex_buffers_format",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2008628980,
+					"arguments": [
+						{
+							"name": "draw_list",
+							"type": "int",
+							"meta": "int64"
+						},
+						{
+							"name": "vertex_format",
+							"type": "int",
+							"meta": "int64"
+						},
+						{
+							"name": "vertex_count",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "vertex_buffers",
+							"type": "typedarray::RID"
+						},
+						{
+							"name": "offsets",
+							"type": "PackedInt64Array",
+							"default_value": "PackedInt64Array()"
+						}
+					]
+				},
+				{
 					"name": "draw_list_bind_index_array",
 					"is_const": false,
 					"is_vararg": false,
@@ -302807,7 +303343,7 @@
 						{
 							"name": "utterance_id",
 							"type": "int",
-							"meta": "int32",
+							"meta": "int64",
 							"default_value": "0"
 						},
 						{
