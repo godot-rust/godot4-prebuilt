@@ -84520,6 +84520,31 @@
 					}
 				},
 				{
+					"name": "set_relative",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_relative",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_origin_safe_margin",
 					"is_const": false,
 					"is_vararg": false,
@@ -85195,6 +85220,12 @@
 					"name": "use_secondary_rotation",
 					"setter": "set_use_secondary_rotation",
 					"getter": "is_using_secondary_rotation"
+				},
+				{
+					"type": "bool",
+					"name": "relative",
+					"setter": "set_relative",
+					"getter": "is_relative"
 				},
 				{
 					"type": "int",
@@ -89550,6 +89581,31 @@
 					}
 				},
 				{
+					"name": "set_deterministic",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "deterministic",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_deterministic",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_target_node",
 					"is_const": false,
 					"is_vararg": false,
@@ -89887,6 +89943,12 @@
 					"name": "angular_delta_limit",
 					"setter": "set_angular_delta_limit",
 					"getter": "get_angular_delta_limit"
+				},
+				{
+					"type": "bool",
+					"name": "deterministic",
+					"setter": "set_deterministic",
+					"getter": "is_deterministic"
 				},
 				{
 					"type": "int",
@@ -90991,12 +91053,45 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "set_mutable_bone_axes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "are_bone_axes_mutable",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "reset",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
 					"hash": 3218959716
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "mutable_bone_axes",
+					"setter": "set_mutable_bone_axes",
+					"getter": "are_bone_axes_mutable"
 				}
 			]
 		},
@@ -91139,6 +91234,43 @@
 				},
 				{
 					"name": "is_using_secondary_rotation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_relative",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_relative",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -94472,6 +94604,31 @@
 					}
 				},
 				{
+					"name": "set_mutable_bone_axes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "are_bone_axes_mutable",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "reset",
 					"is_const": false,
 					"is_vararg": false,
@@ -94486,6 +94643,12 @@
 					"name": "external_force",
 					"setter": "set_external_force",
 					"getter": "get_external_force"
+				},
+				{
+					"type": "bool",
+					"name": "mutable_bone_axes",
+					"setter": "set_mutable_bone_axes",
+					"getter": "are_bone_axes_mutable"
 				},
 				{
 					"type": "int",
@@ -200970,6 +201133,62 @@
 			]
 		},
 		{
+			"name": "OpenXRAndroidThreadSettingsExtension",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRExtensionWrapper",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "ThreadType",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "THREAD_TYPE_APPLICATION_MAIN",
+							"value": 0
+						},
+						{
+							"name": "THREAD_TYPE_APPLICATION_WORKER",
+							"value": 1
+						},
+						{
+							"name": "THREAD_TYPE_RENDERER_MAIN",
+							"value": 2
+						},
+						{
+							"name": "THREAD_TYPE_RENDERER_WORKER",
+							"value": 3
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_application_thread_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1558751158,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "thread_type",
+							"type": "enum::OpenXRAndroidThreadSettingsExtension.ThreadType"
+						},
+						{
+							"name": "thread_id",
+							"type": "int",
+							"meta": "uint32",
+							"default_value": "0"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "OpenXRRenderModelExtension",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -271813,6 +272032,14 @@
 					"return_value": {
 						"type": "enum::OpenXRAPIExtension.OpenXRAlphaBlendModeSupport"
 					}
+				},
+				{
+					"name": "update_main_swapchain_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
 				}
 			]
 		},
