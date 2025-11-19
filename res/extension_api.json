@@ -25816,342 +25816,6 @@
 	],
 	"classes": [
 		{
-			"name": "AnimationNodeOneShot",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "AnimationNodeSync",
-			"api_type": "core",
-			"enums": [
-				{
-					"name": "OneShotRequest",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "ONE_SHOT_REQUEST_NONE",
-							"value": 0
-						},
-						{
-							"name": "ONE_SHOT_REQUEST_FIRE",
-							"value": 1
-						},
-						{
-							"name": "ONE_SHOT_REQUEST_ABORT",
-							"value": 2
-						},
-						{
-							"name": "ONE_SHOT_REQUEST_FADE_OUT",
-							"value": 3
-						}
-					]
-				},
-				{
-					"name": "MixMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "MIX_MODE_BLEND",
-							"value": 0
-						},
-						{
-							"name": "MIX_MODE_ADD",
-							"value": 1
-						}
-					]
-				}
-			],
-			"methods": [
-				{
-					"name": "set_fadein_time",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "time",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_fadein_time",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_fadein_curve",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 270443179,
-					"arguments": [
-						{
-							"name": "curve",
-							"type": "Curve"
-						}
-					]
-				},
-				{
-					"name": "get_fadein_curve",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2460114913,
-					"return_value": {
-						"type": "Curve"
-					}
-				},
-				{
-					"name": "set_fadeout_time",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "time",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_fadeout_time",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_fadeout_curve",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 270443179,
-					"arguments": [
-						{
-							"name": "curve",
-							"type": "Curve"
-						}
-					]
-				},
-				{
-					"name": "get_fadeout_curve",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2460114913,
-					"return_value": {
-						"type": "Curve"
-					}
-				},
-				{
-					"name": "set_break_loop_at_end",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_loop_broken_at_end",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_autorestart",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "active",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "has_autorestart",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_autorestart_delay",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "time",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_autorestart_delay",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_autorestart_random_delay",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "time",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_autorestart_random_delay",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_mix_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1018899799,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::AnimationNodeOneShot.MixMode"
-						}
-					]
-				},
-				{
-					"name": "get_mix_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3076550526,
-					"return_value": {
-						"type": "enum::AnimationNodeOneShot.MixMode"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "int",
-					"name": "mix_mode",
-					"setter": "set_mix_mode",
-					"getter": "get_mix_mode"
-				},
-				{
-					"type": "float",
-					"name": "fadein_time",
-					"setter": "set_fadein_time",
-					"getter": "get_fadein_time"
-				},
-				{
-					"type": "Curve",
-					"name": "fadein_curve",
-					"setter": "set_fadein_curve",
-					"getter": "get_fadein_curve"
-				},
-				{
-					"type": "float",
-					"name": "fadeout_time",
-					"setter": "set_fadeout_time",
-					"getter": "get_fadeout_time"
-				},
-				{
-					"type": "Curve",
-					"name": "fadeout_curve",
-					"setter": "set_fadeout_curve",
-					"getter": "get_fadeout_curve"
-				},
-				{
-					"type": "bool",
-					"name": "break_loop_at_end",
-					"setter": "set_break_loop_at_end",
-					"getter": "is_loop_broken_at_end"
-				},
-				{
-					"type": "bool",
-					"name": "autorestart",
-					"setter": "set_autorestart",
-					"getter": "has_autorestart"
-				},
-				{
-					"type": "float",
-					"name": "autorestart_delay",
-					"setter": "set_autorestart_delay",
-					"getter": "get_autorestart_delay"
-				},
-				{
-					"type": "float",
-					"name": "autorestart_random_delay",
-					"setter": "set_autorestart_random_delay",
-					"getter": "get_autorestart_random_delay"
-				}
-			]
-		},
-		{
 			"name": "AnimationNodeOutput",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -32565,6 +32229,31 @@
 					}
 				},
 				{
+					"name": "set_custom_arrow_round",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "round",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_custom_arrow_rounding",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "is_editable",
 					"is_const": true,
 					"is_vararg": false,
@@ -32681,6 +32370,12 @@
 					"name": "custom_arrow_step",
 					"setter": "set_custom_arrow_step",
 					"getter": "get_custom_arrow_step"
+				},
+				{
+					"type": "bool",
+					"name": "custom_arrow_round",
+					"setter": "set_custom_arrow_round",
+					"getter": "is_custom_arrow_rounding"
 				},
 				{
 					"type": "bool",
@@ -69206,8 +68901,12 @@
 							"value": 2
 						},
 						{
-							"name": "QUAL_MAX",
+							"name": "QUAL_INSTANCE_INDEX",
 							"value": 3
+						},
+						{
+							"name": "QUAL_MAX",
+							"value": 4
 						}
 					]
 				}
@@ -69262,6 +68961,33 @@
 					"return_value": {
 						"type": "enum::VisualShaderNodeParameter.Qualifier"
 					}
+				},
+				{
+					"name": "set_instance_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "instance_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_instance_index",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
 				}
 			],
 			"properties": [
@@ -69276,6 +69002,12 @@
 					"name": "qualifier",
 					"setter": "set_qualifier",
 					"getter": "get_qualifier"
+				},
+				{
+					"type": "int",
+					"name": "instance_index",
+					"setter": "set_instance_index",
+					"getter": "get_instance_index"
 				}
 			]
 		},
@@ -113967,47 +113699,67 @@
 			]
 		},
 		{
-			"name": "AudioStreamPlaylist",
+			"name": "AnimationNodeOneShot",
 			"is_refcounted": true,
 			"is_instantiable": true,
-			"inherits": "AudioStream",
+			"inherits": "AnimationNodeSync",
 			"api_type": "core",
-			"constants": [
+			"enums": [
 				{
-					"name": "MAX_STREAMS",
-					"value": 64
-				}
-			],
-			"methods": [
-				{
-					"name": "set_stream_count",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
+					"name": "OneShotRequest",
+					"is_bitfield": false,
+					"values": [
 						{
-							"name": "stream_count",
-							"type": "int",
-							"meta": "int32"
+							"name": "ONE_SHOT_REQUEST_NONE",
+							"value": 0
+						},
+						{
+							"name": "ONE_SHOT_REQUEST_FIRE",
+							"value": 1
+						},
+						{
+							"name": "ONE_SHOT_REQUEST_ABORT",
+							"value": 2
+						},
+						{
+							"name": "ONE_SHOT_REQUEST_FADE_OUT",
+							"value": 3
 						}
 					]
 				},
 				{
-					"name": "get_stream_count",
-					"is_const": true,
+					"name": "MixMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "MIX_MODE_BLEND",
+							"value": 0
+						},
+						{
+							"name": "MIX_MODE_ADD",
+							"value": 1
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_fadein_time",
+					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "time",
+							"type": "float",
+							"meta": "double"
+						}
+					]
 				},
 				{
-					"name": "get_bpm",
+					"name": "get_fadein_time",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -114019,69 +113771,32 @@
 					}
 				},
 				{
-					"name": "set_list_stream",
+					"name": "set_fadein_curve",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 111075094,
+					"hash": 270443179,
 					"arguments": [
 						{
-							"name": "stream_index",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "audio_stream",
-							"type": "AudioStream"
+							"name": "curve",
+							"type": "Curve"
 						}
 					]
 				},
 				{
-					"name": "get_list_stream",
+					"name": "get_fadein_curve",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2739380747,
+					"hash": 2460114913,
 					"return_value": {
-						"type": "AudioStream"
-					},
-					"arguments": [
-						{
-							"name": "stream_index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_shuffle",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "shuffle",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_shuffle",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
+						"type": "Curve"
 					}
 				},
 				{
-					"name": "set_fade_time",
+					"name": "set_fadeout_time",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -114089,14 +113804,14 @@
 					"hash": 373806689,
 					"arguments": [
 						{
-							"name": "dec",
+							"name": "time",
 							"type": "float",
-							"meta": "float"
+							"meta": "double"
 						}
 					]
 				},
 				{
-					"name": "get_fade_time",
+					"name": "get_fadeout_time",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -114104,11 +113819,36 @@
 					"hash": 1740695150,
 					"return_value": {
 						"type": "float",
-						"meta": "float"
+						"meta": "double"
 					}
 				},
 				{
-					"name": "set_loop",
+					"name": "set_fadeout_curve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 270443179,
+					"arguments": [
+						{
+							"name": "curve",
+							"type": "Curve"
+						}
+					]
+				},
+				{
+					"name": "get_fadeout_curve",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2460114913,
+					"return_value": {
+						"type": "Curve"
+					}
+				},
+				{
+					"name": "set_break_loop_at_end",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -114116,13 +113856,13 @@
 					"hash": 2586408642,
 					"arguments": [
 						{
-							"name": "loop",
+							"name": "enable",
 							"type": "bool"
 						}
 					]
 				},
 				{
-					"name": "has_loop",
+					"name": "is_loop_broken_at_end",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -114131,480 +113871,166 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "set_autorestart",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "active",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "has_autorestart",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_autorestart_delay",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "time",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_autorestart_delay",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_autorestart_random_delay",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "time",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_autorestart_random_delay",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_mix_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1018899799,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::AnimationNodeOneShot.MixMode"
+						}
+					]
+				},
+				{
+					"name": "get_mix_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3076550526,
+					"return_value": {
+						"type": "enum::AnimationNodeOneShot.MixMode"
+					}
 				}
 			],
 			"properties": [
 				{
-					"type": "bool",
-					"name": "shuffle",
-					"setter": "set_shuffle",
-					"getter": "get_shuffle"
-				},
-				{
-					"type": "bool",
-					"name": "loop",
-					"setter": "set_loop",
-					"getter": "has_loop"
+					"type": "int",
+					"name": "mix_mode",
+					"setter": "set_mix_mode",
+					"getter": "get_mix_mode"
 				},
 				{
 					"type": "float",
-					"name": "fade_time",
-					"setter": "set_fade_time",
-					"getter": "get_fade_time"
+					"name": "fadein_time",
+					"setter": "set_fadein_time",
+					"getter": "get_fadein_time"
 				},
 				{
-					"type": "int",
-					"name": "stream_count",
-					"setter": "set_stream_count",
-					"getter": "get_stream_count"
+					"type": "Curve",
+					"name": "fadein_curve",
+					"setter": "set_fadein_curve",
+					"getter": "get_fadein_curve"
 				},
 				{
-					"type": "AudioStream",
-					"name": "stream_0",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 0
+					"type": "float",
+					"name": "fadeout_time",
+					"setter": "set_fadeout_time",
+					"getter": "get_fadeout_time"
 				},
 				{
-					"type": "AudioStream",
-					"name": "stream_1",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 1
+					"type": "Curve",
+					"name": "fadeout_curve",
+					"setter": "set_fadeout_curve",
+					"getter": "get_fadeout_curve"
 				},
 				{
-					"type": "AudioStream",
-					"name": "stream_2",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 2
+					"type": "bool",
+					"name": "break_loop_at_end",
+					"setter": "set_break_loop_at_end",
+					"getter": "is_loop_broken_at_end"
 				},
 				{
-					"type": "AudioStream",
-					"name": "stream_3",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 3
+					"type": "bool",
+					"name": "autorestart",
+					"setter": "set_autorestart",
+					"getter": "has_autorestart"
 				},
 				{
-					"type": "AudioStream",
-					"name": "stream_4",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 4
+					"type": "float",
+					"name": "autorestart_delay",
+					"setter": "set_autorestart_delay",
+					"getter": "get_autorestart_delay"
 				},
 				{
-					"type": "AudioStream",
-					"name": "stream_5",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 5
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_6",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 6
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_7",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 7
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_8",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 8
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_9",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 9
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_10",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 10
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_11",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 11
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_12",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 12
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_13",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 13
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_14",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 14
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_15",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 15
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_16",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 16
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_17",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 17
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_18",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 18
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_19",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 19
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_20",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 20
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_21",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 21
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_22",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 22
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_23",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 23
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_24",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 24
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_25",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 25
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_26",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 26
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_27",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 27
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_28",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 28
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_29",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 29
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_30",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 30
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_31",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 31
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_32",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 32
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_33",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 33
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_34",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 34
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_35",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 35
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_36",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 36
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_37",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 37
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_38",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 38
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_39",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 39
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_40",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 40
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_41",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 41
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_42",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 42
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_43",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 43
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_44",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 44
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_45",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 45
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_46",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 46
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_47",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 47
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_48",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 48
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_49",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 49
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_50",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 50
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_51",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 51
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_52",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 52
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_53",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 53
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_54",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 54
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_55",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 55
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_56",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 56
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_57",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 57
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_58",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 58
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_59",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 59
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_60",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 60
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_61",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 61
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_62",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 62
-				},
-				{
-					"type": "AudioStream",
-					"name": "stream_63",
-					"setter": "set_list_stream",
-					"getter": "get_list_stream",
-					"index": 63
+					"type": "float",
+					"name": "autorestart_random_delay",
+					"setter": "set_autorestart_random_delay",
+					"getter": "get_autorestart_random_delay"
 				}
 			]
 		},
@@ -165782,6 +165208,648 @@
 			"is_instantiable": false,
 			"inherits": "AudioStreamPlayback",
 			"api_type": "core"
+		},
+		{
+			"name": "AudioStreamPlaylist",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "AudioStream",
+			"api_type": "core",
+			"constants": [
+				{
+					"name": "MAX_STREAMS",
+					"value": 64
+				}
+			],
+			"methods": [
+				{
+					"name": "set_stream_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "stream_count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_stream_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_bpm",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_list_stream",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 111075094,
+					"arguments": [
+						{
+							"name": "stream_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "audio_stream",
+							"type": "AudioStream"
+						}
+					]
+				},
+				{
+					"name": "get_list_stream",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2739380747,
+					"return_value": {
+						"type": "AudioStream"
+					},
+					"arguments": [
+						{
+							"name": "stream_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_shuffle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "shuffle",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_shuffle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_fade_time",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "dec",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_fade_time",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_loop",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "loop",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "has_loop",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "shuffle",
+					"setter": "set_shuffle",
+					"getter": "get_shuffle"
+				},
+				{
+					"type": "bool",
+					"name": "loop",
+					"setter": "set_loop",
+					"getter": "has_loop"
+				},
+				{
+					"type": "float",
+					"name": "fade_time",
+					"setter": "set_fade_time",
+					"getter": "get_fade_time"
+				},
+				{
+					"type": "int",
+					"name": "stream_count",
+					"setter": "set_stream_count",
+					"getter": "get_stream_count"
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_0",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 0
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_1",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 1
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_2",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 2
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_3",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 3
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_4",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 4
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_5",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 5
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_6",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 6
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_7",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 7
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_8",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 8
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_9",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 9
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_10",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 10
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_11",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 11
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_12",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 12
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_13",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 13
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_14",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 14
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_15",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 15
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_16",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 16
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_17",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 17
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_18",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 18
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_19",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 19
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_20",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 20
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_21",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 21
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_22",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 22
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_23",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 23
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_24",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 24
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_25",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 25
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_26",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 26
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_27",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 27
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_28",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 28
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_29",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 29
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_30",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 30
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_31",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 31
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_32",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 32
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_33",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 33
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_34",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 34
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_35",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 35
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_36",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 36
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_37",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 37
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_38",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 38
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_39",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 39
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_40",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 40
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_41",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 41
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_42",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 42
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_43",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 43
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_44",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 44
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_45",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 45
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_46",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 46
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_47",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 47
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_48",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 48
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_49",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 49
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_50",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 50
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_51",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 51
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_52",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 52
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_53",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 53
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_54",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 54
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_55",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 55
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_56",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 56
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_57",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 57
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_58",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 58
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_59",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 59
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_60",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 60
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_61",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 61
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_62",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 62
+				},
+				{
+					"type": "AudioStream",
+					"name": "stream_63",
+					"setter": "set_list_stream",
+					"getter": "get_list_stream",
+					"index": 63
+				}
+			]
 		},
 		{
 			"name": "Viewport",
