@@ -25816,13 +25816,6 @@
 	],
 	"classes": [
 		{
-			"name": "AnimationNodeOutput",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "AnimationNode",
-			"api_type": "core"
-		},
-		{
 			"name": "AnimationNodeStateMachineTransition",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -114033,6 +114026,13 @@
 					"getter": "get_autorestart_random_delay"
 				}
 			]
+		},
+		{
+			"name": "AnimationNodeOutput",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "AnimationNode",
+			"api_type": "core"
 		},
 		{
 			"name": "GLTFTextureSampler",
@@ -253497,6 +253497,10 @@
 						{
 							"name": "TEXTURE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT",
 							"value": 4
+						},
+						{
+							"name": "TEXTURE_USAGE_DEPTH_RESOLVE_ATTACHMENT_BIT",
+							"value": 4096
 						},
 						{
 							"name": "TEXTURE_USAGE_STORAGE_BIT",
