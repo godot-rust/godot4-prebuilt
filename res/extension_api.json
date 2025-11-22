@@ -153147,6 +153147,14 @@
 						{
 							"name": "DOCK_LAYOUT_HORIZONTAL",
 							"value": 2
+						},
+						{
+							"name": "DOCK_LAYOUT_FLOATING",
+							"value": 4
+						},
+						{
+							"name": "DOCK_LAYOUT_ALL",
+							"value": 7
 						}
 					]
 				}
@@ -153207,6 +153215,22 @@
 					]
 				},
 				{
+					"name": "open",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "close",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
 					"name": "set_title",
 					"is_const": false,
 					"is_vararg": false,
@@ -153257,6 +153281,56 @@
 					}
 				},
 				{
+					"name": "set_global",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "global",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_global",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_transient",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "transient",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_transient",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_icon_name",
 					"is_const": false,
 					"is_vararg": false,
@@ -153304,6 +153378,31 @@
 					"hash": 3635182373,
 					"return_value": {
 						"type": "Texture2D"
+					}
+				},
+				{
+					"name": "set_title_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2920490490,
+					"arguments": [
+						{
+							"name": "color",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "get_title_color",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3444240500,
+					"return_value": {
+						"type": "Color"
 					}
 				},
 				{
@@ -153396,6 +153495,18 @@
 					"getter": "get_layout_key"
 				},
 				{
+					"type": "bool",
+					"name": "global",
+					"setter": "set_global",
+					"getter": "is_global"
+				},
+				{
+					"type": "bool",
+					"name": "transient",
+					"setter": "set_transient",
+					"getter": "is_transient"
+				},
+				{
 					"type": "StringName",
 					"name": "icon_name",
 					"setter": "set_icon_name",
@@ -153406,6 +153517,12 @@
 					"name": "dock_icon",
 					"setter": "set_dock_icon",
 					"getter": "get_dock_icon"
+				},
+				{
+					"type": "Color",
+					"name": "title_color",
+					"setter": "set_title_color",
+					"getter": "get_title_color"
 				},
 				{
 					"type": "ShortCut",
@@ -153583,8 +153700,12 @@
 							"value": 7
 						},
 						{
-							"name": "DOCK_SLOT_MAX",
+							"name": "DOCK_SLOT_BOTTOM",
 							"value": 8
+						},
+						{
+							"name": "DOCK_SLOT_MAX",
+							"value": 9
 						}
 					]
 				},
@@ -154006,49 +154127,6 @@
 					]
 				},
 				{
-					"name": "add_control_to_bottom_panel",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 111032269,
-					"hash_compatibility": [
-						3526039376
-					],
-					"return_value": {
-						"type": "Button"
-					},
-					"arguments": [
-						{
-							"name": "control",
-							"type": "Control"
-						},
-						{
-							"name": "title",
-							"type": "String"
-						},
-						{
-							"name": "shortcut",
-							"type": "Shortcut",
-							"default_value": "null"
-						}
-					]
-				},
-				{
-					"name": "remove_control_from_bottom_panel",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1496901182,
-					"arguments": [
-						{
-							"name": "control",
-							"type": "Control"
-						}
-					]
-				},
-				{
 					"name": "remove_control_from_container",
 					"is_const": false,
 					"is_vararg": false,
@@ -154222,6 +154300,49 @@
 						{
 							"name": "icon",
 							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "add_control_to_bottom_panel",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 111032269,
+					"hash_compatibility": [
+						3526039376
+					],
+					"return_value": {
+						"type": "Button"
+					},
+					"arguments": [
+						{
+							"name": "control",
+							"type": "Control"
+						},
+						{
+							"name": "title",
+							"type": "String"
+						},
+						{
+							"name": "shortcut",
+							"type": "Shortcut",
+							"default_value": "null"
+						}
+					]
+				},
+				{
+					"name": "remove_control_from_bottom_panel",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1496901182,
+					"arguments": [
+						{
+							"name": "control",
+							"type": "Control"
 						}
 					]
 				},
@@ -212627,6 +212748,76 @@
 					]
 				},
 				{
+					"name": "get_translations",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::Translation"
+					}
+				},
+				{
+					"name": "find_translations",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2109650934,
+					"return_value": {
+						"type": "typedarray::Translation"
+					},
+					"arguments": [
+						{
+							"name": "locale",
+							"type": "String"
+						},
+						{
+							"name": "exact",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "has_translation_for_locale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2034713381,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "locale",
+							"type": "String"
+						},
+						{
+							"name": "exact",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "has_translation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2696976312,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "translation",
+							"type": "Translation"
+						}
+					]
+				},
+				{
 					"name": "has_domain",
 					"is_const": true,
 					"is_vararg": false,
@@ -218738,6 +218929,10 @@
 						{
 							"name": "OVERRUN_JUSTIFICATION_AWARE",
 							"value": 16
+						},
+						{
+							"name": "OVERRUN_SHORT_STRING_ELLIPSIS",
+							"value": 32
 						}
 					]
 				},
@@ -331696,6 +331891,76 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "get_translations",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::Translation"
+					}
+				},
+				{
+					"name": "has_translation_for_locale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2034713381,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "locale",
+							"type": "String"
+						},
+						{
+							"name": "exact",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "has_translation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2696976312,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "translation",
+							"type": "Translation"
+						}
+					]
+				},
+				{
+					"name": "find_translations",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2109650934,
+					"return_value": {
+						"type": "typedarray::Translation"
+					},
+					"arguments": [
+						{
+							"name": "locale",
+							"type": "String"
+						},
+						{
+							"name": "exact",
+							"type": "bool"
+						}
+					]
+				},
+				{
 					"name": "translate",
 					"is_const": true,
 					"is_vararg": false,
@@ -340461,6 +340726,23 @@
 				},
 				{
 					"name": "load_dds_from_buffer",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 680677267,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "buffer",
+							"type": "PackedByteArray"
+						}
+					]
+				},
+				{
+					"name": "load_exr_from_buffer",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
