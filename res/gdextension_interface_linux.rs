@@ -2015,6 +2015,8 @@ pub const GDEXTENSION_METHOD_ARGUMENT_METADATA_INT_IS_CHAR16:
     GDExtensionClassMethodArgumentMetadata = 11;
 pub const GDEXTENSION_METHOD_ARGUMENT_METADATA_INT_IS_CHAR32:
     GDExtensionClassMethodArgumentMetadata = 12;
+pub const GDEXTENSION_METHOD_ARGUMENT_METADATA_OBJECT_IS_REQUIRED:
+    GDExtensionClassMethodArgumentMetadata = 13;
 pub type GDExtensionClassMethodArgumentMetadata = ::std::os::raw::c_uint;
 pub type GDExtensionClassMethodCall = ::std::option::Option<
     unsafe extern "C" fn(
@@ -4353,7 +4355,7 @@ pub type GDExtensionInterfaceGetVariantToTypeConstructor = ::std::option::Option
         p_type: GDExtensionVariantType,
     ) -> GDExtensionTypeFromVariantConstructorFunc,
 >;
-#[doc = " @name variant_get_ptr_internal_getter\n @since 4.4\n\n Provides a function pointer for retrieving a pointer to a variant's internal value.\n Access to a variant's internal value can be used to modify it in-place, or to retrieve its value without the overhead of variant conversion functions.\n It is recommended to cache the getter for all variant types in a function table to avoid retrieval overhead upon use.\n\n @note Each function assumes the variant's type has already been determined and matches the function.\n Invoking the function with a variant of a mismatched type has undefined behavior, and may lead to a segmentation fault.\n\n @param p_type The Variant type.\n\n @return A pointer to a type-specific function that returns a pointer to the internal value of a variant. Check the implementation of this function (gdextension_variant_get_ptr_internal_getter) for pointee type info of each variant type."]
+#[doc = " @name variant_get_ptr_internal_getter\n @since 4.4\n\n Provides a function pointer for retrieving a pointer to a variant's internal value.\n\n Access to a variant's internal value can be used to modify it in-place, or to retrieve its value without the overhead of variant conversion functions.\n It is recommended to cache the getter for all variant types in a function table to avoid retrieval overhead upon use.\n\n Each function assumes the variant's type has already been determined and matches the function.\n Invoking the function with a variant of a mismatched type has undefined behavior, and may lead to a segmentation fault.\n\n @param p_type The Variant type.\n\n @return A pointer to a type-specific function that returns a pointer to the internal value of a variant. Check the implementation of this function (gdextension_variant_get_ptr_internal_getter) for pointee type info of each variant type."]
 pub type GDExtensionInterfaceGetVariantGetInternalPtrFunc = ::std::option::Option<
     unsafe extern "C" fn(p_type: GDExtensionVariantType) -> GDExtensionVariantGetInternalPtrFunc,
 >;
@@ -4598,7 +4600,7 @@ pub type GDExtensionInterfaceStringOperatorPlusEqC32str =
 pub type GDExtensionInterfaceStringResize = ::std::option::Option<
     unsafe extern "C" fn(p_self: GDExtensionStringPtr, p_resize: GDExtensionInt) -> GDExtensionInt,
 >;
-#[doc = " @name string_name_new_with_latin1_chars\n @since 4.2\n\n Creates a StringName from a Latin-1 encoded C string.\n\n If `p_is_static` is true, then:\n - The StringName will reuse the `p_contents` buffer instead of copying it.\n   You must guarantee that the buffer remains valid for the duration of the application (e.g. string literal).\n - You must not call a destructor for this StringName. Incrementing the initial reference once should achieve this.\n\n `p_is_static` is purely an optimization and can easily introduce undefined behavior if used wrong. In case of doubt, set it to false.\n\n @param r_dest A pointer to uninitialized storage, into which the newly created StringName is constructed.\n @param p_contents A pointer to a C string (null terminated and Latin-1 or ASCII encoded).\n @param p_is_static Whether the StringName reuses the buffer directly (see above)."]
+#[doc = " @name string_name_new_with_latin1_chars\n @since 4.2\n\n Creates a StringName from a Latin-1 encoded C string.\n\n If `p_is_static` is true, then:\n - The StringName will reuse the `p_contents` buffer instead of copying it.\n - You must guarantee that the buffer remains valid for the duration of the application (e.g. string literal).\n - You must not call a destructor for this StringName. Incrementing the initial reference once should achieve this.\n\n `p_is_static` is purely an optimization and can easily introduce undefined behavior if used wrong. In case of doubt, set it to false.\n\n @param r_dest A pointer to uninitialized storage, into which the newly created StringName is constructed.\n @param p_contents A pointer to a C string (null terminated and Latin-1 or ASCII encoded).\n @param p_is_static Whether the StringName reuses the buffer directly (see above)."]
 pub type GDExtensionInterfaceStringNameNewWithLatin1Chars = ::std::option::Option<
     unsafe extern "C" fn(
         r_dest: GDExtensionUninitializedStringNamePtr,
