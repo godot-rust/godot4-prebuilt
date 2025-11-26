@@ -21643,9 +21643,12 @@
 					"name": "bsearch",
 					"return_type": "int",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 3380005890,
+					"hash": 954237325,
+					"hash_compatibility": [
+						3380005890
+					],
 					"arguments": [
 						{
 							"name": "value",
@@ -22677,9 +22680,12 @@
 					"name": "bsearch",
 					"return_type": "int",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 3380005890,
+					"hash": 954237325,
+					"hash_compatibility": [
+						3380005890
+					],
 					"arguments": [
 						{
 							"name": "value",
@@ -23053,9 +23059,12 @@
 					"name": "bsearch",
 					"return_type": "int",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 3380005890,
+					"hash": 954237325,
+					"hash_compatibility": [
+						3380005890
+					],
 					"arguments": [
 						{
 							"name": "value",
@@ -23429,9 +23438,12 @@
 					"name": "bsearch",
 					"return_type": "int",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 1188816338,
+					"hash": 1175118842,
+					"hash_compatibility": [
+						1188816338
+					],
 					"arguments": [
 						{
 							"name": "value",
@@ -23805,9 +23817,12 @@
 					"name": "bsearch",
 					"return_type": "int",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 1188816338,
+					"hash": 1175118842,
+					"hash_compatibility": [
+						1188816338
+					],
 					"arguments": [
 						{
 							"name": "value",
@@ -24181,9 +24196,12 @@
 					"name": "bsearch",
 					"return_type": "int",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 328976671,
+					"hash": 1171495151,
+					"hash_compatibility": [
+						328976671
+					],
 					"arguments": [
 						{
 							"name": "value",
@@ -24562,9 +24580,12 @@
 					"name": "bsearch",
 					"return_type": "int",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 3778035805,
+					"hash": 3341588170,
+					"hash_compatibility": [
+						3778035805
+					],
 					"arguments": [
 						{
 							"name": "value",
@@ -24943,9 +24964,12 @@
 					"name": "bsearch",
 					"return_type": "int",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 219263630,
+					"hash": 1259277637,
+					"hash_compatibility": [
+						219263630
+					],
 					"arguments": [
 						{
 							"name": "value",
@@ -25319,9 +25343,12 @@
 					"name": "bsearch",
 					"return_type": "int",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 314143821,
+					"hash": 2639732838,
+					"hash_compatibility": [
+						314143821
+					],
 					"arguments": [
 						{
 							"name": "value",
@@ -25695,9 +25722,12 @@
 					"name": "bsearch",
 					"return_type": "int",
 					"is_vararg": false,
-					"is_const": false,
+					"is_const": true,
 					"is_static": false,
-					"hash": 735671678,
+					"hash": 1822067054,
+					"hash_compatibility": [
+						735671678
+					],
 					"arguments": [
 						{
 							"name": "value",
@@ -30499,30 +30529,28 @@
 			],
 			"methods": [
 				{
-					"name": "set_split_offset",
+					"name": "set_split_offsets",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1286410249,
+					"hash": 3614634198,
 					"arguments": [
 						{
-							"name": "offset",
-							"type": "int",
-							"meta": "int32"
+							"name": "offsets",
+							"type": "PackedInt32Array"
 						}
 					]
 				},
 				{
-					"name": "get_split_offset",
+					"name": "get_split_offsets",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3905245786,
+					"hash": 1930428628,
 					"return_value": {
-						"type": "int",
-						"meta": "int32"
+						"type": "PackedInt32Array"
 					}
 				},
 				{
@@ -30531,7 +30559,18 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3218959716
+					"hash": 1995695955,
+					"hash_compatibility": [
+						3218959716
+					],
+					"arguments": [
+						{
+							"name": "priority_index",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
 				},
 				{
 					"name": "set_collapsed",
@@ -30740,14 +30779,14 @@
 					}
 				},
 				{
-					"name": "get_drag_area_control",
+					"name": "get_drag_area_controls",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 829782337,
+					"hash": 2915620761,
 					"return_value": {
-						"type": "Control"
+						"type": "typedarray::Control"
 					}
 				},
 				{
@@ -30774,6 +30813,44 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "get_drag_area_control",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 829782337,
+					"return_value": {
+						"type": "Control"
+					}
+				},
+				{
+					"name": "set_split_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_split_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
 				}
 			],
 			"signals": [
@@ -30795,10 +30872,10 @@
 			],
 			"properties": [
 				{
-					"type": "int",
-					"name": "split_offset",
-					"setter": "set_split_offset",
-					"getter": "get_split_offset"
+					"type": "PackedInt32Array",
+					"name": "split_offsets",
+					"setter": "set_split_offsets",
+					"getter": "get_split_offsets"
 				},
 				{
 					"type": "bool",
@@ -30853,6 +30930,12 @@
 					"name": "drag_area_highlight_in_editor",
 					"setter": "set_drag_area_highlight_in_editor",
 					"getter": "is_drag_area_highlight_in_editor_enabled"
+				},
+				{
+					"type": "int",
+					"name": "split_offset",
+					"setter": "set_split_offset",
+					"getter": "get_split_offset"
 				}
 			]
 		},
@@ -47331,125 +47414,6 @@
 					"type": "PhysicsDirectSpaceState3D",
 					"name": "direct_space_state",
 					"getter": "get_direct_space_state"
-				}
-			]
-		},
-		{
-			"name": "SkeletonModification2DPhysicalBones",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "SkeletonModification2D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_physical_bone_chain_length",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "length",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_physical_bone_chain_length",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2455072627,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_physical_bone_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2761262315,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "physicalbone2d_node",
-							"type": "NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_physical_bone_node",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 408788394,
-					"return_value": {
-						"type": "NodePath"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "fetch_physical_bones",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "start_simulation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2787316981,
-					"arguments": [
-						{
-							"name": "bones",
-							"type": "typedarray::StringName",
-							"default_value": "[]"
-						}
-					]
-				},
-				{
-					"name": "stop_simulation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2787316981,
-					"arguments": [
-						{
-							"name": "bones",
-							"type": "typedarray::StringName",
-							"default_value": "[]"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "int",
-					"name": "physical_bone_chain_length",
-					"setter": "set_physical_bone_chain_length",
-					"getter": "get_physical_bone_chain_length"
 				}
 			]
 		},
@@ -146754,6 +146718,125 @@
 			]
 		},
 		{
+			"name": "SkeletonModification2DPhysicalBones",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "SkeletonModification2D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_physical_bone_chain_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "length",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_physical_bone_chain_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_physical_bone_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2761262315,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "physicalbone2d_node",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_physical_bone_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 408788394,
+					"return_value": {
+						"type": "NodePath"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "fetch_physical_bones",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "start_simulation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2787316981,
+					"arguments": [
+						{
+							"name": "bones",
+							"type": "typedarray::StringName",
+							"default_value": "[]"
+						}
+					]
+				},
+				{
+					"name": "stop_simulation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2787316981,
+					"arguments": [
+						{
+							"name": "bones",
+							"type": "typedarray::StringName",
+							"default_value": "[]"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "physical_bone_chain_length",
+					"setter": "set_physical_bone_chain_length",
+					"getter": "get_physical_bone_chain_length"
+				}
+			]
+		},
+		{
 			"name": "JavaScriptObject",
 			"is_refcounted": true,
 			"is_instantiable": false,
@@ -153530,6 +153613,31 @@
 					}
 				},
 				{
+					"name": "set_force_show_icon",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "force",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_force_show_icon",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_title_color",
 					"is_const": false,
 					"is_vararg": false,
@@ -153666,6 +153774,12 @@
 					"name": "dock_icon",
 					"setter": "set_dock_icon",
 					"getter": "get_dock_icon"
+				},
+				{
+					"type": "bool",
+					"name": "force_show_icon",
+					"setter": "set_force_show_icon",
+					"getter": "get_force_show_icon"
 				},
 				{
 					"type": "Color",
@@ -331501,6 +331615,136 @@
 					"hash": 2323990056,
 					"return_value": {
 						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "file",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_extended_attribute",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 955893464,
+					"return_value": {
+						"type": "PackedByteArray"
+					},
+					"arguments": [
+						{
+							"name": "file",
+							"type": "String"
+						},
+						{
+							"name": "attribute_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_extended_attribute_string",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1218461987,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "file",
+							"type": "String"
+						},
+						{
+							"name": "attribute_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "set_extended_attribute",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2643421469,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "file",
+							"type": "String"
+						},
+						{
+							"name": "attribute_name",
+							"type": "String"
+						},
+						{
+							"name": "data",
+							"type": "PackedByteArray"
+						}
+					]
+				},
+				{
+					"name": "set_extended_attribute_string",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 699024349,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "file",
+							"type": "String"
+						},
+						{
+							"name": "attribute_name",
+							"type": "String"
+						},
+						{
+							"name": "_data",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "remove_extended_attribute",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 852856452,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "file",
+							"type": "String"
+						},
+						{
+							"name": "attribute_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_extended_attributes_list",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 3538744774,
+					"return_value": {
+						"type": "PackedStringArray"
 					},
 					"arguments": [
 						{
