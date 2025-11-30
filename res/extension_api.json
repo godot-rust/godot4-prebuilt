@@ -153455,6 +153455,14 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "make_visible",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
 					"name": "close",
 					"is_const": false,
 					"is_vararg": false,
@@ -161236,6 +161244,24 @@
 					]
 				},
 				{
+					"name": "register_path_rename",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3186203200,
+					"arguments": [
+						{
+							"name": "old_name",
+							"type": "String"
+						},
+						{
+							"name": "new_name",
+							"type": "String"
+						}
+					]
+				},
+				{
 					"name": "register_top_level_path",
 					"is_const": false,
 					"is_vararg": false,
@@ -161252,7 +161278,7 @@
 							"type": "String"
 						},
 						{
-							"name": "openxr_extension_name",
+							"name": "openxr_extension_names",
 							"type": "String"
 						}
 					]
@@ -161274,7 +161300,7 @@
 							"type": "String"
 						},
 						{
-							"name": "openxr_extension_name",
+							"name": "openxr_extension_names",
 							"type": "String"
 						}
 					]
@@ -161304,7 +161330,7 @@
 							"type": "String"
 						},
 						{
-							"name": "openxr_extension_name",
+							"name": "openxr_extension_names",
 							"type": "String"
 						},
 						{
@@ -202168,10 +202194,20 @@
 					"is_required": false,
 					"is_vararg": false,
 					"is_virtual": true,
-					"hash": 2382534195,
+					"hash": 3554694381,
+					"hash_compatibility": [
+						2382534195
+					],
 					"return_value": {
 						"type": "Dictionary"
-					}
+					},
+					"arguments": [
+						{
+							"name": "xr_version",
+							"type": "int",
+							"meta": "uint64"
+						}
+					]
 				},
 				{
 					"name": "_set_system_properties_and_get_next_pointer",
@@ -202199,12 +202235,20 @@
 					"is_required": false,
 					"is_vararg": false,
 					"is_virtual": true,
-					"hash": 3744713108,
+					"hash": 50157827,
+					"hash_compatibility": [
+						3744713108
+					],
 					"return_value": {
 						"type": "int",
 						"meta": "uint64"
 					},
 					"arguments": [
+						{
+							"name": "xr_version",
+							"type": "int",
+							"meta": "uint64"
+						},
 						{
 							"name": "next_pointer",
 							"type": "void*"
@@ -271856,6 +271900,18 @@
 				}
 			],
 			"methods": [
+				{
+					"name": "get_openxr_version",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					}
+				},
 				{
 					"name": "get_instance",
 					"is_const": false,
