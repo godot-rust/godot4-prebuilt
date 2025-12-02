@@ -116745,11 +116745,14 @@
 				},
 				{
 					"name": "get_json",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2382534195,
+					"hash": 3102165223,
+					"hash_compatibility": [
+						2382534195
+					],
 					"return_value": {
 						"type": "Dictionary"
 					}
@@ -116770,11 +116773,14 @@
 				},
 				{
 					"name": "get_major_version",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
 						"type": "int",
 						"meta": "int32"
@@ -116797,11 +116803,14 @@
 				},
 				{
 					"name": "get_minor_version",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
 						"type": "int",
 						"meta": "int32"
@@ -116849,11 +116858,14 @@
 				},
 				{
 					"name": "get_glb_data",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2115431945,
+					"hash": 2362200018,
+					"hash_compatibility": [
+						2115431945
+					],
 					"return_value": {
 						"type": "PackedByteArray"
 					}
@@ -116874,11 +116886,14 @@
 				},
 				{
 					"name": "get_use_named_skin_binds",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2240911060,
+					"hash": 36873697,
+					"hash_compatibility": [
+						2240911060
+					],
 					"return_value": {
 						"type": "bool"
 					}
@@ -116899,11 +116914,14 @@
 				},
 				{
 					"name": "get_nodes",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::GLTFNode"
 					}
@@ -116924,11 +116942,14 @@
 				},
 				{
 					"name": "get_buffers",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::PackedByteArray"
 					}
@@ -116949,11 +116970,14 @@
 				},
 				{
 					"name": "get_buffer_views",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::GLTFBufferView"
 					}
@@ -116974,11 +116998,14 @@
 				},
 				{
 					"name": "get_accessors",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::GLTFAccessor"
 					}
@@ -116999,11 +117026,14 @@
 				},
 				{
 					"name": "get_meshes",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::GLTFMesh"
 					}
@@ -117024,18 +117054,21 @@
 				},
 				{
 					"name": "get_animation_players_count",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3744713108,
+					"hash": 923996154,
+					"hash_compatibility": [
+						3744713108
+					],
 					"return_value": {
 						"type": "int",
 						"meta": "int32"
 					},
 					"arguments": [
 						{
-							"name": "idx",
+							"name": "anim_player_index",
 							"type": "int",
 							"meta": "int32"
 						}
@@ -117043,17 +117076,20 @@
 				},
 				{
 					"name": "get_animation_player",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 925043400,
+					"hash": 1550200483,
+					"hash_compatibility": [
+						925043400
+					],
 					"return_value": {
 						"type": "AnimationPlayer"
 					},
 					"arguments": [
 						{
-							"name": "idx",
+							"name": "anim_player_index",
 							"type": "int",
 							"meta": "int32"
 						}
@@ -117061,11 +117097,14 @@
 				},
 				{
 					"name": "get_materials",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::Material"
 					}
@@ -117086,11 +117125,14 @@
 				},
 				{
 					"name": "get_scene_name",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2841200299,
+					"hash": 201670096,
+					"hash_compatibility": [
+						2841200299
+					],
 					"return_value": {
 						"type": "String"
 					}
@@ -117111,11 +117153,14 @@
 				},
 				{
 					"name": "get_base_path",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2841200299,
+					"hash": 201670096,
+					"hash_compatibility": [
+						2841200299
+					],
 					"return_value": {
 						"type": "String"
 					}
@@ -117161,11 +117206,14 @@
 				},
 				{
 					"name": "get_root_nodes",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 969006518,
+					"hash": 1930428628,
+					"hash_compatibility": [
+						969006518
+					],
 					"return_value": {
 						"type": "PackedInt32Array"
 					}
@@ -117186,11 +117234,14 @@
 				},
 				{
 					"name": "get_textures",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::GLTFTexture"
 					}
@@ -117211,11 +117262,14 @@
 				},
 				{
 					"name": "get_texture_samplers",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::GLTFTextureSampler"
 					}
@@ -117236,11 +117290,14 @@
 				},
 				{
 					"name": "get_images",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::Texture2D"
 					}
@@ -117261,11 +117318,14 @@
 				},
 				{
 					"name": "get_skins",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::GLTFSkin"
 					}
@@ -117286,11 +117346,14 @@
 				},
 				{
 					"name": "get_cameras",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::GLTFCamera"
 					}
@@ -117311,11 +117374,14 @@
 				},
 				{
 					"name": "get_lights",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::GLTFLight"
 					}
@@ -117336,11 +117402,14 @@
 				},
 				{
 					"name": "get_unique_names",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::String"
 					}
@@ -117361,11 +117430,14 @@
 				},
 				{
 					"name": "get_unique_animation_names",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::String"
 					}
@@ -117386,11 +117458,14 @@
 				},
 				{
 					"name": "get_skeletons",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::GLTFSkeleton"
 					}
@@ -117411,11 +117486,14 @@
 				},
 				{
 					"name": "get_create_animations",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2240911060,
+					"hash": 36873697,
+					"hash_compatibility": [
+						2240911060
+					],
 					"return_value": {
 						"type": "bool"
 					}
@@ -117436,11 +117514,14 @@
 				},
 				{
 					"name": "get_import_as_skeleton_bones",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2240911060,
+					"hash": 36873697,
+					"hash_compatibility": [
+						2240911060
+					],
 					"return_value": {
 						"type": "bool"
 					}
@@ -117461,11 +117542,14 @@
 				},
 				{
 					"name": "get_animations",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2915620761,
+					"hash": 3995934104,
+					"hash_compatibility": [
+						2915620761
+					],
 					"return_value": {
 						"type": "typedarray::GLTFAnimation"
 					}
@@ -117486,17 +117570,20 @@
 				},
 				{
 					"name": "get_scene_node",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 4253421667,
+					"hash": 539202265,
+					"hash_compatibility": [
+						4253421667
+					],
 					"return_value": {
 						"type": "Node"
 					},
 					"arguments": [
 						{
-							"name": "idx",
+							"name": "gltf_node_index",
 							"type": "int",
 							"meta": "int32"
 						}
@@ -117504,11 +117591,14 @@
 				},
 				{
 					"name": "get_node_index",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1205807060,
+					"hash": 3810805390,
+					"hash_compatibility": [
+						1205807060
+					],
 					"return_value": {
 						"type": "int",
 						"meta": "int32"
@@ -117522,11 +117612,14 @@
 				},
 				{
 					"name": "get_additional_data",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2138907829,
+					"hash": 2760726917,
+					"hash_compatibility": [
+						2138907829
+					],
 					"return_value": {
 						"type": "Variant"
 					},
@@ -117557,11 +117650,11 @@
 				},
 				{
 					"name": "get_handle_binary_image_mode",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2681185834,
+					"hash": 1363384196,
 					"return_value": {
 						"type": "enum::GLTFState.HandleBinaryImageMode"
 					}
@@ -117609,11 +117702,14 @@
 				},
 				{
 					"name": "get_handle_binary_image",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
 					"return_value": {
 						"type": "int",
 						"meta": "int32"
@@ -152730,6 +152826,20 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "request_draw_and_wait",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 145472570,
+					"arguments": [
+						{
+							"name": "viewport",
+							"type": "RID"
+						}
+					]
 				}
 			]
 		},
