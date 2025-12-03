@@ -25846,455 +25846,6 @@
 	],
 	"classes": [
 		{
-			"name": "AnimationNodeStateMachineTransition",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"enums": [
-				{
-					"name": "SwitchMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "SWITCH_MODE_IMMEDIATE",
-							"value": 0
-						},
-						{
-							"name": "SWITCH_MODE_SYNC",
-							"value": 1
-						},
-						{
-							"name": "SWITCH_MODE_AT_END",
-							"value": 2
-						}
-					]
-				},
-				{
-					"name": "AdvanceMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "ADVANCE_MODE_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "ADVANCE_MODE_ENABLED",
-							"value": 1
-						},
-						{
-							"name": "ADVANCE_MODE_AUTO",
-							"value": 2
-						}
-					]
-				}
-			],
-			"methods": [
-				{
-					"name": "set_switch_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2074906633,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::AnimationNodeStateMachineTransition.SwitchMode"
-						}
-					]
-				},
-				{
-					"name": "get_switch_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2138562085,
-					"return_value": {
-						"type": "enum::AnimationNodeStateMachineTransition.SwitchMode"
-					}
-				},
-				{
-					"name": "set_advance_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1210869868,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::AnimationNodeStateMachineTransition.AdvanceMode"
-						}
-					]
-				},
-				{
-					"name": "get_advance_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 61101689,
-					"return_value": {
-						"type": "enum::AnimationNodeStateMachineTransition.AdvanceMode"
-					}
-				},
-				{
-					"name": "set_advance_condition",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3304788590,
-					"arguments": [
-						{
-							"name": "name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "get_advance_condition",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2002593661,
-					"return_value": {
-						"type": "StringName"
-					}
-				},
-				{
-					"name": "set_xfade_time",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "secs",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_xfade_time",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_xfade_curve",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 270443179,
-					"arguments": [
-						{
-							"name": "curve",
-							"type": "Curve"
-						}
-					]
-				},
-				{
-					"name": "get_xfade_curve",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2460114913,
-					"return_value": {
-						"type": "Curve"
-					}
-				},
-				{
-					"name": "set_break_loop_at_end",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_loop_broken_at_end",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_reset",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "reset",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_reset",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_priority",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "priority",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_priority",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_advance_expression",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "text",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_advance_expression",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				}
-			],
-			"signals": [
-				{
-					"name": "advance_condition_changed"
-				}
-			],
-			"properties": [
-				{
-					"type": "float",
-					"name": "xfade_time",
-					"setter": "set_xfade_time",
-					"getter": "get_xfade_time"
-				},
-				{
-					"type": "Curve",
-					"name": "xfade_curve",
-					"setter": "set_xfade_curve",
-					"getter": "get_xfade_curve"
-				},
-				{
-					"type": "bool",
-					"name": "break_loop_at_end",
-					"setter": "set_break_loop_at_end",
-					"getter": "is_loop_broken_at_end"
-				},
-				{
-					"type": "bool",
-					"name": "reset",
-					"setter": "set_reset",
-					"getter": "is_reset"
-				},
-				{
-					"type": "int",
-					"name": "priority",
-					"setter": "set_priority",
-					"getter": "get_priority"
-				},
-				{
-					"type": "int",
-					"name": "switch_mode",
-					"setter": "set_switch_mode",
-					"getter": "get_switch_mode"
-				},
-				{
-					"type": "int",
-					"name": "advance_mode",
-					"setter": "set_advance_mode",
-					"getter": "get_advance_mode"
-				},
-				{
-					"type": "StringName",
-					"name": "advance_condition",
-					"setter": "set_advance_condition",
-					"getter": "get_advance_condition"
-				},
-				{
-					"type": "String",
-					"name": "advance_expression",
-					"setter": "set_advance_expression",
-					"getter": "get_advance_expression"
-				}
-			]
-		},
-		{
-			"name": "AnimationNodeSync",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "AnimationNode",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_use_sync",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_sync",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "bool",
-					"name": "sync",
-					"setter": "set_use_sync",
-					"getter": "is_using_sync"
-				}
-			]
-		},
-		{
-			"name": "AnimationNodeExtension",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "AnimationNode",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "_process_animation_node",
-					"is_const": false,
-					"is_static": false,
-					"is_required": true,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 912931771,
-					"return_value": {
-						"type": "PackedFloat32Array"
-					},
-					"arguments": [
-						{
-							"name": "playback_info",
-							"type": "PackedFloat64Array"
-						},
-						{
-							"name": "test_only",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_looping",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 2035584311,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "node_info",
-							"type": "PackedFloat32Array"
-						}
-					]
-				},
-				{
-					"name": "get_remaining_time",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 2851904656,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					},
-					"arguments": [
-						{
-							"name": "node_info",
-							"type": "PackedFloat32Array"
-						},
-						{
-							"name": "break_loop",
-							"type": "bool"
-						}
-					]
-				}
-			]
-		},
-		{
 			"name": "AnimationRootNode",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -27597,7 +27148,8 @@
 					"arguments": [
 						{
 							"name": "object",
-							"type": "Object"
+							"type": "Object",
+							"meta": "required"
 						},
 						{
 							"name": "property",
@@ -27696,7 +27248,8 @@
 					"arguments": [
 						{
 							"name": "subtween",
-							"type": "Tween"
+							"type": "Tween",
+							"meta": "required"
 						}
 					]
 				},
@@ -27798,7 +27351,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -30960,7 +30514,8 @@
 					"arguments": [
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						}
 					]
 				},
@@ -36524,6 +36079,28 @@
 							"value": 4
 						}
 					]
+				},
+				{
+					"name": "ScrollHintMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SCROLL_HINT_MODE_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "SCROLL_HINT_MODE_ALL",
+							"value": 1
+						},
+						{
+							"name": "SCROLL_HINT_MODE_TOP_AND_LEFT",
+							"value": 2
+						},
+						{
+							"name": "SCROLL_HINT_MODE_BOTTOM_AND_RIGHT",
+							"value": 3
+						}
+					]
 				}
 			],
 			"methods": [
@@ -36713,6 +36290,56 @@
 					}
 				},
 				{
+					"name": "set_scroll_hint_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 578158943,
+					"arguments": [
+						{
+							"name": "scroll_hint_mode",
+							"type": "enum::ScrollContainer.ScrollHintMode"
+						}
+					]
+				},
+				{
+					"name": "get_scroll_hint_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 246835423,
+					"return_value": {
+						"type": "enum::ScrollContainer.ScrollHintMode"
+					}
+				},
+				{
+					"name": "set_tile_scroll_hint",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "tile_scroll_hint",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_scroll_hint_tiled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_follow_focus",
 					"is_const": false,
 					"is_vararg": false,
@@ -36861,6 +36488,18 @@
 					"name": "scroll_deadzone",
 					"setter": "set_deadzone",
 					"getter": "get_deadzone"
+				},
+				{
+					"type": "int",
+					"name": "scroll_hint_mode",
+					"setter": "set_scroll_hint_mode",
+					"getter": "get_scroll_hint_mode"
+				},
+				{
+					"type": "bool",
+					"name": "tile_scroll_hint",
+					"setter": "set_tile_scroll_hint",
+					"getter": "is_scroll_hint_tiled"
 				}
 			]
 		},
@@ -40353,7 +39992,8 @@
 					"arguments": [
 						{
 							"name": "child",
-							"type": "Control"
+							"type": "Control",
+							"meta": "required"
 						},
 						{
 							"name": "rect",
@@ -47414,822 +47054,6 @@
 					"type": "PhysicsDirectSpaceState3D",
 					"name": "direct_space_state",
 					"getter": "get_direct_space_state"
-				}
-			]
-		},
-		{
-			"name": "SkeletonModification2DJiggle",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "SkeletonModification2D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_target_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1348162250,
-					"arguments": [
-						{
-							"name": "target_nodepath",
-							"type": "NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_target_node",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4075236667,
-					"return_value": {
-						"type": "NodePath"
-					}
-				},
-				{
-					"name": "set_jiggle_data_chain_length",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "length",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_jiggle_data_chain_length",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2455072627,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_stiffness",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "stiffness",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_stiffness",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_mass",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "mass",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_mass",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_damping",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "damping",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_damping",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_use_gravity",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "use_gravity",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_use_gravity",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_gravity",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "gravity",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_gravity",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
-					"name": "set_use_colliders",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "use_colliders",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_use_colliders",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_collision_mask",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "collision_mask",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_collision_mask",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_jiggle_joint_bone2d_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2761262315,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "bone2d_node",
-							"type": "NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_jiggle_joint_bone2d_node",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 408788394,
-					"return_value": {
-						"type": "NodePath"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_jiggle_joint_bone_index",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3937882851,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "bone_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_jiggle_joint_bone_index",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 923996154,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_jiggle_joint_override",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 300928843,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "override",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_jiggle_joint_override",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1116898809,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_jiggle_joint_stiffness",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1602489585,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "stiffness",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_jiggle_joint_stiffness",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2339986948,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_jiggle_joint_mass",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1602489585,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "mass",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_jiggle_joint_mass",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2339986948,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_jiggle_joint_damping",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1602489585,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "damping",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_jiggle_joint_damping",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2339986948,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_jiggle_joint_use_gravity",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 300928843,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "use_gravity",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_jiggle_joint_use_gravity",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1116898809,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_jiggle_joint_gravity",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 163021252,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "gravity",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_jiggle_joint_gravity",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2299179447,
-					"return_value": {
-						"type": "Vector2"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "NodePath",
-					"name": "target_nodepath",
-					"setter": "set_target_node",
-					"getter": "get_target_node"
-				},
-				{
-					"type": "int",
-					"name": "jiggle_data_chain_length",
-					"setter": "set_jiggle_data_chain_length",
-					"getter": "get_jiggle_data_chain_length"
-				},
-				{
-					"type": "float",
-					"name": "stiffness",
-					"setter": "set_stiffness",
-					"getter": "get_stiffness"
-				},
-				{
-					"type": "float",
-					"name": "mass",
-					"setter": "set_mass",
-					"getter": "get_mass"
-				},
-				{
-					"type": "float",
-					"name": "damping",
-					"setter": "set_damping",
-					"getter": "get_damping"
-				},
-				{
-					"type": "bool",
-					"name": "use_gravity",
-					"setter": "set_use_gravity",
-					"getter": "get_use_gravity"
-				},
-				{
-					"type": "Vector2",
-					"name": "gravity",
-					"setter": "set_gravity",
-					"getter": "get_gravity"
-				}
-			]
-		},
-		{
-			"name": "PhysicalBone2D",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "RigidBody2D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "get_joint",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3582132112,
-					"return_value": {
-						"type": "Joint2D"
-					}
-				},
-				{
-					"name": "get_auto_configure_joint",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_auto_configure_joint",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "auto_configure_joint",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "set_simulate_physics",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "simulate_physics",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_simulate_physics",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "is_simulating_physics",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_bone2d_nodepath",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1348162250,
-					"arguments": [
-						{
-							"name": "nodepath",
-							"type": "NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_bone2d_nodepath",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4075236667,
-					"return_value": {
-						"type": "NodePath"
-					}
-				},
-				{
-					"name": "set_bone2d_index",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "bone_index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_bone2d_index",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_follow_bone_when_simulating",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "follow_bone",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_follow_bone_when_simulating",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "NodePath",
-					"name": "bone2d_nodepath",
-					"setter": "set_bone2d_nodepath",
-					"getter": "get_bone2d_nodepath"
-				},
-				{
-					"type": "int",
-					"name": "bone2d_index",
-					"setter": "set_bone2d_index",
-					"getter": "get_bone2d_index"
-				},
-				{
-					"type": "bool",
-					"name": "auto_configure_joint",
-					"setter": "set_auto_configure_joint",
-					"getter": "get_auto_configure_joint"
-				},
-				{
-					"type": "bool",
-					"name": "simulate_physics",
-					"setter": "set_simulate_physics",
-					"getter": "get_simulate_physics"
-				},
-				{
-					"type": "bool",
-					"name": "follow_bone_when_simulating",
-					"setter": "set_follow_bone_when_simulating",
-					"getter": "get_follow_bone_when_simulating"
-				}
-			]
-		},
-		{
-			"name": "SkeletonModification2DStackHolder",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "SkeletonModification2D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_held_modification_stack",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3907307132,
-					"arguments": [
-						{
-							"name": "held_modification_stack",
-							"type": "SkeletonModificationStack2D"
-						}
-					]
-				},
-				{
-					"name": "get_held_modification_stack",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2107508396,
-					"return_value": {
-						"type": "SkeletonModificationStack2D"
-					}
 				}
 			]
 		},
@@ -56020,7 +54844,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "CollisionObject2D"
+							"type": "CollisionObject2D",
+							"meta": "required"
 						}
 					]
 				},
@@ -56048,7 +54873,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "CollisionObject2D"
+							"type": "CollisionObject2D",
+							"meta": "required"
 						}
 					]
 				},
@@ -56429,7 +55255,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "CollisionObject2D"
+							"type": "CollisionObject2D",
+							"meta": "required"
 						}
 					]
 				},
@@ -56457,7 +55284,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "CollisionObject2D"
+							"type": "CollisionObject2D",
+							"meta": "required"
 						}
 					]
 				},
@@ -57458,7 +56286,8 @@
 					"arguments": [
 						{
 							"name": "body",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -57475,7 +56304,8 @@
 					"arguments": [
 						{
 							"name": "area",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -58829,11 +57659,13 @@
 					"arguments": [
 						{
 							"name": "viewport",
-							"type": "Viewport"
+							"type": "Viewport",
+							"meta": "required"
 						},
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						},
 						{
 							"name": "shape_idx",
@@ -59335,7 +58167,8 @@
 						},
 						{
 							"name": "shape",
-							"type": "Shape2D"
+							"type": "Shape2D",
+							"meta": "required"
 						}
 					]
 				},
@@ -78770,7 +77603,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "CollisionObject3D"
+							"type": "CollisionObject3D",
+							"meta": "required"
 						}
 					]
 				},
@@ -78798,7 +77632,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "CollisionObject3D"
+							"type": "CollisionObject3D",
+							"meta": "required"
 						}
 					]
 				},
@@ -79222,7 +78057,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "CollisionObject3D"
+							"type": "CollisionObject3D",
+							"meta": "required"
 						}
 					]
 				},
@@ -79250,7 +78086,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "CollisionObject3D"
+							"type": "CollisionObject3D",
+							"meta": "required"
 						}
 					]
 				},
@@ -80431,7 +79268,8 @@
 					"arguments": [
 						{
 							"name": "body",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -80448,7 +79286,8 @@
 					"arguments": [
 						{
 							"name": "area",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -83330,7 +82169,8 @@
 					"arguments": [
 						{
 							"name": "body",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -83344,7 +82184,8 @@
 					"arguments": [
 						{
 							"name": "body",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -85358,11 +84199,13 @@
 					"arguments": [
 						{
 							"name": "camera",
-							"type": "Camera3D"
+							"type": "Camera3D",
+							"meta": "required"
 						},
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						},
 						{
 							"name": "event_position",
@@ -85789,7 +84632,8 @@
 						},
 						{
 							"name": "shape",
-							"type": "Shape3D"
+							"type": "Shape3D",
+							"meta": "required"
 						}
 					]
 				},
@@ -86732,6 +85576,674 @@
 			"is_instantiable": true,
 			"inherits": "Camera3D",
 			"api_type": "core"
+		},
+		{
+			"name": "BoneTwistDisperser3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SkeletonModifier3D",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "DisperseMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "DISPERSE_MODE_EVEN",
+							"value": 0
+						},
+						{
+							"name": "DISPERSE_MODE_WEIGHTED",
+							"value": 1
+						},
+						{
+							"name": "DISPERSE_MODE_CUSTOM",
+							"value": 2
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_setting_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_setting_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "clear_settings",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "set_mutable_bone_axes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "are_bone_axes_mutable",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_root_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_root_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_root_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_root_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 501894301,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_reference_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_reference_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_extend_end_bone",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_end_bone_extended",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_end_bone_direction",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2838484201,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_direction",
+							"type": "enum::SkeletonModifier3D.BoneDirection"
+						}
+					]
+				},
+				{
+					"name": "get_end_bone_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1843036459,
+					"return_value": {
+						"type": "enum::SkeletonModifier3D.BoneDirection"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_twist_from_rest",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_twist_from_rest",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_twist_from",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2823819782,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "from",
+							"type": "Quaternion"
+						}
+					]
+				},
+				{
+					"name": "get_twist_from",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 476865136,
+					"return_value": {
+						"type": "Quaternion"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_disperse_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2954194337,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "disperse_mode",
+							"type": "enum::BoneTwistDisperser3D.DisperseMode"
+						}
+					]
+				},
+				{
+					"name": "get_disperse_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1326397005,
+					"return_value": {
+						"type": "enum::BoneTwistDisperser3D.DisperseMode"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_weight_position",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "weight_position",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_weight_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_damping_curve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1447180063,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "curve",
+							"type": "Curve"
+						}
+					]
+				},
+				{
+					"name": "get_damping_curve",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 747537754,
+					"return_value": {
+						"type": "Curve"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joint_bone_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1391810591,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joint_bone",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3175239445,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joint_twist_amount",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3085491603,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joint_twist_amount",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3506521499,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "joint",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "twist_amount",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_joint_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "mutable_bone_axes",
+					"setter": "set_mutable_bone_axes",
+					"getter": "are_bone_axes_mutable"
+				},
+				{
+					"type": "int",
+					"name": "setting_count",
+					"setter": "set_setting_count",
+					"getter": "get_setting_count"
+				}
+			]
 		},
 		{
 			"name": "LimitAngularVelocityModifier3D",
@@ -111884,219 +111396,127 @@
 			"api_type": "core"
 		},
 		{
-			"name": "GLTFTextureSampler",
+			"name": "AnimationNodeStateMachineTransition",
 			"is_refcounted": true,
 			"is_instantiable": true,
 			"inherits": "Resource",
 			"api_type": "core",
-			"methods": [
+			"enums": [
 				{
-					"name": "get_mag_filter",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_mag_filter",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
+					"name": "SwitchMode",
+					"is_bitfield": false,
+					"values": [
 						{
-							"name": "filter_mode",
-							"type": "int",
-							"meta": "int32"
+							"name": "SWITCH_MODE_IMMEDIATE",
+							"value": 0
+						},
+						{
+							"name": "SWITCH_MODE_SYNC",
+							"value": 1
+						},
+						{
+							"name": "SWITCH_MODE_AT_END",
+							"value": 2
 						}
 					]
 				},
 				{
-					"name": "get_min_filter",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_min_filter",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
+					"name": "AdvanceMode",
+					"is_bitfield": false,
+					"values": [
 						{
-							"name": "filter_mode",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_wrap_s",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_wrap_s",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
+							"name": "ADVANCE_MODE_DISABLED",
+							"value": 0
+						},
 						{
-							"name": "wrap_mode",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_wrap_t",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_wrap_t",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
+							"name": "ADVANCE_MODE_ENABLED",
+							"value": 1
+						},
 						{
-							"name": "wrap_mode",
-							"type": "int",
-							"meta": "int32"
+							"name": "ADVANCE_MODE_AUTO",
+							"value": 2
 						}
 					]
 				}
 			],
-			"properties": [
-				{
-					"type": "int",
-					"name": "mag_filter",
-					"setter": "set_mag_filter",
-					"getter": "get_mag_filter"
-				},
-				{
-					"type": "int",
-					"name": "min_filter",
-					"setter": "set_min_filter",
-					"getter": "get_min_filter"
-				},
-				{
-					"type": "int",
-					"name": "wrap_s",
-					"setter": "set_wrap_s",
-					"getter": "get_wrap_s"
-				},
-				{
-					"type": "int",
-					"name": "wrap_t",
-					"setter": "set_wrap_t",
-					"getter": "get_wrap_t"
-				}
-			]
-		},
-		{
-			"name": "GLTFSpecGloss",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
 			"methods": [
 				{
-					"name": "get_diffuse_img",
+					"name": "set_switch_mode",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 564927088,
-					"return_value": {
-						"type": "Image"
-					}
-				},
-				{
-					"name": "set_diffuse_img",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 532598488,
+					"hash": 2074906633,
 					"arguments": [
 						{
-							"name": "diffuse_img",
-							"type": "Image"
+							"name": "mode",
+							"type": "enum::AnimationNodeStateMachineTransition.SwitchMode"
 						}
 					]
 				},
 				{
-					"name": "get_diffuse_factor",
-					"is_const": false,
+					"name": "get_switch_mode",
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3200896285,
+					"hash": 2138562085,
 					"return_value": {
-						"type": "Color"
+						"type": "enum::AnimationNodeStateMachineTransition.SwitchMode"
 					}
 				},
 				{
-					"name": "set_diffuse_factor",
+					"name": "set_advance_mode",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2920490490,
+					"hash": 1210869868,
 					"arguments": [
 						{
-							"name": "diffuse_factor",
-							"type": "Color"
+							"name": "mode",
+							"type": "enum::AnimationNodeStateMachineTransition.AdvanceMode"
 						}
 					]
 				},
 				{
-					"name": "get_gloss_factor",
+					"name": "get_advance_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 61101689,
+					"return_value": {
+						"type": "enum::AnimationNodeStateMachineTransition.AdvanceMode"
+					}
+				},
+				{
+					"name": "set_advance_condition",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 191475506,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_advance_condition",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
 					"return_value": {
-						"type": "float",
-						"meta": "float"
+						"type": "StringName"
 					}
 				},
 				{
-					"name": "set_gloss_factor",
+					"name": "set_xfade_time",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -112104,93 +111524,323 @@
 					"hash": 373806689,
 					"arguments": [
 						{
-							"name": "gloss_factor",
+							"name": "secs",
 							"type": "float",
 							"meta": "float"
 						}
 					]
 				},
 				{
-					"name": "get_specular_factor",
-					"is_const": false,
+					"name": "get_xfade_time",
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3200896285,
+					"hash": 1740695150,
 					"return_value": {
-						"type": "Color"
+						"type": "float",
+						"meta": "float"
 					}
 				},
 				{
-					"name": "set_specular_factor",
+					"name": "set_xfade_curve",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2920490490,
+					"hash": 270443179,
 					"arguments": [
 						{
-							"name": "specular_factor",
-							"type": "Color"
+							"name": "curve",
+							"type": "Curve"
 						}
 					]
 				},
 				{
-					"name": "get_spec_gloss_img",
-					"is_const": false,
+					"name": "get_xfade_curve",
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 564927088,
+					"hash": 2460114913,
 					"return_value": {
-						"type": "Image"
+						"type": "Curve"
 					}
 				},
 				{
-					"name": "set_spec_gloss_img",
+					"name": "set_break_loop_at_end",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 532598488,
+					"hash": 2586408642,
 					"arguments": [
 						{
-							"name": "spec_gloss_img",
-							"type": "Image"
+							"name": "enable",
+							"type": "bool"
 						}
 					]
+				},
+				{
+					"name": "is_loop_broken_at_end",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_reset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "reset",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_reset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_priority",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "priority",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_priority",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_advance_expression",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "text",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_advance_expression",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				}
+			],
+			"signals": [
+				{
+					"name": "advance_condition_changed"
 				}
 			],
 			"properties": [
 				{
-					"type": "Object",
-					"name": "diffuse_img",
-					"setter": "set_diffuse_img",
-					"getter": "get_diffuse_img"
-				},
-				{
-					"type": "Color",
-					"name": "diffuse_factor",
-					"setter": "set_diffuse_factor",
-					"getter": "get_diffuse_factor"
-				},
-				{
 					"type": "float",
-					"name": "gloss_factor",
-					"setter": "set_gloss_factor",
-					"getter": "get_gloss_factor"
+					"name": "xfade_time",
+					"setter": "set_xfade_time",
+					"getter": "get_xfade_time"
 				},
 				{
-					"type": "Color",
-					"name": "specular_factor",
-					"setter": "set_specular_factor",
-					"getter": "get_specular_factor"
+					"type": "Curve",
+					"name": "xfade_curve",
+					"setter": "set_xfade_curve",
+					"getter": "get_xfade_curve"
 				},
 				{
-					"type": "Object",
-					"name": "spec_gloss_img",
-					"setter": "set_spec_gloss_img",
-					"getter": "get_spec_gloss_img"
+					"type": "bool",
+					"name": "break_loop_at_end",
+					"setter": "set_break_loop_at_end",
+					"getter": "is_loop_broken_at_end"
+				},
+				{
+					"type": "bool",
+					"name": "reset",
+					"setter": "set_reset",
+					"getter": "is_reset"
+				},
+				{
+					"type": "int",
+					"name": "priority",
+					"setter": "set_priority",
+					"getter": "get_priority"
+				},
+				{
+					"type": "int",
+					"name": "switch_mode",
+					"setter": "set_switch_mode",
+					"getter": "get_switch_mode"
+				},
+				{
+					"type": "int",
+					"name": "advance_mode",
+					"setter": "set_advance_mode",
+					"getter": "get_advance_mode"
+				},
+				{
+					"type": "StringName",
+					"name": "advance_condition",
+					"setter": "set_advance_condition",
+					"getter": "get_advance_condition"
+				},
+				{
+					"type": "String",
+					"name": "advance_expression",
+					"setter": "set_advance_expression",
+					"getter": "get_advance_expression"
+				}
+			]
+		},
+		{
+			"name": "AnimationNodeSync",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "AnimationNode",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_use_sync",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_sync",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "sync",
+					"setter": "set_use_sync",
+					"getter": "is_using_sync"
+				}
+			]
+		},
+		{
+			"name": "AnimationNodeExtension",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "AnimationNode",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "_process_animation_node",
+					"is_const": false,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 912931771,
+					"return_value": {
+						"type": "PackedFloat32Array"
+					},
+					"arguments": [
+						{
+							"name": "playback_info",
+							"type": "PackedFloat64Array"
+						},
+						{
+							"name": "test_only",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_looping",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2035584311,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "node_info",
+							"type": "PackedFloat32Array"
+						}
+					]
+				},
+				{
+					"name": "get_remaining_time",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2851904656,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					},
+					"arguments": [
+						{
+							"name": "node_info",
+							"type": "PackedFloat32Array"
+						},
+						{
+							"name": "break_loop",
+							"type": "bool"
+						}
+					]
 				}
 			]
 		},
@@ -133590,6 +133240,14 @@
 						}
 					]
 				}
+			],
+			"properties": [
+				{
+					"type": "Image",
+					"name": "image",
+					"setter": "_set_image",
+					"getter": "get_image"
+				}
 			]
 		},
 		{
@@ -146929,6 +146587,822 @@
 					"name": "physical_bone_chain_length",
 					"setter": "set_physical_bone_chain_length",
 					"getter": "get_physical_bone_chain_length"
+				}
+			]
+		},
+		{
+			"name": "SkeletonModification2DJiggle",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "SkeletonModification2D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_target_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1348162250,
+					"arguments": [
+						{
+							"name": "target_nodepath",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_target_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4075236667,
+					"return_value": {
+						"type": "NodePath"
+					}
+				},
+				{
+					"name": "set_jiggle_data_chain_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "length",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_jiggle_data_chain_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_stiffness",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "stiffness",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_stiffness",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_mass",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "mass",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_mass",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_damping",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "damping",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_damping",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_use_gravity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use_gravity",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_use_gravity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_gravity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "gravity",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_gravity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_use_colliders",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use_colliders",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_use_colliders",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_collision_mask",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "collision_mask",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collision_mask",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_jiggle_joint_bone2d_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2761262315,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone2d_node",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_jiggle_joint_bone2d_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 408788394,
+					"return_value": {
+						"type": "NodePath"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_jiggle_joint_bone_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_jiggle_joint_bone_index",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_jiggle_joint_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "override",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_jiggle_joint_override",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_jiggle_joint_stiffness",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "stiffness",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_jiggle_joint_stiffness",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_jiggle_joint_mass",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "mass",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_jiggle_joint_mass",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_jiggle_joint_damping",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "damping",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_jiggle_joint_damping",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_jiggle_joint_use_gravity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "use_gravity",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_jiggle_joint_use_gravity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_jiggle_joint_gravity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 163021252,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "gravity",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_jiggle_joint_gravity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2299179447,
+					"return_value": {
+						"type": "Vector2"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "NodePath",
+					"name": "target_nodepath",
+					"setter": "set_target_node",
+					"getter": "get_target_node"
+				},
+				{
+					"type": "int",
+					"name": "jiggle_data_chain_length",
+					"setter": "set_jiggle_data_chain_length",
+					"getter": "get_jiggle_data_chain_length"
+				},
+				{
+					"type": "float",
+					"name": "stiffness",
+					"setter": "set_stiffness",
+					"getter": "get_stiffness"
+				},
+				{
+					"type": "float",
+					"name": "mass",
+					"setter": "set_mass",
+					"getter": "get_mass"
+				},
+				{
+					"type": "float",
+					"name": "damping",
+					"setter": "set_damping",
+					"getter": "get_damping"
+				},
+				{
+					"type": "bool",
+					"name": "use_gravity",
+					"setter": "set_use_gravity",
+					"getter": "get_use_gravity"
+				},
+				{
+					"type": "Vector2",
+					"name": "gravity",
+					"setter": "set_gravity",
+					"getter": "get_gravity"
+				}
+			]
+		},
+		{
+			"name": "PhysicalBone2D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "RigidBody2D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_joint",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3582132112,
+					"return_value": {
+						"type": "Joint2D"
+					}
+				},
+				{
+					"name": "get_auto_configure_joint",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_auto_configure_joint",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "auto_configure_joint",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "set_simulate_physics",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "simulate_physics",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_simulate_physics",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_simulating_physics",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_bone2d_nodepath",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1348162250,
+					"arguments": [
+						{
+							"name": "nodepath",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_bone2d_nodepath",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4075236667,
+					"return_value": {
+						"type": "NodePath"
+					}
+				},
+				{
+					"name": "set_bone2d_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "bone_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_bone2d_index",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_follow_bone_when_simulating",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "follow_bone",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_follow_bone_when_simulating",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "NodePath",
+					"name": "bone2d_nodepath",
+					"setter": "set_bone2d_nodepath",
+					"getter": "get_bone2d_nodepath"
+				},
+				{
+					"type": "int",
+					"name": "bone2d_index",
+					"setter": "set_bone2d_index",
+					"getter": "get_bone2d_index"
+				},
+				{
+					"type": "bool",
+					"name": "auto_configure_joint",
+					"setter": "set_auto_configure_joint",
+					"getter": "get_auto_configure_joint"
+				},
+				{
+					"type": "bool",
+					"name": "simulate_physics",
+					"setter": "set_simulate_physics",
+					"getter": "get_simulate_physics"
+				},
+				{
+					"type": "bool",
+					"name": "follow_bone_when_simulating",
+					"setter": "set_follow_bone_when_simulating",
+					"getter": "get_follow_bone_when_simulating"
+				}
+			]
+		},
+		{
+			"name": "SkeletonModification2DStackHolder",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "SkeletonModification2D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_held_modification_stack",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3907307132,
+					"arguments": [
+						{
+							"name": "held_modification_stack",
+							"type": "SkeletonModificationStack2D"
+						}
+					]
+				},
+				{
+					"name": "get_held_modification_stack",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2107508396,
+					"return_value": {
+						"type": "SkeletonModificationStack2D"
+					}
 				}
 			]
 		},
@@ -166372,6 +166846,317 @@
 			]
 		},
 		{
+			"name": "GLTFTextureSampler",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_mag_filter",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_mag_filter",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "filter_mode",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_min_filter",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_min_filter",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "filter_mode",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_wrap_s",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_wrap_s",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "wrap_mode",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_wrap_t",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_wrap_t",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "wrap_mode",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "mag_filter",
+					"setter": "set_mag_filter",
+					"getter": "get_mag_filter"
+				},
+				{
+					"type": "int",
+					"name": "min_filter",
+					"setter": "set_min_filter",
+					"getter": "get_min_filter"
+				},
+				{
+					"type": "int",
+					"name": "wrap_s",
+					"setter": "set_wrap_s",
+					"getter": "get_wrap_s"
+				},
+				{
+					"type": "int",
+					"name": "wrap_t",
+					"setter": "set_wrap_t",
+					"getter": "get_wrap_t"
+				}
+			]
+		},
+		{
+			"name": "GLTFSpecGloss",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_diffuse_img",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 564927088,
+					"return_value": {
+						"type": "Image"
+					}
+				},
+				{
+					"name": "set_diffuse_img",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 532598488,
+					"arguments": [
+						{
+							"name": "diffuse_img",
+							"type": "Image"
+						}
+					]
+				},
+				{
+					"name": "get_diffuse_factor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3200896285,
+					"return_value": {
+						"type": "Color"
+					}
+				},
+				{
+					"name": "set_diffuse_factor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2920490490,
+					"arguments": [
+						{
+							"name": "diffuse_factor",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "get_gloss_factor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 191475506,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_gloss_factor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "gloss_factor",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_specular_factor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3200896285,
+					"return_value": {
+						"type": "Color"
+					}
+				},
+				{
+					"name": "set_specular_factor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2920490490,
+					"arguments": [
+						{
+							"name": "specular_factor",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "get_spec_gloss_img",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 564927088,
+					"return_value": {
+						"type": "Image"
+					}
+				},
+				{
+					"name": "set_spec_gloss_img",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 532598488,
+					"arguments": [
+						{
+							"name": "spec_gloss_img",
+							"type": "Image"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "Object",
+					"name": "diffuse_img",
+					"setter": "set_diffuse_img",
+					"getter": "get_diffuse_img"
+				},
+				{
+					"type": "Color",
+					"name": "diffuse_factor",
+					"setter": "set_diffuse_factor",
+					"getter": "get_diffuse_factor"
+				},
+				{
+					"type": "float",
+					"name": "gloss_factor",
+					"setter": "set_gloss_factor",
+					"getter": "get_gloss_factor"
+				},
+				{
+					"type": "Color",
+					"name": "specular_factor",
+					"setter": "set_specular_factor",
+					"getter": "get_specular_factor"
+				},
+				{
+					"type": "Object",
+					"name": "spec_gloss_img",
+					"setter": "set_spec_gloss_img",
+					"getter": "get_spec_gloss_img"
+				}
+			]
+		},
+		{
 			"name": "Viewport",
 			"is_refcounted": false,
 			"is_instantiable": false,
@@ -167386,7 +168171,8 @@
 					"arguments": [
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						},
 						{
 							"name": "in_local_coords",
@@ -167405,7 +168191,8 @@
 					"arguments": [
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						},
 						{
 							"name": "in_local_coords",
@@ -175828,7 +176615,8 @@
 					"is_virtual": true,
 					"hash": 2069328350,
 					"return_value": {
-						"type": "PhysicsDirectSpaceState3D"
+						"type": "PhysicsDirectSpaceState3D",
+						"meta": "required"
 					}
 				}
 			]
@@ -178171,7 +178959,8 @@
 						},
 						{
 							"name": "rendering_server_handler",
-							"type": "PhysicsServer3DRenderingServerHandler"
+							"type": "PhysicsServer3DRenderingServerHandler",
+							"meta": "required"
 						}
 					]
 				},
@@ -180998,7 +181787,8 @@
 						},
 						{
 							"name": "with_shape",
-							"type": "Shape2D"
+							"type": "Shape2D",
+							"meta": "required"
 						},
 						{
 							"name": "shape_xform",
@@ -181027,7 +181817,8 @@
 						},
 						{
 							"name": "with_shape",
-							"type": "Shape2D"
+							"type": "Shape2D",
+							"meta": "required"
 						},
 						{
 							"name": "shape_xform",
@@ -181056,7 +181847,8 @@
 						},
 						{
 							"name": "with_shape",
-							"type": "Shape2D"
+							"type": "Shape2D",
+							"meta": "required"
 						},
 						{
 							"name": "shape_xform",
@@ -181085,7 +181877,8 @@
 						},
 						{
 							"name": "with_shape",
-							"type": "Shape2D"
+							"type": "Shape2D",
+							"meta": "required"
 						},
 						{
 							"name": "shape_xform",
@@ -182700,7 +183493,8 @@
 					"is_virtual": true,
 					"hash": 2506717822,
 					"return_value": {
-						"type": "PhysicsDirectSpaceState2D"
+						"type": "PhysicsDirectSpaceState2D",
+						"meta": "required"
 					}
 				}
 			]
@@ -211618,6 +212412,28 @@
 							"value": 2
 						}
 					]
+				},
+				{
+					"name": "ScrollHintMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SCROLL_HINT_MODE_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "SCROLL_HINT_MODE_BOTH",
+							"value": 1
+						},
+						{
+							"name": "SCROLL_HINT_MODE_TOP",
+							"value": 2
+						},
+						{
+							"name": "SCROLL_HINT_MODE_BOTTOM",
+							"value": 3
+						}
+					]
 				}
 			],
 			"methods": [
@@ -212426,6 +213242,56 @@
 					}
 				},
 				{
+					"name": "set_scroll_hint_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 415911924,
+					"arguments": [
+						{
+							"name": "scroll_hint_mode",
+							"type": "enum::Tree.ScrollHintMode"
+						}
+					]
+				},
+				{
+					"name": "get_scroll_hint_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 553087187,
+					"return_value": {
+						"type": "enum::Tree.ScrollHintMode"
+					}
+				},
+				{
+					"name": "set_tile_scroll_hint",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "tile_scroll_hint",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_scroll_hint_tiled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_hide_folding",
 					"is_const": false,
 					"is_vararg": false,
@@ -212834,6 +213700,12 @@
 				},
 				{
 					"type": "bool",
+					"name": "auto_tooltip",
+					"setter": "set_auto_tooltip",
+					"getter": "is_auto_tooltip_enabled"
+				},
+				{
+					"type": "bool",
 					"name": "scroll_horizontal_enabled",
 					"setter": "set_h_scroll_enabled",
 					"getter": "is_h_scroll_enabled"
@@ -212845,10 +213717,16 @@
 					"getter": "is_v_scroll_enabled"
 				},
 				{
+					"type": "int",
+					"name": "scroll_hint_mode",
+					"setter": "set_scroll_hint_mode",
+					"getter": "get_scroll_hint_mode"
+				},
+				{
 					"type": "bool",
-					"name": "auto_tooltip",
-					"setter": "set_auto_tooltip",
-					"getter": "is_auto_tooltip_enabled"
+					"name": "tile_scroll_hint",
+					"setter": "set_tile_scroll_hint",
+					"getter": "is_scroll_hint_tiled"
 				}
 			]
 		},
@@ -233509,7 +234387,8 @@
 						1780978058
 					],
 					"return_value": {
-						"type": "SceneTreeTimer"
+						"type": "SceneTreeTimer",
+						"meta": "required"
 					},
 					"arguments": [
 						{
@@ -233632,7 +234511,8 @@
 					"arguments": [
 						{
 							"name": "obj",
-							"type": "Object"
+							"type": "Object",
+							"meta": "required"
 						}
 					]
 				},
@@ -233875,7 +234755,8 @@
 					"arguments": [
 						{
 							"name": "packed_scene",
-							"type": "PackedScene"
+							"type": "PackedScene",
+							"meta": "required"
 						}
 					]
 				},
@@ -233892,7 +234773,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -234822,7 +235704,8 @@
 					"arguments": [
 						{
 							"name": "state",
-							"type": "PhysicsDirectBodyState3D"
+							"type": "PhysicsDirectBodyState3D",
+							"meta": "required"
 						}
 					]
 				},
@@ -235896,7 +236779,8 @@
 					"arguments": [
 						{
 							"name": "state",
-							"type": "PhysicsDirectBodyState2D"
+							"type": "PhysicsDirectBodyState2D",
+							"meta": "required"
 						}
 					]
 				},
@@ -263325,7 +264209,8 @@
 						},
 						{
 							"name": "parameters",
-							"type": "PhysicsTestMotionParameters3D"
+							"type": "PhysicsTestMotionParameters3D",
+							"meta": "required"
 						},
 						{
 							"name": "result",
@@ -263376,7 +264261,8 @@
 						},
 						{
 							"name": "rendering_server_handler",
-							"type": "PhysicsServer3DRenderingServerHandler"
+							"type": "PhysicsServer3DRenderingServerHandler",
+							"meta": "required"
 						}
 					]
 				},
@@ -267052,7 +267938,8 @@
 						},
 						{
 							"name": "parameters",
-							"type": "PhysicsTestMotionParameters2D"
+							"type": "PhysicsTestMotionParameters2D",
+							"meta": "required"
 						},
 						{
 							"name": "result",
@@ -268068,7 +268955,8 @@
 					"arguments": [
 						{
 							"name": "parameters",
-							"type": "PhysicsPointQueryParameters3D"
+							"type": "PhysicsPointQueryParameters3D",
+							"meta": "required"
 						},
 						{
 							"name": "max_results",
@@ -268091,7 +268979,8 @@
 					"arguments": [
 						{
 							"name": "parameters",
-							"type": "PhysicsRayQueryParameters3D"
+							"type": "PhysicsRayQueryParameters3D",
+							"meta": "required"
 						}
 					]
 				},
@@ -268111,7 +269000,8 @@
 					"arguments": [
 						{
 							"name": "parameters",
-							"type": "PhysicsShapeQueryParameters3D"
+							"type": "PhysicsShapeQueryParameters3D",
+							"meta": "required"
 						},
 						{
 							"name": "max_results",
@@ -268134,7 +269024,8 @@
 					"arguments": [
 						{
 							"name": "parameters",
-							"type": "PhysicsShapeQueryParameters3D"
+							"type": "PhysicsShapeQueryParameters3D",
+							"meta": "required"
 						}
 					]
 				},
@@ -268154,7 +269045,8 @@
 					"arguments": [
 						{
 							"name": "parameters",
-							"type": "PhysicsShapeQueryParameters3D"
+							"type": "PhysicsShapeQueryParameters3D",
+							"meta": "required"
 						},
 						{
 							"name": "max_results",
@@ -268177,7 +269069,8 @@
 					"arguments": [
 						{
 							"name": "parameters",
-							"type": "PhysicsShapeQueryParameters3D"
+							"type": "PhysicsShapeQueryParameters3D",
+							"meta": "required"
 						}
 					]
 				}
@@ -268206,7 +269099,8 @@
 					"arguments": [
 						{
 							"name": "parameters",
-							"type": "PhysicsPointQueryParameters2D"
+							"type": "PhysicsPointQueryParameters2D",
+							"meta": "required"
 						},
 						{
 							"name": "max_results",
@@ -268229,7 +269123,8 @@
 					"arguments": [
 						{
 							"name": "parameters",
-							"type": "PhysicsRayQueryParameters2D"
+							"type": "PhysicsRayQueryParameters2D",
+							"meta": "required"
 						}
 					]
 				},
@@ -268249,7 +269144,8 @@
 					"arguments": [
 						{
 							"name": "parameters",
-							"type": "PhysicsShapeQueryParameters2D"
+							"type": "PhysicsShapeQueryParameters2D",
+							"meta": "required"
 						},
 						{
 							"name": "max_results",
@@ -268272,7 +269168,8 @@
 					"arguments": [
 						{
 							"name": "parameters",
-							"type": "PhysicsShapeQueryParameters2D"
+							"type": "PhysicsShapeQueryParameters2D",
+							"meta": "required"
 						}
 					]
 				},
@@ -268292,7 +269189,8 @@
 					"arguments": [
 						{
 							"name": "parameters",
-							"type": "PhysicsShapeQueryParameters2D"
+							"type": "PhysicsShapeQueryParameters2D",
+							"meta": "required"
 						},
 						{
 							"name": "max_results",
@@ -268315,7 +269213,8 @@
 					"arguments": [
 						{
 							"name": "parameters",
-							"type": "PhysicsShapeQueryParameters2D"
+							"type": "PhysicsShapeQueryParameters2D",
+							"meta": "required"
 						}
 					]
 				}
@@ -269045,7 +269944,8 @@
 					"is_virtual": false,
 					"hash": 2069328350,
 					"return_value": {
-						"type": "PhysicsDirectSpaceState3D"
+						"type": "PhysicsDirectSpaceState3D",
+						"meta": "required"
 					}
 				}
 			],
@@ -269847,7 +270747,8 @@
 					"is_virtual": false,
 					"hash": 2506717822,
 					"return_value": {
-						"type": "PhysicsDirectSpaceState2D"
+						"type": "PhysicsDirectSpaceState2D",
+						"meta": "required"
 					}
 				}
 			],
@@ -270092,7 +270993,8 @@
 					"arguments": [
 						{
 							"name": "body",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -270106,7 +271008,8 @@
 					"arguments": [
 						{
 							"name": "body",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				}
@@ -270271,7 +271174,8 @@
 					"arguments": [
 						{
 							"name": "body",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -270285,7 +271189,8 @@
 					"arguments": [
 						{
 							"name": "body",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				}
@@ -270355,7 +271260,8 @@
 					"arguments": [
 						{
 							"name": "state",
-							"type": "PhysicsDirectBodyState3D"
+							"type": "PhysicsDirectBodyState3D",
+							"meta": "required"
 						}
 					]
 				},
@@ -275940,7 +276846,8 @@
 					"arguments": [
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						}
 					]
 				},
@@ -275955,7 +276862,8 @@
 					"arguments": [
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						}
 					]
 				},
@@ -275970,7 +276878,8 @@
 					"arguments": [
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						}
 					]
 				},
@@ -275985,7 +276894,8 @@
 					"arguments": [
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						}
 					]
 				},
@@ -276030,7 +276940,8 @@
 					"arguments": [
 						{
 							"name": "sibling",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						},
 						{
 							"name": "force_readable_name",
@@ -276105,7 +277016,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -276122,7 +277034,8 @@
 					"arguments": [
 						{
 							"name": "new_parent",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						},
 						{
 							"name": "keep_global_transform",
@@ -276404,7 +277317,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -276421,7 +277335,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -276449,7 +277364,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						},
 						{
 							"name": "use_unique_path",
@@ -276518,7 +277434,8 @@
 					"arguments": [
 						{
 							"name": "child_node",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						},
 						{
 							"name": "to_index",
@@ -277295,7 +278212,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						},
 						{
 							"name": "keep_groups",
@@ -277339,7 +278257,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						},
 						{
 							"name": "is_editable",
@@ -277360,7 +278279,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -287751,7 +288671,8 @@
 						},
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						}
 					]
 				},
@@ -287772,7 +288693,8 @@
 						},
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						}
 					]
 				},
@@ -287790,7 +288712,8 @@
 						},
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						}
 					]
 				},
@@ -287838,7 +288761,8 @@
 					"arguments": [
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						},
 						{
 							"name": "action",
@@ -288158,7 +289082,8 @@
 						},
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						},
 						{
 							"name": "exact_match",
@@ -288184,7 +289109,8 @@
 						},
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						},
 						{
 							"name": "exact_match",
@@ -288884,7 +289810,8 @@
 					"arguments": [
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						}
 					]
 				},
@@ -289406,6 +290333,23 @@
 							"name": "base_mesh",
 							"type": "ArrayMesh",
 							"default_value": "null"
+						}
+					]
+				},
+				{
+					"name": "from_mesh",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 283226343,
+					"return_value": {
+						"type": "ImporterMesh"
+					},
+					"arguments": [
+						{
+							"name": "mesh",
+							"type": "Mesh"
 						}
 					]
 				},
@@ -295245,6 +296189,14 @@
 					]
 				},
 				{
+					"name": "popup_file_dialog",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
 					"name": "invalidate",
 					"is_const": false,
 					"is_vararg": false,
@@ -298324,6 +299276,41 @@
 					]
 				},
 				{
+					"name": "set_object_edited",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1462101905,
+					"arguments": [
+						{
+							"name": "object",
+							"type": "Object"
+						},
+						{
+							"name": "edited",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_object_edited",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 397768994,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "object",
+							"type": "Object"
+						}
+					]
+				},
+				{
 					"name": "get_open_scenes",
 					"is_const": true,
 					"is_vararg": false,
@@ -298805,527 +299792,27 @@
 			"name": "EditorFileDialog",
 			"is_refcounted": false,
 			"is_instantiable": true,
-			"inherits": "ConfirmationDialog",
+			"inherits": "FileDialog",
 			"api_type": "editor",
-			"enums": [
-				{
-					"name": "FileMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "FILE_MODE_OPEN_FILE",
-							"value": 0
-						},
-						{
-							"name": "FILE_MODE_OPEN_FILES",
-							"value": 1
-						},
-						{
-							"name": "FILE_MODE_OPEN_DIR",
-							"value": 2
-						},
-						{
-							"name": "FILE_MODE_OPEN_ANY",
-							"value": 3
-						},
-						{
-							"name": "FILE_MODE_SAVE_FILE",
-							"value": 4
-						}
-					]
-				},
-				{
-					"name": "Access",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "ACCESS_RESOURCES",
-							"value": 0
-						},
-						{
-							"name": "ACCESS_USERDATA",
-							"value": 1
-						},
-						{
-							"name": "ACCESS_FILESYSTEM",
-							"value": 2
-						}
-					]
-				},
-				{
-					"name": "DisplayMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "DISPLAY_THUMBNAILS",
-							"value": 0
-						},
-						{
-							"name": "DISPLAY_LIST",
-							"value": 1
-						}
-					]
-				}
-			],
 			"methods": [
 				{
-					"name": "clear_filters",
+					"name": "add_side_menu",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "add_filter",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3388804757,
-					"hash_compatibility": [
-						233059325
-					],
+					"hash": 402368861,
 					"arguments": [
 						{
-							"name": "filter",
-							"type": "String"
+							"name": "menu",
+							"type": "Control"
 						},
 						{
-							"name": "description",
+							"name": "title",
 							"type": "String",
 							"default_value": "\"\""
 						}
 					]
-				},
-				{
-					"name": "set_filters",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4015028928,
-					"arguments": [
-						{
-							"name": "filters",
-							"type": "PackedStringArray"
-						}
-					]
-				},
-				{
-					"name": "get_filters",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1139954409,
-					"return_value": {
-						"type": "PackedStringArray"
-					}
-				},
-				{
-					"name": "get_option_name",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 844755477,
-					"return_value": {
-						"type": "String"
-					},
-					"arguments": [
-						{
-							"name": "option",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_option_values",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 647634434,
-					"return_value": {
-						"type": "PackedStringArray"
-					},
-					"arguments": [
-						{
-							"name": "option",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_option_default",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 923996154,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					},
-					"arguments": [
-						{
-							"name": "option",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_option_name",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 501894301,
-					"arguments": [
-						{
-							"name": "option",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "name",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "set_option_values",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3353661094,
-					"arguments": [
-						{
-							"name": "option",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "values",
-							"type": "PackedStringArray"
-						}
-					]
-				},
-				{
-					"name": "set_option_default",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3937882851,
-					"arguments": [
-						{
-							"name": "option",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "default_value_index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_option_count",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "count",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_option_count",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "add_option",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 149592325,
-					"arguments": [
-						{
-							"name": "name",
-							"type": "String"
-						},
-						{
-							"name": "values",
-							"type": "PackedStringArray"
-						},
-						{
-							"name": "default_value_index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_selected_options",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3102165223,
-					"return_value": {
-						"type": "Dictionary"
-					}
-				},
-				{
-					"name": "clear_filename_filter",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "set_filename_filter",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "filter",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_filename_filter",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "get_current_dir",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "get_current_file",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "get_current_path",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "set_current_dir",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "dir",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "set_current_file",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "file",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "set_current_path",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "set_file_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 274150415,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::EditorFileDialog.FileMode"
-						}
-					]
-				},
-				{
-					"name": "get_file_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2681044145,
-					"return_value": {
-						"type": "enum::EditorFileDialog.FileMode"
-					}
-				},
-				{
-					"name": "get_vbox",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 915758477,
-					"return_value": {
-						"type": "VBoxContainer"
-					}
-				},
-				{
-					"name": "get_line_edit",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4071694264,
-					"return_value": {
-						"type": "LineEdit"
-					}
-				},
-				{
-					"name": "set_access",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3882893764,
-					"arguments": [
-						{
-							"name": "access",
-							"type": "enum::EditorFileDialog.Access"
-						}
-					]
-				},
-				{
-					"name": "get_access",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 778734016,
-					"return_value": {
-						"type": "enum::EditorFileDialog.Access"
-					}
-				},
-				{
-					"name": "set_show_hidden_files",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "show",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_showing_hidden_files",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_display_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3049004050,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::EditorFileDialog.DisplayMode"
-						}
-					]
-				},
-				{
-					"name": "get_display_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3517174669,
-					"return_value": {
-						"type": "enum::EditorFileDialog.DisplayMode"
-					}
 				},
 				{
 					"name": "set_disable_overwrite_warning",
@@ -299351,136 +299838,9 @@
 					"return_value": {
 						"type": "bool"
 					}
-				},
-				{
-					"name": "popup_file_dialog",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "add_side_menu",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 402368861,
-					"arguments": [
-						{
-							"name": "menu",
-							"type": "Control"
-						},
-						{
-							"name": "title",
-							"type": "String",
-							"default_value": "\"\""
-						}
-					]
-				},
-				{
-					"name": "invalidate",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				}
-			],
-			"signals": [
-				{
-					"name": "file_selected",
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "files_selected",
-					"arguments": [
-						{
-							"name": "paths",
-							"type": "PackedStringArray"
-						}
-					]
-				},
-				{
-					"name": "dir_selected",
-					"arguments": [
-						{
-							"name": "dir",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "filename_filter_changed",
-					"arguments": [
-						{
-							"name": "filter",
-							"type": "String"
-						}
-					]
 				}
 			],
 			"properties": [
-				{
-					"type": "int",
-					"name": "access",
-					"setter": "set_access",
-					"getter": "get_access"
-				},
-				{
-					"type": "int",
-					"name": "display_mode",
-					"setter": "set_display_mode",
-					"getter": "get_display_mode"
-				},
-				{
-					"type": "int",
-					"name": "file_mode",
-					"setter": "set_file_mode",
-					"getter": "get_file_mode"
-				},
-				{
-					"type": "String",
-					"name": "current_dir",
-					"setter": "set_current_dir",
-					"getter": "get_current_dir"
-				},
-				{
-					"type": "String",
-					"name": "current_file",
-					"setter": "set_current_file",
-					"getter": "get_current_file"
-				},
-				{
-					"type": "String",
-					"name": "current_path",
-					"setter": "set_current_path",
-					"getter": "get_current_path"
-				},
-				{
-					"type": "PackedStringArray",
-					"name": "filters",
-					"setter": "set_filters",
-					"getter": "get_filters"
-				},
-				{
-					"type": "int",
-					"name": "option_count",
-					"setter": "set_option_count",
-					"getter": "get_option_count"
-				},
-				{
-					"type": "bool",
-					"name": "show_hidden_files",
-					"setter": "set_show_hidden_files",
-					"getter": "is_showing_hidden_files"
-				},
 				{
 					"type": "bool",
 					"name": "disable_overwrite_warning",
@@ -310292,7 +310652,8 @@
 					"arguments": [
 						{
 							"name": "node",
-							"type": "Node"
+							"type": "Node",
+							"meta": "required"
 						}
 					]
 				},
@@ -310307,7 +310668,8 @@
 					"arguments": [
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						}
 					]
 				},
@@ -311193,7 +311555,8 @@
 						},
 						{
 							"name": "texture",
-							"type": "Texture2D"
+							"type": "Texture2D",
+							"meta": "required"
 						}
 					]
 				},
@@ -311211,7 +311574,8 @@
 						},
 						{
 							"name": "stylebox",
-							"type": "StyleBox"
+							"type": "StyleBox",
+							"meta": "required"
 						}
 					]
 				},
@@ -311229,7 +311593,8 @@
 						},
 						{
 							"name": "font",
-							"type": "Font"
+							"type": "Font",
+							"meta": "required"
 						}
 					]
 				},
@@ -315718,7 +316083,8 @@
 					"arguments": [
 						{
 							"name": "texture",
-							"type": "Texture2D"
+							"type": "Texture2D",
+							"meta": "required"
 						},
 						{
 							"name": "position",
@@ -315744,7 +316110,8 @@
 					"arguments": [
 						{
 							"name": "texture",
-							"type": "Texture2D"
+							"type": "Texture2D",
+							"meta": "required"
 						},
 						{
 							"name": "rect",
@@ -315779,7 +316146,8 @@
 					"arguments": [
 						{
 							"name": "texture",
-							"type": "Texture2D"
+							"type": "Texture2D",
+							"meta": "required"
 						},
 						{
 							"name": "rect",
@@ -315819,7 +316187,8 @@
 					"arguments": [
 						{
 							"name": "texture",
-							"type": "Texture2D"
+							"type": "Texture2D",
+							"meta": "required"
 						},
 						{
 							"name": "rect",
@@ -315867,7 +316236,8 @@
 					"arguments": [
 						{
 							"name": "texture",
-							"type": "Texture2D"
+							"type": "Texture2D",
+							"meta": "required"
 						},
 						{
 							"name": "rect",
@@ -315894,7 +316264,8 @@
 					"arguments": [
 						{
 							"name": "style_box",
-							"type": "StyleBox"
+							"type": "StyleBox",
+							"meta": "required"
 						},
 						{
 							"name": "rect",
@@ -316008,7 +316379,8 @@
 					"arguments": [
 						{
 							"name": "font",
-							"type": "Font"
+							"type": "Font",
+							"meta": "required"
 						},
 						{
 							"name": "pos",
@@ -316077,7 +316449,8 @@
 					"arguments": [
 						{
 							"name": "font",
-							"type": "Font"
+							"type": "Font",
+							"meta": "required"
 						},
 						{
 							"name": "pos",
@@ -316157,7 +316530,8 @@
 					"arguments": [
 						{
 							"name": "font",
-							"type": "Font"
+							"type": "Font",
+							"meta": "required"
 						},
 						{
 							"name": "pos",
@@ -316232,7 +316606,8 @@
 					"arguments": [
 						{
 							"name": "font",
-							"type": "Font"
+							"type": "Font",
+							"meta": "required"
 						},
 						{
 							"name": "pos",
@@ -316318,7 +316693,8 @@
 					"arguments": [
 						{
 							"name": "font",
-							"type": "Font"
+							"type": "Font",
+							"meta": "required"
 						},
 						{
 							"name": "pos",
@@ -316361,7 +316737,8 @@
 					"arguments": [
 						{
 							"name": "font",
-							"type": "Font"
+							"type": "Font",
+							"meta": "required"
 						},
 						{
 							"name": "pos",
@@ -316409,7 +316786,8 @@
 					"arguments": [
 						{
 							"name": "mesh",
-							"type": "Mesh"
+							"type": "Mesh",
+							"meta": "required"
 						},
 						{
 							"name": "texture",
@@ -316437,7 +316815,8 @@
 					"arguments": [
 						{
 							"name": "multimesh",
-							"type": "MultiMesh"
+							"type": "MultiMesh",
+							"meta": "required"
 						},
 						{
 							"name": "texture",
@@ -316829,12 +317208,14 @@
 					"is_virtual": false,
 					"hash": 811130057,
 					"return_value": {
-						"type": "InputEvent"
+						"type": "InputEvent",
+						"meta": "required"
 					},
 					"arguments": [
 						{
 							"name": "event",
-							"type": "InputEvent"
+							"type": "InputEvent",
+							"meta": "required"
 						}
 					]
 				},
@@ -339606,7 +339987,8 @@
 						2747409789
 					],
 					"return_value": {
-						"type": "InputEvent"
+						"type": "InputEvent",
+						"meta": "required"
 					},
 					"arguments": [
 						{
