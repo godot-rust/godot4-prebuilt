@@ -29935,6 +29935,31 @@
 					}
 				},
 				{
+					"name": "set_scaling_menus",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "scaling_menus",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_scaling_menus",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_position_offset",
 					"is_const": false,
 					"is_vararg": false,
@@ -30038,6 +30063,12 @@
 					"name": "selected",
 					"setter": "set_selected",
 					"getter": "is_selected"
+				},
+				{
+					"type": "bool",
+					"name": "scaling_menus",
+					"setter": "set_scaling_menus",
+					"getter": "is_scaling_menus"
 				}
 			]
 		},
