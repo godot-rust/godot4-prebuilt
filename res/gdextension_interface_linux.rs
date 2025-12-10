@@ -483,7 +483,7 @@ pub type GDExtensionPtrBuiltInMethod = ::std::option::Option<
         p_base: GDExtensionTypePtr,
         p_args: *const GDExtensionConstTypePtr,
         r_return: GDExtensionTypePtr,
-        p_argument_count: ::std::os::raw::c_int,
+        p_argument_count: i32,
     ),
 >;
 pub type GDExtensionPtrConstructor = ::std::option::Option<
@@ -538,7 +538,7 @@ pub type GDExtensionPtrUtilityFunction = ::std::option::Option<
     unsafe extern "C" fn(
         r_return: GDExtensionTypePtr,
         p_args: *const GDExtensionConstTypePtr,
-        p_argument_count: ::std::os::raw::c_int,
+        p_argument_count: i32,
     ),
 >;
 pub type GDExtensionClassConstructor =
@@ -4013,23 +4013,23 @@ fn bindgen_test_layout_GDExtensionMainLoopCallbacks() {
         )
     );
 }
-#[doc = " @name get_godot_version\n @since 4.1\n @deprecated in Godot 4.5. Use `get_godot_version2` instead.\n\n Gets the Godot version that the GDExtension was loaded into.\n\n @param r_godot_version A pointer to the structure to write the version information into."]
+#[doc = " @name get_godot_version\n @since 4.1\n @deprecated Deprecated in Godot 4.5. Use `get_godot_version2` instead.\n\n Gets the Godot version that the GDExtension was loaded into.\n\n @param r_godot_version A pointer to the structure to write the version information into."]
 pub type GDExtensionInterfaceGetGodotVersion =
     ::std::option::Option<unsafe extern "C" fn(r_godot_version: *mut GDExtensionGodotVersion)>;
 #[doc = " @name get_godot_version2\n @since 4.5\n\n Gets the Godot version that the GDExtension was loaded into.\n\n @param r_godot_version A pointer to the structure to write the version information into."]
 pub type GDExtensionInterfaceGetGodotVersion2 =
     ::std::option::Option<unsafe extern "C" fn(r_godot_version: *mut GDExtensionGodotVersion2)>;
-#[doc = " @name mem_alloc\n @since 4.1\n @deprecated in Godot 4.6. Use `mem_alloc2` instead.\n\n Allocates memory.\n\n @param p_bytes The amount of memory to allocate in bytes.\n\n @return A pointer to the allocated memory, or NULL if unsuccessful."]
+#[doc = " @name mem_alloc\n @since 4.1\n @deprecated Deprecated in Godot 4.6. Does not allow explicitly requesting padding. Use `mem_alloc2` instead.\n\n Allocates memory.\n\n @param p_bytes The amount of memory to allocate in bytes.\n\n @return A pointer to the allocated memory, or NULL if unsuccessful."]
 pub type GDExtensionInterfaceMemAlloc =
     ::std::option::Option<unsafe extern "C" fn(p_bytes: usize) -> *mut ::std::os::raw::c_void>;
-#[doc = " @name mem_realloc\n @since 4.1\n @deprecated in Godot 4.6. Use `mem_realloc2` instead.\n\n Reallocates memory.\n\n @param p_ptr A pointer to the previously allocated memory.\n @param p_bytes The number of bytes to resize the memory block to.\n\n @return A pointer to the allocated memory, or NULL if unsuccessful."]
+#[doc = " @name mem_realloc\n @since 4.1\n @deprecated Deprecated in Godot 4.6. Does not allow explicitly requesting padding. Use `mem_realloc2` instead.\n\n Reallocates memory.\n\n @param p_ptr A pointer to the previously allocated memory.\n @param p_bytes The number of bytes to resize the memory block to.\n\n @return A pointer to the allocated memory, or NULL if unsuccessful."]
 pub type GDExtensionInterfaceMemRealloc = ::std::option::Option<
     unsafe extern "C" fn(
         p_ptr: *mut ::std::os::raw::c_void,
         p_bytes: usize,
     ) -> *mut ::std::os::raw::c_void,
 >;
-#[doc = " @name mem_free\n @since 4.1\n @deprecated in Godot 4.6. Use `mem_free2` instead.\n\n Frees memory.\n\n @param p_ptr A pointer to the previously allocated memory."]
+#[doc = " @name mem_free\n @since 4.1\n @deprecated Deprecated in Godot 4.6. Does not allow explicitly requesting padding. Use `mem_free2` instead.\n\n Frees memory.\n\n @param p_ptr A pointer to the previously allocated memory."]
 pub type GDExtensionInterfaceMemFree =
     ::std::option::Option<unsafe extern "C" fn(p_ptr: *mut ::std::os::raw::c_void)>;
 #[doc = " @name mem_alloc2\n @since 4.6\n\n Allocates memory.\n\n @param p_bytes The amount of memory to allocate in bytes.\n @param p_pad_align If true, the returned memory will have prepadding of at least 8 bytes.\n\n @return A pointer to the allocated memory, or NULL if unsuccessful."]
@@ -4479,7 +4479,7 @@ pub type GDExtensionInterfaceStringNewWithLatin1CharsAndLen = ::std::option::Opt
         p_size: GDExtensionInt,
     ),
 >;
-#[doc = " @name string_new_with_utf8_chars_and_len\n @since 4.1\n @deprecated in Godot 4.3. Use `string_new_with_utf8_chars_and_len2` instead.\n\n Creates a String from a UTF-8 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-8 encoded C string.\n @param p_size The number of bytes (not code units)."]
+#[doc = " @name string_new_with_utf8_chars_and_len\n @since 4.1\n @deprecated Deprecated in Godot 4.3. Use `string_new_with_utf8_chars_and_len2` instead.\n\n Creates a String from a UTF-8 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-8 encoded C string.\n @param p_size The number of bytes (not code units)."]
 pub type GDExtensionInterfaceStringNewWithUtf8CharsAndLen = ::std::option::Option<
     unsafe extern "C" fn(
         r_dest: GDExtensionUninitializedStringPtr,
@@ -4495,7 +4495,7 @@ pub type GDExtensionInterfaceStringNewWithUtf8CharsAndLen2 = ::std::option::Opti
         p_size: GDExtensionInt,
     ) -> GDExtensionInt,
 >;
-#[doc = " @name string_new_with_utf16_chars_and_len\n @since 4.1\n @deprecated in Godot 4.3. Use `string_new_with_utf16_chars_and_len2` instead.\n\n Creates a String from a UTF-16 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-16 encoded C string.\n @param p_char_count The number of characters (not bytes)."]
+#[doc = " @name string_new_with_utf16_chars_and_len\n @since 4.1\n @deprecated Deprecated in Godot 4.3. Use `string_new_with_utf16_chars_and_len2` instead.\n\n Creates a String from a UTF-16 encoded C string with the given length.\n\n @param r_dest A pointer to a Variant to hold the newly created String.\n @param p_contents A pointer to a UTF-16 encoded C string.\n @param p_char_count The number of characters (not bytes)."]
 pub type GDExtensionInterfaceStringNewWithUtf16CharsAndLen = ::std::option::Option<
     unsafe extern "C" fn(
         r_dest: GDExtensionUninitializedStringPtr,
@@ -4655,8 +4655,8 @@ pub type GDExtensionInterfaceWorkerThreadPoolAddNativeGroupTask = ::std::option:
         p_instance: GDExtensionObjectPtr,
         p_func: GDExtensionWorkerThreadPoolGroupTask,
         p_userdata: *mut ::std::os::raw::c_void,
-        p_elements: ::std::os::raw::c_int,
-        p_tasks: ::std::os::raw::c_int,
+        p_elements: i32,
+        p_tasks: i32,
         p_high_priority: GDExtensionBool,
         p_description: GDExtensionConstStringPtr,
     ) -> i64,
@@ -4783,7 +4783,7 @@ pub type GDExtensionInterfaceArrayOperatorIndexConst = ::std::option::Option<
         p_index: GDExtensionInt,
     ) -> GDExtensionVariantPtr,
 >;
-#[doc = " @name array_ref\n @since 4.1\n @deprecated in Godot 4.5. use `Array::operator=` instead.\n\n Sets an Array to be a reference to another Array object.\n\n @param p_self A pointer to the Array object to update.\n @param p_from A pointer to the Array object to reference."]
+#[doc = " @name array_ref\n @since 4.1\n @deprecated Deprecated in Godot 4.5. Removed from interface. Use copy constructor instead.\n\n Sets an Array to be a reference to another Array object.\n\n @param p_self A pointer to the Array object to update.\n @param p_from A pointer to the Array object to reference."]
 pub type GDExtensionInterfaceArrayRef = ::std::option::Option<
     unsafe extern "C" fn(p_self: GDExtensionTypePtr, p_from: GDExtensionConstTypePtr),
 >;
@@ -4927,14 +4927,14 @@ pub type GDExtensionInterfaceRefGetObject = ::std::option::Option<
 pub type GDExtensionInterfaceRefSetObject = ::std::option::Option<
     unsafe extern "C" fn(p_ref: GDExtensionRefPtr, p_object: GDExtensionObjectPtr),
 >;
-#[doc = " @name script_instance_create\n @since 4.1\n @deprecated in Godot 4.2. Use `script_instance_create3` instead.\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
+#[doc = " @name script_instance_create\n @since 4.1\n @deprecated Deprecated in Godot 4.2. Use `script_instance_create3` instead.\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
 pub type GDExtensionInterfaceScriptInstanceCreate = ::std::option::Option<
     unsafe extern "C" fn(
         p_info: *const GDExtensionScriptInstanceInfo,
         p_instance_data: GDExtensionScriptInstanceDataPtr,
     ) -> GDExtensionScriptInstancePtr,
 >;
-#[doc = " @name script_instance_create2\n @since 4.2\n @deprecated in Godot 4.3. Use `script_instance_create3` instead.\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo2 struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
+#[doc = " @name script_instance_create2\n @since 4.2\n @deprecated Deprecated in Godot 4.3. Use `script_instance_create3` instead.\n\n Creates a script instance that contains the given info and instance data.\n\n @param p_info A pointer to a GDExtensionScriptInstanceInfo2 struct.\n @param p_instance_data A pointer to a data representing the script instance in the GDExtension. This will be passed to all the function pointers on p_info.\n\n @return A pointer to a ScriptInstanceExtension object."]
 pub type GDExtensionInterfaceScriptInstanceCreate2 = ::std::option::Option<
     unsafe extern "C" fn(
         p_info: *const GDExtensionScriptInstanceInfo2,
@@ -4978,7 +4978,7 @@ pub type GDExtensionInterfaceObjectSetScriptInstance = ::std::option::Option<
         p_script_instance: GDExtensionScriptInstanceDataPtr,
     ),
 >;
-#[doc = " @name callable_custom_create\n @since 4.2\n @deprecated in Godot 4.3. Use `callable_custom_create2` instead.\n\n Creates a custom Callable object from a function pointer.\n\n Provided struct can be safely freed once the function returns.\n\n @param r_callable A pointer that will receive the new Callable.\n @param p_callable_custom_info The info required to construct a Callable."]
+#[doc = " @name callable_custom_create\n @since 4.2\n @deprecated Deprecated in Godot 4.3. Use `callable_custom_create2` instead.\n\n Creates a custom Callable object from a function pointer.\n\n Provided struct can be safely freed once the function returns.\n\n @param r_callable A pointer that will receive the new Callable.\n @param p_callable_custom_info The info required to construct a Callable."]
 pub type GDExtensionInterfaceCallableCustomCreate = ::std::option::Option<
     unsafe extern "C" fn(
         r_callable: GDExtensionUninitializedTypePtr,
@@ -4999,7 +4999,7 @@ pub type GDExtensionInterfaceCallableCustomGetUserData = ::std::option::Option<
         p_token: *mut ::std::os::raw::c_void,
     ) -> *mut ::std::os::raw::c_void,
 >;
-#[doc = " @name classdb_construct_object\n @since 4.1\n @deprecated in Godot 4.4. Use `classdb_construct_object2` instead.\n\n Constructs an Object of the requested class.\n\n The passed class must be a built-in godot class, or an already-registered extension class. In both cases, object_set_instance() should be called to fully initialize the object.\n\n @param p_classname A pointer to a StringName with the class name.\n\n @return A pointer to the newly created Object."]
+#[doc = " @name classdb_construct_object\n @since 4.1\n @deprecated Deprecated in Godot 4.4. Use `classdb_construct_object2` instead.\n\n Constructs an Object of the requested class.\n\n The passed class must be a built-in godot class, or an already-registered extension class. In both cases, object_set_instance() should be called to fully initialize the object.\n\n @param p_classname A pointer to a StringName with the class name.\n\n @return A pointer to the newly created Object."]
 pub type GDExtensionInterfaceClassdbConstructObject = ::std::option::Option<
     unsafe extern "C" fn(p_classname: GDExtensionConstStringNamePtr) -> GDExtensionObjectPtr,
 >;
@@ -5019,7 +5019,7 @@ pub type GDExtensionInterfaceClassdbGetMethodBind = ::std::option::Option<
 pub type GDExtensionInterfaceClassdbGetClassTag = ::std::option::Option<
     unsafe extern "C" fn(p_classname: GDExtensionConstStringNamePtr) -> *mut ::std::os::raw::c_void,
 >;
-#[doc = " @name classdb_register_extension_class\n @since 4.1\n @deprecated in Godot 4.2. Use `classdb_register_extension_class4` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo struct."]
+#[doc = " @name classdb_register_extension_class\n @since 4.1\n @deprecated Deprecated in Godot 4.2. Use `classdb_register_extension_class5` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo struct."]
 pub type GDExtensionInterfaceClassdbRegisterExtensionClass = ::std::option::Option<
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,
@@ -5028,7 +5028,7 @@ pub type GDExtensionInterfaceClassdbRegisterExtensionClass = ::std::option::Opti
         p_extension_funcs: *const GDExtensionClassCreationInfo,
     ),
 >;
-#[doc = " @name classdb_register_extension_class2\n @since 4.2\n @deprecated in Godot 4.3. Use `classdb_register_extension_class4` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo2 struct."]
+#[doc = " @name classdb_register_extension_class2\n @since 4.2\n @deprecated Deprecated in Godot 4.3. Use `classdb_register_extension_class5` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo2 struct."]
 pub type GDExtensionInterfaceClassdbRegisterExtensionClass2 = ::std::option::Option<
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,
@@ -5037,7 +5037,7 @@ pub type GDExtensionInterfaceClassdbRegisterExtensionClass2 = ::std::option::Opt
         p_extension_funcs: *const GDExtensionClassCreationInfo2,
     ),
 >;
-#[doc = " @name classdb_register_extension_class3\n @since 4.3\n @deprecated in Godot 4.4. Use `classdb_register_extension_class4` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo3 struct."]
+#[doc = " @name classdb_register_extension_class3\n @since 4.3\n @deprecated Deprecated in Godot 4.4. Use `classdb_register_extension_class5` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo3 struct."]
 pub type GDExtensionInterfaceClassdbRegisterExtensionClass3 = ::std::option::Option<
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,
@@ -5046,7 +5046,7 @@ pub type GDExtensionInterfaceClassdbRegisterExtensionClass3 = ::std::option::Opt
         p_extension_funcs: *const GDExtensionClassCreationInfo3,
     ),
 >;
-#[doc = " @name classdb_register_extension_class4\n @since 4.4\n @deprecated in Godot 4.5. Use `classdb_register_extension_class5` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo4 struct."]
+#[doc = " @name classdb_register_extension_class4\n @since 4.4\n @deprecated Deprecated in Godot 4.5. Use `classdb_register_extension_class5` instead.\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo4 struct."]
 pub type GDExtensionInterfaceClassdbRegisterExtensionClass4 = ::std::option::Option<
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,

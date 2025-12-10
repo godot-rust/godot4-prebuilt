@@ -3,9 +3,9 @@
 		"version_major": 4,
 		"version_minor": 6,
 		"version_patch": 0,
-		"version_status": "dev",
+		"version_status": "beta",
 		"version_build": "custom_build",
-		"version_full_name": "Godot Engine v4.6.dev.custom_build",
+		"version_full_name": "Godot Engine v4.6.beta.custom_build",
 		"precision": "single"
 	},
 	"builtin_class_sizes": [
@@ -287271,6 +287271,28 @@
 							"value": 2
 						}
 					]
+				},
+				{
+					"name": "ScrollHintMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SCROLL_HINT_MODE_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "SCROLL_HINT_MODE_BOTH",
+							"value": 1
+						},
+						{
+							"name": "SCROLL_HINT_MODE_TOP",
+							"value": 2
+						},
+						{
+							"name": "SCROLL_HINT_MODE_BOTTOM",
+							"value": 3
+						}
+					]
 				}
 			],
 			"methods": [
@@ -288463,6 +288485,56 @@
 					}
 				},
 				{
+					"name": "set_scroll_hint_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2917787337,
+					"arguments": [
+						{
+							"name": "scroll_hint_mode",
+							"type": "enum::ItemList.ScrollHintMode"
+						}
+					]
+				},
+				{
+					"name": "get_scroll_hint_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2522227939,
+					"return_value": {
+						"type": "enum::ItemList.ScrollHintMode"
+					}
+				},
+				{
+					"name": "set_tile_scroll_hint",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "tile_scroll_hint",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_scroll_hint_tiled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_text_overrun_behavior",
 					"is_const": false,
 					"is_vararg": false,
@@ -288638,6 +288710,18 @@
 					"name": "wraparound_items",
 					"setter": "set_wraparound_items",
 					"getter": "has_wraparound_items"
+				},
+				{
+					"type": "int",
+					"name": "scroll_hint_mode",
+					"setter": "set_scroll_hint_mode",
+					"getter": "get_scroll_hint_mode"
+				},
+				{
+					"type": "bool",
+					"name": "tile_scroll_hint",
+					"setter": "set_tile_scroll_hint",
+					"getter": "is_scroll_hint_tiled"
 				},
 				{
 					"type": "int",
