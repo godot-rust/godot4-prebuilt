@@ -164791,6 +164791,245 @@
 			]
 		},
 		{
+			"name": "AudioStreamMP3",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "AudioStream",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "load_from_buffer",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1674970313,
+					"return_value": {
+						"type": "AudioStreamMP3"
+					},
+					"arguments": [
+						{
+							"name": "stream_data",
+							"type": "PackedByteArray"
+						}
+					]
+				},
+				{
+					"name": "load_from_file",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 4238362998,
+					"return_value": {
+						"type": "AudioStreamMP3"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "set_data",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2971499966,
+					"arguments": [
+						{
+							"name": "data",
+							"type": "PackedByteArray"
+						}
+					]
+				},
+				{
+					"name": "get_data",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2362200018,
+					"return_value": {
+						"type": "PackedByteArray"
+					}
+				},
+				{
+					"name": "set_loop",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "has_loop",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_loop_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "seconds",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_loop_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_bpm",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "bpm",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_bpm",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
+				},
+				{
+					"name": "set_beat_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_beat_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_bar_beats",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_bar_beats",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "PackedByteArray",
+					"name": "data",
+					"setter": "set_data",
+					"getter": "get_data"
+				},
+				{
+					"type": "float",
+					"name": "bpm",
+					"setter": "set_bpm",
+					"getter": "get_bpm"
+				},
+				{
+					"type": "int",
+					"name": "beat_count",
+					"setter": "set_beat_count",
+					"getter": "get_beat_count"
+				},
+				{
+					"type": "int",
+					"name": "bar_beats",
+					"setter": "set_bar_beats",
+					"getter": "get_bar_beats"
+				},
+				{
+					"type": "bool",
+					"name": "loop",
+					"setter": "set_loop",
+					"getter": "has_loop"
+				},
+				{
+					"type": "float",
+					"name": "loop_offset",
+					"setter": "set_loop_offset",
+					"getter": "get_loop_offset"
+				}
+			]
+		},
+		{
 			"name": "MobileVRInterface",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -165126,245 +165365,6 @@
 					"name": "vrs_strength",
 					"setter": "set_vrs_strength",
 					"getter": "get_vrs_strength"
-				}
-			]
-		},
-		{
-			"name": "AudioStreamMP3",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "AudioStream",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "load_from_buffer",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 1674970313,
-					"return_value": {
-						"type": "AudioStreamMP3"
-					},
-					"arguments": [
-						{
-							"name": "stream_data",
-							"type": "PackedByteArray"
-						}
-					]
-				},
-				{
-					"name": "load_from_file",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 4238362998,
-					"return_value": {
-						"type": "AudioStreamMP3"
-					},
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "set_data",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2971499966,
-					"arguments": [
-						{
-							"name": "data",
-							"type": "PackedByteArray"
-						}
-					]
-				},
-				{
-					"name": "get_data",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2362200018,
-					"return_value": {
-						"type": "PackedByteArray"
-					}
-				},
-				{
-					"name": "set_loop",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "has_loop",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_loop_offset",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "seconds",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_loop_offset",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_bpm",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "bpm",
-							"type": "float",
-							"meta": "double"
-						}
-					]
-				},
-				{
-					"name": "get_bpm",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "double"
-					}
-				},
-				{
-					"name": "set_beat_count",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "count",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_beat_count",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_bar_beats",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "count",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_bar_beats",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "PackedByteArray",
-					"name": "data",
-					"setter": "set_data",
-					"getter": "get_data"
-				},
-				{
-					"type": "float",
-					"name": "bpm",
-					"setter": "set_bpm",
-					"getter": "get_bpm"
-				},
-				{
-					"type": "int",
-					"name": "beat_count",
-					"setter": "set_beat_count",
-					"getter": "get_beat_count"
-				},
-				{
-					"type": "int",
-					"name": "bar_beats",
-					"setter": "set_bar_beats",
-					"getter": "get_bar_beats"
-				},
-				{
-					"type": "bool",
-					"name": "loop",
-					"setter": "set_loop",
-					"getter": "has_loop"
-				},
-				{
-					"type": "float",
-					"name": "loop_offset",
-					"setter": "set_loop_offset",
-					"getter": "get_loop_offset"
 				}
 			]
 		},
