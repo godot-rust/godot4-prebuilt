@@ -30,6 +30,16 @@ pub const fn load_gdextension_header_h() -> CowStr {
 ///
 /// The bindings are now generated separately for 32-bit and 64-bit targets to ensure
 /// correct layout tests on both architectures. See: https://github.com/godot-rust/gdext/issues/347
+///
+/// **Important**: This function uses compile-time `#[cfg]` to select bindings, which means it
+/// evaluates based on the *current compilation target*, not the cross-compilation target.
+/// For cross-compilation scenarios (e.g., build scripts), use [`load_gdextension_header_rs_32`]
+/// or [`load_gdextension_header_rs_64`] with `CARGO_CFG_TARGET_POINTER_WIDTH` instead.
+// Kept for backward compatibility. New code should use load_gdextension_header_rs_32() or _64().
+#[deprecated(
+    since = "0.3.1",
+    note = "Use load_gdextension_header_rs_32() or load_gdextension_header_rs_64() with CARGO_CFG_TARGET_POINTER_WIDTH for cross-compilation support"
+)]
 pub const fn load_gdextension_header_rs() -> CowStr {
     // 64-bit platforms: use platform-specific bindings
     #[cfg(all(windows, target_pointer_width = "64"))]
@@ -49,6 +59,39 @@ pub const fn load_gdextension_header_rs() -> CowStr {
     // as win32 is quite costly. Wasm32 is a real-world use case though.
     #[cfg(target_pointer_width = "32")]
     let s = include_str!("../res/gdextension_interface_linux_32.rs");
+
+    CowStr::Borrowed(s)
+}
+
+/// Returns the 32-bit bindings, regardless of current compilation target.
+///
+/// Use this in build scripts with `CARGO_CFG_TARGET_POINTER_WIDTH` to select
+/// the correct bindings for cross-compilation.
+pub const fn load_gdextension_header_rs_32() -> CowStr {
+    CowStr::Borrowed(include_str!("../res/gdextension_interface_linux_32.rs"))
+}
+
+/// Returns the 64-bit bindings for the current platform.
+///
+/// Use this in build scripts with `CARGO_CFG_TARGET_POINTER_WIDTH` to select
+/// the correct bindings for cross-compilation.
+///
+/// Note: Returns platform-specific bindings (Windows/macOS/Linux) based on compile-time cfg.
+/// For cross-compilation to a different OS, this may not be accurate, but struct layouts
+/// are identical across 64-bit platforms.
+pub const fn load_gdextension_header_rs_64() -> CowStr {
+    #[cfg(windows)]
+    let s = include_str!("../res/gdextension_interface_windows.rs");
+
+    #[cfg(target_os = "macos")]
+    let s = include_str!("../res/gdextension_interface_macos.rs");
+
+    #[cfg(all(unix, not(target_os = "macos")))]
+    let s = include_str!("../res/gdextension_interface_linux_64.rs");
+
+    // Fallback for non-unix, non-windows, non-macos (unlikely but safe)
+    #[cfg(not(any(windows, unix)))]
+    let s = include_str!("../res/gdextension_interface_linux_64.rs");
 
     CowStr::Borrowed(s)
 }
