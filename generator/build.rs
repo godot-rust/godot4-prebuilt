@@ -14,16 +14,36 @@
 
 use std::path::Path;
 
-fn main() {
-    let mut watch = godot_bindings::StopWatch::start();
+use godot_bindings::TargetPointerWidth;
 
+fn main() {
     let gen_path = Path::new(concat!(env!("CARGO_MANIFEST_DIR"), "/../.generated"));
     let header_c_path = gen_path.join("gdextension_interface.h");
-    let header_rs_path = gen_path.join("gdextension_interface.rs");
+
+    // Generate bindings for both 64-bit and 32-bit targets.
+    // This allows proper layout tests on both architectures without runtime stripping.
+    // See: https://github.com/godot-rust/gdext/issues/347
+
+    // Output paths - CI workflow will rename these with platform prefix (e.g., linux_64, linux_32).
+    // Windows and macOS only need 64-bit; Linux/wasm needs both.
+    let header_rs_64_path = gen_path.join("gdextension_interface_64.rs");
+    let header_rs_32_path = gen_path.join("gdextension_interface_32.rs");
 
     // Note: do not call clear_dir(), as we pass in the C header into the gen directory.
-    //godot_bindings::clear_dir(gen_path, &mut watch);
-    godot_bindings::write_gdextension_headers_from_c(&header_c_path, &header_rs_path, &mut watch);
 
-    watch.write_stats_to(&gen_path.join("godot-ffi-stats.txt"));
+    // Generate 64-bit bindings.
+    godot_bindings::write_gdextension_headers_for_target(
+        &header_c_path,
+        &header_rs_64_path,
+        TargetPointerWidth::Bits64,
+    );
+    println!("Generated 64-bit bindings: {}", header_rs_64_path.display());
+
+    // Generate 32-bit bindings.
+    godot_bindings::write_gdextension_headers_for_target(
+        &header_c_path,
+        &header_rs_32_path,
+        TargetPointerWidth::Bits32,
+    );
+    println!("Generated 32-bit bindings: {}", header_rs_32_path.display());
 }

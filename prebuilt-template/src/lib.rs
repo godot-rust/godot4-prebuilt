@@ -26,16 +26,29 @@ pub const fn load_gdextension_header_h() -> CowStr {
     CowStr::Borrowed(include_str!("../res/gdextension_interface.h"))
 }
 
-/// Returns the contents of the header file `gdextension_interface.rs`, generated for the corresponding platform.
+/// Returns the contents of the header file `gdextension_interface.rs`, generated for the corresponding platform and pointer width.
+///
+/// The bindings are now generated separately for 32-bit and 64-bit targets to ensure
+/// correct layout tests on both architectures. See: https://github.com/godot-rust/gdext/issues/347
 pub const fn load_gdextension_header_rs() -> CowStr {
-    #[cfg(windows)]
+    // 64-bit platforms: use platform-specific bindings
+    #[cfg(all(windows, target_pointer_width = "64"))]
     let s = include_str!("../res/gdextension_interface_windows.rs");
 
-    #[cfg(target_os = "macos")]
+    #[cfg(all(target_os = "macos", target_pointer_width = "64"))]
     let s = include_str!("../res/gdextension_interface_macos.rs");
 
-    #[cfg(all(unix, not(target_os = "macos")))]
-    let s = include_str!("../res/gdextension_interface_linux.rs");
+    #[cfg(all(unix, not(target_os = "macos"), target_pointer_width = "64"))]
+    let s = include_str!("../res/gdextension_interface_linux_64.rs");
+
+    // 32-bit platforms: all use the same bindings (Linux, wasm32, etc.)
+    //
+    // Note: with this, in practce, we only support wasm32 and linux i686.
+    // Godot *has* support for other 32-bit platforms. However
+    // maintaining and offering *tested* exports for corner cases such
+    // as win32 is quite costly. Wasm32 is a real-world use case though.
+    #[cfg(target_pointer_width = "32")]
+    let s = include_str!("../res/gdextension_interface_linux_32.rs");
 
     CowStr::Borrowed(s)
 }

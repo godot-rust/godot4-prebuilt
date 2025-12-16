@@ -125,13 +125,21 @@ jobs:
         working-directory: generator
         run: cargo build -vv
 
+      - name: "Run generator tests"
+        working-directory: generator
+        run: cargo test
+
       - name: "Move generated files + rename according to platform"
         env:
             BUILD_CONFIG: linux
         run: |
-          mv .generated/* output/
-          mv output/gdextension_interface.rs output/gdextension_interface_${BUILD_CONFIG}.rs
-          rm output/*stats*
+          mv .generated/gdextension_interface.h output/
+          # Rename 64-bit and 32-bit bindings with platform prefix
+          mv .generated/gdextension_interface_64.rs output/gdextension_interface_${BUILD_CONFIG}_64.rs
+          mv .generated/gdextension_interface_32.rs output/gdextension_interface_${BUILD_CONFIG}_32.rs
+          rm -f .generated/*stats* output/*stats*
+          echo "Output directory:"
+          ls -la output/
 
       # -----------------------------------------------------------------------------------------------------------------------------------------
       # JSON spec
