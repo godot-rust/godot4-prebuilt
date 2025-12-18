@@ -154518,7 +154518,7 @@
 					"getter": "get_title_color"
 				},
 				{
-					"type": "ShortCut",
+					"type": "Shortcut",
 					"name": "dock_shortcut",
 					"setter": "set_dock_shortcut",
 					"getter": "get_dock_shortcut"
