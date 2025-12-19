@@ -111942,331 +111942,6 @@
 			]
 		},
 		{
-			"name": "GLTFSkin",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "get_skin_root",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2455072627,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_skin_root",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "skin_root",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_joints_original",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 969006518,
-					"return_value": {
-						"type": "PackedInt32Array"
-					}
-				},
-				{
-					"name": "set_joints_original",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3614634198,
-					"arguments": [
-						{
-							"name": "joints_original",
-							"type": "PackedInt32Array"
-						}
-					]
-				},
-				{
-					"name": "get_inverse_binds",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2915620761,
-					"return_value": {
-						"type": "typedarray::Transform3D"
-					}
-				},
-				{
-					"name": "set_inverse_binds",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 381264803,
-					"arguments": [
-						{
-							"name": "inverse_binds",
-							"type": "typedarray::Transform3D"
-						}
-					]
-				},
-				{
-					"name": "get_joints",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 969006518,
-					"return_value": {
-						"type": "PackedInt32Array"
-					}
-				},
-				{
-					"name": "set_joints",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3614634198,
-					"arguments": [
-						{
-							"name": "joints",
-							"type": "PackedInt32Array"
-						}
-					]
-				},
-				{
-					"name": "get_non_joints",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 969006518,
-					"return_value": {
-						"type": "PackedInt32Array"
-					}
-				},
-				{
-					"name": "set_non_joints",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3614634198,
-					"arguments": [
-						{
-							"name": "non_joints",
-							"type": "PackedInt32Array"
-						}
-					]
-				},
-				{
-					"name": "get_roots",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 969006518,
-					"return_value": {
-						"type": "PackedInt32Array"
-					}
-				},
-				{
-					"name": "set_roots",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3614634198,
-					"arguments": [
-						{
-							"name": "roots",
-							"type": "PackedInt32Array"
-						}
-					]
-				},
-				{
-					"name": "get_skeleton",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2455072627,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_skeleton",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "skeleton",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_joint_i_to_bone_i",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2382534195,
-					"return_value": {
-						"type": "Dictionary"
-					}
-				},
-				{
-					"name": "set_joint_i_to_bone_i",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4155329257,
-					"arguments": [
-						{
-							"name": "joint_i_to_bone_i",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
-					"name": "get_joint_i_to_name",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2382534195,
-					"return_value": {
-						"type": "Dictionary"
-					}
-				},
-				{
-					"name": "set_joint_i_to_name",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4155329257,
-					"arguments": [
-						{
-							"name": "joint_i_to_name",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
-					"name": "get_godot_skin",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1032037385,
-					"return_value": {
-						"type": "Skin"
-					}
-				},
-				{
-					"name": "set_godot_skin",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3971435618,
-					"arguments": [
-						{
-							"name": "godot_skin",
-							"type": "Skin"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "int",
-					"name": "skin_root",
-					"setter": "set_skin_root",
-					"getter": "get_skin_root"
-				},
-				{
-					"type": "PackedInt32Array",
-					"name": "joints_original",
-					"setter": "set_joints_original",
-					"getter": "get_joints_original"
-				},
-				{
-					"type": "Array",
-					"name": "inverse_binds",
-					"setter": "set_inverse_binds",
-					"getter": "get_inverse_binds"
-				},
-				{
-					"type": "PackedInt32Array",
-					"name": "joints",
-					"setter": "set_joints",
-					"getter": "get_joints"
-				},
-				{
-					"type": "PackedInt32Array",
-					"name": "non_joints",
-					"setter": "set_non_joints",
-					"getter": "get_non_joints"
-				},
-				{
-					"type": "PackedInt32Array",
-					"name": "roots",
-					"setter": "set_roots",
-					"getter": "get_roots"
-				},
-				{
-					"type": "int",
-					"name": "skeleton",
-					"setter": "set_skeleton",
-					"getter": "get_skeleton"
-				},
-				{
-					"type": "Dictionary",
-					"name": "joint_i_to_bone_i",
-					"setter": "set_joint_i_to_bone_i",
-					"getter": "get_joint_i_to_bone_i"
-				},
-				{
-					"type": "Dictionary",
-					"name": "joint_i_to_name",
-					"setter": "set_joint_i_to_name",
-					"getter": "get_joint_i_to_name"
-				},
-				{
-					"type": "Skin",
-					"name": "godot_skin",
-					"setter": "set_godot_skin",
-					"getter": "get_godot_skin"
-				}
-			]
-		},
-		{
 			"name": "GLTFSkeleton",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -167295,6 +166970,331 @@
 			]
 		},
 		{
+			"name": "GLTFSkin",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_skin_root",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_skin_root",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "skin_root",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joints_original",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 969006518,
+					"return_value": {
+						"type": "PackedInt32Array"
+					}
+				},
+				{
+					"name": "set_joints_original",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3614634198,
+					"arguments": [
+						{
+							"name": "joints_original",
+							"type": "PackedInt32Array"
+						}
+					]
+				},
+				{
+					"name": "get_inverse_binds",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2915620761,
+					"return_value": {
+						"type": "typedarray::Transform3D"
+					}
+				},
+				{
+					"name": "set_inverse_binds",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "inverse_binds",
+							"type": "typedarray::Transform3D"
+						}
+					]
+				},
+				{
+					"name": "get_joints",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 969006518,
+					"return_value": {
+						"type": "PackedInt32Array"
+					}
+				},
+				{
+					"name": "set_joints",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3614634198,
+					"arguments": [
+						{
+							"name": "joints",
+							"type": "PackedInt32Array"
+						}
+					]
+				},
+				{
+					"name": "get_non_joints",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 969006518,
+					"return_value": {
+						"type": "PackedInt32Array"
+					}
+				},
+				{
+					"name": "set_non_joints",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3614634198,
+					"arguments": [
+						{
+							"name": "non_joints",
+							"type": "PackedInt32Array"
+						}
+					]
+				},
+				{
+					"name": "get_roots",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 969006518,
+					"return_value": {
+						"type": "PackedInt32Array"
+					}
+				},
+				{
+					"name": "set_roots",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3614634198,
+					"arguments": [
+						{
+							"name": "roots",
+							"type": "PackedInt32Array"
+						}
+					]
+				},
+				{
+					"name": "get_skeleton",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_skeleton",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "skeleton",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joint_i_to_bone_i",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2382534195,
+					"return_value": {
+						"type": "Dictionary"
+					}
+				},
+				{
+					"name": "set_joint_i_to_bone_i",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155329257,
+					"arguments": [
+						{
+							"name": "joint_i_to_bone_i",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "get_joint_i_to_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2382534195,
+					"return_value": {
+						"type": "Dictionary"
+					}
+				},
+				{
+					"name": "set_joint_i_to_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155329257,
+					"arguments": [
+						{
+							"name": "joint_i_to_name",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "get_godot_skin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1032037385,
+					"return_value": {
+						"type": "Skin"
+					}
+				},
+				{
+					"name": "set_godot_skin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3971435618,
+					"arguments": [
+						{
+							"name": "godot_skin",
+							"type": "Skin"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "skin_root",
+					"setter": "set_skin_root",
+					"getter": "get_skin_root"
+				},
+				{
+					"type": "PackedInt32Array",
+					"name": "joints_original",
+					"setter": "set_joints_original",
+					"getter": "get_joints_original"
+				},
+				{
+					"type": "Array",
+					"name": "inverse_binds",
+					"setter": "set_inverse_binds",
+					"getter": "get_inverse_binds"
+				},
+				{
+					"type": "PackedInt32Array",
+					"name": "joints",
+					"setter": "set_joints",
+					"getter": "get_joints"
+				},
+				{
+					"type": "PackedInt32Array",
+					"name": "non_joints",
+					"setter": "set_non_joints",
+					"getter": "get_non_joints"
+				},
+				{
+					"type": "PackedInt32Array",
+					"name": "roots",
+					"setter": "set_roots",
+					"getter": "get_roots"
+				},
+				{
+					"type": "int",
+					"name": "skeleton",
+					"setter": "set_skeleton",
+					"getter": "get_skeleton"
+				},
+				{
+					"type": "Dictionary",
+					"name": "joint_i_to_bone_i",
+					"setter": "set_joint_i_to_bone_i",
+					"getter": "get_joint_i_to_bone_i"
+				},
+				{
+					"type": "Dictionary",
+					"name": "joint_i_to_name",
+					"setter": "set_joint_i_to_name",
+					"getter": "get_joint_i_to_name"
+				},
+				{
+					"type": "Skin",
+					"name": "godot_skin",
+					"setter": "set_godot_skin",
+					"getter": "get_godot_skin"
+				}
+			]
+		},
+		{
 			"name": "Viewport",
 			"is_refcounted": false,
 			"is_instantiable": false,
@@ -197086,6 +197086,24 @@
 					}
 				},
 				{
+					"name": "_is_locale_using_support_data",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3927539163,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "locale",
+							"type": "String"
+						}
+					]
+				},
+				{
 					"name": "_is_locale_right_to_left",
 					"is_const": true,
 					"is_static": false,
@@ -220767,6 +220785,23 @@
 					"return_value": {
 						"type": "PackedByteArray"
 					}
+				},
+				{
+					"name": "is_locale_using_support_data",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3927539163,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "locale",
+							"type": "String"
+						}
+					]
 				},
 				{
 					"name": "is_locale_right_to_left",
@@ -284639,6 +284674,41 @@
 						{
 							"name": "menu_id",
 							"type": "enum::NativeMenu.SystemMenus"
+						}
+					]
+				},
+				{
+					"name": "get_system_menu_text",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1281499290,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "menu_id",
+							"type": "enum::NativeMenu.SystemMenus"
+						}
+					]
+				},
+				{
+					"name": "set_system_menu_text",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3925225603,
+					"arguments": [
+						{
+							"name": "menu_id",
+							"type": "enum::NativeMenu.SystemMenus"
+						},
+						{
+							"name": "name",
+							"type": "String"
 						}
 					]
 				},
