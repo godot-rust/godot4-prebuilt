@@ -91752,7 +91752,7 @@
 			"api_type": "core",
 			"methods": [
 				{
-					"name": "set_radius_range",
+					"name": "set_angle",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -91760,14 +91760,14 @@
 					"hash": 373806689,
 					"arguments": [
 						{
-							"name": "radius_range",
+							"name": "angle",
 							"type": "float",
 							"meta": "float"
 						}
 					]
 				},
 				{
-					"name": "get_radius_range",
+					"name": "get_angle",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -91782,9 +91782,9 @@
 			"properties": [
 				{
 					"type": "float",
-					"name": "radius_range",
-					"setter": "set_radius_range",
-					"getter": "get_radius_range"
+					"name": "angle",
+					"setter": "set_angle",
+					"getter": "get_angle"
 				}
 			]
 		},
@@ -331613,15 +331613,17 @@
 					"is_vararg": false,
 					"is_static": true,
 					"is_virtual": false,
-					"hash": 3075606245,
+					"hash": 171914364,
+					"hash_compatibility": [
+						3075606245
+					],
 					"return_value": {
 						"type": "FileAccess"
 					},
 					"arguments": [
 						{
 							"name": "mode_flags",
-							"type": "int",
-							"meta": "int32"
+							"type": "enum::FileAccess.ModeFlags"
 						},
 						{
 							"name": "prefix",
