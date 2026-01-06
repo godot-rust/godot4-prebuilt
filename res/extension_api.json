@@ -261732,6 +261732,56 @@
 					"return_value": {
 						"type": "enum::NativeMenu.SystemMenus"
 					}
+				},
+				{
+					"name": "set_shrink_height",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "shrink",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_shrink_height",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_shrink_width",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "shrink",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_shrink_width",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"signals": [
@@ -261808,6 +261858,18 @@
 					"name": "prefer_native_menu",
 					"setter": "set_prefer_native_menu",
 					"getter": "is_prefer_native_menu"
+				},
+				{
+					"type": "bool",
+					"name": "shrink_height",
+					"setter": "set_shrink_height",
+					"getter": "get_shrink_height"
+				},
+				{
+					"type": "bool",
+					"name": "shrink_width",
+					"setter": "set_shrink_width",
+					"getter": "get_shrink_width"
 				},
 				{
 					"type": "int",
