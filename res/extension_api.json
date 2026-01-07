@@ -153747,6 +153747,56 @@
 							"value": 7
 						}
 					]
+				},
+				{
+					"name": "DockSlot",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "DOCK_SLOT_NONE",
+							"value": -1
+						},
+						{
+							"name": "DOCK_SLOT_LEFT_UL",
+							"value": 0
+						},
+						{
+							"name": "DOCK_SLOT_LEFT_BL",
+							"value": 1
+						},
+						{
+							"name": "DOCK_SLOT_LEFT_UR",
+							"value": 2
+						},
+						{
+							"name": "DOCK_SLOT_LEFT_BR",
+							"value": 3
+						},
+						{
+							"name": "DOCK_SLOT_RIGHT_UL",
+							"value": 4
+						},
+						{
+							"name": "DOCK_SLOT_RIGHT_BL",
+							"value": 5
+						},
+						{
+							"name": "DOCK_SLOT_RIGHT_UR",
+							"value": 6
+						},
+						{
+							"name": "DOCK_SLOT_RIGHT_BR",
+							"value": 7
+						},
+						{
+							"name": "DOCK_SLOT_BOTTOM",
+							"value": 8
+						},
+						{
+							"name": "DOCK_SLOT_MAX",
+							"value": 9
+						}
+					]
 				}
 			],
 			"methods": [
@@ -154084,11 +154134,11 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 543848026,
+					"hash": 4142995464,
 					"arguments": [
 						{
 							"name": "slot",
-							"type": "enum::EditorPlugin.DockSlot"
+							"type": "enum::EditorDock.DockSlot"
 						}
 					]
 				},
@@ -154098,9 +154148,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 4189888328,
+					"hash": 3298961740,
 					"return_value": {
-						"type": "enum::EditorPlugin.DockSlot"
+						"type": "enum::EditorDock.DockSlot"
 					}
 				},
 				{
