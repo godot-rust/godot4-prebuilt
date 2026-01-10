@@ -49,8 +49,8 @@ pub const fn load_gdextension_json() -> CowStr {
 pub fn get_package_property(key: &str) -> Option<CowStr> {
     let value = match key {
         "godot_version_string" => Cow::Borrowed(GODOT_VERSION_STRING),
-        "rust_version_string" => Cow::Borrowed("1.90.0"),
-        "bindgen_version_string" => Cow::Borrowed("0.71.1"),
+        "rust_version_string" => Cow::Borrowed("1.92.0"),
+        "bindgen_version_string" => Cow::Borrowed("0.72.1"),
         _ => return None,
     };
 
