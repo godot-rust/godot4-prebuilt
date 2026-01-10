@@ -21,12 +21,29 @@ pub type CowStr = Cow<'static, str>;
 /// not published).
 pub const GODOT_VERSION_STRING: &str = "4.2";
 
+/// Target platform for which the GDExtension interface is generated.
+///
+/// Since the `gdextension-api` crate is typically used as a build dependency, it won't have compile-time access to the build target
+/// (only runtime via `CARGO_CFG_TARGET_*` env vars). For more flexibility and testing, this choice is delegated to the caller.
+///
+/// See [`load_gdextension_header_rs_for_platform()`] for usage.
+#[non_exhaustive]
+pub enum TargetPlatform {
+    Windows,
+    /// Includes iOS.
+    MacOS,
+    /// Includes other Unix-like systems such as BSD and Android.
+    Linux,
+    Wasm,
+}
+
 /// Returns the contents of the header file `gdextension_interface.h`.
 pub const fn load_gdextension_header_h() -> CowStr {
     CowStr::Borrowed(include_str!("../../4.2/res/gdextension_interface.h"))
 }
 
 /// Returns the contents of the header file `gdextension_interface.rs`, generated for the corresponding platform.
+#[deprecated = "Wrongly dispatches based on host and doesn't support Wasm. Use load_gdextension_header_rs_for_platform() instead."]
 pub const fn load_gdextension_header_rs() -> CowStr {
     #[cfg(windows)]
     let s = include_str!("../../4.2/res/gdextension_interface_windows.rs");
@@ -36,6 +53,18 @@ pub const fn load_gdextension_header_rs() -> CowStr {
 
     #[cfg(all(unix, not(target_os = "macos")))]
     let s = include_str!("../../4.2/res/gdextension_interface_linux.rs");
+
+    CowStr::Borrowed(s)
+}
+
+/// Returns the contents of the header file `gdextension_interface.rs`, generated for the corresponding platform.
+pub fn load_gdextension_header_rs_for_platform(platform: TargetPlatform) -> CowStr {
+    let s = match platform {
+        TargetPlatform::Windows => include_str!("../../4.2/res/gdextension_interface_windows.rs"),
+        TargetPlatform::MacOS => include_str!("../../4.2/res/gdextension_interface_macos.rs"),
+        TargetPlatform::Linux => include_str!("../../4.2/res/gdextension_interface_linux.rs"),
+        TargetPlatform::Wasm => include_str!("../../4.2/res/gdextension_interface_wasm.rs"),
+    };
 
     CowStr::Borrowed(s)
 }
