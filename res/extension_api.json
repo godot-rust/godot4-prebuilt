@@ -111699,182 +111699,6 @@
 			]
 		},
 		{
-			"name": "GLTFSkeleton",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "get_joints",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 969006518,
-					"return_value": {
-						"type": "PackedInt32Array"
-					}
-				},
-				{
-					"name": "set_joints",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3614634198,
-					"arguments": [
-						{
-							"name": "joints",
-							"type": "PackedInt32Array"
-						}
-					]
-				},
-				{
-					"name": "get_roots",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 969006518,
-					"return_value": {
-						"type": "PackedInt32Array"
-					}
-				},
-				{
-					"name": "set_roots",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3614634198,
-					"arguments": [
-						{
-							"name": "roots",
-							"type": "PackedInt32Array"
-						}
-					]
-				},
-				{
-					"name": "get_godot_skeleton",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1814733083,
-					"return_value": {
-						"type": "Skeleton3D"
-					}
-				},
-				{
-					"name": "get_unique_names",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2915620761,
-					"return_value": {
-						"type": "typedarray::String"
-					}
-				},
-				{
-					"name": "set_unique_names",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 381264803,
-					"arguments": [
-						{
-							"name": "unique_names",
-							"type": "typedarray::String"
-						}
-					]
-				},
-				{
-					"name": "get_godot_bone_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2382534195,
-					"return_value": {
-						"type": "Dictionary"
-					}
-				},
-				{
-					"name": "set_godot_bone_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4155329257,
-					"arguments": [
-						{
-							"name": "godot_bone_node",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
-					"name": "get_bone_attachment_count",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2455072627,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "get_bone_attachment",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 945440495,
-					"return_value": {
-						"type": "BoneAttachment3D"
-					},
-					"arguments": [
-						{
-							"name": "idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "PackedInt32Array",
-					"name": "joints",
-					"setter": "set_joints",
-					"getter": "get_joints"
-				},
-				{
-					"type": "PackedInt32Array",
-					"name": "roots",
-					"setter": "set_roots",
-					"getter": "get_roots"
-				},
-				{
-					"type": "Array",
-					"name": "unique_names",
-					"setter": "set_unique_names",
-					"getter": "get_unique_names"
-				},
-				{
-					"type": "Dictionary",
-					"name": "godot_bone_node",
-					"setter": "set_godot_bone_node",
-					"getter": "get_godot_bone_node"
-				}
-			]
-		},
-		{
 			"name": "GLTFPhysicsShape",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -167341,6 +167165,182 @@
 					"name": "godot_skin",
 					"setter": "set_godot_skin",
 					"getter": "get_godot_skin"
+				}
+			]
+		},
+		{
+			"name": "GLTFSkeleton",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_joints",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 969006518,
+					"return_value": {
+						"type": "PackedInt32Array"
+					}
+				},
+				{
+					"name": "set_joints",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3614634198,
+					"arguments": [
+						{
+							"name": "joints",
+							"type": "PackedInt32Array"
+						}
+					]
+				},
+				{
+					"name": "get_roots",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 969006518,
+					"return_value": {
+						"type": "PackedInt32Array"
+					}
+				},
+				{
+					"name": "set_roots",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3614634198,
+					"arguments": [
+						{
+							"name": "roots",
+							"type": "PackedInt32Array"
+						}
+					]
+				},
+				{
+					"name": "get_godot_skeleton",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1814733083,
+					"return_value": {
+						"type": "Skeleton3D"
+					}
+				},
+				{
+					"name": "get_unique_names",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2915620761,
+					"return_value": {
+						"type": "typedarray::String"
+					}
+				},
+				{
+					"name": "set_unique_names",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "unique_names",
+							"type": "typedarray::String"
+						}
+					]
+				},
+				{
+					"name": "get_godot_bone_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2382534195,
+					"return_value": {
+						"type": "Dictionary"
+					}
+				},
+				{
+					"name": "set_godot_bone_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155329257,
+					"arguments": [
+						{
+							"name": "godot_bone_node",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "get_bone_attachment_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_bone_attachment",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 945440495,
+					"return_value": {
+						"type": "BoneAttachment3D"
+					},
+					"arguments": [
+						{
+							"name": "idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "PackedInt32Array",
+					"name": "joints",
+					"setter": "set_joints",
+					"getter": "get_joints"
+				},
+				{
+					"type": "PackedInt32Array",
+					"name": "roots",
+					"setter": "set_roots",
+					"getter": "get_roots"
+				},
+				{
+					"type": "Array",
+					"name": "unique_names",
+					"setter": "set_unique_names",
+					"getter": "get_unique_names"
+				},
+				{
+					"type": "Dictionary",
+					"name": "godot_bone_node",
+					"setter": "set_godot_bone_node",
+					"getter": "get_godot_bone_node"
 				}
 			]
 		},
