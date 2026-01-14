@@ -3,9 +3,9 @@
 		"version_major": 4,
 		"version_minor": 6,
 		"version_patch": 0,
-		"version_status": "beta",
+		"version_status": "rc",
 		"version_build": "custom_build",
-		"version_full_name": "Godot Engine v4.6.beta.custom_build",
+		"version_full_name": "Godot Engine v4.6.rc.custom_build",
 		"precision": "single"
 	},
 	"builtin_class_sizes": [
@@ -290026,10 +290026,7 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3411196907,
-					"return_value": {
-						"type": "bool"
-					},
+					"hash": 2878471219,
 					"arguments": [
 						{
 							"name": "device",
