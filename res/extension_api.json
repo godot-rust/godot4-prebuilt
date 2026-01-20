@@ -153457,6 +153457,9 @@
 			"signals": [
 				{
 					"name": "settings_changed"
+				},
+				{
+					"name": "_favorites_changed"
 				}
 			]
 		},
