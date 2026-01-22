@@ -153457,9 +153457,6 @@
 			"signals": [
 				{
 					"name": "settings_changed"
-				},
-				{
-					"name": "_favorites_changed"
 				}
 			]
 		},
@@ -154009,9 +154006,6 @@
 			"signals": [
 				{
 					"name": "closed"
-				},
-				{
-					"name": "_tab_style_changed"
 				}
 			],
 			"properties": [
