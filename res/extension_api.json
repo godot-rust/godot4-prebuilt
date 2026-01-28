@@ -40031,6 +40031,31 @@
 							"type": "Rect2"
 						}
 					]
+				},
+				{
+					"name": "set_accessibility_region",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "region",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_accessibility_region",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"signals": [
@@ -40039,6 +40064,14 @@
 				},
 				{
 					"name": "sort_children"
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "accessibility_region",
+					"setter": "set_accessibility_region",
+					"getter": "is_accessibility_region"
 				}
 			]
 		},
@@ -47089,714 +47122,590 @@
 			]
 		},
 		{
-			"name": "SkeletonModification2DFABRIK",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "SkeletonModification2D",
+			"name": "Viewport",
+			"is_refcounted": false,
+			"is_instantiable": false,
+			"inherits": "Node",
 			"api_type": "core",
-			"methods": [
+			"enums": [
 				{
-					"name": "set_target_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1348162250,
-					"arguments": [
+					"name": "PositionalShadowAtlasQuadrantSubdiv",
+					"is_bitfield": false,
+					"values": [
 						{
-							"name": "target_nodepath",
-							"type": "NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_target_node",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4075236667,
-					"return_value": {
-						"type": "NodePath"
-					}
-				},
-				{
-					"name": "set_fabrik_data_chain_length",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "length",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_fabrik_data_chain_length",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2455072627,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_fabrik_joint_bone2d_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2761262315,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
+							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_DISABLED",
+							"value": 0
 						},
 						{
-							"name": "bone2d_nodepath",
-							"type": "NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_fabrik_joint_bone2d_node",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 408788394,
-					"return_value": {
-						"type": "NodePath"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_fabrik_joint_bone_index",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3937882851,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
+							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_1",
+							"value": 1
 						},
 						{
-							"name": "bone_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_fabrik_joint_bone_index",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 923996154,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_fabrik_joint_magnet_position",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 163021252,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
+							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_4",
+							"value": 2
 						},
 						{
-							"name": "magnet_position",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_fabrik_joint_magnet_position",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2299179447,
-					"return_value": {
-						"type": "Vector2"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_fabrik_joint_use_target_rotation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 300928843,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
+							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_16",
+							"value": 3
 						},
 						{
-							"name": "use_target_rotation",
-							"type": "bool"
+							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_64",
+							"value": 4
+						},
+						{
+							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_256",
+							"value": 5
+						},
+						{
+							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_1024",
+							"value": 6
+						},
+						{
+							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_MAX",
+							"value": 7
 						}
 					]
 				},
 				{
-					"name": "get_fabrik_joint_use_target_rotation",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1116898809,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
+					"name": "Scaling3DMode",
+					"is_bitfield": false,
+					"values": [
 						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
+							"name": "SCALING_3D_MODE_BILINEAR",
+							"value": 0
+						},
+						{
+							"name": "SCALING_3D_MODE_FSR",
+							"value": 1
+						},
+						{
+							"name": "SCALING_3D_MODE_FSR2",
+							"value": 2
+						},
+						{
+							"name": "SCALING_3D_MODE_METALFX_SPATIAL",
+							"value": 3
+						},
+						{
+							"name": "SCALING_3D_MODE_METALFX_TEMPORAL",
+							"value": 4
+						},
+						{
+							"name": "SCALING_3D_MODE_MAX",
+							"value": 5
+						}
+					]
+				},
+				{
+					"name": "MSAA",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "MSAA_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "MSAA_2X",
+							"value": 1
+						},
+						{
+							"name": "MSAA_4X",
+							"value": 2
+						},
+						{
+							"name": "MSAA_8X",
+							"value": 3
+						},
+						{
+							"name": "MSAA_MAX",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "AnisotropicFiltering",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ANISOTROPY_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "ANISOTROPY_2X",
+							"value": 1
+						},
+						{
+							"name": "ANISOTROPY_4X",
+							"value": 2
+						},
+						{
+							"name": "ANISOTROPY_8X",
+							"value": 3
+						},
+						{
+							"name": "ANISOTROPY_16X",
+							"value": 4
+						},
+						{
+							"name": "ANISOTROPY_MAX",
+							"value": 5
+						}
+					]
+				},
+				{
+					"name": "ScreenSpaceAA",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SCREEN_SPACE_AA_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "SCREEN_SPACE_AA_FXAA",
+							"value": 1
+						},
+						{
+							"name": "SCREEN_SPACE_AA_SMAA",
+							"value": 2
+						},
+						{
+							"name": "SCREEN_SPACE_AA_MAX",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "RenderInfo",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "RENDER_INFO_OBJECTS_IN_FRAME",
+							"value": 0
+						},
+						{
+							"name": "RENDER_INFO_PRIMITIVES_IN_FRAME",
+							"value": 1
+						},
+						{
+							"name": "RENDER_INFO_DRAW_CALLS_IN_FRAME",
+							"value": 2
+						},
+						{
+							"name": "RENDER_INFO_MAX",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "RenderInfoType",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "RENDER_INFO_TYPE_VISIBLE",
+							"value": 0
+						},
+						{
+							"name": "RENDER_INFO_TYPE_SHADOW",
+							"value": 1
+						},
+						{
+							"name": "RENDER_INFO_TYPE_CANVAS",
+							"value": 2
+						},
+						{
+							"name": "RENDER_INFO_TYPE_MAX",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "DebugDraw",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "DEBUG_DRAW_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "DEBUG_DRAW_UNSHADED",
+							"value": 1
+						},
+						{
+							"name": "DEBUG_DRAW_LIGHTING",
+							"value": 2
+						},
+						{
+							"name": "DEBUG_DRAW_OVERDRAW",
+							"value": 3
+						},
+						{
+							"name": "DEBUG_DRAW_WIREFRAME",
+							"value": 4
+						},
+						{
+							"name": "DEBUG_DRAW_NORMAL_BUFFER",
+							"value": 5
+						},
+						{
+							"name": "DEBUG_DRAW_VOXEL_GI_ALBEDO",
+							"value": 6
+						},
+						{
+							"name": "DEBUG_DRAW_VOXEL_GI_LIGHTING",
+							"value": 7
+						},
+						{
+							"name": "DEBUG_DRAW_VOXEL_GI_EMISSION",
+							"value": 8
+						},
+						{
+							"name": "DEBUG_DRAW_SHADOW_ATLAS",
+							"value": 9
+						},
+						{
+							"name": "DEBUG_DRAW_DIRECTIONAL_SHADOW_ATLAS",
+							"value": 10
+						},
+						{
+							"name": "DEBUG_DRAW_SCENE_LUMINANCE",
+							"value": 11
+						},
+						{
+							"name": "DEBUG_DRAW_SSAO",
+							"value": 12
+						},
+						{
+							"name": "DEBUG_DRAW_SSIL",
+							"value": 13
+						},
+						{
+							"name": "DEBUG_DRAW_PSSM_SPLITS",
+							"value": 14
+						},
+						{
+							"name": "DEBUG_DRAW_DECAL_ATLAS",
+							"value": 15
+						},
+						{
+							"name": "DEBUG_DRAW_SDFGI",
+							"value": 16
+						},
+						{
+							"name": "DEBUG_DRAW_SDFGI_PROBES",
+							"value": 17
+						},
+						{
+							"name": "DEBUG_DRAW_GI_BUFFER",
+							"value": 18
+						},
+						{
+							"name": "DEBUG_DRAW_DISABLE_LOD",
+							"value": 19
+						},
+						{
+							"name": "DEBUG_DRAW_CLUSTER_OMNI_LIGHTS",
+							"value": 20
+						},
+						{
+							"name": "DEBUG_DRAW_CLUSTER_SPOT_LIGHTS",
+							"value": 21
+						},
+						{
+							"name": "DEBUG_DRAW_CLUSTER_DECALS",
+							"value": 22
+						},
+						{
+							"name": "DEBUG_DRAW_CLUSTER_REFLECTION_PROBES",
+							"value": 23
+						},
+						{
+							"name": "DEBUG_DRAW_OCCLUDERS",
+							"value": 24
+						},
+						{
+							"name": "DEBUG_DRAW_MOTION_VECTORS",
+							"value": 25
+						},
+						{
+							"name": "DEBUG_DRAW_INTERNAL_BUFFER",
+							"value": 26
+						}
+					]
+				},
+				{
+					"name": "DefaultCanvasItemTextureFilter",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST",
+							"value": 0
+						},
+						{
+							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_LINEAR",
+							"value": 1
+						},
+						{
+							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS",
+							"value": 2
+						},
+						{
+							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS",
+							"value": 3
+						},
+						{
+							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_MAX",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "DefaultCanvasItemTextureRepeat",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_ENABLED",
+							"value": 1
+						},
+						{
+							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MIRROR",
+							"value": 2
+						},
+						{
+							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MAX",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "SDFOversize",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SDF_OVERSIZE_100_PERCENT",
+							"value": 0
+						},
+						{
+							"name": "SDF_OVERSIZE_120_PERCENT",
+							"value": 1
+						},
+						{
+							"name": "SDF_OVERSIZE_150_PERCENT",
+							"value": 2
+						},
+						{
+							"name": "SDF_OVERSIZE_200_PERCENT",
+							"value": 3
+						},
+						{
+							"name": "SDF_OVERSIZE_MAX",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "SDFScale",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SDF_SCALE_100_PERCENT",
+							"value": 0
+						},
+						{
+							"name": "SDF_SCALE_50_PERCENT",
+							"value": 1
+						},
+						{
+							"name": "SDF_SCALE_25_PERCENT",
+							"value": 2
+						},
+						{
+							"name": "SDF_SCALE_MAX",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "VRSMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "VRS_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "VRS_TEXTURE",
+							"value": 1
+						},
+						{
+							"name": "VRS_XR",
+							"value": 2
+						},
+						{
+							"name": "VRS_MAX",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "VRSUpdateMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "VRS_UPDATE_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "VRS_UPDATE_ONCE",
+							"value": 1
+						},
+						{
+							"name": "VRS_UPDATE_ALWAYS",
+							"value": 2
+						},
+						{
+							"name": "VRS_UPDATE_MAX",
+							"value": 3
 						}
 					]
 				}
 			],
-			"properties": [
-				{
-					"type": "NodePath",
-					"name": "target_nodepath",
-					"setter": "set_target_node",
-					"getter": "get_target_node"
-				},
-				{
-					"type": "int",
-					"name": "fabrik_data_chain_length",
-					"setter": "set_fabrik_data_chain_length",
-					"getter": "get_fabrik_data_chain_length"
-				}
-			]
-		},
-		{
-			"name": "SkeletonModification2DCCDIK",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "SkeletonModification2D",
-			"api_type": "core",
 			"methods": [
 				{
-					"name": "set_target_node",
+					"name": "set_world_2d",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1348162250,
+					"hash": 2736080068,
 					"arguments": [
 						{
-							"name": "target_nodepath",
-							"type": "NodePath"
+							"name": "world_2d",
+							"type": "World2D"
 						}
 					]
 				},
 				{
-					"name": "get_target_node",
+					"name": "get_world_2d",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 4075236667,
+					"hash": 2339128592,
 					"return_value": {
-						"type": "NodePath"
+						"type": "World2D"
 					}
 				},
 				{
-					"name": "set_tip_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1348162250,
-					"arguments": [
-						{
-							"name": "tip_nodepath",
-							"type": "NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_tip_node",
+					"name": "find_world_2d",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 4075236667,
+					"hash": 2339128592,
 					"return_value": {
-						"type": "NodePath"
+						"type": "World2D"
 					}
 				},
 				{
-					"name": "set_ccdik_data_chain_length",
+					"name": "set_canvas_transform",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1286410249,
+					"hash": 2761652528,
 					"arguments": [
 						{
-							"name": "length",
-							"type": "int",
-							"meta": "int32"
+							"name": "xform",
+							"type": "Transform2D"
 						}
 					]
 				},
 				{
-					"name": "get_ccdik_data_chain_length",
-					"is_const": false,
+					"name": "get_canvas_transform",
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2455072627,
+					"hash": 3814499831,
 					"return_value": {
-						"type": "int",
-						"meta": "int32"
+						"type": "Transform2D"
 					}
 				},
 				{
-					"name": "set_ccdik_joint_bone2d_node",
+					"name": "set_global_canvas_transform",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2761262315,
+					"hash": 2761652528,
 					"arguments": [
 						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "bone2d_nodepath",
-							"type": "NodePath"
+							"name": "xform",
+							"type": "Transform2D"
 						}
 					]
 				},
 				{
-					"name": "get_ccdik_joint_bone2d_node",
+					"name": "get_global_canvas_transform",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 408788394,
+					"hash": 3814499831,
 					"return_value": {
-						"type": "NodePath"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_ccdik_joint_bone_index",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3937882851,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "bone_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_ccdik_joint_bone_index",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 923996154,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_ccdik_joint_rotate_from_joint",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 300928843,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "rotate_from_joint",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_ccdik_joint_rotate_from_joint",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1116898809,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_ccdik_joint_enable_constraint",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 300928843,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "enable_constraint",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_ccdik_joint_enable_constraint",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1116898809,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_ccdik_joint_constraint_angle_min",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1602489585,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "angle_min",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_ccdik_joint_constraint_angle_min",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2339986948,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_ccdik_joint_constraint_angle_max",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1602489585,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "angle_max",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_ccdik_joint_constraint_angle_max",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2339986948,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_ccdik_joint_constraint_angle_invert",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 300928843,
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "invert",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_ccdik_joint_constraint_angle_invert",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1116898809,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "joint_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "NodePath",
-					"name": "target_nodepath",
-					"setter": "set_target_node",
-					"getter": "get_target_node"
-				},
-				{
-					"type": "NodePath",
-					"name": "tip_nodepath",
-					"setter": "set_tip_node",
-					"getter": "get_tip_node"
-				},
-				{
-					"type": "int",
-					"name": "ccdik_data_chain_length",
-					"setter": "set_ccdik_data_chain_length",
-					"getter": "get_ccdik_data_chain_length"
-				}
-			]
-		},
-		{
-			"name": "SkeletonModification2DLookAt",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "SkeletonModification2D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_bone2d_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1348162250,
-					"arguments": [
-						{
-							"name": "bone2d_nodepath",
-							"type": "NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_bone2d_node",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4075236667,
-					"return_value": {
-						"type": "NodePath"
+						"type": "Transform2D"
 					}
 				},
 				{
-					"name": "set_bone_index",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "bone_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_bone_index",
+					"name": "get_stretch_transform",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3905245786,
+					"hash": 3814499831,
 					"return_value": {
-						"type": "int",
-						"meta": "int32"
+						"type": "Transform2D"
 					}
 				},
 				{
-					"name": "set_target_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1348162250,
-					"arguments": [
-						{
-							"name": "target_nodepath",
-							"type": "NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_target_node",
+					"name": "get_final_transform",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 4075236667,
+					"hash": 3814499831,
 					"return_value": {
-						"type": "NodePath"
+						"type": "Transform2D"
 					}
 				},
 				{
-					"name": "set_additional_rotation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "rotation",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_additional_rotation",
+					"name": "get_screen_transform",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1740695150,
+					"hash": 3814499831,
 					"return_value": {
-						"type": "float",
-						"meta": "float"
+						"type": "Transform2D"
 					}
 				},
 				{
-					"name": "set_enable_constraint",
+					"name": "get_visible_rect",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1639390495,
+					"return_value": {
+						"type": "Rect2"
+					}
+				},
+				{
+					"name": "set_transparent_background",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -47804,13 +47713,13 @@
 					"hash": 2586408642,
 					"arguments": [
 						{
-							"name": "enable_constraint",
+							"name": "enable",
 							"type": "bool"
 						}
 					]
 				},
 				{
-					"name": "get_enable_constraint",
+					"name": "has_transparent_background",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -47821,61 +47730,7 @@
 					}
 				},
 				{
-					"name": "set_constraint_angle_min",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "angle_min",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_constraint_angle_min",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_constraint_angle_max",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "angle_max",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_constraint_angle_max",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_constraint_angle_invert",
+					"name": "set_use_hdr_2d",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -47883,13 +47738,13 @@
 					"hash": 2586408642,
 					"arguments": [
 						{
-							"name": "invert",
+							"name": "enable",
 							"type": "bool"
 						}
 					]
 				},
 				{
-					"name": "get_constraint_angle_invert",
+					"name": "is_using_hdr_2d",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -47898,78 +47753,84 @@
 					"return_value": {
 						"type": "bool"
 					}
-				}
-			],
-			"properties": [
-				{
-					"type": "int",
-					"name": "bone_index",
-					"setter": "set_bone_index",
-					"getter": "get_bone_index"
 				},
 				{
-					"type": "NodePath",
-					"name": "bone2d_node",
-					"setter": "set_bone2d_node",
-					"getter": "get_bone2d_node"
-				},
-				{
-					"type": "NodePath",
-					"name": "target_nodepath",
-					"setter": "set_target_node",
-					"getter": "get_target_node"
-				}
-			]
-		},
-		{
-			"name": "SkeletonModification2D",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "_execute",
+					"name": "set_msaa_2d",
 					"is_const": false,
-					"is_static": false,
-					"is_required": false,
 					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 373806689,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3330258708,
 					"arguments": [
 						{
-							"name": "delta",
-							"type": "float",
-							"meta": "double"
+							"name": "msaa",
+							"type": "enum::Viewport.MSAA"
 						}
 					]
 				},
 				{
-					"name": "_setup_modification",
-					"is_const": false,
-					"is_static": false,
-					"is_required": false,
+					"name": "get_msaa_2d",
+					"is_const": true,
 					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 3907307132,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2542055527,
+					"return_value": {
+						"type": "enum::Viewport.MSAA"
+					}
+				},
+				{
+					"name": "set_msaa_3d",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3330258708,
 					"arguments": [
 						{
-							"name": "modification_stack",
-							"type": "SkeletonModificationStack2D"
+							"name": "msaa",
+							"type": "enum::Viewport.MSAA"
 						}
 					]
 				},
 				{
-					"name": "_draw_editor_gizmo",
-					"is_const": false,
-					"is_static": false,
-					"is_required": false,
+					"name": "get_msaa_3d",
+					"is_const": true,
 					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 3218959716
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2542055527,
+					"return_value": {
+						"type": "enum::Viewport.MSAA"
+					}
 				},
 				{
-					"name": "set_enabled",
+					"name": "set_screen_space_aa",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3544169389,
+					"arguments": [
+						{
+							"name": "screen_space_aa",
+							"type": "enum::Viewport.ScreenSpaceAA"
+						}
+					]
+				},
+				{
+					"name": "get_screen_space_aa",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1390814124,
+					"return_value": {
+						"type": "enum::Viewport.ScreenSpaceAA"
+					}
+				},
+				{
+					"name": "set_use_taa",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -47977,13 +47838,210 @@
 					"hash": 2586408642,
 					"arguments": [
 						{
-							"name": "enabled",
+							"name": "enable",
 							"type": "bool"
 						}
 					]
 				},
 				{
-					"name": "get_enabled",
+					"name": "is_using_taa",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_use_debanding",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_debanding",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_use_occlusion_culling",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_occlusion_culling",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_debug_draw",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1970246205,
+					"arguments": [
+						{
+							"name": "debug_draw",
+							"type": "enum::Viewport.DebugDraw"
+						}
+					]
+				},
+				{
+					"name": "get_debug_draw",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 579191299,
+					"return_value": {
+						"type": "enum::Viewport.DebugDraw"
+					}
+				},
+				{
+					"name": "set_use_oversampling",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_oversampling",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_oversampling_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "oversampling",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_oversampling_override",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_oversampling",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_render_info",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 481977019,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "type",
+							"type": "enum::Viewport.RenderInfoType"
+						},
+						{
+							"name": "info",
+							"type": "enum::Viewport.RenderInfo"
+						}
+					]
+				},
+				{
+					"name": "get_texture",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1746695840,
+					"return_value": {
+						"type": "ViewportTexture"
+					}
+				},
+				{
+					"name": "set_physics_object_picking",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_physics_object_picking",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -47994,18 +48052,7 @@
 					}
 				},
 				{
-					"name": "get_modification_stack",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2137761694,
-					"return_value": {
-						"type": "SkeletonModificationStack2D"
-					}
-				},
-				{
-					"name": "set_is_setup",
+					"name": "set_physics_object_picking_sort",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -48013,84 +48060,24 @@
 					"hash": 2586408642,
 					"arguments": [
 						{
-							"name": "is_setup",
+							"name": "enable",
 							"type": "bool"
 						}
 					]
 				},
 				{
-					"name": "get_is_setup",
-					"is_const": true,
+					"name": "get_physics_object_picking_sort",
+					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 36873697,
+					"hash": 2240911060,
 					"return_value": {
 						"type": "bool"
 					}
 				},
 				{
-					"name": "set_execution_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "execution_mode",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_execution_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "clamp_angle",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1229502682,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					},
-					"arguments": [
-						{
-							"name": "angle",
-							"type": "float",
-							"meta": "float"
-						},
-						{
-							"name": "min",
-							"type": "float",
-							"meta": "float"
-						},
-						{
-							"name": "max",
-							"type": "float",
-							"meta": "float"
-						},
-						{
-							"name": "invert",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "set_editor_draw_gizmo",
+					"name": "set_physics_object_picking_first_only",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -48098,47 +48085,89 @@
 					"hash": 2586408642,
 					"arguments": [
 						{
-							"name": "draw_gizmo",
+							"name": "enable",
 							"type": "bool"
 						}
 					]
 				},
 				{
-					"name": "get_editor_draw_gizmo",
+					"name": "get_physics_object_picking_first_only",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_viewport_rid",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 36873697,
+					"hash": 2944877500,
 					"return_value": {
-						"type": "bool"
+						"type": "RID"
 					}
-				}
-			],
-			"properties": [
-				{
-					"type": "bool",
-					"name": "enabled",
-					"setter": "set_enabled",
-					"getter": "get_enabled"
 				},
 				{
-					"type": "int",
-					"name": "execution_mode",
-					"setter": "set_execution_mode",
-					"getter": "get_execution_mode"
-				}
-			]
-		},
-		{
-			"name": "SkeletonModificationStack2D",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
+					"name": "push_text_input",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "text",
+							"type": "String"
+						}
+					]
+				},
 				{
-					"name": "setup",
+					"name": "push_input",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3644664830,
+					"arguments": [
+						{
+							"name": "event",
+							"type": "InputEvent",
+							"meta": "required"
+						},
+						{
+							"name": "in_local_coords",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "push_unhandled_input",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3644664830,
+					"arguments": [
+						{
+							"name": "event",
+							"type": "InputEvent",
+							"meta": "required"
+						},
+						{
+							"name": "in_local_coords",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "notify_mouse_entered",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -48146,27 +48175,144 @@
 					"hash": 3218959716
 				},
 				{
-					"name": "execute",
+					"name": "notify_mouse_exited",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1005356550,
+					"hash": 3218959716
+				},
+				{
+					"name": "get_mouse_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "warp_mouse",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
 					"arguments": [
 						{
-							"name": "delta",
-							"type": "float",
-							"meta": "float"
-						},
-						{
-							"name": "execution_mode",
-							"type": "int",
-							"meta": "int32"
+							"name": "position",
+							"type": "Vector2"
 						}
 					]
 				},
 				{
-					"name": "enable_all_modifications",
+					"name": "update_mouse_cursor_state",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "gui_cancel_drag",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "gui_get_drag_data",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1214101251,
+					"return_value": {
+						"type": "Variant"
+					}
+				},
+				{
+					"name": "gui_get_drag_description",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "gui_set_drag_description",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "description",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "gui_is_dragging",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "gui_is_drag_successful",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "gui_release_focus",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "gui_get_focus_owner",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2783021301,
+					"return_value": {
+						"type": "Control"
+					}
+				},
+				{
+					"name": "gui_get_hovered_control",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2783021301,
+					"return_value": {
+						"type": "Control"
+					}
+				},
+				{
+					"name": "set_disable_input",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -48174,45 +48320,24 @@
 					"hash": 2586408642,
 					"arguments": [
 						{
-							"name": "enabled",
+							"name": "disable",
 							"type": "bool"
 						}
 					]
 				},
 				{
-					"name": "get_modification",
+					"name": "is_input_disabled",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2570274329,
+					"hash": 36873697,
 					"return_value": {
-						"type": "SkeletonModification2D"
-					},
-					"arguments": [
-						{
-							"name": "mod_idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
+						"type": "bool"
+					}
 				},
 				{
-					"name": "add_modification",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 354162120,
-					"arguments": [
-						{
-							"name": "modification",
-							"type": "SkeletonModification2D"
-						}
-					]
-				},
-				{
-					"name": "delete_modification",
+					"name": "set_positional_shadow_atlas_size",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -48220,48 +48345,14 @@
 					"hash": 1286410249,
 					"arguments": [
 						{
-							"name": "mod_idx",
+							"name": "size",
 							"type": "int",
 							"meta": "int32"
 						}
 					]
 				},
 				{
-					"name": "set_modification",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1098262544,
-					"arguments": [
-						{
-							"name": "mod_idx",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "modification",
-							"type": "SkeletonModification2D"
-						}
-					]
-				},
-				{
-					"name": "set_modification_count",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "count",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_modification_count",
+					"name": "get_positional_shadow_atlas_size",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -48273,7 +48364,21 @@
 					}
 				},
 				{
-					"name": "get_is_setup",
+					"name": "set_positional_shadow_atlas_16_bits",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_positional_shadow_atlas_16_bits",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -48284,7 +48389,7 @@
 					}
 				},
 				{
-					"name": "set_enabled",
+					"name": "set_snap_controls_to_pixels",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -48298,7 +48403,7 @@
 					]
 				},
 				{
-					"name": "get_enabled",
+					"name": "is_snap_controls_to_pixels_enabled",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -48309,7 +48414,365 @@
 					}
 				},
 				{
-					"name": "set_strength",
+					"name": "set_snap_2d_transforms_to_pixel",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_snap_2d_transforms_to_pixel_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_snap_2d_vertices_to_pixel",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_snap_2d_vertices_to_pixel_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_positional_shadow_atlas_quadrant_subdiv",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2596956071,
+					"arguments": [
+						{
+							"name": "quadrant",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "subdiv",
+							"type": "enum::Viewport.PositionalShadowAtlasQuadrantSubdiv"
+						}
+					]
+				},
+				{
+					"name": "get_positional_shadow_atlas_quadrant_subdiv",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2676778355,
+					"return_value": {
+						"type": "enum::Viewport.PositionalShadowAtlasQuadrantSubdiv"
+					},
+					"arguments": [
+						{
+							"name": "quadrant",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_input_as_handled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "is_input_handled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_handle_input_locally",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_handling_input_locally",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_default_canvas_item_texture_filter",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2815160100,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::Viewport.DefaultCanvasItemTextureFilter"
+						}
+					]
+				},
+				{
+					"name": "get_default_canvas_item_texture_filter",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 896601198,
+					"return_value": {
+						"type": "enum::Viewport.DefaultCanvasItemTextureFilter"
+					}
+				},
+				{
+					"name": "set_embedding_subwindows",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_embedding_subwindows",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_embedded_subwindows",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::Window"
+					}
+				},
+				{
+					"name": "set_drag_threshold",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "threshold",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_drag_threshold",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_canvas_cull_mask",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "mask",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_canvas_cull_mask",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
+					"name": "set_canvas_cull_mask_bit",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "layer",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_canvas_cull_mask_bit",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "layer",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "set_default_canvas_item_texture_repeat",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1658513413,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::Viewport.DefaultCanvasItemTextureRepeat"
+						}
+					]
+				},
+				{
+					"name": "get_default_canvas_item_texture_repeat",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4049774160,
+					"return_value": {
+						"type": "enum::Viewport.DefaultCanvasItemTextureRepeat"
+					}
+				},
+				{
+					"name": "set_sdf_oversize",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2574159017,
+					"arguments": [
+						{
+							"name": "oversize",
+							"type": "enum::Viewport.SDFOversize"
+						}
+					]
+				},
+				{
+					"name": "get_sdf_oversize",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2631427510,
+					"return_value": {
+						"type": "enum::Viewport.SDFOversize"
+					}
+				},
+				{
+					"name": "set_sdf_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1402773951,
+					"arguments": [
+						{
+							"name": "scale",
+							"type": "enum::Viewport.SDFScale"
+						}
+					]
+				},
+				{
+					"name": "get_sdf_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3162688184,
+					"return_value": {
+						"type": "enum::Viewport.SDFScale"
+					}
+				},
+				{
+					"name": "set_mesh_lod_threshold",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -48317,14 +48780,14 @@
 					"hash": 373806689,
 					"arguments": [
 						{
-							"name": "strength",
+							"name": "pixels",
 							"type": "float",
 							"meta": "float"
 						}
 					]
 				},
 				{
-					"name": "get_strength",
+					"name": "get_mesh_lod_threshold",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -48336,37 +48799,903 @@
 					}
 				},
 				{
-					"name": "get_skeleton",
+					"name": "set_as_audio_listener_2d",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_audio_listener_2d",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1697361217,
+					"hash": 36873697,
 					"return_value": {
-						"type": "Skeleton2D"
+						"type": "bool"
 					}
+				},
+				{
+					"name": "get_audio_listener_2d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1840977180,
+					"return_value": {
+						"type": "AudioListener2D"
+					}
+				},
+				{
+					"name": "get_camera_2d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3551466917,
+					"return_value": {
+						"type": "Camera2D"
+					}
+				},
+				{
+					"name": "set_world_3d",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1400875337,
+					"arguments": [
+						{
+							"name": "world_3d",
+							"type": "World3D"
+						}
+					]
+				},
+				{
+					"name": "get_world_3d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 317588385,
+					"return_value": {
+						"type": "World3D"
+					}
+				},
+				{
+					"name": "find_world_3d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 317588385,
+					"return_value": {
+						"type": "World3D"
+					}
+				},
+				{
+					"name": "set_use_own_world_3d",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_own_world_3d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_audio_listener_3d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3472246991,
+					"return_value": {
+						"type": "AudioListener3D"
+					}
+				},
+				{
+					"name": "get_camera_3d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2285090890,
+					"return_value": {
+						"type": "Camera3D"
+					}
+				},
+				{
+					"name": "set_as_audio_listener_3d",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_audio_listener_3d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_disable_3d",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "disable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_3d_disabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_use_xr",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_xr",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_scaling_3d_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1531597597,
+					"arguments": [
+						{
+							"name": "scaling_3d_mode",
+							"type": "enum::Viewport.Scaling3DMode"
+						}
+					]
+				},
+				{
+					"name": "get_scaling_3d_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2597660574,
+					"return_value": {
+						"type": "enum::Viewport.Scaling3DMode"
+					}
+				},
+				{
+					"name": "set_scaling_3d_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "scale",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_scaling_3d_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_fsr_sharpness",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "fsr_sharpness",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_fsr_sharpness",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_texture_mipmap_bias",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "texture_mipmap_bias",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_texture_mipmap_bias",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_anisotropic_filtering_level",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3445583046,
+					"arguments": [
+						{
+							"name": "anisotropic_filtering_level",
+							"type": "enum::Viewport.AnisotropicFiltering"
+						}
+					]
+				},
+				{
+					"name": "get_anisotropic_filtering_level",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3991528932,
+					"return_value": {
+						"type": "enum::Viewport.AnisotropicFiltering"
+					}
+				},
+				{
+					"name": "set_vrs_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2749867817,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::Viewport.VRSMode"
+						}
+					]
+				},
+				{
+					"name": "get_vrs_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 349660525,
+					"return_value": {
+						"type": "enum::Viewport.VRSMode"
+					}
+				},
+				{
+					"name": "set_vrs_update_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3182412319,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::Viewport.VRSUpdateMode"
+						}
+					]
+				},
+				{
+					"name": "get_vrs_update_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2255951583,
+					"return_value": {
+						"type": "enum::Viewport.VRSUpdateMode"
+					}
+				},
+				{
+					"name": "set_vrs_texture",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "texture",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_vrs_texture",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
+				}
+			],
+			"signals": [
+				{
+					"name": "size_changed"
+				},
+				{
+					"name": "gui_focus_changed",
+					"arguments": [
+						{
+							"name": "node",
+							"type": "Control"
+						}
+					]
 				}
 			],
 			"properties": [
 				{
 					"type": "bool",
-					"name": "enabled",
-					"setter": "set_enabled",
-					"getter": "get_enabled"
+					"name": "disable_3d",
+					"setter": "set_disable_3d",
+					"getter": "is_3d_disabled"
 				},
 				{
-					"type": "float",
-					"name": "strength",
-					"setter": "set_strength",
-					"getter": "get_strength"
+					"type": "bool",
+					"name": "use_xr",
+					"setter": "set_use_xr",
+					"getter": "is_using_xr"
+				},
+				{
+					"type": "bool",
+					"name": "own_world_3d",
+					"setter": "set_use_own_world_3d",
+					"getter": "is_using_own_world_3d"
+				},
+				{
+					"type": "World3D",
+					"name": "world_3d",
+					"setter": "set_world_3d",
+					"getter": "get_world_3d"
+				},
+				{
+					"type": "World2D",
+					"name": "world_2d",
+					"setter": "set_world_2d",
+					"getter": "get_world_2d"
+				},
+				{
+					"type": "bool",
+					"name": "transparent_bg",
+					"setter": "set_transparent_background",
+					"getter": "has_transparent_background"
+				},
+				{
+					"type": "bool",
+					"name": "handle_input_locally",
+					"setter": "set_handle_input_locally",
+					"getter": "is_handling_input_locally"
+				},
+				{
+					"type": "bool",
+					"name": "snap_2d_transforms_to_pixel",
+					"setter": "set_snap_2d_transforms_to_pixel",
+					"getter": "is_snap_2d_transforms_to_pixel_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "snap_2d_vertices_to_pixel",
+					"setter": "set_snap_2d_vertices_to_pixel",
+					"getter": "is_snap_2d_vertices_to_pixel_enabled"
 				},
 				{
 					"type": "int",
-					"name": "modification_count",
-					"setter": "set_modification_count",
-					"getter": "get_modification_count"
+					"name": "msaa_2d",
+					"setter": "set_msaa_2d",
+					"getter": "get_msaa_2d"
+				},
+				{
+					"type": "int",
+					"name": "msaa_3d",
+					"setter": "set_msaa_3d",
+					"getter": "get_msaa_3d"
+				},
+				{
+					"type": "int",
+					"name": "screen_space_aa",
+					"setter": "set_screen_space_aa",
+					"getter": "get_screen_space_aa"
+				},
+				{
+					"type": "bool",
+					"name": "use_taa",
+					"setter": "set_use_taa",
+					"getter": "is_using_taa"
+				},
+				{
+					"type": "bool",
+					"name": "use_debanding",
+					"setter": "set_use_debanding",
+					"getter": "is_using_debanding"
+				},
+				{
+					"type": "bool",
+					"name": "use_occlusion_culling",
+					"setter": "set_use_occlusion_culling",
+					"getter": "is_using_occlusion_culling"
+				},
+				{
+					"type": "float",
+					"name": "mesh_lod_threshold",
+					"setter": "set_mesh_lod_threshold",
+					"getter": "get_mesh_lod_threshold"
+				},
+				{
+					"type": "int",
+					"name": "debug_draw",
+					"setter": "set_debug_draw",
+					"getter": "get_debug_draw"
+				},
+				{
+					"type": "bool",
+					"name": "use_hdr_2d",
+					"setter": "set_use_hdr_2d",
+					"getter": "is_using_hdr_2d"
+				},
+				{
+					"type": "int",
+					"name": "scaling_3d_mode",
+					"setter": "set_scaling_3d_mode",
+					"getter": "get_scaling_3d_mode"
+				},
+				{
+					"type": "float",
+					"name": "scaling_3d_scale",
+					"setter": "set_scaling_3d_scale",
+					"getter": "get_scaling_3d_scale"
+				},
+				{
+					"type": "float",
+					"name": "texture_mipmap_bias",
+					"setter": "set_texture_mipmap_bias",
+					"getter": "get_texture_mipmap_bias"
+				},
+				{
+					"type": "int",
+					"name": "anisotropic_filtering_level",
+					"setter": "set_anisotropic_filtering_level",
+					"getter": "get_anisotropic_filtering_level"
+				},
+				{
+					"type": "float",
+					"name": "fsr_sharpness",
+					"setter": "set_fsr_sharpness",
+					"getter": "get_fsr_sharpness"
+				},
+				{
+					"type": "int",
+					"name": "vrs_mode",
+					"setter": "set_vrs_mode",
+					"getter": "get_vrs_mode"
+				},
+				{
+					"type": "int",
+					"name": "vrs_update_mode",
+					"setter": "set_vrs_update_mode",
+					"getter": "get_vrs_update_mode"
+				},
+				{
+					"type": "Texture2D",
+					"name": "vrs_texture",
+					"setter": "set_vrs_texture",
+					"getter": "get_vrs_texture"
+				},
+				{
+					"type": "int",
+					"name": "canvas_item_default_texture_filter",
+					"setter": "set_default_canvas_item_texture_filter",
+					"getter": "get_default_canvas_item_texture_filter"
+				},
+				{
+					"type": "int",
+					"name": "canvas_item_default_texture_repeat",
+					"setter": "set_default_canvas_item_texture_repeat",
+					"getter": "get_default_canvas_item_texture_repeat"
+				},
+				{
+					"type": "bool",
+					"name": "audio_listener_enable_2d",
+					"setter": "set_as_audio_listener_2d",
+					"getter": "is_audio_listener_2d"
+				},
+				{
+					"type": "bool",
+					"name": "audio_listener_enable_3d",
+					"setter": "set_as_audio_listener_3d",
+					"getter": "is_audio_listener_3d"
+				},
+				{
+					"type": "bool",
+					"name": "physics_object_picking",
+					"setter": "set_physics_object_picking",
+					"getter": "get_physics_object_picking"
+				},
+				{
+					"type": "bool",
+					"name": "physics_object_picking_sort",
+					"setter": "set_physics_object_picking_sort",
+					"getter": "get_physics_object_picking_sort"
+				},
+				{
+					"type": "bool",
+					"name": "physics_object_picking_first_only",
+					"setter": "set_physics_object_picking_first_only",
+					"getter": "get_physics_object_picking_first_only"
+				},
+				{
+					"type": "bool",
+					"name": "gui_disable_input",
+					"setter": "set_disable_input",
+					"getter": "is_input_disabled"
+				},
+				{
+					"type": "bool",
+					"name": "gui_snap_controls_to_pixels",
+					"setter": "set_snap_controls_to_pixels",
+					"getter": "is_snap_controls_to_pixels_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "gui_embed_subwindows",
+					"setter": "set_embedding_subwindows",
+					"getter": "is_embedding_subwindows"
+				},
+				{
+					"type": "int",
+					"name": "gui_drag_threshold",
+					"setter": "set_drag_threshold",
+					"getter": "get_drag_threshold"
+				},
+				{
+					"type": "int",
+					"name": "sdf_oversize",
+					"setter": "set_sdf_oversize",
+					"getter": "get_sdf_oversize"
+				},
+				{
+					"type": "int",
+					"name": "sdf_scale",
+					"setter": "set_sdf_scale",
+					"getter": "get_sdf_scale"
+				},
+				{
+					"type": "int",
+					"name": "positional_shadow_atlas_size",
+					"setter": "set_positional_shadow_atlas_size",
+					"getter": "get_positional_shadow_atlas_size"
+				},
+				{
+					"type": "bool",
+					"name": "positional_shadow_atlas_16_bits",
+					"setter": "set_positional_shadow_atlas_16_bits",
+					"getter": "get_positional_shadow_atlas_16_bits"
+				},
+				{
+					"type": "int",
+					"name": "positional_shadow_atlas_quad_0",
+					"setter": "set_positional_shadow_atlas_quadrant_subdiv",
+					"getter": "get_positional_shadow_atlas_quadrant_subdiv",
+					"index": 0
+				},
+				{
+					"type": "int",
+					"name": "positional_shadow_atlas_quad_1",
+					"setter": "set_positional_shadow_atlas_quadrant_subdiv",
+					"getter": "get_positional_shadow_atlas_quadrant_subdiv",
+					"index": 1
+				},
+				{
+					"type": "int",
+					"name": "positional_shadow_atlas_quad_2",
+					"setter": "set_positional_shadow_atlas_quadrant_subdiv",
+					"getter": "get_positional_shadow_atlas_quadrant_subdiv",
+					"index": 2
+				},
+				{
+					"type": "int",
+					"name": "positional_shadow_atlas_quad_3",
+					"setter": "set_positional_shadow_atlas_quadrant_subdiv",
+					"getter": "get_positional_shadow_atlas_quadrant_subdiv",
+					"index": 3
+				},
+				{
+					"type": "Transform2D",
+					"name": "canvas_transform",
+					"setter": "set_canvas_transform",
+					"getter": "get_canvas_transform"
+				},
+				{
+					"type": "Transform2D",
+					"name": "global_canvas_transform",
+					"setter": "set_global_canvas_transform",
+					"getter": "get_global_canvas_transform"
+				},
+				{
+					"type": "int",
+					"name": "canvas_cull_mask",
+					"setter": "set_canvas_cull_mask",
+					"getter": "get_canvas_cull_mask"
+				},
+				{
+					"type": "bool",
+					"name": "oversampling",
+					"setter": "set_use_oversampling",
+					"getter": "is_using_oversampling"
+				},
+				{
+					"type": "float",
+					"name": "oversampling_override",
+					"setter": "set_oversampling_override",
+					"getter": "get_oversampling_override"
 				}
 			]
+		},
+		{
+			"name": "PlaceholderMaterial",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Material",
+			"api_type": "core"
+		},
+		{
+			"name": "Material",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"constants": [
+				{
+					"name": "RENDER_PRIORITY_MAX",
+					"value": 127
+				},
+				{
+					"name": "RENDER_PRIORITY_MIN",
+					"value": -128
+				}
+			],
+			"methods": [
+				{
+					"name": "_get_shader_rid",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "_get_shader_mode",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3392948163,
+					"return_value": {
+						"type": "enum::Shader.Mode"
+					}
+				},
+				{
+					"name": "_can_do_next_pass",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "_can_use_render_priority",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_next_pass",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2757459619,
+					"arguments": [
+						{
+							"name": "next_pass",
+							"type": "Material"
+						}
+					]
+				},
+				{
+					"name": "get_next_pass",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 5934680,
+					"return_value": {
+						"type": "Material"
+					}
+				},
+				{
+					"name": "set_render_priority",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "priority",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_render_priority",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "inspect_native_shader_code",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "create_placeholder",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 121922552,
+					"return_value": {
+						"type": "Resource"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "render_priority",
+					"setter": "set_render_priority",
+					"getter": "get_render_priority"
+				},
+				{
+					"type": "Material",
+					"name": "next_pass",
+					"setter": "set_next_pass",
+					"getter": "get_next_pass"
+				}
+			]
+		},
+		{
+			"name": "Texture",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core"
 		},
 		{
 			"name": "ParallaxLayer",
@@ -111699,655 +113028,6 @@
 			]
 		},
 		{
-			"name": "GLTFPhysicsShape",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "from_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 3613751275,
-					"return_value": {
-						"type": "GLTFPhysicsShape"
-					},
-					"arguments": [
-						{
-							"name": "shape_node",
-							"type": "CollisionShape3D"
-						}
-					]
-				},
-				{
-					"name": "to_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 563689933,
-					"return_value": {
-						"type": "CollisionShape3D"
-					},
-					"arguments": [
-						{
-							"name": "cache_shapes",
-							"type": "bool",
-							"default_value": "false"
-						}
-					]
-				},
-				{
-					"name": "from_resource",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 3845569786,
-					"return_value": {
-						"type": "GLTFPhysicsShape"
-					},
-					"arguments": [
-						{
-							"name": "shape_resource",
-							"type": "Shape3D"
-						}
-					]
-				},
-				{
-					"name": "to_resource",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1913542110,
-					"return_value": {
-						"type": "Shape3D"
-					},
-					"arguments": [
-						{
-							"name": "cache_shapes",
-							"type": "bool",
-							"default_value": "false"
-						}
-					]
-				},
-				{
-					"name": "from_dictionary",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 2390691823,
-					"return_value": {
-						"type": "GLTFPhysicsShape"
-					},
-					"arguments": [
-						{
-							"name": "dictionary",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
-					"name": "to_dictionary",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3102165223,
-					"return_value": {
-						"type": "Dictionary"
-					}
-				},
-				{
-					"name": "get_shape_type",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "set_shape_type",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "shape_type",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_size",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3360562783,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "set_size",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3460891852,
-					"arguments": [
-						{
-							"name": "size",
-							"type": "Vector3"
-						}
-					]
-				},
-				{
-					"name": "get_radius",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_radius",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "radius",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_height",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_height",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "height",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_is_trigger",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_is_trigger",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "is_trigger",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_mesh_index",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_mesh_index",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "mesh_index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_importer_mesh",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3161779525,
-					"return_value": {
-						"type": "ImporterMesh"
-					}
-				},
-				{
-					"name": "set_importer_mesh",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2255166972,
-					"arguments": [
-						{
-							"name": "importer_mesh",
-							"type": "ImporterMesh"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "String",
-					"name": "shape_type",
-					"setter": "set_shape_type",
-					"getter": "get_shape_type"
-				},
-				{
-					"type": "Vector3",
-					"name": "size",
-					"setter": "set_size",
-					"getter": "get_size"
-				},
-				{
-					"type": "float",
-					"name": "radius",
-					"setter": "set_radius",
-					"getter": "get_radius"
-				},
-				{
-					"type": "float",
-					"name": "height",
-					"setter": "set_height",
-					"getter": "get_height"
-				},
-				{
-					"type": "bool",
-					"name": "is_trigger",
-					"setter": "set_is_trigger",
-					"getter": "get_is_trigger"
-				},
-				{
-					"type": "int",
-					"name": "mesh_index",
-					"setter": "set_mesh_index",
-					"getter": "get_mesh_index"
-				},
-				{
-					"type": "ImporterMesh",
-					"name": "importer_mesh",
-					"setter": "set_importer_mesh",
-					"getter": "get_importer_mesh"
-				}
-			]
-		},
-		{
-			"name": "GLTFPhysicsBody",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "from_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 420544174,
-					"return_value": {
-						"type": "GLTFPhysicsBody"
-					},
-					"arguments": [
-						{
-							"name": "body_node",
-							"type": "CollisionObject3D"
-						}
-					]
-				},
-				{
-					"name": "to_node",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3224013656,
-					"return_value": {
-						"type": "CollisionObject3D"
-					}
-				},
-				{
-					"name": "from_dictionary",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 1177544336,
-					"return_value": {
-						"type": "GLTFPhysicsBody"
-					},
-					"arguments": [
-						{
-							"name": "dictionary",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
-					"name": "to_dictionary",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3102165223,
-					"return_value": {
-						"type": "Dictionary"
-					}
-				},
-				{
-					"name": "get_body_type",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 201670096,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "set_body_type",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "body_type",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_mass",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_mass",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "mass",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_linear_velocity",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3360562783,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "set_linear_velocity",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3460891852,
-					"arguments": [
-						{
-							"name": "linear_velocity",
-							"type": "Vector3"
-						}
-					]
-				},
-				{
-					"name": "get_angular_velocity",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3360562783,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "set_angular_velocity",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3460891852,
-					"arguments": [
-						{
-							"name": "angular_velocity",
-							"type": "Vector3"
-						}
-					]
-				},
-				{
-					"name": "get_center_of_mass",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3360562783,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "set_center_of_mass",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3460891852,
-					"arguments": [
-						{
-							"name": "center_of_mass",
-							"type": "Vector3"
-						}
-					]
-				},
-				{
-					"name": "get_inertia_diagonal",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3360562783,
-					"return_value": {
-						"type": "Vector3"
-					}
-				},
-				{
-					"name": "set_inertia_diagonal",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3460891852,
-					"arguments": [
-						{
-							"name": "inertia_diagonal",
-							"type": "Vector3"
-						}
-					]
-				},
-				{
-					"name": "get_inertia_orientation",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1222331677,
-					"return_value": {
-						"type": "Quaternion"
-					}
-				},
-				{
-					"name": "set_inertia_orientation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1727505552,
-					"arguments": [
-						{
-							"name": "inertia_orientation",
-							"type": "Quaternion"
-						}
-					]
-				},
-				{
-					"name": "get_inertia_tensor",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2716978435,
-					"return_value": {
-						"type": "Basis"
-					}
-				},
-				{
-					"name": "set_inertia_tensor",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1055510324,
-					"arguments": [
-						{
-							"name": "inertia_tensor",
-							"type": "Basis"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "String",
-					"name": "body_type",
-					"setter": "set_body_type",
-					"getter": "get_body_type"
-				},
-				{
-					"type": "float",
-					"name": "mass",
-					"setter": "set_mass",
-					"getter": "get_mass"
-				},
-				{
-					"type": "Vector3",
-					"name": "linear_velocity",
-					"setter": "set_linear_velocity",
-					"getter": "get_linear_velocity"
-				},
-				{
-					"type": "Vector3",
-					"name": "angular_velocity",
-					"setter": "set_angular_velocity",
-					"getter": "get_angular_velocity"
-				},
-				{
-					"type": "Vector3",
-					"name": "center_of_mass",
-					"setter": "set_center_of_mass",
-					"getter": "get_center_of_mass"
-				},
-				{
-					"type": "Vector3",
-					"name": "inertia_diagonal",
-					"setter": "set_inertia_diagonal",
-					"getter": "get_inertia_diagonal"
-				},
-				{
-					"type": "Quaternion",
-					"name": "inertia_orientation",
-					"setter": "set_inertia_orientation",
-					"getter": "get_inertia_orientation"
-				},
-				{
-					"type": "Basis",
-					"name": "inertia_tensor",
-					"setter": "set_inertia_tensor",
-					"getter": "get_inertia_tensor"
-				}
-			]
-		},
-		{
 			"name": "GLTFMesh",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -147003,6 +147683,1286 @@
 			]
 		},
 		{
+			"name": "SkeletonModification2DFABRIK",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "SkeletonModification2D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_target_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1348162250,
+					"arguments": [
+						{
+							"name": "target_nodepath",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_target_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4075236667,
+					"return_value": {
+						"type": "NodePath"
+					}
+				},
+				{
+					"name": "set_fabrik_data_chain_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "length",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_fabrik_data_chain_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_fabrik_joint_bone2d_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2761262315,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone2d_nodepath",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_fabrik_joint_bone2d_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 408788394,
+					"return_value": {
+						"type": "NodePath"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_fabrik_joint_bone_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_fabrik_joint_bone_index",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_fabrik_joint_magnet_position",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 163021252,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "magnet_position",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_fabrik_joint_magnet_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2299179447,
+					"return_value": {
+						"type": "Vector2"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_fabrik_joint_use_target_rotation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "use_target_rotation",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_fabrik_joint_use_target_rotation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "NodePath",
+					"name": "target_nodepath",
+					"setter": "set_target_node",
+					"getter": "get_target_node"
+				},
+				{
+					"type": "int",
+					"name": "fabrik_data_chain_length",
+					"setter": "set_fabrik_data_chain_length",
+					"getter": "get_fabrik_data_chain_length"
+				}
+			]
+		},
+		{
+			"name": "SkeletonModification2DCCDIK",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "SkeletonModification2D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_target_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1348162250,
+					"arguments": [
+						{
+							"name": "target_nodepath",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_target_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4075236667,
+					"return_value": {
+						"type": "NodePath"
+					}
+				},
+				{
+					"name": "set_tip_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1348162250,
+					"arguments": [
+						{
+							"name": "tip_nodepath",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_tip_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4075236667,
+					"return_value": {
+						"type": "NodePath"
+					}
+				},
+				{
+					"name": "set_ccdik_data_chain_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "length",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_ccdik_data_chain_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_ccdik_joint_bone2d_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2761262315,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone2d_nodepath",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_ccdik_joint_bone2d_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 408788394,
+					"return_value": {
+						"type": "NodePath"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_ccdik_joint_bone_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "bone_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_ccdik_joint_bone_index",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_ccdik_joint_rotate_from_joint",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "rotate_from_joint",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_ccdik_joint_rotate_from_joint",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_ccdik_joint_enable_constraint",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enable_constraint",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_ccdik_joint_enable_constraint",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_ccdik_joint_constraint_angle_min",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "angle_min",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_ccdik_joint_constraint_angle_min",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_ccdik_joint_constraint_angle_max",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1602489585,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "angle_max",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_ccdik_joint_constraint_angle_max",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_ccdik_joint_constraint_angle_invert",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "invert",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_ccdik_joint_constraint_angle_invert",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "joint_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "NodePath",
+					"name": "target_nodepath",
+					"setter": "set_target_node",
+					"getter": "get_target_node"
+				},
+				{
+					"type": "NodePath",
+					"name": "tip_nodepath",
+					"setter": "set_tip_node",
+					"getter": "get_tip_node"
+				},
+				{
+					"type": "int",
+					"name": "ccdik_data_chain_length",
+					"setter": "set_ccdik_data_chain_length",
+					"getter": "get_ccdik_data_chain_length"
+				}
+			]
+		},
+		{
+			"name": "SkeletonModification2DLookAt",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "SkeletonModification2D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_bone2d_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1348162250,
+					"arguments": [
+						{
+							"name": "bone2d_nodepath",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_bone2d_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4075236667,
+					"return_value": {
+						"type": "NodePath"
+					}
+				},
+				{
+					"name": "set_bone_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "bone_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_bone_index",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_target_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1348162250,
+					"arguments": [
+						{
+							"name": "target_nodepath",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_target_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4075236667,
+					"return_value": {
+						"type": "NodePath"
+					}
+				},
+				{
+					"name": "set_additional_rotation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "rotation",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_additional_rotation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_enable_constraint",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable_constraint",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_enable_constraint",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_constraint_angle_min",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "angle_min",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_constraint_angle_min",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_constraint_angle_max",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "angle_max",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_constraint_angle_max",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_constraint_angle_invert",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "invert",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_constraint_angle_invert",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "bone_index",
+					"setter": "set_bone_index",
+					"getter": "get_bone_index"
+				},
+				{
+					"type": "NodePath",
+					"name": "bone2d_node",
+					"setter": "set_bone2d_node",
+					"getter": "get_bone2d_node"
+				},
+				{
+					"type": "NodePath",
+					"name": "target_nodepath",
+					"setter": "set_target_node",
+					"getter": "get_target_node"
+				}
+			]
+		},
+		{
+			"name": "SkeletonModification2D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "_execute",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "delta",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "_setup_modification",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3907307132,
+					"arguments": [
+						{
+							"name": "modification_stack",
+							"type": "SkeletonModificationStack2D"
+						}
+					]
+				},
+				{
+					"name": "_draw_editor_gizmo",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3218959716
+				},
+				{
+					"name": "set_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_modification_stack",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2137761694,
+					"return_value": {
+						"type": "SkeletonModificationStack2D"
+					}
+				},
+				{
+					"name": "set_is_setup",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "is_setup",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_is_setup",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_execution_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "execution_mode",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_execution_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "clamp_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1229502682,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "angle",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "min",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "max",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "invert",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "set_editor_draw_gizmo",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "draw_gizmo",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_editor_draw_gizmo",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "enabled",
+					"setter": "set_enabled",
+					"getter": "get_enabled"
+				},
+				{
+					"type": "int",
+					"name": "execution_mode",
+					"setter": "set_execution_mode",
+					"getter": "get_execution_mode"
+				}
+			]
+		},
+		{
+			"name": "SkeletonModificationStack2D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "setup",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "execute",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1005356550,
+					"arguments": [
+						{
+							"name": "delta",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "execution_mode",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "enable_all_modifications",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_modification",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2570274329,
+					"return_value": {
+						"type": "SkeletonModification2D"
+					},
+					"arguments": [
+						{
+							"name": "mod_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "add_modification",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 354162120,
+					"arguments": [
+						{
+							"name": "modification",
+							"type": "SkeletonModification2D"
+						}
+					]
+				},
+				{
+					"name": "delete_modification",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "mod_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_modification",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1098262544,
+					"arguments": [
+						{
+							"name": "mod_idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "modification",
+							"type": "SkeletonModification2D"
+						}
+					]
+				},
+				{
+					"name": "set_modification_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_modification_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_is_setup",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_strength",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "strength",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_strength",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_skeleton",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1697361217,
+					"return_value": {
+						"type": "Skeleton2D"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "enabled",
+					"setter": "set_enabled",
+					"getter": "get_enabled"
+				},
+				{
+					"type": "float",
+					"name": "strength",
+					"setter": "set_strength",
+					"getter": "get_strength"
+				},
+				{
+					"type": "int",
+					"name": "modification_count",
+					"setter": "set_modification_count",
+					"getter": "get_modification_count"
+				}
+			]
+		},
+		{
 			"name": "JavaScriptObject",
 			"is_refcounted": true,
 			"is_instantiable": false,
@@ -151675,6 +153635,14 @@
 							"type": "Script"
 						}
 					]
+				},
+				{
+					"name": "save_all_scripts",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
 				}
 			],
 			"signals": [
@@ -167342,1120 +169310,112 @@
 			]
 		},
 		{
-			"name": "Viewport",
-			"is_refcounted": false,
-			"is_instantiable": false,
-			"inherits": "Node",
+			"name": "GLTFPhysicsShape",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
 			"api_type": "core",
-			"enums": [
-				{
-					"name": "PositionalShadowAtlasQuadrantSubdiv",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_1",
-							"value": 1
-						},
-						{
-							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_4",
-							"value": 2
-						},
-						{
-							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_16",
-							"value": 3
-						},
-						{
-							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_64",
-							"value": 4
-						},
-						{
-							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_256",
-							"value": 5
-						},
-						{
-							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_1024",
-							"value": 6
-						},
-						{
-							"name": "SHADOW_ATLAS_QUADRANT_SUBDIV_MAX",
-							"value": 7
-						}
-					]
-				},
-				{
-					"name": "Scaling3DMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "SCALING_3D_MODE_BILINEAR",
-							"value": 0
-						},
-						{
-							"name": "SCALING_3D_MODE_FSR",
-							"value": 1
-						},
-						{
-							"name": "SCALING_3D_MODE_FSR2",
-							"value": 2
-						},
-						{
-							"name": "SCALING_3D_MODE_METALFX_SPATIAL",
-							"value": 3
-						},
-						{
-							"name": "SCALING_3D_MODE_METALFX_TEMPORAL",
-							"value": 4
-						},
-						{
-							"name": "SCALING_3D_MODE_MAX",
-							"value": 5
-						}
-					]
-				},
-				{
-					"name": "MSAA",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "MSAA_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "MSAA_2X",
-							"value": 1
-						},
-						{
-							"name": "MSAA_4X",
-							"value": 2
-						},
-						{
-							"name": "MSAA_8X",
-							"value": 3
-						},
-						{
-							"name": "MSAA_MAX",
-							"value": 4
-						}
-					]
-				},
-				{
-					"name": "AnisotropicFiltering",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "ANISOTROPY_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "ANISOTROPY_2X",
-							"value": 1
-						},
-						{
-							"name": "ANISOTROPY_4X",
-							"value": 2
-						},
-						{
-							"name": "ANISOTROPY_8X",
-							"value": 3
-						},
-						{
-							"name": "ANISOTROPY_16X",
-							"value": 4
-						},
-						{
-							"name": "ANISOTROPY_MAX",
-							"value": 5
-						}
-					]
-				},
-				{
-					"name": "ScreenSpaceAA",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "SCREEN_SPACE_AA_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "SCREEN_SPACE_AA_FXAA",
-							"value": 1
-						},
-						{
-							"name": "SCREEN_SPACE_AA_SMAA",
-							"value": 2
-						},
-						{
-							"name": "SCREEN_SPACE_AA_MAX",
-							"value": 3
-						}
-					]
-				},
-				{
-					"name": "RenderInfo",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "RENDER_INFO_OBJECTS_IN_FRAME",
-							"value": 0
-						},
-						{
-							"name": "RENDER_INFO_PRIMITIVES_IN_FRAME",
-							"value": 1
-						},
-						{
-							"name": "RENDER_INFO_DRAW_CALLS_IN_FRAME",
-							"value": 2
-						},
-						{
-							"name": "RENDER_INFO_MAX",
-							"value": 3
-						}
-					]
-				},
-				{
-					"name": "RenderInfoType",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "RENDER_INFO_TYPE_VISIBLE",
-							"value": 0
-						},
-						{
-							"name": "RENDER_INFO_TYPE_SHADOW",
-							"value": 1
-						},
-						{
-							"name": "RENDER_INFO_TYPE_CANVAS",
-							"value": 2
-						},
-						{
-							"name": "RENDER_INFO_TYPE_MAX",
-							"value": 3
-						}
-					]
-				},
-				{
-					"name": "DebugDraw",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "DEBUG_DRAW_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "DEBUG_DRAW_UNSHADED",
-							"value": 1
-						},
-						{
-							"name": "DEBUG_DRAW_LIGHTING",
-							"value": 2
-						},
-						{
-							"name": "DEBUG_DRAW_OVERDRAW",
-							"value": 3
-						},
-						{
-							"name": "DEBUG_DRAW_WIREFRAME",
-							"value": 4
-						},
-						{
-							"name": "DEBUG_DRAW_NORMAL_BUFFER",
-							"value": 5
-						},
-						{
-							"name": "DEBUG_DRAW_VOXEL_GI_ALBEDO",
-							"value": 6
-						},
-						{
-							"name": "DEBUG_DRAW_VOXEL_GI_LIGHTING",
-							"value": 7
-						},
-						{
-							"name": "DEBUG_DRAW_VOXEL_GI_EMISSION",
-							"value": 8
-						},
-						{
-							"name": "DEBUG_DRAW_SHADOW_ATLAS",
-							"value": 9
-						},
-						{
-							"name": "DEBUG_DRAW_DIRECTIONAL_SHADOW_ATLAS",
-							"value": 10
-						},
-						{
-							"name": "DEBUG_DRAW_SCENE_LUMINANCE",
-							"value": 11
-						},
-						{
-							"name": "DEBUG_DRAW_SSAO",
-							"value": 12
-						},
-						{
-							"name": "DEBUG_DRAW_SSIL",
-							"value": 13
-						},
-						{
-							"name": "DEBUG_DRAW_PSSM_SPLITS",
-							"value": 14
-						},
-						{
-							"name": "DEBUG_DRAW_DECAL_ATLAS",
-							"value": 15
-						},
-						{
-							"name": "DEBUG_DRAW_SDFGI",
-							"value": 16
-						},
-						{
-							"name": "DEBUG_DRAW_SDFGI_PROBES",
-							"value": 17
-						},
-						{
-							"name": "DEBUG_DRAW_GI_BUFFER",
-							"value": 18
-						},
-						{
-							"name": "DEBUG_DRAW_DISABLE_LOD",
-							"value": 19
-						},
-						{
-							"name": "DEBUG_DRAW_CLUSTER_OMNI_LIGHTS",
-							"value": 20
-						},
-						{
-							"name": "DEBUG_DRAW_CLUSTER_SPOT_LIGHTS",
-							"value": 21
-						},
-						{
-							"name": "DEBUG_DRAW_CLUSTER_DECALS",
-							"value": 22
-						},
-						{
-							"name": "DEBUG_DRAW_CLUSTER_REFLECTION_PROBES",
-							"value": 23
-						},
-						{
-							"name": "DEBUG_DRAW_OCCLUDERS",
-							"value": 24
-						},
-						{
-							"name": "DEBUG_DRAW_MOTION_VECTORS",
-							"value": 25
-						},
-						{
-							"name": "DEBUG_DRAW_INTERNAL_BUFFER",
-							"value": 26
-						}
-					]
-				},
-				{
-					"name": "DefaultCanvasItemTextureFilter",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST",
-							"value": 0
-						},
-						{
-							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_LINEAR",
-							"value": 1
-						},
-						{
-							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS",
-							"value": 2
-						},
-						{
-							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS",
-							"value": 3
-						},
-						{
-							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_MAX",
-							"value": 4
-						}
-					]
-				},
-				{
-					"name": "DefaultCanvasItemTextureRepeat",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_ENABLED",
-							"value": 1
-						},
-						{
-							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MIRROR",
-							"value": 2
-						},
-						{
-							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MAX",
-							"value": 3
-						}
-					]
-				},
-				{
-					"name": "SDFOversize",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "SDF_OVERSIZE_100_PERCENT",
-							"value": 0
-						},
-						{
-							"name": "SDF_OVERSIZE_120_PERCENT",
-							"value": 1
-						},
-						{
-							"name": "SDF_OVERSIZE_150_PERCENT",
-							"value": 2
-						},
-						{
-							"name": "SDF_OVERSIZE_200_PERCENT",
-							"value": 3
-						},
-						{
-							"name": "SDF_OVERSIZE_MAX",
-							"value": 4
-						}
-					]
-				},
-				{
-					"name": "SDFScale",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "SDF_SCALE_100_PERCENT",
-							"value": 0
-						},
-						{
-							"name": "SDF_SCALE_50_PERCENT",
-							"value": 1
-						},
-						{
-							"name": "SDF_SCALE_25_PERCENT",
-							"value": 2
-						},
-						{
-							"name": "SDF_SCALE_MAX",
-							"value": 3
-						}
-					]
-				},
-				{
-					"name": "VRSMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "VRS_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "VRS_TEXTURE",
-							"value": 1
-						},
-						{
-							"name": "VRS_XR",
-							"value": 2
-						},
-						{
-							"name": "VRS_MAX",
-							"value": 3
-						}
-					]
-				},
-				{
-					"name": "VRSUpdateMode",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "VRS_UPDATE_DISABLED",
-							"value": 0
-						},
-						{
-							"name": "VRS_UPDATE_ONCE",
-							"value": 1
-						},
-						{
-							"name": "VRS_UPDATE_ALWAYS",
-							"value": 2
-						},
-						{
-							"name": "VRS_UPDATE_MAX",
-							"value": 3
-						}
-					]
-				}
-			],
 			"methods": [
 				{
-					"name": "set_world_2d",
+					"name": "from_node",
 					"is_const": false,
 					"is_vararg": false,
-					"is_static": false,
+					"is_static": true,
 					"is_virtual": false,
-					"hash": 2736080068,
-					"arguments": [
-						{
-							"name": "world_2d",
-							"type": "World2D"
-						}
-					]
-				},
-				{
-					"name": "get_world_2d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2339128592,
+					"hash": 3613751275,
 					"return_value": {
-						"type": "World2D"
-					}
-				},
-				{
-					"name": "find_world_2d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2339128592,
-					"return_value": {
-						"type": "World2D"
-					}
-				},
-				{
-					"name": "set_canvas_transform",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2761652528,
-					"arguments": [
-						{
-							"name": "xform",
-							"type": "Transform2D"
-						}
-					]
-				},
-				{
-					"name": "get_canvas_transform",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3814499831,
-					"return_value": {
-						"type": "Transform2D"
-					}
-				},
-				{
-					"name": "set_global_canvas_transform",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2761652528,
-					"arguments": [
-						{
-							"name": "xform",
-							"type": "Transform2D"
-						}
-					]
-				},
-				{
-					"name": "get_global_canvas_transform",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3814499831,
-					"return_value": {
-						"type": "Transform2D"
-					}
-				},
-				{
-					"name": "get_stretch_transform",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3814499831,
-					"return_value": {
-						"type": "Transform2D"
-					}
-				},
-				{
-					"name": "get_final_transform",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3814499831,
-					"return_value": {
-						"type": "Transform2D"
-					}
-				},
-				{
-					"name": "get_screen_transform",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3814499831,
-					"return_value": {
-						"type": "Transform2D"
-					}
-				},
-				{
-					"name": "get_visible_rect",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1639390495,
-					"return_value": {
-						"type": "Rect2"
-					}
-				},
-				{
-					"name": "set_transparent_background",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "has_transparent_background",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_use_hdr_2d",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_hdr_2d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_msaa_2d",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3330258708,
-					"arguments": [
-						{
-							"name": "msaa",
-							"type": "enum::Viewport.MSAA"
-						}
-					]
-				},
-				{
-					"name": "get_msaa_2d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2542055527,
-					"return_value": {
-						"type": "enum::Viewport.MSAA"
-					}
-				},
-				{
-					"name": "set_msaa_3d",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3330258708,
-					"arguments": [
-						{
-							"name": "msaa",
-							"type": "enum::Viewport.MSAA"
-						}
-					]
-				},
-				{
-					"name": "get_msaa_3d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2542055527,
-					"return_value": {
-						"type": "enum::Viewport.MSAA"
-					}
-				},
-				{
-					"name": "set_screen_space_aa",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3544169389,
-					"arguments": [
-						{
-							"name": "screen_space_aa",
-							"type": "enum::Viewport.ScreenSpaceAA"
-						}
-					]
-				},
-				{
-					"name": "get_screen_space_aa",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1390814124,
-					"return_value": {
-						"type": "enum::Viewport.ScreenSpaceAA"
-					}
-				},
-				{
-					"name": "set_use_taa",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_taa",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_use_debanding",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_debanding",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_use_occlusion_culling",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_occlusion_culling",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_debug_draw",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1970246205,
-					"arguments": [
-						{
-							"name": "debug_draw",
-							"type": "enum::Viewport.DebugDraw"
-						}
-					]
-				},
-				{
-					"name": "get_debug_draw",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 579191299,
-					"return_value": {
-						"type": "enum::Viewport.DebugDraw"
-					}
-				},
-				{
-					"name": "set_use_oversampling",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_oversampling",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_oversampling_override",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "oversampling",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_oversampling_override",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "get_oversampling",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "get_render_info",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 481977019,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
+						"type": "GLTFPhysicsShape"
 					},
 					"arguments": [
 						{
-							"name": "type",
-							"type": "enum::Viewport.RenderInfoType"
-						},
-						{
-							"name": "info",
-							"type": "enum::Viewport.RenderInfo"
+							"name": "shape_node",
+							"type": "CollisionShape3D"
 						}
 					]
 				},
 				{
-					"name": "get_texture",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1746695840,
-					"return_value": {
-						"type": "ViewportTexture"
-					}
-				},
-				{
-					"name": "set_physics_object_picking",
+					"name": "to_node",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2586408642,
+					"hash": 563689933,
+					"return_value": {
+						"type": "CollisionShape3D"
+					},
 					"arguments": [
 						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_physics_object_picking",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2240911060,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_physics_object_picking_sort",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_physics_object_picking_sort",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2240911060,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_physics_object_picking_first_only",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_physics_object_picking_first_only",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2240911060,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "get_viewport_rid",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2944877500,
-					"return_value": {
-						"type": "RID"
-					}
-				},
-				{
-					"name": "push_text_input",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "text",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "push_input",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3644664830,
-					"arguments": [
-						{
-							"name": "event",
-							"type": "InputEvent",
-							"meta": "required"
-						},
-						{
-							"name": "in_local_coords",
+							"name": "cache_shapes",
 							"type": "bool",
 							"default_value": "false"
 						}
 					]
 				},
 				{
-					"name": "push_unhandled_input",
+					"name": "from_resource",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 3845569786,
+					"return_value": {
+						"type": "GLTFPhysicsShape"
+					},
+					"arguments": [
+						{
+							"name": "shape_resource",
+							"type": "Shape3D"
+						}
+					]
+				},
+				{
+					"name": "to_resource",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3644664830,
+					"hash": 1913542110,
+					"return_value": {
+						"type": "Shape3D"
+					},
 					"arguments": [
 						{
-							"name": "event",
-							"type": "InputEvent",
-							"meta": "required"
-						},
-						{
-							"name": "in_local_coords",
+							"name": "cache_shapes",
 							"type": "bool",
 							"default_value": "false"
 						}
 					]
 				},
 				{
-					"name": "notify_mouse_entered",
+					"name": "from_dictionary",
 					"is_const": false,
 					"is_vararg": false,
-					"is_static": false,
+					"is_static": true,
 					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "notify_mouse_exited",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "get_mouse_position",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
+					"hash": 2390691823,
 					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
-					"name": "warp_mouse",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
+						"type": "GLTFPhysicsShape"
+					},
 					"arguments": [
 						{
-							"name": "position",
-							"type": "Vector2"
+							"name": "dictionary",
+							"type": "Dictionary"
 						}
 					]
 				},
 				{
-					"name": "update_mouse_cursor_state",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "gui_cancel_drag",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "gui_get_drag_data",
+					"name": "to_dictionary",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1214101251,
+					"hash": 3102165223,
 					"return_value": {
-						"type": "Variant"
+						"type": "Dictionary"
 					}
 				},
 				{
-					"name": "gui_get_drag_description",
+					"name": "get_shape_type",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -168466,7 +169426,7 @@
 					}
 				},
 				{
-					"name": "gui_set_drag_description",
+					"name": "set_shape_type",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -168474,105 +169434,117 @@
 					"hash": 83702148,
 					"arguments": [
 						{
-							"name": "description",
+							"name": "shape_type",
 							"type": "String"
 						}
 					]
 				},
 				{
-					"name": "gui_is_dragging",
+					"name": "get_size",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 36873697,
+					"hash": 3360562783,
 					"return_value": {
-						"type": "bool"
+						"type": "Vector3"
 					}
 				},
 				{
-					"name": "gui_is_drag_successful",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "gui_release_focus",
+					"name": "set_size",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "gui_get_focus_owner",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2783021301,
-					"return_value": {
-						"type": "Control"
-					}
-				},
-				{
-					"name": "gui_get_hovered_control",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2783021301,
-					"return_value": {
-						"type": "Control"
-					}
-				},
-				{
-					"name": "set_disable_input",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "disable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_input_disabled",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_positional_shadow_atlas_size",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
+					"hash": 3460891852,
 					"arguments": [
 						{
 							"name": "size",
-							"type": "int",
-							"meta": "int32"
+							"type": "Vector3"
 						}
 					]
 				},
 				{
-					"name": "get_positional_shadow_atlas_size",
+					"name": "get_radius",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_radius",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "radius",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_height",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_height",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "height",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_is_trigger",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_is_trigger",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "is_trigger",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_mesh_index",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -168584,249 +169556,7 @@
 					}
 				},
 				{
-					"name": "set_positional_shadow_atlas_16_bits",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_positional_shadow_atlas_16_bits",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_snap_controls_to_pixels",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enabled",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_snap_controls_to_pixels_enabled",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_snap_2d_transforms_to_pixel",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enabled",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_snap_2d_transforms_to_pixel_enabled",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_snap_2d_vertices_to_pixel",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enabled",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_snap_2d_vertices_to_pixel_enabled",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_positional_shadow_atlas_quadrant_subdiv",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2596956071,
-					"arguments": [
-						{
-							"name": "quadrant",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "subdiv",
-							"type": "enum::Viewport.PositionalShadowAtlasQuadrantSubdiv"
-						}
-					]
-				},
-				{
-					"name": "get_positional_shadow_atlas_quadrant_subdiv",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2676778355,
-					"return_value": {
-						"type": "enum::Viewport.PositionalShadowAtlasQuadrantSubdiv"
-					},
-					"arguments": [
-						{
-							"name": "quadrant",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_input_as_handled",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "is_input_handled",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_handle_input_locally",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_handling_input_locally",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_default_canvas_item_texture_filter",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2815160100,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::Viewport.DefaultCanvasItemTextureFilter"
-						}
-					]
-				},
-				{
-					"name": "get_default_canvas_item_texture_filter",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 896601198,
-					"return_value": {
-						"type": "enum::Viewport.DefaultCanvasItemTextureFilter"
-					}
-				},
-				{
-					"name": "set_embedding_subwindows",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_embedding_subwindows",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "get_embedded_subwindows",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3995934104,
-					"return_value": {
-						"type": "typedarray::Window"
-					}
-				},
-				{
-					"name": "set_drag_threshold",
+					"name": "set_mesh_index",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -168834,1088 +169564,399 @@
 					"hash": 1286410249,
 					"arguments": [
 						{
-							"name": "threshold",
+							"name": "mesh_index",
 							"type": "int",
 							"meta": "int32"
 						}
 					]
 				},
 				{
-					"name": "get_drag_threshold",
+					"name": "get_importer_mesh",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3905245786,
+					"hash": 3161779525,
 					"return_value": {
-						"type": "int",
-						"meta": "int32"
+						"type": "ImporterMesh"
 					}
 				},
 				{
-					"name": "set_canvas_cull_mask",
+					"name": "set_importer_mesh",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1286410249,
+					"hash": 2255166972,
 					"arguments": [
 						{
-							"name": "mask",
-							"type": "int",
-							"meta": "uint32"
-						}
-					]
-				},
-				{
-					"name": "get_canvas_cull_mask",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "uint32"
-					}
-				},
-				{
-					"name": "set_canvas_cull_mask_bit",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 300928843,
-					"arguments": [
-						{
-							"name": "layer",
-							"type": "int",
-							"meta": "uint32"
-						},
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_canvas_cull_mask_bit",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1116898809,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "layer",
-							"type": "int",
-							"meta": "uint32"
-						}
-					]
-				},
-				{
-					"name": "set_default_canvas_item_texture_repeat",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1658513413,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::Viewport.DefaultCanvasItemTextureRepeat"
-						}
-					]
-				},
-				{
-					"name": "get_default_canvas_item_texture_repeat",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4049774160,
-					"return_value": {
-						"type": "enum::Viewport.DefaultCanvasItemTextureRepeat"
-					}
-				},
-				{
-					"name": "set_sdf_oversize",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2574159017,
-					"arguments": [
-						{
-							"name": "oversize",
-							"type": "enum::Viewport.SDFOversize"
-						}
-					]
-				},
-				{
-					"name": "get_sdf_oversize",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2631427510,
-					"return_value": {
-						"type": "enum::Viewport.SDFOversize"
-					}
-				},
-				{
-					"name": "set_sdf_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1402773951,
-					"arguments": [
-						{
-							"name": "scale",
-							"type": "enum::Viewport.SDFScale"
-						}
-					]
-				},
-				{
-					"name": "get_sdf_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3162688184,
-					"return_value": {
-						"type": "enum::Viewport.SDFScale"
-					}
-				},
-				{
-					"name": "set_mesh_lod_threshold",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "pixels",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_mesh_lod_threshold",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_as_audio_listener_2d",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_audio_listener_2d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "get_audio_listener_2d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1840977180,
-					"return_value": {
-						"type": "AudioListener2D"
-					}
-				},
-				{
-					"name": "get_camera_2d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3551466917,
-					"return_value": {
-						"type": "Camera2D"
-					}
-				},
-				{
-					"name": "set_world_3d",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1400875337,
-					"arguments": [
-						{
-							"name": "world_3d",
-							"type": "World3D"
-						}
-					]
-				},
-				{
-					"name": "get_world_3d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 317588385,
-					"return_value": {
-						"type": "World3D"
-					}
-				},
-				{
-					"name": "find_world_3d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 317588385,
-					"return_value": {
-						"type": "World3D"
-					}
-				},
-				{
-					"name": "set_use_own_world_3d",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_own_world_3d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "get_audio_listener_3d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3472246991,
-					"return_value": {
-						"type": "AudioListener3D"
-					}
-				},
-				{
-					"name": "get_camera_3d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2285090890,
-					"return_value": {
-						"type": "Camera3D"
-					}
-				},
-				{
-					"name": "set_as_audio_listener_3d",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_audio_listener_3d",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_disable_3d",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "disable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_3d_disabled",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_use_xr",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "use",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_xr",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2240911060,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_scaling_3d_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1531597597,
-					"arguments": [
-						{
-							"name": "scaling_3d_mode",
-							"type": "enum::Viewport.Scaling3DMode"
-						}
-					]
-				},
-				{
-					"name": "get_scaling_3d_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2597660574,
-					"return_value": {
-						"type": "enum::Viewport.Scaling3DMode"
-					}
-				},
-				{
-					"name": "set_scaling_3d_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "scale",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_scaling_3d_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_fsr_sharpness",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "fsr_sharpness",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_fsr_sharpness",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_texture_mipmap_bias",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "texture_mipmap_bias",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_texture_mipmap_bias",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_anisotropic_filtering_level",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3445583046,
-					"arguments": [
-						{
-							"name": "anisotropic_filtering_level",
-							"type": "enum::Viewport.AnisotropicFiltering"
-						}
-					]
-				},
-				{
-					"name": "get_anisotropic_filtering_level",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3991528932,
-					"return_value": {
-						"type": "enum::Viewport.AnisotropicFiltering"
-					}
-				},
-				{
-					"name": "set_vrs_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2749867817,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::Viewport.VRSMode"
-						}
-					]
-				},
-				{
-					"name": "get_vrs_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 349660525,
-					"return_value": {
-						"type": "enum::Viewport.VRSMode"
-					}
-				},
-				{
-					"name": "set_vrs_update_mode",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3182412319,
-					"arguments": [
-						{
-							"name": "mode",
-							"type": "enum::Viewport.VRSUpdateMode"
-						}
-					]
-				},
-				{
-					"name": "get_vrs_update_mode",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2255951583,
-					"return_value": {
-						"type": "enum::Viewport.VRSUpdateMode"
-					}
-				},
-				{
-					"name": "set_vrs_texture",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4051416890,
-					"arguments": [
-						{
-							"name": "texture",
-							"type": "Texture2D"
-						}
-					]
-				},
-				{
-					"name": "get_vrs_texture",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3635182373,
-					"return_value": {
-						"type": "Texture2D"
-					}
-				}
-			],
-			"signals": [
-				{
-					"name": "size_changed"
-				},
-				{
-					"name": "gui_focus_changed",
-					"arguments": [
-						{
-							"name": "node",
-							"type": "Control"
+							"name": "importer_mesh",
+							"type": "ImporterMesh"
 						}
 					]
 				}
 			],
 			"properties": [
 				{
-					"type": "bool",
-					"name": "disable_3d",
-					"setter": "set_disable_3d",
-					"getter": "is_3d_disabled"
+					"type": "String",
+					"name": "shape_type",
+					"setter": "set_shape_type",
+					"getter": "get_shape_type"
 				},
 				{
-					"type": "bool",
-					"name": "use_xr",
-					"setter": "set_use_xr",
-					"getter": "is_using_xr"
-				},
-				{
-					"type": "bool",
-					"name": "own_world_3d",
-					"setter": "set_use_own_world_3d",
-					"getter": "is_using_own_world_3d"
-				},
-				{
-					"type": "World3D",
-					"name": "world_3d",
-					"setter": "set_world_3d",
-					"getter": "get_world_3d"
-				},
-				{
-					"type": "World2D",
-					"name": "world_2d",
-					"setter": "set_world_2d",
-					"getter": "get_world_2d"
-				},
-				{
-					"type": "bool",
-					"name": "transparent_bg",
-					"setter": "set_transparent_background",
-					"getter": "has_transparent_background"
-				},
-				{
-					"type": "bool",
-					"name": "handle_input_locally",
-					"setter": "set_handle_input_locally",
-					"getter": "is_handling_input_locally"
-				},
-				{
-					"type": "bool",
-					"name": "snap_2d_transforms_to_pixel",
-					"setter": "set_snap_2d_transforms_to_pixel",
-					"getter": "is_snap_2d_transforms_to_pixel_enabled"
-				},
-				{
-					"type": "bool",
-					"name": "snap_2d_vertices_to_pixel",
-					"setter": "set_snap_2d_vertices_to_pixel",
-					"getter": "is_snap_2d_vertices_to_pixel_enabled"
-				},
-				{
-					"type": "int",
-					"name": "msaa_2d",
-					"setter": "set_msaa_2d",
-					"getter": "get_msaa_2d"
-				},
-				{
-					"type": "int",
-					"name": "msaa_3d",
-					"setter": "set_msaa_3d",
-					"getter": "get_msaa_3d"
-				},
-				{
-					"type": "int",
-					"name": "screen_space_aa",
-					"setter": "set_screen_space_aa",
-					"getter": "get_screen_space_aa"
-				},
-				{
-					"type": "bool",
-					"name": "use_taa",
-					"setter": "set_use_taa",
-					"getter": "is_using_taa"
-				},
-				{
-					"type": "bool",
-					"name": "use_debanding",
-					"setter": "set_use_debanding",
-					"getter": "is_using_debanding"
-				},
-				{
-					"type": "bool",
-					"name": "use_occlusion_culling",
-					"setter": "set_use_occlusion_culling",
-					"getter": "is_using_occlusion_culling"
+					"type": "Vector3",
+					"name": "size",
+					"setter": "set_size",
+					"getter": "get_size"
 				},
 				{
 					"type": "float",
-					"name": "mesh_lod_threshold",
-					"setter": "set_mesh_lod_threshold",
-					"getter": "get_mesh_lod_threshold"
-				},
-				{
-					"type": "int",
-					"name": "debug_draw",
-					"setter": "set_debug_draw",
-					"getter": "get_debug_draw"
-				},
-				{
-					"type": "bool",
-					"name": "use_hdr_2d",
-					"setter": "set_use_hdr_2d",
-					"getter": "is_using_hdr_2d"
-				},
-				{
-					"type": "int",
-					"name": "scaling_3d_mode",
-					"setter": "set_scaling_3d_mode",
-					"getter": "get_scaling_3d_mode"
+					"name": "radius",
+					"setter": "set_radius",
+					"getter": "get_radius"
 				},
 				{
 					"type": "float",
-					"name": "scaling_3d_scale",
-					"setter": "set_scaling_3d_scale",
-					"getter": "get_scaling_3d_scale"
-				},
-				{
-					"type": "float",
-					"name": "texture_mipmap_bias",
-					"setter": "set_texture_mipmap_bias",
-					"getter": "get_texture_mipmap_bias"
-				},
-				{
-					"type": "int",
-					"name": "anisotropic_filtering_level",
-					"setter": "set_anisotropic_filtering_level",
-					"getter": "get_anisotropic_filtering_level"
-				},
-				{
-					"type": "float",
-					"name": "fsr_sharpness",
-					"setter": "set_fsr_sharpness",
-					"getter": "get_fsr_sharpness"
-				},
-				{
-					"type": "int",
-					"name": "vrs_mode",
-					"setter": "set_vrs_mode",
-					"getter": "get_vrs_mode"
-				},
-				{
-					"type": "int",
-					"name": "vrs_update_mode",
-					"setter": "set_vrs_update_mode",
-					"getter": "get_vrs_update_mode"
-				},
-				{
-					"type": "Texture2D",
-					"name": "vrs_texture",
-					"setter": "set_vrs_texture",
-					"getter": "get_vrs_texture"
-				},
-				{
-					"type": "int",
-					"name": "canvas_item_default_texture_filter",
-					"setter": "set_default_canvas_item_texture_filter",
-					"getter": "get_default_canvas_item_texture_filter"
-				},
-				{
-					"type": "int",
-					"name": "canvas_item_default_texture_repeat",
-					"setter": "set_default_canvas_item_texture_repeat",
-					"getter": "get_default_canvas_item_texture_repeat"
+					"name": "height",
+					"setter": "set_height",
+					"getter": "get_height"
 				},
 				{
 					"type": "bool",
-					"name": "audio_listener_enable_2d",
-					"setter": "set_as_audio_listener_2d",
-					"getter": "is_audio_listener_2d"
-				},
-				{
-					"type": "bool",
-					"name": "audio_listener_enable_3d",
-					"setter": "set_as_audio_listener_3d",
-					"getter": "is_audio_listener_3d"
-				},
-				{
-					"type": "bool",
-					"name": "physics_object_picking",
-					"setter": "set_physics_object_picking",
-					"getter": "get_physics_object_picking"
-				},
-				{
-					"type": "bool",
-					"name": "physics_object_picking_sort",
-					"setter": "set_physics_object_picking_sort",
-					"getter": "get_physics_object_picking_sort"
-				},
-				{
-					"type": "bool",
-					"name": "physics_object_picking_first_only",
-					"setter": "set_physics_object_picking_first_only",
-					"getter": "get_physics_object_picking_first_only"
-				},
-				{
-					"type": "bool",
-					"name": "gui_disable_input",
-					"setter": "set_disable_input",
-					"getter": "is_input_disabled"
-				},
-				{
-					"type": "bool",
-					"name": "gui_snap_controls_to_pixels",
-					"setter": "set_snap_controls_to_pixels",
-					"getter": "is_snap_controls_to_pixels_enabled"
-				},
-				{
-					"type": "bool",
-					"name": "gui_embed_subwindows",
-					"setter": "set_embedding_subwindows",
-					"getter": "is_embedding_subwindows"
+					"name": "is_trigger",
+					"setter": "set_is_trigger",
+					"getter": "get_is_trigger"
 				},
 				{
 					"type": "int",
-					"name": "gui_drag_threshold",
-					"setter": "set_drag_threshold",
-					"getter": "get_drag_threshold"
+					"name": "mesh_index",
+					"setter": "set_mesh_index",
+					"getter": "get_mesh_index"
 				},
 				{
-					"type": "int",
-					"name": "sdf_oversize",
-					"setter": "set_sdf_oversize",
-					"getter": "get_sdf_oversize"
-				},
-				{
-					"type": "int",
-					"name": "sdf_scale",
-					"setter": "set_sdf_scale",
-					"getter": "get_sdf_scale"
-				},
-				{
-					"type": "int",
-					"name": "positional_shadow_atlas_size",
-					"setter": "set_positional_shadow_atlas_size",
-					"getter": "get_positional_shadow_atlas_size"
-				},
-				{
-					"type": "bool",
-					"name": "positional_shadow_atlas_16_bits",
-					"setter": "set_positional_shadow_atlas_16_bits",
-					"getter": "get_positional_shadow_atlas_16_bits"
-				},
-				{
-					"type": "int",
-					"name": "positional_shadow_atlas_quad_0",
-					"setter": "set_positional_shadow_atlas_quadrant_subdiv",
-					"getter": "get_positional_shadow_atlas_quadrant_subdiv",
-					"index": 0
-				},
-				{
-					"type": "int",
-					"name": "positional_shadow_atlas_quad_1",
-					"setter": "set_positional_shadow_atlas_quadrant_subdiv",
-					"getter": "get_positional_shadow_atlas_quadrant_subdiv",
-					"index": 1
-				},
-				{
-					"type": "int",
-					"name": "positional_shadow_atlas_quad_2",
-					"setter": "set_positional_shadow_atlas_quadrant_subdiv",
-					"getter": "get_positional_shadow_atlas_quadrant_subdiv",
-					"index": 2
-				},
-				{
-					"type": "int",
-					"name": "positional_shadow_atlas_quad_3",
-					"setter": "set_positional_shadow_atlas_quadrant_subdiv",
-					"getter": "get_positional_shadow_atlas_quadrant_subdiv",
-					"index": 3
-				},
-				{
-					"type": "Transform2D",
-					"name": "canvas_transform",
-					"setter": "set_canvas_transform",
-					"getter": "get_canvas_transform"
-				},
-				{
-					"type": "Transform2D",
-					"name": "global_canvas_transform",
-					"setter": "set_global_canvas_transform",
-					"getter": "get_global_canvas_transform"
-				},
-				{
-					"type": "int",
-					"name": "canvas_cull_mask",
-					"setter": "set_canvas_cull_mask",
-					"getter": "get_canvas_cull_mask"
-				},
-				{
-					"type": "bool",
-					"name": "oversampling",
-					"setter": "set_use_oversampling",
-					"getter": "is_using_oversampling"
-				},
-				{
-					"type": "float",
-					"name": "oversampling_override",
-					"setter": "set_oversampling_override",
-					"getter": "get_oversampling_override"
+					"type": "ImporterMesh",
+					"name": "importer_mesh",
+					"setter": "set_importer_mesh",
+					"getter": "get_importer_mesh"
 				}
 			]
 		},
 		{
-			"name": "PlaceholderMaterial",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Material",
-			"api_type": "core"
-		},
-		{
-			"name": "Material",
+			"name": "GLTFPhysicsBody",
 			"is_refcounted": true,
 			"is_instantiable": true,
 			"inherits": "Resource",
 			"api_type": "core",
-			"constants": [
-				{
-					"name": "RENDER_PRIORITY_MAX",
-					"value": 127
-				},
-				{
-					"name": "RENDER_PRIORITY_MIN",
-					"value": -128
-				}
-			],
 			"methods": [
 				{
-					"name": "_get_shader_rid",
-					"is_const": true,
-					"is_static": false,
-					"is_required": true,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 2944877500,
-					"return_value": {
-						"type": "RID"
-					}
-				},
-				{
-					"name": "_get_shader_mode",
-					"is_const": true,
-					"is_static": false,
-					"is_required": true,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 3392948163,
-					"return_value": {
-						"type": "enum::Shader.Mode"
-					}
-				},
-				{
-					"name": "_can_do_next_pass",
-					"is_const": true,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "_can_use_render_priority",
-					"is_const": true,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_next_pass",
+					"name": "from_node",
 					"is_const": false,
 					"is_vararg": false,
-					"is_static": false,
+					"is_static": true,
 					"is_virtual": false,
-					"hash": 2757459619,
+					"hash": 420544174,
+					"return_value": {
+						"type": "GLTFPhysicsBody"
+					},
 					"arguments": [
 						{
-							"name": "next_pass",
-							"type": "Material"
+							"name": "body_node",
+							"type": "CollisionObject3D"
 						}
 					]
 				},
 				{
-					"name": "get_next_pass",
+					"name": "to_node",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 5934680,
+					"hash": 3224013656,
 					"return_value": {
-						"type": "Material"
+						"type": "CollisionObject3D"
 					}
 				},
 				{
-					"name": "set_render_priority",
+					"name": "from_dictionary",
 					"is_const": false,
 					"is_vararg": false,
-					"is_static": false,
+					"is_static": true,
 					"is_virtual": false,
-					"hash": 1286410249,
+					"hash": 1177544336,
+					"return_value": {
+						"type": "GLTFPhysicsBody"
+					},
 					"arguments": [
 						{
-							"name": "priority",
-							"type": "int",
-							"meta": "int32"
+							"name": "dictionary",
+							"type": "Dictionary"
 						}
 					]
 				},
 				{
-					"name": "get_render_priority",
+					"name": "to_dictionary",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3905245786,
+					"hash": 3102165223,
 					"return_value": {
-						"type": "int",
-						"meta": "int32"
+						"type": "Dictionary"
 					}
 				},
 				{
-					"name": "inspect_native_shader_code",
+					"name": "get_body_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_body_type",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3218959716
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "body_type",
+							"type": "String"
+						}
+					]
 				},
 				{
-					"name": "create_placeholder",
+					"name": "get_mass",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 121922552,
+					"hash": 1740695150,
 					"return_value": {
-						"type": "Resource"
+						"type": "float",
+						"meta": "float"
 					}
+				},
+				{
+					"name": "set_mass",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "mass",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_linear_velocity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_linear_velocity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "linear_velocity",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_angular_velocity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_angular_velocity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "angular_velocity",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_center_of_mass",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_center_of_mass",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "center_of_mass",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_inertia_diagonal",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_inertia_diagonal",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "inertia_diagonal",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_inertia_orientation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1222331677,
+					"return_value": {
+						"type": "Quaternion"
+					}
+				},
+				{
+					"name": "set_inertia_orientation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1727505552,
+					"arguments": [
+						{
+							"name": "inertia_orientation",
+							"type": "Quaternion"
+						}
+					]
+				},
+				{
+					"name": "get_inertia_tensor",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2716978435,
+					"return_value": {
+						"type": "Basis"
+					}
+				},
+				{
+					"name": "set_inertia_tensor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1055510324,
+					"arguments": [
+						{
+							"name": "inertia_tensor",
+							"type": "Basis"
+						}
+					]
 				}
 			],
 			"properties": [
 				{
-					"type": "int",
-					"name": "render_priority",
-					"setter": "set_render_priority",
-					"getter": "get_render_priority"
+					"type": "String",
+					"name": "body_type",
+					"setter": "set_body_type",
+					"getter": "get_body_type"
 				},
 				{
-					"type": "Material",
-					"name": "next_pass",
-					"setter": "set_next_pass",
-					"getter": "get_next_pass"
+					"type": "float",
+					"name": "mass",
+					"setter": "set_mass",
+					"getter": "get_mass"
+				},
+				{
+					"type": "Vector3",
+					"name": "linear_velocity",
+					"setter": "set_linear_velocity",
+					"getter": "get_linear_velocity"
+				},
+				{
+					"type": "Vector3",
+					"name": "angular_velocity",
+					"setter": "set_angular_velocity",
+					"getter": "get_angular_velocity"
+				},
+				{
+					"type": "Vector3",
+					"name": "center_of_mass",
+					"setter": "set_center_of_mass",
+					"getter": "get_center_of_mass"
+				},
+				{
+					"type": "Vector3",
+					"name": "inertia_diagonal",
+					"setter": "set_inertia_diagonal",
+					"getter": "get_inertia_diagonal"
+				},
+				{
+					"type": "Quaternion",
+					"name": "inertia_orientation",
+					"setter": "set_inertia_orientation",
+					"getter": "get_inertia_orientation"
+				},
+				{
+					"type": "Basis",
+					"name": "inertia_tensor",
+					"setter": "set_inertia_tensor",
+					"getter": "get_inertia_tensor"
 				}
 			]
-		},
-		{
-			"name": "Texture",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core"
 		},
 		{
 			"name": "InstancePlaceholder",
@@ -189176,6 +189217,41 @@
 					"index": 4
 				},
 				{
+					"type": "PackedByteArray",
+					"name": "bytecode_raygen",
+					"setter": "set_stage_bytecode",
+					"getter": "get_stage_bytecode",
+					"index": 5
+				},
+				{
+					"type": "PackedByteArray",
+					"name": "bytecode_any_hit",
+					"setter": "set_stage_bytecode",
+					"getter": "get_stage_bytecode",
+					"index": 6
+				},
+				{
+					"type": "PackedByteArray",
+					"name": "bytecode_closest_hit",
+					"setter": "set_stage_bytecode",
+					"getter": "get_stage_bytecode",
+					"index": 7
+				},
+				{
+					"type": "PackedByteArray",
+					"name": "bytecode_miss",
+					"setter": "set_stage_bytecode",
+					"getter": "get_stage_bytecode",
+					"index": 8
+				},
+				{
+					"type": "PackedByteArray",
+					"name": "bytecode_intersection",
+					"setter": "set_stage_bytecode",
+					"getter": "get_stage_bytecode",
+					"index": 9
+				},
+				{
 					"type": "String",
 					"name": "compile_error_vertex",
 					"setter": "set_stage_compile_error",
@@ -189209,6 +189285,41 @@
 					"setter": "set_stage_compile_error",
 					"getter": "get_stage_compile_error",
 					"index": 4
+				},
+				{
+					"type": "String",
+					"name": "compile_error_raygen",
+					"setter": "set_stage_compile_error",
+					"getter": "get_stage_compile_error",
+					"index": 5
+				},
+				{
+					"type": "String",
+					"name": "compile_error_any_hit",
+					"setter": "set_stage_compile_error",
+					"getter": "get_stage_compile_error",
+					"index": 6
+				},
+				{
+					"type": "String",
+					"name": "compile_error_closest_hit",
+					"setter": "set_stage_compile_error",
+					"getter": "get_stage_compile_error",
+					"index": 7
+				},
+				{
+					"type": "String",
+					"name": "compile_error_miss",
+					"setter": "set_stage_compile_error",
+					"getter": "get_stage_compile_error",
+					"index": 8
+				},
+				{
+					"type": "String",
+					"name": "compile_error_intersection",
+					"setter": "set_stage_compile_error",
+					"getter": "get_stage_compile_error",
+					"index": 9
 				}
 			]
 		},
@@ -189315,6 +189426,41 @@
 					"setter": "set_stage_source",
 					"getter": "get_stage_source",
 					"index": 4
+				},
+				{
+					"type": "String",
+					"name": "source_raygen",
+					"setter": "set_stage_source",
+					"getter": "get_stage_source",
+					"index": 5
+				},
+				{
+					"type": "String",
+					"name": "source_any_hit",
+					"setter": "set_stage_source",
+					"getter": "get_stage_source",
+					"index": 6
+				},
+				{
+					"type": "String",
+					"name": "source_closest_hit",
+					"setter": "set_stage_source",
+					"getter": "get_stage_source",
+					"index": 7
+				},
+				{
+					"type": "String",
+					"name": "source_miss",
+					"setter": "set_stage_source",
+					"getter": "get_stage_source",
+					"index": 8
+				},
+				{
+					"type": "String",
+					"name": "source_intersection",
+					"setter": "set_stage_source",
+					"getter": "get_stage_source",
+					"index": 9
 				},
 				{
 					"type": "int",
@@ -255452,6 +255598,24 @@
 						{
 							"name": "BUFFER_CREATION_AS_STORAGE_BIT",
 							"value": 2
+						},
+						{
+							"name": "BUFFER_CREATION_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT",
+							"value": 8
+						}
+					]
+				},
+				{
+					"name": "AccelerationStructureGeometryBits",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "ACCELERATION_STRUCTURE_GEOMETRY_OPAQUE",
+							"value": 1
+						},
+						{
+							"name": "ACCELERATION_STRUCTURE_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION",
+							"value": 2
 						}
 					]
 				},
@@ -255508,8 +255672,12 @@
 							"value": 11
 						},
 						{
-							"name": "UNIFORM_TYPE_MAX",
+							"name": "UNIFORM_TYPE_ACCELERATION_STRUCTURE",
 							"value": 12
+						},
+						{
+							"name": "UNIFORM_TYPE_MAX",
+							"value": 13
 						}
 					]
 				},
@@ -256000,8 +256168,28 @@
 							"value": 4
 						},
 						{
-							"name": "SHADER_STAGE_MAX",
+							"name": "SHADER_STAGE_RAYGEN",
 							"value": 5
+						},
+						{
+							"name": "SHADER_STAGE_ANY_HIT",
+							"value": 6
+						},
+						{
+							"name": "SHADER_STAGE_CLOSEST_HIT",
+							"value": 7
+						},
+						{
+							"name": "SHADER_STAGE_MISS",
+							"value": 8
+						},
+						{
+							"name": "SHADER_STAGE_INTERSECTION",
+							"value": 9
+						},
+						{
+							"name": "SHADER_STAGE_MAX",
+							"value": 10
 						},
 						{
 							"name": "SHADER_STAGE_VERTEX_BIT",
@@ -256022,6 +256210,26 @@
 						{
 							"name": "SHADER_STAGE_COMPUTE_BIT",
 							"value": 16
+						},
+						{
+							"name": "SHADER_STAGE_RAYGEN_BIT",
+							"value": 32
+						},
+						{
+							"name": "SHADER_STAGE_ANY_HIT_BIT",
+							"value": 64
+						},
+						{
+							"name": "SHADER_STAGE_CLOSEST_HIT_BIT",
+							"value": 128
+						},
+						{
+							"name": "SHADER_STAGE_MISS_BIT",
+							"value": 256
+						},
+						{
+							"name": "SHADER_STAGE_INTERSECTION_BIT",
+							"value": 512
 						}
 					]
 				},
@@ -256076,6 +256284,14 @@
 						{
 							"name": "SUPPORTS_IMAGE_ATOMIC_32_BIT",
 							"value": 7
+						},
+						{
+							"name": "SUPPORTS_RAY_QUERY",
+							"value": 11
+						},
+						{
+							"name": "SUPPORTS_RAYTRACING_PIPELINE",
+							"value": 12
 						}
 					]
 				},
@@ -257933,6 +258149,156 @@
 					]
 				},
 				{
+					"name": "raytracing_pipeline_create",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1448838280,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "shader",
+							"type": "RID"
+						},
+						{
+							"name": "specialization_constants",
+							"type": "typedarray::RDPipelineSpecializationConstant",
+							"default_value": "Array[RDPipelineSpecializationConstant]([])"
+						}
+					]
+				},
+				{
+					"name": "raytracing_pipeline_is_valid",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3521089500,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "raytracing_pipeline",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "blas_create",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1252581520,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "vertex_array",
+							"type": "RID"
+						},
+						{
+							"name": "index_array",
+							"type": "RID"
+						},
+						{
+							"name": "geometry_bits",
+							"type": "bitfield::RenderingDevice.AccelerationStructureGeometryBits",
+							"default_value": "0"
+						},
+						{
+							"name": "position_attribute_location",
+							"type": "int",
+							"meta": "uint32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "tlas_instances_buffer_create",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3821760831,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "instance_count",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "creation_bits",
+							"type": "bitfield::RenderingDevice.BufferCreationBits",
+							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "tlas_instances_buffer_fill",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1473425859,
+					"arguments": [
+						{
+							"name": "instances_buffer",
+							"type": "RID"
+						},
+						{
+							"name": "blases",
+							"type": "typedarray::RID"
+						},
+						{
+							"name": "transforms",
+							"type": "typedarray::Transform3D"
+						}
+					]
+				},
+				{
+					"name": "tlas_create",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 41030802,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "instances_buffer",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "acceleration_structure_build",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 813180755,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "acceleration_structure",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "screen_get_width",
 					"is_const": true,
 					"is_vararg": false,
@@ -258619,6 +258985,118 @@
 						422991495,
 						3920951950
 					]
+				},
+				{
+					"name": "raytracing_list_begin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					}
+				},
+				{
+					"name": "raytracing_list_bind_raytracing_pipeline",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4040184819,
+					"arguments": [
+						{
+							"name": "raytracing_list",
+							"type": "int",
+							"meta": "int64"
+						},
+						{
+							"name": "raytracing_pipeline",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "raytracing_list_set_push_constant",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2772371345,
+					"arguments": [
+						{
+							"name": "raytracing_list",
+							"type": "int",
+							"meta": "int64"
+						},
+						{
+							"name": "buffer",
+							"type": "PackedByteArray"
+						},
+						{
+							"name": "size_bytes",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "raytracing_list_bind_uniform_set",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 749655778,
+					"arguments": [
+						{
+							"name": "raytracing_list",
+							"type": "int",
+							"meta": "int64"
+						},
+						{
+							"name": "uniform_set",
+							"type": "RID"
+						},
+						{
+							"name": "set_index",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "raytracing_list_trace_rays",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1649997291,
+					"arguments": [
+						{
+							"name": "raytracing_list",
+							"type": "int",
+							"meta": "int64"
+						},
+						{
+							"name": "width",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "height",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "raytracing_list_end",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
 				},
 				{
 					"name": "free_rid",
@@ -289962,6 +290440,252 @@
 					}
 				},
 				{
+					"name": "get_joy_accelerometer",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 711720468,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joy_gravity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 711720468,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joy_gyroscope",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 711720468,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joy_motion_sensors_rate",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2339986948,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "is_joy_motion_sensors_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joy_motion_sensors_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "has_joy_motion_sensors",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "start_joy_motion_sensors_calibration",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "stop_joy_motion_sensors_calibration",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "clear_joy_motion_sensors_calibration",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joy_motion_sensors_calibration",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3485342025,
+					"return_value": {
+						"type": "Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joy_motion_sensors_calibration",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 64545446,
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "calibration_info",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "is_joy_motion_sensors_calibrated",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "is_joy_motion_sensors_calibrating",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "set_gravity",
 					"is_const": false,
 					"is_vararg": false,
@@ -302900,6 +303624,10 @@
 						{
 							"name": "ROLE_TOOLTIP",
 							"value": 45
+						},
+						{
+							"name": "ROLE_REGION",
+							"value": 46
 						}
 					]
 				},
@@ -308857,6 +309585,17 @@
 					"return_value": {
 						"type": "bool"
 					}
+				}
+			],
+			"signals": [
+				{
+					"name": "orientation_changed",
+					"arguments": [
+						{
+							"name": "orientation",
+							"type": "int"
+						}
+					]
 				}
 			]
 		},
