@@ -164573,6 +164573,28 @@
 					}
 				},
 				{
+					"name": "is_user_presence_supported",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_user_present",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "get_display_refresh_rate",
 					"is_const": true,
 					"is_vararg": false,
@@ -165106,6 +165128,15 @@
 						{
 							"name": "to_level",
 							"type": "int"
+						}
+					]
+				},
+				{
+					"name": "user_presence_changed",
+					"arguments": [
+						{
+							"name": "is_user_present",
+							"type": "bool"
 						}
 					]
 				}
@@ -187434,6 +187465,41 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "_set_format",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 31872775,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "parameters",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "_get_formats",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "Array"
+					}
+				},
+				{
 					"name": "get_id",
 					"is_const": true,
 					"is_vararg": false,
@@ -202864,6 +202930,13 @@
 			]
 		},
 		{
+			"name": "OpenXRUserPresenceExtension",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRExtensionWrapper",
+			"api_type": "core"
+		},
+		{
 			"name": "OpenXRAndroidThreadSettingsExtension",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -210856,6 +210929,43 @@
 					"hash": 2902757236,
 					"return_value": {
 						"type": "enum::TextServer.AutowrapMode"
+					},
+					"arguments": [
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_autowrap_trim_flags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2186029660,
+					"arguments": [
+						{
+							"name": "column",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "flags",
+							"type": "bitfield::TextServer.LineBreakFlag"
+						}
+					]
+				},
+				{
+					"name": "get_autowrap_trim_flags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3513056523,
+					"return_value": {
+						"type": "bitfield::TextServer.LineBreakFlag"
 					},
 					"arguments": [
 						{
@@ -261505,6 +261615,26 @@
 					]
 				},
 				{
+					"name": "set_item_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "target_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "toggle_item_checked",
 					"is_const": false,
 					"is_vararg": false,
@@ -286774,6 +286904,34 @@
 					]
 				},
 				{
+					"name": "set_item_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 23951185,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "rid",
+							"type": "RID"
+						},
+						{
+							"name": "idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "target_idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "get_item_count",
 					"is_const": true,
 					"is_vararg": false,
@@ -289121,6 +289279,26 @@
 					"is_static": false,
 					"is_virtual": false,
 					"hash": 3218959716
+				},
+				{
+					"name": "center_on_current",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3058350285,
+					"arguments": [
+						{
+							"name": "center_verically",
+							"type": "bool",
+							"default_value": "true"
+						},
+						{
+							"name": "center_horizontally",
+							"type": "bool",
+							"default_value": "true"
+						}
+					]
 				},
 				{
 					"name": "get_v_scroll_bar",
@@ -343459,7 +343637,7 @@
 					"name": "_create_script",
 					"is_const": true,
 					"is_static": false,
-					"is_required": true,
+					"is_required": false,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 1981248198,
