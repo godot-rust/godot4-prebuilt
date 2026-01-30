@@ -27606,6 +27606,491 @@
 			]
 		},
 		{
+			"name": "VirtualJoystick",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Control",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "JoystickMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "JOYSTICK_FIXED",
+							"value": 0
+						},
+						{
+							"name": "JOYSTICK_DYNAMIC",
+							"value": 1
+						},
+						{
+							"name": "JOYSTICK_FOLLOWING",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "VisibilityMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "VISIBILITY_ALWAYS",
+							"value": 0
+						},
+						{
+							"name": "VISIBILITY_WHEN_TOUCHED",
+							"value": 1
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_joystick_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1316760817,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::VirtualJoystick.JoystickMode"
+						}
+					]
+				},
+				{
+					"name": "get_joystick_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2694680530,
+					"return_value": {
+						"type": "enum::VirtualJoystick.JoystickMode"
+					}
+				},
+				{
+					"name": "set_joystick_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "size",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_joystick_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_tip_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "size",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_tip_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_deadzone_ratio",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "ratio",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_deadzone_ratio",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_clampzone_ratio",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "ratio",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_clampzone_ratio",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_initial_offset_ratio",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "ratio",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_initial_offset_ratio",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_action_left",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "action",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_action_left",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_action_right",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "action",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_action_right",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_action_up",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "action",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_action_up",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_action_down",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "action",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_action_down",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
+					"name": "set_visibility_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2638298545,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::VirtualJoystick.VisibilityMode"
+						}
+					]
+				},
+				{
+					"name": "get_visibility_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3530872950,
+					"return_value": {
+						"type": "enum::VirtualJoystick.VisibilityMode"
+					}
+				},
+				{
+					"name": "set_joystick_texture",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "texture",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_joystick_texture",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
+				},
+				{
+					"name": "set_tip_texture",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "texture",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_tip_texture",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
+				}
+			],
+			"signals": [
+				{
+					"name": "pressed"
+				},
+				{
+					"name": "tapped"
+				},
+				{
+					"name": "released",
+					"arguments": [
+						{
+							"name": "input_vector",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "flicked",
+					"arguments": [
+						{
+							"name": "input_vector",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "flick_canceled"
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "joystick_mode",
+					"setter": "set_joystick_mode",
+					"getter": "get_joystick_mode"
+				},
+				{
+					"type": "float",
+					"name": "joystick_size",
+					"setter": "set_joystick_size",
+					"getter": "get_joystick_size"
+				},
+				{
+					"type": "float",
+					"name": "tip_size",
+					"setter": "set_tip_size",
+					"getter": "get_tip_size"
+				},
+				{
+					"type": "float",
+					"name": "deadzone_ratio",
+					"setter": "set_deadzone_ratio",
+					"getter": "get_deadzone_ratio"
+				},
+				{
+					"type": "float",
+					"name": "clampzone_ratio",
+					"setter": "set_clampzone_ratio",
+					"getter": "get_clampzone_ratio"
+				},
+				{
+					"type": "Vector2",
+					"name": "initial_offset_ratio",
+					"setter": "set_initial_offset_ratio",
+					"getter": "get_initial_offset_ratio"
+				},
+				{
+					"type": "StringName",
+					"name": "action_left",
+					"setter": "set_action_left",
+					"getter": "get_action_left"
+				},
+				{
+					"type": "StringName",
+					"name": "action_right",
+					"setter": "set_action_right",
+					"getter": "get_action_right"
+				},
+				{
+					"type": "StringName",
+					"name": "action_up",
+					"setter": "set_action_up",
+					"getter": "get_action_up"
+				},
+				{
+					"type": "StringName",
+					"name": "action_down",
+					"setter": "set_action_down",
+					"getter": "get_action_down"
+				},
+				{
+					"type": "int",
+					"name": "visibility_mode",
+					"setter": "set_visibility_mode",
+					"getter": "get_visibility_mode"
+				},
+				{
+					"type": "Texture2D",
+					"name": "joystick_texture",
+					"setter": "set_joystick_texture",
+					"getter": "get_joystick_texture"
+				},
+				{
+					"type": "Texture2D",
+					"name": "tip_texture",
+					"setter": "set_tip_texture",
+					"getter": "get_tip_texture"
+				}
+			]
+		},
+		{
 			"name": "FoldableContainer",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -49696,481 +50181,6 @@
 			"is_instantiable": true,
 			"inherits": "Resource",
 			"api_type": "core"
-		},
-		{
-			"name": "ParallaxLayer",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "Node2D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_motion_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "scale",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_motion_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
-					"name": "set_motion_offset",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "offset",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_motion_offset",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
-					"name": "set_mirroring",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "mirror",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_mirroring",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "Vector2",
-					"name": "motion_scale",
-					"setter": "set_motion_scale",
-					"getter": "get_motion_scale"
-				},
-				{
-					"type": "Vector2",
-					"name": "motion_offset",
-					"setter": "set_motion_offset",
-					"getter": "get_motion_offset"
-				},
-				{
-					"type": "Vector2",
-					"name": "motion_mirroring",
-					"setter": "set_mirroring",
-					"getter": "get_mirroring"
-				}
-			]
-		},
-		{
-			"name": "ParallaxBackground",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "CanvasLayer",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_scroll_offset",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "offset",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_scroll_offset",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
-					"name": "set_scroll_base_offset",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "offset",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_scroll_base_offset",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
-					"name": "set_scroll_base_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "scale",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_scroll_base_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
-					"name": "set_limit_begin",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "offset",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_limit_begin",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
-					"name": "set_limit_end",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 743155724,
-					"arguments": [
-						{
-							"name": "offset",
-							"type": "Vector2"
-						}
-					]
-				},
-				{
-					"name": "get_limit_end",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3341600327,
-					"return_value": {
-						"type": "Vector2"
-					}
-				},
-				{
-					"name": "set_ignore_camera_zoom",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "ignore",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_ignore_camera_zoom",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2240911060,
-					"return_value": {
-						"type": "bool"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "Vector2",
-					"name": "scroll_offset",
-					"setter": "set_scroll_offset",
-					"getter": "get_scroll_offset"
-				},
-				{
-					"type": "Vector2",
-					"name": "scroll_base_offset",
-					"setter": "set_scroll_base_offset",
-					"getter": "get_scroll_base_offset"
-				},
-				{
-					"type": "Vector2",
-					"name": "scroll_base_scale",
-					"setter": "set_scroll_base_scale",
-					"getter": "get_scroll_base_scale"
-				},
-				{
-					"type": "Vector2",
-					"name": "scroll_limit_begin",
-					"setter": "set_limit_begin",
-					"getter": "get_limit_begin"
-				},
-				{
-					"type": "Vector2",
-					"name": "scroll_limit_end",
-					"setter": "set_limit_end",
-					"getter": "get_limit_end"
-				},
-				{
-					"type": "bool",
-					"name": "scroll_ignore_camera_zoom",
-					"setter": "set_ignore_camera_zoom",
-					"getter": "is_ignore_camera_zoom"
-				}
-			]
-		},
-		{
-			"name": "RemoteTransform2D",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "Node2D",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "set_remote_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1348162250,
-					"arguments": [
-						{
-							"name": "path",
-							"type": "NodePath"
-						}
-					]
-				},
-				{
-					"name": "get_remote_node",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4075236667,
-					"return_value": {
-						"type": "NodePath"
-					}
-				},
-				{
-					"name": "force_update_cache",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "set_use_global_coordinates",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "use_global_coordinates",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_use_global_coordinates",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_update_position",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "update_remote_position",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_update_position",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_update_rotation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "update_remote_rotation",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_update_rotation",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_update_scale",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "update_remote_scale",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_update_scale",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "NodePath",
-					"name": "remote_path",
-					"setter": "set_remote_node",
-					"getter": "get_remote_node"
-				},
-				{
-					"type": "bool",
-					"name": "use_global_coordinates",
-					"setter": "set_use_global_coordinates",
-					"getter": "get_use_global_coordinates"
-				},
-				{
-					"type": "bool",
-					"name": "update_position",
-					"setter": "set_update_position",
-					"getter": "get_update_position"
-				},
-				{
-					"type": "bool",
-					"name": "update_rotation",
-					"setter": "set_update_rotation",
-					"getter": "get_update_rotation"
-				},
-				{
-					"type": "bool",
-					"name": "update_scale",
-					"setter": "set_update_scale",
-					"getter": "get_update_scale"
-				}
-			]
 		},
 		{
 			"name": "Parallax2D",
@@ -113028,1075 +113038,6 @@
 			]
 		},
 		{
-			"name": "GLTFMesh",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "get_original_name",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2841200299,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "set_original_name",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "original_name",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_mesh",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3754628756,
-					"return_value": {
-						"type": "ImporterMesh"
-					}
-				},
-				{
-					"name": "set_mesh",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2255166972,
-					"arguments": [
-						{
-							"name": "mesh",
-							"type": "ImporterMesh"
-						}
-					]
-				},
-				{
-					"name": "get_blend_weights",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2445143706,
-					"return_value": {
-						"type": "PackedFloat32Array"
-					}
-				},
-				{
-					"name": "set_blend_weights",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2899603908,
-					"arguments": [
-						{
-							"name": "blend_weights",
-							"type": "PackedFloat32Array"
-						}
-					]
-				},
-				{
-					"name": "get_instance_materials",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2915620761,
-					"return_value": {
-						"type": "typedarray::Material"
-					}
-				},
-				{
-					"name": "set_instance_materials",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 381264803,
-					"arguments": [
-						{
-							"name": "instance_materials",
-							"type": "typedarray::Material"
-						}
-					]
-				},
-				{
-					"name": "get_additional_data",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2138907829,
-					"return_value": {
-						"type": "Variant"
-					},
-					"arguments": [
-						{
-							"name": "extension_name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "set_additional_data",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3776071444,
-					"arguments": [
-						{
-							"name": "extension_name",
-							"type": "StringName"
-						},
-						{
-							"name": "additional_data",
-							"type": "Variant"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "String",
-					"name": "original_name",
-					"setter": "set_original_name",
-					"getter": "get_original_name"
-				},
-				{
-					"type": "Object",
-					"name": "mesh",
-					"setter": "set_mesh",
-					"getter": "get_mesh"
-				},
-				{
-					"type": "PackedFloat32Array",
-					"name": "blend_weights",
-					"setter": "set_blend_weights",
-					"getter": "get_blend_weights"
-				},
-				{
-					"type": "Array",
-					"name": "instance_materials",
-					"setter": "set_instance_materials",
-					"getter": "get_instance_materials"
-				}
-			]
-		},
-		{
-			"name": "GLTFLight",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "from_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 3907677874,
-					"return_value": {
-						"type": "GLTFLight"
-					},
-					"arguments": [
-						{
-							"name": "light_node",
-							"type": "Light3D"
-						}
-					]
-				},
-				{
-					"name": "to_node",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2040811672,
-					"return_value": {
-						"type": "Light3D"
-					}
-				},
-				{
-					"name": "from_dictionary",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 4057087208,
-					"return_value": {
-						"type": "GLTFLight"
-					},
-					"arguments": [
-						{
-							"name": "dictionary",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
-					"name": "to_dictionary",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3102165223,
-					"return_value": {
-						"type": "Dictionary"
-					}
-				},
-				{
-					"name": "get_color",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3200896285,
-					"return_value": {
-						"type": "Color"
-					}
-				},
-				{
-					"name": "set_color",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2920490490,
-					"arguments": [
-						{
-							"name": "color",
-							"type": "Color"
-						}
-					]
-				},
-				{
-					"name": "get_intensity",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 191475506,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_intensity",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "intensity",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_light_type",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2841200299,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "set_light_type",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "light_type",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_range",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 191475506,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_range",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "range",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_inner_cone_angle",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 191475506,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_inner_cone_angle",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "inner_cone_angle",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_outer_cone_angle",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 191475506,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_outer_cone_angle",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "outer_cone_angle",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_additional_data",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2138907829,
-					"return_value": {
-						"type": "Variant"
-					},
-					"arguments": [
-						{
-							"name": "extension_name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "set_additional_data",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3776071444,
-					"arguments": [
-						{
-							"name": "extension_name",
-							"type": "StringName"
-						},
-						{
-							"name": "additional_data",
-							"type": "Variant"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "Color",
-					"name": "color",
-					"setter": "set_color",
-					"getter": "get_color"
-				},
-				{
-					"type": "float",
-					"name": "intensity",
-					"setter": "set_intensity",
-					"getter": "get_intensity"
-				},
-				{
-					"type": "String",
-					"name": "light_type",
-					"setter": "set_light_type",
-					"getter": "get_light_type"
-				},
-				{
-					"type": "float",
-					"name": "range",
-					"setter": "set_range",
-					"getter": "get_range"
-				},
-				{
-					"type": "float",
-					"name": "inner_cone_angle",
-					"setter": "set_inner_cone_angle",
-					"getter": "get_inner_cone_angle"
-				},
-				{
-					"type": "float",
-					"name": "outer_cone_angle",
-					"setter": "set_outer_cone_angle",
-					"getter": "get_outer_cone_angle"
-				}
-			]
-		},
-		{
-			"name": "GLTFCamera",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "from_node",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 237784,
-					"return_value": {
-						"type": "GLTFCamera"
-					},
-					"arguments": [
-						{
-							"name": "camera_node",
-							"type": "Camera3D"
-						}
-					]
-				},
-				{
-					"name": "to_node",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2285090890,
-					"return_value": {
-						"type": "Camera3D"
-					}
-				},
-				{
-					"name": "from_dictionary",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 2495512509,
-					"return_value": {
-						"type": "GLTFCamera"
-					},
-					"arguments": [
-						{
-							"name": "dictionary",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
-					"name": "to_dictionary",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3102165223,
-					"return_value": {
-						"type": "Dictionary"
-					}
-				},
-				{
-					"name": "get_perspective",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_perspective",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "perspective",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_fov",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_fov",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "fov",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_size_mag",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_size_mag",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "size_mag",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_depth_far",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_depth_far",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "zdepth_far",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_depth_near",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
-					"name": "set_depth_near",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "zdepth_near",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "bool",
-					"name": "perspective",
-					"setter": "set_perspective",
-					"getter": "get_perspective"
-				},
-				{
-					"type": "float",
-					"name": "fov",
-					"setter": "set_fov",
-					"getter": "get_fov"
-				},
-				{
-					"type": "float",
-					"name": "size_mag",
-					"setter": "set_size_mag",
-					"getter": "get_size_mag"
-				},
-				{
-					"type": "float",
-					"name": "depth_far",
-					"setter": "set_depth_far",
-					"getter": "get_depth_far"
-				},
-				{
-					"type": "float",
-					"name": "depth_near",
-					"setter": "set_depth_near",
-					"getter": "get_depth_near"
-				}
-			]
-		},
-		{
-			"name": "GLTFBufferView",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "load_buffer_view_data",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3945446907,
-					"return_value": {
-						"type": "PackedByteArray"
-					},
-					"arguments": [
-						{
-							"name": "state",
-							"type": "GLTFState"
-						}
-					]
-				},
-				{
-					"name": "from_dictionary",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": true,
-					"is_virtual": false,
-					"hash": 2594413512,
-					"return_value": {
-						"type": "GLTFBufferView"
-					},
-					"arguments": [
-						{
-							"name": "dictionary",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
-					"name": "to_dictionary",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3102165223,
-					"return_value": {
-						"type": "Dictionary"
-					}
-				},
-				{
-					"name": "get_buffer",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"hash_compatibility": [
-						2455072627
-					],
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "set_buffer",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "buffer",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_byte_offset",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"hash_compatibility": [
-						2455072627
-					],
-					"return_value": {
-						"type": "int",
-						"meta": "int64"
-					}
-				},
-				{
-					"name": "set_byte_offset",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "byte_offset",
-							"type": "int",
-							"meta": "int64"
-						}
-					]
-				},
-				{
-					"name": "get_byte_length",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"hash_compatibility": [
-						2455072627
-					],
-					"return_value": {
-						"type": "int",
-						"meta": "int64"
-					}
-				},
-				{
-					"name": "set_byte_length",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "byte_length",
-							"type": "int",
-							"meta": "int64"
-						}
-					]
-				},
-				{
-					"name": "get_byte_stride",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"hash_compatibility": [
-						2455072627
-					],
-					"return_value": {
-						"type": "int",
-						"meta": "int64"
-					}
-				},
-				{
-					"name": "set_byte_stride",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "byte_stride",
-							"type": "int",
-							"meta": "int64"
-						}
-					]
-				},
-				{
-					"name": "get_indices",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"hash_compatibility": [
-						2240911060
-					],
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_indices",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "indices",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_vertex_attributes",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_vertex_attributes",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "is_attributes",
-							"type": "bool"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "int",
-					"name": "buffer",
-					"setter": "set_buffer",
-					"getter": "get_buffer"
-				},
-				{
-					"type": "int",
-					"name": "byte_offset",
-					"setter": "set_byte_offset",
-					"getter": "get_byte_offset"
-				},
-				{
-					"type": "int",
-					"name": "byte_length",
-					"setter": "set_byte_length",
-					"getter": "get_byte_length"
-				},
-				{
-					"type": "int",
-					"name": "byte_stride",
-					"setter": "set_byte_stride",
-					"getter": "get_byte_stride"
-				},
-				{
-					"type": "bool",
-					"name": "indices",
-					"setter": "set_indices",
-					"getter": "get_indices"
-				},
-				{
-					"type": "bool",
-					"name": "vertex_attributes",
-					"setter": "set_vertex_attributes",
-					"getter": "get_vertex_attributes"
-				}
-			]
-		},
-		{
-			"name": "GLTFAnimation",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "get_original_name",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2841200299,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "set_original_name",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 83702148,
-					"arguments": [
-						{
-							"name": "original_name",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_loop",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_loop",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "loop",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_additional_data",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2138907829,
-					"return_value": {
-						"type": "Variant"
-					},
-					"arguments": [
-						{
-							"name": "extension_name",
-							"type": "StringName"
-						}
-					]
-				},
-				{
-					"name": "set_additional_data",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3776071444,
-					"arguments": [
-						{
-							"name": "extension_name",
-							"type": "StringName"
-						},
-						{
-							"name": "additional_data",
-							"type": "Variant"
-						}
-					]
-				}
-			],
-			"properties": [
-				{
-					"type": "String",
-					"name": "original_name",
-					"setter": "set_original_name",
-					"getter": "get_original_name"
-				},
-				{
-					"type": "bool",
-					"name": "loop",
-					"setter": "set_loop",
-					"getter": "get_loop"
-				}
-			]
-		},
-		{
 			"name": "GLTFAccessor",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -148963,6 +147904,481 @@
 			]
 		},
 		{
+			"name": "ParallaxLayer",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Node2D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_motion_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "scale",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_motion_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_motion_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_motion_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_mirroring",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "mirror",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_mirroring",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "Vector2",
+					"name": "motion_scale",
+					"setter": "set_motion_scale",
+					"getter": "get_motion_scale"
+				},
+				{
+					"type": "Vector2",
+					"name": "motion_offset",
+					"setter": "set_motion_offset",
+					"getter": "get_motion_offset"
+				},
+				{
+					"type": "Vector2",
+					"name": "motion_mirroring",
+					"setter": "set_mirroring",
+					"getter": "get_mirroring"
+				}
+			]
+		},
+		{
+			"name": "ParallaxBackground",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "CanvasLayer",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_scroll_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_scroll_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_scroll_base_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_scroll_base_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_scroll_base_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "scale",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_scroll_base_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_limit_begin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_limit_begin",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_limit_end",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_limit_end",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_ignore_camera_zoom",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "ignore",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_ignore_camera_zoom",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "Vector2",
+					"name": "scroll_offset",
+					"setter": "set_scroll_offset",
+					"getter": "get_scroll_offset"
+				},
+				{
+					"type": "Vector2",
+					"name": "scroll_base_offset",
+					"setter": "set_scroll_base_offset",
+					"getter": "get_scroll_base_offset"
+				},
+				{
+					"type": "Vector2",
+					"name": "scroll_base_scale",
+					"setter": "set_scroll_base_scale",
+					"getter": "get_scroll_base_scale"
+				},
+				{
+					"type": "Vector2",
+					"name": "scroll_limit_begin",
+					"setter": "set_limit_begin",
+					"getter": "get_limit_begin"
+				},
+				{
+					"type": "Vector2",
+					"name": "scroll_limit_end",
+					"setter": "set_limit_end",
+					"getter": "get_limit_end"
+				},
+				{
+					"type": "bool",
+					"name": "scroll_ignore_camera_zoom",
+					"setter": "set_ignore_camera_zoom",
+					"getter": "is_ignore_camera_zoom"
+				}
+			]
+		},
+		{
+			"name": "RemoteTransform2D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Node2D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_remote_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1348162250,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "NodePath"
+						}
+					]
+				},
+				{
+					"name": "get_remote_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4075236667,
+					"return_value": {
+						"type": "NodePath"
+					}
+				},
+				{
+					"name": "force_update_cache",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "set_use_global_coordinates",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use_global_coordinates",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_use_global_coordinates",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_update_position",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "update_remote_position",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_update_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_update_rotation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "update_remote_rotation",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_update_rotation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_update_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "update_remote_scale",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_update_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "NodePath",
+					"name": "remote_path",
+					"setter": "set_remote_node",
+					"getter": "get_remote_node"
+				},
+				{
+					"type": "bool",
+					"name": "use_global_coordinates",
+					"setter": "set_use_global_coordinates",
+					"getter": "get_use_global_coordinates"
+				},
+				{
+					"type": "bool",
+					"name": "update_position",
+					"setter": "set_update_position",
+					"getter": "get_update_position"
+				},
+				{
+					"type": "bool",
+					"name": "update_rotation",
+					"setter": "set_update_rotation",
+					"getter": "get_update_rotation"
+				},
+				{
+					"type": "bool",
+					"name": "update_scale",
+					"setter": "set_update_scale",
+					"getter": "get_update_scale"
+				}
+			]
+		},
+		{
 			"name": "JavaScriptObject",
 			"is_refcounted": true,
 			"is_instantiable": false,
@@ -169986,6 +169402,1075 @@
 					"name": "inertia_tensor",
 					"setter": "set_inertia_tensor",
 					"getter": "get_inertia_tensor"
+				}
+			]
+		},
+		{
+			"name": "GLTFMesh",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_original_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2841200299,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_original_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "original_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_mesh",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3754628756,
+					"return_value": {
+						"type": "ImporterMesh"
+					}
+				},
+				{
+					"name": "set_mesh",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2255166972,
+					"arguments": [
+						{
+							"name": "mesh",
+							"type": "ImporterMesh"
+						}
+					]
+				},
+				{
+					"name": "get_blend_weights",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2445143706,
+					"return_value": {
+						"type": "PackedFloat32Array"
+					}
+				},
+				{
+					"name": "set_blend_weights",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2899603908,
+					"arguments": [
+						{
+							"name": "blend_weights",
+							"type": "PackedFloat32Array"
+						}
+					]
+				},
+				{
+					"name": "get_instance_materials",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2915620761,
+					"return_value": {
+						"type": "typedarray::Material"
+					}
+				},
+				{
+					"name": "set_instance_materials",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "instance_materials",
+							"type": "typedarray::Material"
+						}
+					]
+				},
+				{
+					"name": "get_additional_data",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2138907829,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "extension_name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "set_additional_data",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3776071444,
+					"arguments": [
+						{
+							"name": "extension_name",
+							"type": "StringName"
+						},
+						{
+							"name": "additional_data",
+							"type": "Variant"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "original_name",
+					"setter": "set_original_name",
+					"getter": "get_original_name"
+				},
+				{
+					"type": "Object",
+					"name": "mesh",
+					"setter": "set_mesh",
+					"getter": "get_mesh"
+				},
+				{
+					"type": "PackedFloat32Array",
+					"name": "blend_weights",
+					"setter": "set_blend_weights",
+					"getter": "get_blend_weights"
+				},
+				{
+					"type": "Array",
+					"name": "instance_materials",
+					"setter": "set_instance_materials",
+					"getter": "get_instance_materials"
+				}
+			]
+		},
+		{
+			"name": "GLTFLight",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "from_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 3907677874,
+					"return_value": {
+						"type": "GLTFLight"
+					},
+					"arguments": [
+						{
+							"name": "light_node",
+							"type": "Light3D"
+						}
+					]
+				},
+				{
+					"name": "to_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2040811672,
+					"return_value": {
+						"type": "Light3D"
+					}
+				},
+				{
+					"name": "from_dictionary",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 4057087208,
+					"return_value": {
+						"type": "GLTFLight"
+					},
+					"arguments": [
+						{
+							"name": "dictionary",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "to_dictionary",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3102165223,
+					"return_value": {
+						"type": "Dictionary"
+					}
+				},
+				{
+					"name": "get_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3200896285,
+					"return_value": {
+						"type": "Color"
+					}
+				},
+				{
+					"name": "set_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2920490490,
+					"arguments": [
+						{
+							"name": "color",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "get_intensity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 191475506,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_intensity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "intensity",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_light_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2841200299,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_light_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "light_type",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_range",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 191475506,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_range",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "range",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_inner_cone_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 191475506,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_inner_cone_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "inner_cone_angle",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_outer_cone_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 191475506,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_outer_cone_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "outer_cone_angle",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_additional_data",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2138907829,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "extension_name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "set_additional_data",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3776071444,
+					"arguments": [
+						{
+							"name": "extension_name",
+							"type": "StringName"
+						},
+						{
+							"name": "additional_data",
+							"type": "Variant"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "Color",
+					"name": "color",
+					"setter": "set_color",
+					"getter": "get_color"
+				},
+				{
+					"type": "float",
+					"name": "intensity",
+					"setter": "set_intensity",
+					"getter": "get_intensity"
+				},
+				{
+					"type": "String",
+					"name": "light_type",
+					"setter": "set_light_type",
+					"getter": "get_light_type"
+				},
+				{
+					"type": "float",
+					"name": "range",
+					"setter": "set_range",
+					"getter": "get_range"
+				},
+				{
+					"type": "float",
+					"name": "inner_cone_angle",
+					"setter": "set_inner_cone_angle",
+					"getter": "get_inner_cone_angle"
+				},
+				{
+					"type": "float",
+					"name": "outer_cone_angle",
+					"setter": "set_outer_cone_angle",
+					"getter": "get_outer_cone_angle"
+				}
+			]
+		},
+		{
+			"name": "GLTFCamera",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "from_node",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 237784,
+					"return_value": {
+						"type": "GLTFCamera"
+					},
+					"arguments": [
+						{
+							"name": "camera_node",
+							"type": "Camera3D"
+						}
+					]
+				},
+				{
+					"name": "to_node",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2285090890,
+					"return_value": {
+						"type": "Camera3D"
+					}
+				},
+				{
+					"name": "from_dictionary",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2495512509,
+					"return_value": {
+						"type": "GLTFCamera"
+					},
+					"arguments": [
+						{
+							"name": "dictionary",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "to_dictionary",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3102165223,
+					"return_value": {
+						"type": "Dictionary"
+					}
+				},
+				{
+					"name": "get_perspective",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_perspective",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "perspective",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_fov",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_fov",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "fov",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_size_mag",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_size_mag",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "size_mag",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_depth_far",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_depth_far",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "zdepth_far",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_depth_near",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_depth_near",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "zdepth_near",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "perspective",
+					"setter": "set_perspective",
+					"getter": "get_perspective"
+				},
+				{
+					"type": "float",
+					"name": "fov",
+					"setter": "set_fov",
+					"getter": "get_fov"
+				},
+				{
+					"type": "float",
+					"name": "size_mag",
+					"setter": "set_size_mag",
+					"getter": "get_size_mag"
+				},
+				{
+					"type": "float",
+					"name": "depth_far",
+					"setter": "set_depth_far",
+					"getter": "get_depth_far"
+				},
+				{
+					"type": "float",
+					"name": "depth_near",
+					"setter": "set_depth_near",
+					"getter": "get_depth_near"
+				}
+			]
+		},
+		{
+			"name": "GLTFBufferView",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "load_buffer_view_data",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3945446907,
+					"return_value": {
+						"type": "PackedByteArray"
+					},
+					"arguments": [
+						{
+							"name": "state",
+							"type": "GLTFState"
+						}
+					]
+				},
+				{
+					"name": "from_dictionary",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2594413512,
+					"return_value": {
+						"type": "GLTFBufferView"
+					},
+					"arguments": [
+						{
+							"name": "dictionary",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "to_dictionary",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3102165223,
+					"return_value": {
+						"type": "Dictionary"
+					}
+				},
+				{
+					"name": "get_buffer",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_buffer",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "buffer",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_byte_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					}
+				},
+				{
+					"name": "set_byte_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "byte_offset",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_byte_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					}
+				},
+				{
+					"name": "set_byte_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "byte_length",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_byte_stride",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"hash_compatibility": [
+						2455072627
+					],
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					}
+				},
+				{
+					"name": "set_byte_stride",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "byte_stride",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_indices",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"hash_compatibility": [
+						2240911060
+					],
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_indices",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "indices",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_vertex_attributes",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_vertex_attributes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "is_attributes",
+							"type": "bool"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "buffer",
+					"setter": "set_buffer",
+					"getter": "get_buffer"
+				},
+				{
+					"type": "int",
+					"name": "byte_offset",
+					"setter": "set_byte_offset",
+					"getter": "get_byte_offset"
+				},
+				{
+					"type": "int",
+					"name": "byte_length",
+					"setter": "set_byte_length",
+					"getter": "get_byte_length"
+				},
+				{
+					"type": "int",
+					"name": "byte_stride",
+					"setter": "set_byte_stride",
+					"getter": "get_byte_stride"
+				},
+				{
+					"type": "bool",
+					"name": "indices",
+					"setter": "set_indices",
+					"getter": "get_indices"
+				},
+				{
+					"type": "bool",
+					"name": "vertex_attributes",
+					"setter": "set_vertex_attributes",
+					"getter": "get_vertex_attributes"
+				}
+			]
+		},
+		{
+			"name": "GLTFAnimation",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_original_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2841200299,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_original_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "original_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_loop",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_loop",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "loop",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_additional_data",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2138907829,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "extension_name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "set_additional_data",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3776071444,
+					"arguments": [
+						{
+							"name": "extension_name",
+							"type": "StringName"
+						},
+						{
+							"name": "additional_data",
+							"type": "Variant"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "original_name",
+					"setter": "set_original_name",
+					"getter": "get_original_name"
+				},
+				{
+					"type": "bool",
+					"name": "loop",
+					"setter": "set_loop",
+					"getter": "get_loop"
 				}
 			]
 		},
