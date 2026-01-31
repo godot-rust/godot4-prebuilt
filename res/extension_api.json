@@ -63410,6 +63410,76 @@
 			]
 		},
 		{
+			"name": "BlitMaterial",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Material",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "BlendMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "BLEND_MODE_MIX",
+							"value": 0
+						},
+						{
+							"name": "BLEND_MODE_ADD",
+							"value": 1
+						},
+						{
+							"name": "BLEND_MODE_SUB",
+							"value": 2
+						},
+						{
+							"name": "BLEND_MODE_MUL",
+							"value": 3
+						},
+						{
+							"name": "BLEND_MODE_DISABLED",
+							"value": 4
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_blend_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 80206916,
+					"arguments": [
+						{
+							"name": "blend_mode",
+							"type": "enum::BlitMaterial.BlendMode"
+						}
+					]
+				},
+				{
+					"name": "get_blend_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4234246416,
+					"return_value": {
+						"type": "enum::BlitMaterial.BlendMode"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "blend_mode",
+					"setter": "set_blend_mode",
+					"getter": "get_blend_mode"
+				}
+			]
+		},
+		{
 			"name": "CanvasItemMaterial",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -71405,8 +71475,12 @@
 							"value": 9
 						},
 						{
-							"name": "TYPE_MAX",
+							"name": "TYPE_TEXTURE_BLIT",
 							"value": 10
+						},
+						{
+							"name": "TYPE_MAX",
+							"value": 11
 						}
 					]
 				},
@@ -131454,6 +131528,153 @@
 							"meta": "int32"
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "DrawableTexture2D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Texture2D",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "DrawableFormat",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "DRAWABLE_FORMAT_RGBA8",
+							"value": 0
+						},
+						{
+							"name": "DRAWABLE_FORMAT_RGBA8_SRGB",
+							"value": 1
+						},
+						{
+							"name": "DRAWABLE_FORMAT_RGBAH",
+							"value": 2
+						},
+						{
+							"name": "DRAWABLE_FORMAT_RGBAF",
+							"value": 3
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "setup",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 674365339,
+					"arguments": [
+						{
+							"name": "width",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "height",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "format",
+							"type": "enum::DrawableTexture2D.DrawableFormat"
+						},
+						{
+							"name": "color",
+							"type": "Color",
+							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "use_mipmaps",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "blit_rect",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 319217173,
+					"arguments": [
+						{
+							"name": "rect",
+							"type": "Rect2i"
+						},
+						{
+							"name": "source",
+							"type": "Texture2D"
+						},
+						{
+							"name": "modulate",
+							"type": "Color",
+							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "mipmap",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						},
+						{
+							"name": "material",
+							"type": "Material",
+							"default_value": "null"
+						}
+					]
+				},
+				{
+					"name": "blit_rect_multi",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3074783066,
+					"arguments": [
+						{
+							"name": "rect",
+							"type": "Rect2i"
+						},
+						{
+							"name": "sources",
+							"type": "typedarray::Texture2D"
+						},
+						{
+							"name": "extra_targets",
+							"type": "typedarray::DrawableTexture2D"
+						},
+						{
+							"name": "modulate",
+							"type": "Color",
+							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "mipmap",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						},
+						{
+							"name": "material",
+							"type": "Material",
+							"default_value": "null"
+						}
+					]
+				},
+				{
+					"name": "generate_mipmaps",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
 				}
 			]
 		},
@@ -203415,13 +203636,6 @@
 			]
 		},
 		{
-			"name": "OpenXRUserPresenceExtension",
-			"is_refcounted": false,
-			"is_instantiable": true,
-			"inherits": "OpenXRExtensionWrapper",
-			"api_type": "core"
-		},
-		{
 			"name": "OpenXRAndroidThreadSettingsExtension",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -234898,6 +235112,10 @@
 						{
 							"name": "MODE_FOG",
 							"value": 4
+						},
+						{
+							"name": "MODE_TEXTURE_BLIT",
+							"value": 5
 						}
 					]
 				}
@@ -241806,6 +242024,28 @@
 					]
 				},
 				{
+					"name": "TextureDrawableFormat",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "TEXTURE_DRAWABLE_FORMAT_RGBA8",
+							"value": 0
+						},
+						{
+							"name": "TEXTURE_DRAWABLE_FORMAT_RGBA8_SRGB",
+							"value": 1
+						},
+						{
+							"name": "TEXTURE_DRAWABLE_FORMAT_RGBAH",
+							"value": 2
+						},
+						{
+							"name": "TEXTURE_DRAWABLE_FORMAT_RGBAF",
+							"value": 3
+						}
+					]
+				},
+				{
 					"name": "ShaderMode",
 					"is_bitfield": false,
 					"values": [
@@ -241830,8 +242070,12 @@
 							"value": 4
 						},
 						{
-							"name": "SHADER_MAX",
+							"name": "SHADER_TEXTURE_BLIT",
 							"value": 5
+						},
+						{
+							"name": "SHADER_MAX",
+							"value": 6
 						}
 					]
 				},
@@ -244315,6 +244559,43 @@
 					]
 				},
 				{
+					"name": "texture_drawable_create",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1993613667,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "width",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "height",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "format",
+							"type": "enum::RenderingServer.TextureDrawableFormat"
+						},
+						{
+							"name": "color",
+							"type": "Color",
+							"default_value": "Color(1, 1, 1, 1)"
+						},
+						{
+							"name": "with_mipmaps",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
 					"name": "texture_2d_update",
 					"is_const": false,
 					"is_vararg": false,
@@ -244370,6 +244651,42 @@
 						{
 							"name": "proxy_to",
 							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "texture_drawable_blit_rect",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4077763890,
+					"arguments": [
+						{
+							"name": "textures",
+							"type": "typedarray::RID"
+						},
+						{
+							"name": "rect",
+							"type": "Rect2i"
+						},
+						{
+							"name": "material",
+							"type": "RID"
+						},
+						{
+							"name": "modulate",
+							"type": "Color"
+						},
+						{
+							"name": "source_textures",
+							"type": "typedarray::RID"
+						},
+						{
+							"name": "to_mipmap",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
 						}
 					]
 				},
@@ -244467,6 +244784,31 @@
 							"type": "RID"
 						}
 					]
+				},
+				{
+					"name": "texture_drawable_generate_mipmaps",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "texture",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "texture_drawable_get_default_material",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
 				},
 				{
 					"name": "texture_replace",
