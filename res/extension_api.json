@@ -161656,6 +161656,24 @@
 							"value": 5
 						}
 					]
+				},
+				{
+					"name": "EyeVisibility",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "EYE_VISIBILITY_BOTH",
+							"value": 0
+						},
+						{
+							"name": "EYE_VISIBILITY_LEFT",
+							"value": 1
+						},
+						{
+							"name": "EYE_VISIBILITY_RIGHT",
+							"value": 2
+						}
+					]
 				}
 			],
 			"methods": [
@@ -162136,6 +162154,31 @@
 					}
 				},
 				{
+					"name": "set_eye_visibility",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 156391336,
+					"arguments": [
+						{
+							"name": "eye_visibility",
+							"type": "enum::OpenXRCompositionLayer.EyeVisibility"
+						}
+					]
+				},
+				{
+					"name": "get_eye_visibility",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 467669000,
+					"return_value": {
+						"type": "enum::OpenXRCompositionLayer.EyeVisibility"
+					}
+				},
+				{
 					"name": "intersects_ray",
 					"is_const": true,
 					"is_vararg": false,
@@ -162199,6 +162242,12 @@
 					"name": "enable_hole_punch",
 					"setter": "set_enable_hole_punch",
 					"getter": "get_enable_hole_punch"
+				},
+				{
+					"type": "int",
+					"name": "eye_visibility",
+					"setter": "set_eye_visibility",
+					"getter": "get_eye_visibility"
 				},
 				{
 					"type": "int",
