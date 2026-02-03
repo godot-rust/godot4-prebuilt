@@ -1741,7 +1741,7 @@ typedef void (*GDExtensionInterfaceStringNewWithWideCharsAndLen)(GDExtensionUnin
  * @param r_text A pointer to the buffer to hold the resulting data. If NULL is passed in, only the length will be computed.
  * @param p_max_write_length The maximum number of characters that can be written to r_text. It has no affect on the return value.
  *
- * @return The resulting encoded string length in characters (not bytes), not including a null terminator.
+ * @return The resulting encoded string length in characters, not including a null terminator. Characters that cannot be converted to Latin-1 are replaced with a space.
  */
 typedef GDExtensionInt (*GDExtensionInterfaceStringToLatin1Chars)(GDExtensionConstStringPtr p_self, char *r_text, GDExtensionInt p_max_write_length);
 
@@ -1757,7 +1757,7 @@ typedef GDExtensionInt (*GDExtensionInterfaceStringToLatin1Chars)(GDExtensionCon
  * @param r_text A pointer to the buffer to hold the resulting data. If NULL is passed in, only the length will be computed.
  * @param p_max_write_length The maximum number of characters that can be written to r_text. It has no affect on the return value.
  *
- * @return The resulting encoded string length in characters (not bytes), not including a null terminator.
+ * @return The resulting encoded string length in bytes (not characters), not including a null terminator.
  */
 typedef GDExtensionInt (*GDExtensionInterfaceStringToUtf8Chars)(GDExtensionConstStringPtr p_self, char *r_text, GDExtensionInt p_max_write_length);
 
@@ -1773,7 +1773,7 @@ typedef GDExtensionInt (*GDExtensionInterfaceStringToUtf8Chars)(GDExtensionConst
  * @param r_text A pointer to the buffer to hold the resulting data. If NULL is passed in, only the length will be computed.
  * @param p_max_write_length The maximum number of characters that can be written to r_text. It has no affect on the return value.
  *
- * @return The resulting encoded string length in characters (not bytes), not including a null terminator.
+ * @return The resulting encoded string length in 16-bit code units (not bytes or characters), not including a null terminator.
  */
 typedef GDExtensionInt (*GDExtensionInterfaceStringToUtf16Chars)(GDExtensionConstStringPtr p_self, char16_t *r_text, GDExtensionInt p_max_write_length);
 
@@ -1805,7 +1805,7 @@ typedef GDExtensionInt (*GDExtensionInterfaceStringToUtf32Chars)(GDExtensionCons
  * @param r_text A pointer to the buffer to hold the resulting data. If NULL is passed in, only the length will be computed.
  * @param p_max_write_length The maximum number of characters that can be written to r_text. It has no affect on the return value.
  *
- * @return The resulting encoded string length in characters (not bytes), not including a null terminator.
+ * @return The resulting encoded string length in characters (for UTF-32) or 16-bit code units (for UTF-16), depending on the wchar_t representation. Does not include a null terminator.
  */
 typedef GDExtensionInt (*GDExtensionInterfaceStringToWideChars)(GDExtensionConstStringPtr p_self, wchar_t *r_text, GDExtensionInt p_max_write_length);
 

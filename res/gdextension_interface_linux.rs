@@ -4528,7 +4528,7 @@ pub type GDExtensionInterfaceStringNewWithWideCharsAndLen = ::std::option::Optio
         p_char_count: GDExtensionInt,
     ),
 >;
-#[doc = " @name string_to_latin1_chars\n @since 4.1\n\n Converts a String to a Latin-1 encoded C string.\n\n It doesn't write a null terminator.\n\n @param p_self A pointer to the String.\n @param r_text A pointer to the buffer to hold the resulting data. If NULL is passed in, only the length will be computed.\n @param p_max_write_length The maximum number of characters that can be written to r_text. It has no affect on the return value.\n\n @return The resulting encoded string length in characters (not bytes), not including a null terminator."]
+#[doc = " @name string_to_latin1_chars\n @since 4.1\n\n Converts a String to a Latin-1 encoded C string.\n\n It doesn't write a null terminator.\n\n @param p_self A pointer to the String.\n @param r_text A pointer to the buffer to hold the resulting data. If NULL is passed in, only the length will be computed.\n @param p_max_write_length The maximum number of characters that can be written to r_text. It has no affect on the return value.\n\n @return The resulting encoded string length in characters, not including a null terminator. Characters that cannot be converted to Latin-1 are replaced with a space."]
 pub type GDExtensionInterfaceStringToLatin1Chars = ::std::option::Option<
     unsafe extern "C" fn(
         p_self: GDExtensionConstStringPtr,
@@ -4536,7 +4536,7 @@ pub type GDExtensionInterfaceStringToLatin1Chars = ::std::option::Option<
         p_max_write_length: GDExtensionInt,
     ) -> GDExtensionInt,
 >;
-#[doc = " @name string_to_utf8_chars\n @since 4.1\n\n Converts a String to a UTF-8 encoded C string.\n\n It doesn't write a null terminator.\n\n @param p_self A pointer to the String.\n @param r_text A pointer to the buffer to hold the resulting data. If NULL is passed in, only the length will be computed.\n @param p_max_write_length The maximum number of characters that can be written to r_text. It has no affect on the return value.\n\n @return The resulting encoded string length in characters (not bytes), not including a null terminator."]
+#[doc = " @name string_to_utf8_chars\n @since 4.1\n\n Converts a String to a UTF-8 encoded C string.\n\n It doesn't write a null terminator.\n\n @param p_self A pointer to the String.\n @param r_text A pointer to the buffer to hold the resulting data. If NULL is passed in, only the length will be computed.\n @param p_max_write_length The maximum number of characters that can be written to r_text. It has no affect on the return value.\n\n @return The resulting encoded string length in bytes (not characters), not including a null terminator."]
 pub type GDExtensionInterfaceStringToUtf8Chars = ::std::option::Option<
     unsafe extern "C" fn(
         p_self: GDExtensionConstStringPtr,
@@ -4544,7 +4544,7 @@ pub type GDExtensionInterfaceStringToUtf8Chars = ::std::option::Option<
         p_max_write_length: GDExtensionInt,
     ) -> GDExtensionInt,
 >;
-#[doc = " @name string_to_utf16_chars\n @since 4.1\n\n Converts a String to a UTF-16 encoded C string.\n\n It doesn't write a null terminator.\n\n @param p_self A pointer to the String.\n @param r_text A pointer to the buffer to hold the resulting data. If NULL is passed in, only the length will be computed.\n @param p_max_write_length The maximum number of characters that can be written to r_text. It has no affect on the return value.\n\n @return The resulting encoded string length in characters (not bytes), not including a null terminator."]
+#[doc = " @name string_to_utf16_chars\n @since 4.1\n\n Converts a String to a UTF-16 encoded C string.\n\n It doesn't write a null terminator.\n\n @param p_self A pointer to the String.\n @param r_text A pointer to the buffer to hold the resulting data. If NULL is passed in, only the length will be computed.\n @param p_max_write_length The maximum number of characters that can be written to r_text. It has no affect on the return value.\n\n @return The resulting encoded string length in 16-bit code units (not bytes or characters), not including a null terminator."]
 pub type GDExtensionInterfaceStringToUtf16Chars = ::std::option::Option<
     unsafe extern "C" fn(
         p_self: GDExtensionConstStringPtr,
@@ -4560,7 +4560,7 @@ pub type GDExtensionInterfaceStringToUtf32Chars = ::std::option::Option<
         p_max_write_length: GDExtensionInt,
     ) -> GDExtensionInt,
 >;
-#[doc = " @name string_to_wide_chars\n @since 4.1\n\n Converts a String to a wide C string.\n\n It doesn't write a null terminator.\n\n @param p_self A pointer to the String.\n @param r_text A pointer to the buffer to hold the resulting data. If NULL is passed in, only the length will be computed.\n @param p_max_write_length The maximum number of characters that can be written to r_text. It has no affect on the return value.\n\n @return The resulting encoded string length in characters (not bytes), not including a null terminator."]
+#[doc = " @name string_to_wide_chars\n @since 4.1\n\n Converts a String to a wide C string.\n\n It doesn't write a null terminator.\n\n @param p_self A pointer to the String.\n @param r_text A pointer to the buffer to hold the resulting data. If NULL is passed in, only the length will be computed.\n @param p_max_write_length The maximum number of characters that can be written to r_text. It has no affect on the return value.\n\n @return The resulting encoded string length in characters (for UTF-32) or 16-bit code units (for UTF-16), depending on the wchar_t representation. Does not include a null terminator."]
 pub type GDExtensionInterfaceStringToWideChars = ::std::option::Option<
     unsafe extern "C" fn(
         p_self: GDExtensionConstStringPtr,

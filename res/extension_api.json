@@ -50176,13 +50176,6 @@
 			]
 		},
 		{
-			"name": "Texture",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "Resource",
-			"api_type": "core"
-		},
-		{
 			"name": "Parallax2D",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -152996,20 +152989,9 @@
 			"name": "ScriptEditorBase",
 			"is_refcounted": false,
 			"is_instantiable": false,
-			"inherits": "VBoxContainer",
+			"inherits": "Control",
 			"api_type": "editor",
 			"methods": [
-				{
-					"name": "get_base_editor",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2783021301,
-					"return_value": {
-						"type": "Control"
-					}
-				},
 				{
 					"name": "add_syntax_highlighter",
 					"is_const": false,
@@ -153023,6 +153005,17 @@
 							"type": "EditorSyntaxHighlighter"
 						}
 					]
+				},
+				{
+					"name": "get_base_editor",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2783021301,
+					"return_value": {
+						"type": "Control"
+					}
 				}
 			],
 			"signals": [
@@ -153031,6 +153024,18 @@
 				},
 				{
 					"name": "edited_script_changed"
+				},
+				{
+					"name": "search_in_files_requested",
+					"arguments": [
+						{
+							"name": "text",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "request_save_history"
 				},
 				{
 					"name": "request_help",
@@ -153055,18 +153060,6 @@
 					]
 				},
 				{
-					"name": "request_save_history"
-				},
-				{
-					"name": "request_save_previous_state",
-					"arguments": [
-						{
-							"name": "state",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
 					"name": "go_to_help",
 					"arguments": [
 						{
@@ -153076,11 +153069,11 @@
 					]
 				},
 				{
-					"name": "search_in_files_requested",
+					"name": "request_save_previous_state",
 					"arguments": [
 						{
-							"name": "text",
-							"type": "String"
+							"name": "state",
+							"type": "Dictionary"
 						}
 					]
 				},
@@ -162872,6 +162865,20 @@
 			]
 		},
 		{
+			"name": "OpenXRIPBindingModifier",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRBindingModifier",
+			"api_type": "core"
+		},
+		{
+			"name": "OpenXRActionBindingModifier",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "OpenXRBindingModifier",
+			"api_type": "core"
+		},
+		{
 			"name": "OpenXRBindingModifier",
 			"is_refcounted": true,
 			"is_instantiable": false,
@@ -162903,20 +162910,6 @@
 					}
 				}
 			]
-		},
-		{
-			"name": "OpenXRIPBindingModifier",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "OpenXRBindingModifier",
-			"api_type": "core"
-		},
-		{
-			"name": "OpenXRActionBindingModifier",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "OpenXRBindingModifier",
-			"api_type": "core"
 		},
 		{
 			"name": "OpenXRIPBinding",
@@ -171191,6 +171184,13 @@
 					"index": 3
 				}
 			]
+		},
+		{
+			"name": "Texture",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core"
 		},
 		{
 			"name": "ThemeDB",
