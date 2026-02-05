@@ -155603,6 +155603,9 @@
 			],
 			"signals": [
 				{
+					"name": "opened"
+				},
+				{
 					"name": "closed"
 				}
 			],
