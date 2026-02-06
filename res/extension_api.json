@@ -194061,33 +194061,6 @@
 					}
 				},
 				{
-					"name": "set_tap_back_pos",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 373806689,
-					"arguments": [
-						{
-							"name": "seconds",
-							"type": "float",
-							"meta": "float"
-						}
-					]
-				},
-				{
-					"name": "get_tap_back_pos",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1740695150,
-					"return_value": {
-						"type": "float",
-						"meta": "float"
-					}
-				},
-				{
 					"name": "set_fft_size",
 					"is_const": false,
 					"is_vararg": false,
@@ -194119,12 +194092,6 @@
 					"name": "buffer_length",
 					"setter": "set_buffer_length",
 					"getter": "get_buffer_length"
-				},
-				{
-					"type": "float",
-					"name": "tap_back_pos",
-					"setter": "set_tap_back_pos",
-					"getter": "get_tap_back_pos"
 				},
 				{
 					"type": "int",
