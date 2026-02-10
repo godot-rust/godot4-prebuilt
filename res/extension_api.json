@@ -97807,6 +97807,17 @@
 					}
 				},
 				{
+					"name": "is_importing",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "get_scanning_progress",
 					"is_const": true,
 					"is_vararg": false,
