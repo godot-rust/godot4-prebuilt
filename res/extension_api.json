@@ -74105,6 +74105,43 @@
 					]
 				},
 				{
+					"name": "get_shape_owner_one_way_collision_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2299179447,
+					"return_value": {
+						"type": "Vector2"
+					},
+					"arguments": [
+						{
+							"name": "owner_id",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "shape_owner_set_one_way_collision_direction",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 163021252,
+					"arguments": [
+						{
+							"name": "owner_id",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "p_direction",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
 					"name": "shape_owner_add_shape",
 					"is_const": false,
 					"is_vararg": false,
@@ -75139,6 +75176,31 @@
 						"type": "float",
 						"meta": "float"
 					}
+				},
+				{
+					"name": "set_one_way_collision_direction",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "direction",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_one_way_collision_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
 				}
 			],
 			"properties": [
@@ -75171,6 +75233,12 @@
 					"name": "one_way_collision_margin",
 					"setter": "set_one_way_collision_margin",
 					"getter": "get_one_way_collision_margin"
+				},
+				{
+					"type": "Vector2",
+					"name": "one_way_collision_direction",
+					"setter": "set_one_way_collision_direction",
+					"getter": "get_one_way_collision_direction"
 				}
 			]
 		},
@@ -75485,6 +75553,31 @@
 					}
 				},
 				{
+					"name": "set_one_way_collision_direction",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "p_direction",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_one_way_collision_direction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
 					"name": "set_debug_color",
 					"is_const": false,
 					"is_vararg": false,
@@ -75534,6 +75627,12 @@
 					"name": "one_way_collision_margin",
 					"setter": "set_one_way_collision_margin",
 					"getter": "get_one_way_collision_margin"
+				},
+				{
+					"type": "Vector2",
+					"name": "one_way_collision_direction",
+					"setter": "set_one_way_collision_direction",
+					"getter": "get_one_way_collision_direction"
 				},
 				{
 					"type": "Color",
@@ -130438,6 +130537,10 @@
 						{
 							"name": "FILL_SQUARE",
 							"value": 2
+						},
+						{
+							"name": "FILL_CONIC",
+							"value": 3
 						}
 					]
 				},
@@ -209448,7 +209551,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2556489974,
+					"hash": 2389283141,
+					"hash_compatibility": [
+						2556489974
+					],
 					"arguments": [
 						{
 							"name": "body",
@@ -209467,6 +209573,11 @@
 							"name": "margin",
 							"type": "float",
 							"meta": "float"
+						},
+						{
+							"name": "direction",
+							"type": "Vector2",
+							"default_value": "Vector2(0, 1)"
 						}
 					]
 				},
@@ -211906,7 +212017,10 @@
 					"is_required": true,
 					"is_vararg": false,
 					"is_virtual": true,
-					"hash": 2556489974,
+					"hash": 2042146392,
+					"hash_compatibility": [
+						2556489974
+					],
 					"arguments": [
 						{
 							"name": "body",
@@ -211925,6 +212039,10 @@
 							"name": "margin",
 							"type": "float",
 							"meta": "float"
+						},
+						{
+							"name": "direction",
+							"type": "Vector2"
 						}
 					]
 				},
