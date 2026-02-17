@@ -87241,6 +87241,32 @@
 					]
 				},
 				{
+					"name": "ProgressState",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "PROGRESS_STATE_NOPROGRESS",
+							"value": 0
+						},
+						{
+							"name": "PROGRESS_STATE_INDETERMINATE",
+							"value": 1
+						},
+						{
+							"name": "PROGRESS_STATE_NORMAL",
+							"value": 2
+						},
+						{
+							"name": "PROGRESS_STATE_ERROR",
+							"value": 3
+						},
+						{
+							"name": "PROGRESS_STATE_PAUSED",
+							"value": 4
+						}
+					]
+				},
+				{
 					"name": "WindowFlags",
 					"is_bitfield": false,
 					"values": [
@@ -87435,6 +87461,14 @@
 						{
 							"name": "EGL_CONFIG",
 							"value": 5
+						},
+						{
+							"name": "GLX_VISUALID",
+							"value": 6
+						},
+						{
+							"name": "GLX_FBCONFIG",
+							"value": 7
 						}
 					]
 				},
@@ -90221,6 +90255,47 @@
 					"is_virtual": false,
 					"hash": 1995695955,
 					"arguments": [
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "window_set_taskbar_progress_value",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3506631519,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "window_set_taskbar_progress_state",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4119882768,
+					"arguments": [
+						{
+							"name": "state",
+							"type": "enum::DisplayServer.ProgressState"
+						},
 						{
 							"name": "window_id",
 							"type": "int",
@@ -118690,11 +118765,642 @@
 			]
 		},
 		{
+			"name": "GDScriptLanguageProtocol",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "JSONRPC",
+			"api_type": "editor",
+			"methods": [
+				{
+					"name": "get_text_document",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 770545799,
+					"return_value": {
+						"type": "GDScriptTextDocument"
+					}
+				},
+				{
+					"name": "get_workspace",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 969295246,
+					"return_value": {
+						"type": "GDScriptWorkspace"
+					}
+				},
+				{
+					"name": "is_smart_resolve_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_initialized",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "initialize",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1333564645,
+					"return_value": {
+						"type": "Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "initialized",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1114965689,
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "on_client_connected",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 166280745,
+					"return_value": {
+						"type": "enum::Error"
+					}
+				},
+				{
+					"name": "on_client_disconnected",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "client_id",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "notify_client",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2511212011,
+					"arguments": [
+						{
+							"name": "method",
+							"type": "String"
+						},
+						{
+							"name": "params",
+							"type": "Variant",
+							"default_value": "null"
+						},
+						{
+							"name": "client_id",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "-1"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "GDScriptSyntaxHighlighter",
 			"is_refcounted": true,
 			"is_instantiable": true,
 			"inherits": "EditorSyntaxHighlighter",
 			"api_type": "editor"
+		},
+		{
+			"name": "GDScriptTextDocument",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "editor",
+			"methods": [
+				{
+					"name": "show_native_symbol_in_editor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "symbol_id",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "didOpen",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1114965689,
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "didClose",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1114965689,
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "didChange",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1114965689,
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "willSaveWaitUntil",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1114965689,
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "didSave",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1114965689,
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "nativeSymbol",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3762224011,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "documentSymbol",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3877611628,
+					"return_value": {
+						"type": "Array"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "completion",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3877611628,
+					"return_value": {
+						"type": "Array"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "resolve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1333564645,
+					"return_value": {
+						"type": "Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "rename",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1333564645,
+					"return_value": {
+						"type": "Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "prepareRename",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3762224011,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "references",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3877611628,
+					"return_value": {
+						"type": "Array"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "foldingRange",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3877611628,
+					"return_value": {
+						"type": "Array"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "codeLens",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3877611628,
+					"return_value": {
+						"type": "Array"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "documentLink",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3877611628,
+					"return_value": {
+						"type": "Array"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "colorPresentation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3877611628,
+					"return_value": {
+						"type": "Array"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "hover",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3762224011,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "definition",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3877611628,
+					"return_value": {
+						"type": "Array"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "declaration",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3762224011,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "signatureHelp",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3762224011,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GDScriptWorkspace",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "editor",
+			"methods": [
+				{
+					"name": "apply_new_signal",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3682583557,
+					"arguments": [
+						{
+							"name": "obj",
+							"type": "Object"
+						},
+						{
+							"name": "function",
+							"type": "String"
+						},
+						{
+							"name": "args",
+							"type": "PackedStringArray"
+						}
+					]
+				},
+				{
+					"name": "get_file_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1703090593,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "uri",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_file_uri",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3135753539,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "generate_script_api",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2786125124,
+					"return_value": {
+						"type": "Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "didDeleteFiles",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155329257,
+					"arguments": [
+						{
+							"name": "params",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "parse_script",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 852856452,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						},
+						{
+							"name": "content",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "parse_local_script",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 166001499,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "publish_diagnostics",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "GLTFAccessor",
@@ -143905,6 +144611,11 @@
 					"is_static": false,
 					"is_virtual": false,
 					"hash": 3218959716
+				}
+			],
+			"signals": [
+				{
+					"name": "project_settings_loaded"
 				}
 			]
 		},
@@ -340978,6 +341689,35 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "set_taskbar_progress_value",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "set_taskbar_progress_state",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 824071031,
+					"arguments": [
+						{
+							"name": "state",
+							"type": "enum::DisplayServer.ProgressState"
+						}
+					]
+				},
+				{
 					"name": "move_to_foreground",
 					"is_const": false,
 					"is_vararg": false,
@@ -349055,6 +349795,10 @@
 		{
 			"name": "EditorInterface",
 			"type": "EditorInterface"
+		},
+		{
+			"name": "GDScriptLanguageProtocol",
+			"type": "GDScriptLanguageProtocol"
 		},
 		{
 			"name": "JavaClassWrapper",
