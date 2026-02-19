@@ -3141,8 +3141,28 @@
 					"value": 20
 				},
 				{
-					"name": "JOY_BUTTON_SDL_MAX",
+					"name": "JOY_BUTTON_MISC2",
 					"value": 21
+				},
+				{
+					"name": "JOY_BUTTON_MISC3",
+					"value": 22
+				},
+				{
+					"name": "JOY_BUTTON_MISC4",
+					"value": 23
+				},
+				{
+					"name": "JOY_BUTTON_MISC5",
+					"value": 24
+				},
+				{
+					"name": "JOY_BUTTON_MISC6",
+					"value": 25
+				},
+				{
+					"name": "JOY_BUTTON_SDL_MAX",
+					"value": 26
 				},
 				{
 					"name": "JOY_BUTTON_MAX",
@@ -49545,6 +49565,33 @@
 			]
 		},
 		{
+			"name": "AwaitTweener",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Tweener",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_timeout",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3123469156,
+					"return_value": {
+						"type": "AwaitTweener"
+					},
+					"arguments": [
+						{
+							"name": "timeout",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "BackBufferCopy",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -94803,8 +94850,16 @@
 							"value": 8
 						},
 						{
-							"name": "DOCK_SLOT_MAX",
+							"name": "DOCK_SLOT_BOTTOM_L",
 							"value": 9
+						},
+						{
+							"name": "DOCK_SLOT_BOTTOM_R",
+							"value": 10
+						},
+						{
+							"name": "DOCK_SLOT_MAX",
+							"value": 11
 						}
 					]
 				}
@@ -141913,6 +141968,14 @@
 				{
 					"name": "DEVICE_ID_EMULATION",
 					"value": -1
+				},
+				{
+					"name": "DEVICE_ID_KEYBOARD",
+					"value": 16
+				},
+				{
+					"name": "DEVICE_ID_MOUSE",
+					"value": 32
 				}
 			],
 			"methods": [
@@ -188038,6 +188101,30 @@
 					]
 				},
 				{
+					"name": "get_view_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
+					"name": "get_view_configuration",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					}
+				},
+				{
 					"name": "is_initialized",
 					"is_const": false,
 					"is_vararg": false,
@@ -188262,6 +188349,34 @@
 				},
 				{
 					"name": "unregister_frame_info_extension",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1477360496,
+					"arguments": [
+						{
+							"name": "extension",
+							"type": "OpenXRExtensionWrapper"
+						}
+					]
+				},
+				{
+					"name": "register_projection_layer_extension",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1477360496,
+					"arguments": [
+						{
+							"name": "extension",
+							"type": "OpenXRExtensionWrapper"
+						}
+					]
+				},
+				{
+					"name": "unregister_projection_layer_extension",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -190990,6 +191105,25 @@
 				},
 				{
 					"name": "_set_frame_end_info_and_get_next_pointer",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3744713108,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "next_pointer",
+							"type": "void*"
+						}
+					]
+				},
+				{
+					"name": "_set_projection_layer_and_get_next_pointer",
 					"is_const": false,
 					"is_static": false,
 					"is_required": false,
@@ -265996,7 +266130,7 @@
 			"name": "ScriptEditorBase",
 			"is_refcounted": false,
 			"is_instantiable": false,
-			"inherits": "Control",
+			"inherits": "VBoxContainer",
 			"api_type": "editor",
 			"methods": [
 				{
@@ -323327,6 +323461,24 @@
 							"name": "subtween",
 							"type": "Tween",
 							"meta": "required"
+						}
+					]
+				},
+				{
+					"name": "tween_await",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2242837462,
+					"return_value": {
+						"type": "AwaitTweener",
+						"meta": "required"
+					},
+					"arguments": [
+						{
+							"name": "signal",
+							"type": "Signal"
 						}
 					]
 				},
