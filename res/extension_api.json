@@ -141199,6 +141199,61 @@
 					]
 				},
 				{
+					"name": "get_joy_vibration_remaining_duration",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4025615559,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "is_joy_vibrating",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3067735520,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "has_joy_vibration",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "start_joy_vibration",
 					"is_const": false,
 					"is_vararg": false,
@@ -266053,6 +266108,14 @@
 							"type": "String"
 						}
 					]
+				},
+				{
+					"name": "reload_open_files",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
 				},
 				{
 					"name": "goto_help",
