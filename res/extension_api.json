@@ -1932,7 +1932,63 @@
 			]
 		}
 	],
-	"global_constants": [],
+	"global_constants": [
+		{
+			"name": "UINT8_MAX",
+			"value": 255,
+			"is_bitfield": false
+		},
+		{
+			"name": "UINT16_MAX",
+			"value": 65535,
+			"is_bitfield": false
+		},
+		{
+			"name": "UINT32_MAX",
+			"value": 4294967295,
+			"is_bitfield": false
+		},
+		{
+			"name": "INT8_MIN",
+			"value": -128,
+			"is_bitfield": false
+		},
+		{
+			"name": "INT8_MAX",
+			"value": 127,
+			"is_bitfield": false
+		},
+		{
+			"name": "INT16_MIN",
+			"value": -32768,
+			"is_bitfield": false
+		},
+		{
+			"name": "INT16_MAX",
+			"value": 32767,
+			"is_bitfield": false
+		},
+		{
+			"name": "INT32_MIN",
+			"value": -2147483648,
+			"is_bitfield": false
+		},
+		{
+			"name": "INT32_MAX",
+			"value": 2147483647,
+			"is_bitfield": false
+		},
+		{
+			"name": "INT64_MIN",
+			"value": -9223372036854775808,
+			"is_bitfield": false
+		},
+		{
+			"name": "INT64_MAX",
+			"value": 9223372036854775807,
+			"is_bitfield": false
+		}
+	],
 	"global_enums": [
 		{
 			"name": "Side",
