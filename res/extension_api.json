@@ -100239,6 +100239,17 @@
 					}
 				},
 				{
+					"name": "get_unsaved_scenes",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1139954409,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
+				},
+				{
 					"name": "get_open_scene_roots",
 					"is_const": true,
 					"is_vararg": false,
