@@ -105446,6 +105446,32 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "set_deferred_drag_mode_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3216645846,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool",
+							"default_value": "true"
+						}
+					]
+				},
+				{
+					"name": "is_deferred_drag_mode_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"signals": [
@@ -105507,6 +105533,12 @@
 					"name": "editing_integer",
 					"setter": "set_editing_integer",
 					"getter": "is_editing_integer"
+				},
+				{
+					"type": "bool",
+					"name": "deferred_drag_mode",
+					"setter": "set_deferred_drag_mode_enabled",
+					"getter": "is_deferred_drag_mode_enabled"
 				}
 			]
 		},
@@ -139855,6 +139887,32 @@
 			"inherits": "Resource",
 			"api_type": "core",
 			"methods": [
+				{
+					"name": "merge_importer_meshes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1030647649,
+					"return_value": {
+						"type": "ImporterMesh"
+					},
+					"arguments": [
+						{
+							"name": "importer_meshes",
+							"type": "typedarray::ImporterMesh"
+						},
+						{
+							"name": "relative_transforms",
+							"type": "typedarray::Transform3D"
+						},
+						{
+							"name": "deduplicate_surfaces",
+							"type": "bool",
+							"default_value": "true"
+						}
+					]
+				},
 				{
 					"name": "add_blend_shape",
 					"is_const": false,
