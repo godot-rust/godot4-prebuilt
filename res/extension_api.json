@@ -73026,6 +73026,21 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "join_lines",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4063782979,
+					"arguments": [
+						{
+							"name": "line_ending",
+							"type": "String",
+							"default_value": "\" \""
+						}
+					]
+				},
+				{
 					"name": "duplicate_selection",
 					"is_const": false,
 					"is_vararg": false,
@@ -93177,6 +93192,75 @@
 			],
 			"methods": [
 				{
+					"name": "set_width",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "width",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_height",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "height",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_format",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2875673594,
+					"arguments": [
+						{
+							"name": "format",
+							"type": "enum::DrawableTexture2D.DrawableFormat"
+						}
+					]
+				},
+				{
+					"name": "set_use_mipmaps",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "mipmaps",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_use_mipmaps",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "setup",
 					"is_const": false,
 					"is_vararg": false,
@@ -96828,6 +96912,25 @@
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 3218959716
+				},
+				{
+					"name": "_end_generate_apple_embedded_project",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2678287736,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						},
+						{
+							"name": "will_build_archive",
+							"type": "bool"
+						}
+					]
 				},
 				{
 					"name": "_begin_customize_resources",
@@ -134819,6 +134922,26 @@
 					"value": -1
 				}
 			],
+			"enums": [
+				{
+					"name": "DebugVisibilityMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "DEBUG_VISIBILITY_MODE_DEFAULT",
+							"value": 0
+						},
+						{
+							"name": "DEBUG_VISIBILITY_MODE_FORCE_SHOW",
+							"value": 1
+						},
+						{
+							"name": "DEBUG_VISIBILITY_MODE_FORCE_HIDE",
+							"value": 2
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "set_collision_layer",
@@ -134973,6 +135096,31 @@
 					"return_value": {
 						"type": "float",
 						"meta": "float"
+					}
+				},
+				{
+					"name": "set_collision_visibility_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4160694578,
+					"arguments": [
+						{
+							"name": "visibility_mode",
+							"type": "enum::GridMap.DebugVisibilityMode"
+						}
+					]
+				},
+				{
+					"name": "get_collision_visibility_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3729798365,
+					"return_value": {
+						"type": "enum::GridMap.DebugVisibilityMode"
 					}
 				},
 				{
@@ -135581,6 +135729,12 @@
 					"name": "collision_priority",
 					"setter": "set_collision_priority",
 					"getter": "get_collision_priority"
+				},
+				{
+					"type": "int",
+					"name": "collision_visibility_mode",
+					"setter": "set_collision_visibility_mode",
+					"getter": "get_collision_visibility_mode"
 				},
 				{
 					"type": "bool",
@@ -139563,17 +139717,6 @@
 							"type": "Image"
 						}
 					]
-				},
-				{
-					"name": "get_format",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3847873762,
-					"return_value": {
-						"type": "enum::Image.Format"
-					}
 				},
 				{
 					"name": "set_image",
@@ -228010,17 +228153,6 @@
 					]
 				},
 				{
-					"name": "get_format",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3847873762,
-					"return_value": {
-						"type": "enum::Image.Format"
-					}
-				},
-				{
 					"name": "get_compression_mode",
 					"is_const": true,
 					"is_vararg": false,
@@ -250762,7 +250894,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 4288446313,
+					"hash": 3313592705,
+					"hash_compatibility": [
+						4288446313
+					],
 					"arguments": [
 						{
 							"name": "viewport",
@@ -250777,6 +250912,12 @@
 							"name": "height",
 							"type": "int",
 							"meta": "int32"
+						},
+						{
+							"name": "view_count",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "1"
 						}
 					]
 				},
@@ -285060,6 +285201,33 @@
 					}
 				},
 				{
+					"name": "set_view_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "view_count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_view_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
 					"name": "set_update_mode",
 					"is_const": false,
 					"is_vararg": false,
@@ -285128,6 +285296,12 @@
 					"name": "size_2d_override_stretch",
 					"setter": "set_size_2d_override_stretch",
 					"getter": "is_size_2d_override_stretch_enabled"
+				},
+				{
+					"type": "int",
+					"name": "view_count",
+					"setter": "set_view_count",
+					"getter": "get_view_count"
 				},
 				{
 					"type": "int",
@@ -306758,6 +306932,43 @@
 			"api_type": "core",
 			"methods": [
 				{
+					"name": "_get_image",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 4190603485,
+					"return_value": {
+						"type": "Image"
+					}
+				},
+				{
+					"name": "_get_format",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3847873762,
+					"return_value": {
+						"type": "enum::Image.Format"
+					}
+				},
+				{
+					"name": "_get_mipmap_count",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
 					"name": "_get_width",
 					"is_const": true,
 					"is_static": false,
@@ -306809,6 +307020,18 @@
 				},
 				{
 					"name": "_has_alpha",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "_has_mipmaps",
 					"is_const": true,
 					"is_static": false,
 					"is_required": false,
@@ -306913,6 +307136,29 @@
 					]
 				},
 				{
+					"name": "get_format",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3847873762,
+					"return_value": {
+						"type": "enum::Image.Format"
+					}
+				},
+				{
+					"name": "get_mipmap_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
 					"name": "get_width",
 					"is_const": true,
 					"is_vararg": false,
@@ -306949,6 +307195,17 @@
 				},
 				{
 					"name": "has_alpha",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "has_mipmaps",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -329218,11 +329475,14 @@
 				},
 				{
 					"name": "is_using_xr",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2240911060,
+					"hash": 36873697,
+					"hash_compatibility": [
+						2240911060
+					],
 					"return_value": {
 						"type": "bool"
 					}
