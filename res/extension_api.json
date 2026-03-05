@@ -28140,6 +28140,1896 @@
 			]
 		},
 		{
+			"name": "AccessibilityServer",
+			"is_refcounted": false,
+			"is_instantiable": false,
+			"inherits": "Object",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "AccessibilityRole",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ROLE_UNKNOWN",
+							"value": 0
+						},
+						{
+							"name": "ROLE_DEFAULT_BUTTON",
+							"value": 1
+						},
+						{
+							"name": "ROLE_AUDIO",
+							"value": 2
+						},
+						{
+							"name": "ROLE_VIDEO",
+							"value": 3
+						},
+						{
+							"name": "ROLE_STATIC_TEXT",
+							"value": 4
+						},
+						{
+							"name": "ROLE_CONTAINER",
+							"value": 5
+						},
+						{
+							"name": "ROLE_PANEL",
+							"value": 6
+						},
+						{
+							"name": "ROLE_BUTTON",
+							"value": 7
+						},
+						{
+							"name": "ROLE_LINK",
+							"value": 8
+						},
+						{
+							"name": "ROLE_CHECK_BOX",
+							"value": 9
+						},
+						{
+							"name": "ROLE_RADIO_BUTTON",
+							"value": 10
+						},
+						{
+							"name": "ROLE_CHECK_BUTTON",
+							"value": 11
+						},
+						{
+							"name": "ROLE_SCROLL_BAR",
+							"value": 12
+						},
+						{
+							"name": "ROLE_SCROLL_VIEW",
+							"value": 13
+						},
+						{
+							"name": "ROLE_SPLITTER",
+							"value": 14
+						},
+						{
+							"name": "ROLE_SLIDER",
+							"value": 15
+						},
+						{
+							"name": "ROLE_SPIN_BUTTON",
+							"value": 16
+						},
+						{
+							"name": "ROLE_PROGRESS_INDICATOR",
+							"value": 17
+						},
+						{
+							"name": "ROLE_TEXT_FIELD",
+							"value": 18
+						},
+						{
+							"name": "ROLE_MULTILINE_TEXT_FIELD",
+							"value": 19
+						},
+						{
+							"name": "ROLE_COLOR_PICKER",
+							"value": 20
+						},
+						{
+							"name": "ROLE_TABLE",
+							"value": 21
+						},
+						{
+							"name": "ROLE_CELL",
+							"value": 22
+						},
+						{
+							"name": "ROLE_ROW",
+							"value": 23
+						},
+						{
+							"name": "ROLE_ROW_GROUP",
+							"value": 24
+						},
+						{
+							"name": "ROLE_ROW_HEADER",
+							"value": 25
+						},
+						{
+							"name": "ROLE_COLUMN_HEADER",
+							"value": 26
+						},
+						{
+							"name": "ROLE_TREE",
+							"value": 27
+						},
+						{
+							"name": "ROLE_TREE_ITEM",
+							"value": 28
+						},
+						{
+							"name": "ROLE_LIST",
+							"value": 29
+						},
+						{
+							"name": "ROLE_LIST_ITEM",
+							"value": 30
+						},
+						{
+							"name": "ROLE_LIST_BOX",
+							"value": 31
+						},
+						{
+							"name": "ROLE_LIST_BOX_OPTION",
+							"value": 32
+						},
+						{
+							"name": "ROLE_TAB_BAR",
+							"value": 33
+						},
+						{
+							"name": "ROLE_TAB",
+							"value": 34
+						},
+						{
+							"name": "ROLE_TAB_PANEL",
+							"value": 35
+						},
+						{
+							"name": "ROLE_MENU_BAR",
+							"value": 36
+						},
+						{
+							"name": "ROLE_MENU",
+							"value": 37
+						},
+						{
+							"name": "ROLE_MENU_ITEM",
+							"value": 38
+						},
+						{
+							"name": "ROLE_MENU_ITEM_CHECK_BOX",
+							"value": 39
+						},
+						{
+							"name": "ROLE_MENU_ITEM_RADIO",
+							"value": 40
+						},
+						{
+							"name": "ROLE_IMAGE",
+							"value": 41
+						},
+						{
+							"name": "ROLE_WINDOW",
+							"value": 42
+						},
+						{
+							"name": "ROLE_TITLE_BAR",
+							"value": 43
+						},
+						{
+							"name": "ROLE_DIALOG",
+							"value": 44
+						},
+						{
+							"name": "ROLE_TOOLTIP",
+							"value": 45
+						},
+						{
+							"name": "ROLE_REGION",
+							"value": 46
+						},
+						{
+							"name": "ROLE_TEXT_RUN",
+							"value": 47
+						}
+					]
+				},
+				{
+					"name": "AccessibilityPopupType",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "POPUP_MENU",
+							"value": 0
+						},
+						{
+							"name": "POPUP_LIST",
+							"value": 1
+						},
+						{
+							"name": "POPUP_TREE",
+							"value": 2
+						},
+						{
+							"name": "POPUP_DIALOG",
+							"value": 3
+						}
+					]
+				},
+				{
+					"name": "AccessibilityFlags",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "FLAG_HIDDEN",
+							"value": 0
+						},
+						{
+							"name": "FLAG_MULTISELECTABLE",
+							"value": 1
+						},
+						{
+							"name": "FLAG_REQUIRED",
+							"value": 2
+						},
+						{
+							"name": "FLAG_VISITED",
+							"value": 3
+						},
+						{
+							"name": "FLAG_BUSY",
+							"value": 4
+						},
+						{
+							"name": "FLAG_MODAL",
+							"value": 5
+						},
+						{
+							"name": "FLAG_TOUCH_PASSTHROUGH",
+							"value": 6
+						},
+						{
+							"name": "FLAG_READONLY",
+							"value": 7
+						},
+						{
+							"name": "FLAG_DISABLED",
+							"value": 8
+						},
+						{
+							"name": "FLAG_CLIPS_CHILDREN",
+							"value": 9
+						}
+					]
+				},
+				{
+					"name": "AccessibilityAction",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "ACTION_CLICK",
+							"value": 0
+						},
+						{
+							"name": "ACTION_FOCUS",
+							"value": 1
+						},
+						{
+							"name": "ACTION_BLUR",
+							"value": 2
+						},
+						{
+							"name": "ACTION_COLLAPSE",
+							"value": 3
+						},
+						{
+							"name": "ACTION_EXPAND",
+							"value": 4
+						},
+						{
+							"name": "ACTION_DECREMENT",
+							"value": 5
+						},
+						{
+							"name": "ACTION_INCREMENT",
+							"value": 6
+						},
+						{
+							"name": "ACTION_HIDE_TOOLTIP",
+							"value": 7
+						},
+						{
+							"name": "ACTION_SHOW_TOOLTIP",
+							"value": 8
+						},
+						{
+							"name": "ACTION_SET_TEXT_SELECTION",
+							"value": 9
+						},
+						{
+							"name": "ACTION_REPLACE_SELECTED_TEXT",
+							"value": 10
+						},
+						{
+							"name": "ACTION_SCROLL_BACKWARD",
+							"value": 11
+						},
+						{
+							"name": "ACTION_SCROLL_DOWN",
+							"value": 12
+						},
+						{
+							"name": "ACTION_SCROLL_FORWARD",
+							"value": 13
+						},
+						{
+							"name": "ACTION_SCROLL_LEFT",
+							"value": 14
+						},
+						{
+							"name": "ACTION_SCROLL_RIGHT",
+							"value": 15
+						},
+						{
+							"name": "ACTION_SCROLL_UP",
+							"value": 16
+						},
+						{
+							"name": "ACTION_SCROLL_INTO_VIEW",
+							"value": 17
+						},
+						{
+							"name": "ACTION_SCROLL_TO_POINT",
+							"value": 18
+						},
+						{
+							"name": "ACTION_SET_SCROLL_OFFSET",
+							"value": 19
+						},
+						{
+							"name": "ACTION_SET_VALUE",
+							"value": 20
+						},
+						{
+							"name": "ACTION_SHOW_CONTEXT_MENU",
+							"value": 21
+						},
+						{
+							"name": "ACTION_CUSTOM",
+							"value": 22
+						}
+					]
+				},
+				{
+					"name": "AccessibilityLiveMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "LIVE_OFF",
+							"value": 0
+						},
+						{
+							"name": "LIVE_POLITE",
+							"value": 1
+						},
+						{
+							"name": "LIVE_ASSERTIVE",
+							"value": 2
+						}
+					]
+				},
+				{
+					"name": "AccessibilityScrollUnit",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SCROLL_UNIT_ITEM",
+							"value": 0
+						},
+						{
+							"name": "SCROLL_UNIT_PAGE",
+							"value": 1
+						}
+					]
+				},
+				{
+					"name": "AccessibilityScrollHint",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SCROLL_HINT_TOP_LEFT",
+							"value": 0
+						},
+						{
+							"name": "SCROLL_HINT_BOTTOM_RIGHT",
+							"value": 1
+						},
+						{
+							"name": "SCROLL_HINT_TOP_EDGE",
+							"value": 2
+						},
+						{
+							"name": "SCROLL_HINT_BOTTOM_EDGE",
+							"value": 3
+						},
+						{
+							"name": "SCROLL_HINT_LEFT_EDGE",
+							"value": 4
+						},
+						{
+							"name": "SCROLL_HINT_RIGHT_EDGE",
+							"value": 5
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "is_supported",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "create_element",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3846965249,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "role",
+							"type": "enum::AccessibilityServer.AccessibilityRole"
+						}
+					]
+				},
+				{
+					"name": "create_sub_element",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1151690429,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "parent_rid",
+							"type": "RID"
+						},
+						{
+							"name": "role",
+							"type": "enum::AccessibilityServer.AccessibilityRole"
+						},
+						{
+							"name": "insert_pos",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "-1"
+						}
+					]
+				},
+				{
+					"name": "create_sub_text_edit_elements",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2702009895,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "parent_rid",
+							"type": "RID"
+						},
+						{
+							"name": "shaped_text",
+							"type": "RID"
+						},
+						{
+							"name": "min_height",
+							"type": "float",
+							"meta": "float"
+						},
+						{
+							"name": "insert_pos",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "-1"
+						},
+						{
+							"name": "is_last_line",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "has_element",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4155700596,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "free_element",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "element_set_meta",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3175752987,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "meta",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "element_get_meta",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4171304767,
+					"return_value": {
+						"type": "Variant"
+					},
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "set_window_rect",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2386961724,
+					"arguments": [
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "rect_out",
+							"type": "Rect2"
+						},
+						{
+							"name": "rect_in",
+							"type": "Rect2"
+						}
+					]
+				},
+				{
+					"name": "set_window_focused",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "focused",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "update_set_focus",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "get_window_root",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 495598643,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "update_set_role",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3747886520,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "role",
+							"type": "enum::AccessibilityServer.AccessibilityRole"
+						}
+					]
+				},
+				{
+					"name": "update_set_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_braille_label",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_braille_role_description",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "description",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_extra_info",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_description",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "description",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_value",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "value",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_tooltip",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "tooltip",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_bounds",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1378122625,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "p_rect",
+							"type": "Rect2"
+						}
+					]
+				},
+				{
+					"name": "update_set_transform",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1246044741,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "transform",
+							"type": "Transform2D"
+						}
+					]
+				},
+				{
+					"name": "update_add_child",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "child_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "update_add_related_controls",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "related_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "update_add_related_details",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "related_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "update_add_related_described_by",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "related_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "update_add_related_flow_to",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "related_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "update_add_related_labeled_by",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "related_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "update_add_related_radio_group",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "related_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "update_set_active_descendant",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "other_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "update_set_next_on_line",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "other_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "update_set_previous_on_line",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "other_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "update_set_member_of",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "group_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "update_set_in_page_link_target",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "other_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "update_set_error_message",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "other_id",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "update_set_live",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2993365237,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "live",
+							"type": "enum::AccessibilityServer.AccessibilityLiveMode"
+						}
+					]
+				},
+				{
+					"name": "update_add_action",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3960092835,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "action",
+							"type": "enum::AccessibilityServer.AccessibilityAction"
+						},
+						{
+							"name": "callable",
+							"type": "Callable"
+						}
+					]
+				},
+				{
+					"name": "update_add_custom_action",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4153150897,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "action_id",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "action_description",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_table_row_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "update_set_table_column_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "update_set_table_row_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "update_set_table_column_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "update_set_table_cell_position",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4288446313,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "row_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "column_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "update_set_table_cell_span",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4288446313,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "row_span",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "column_span",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "update_set_list_item_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "size",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "update_set_list_item_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "update_set_list_item_level",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "level",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "update_set_list_item_selected",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "selected",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "update_set_list_item_expanded",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "expanded",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "update_set_popup_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 690307634,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "popup",
+							"type": "enum::AccessibilityServer.AccessibilityPopupType"
+						}
+					]
+				},
+				{
+					"name": "update_set_checked",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "checekd",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "update_set_num_value",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "position",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "update_set_num_range",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2513314492,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "min",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "max",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "update_set_num_step",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "step",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "update_set_num_jump",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "jump",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "update_set_scroll_x",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "position",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "update_set_scroll_x_range",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2513314492,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "min",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "max",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "update_set_scroll_y",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1794382983,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "position",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "update_set_scroll_y_range",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2513314492,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "min",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "max",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "update_set_text_decorations",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 457503484,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "underline",
+							"type": "bool"
+						},
+						{
+							"name": "strikethrough",
+							"type": "bool"
+						},
+						{
+							"name": "overline",
+							"type": "bool"
+						},
+						{
+							"name": "color",
+							"type": "Color",
+							"default_value": "Color(0, 0, 0, 1)"
+						}
+					]
+				},
+				{
+					"name": "update_set_text_align",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3725995085,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "align",
+							"type": "enum::HorizontalAlignment"
+						}
+					]
+				},
+				{
+					"name": "update_set_text_selection",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3119144029,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "text_start_id",
+							"type": "RID"
+						},
+						{
+							"name": "start_char",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "text_end_id",
+							"type": "RID"
+						},
+						{
+							"name": "end_char",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "update_set_flag",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1473043386,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "flag",
+							"type": "enum::AccessibilityServer.AccessibilityFlags"
+						},
+						{
+							"name": "value",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "update_set_classname",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "classname",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_placeholder",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "placeholder",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_language",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "language",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_text_orientation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "vertical",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "update_set_list_orientation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "vertical",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "update_set_shortcut",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "shortcut",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_url",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "url",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_role_description",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "description",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_state_description",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2726140452,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "description",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "update_set_color_value",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2948539648,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "color",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "update_set_background_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2948539648,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "color",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "update_set_foreground_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2948539648,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "RID"
+						},
+						{
+							"name": "color",
+							"type": "Color"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "AimModifier3D",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -61134,9 +63024,73 @@
 					"return_value": {
 						"type": "ArrayMesh"
 					}
+				},
+				{
+					"name": "set_autosmooth",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "autosmooth",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_autosmooth",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_smoothing_angle",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "smoothing_angle",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_smoothing_angle",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
 				}
 			],
 			"properties": [
+				{
+					"type": "bool",
+					"name": "autosmooth",
+					"setter": "set_autosmooth",
+					"getter": "is_autosmooth"
+				},
+				{
+					"type": "float",
+					"name": "smoothing_angle",
+					"setter": "set_smoothing_angle",
+					"getter": "get_smoothing_angle"
+				},
 				{
 					"type": "int",
 					"name": "operation",
@@ -80337,11 +82291,14 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1720261470,
+					"hash": 353443434,
+					"hash_compatibility": [
+						1720261470
+					],
 					"arguments": [
 						{
 							"name": "mode",
-							"type": "enum::DisplayServer.AccessibilityLiveMode"
+							"type": "enum::AccessibilityServer.AccessibilityLiveMode"
 						}
 					]
 				},
@@ -80351,9 +82308,12 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3311037003,
+					"hash": 2858591811,
+					"hash_compatibility": [
+						3311037003
+					],
 					"return_value": {
-						"type": "enum::DisplayServer.AccessibilityLiveMode"
+						"type": "enum::AccessibilityServer.AccessibilityLiveMode"
 					}
 				},
 				{
@@ -86895,6 +88855,10 @@
 						{
 							"name": "ROLE_REGION",
 							"value": 46
+						},
+						{
+							"name": "ROLE_TEXT_RUN",
+							"value": 47
 						}
 					]
 				},
@@ -141596,6 +143560,31 @@
 					]
 				},
 				{
+					"name": "set_ignore_joypad_on_unfocused_application",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_ignoring_joypad_on_unfocused_application",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "get_gravity",
 					"is_const": true,
 					"is_vararg": false,
@@ -142278,6 +144267,12 @@
 					"name": "emulate_touch_from_mouse",
 					"setter": "set_emulate_touch_from_mouse",
 					"getter": "is_emulating_touch_from_mouse"
+				},
+				{
+					"type": "bool",
+					"name": "ignore_joypad_on_unfocused_application",
+					"setter": "set_ignore_joypad_on_unfocused_application",
+					"getter": "is_ignoring_joypad_on_unfocused_application"
 				}
 			]
 		},
@@ -197196,6 +199191,21 @@
 					]
 				},
 				{
+					"name": "set_search_bar_enabled_on_item_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "counts",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "get_item_text",
 					"is_const": true,
 					"is_vararg": false,
@@ -197358,6 +199368,29 @@
 							"meta": "int32"
 						}
 					]
+				},
+				{
+					"name": "is_search_bar_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_search_bar_enabled_on_item_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
 				},
 				{
 					"name": "add_separator",
@@ -197626,6 +199659,12 @@
 					"name": "allow_reselect",
 					"setter": "set_allow_reselect",
 					"getter": "get_allow_reselect"
+				},
+				{
+					"type": "int",
+					"name": "enable_search_bar_on_item_count",
+					"setter": "set_search_bar_enabled_on_item_count",
+					"getter": "get_search_bar_enabled_on_item_count"
 				},
 				{
 					"type": "int",
@@ -227925,6 +229964,44 @@
 					}
 				},
 				{
+					"name": "is_search_bar_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_search_bar_enabled_on_item_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "count",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_search_bar_enabled_on_item_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
 					"name": "set_shrink_height",
 					"is_const": false,
 					"is_vararg": false,
@@ -228061,6 +230138,12 @@
 					"name": "shrink_width",
 					"setter": "set_shrink_width",
 					"getter": "get_shrink_width"
+				},
+				{
+					"type": "int",
+					"name": "search_bar_enabled_on_item_count",
+					"setter": "set_search_bar_enabled_on_item_count",
+					"getter": "get_search_bar_enabled_on_item_count"
 				},
 				{
 					"type": "int",
@@ -292108,6 +294191,24 @@
 					}
 				},
 				{
+					"name": "is_line_in_viewport",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "line",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "set_line_as_center_visible",
 					"is_const": false,
 					"is_vararg": false,
@@ -330380,56 +332481,6 @@
 					"return_value": {
 						"type": "enum::VirtualJoystick.VisibilityMode"
 					}
-				},
-				{
-					"name": "set_joystick_texture",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4051416890,
-					"arguments": [
-						{
-							"name": "texture",
-							"type": "Texture2D"
-						}
-					]
-				},
-				{
-					"name": "get_joystick_texture",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3635182373,
-					"return_value": {
-						"type": "Texture2D"
-					}
-				},
-				{
-					"name": "set_tip_texture",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 4051416890,
-					"arguments": [
-						{
-							"name": "texture",
-							"type": "Texture2D"
-						}
-					]
-				},
-				{
-					"name": "get_tip_texture",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3635182373,
-					"return_value": {
-						"type": "Texture2D"
-					}
 				}
 			],
 			"signals": [
@@ -330527,18 +332578,6 @@
 					"name": "visibility_mode",
 					"setter": "set_visibility_mode",
 					"getter": "get_visibility_mode"
-				},
-				{
-					"type": "Texture2D",
-					"name": "joystick_texture",
-					"setter": "set_joystick_texture",
-					"getter": "get_joystick_texture"
-				},
-				{
-					"type": "Texture2D",
-					"name": "tip_texture",
-					"setter": "set_tip_texture",
-					"getter": "get_tip_texture"
 				}
 			]
 		},
@@ -349694,6 +351733,9 @@
 							"type": "int"
 						}
 					]
+				},
+				{
+					"name": "world_origin_changed"
 				}
 			],
 			"properties": [
@@ -350407,6 +352449,10 @@
 		{
 			"name": "JavaScriptBridge",
 			"type": "JavaScriptBridge"
+		},
+		{
+			"name": "AccessibilityServer",
+			"type": "AccessibilityServer"
 		},
 		{
 			"name": "AudioServer",
