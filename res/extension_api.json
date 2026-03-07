@@ -81243,6 +81243,208 @@
 					}
 				},
 				{
+					"name": "set_offset_transform_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_offset_transform_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_offset_transform_position",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_offset_transform_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_offset_transform_position_ratio",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "offset",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_offset_transform_position_ratio",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_offset_transform_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "scale",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_offset_transform_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_offset_transform_rotation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "rotation",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_offset_transform_rotation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_offset_transform_pivot",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "pivot",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_offset_transform_pivot",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_offset_transform_pivot_ratio",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "pivot",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_offset_transform_pivot_ratio",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_offset_transform_visual_only",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_offset_transform_visual_only",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_theme",
 					"is_const": false,
 					"is_vararg": false,
@@ -82915,6 +83117,54 @@
 					"name": "size_flags_stretch_ratio",
 					"setter": "set_stretch_ratio",
 					"getter": "get_stretch_ratio"
+				},
+				{
+					"type": "bool",
+					"name": "offset_transform_enabled",
+					"setter": "set_offset_transform_enabled",
+					"getter": "is_offset_transform_enabled"
+				},
+				{
+					"type": "Vector2",
+					"name": "offset_transform_position",
+					"setter": "set_offset_transform_position",
+					"getter": "get_offset_transform_position"
+				},
+				{
+					"type": "Vector2",
+					"name": "offset_transform_position_ratio",
+					"setter": "set_offset_transform_position_ratio",
+					"getter": "get_offset_transform_position_ratio"
+				},
+				{
+					"type": "Vector2",
+					"name": "offset_transform_scale",
+					"setter": "set_offset_transform_scale",
+					"getter": "get_offset_transform_scale"
+				},
+				{
+					"type": "float",
+					"name": "offset_transform_rotation",
+					"setter": "set_offset_transform_rotation",
+					"getter": "get_offset_transform_rotation"
+				},
+				{
+					"type": "Vector2",
+					"name": "offset_transform_pivot",
+					"setter": "set_offset_transform_pivot",
+					"getter": "get_offset_transform_pivot"
+				},
+				{
+					"type": "Vector2",
+					"name": "offset_transform_pivot_ratio",
+					"setter": "set_offset_transform_pivot_ratio",
+					"getter": "get_offset_transform_pivot_ratio"
+				},
+				{
+					"type": "bool",
+					"name": "offset_transform_visual_only",
+					"setter": "set_offset_transform_visual_only",
+					"getter": "is_offset_transform_visual_only"
 				},
 				{
 					"type": "bool",
@@ -280121,6 +280371,31 @@
 					}
 				},
 				{
+					"name": "set_drag_nested_intersections",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_dragging_nested_intersections",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "get_drag_area_control",
 					"is_const": false,
 					"is_vararg": false,
@@ -280212,6 +280487,12 @@
 					"name": "touch_dragger_enabled",
 					"setter": "set_touch_dragger_enabled",
 					"getter": "is_touch_dragger_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "drag_nested_intersections",
+					"setter": "set_drag_nested_intersections",
+					"getter": "is_dragging_nested_intersections"
 				},
 				{
 					"type": "int",
