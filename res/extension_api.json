@@ -15351,6 +15351,14 @@
 					"hash": 3918633141
 				},
 				{
+					"name": "is_orthonormal",
+					"return_type": "bool",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 3918633141
+				},
+				{
 					"name": "get_rotation_quaternion",
 					"return_type": "Quaternion",
 					"is_vararg": false,
@@ -33203,7 +33211,7 @@
 						{
 							"name": "time_sec",
 							"type": "float",
-							"meta": "float"
+							"meta": "double"
 						}
 					]
 				},
@@ -33216,7 +33224,7 @@
 					"hash": 1740695150,
 					"return_value": {
 						"type": "float",
-						"meta": "float"
+						"meta": "double"
 					}
 				},
 				{
