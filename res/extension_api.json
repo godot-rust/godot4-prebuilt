@@ -88919,6 +88919,10 @@
 						{
 							"name": "FEATURE_HDR_OUTPUT",
 							"value": 35
+						},
+						{
+							"name": "FEATURE_PIP_MODE",
+							"value": 36
 						}
 					]
 				},
@@ -95368,6 +95372,87 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "is_in_pip_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1885608816,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "pip_mode_enter",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1995695955,
+					"arguments": [
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "pip_mode_set_aspect_ratio",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3471927553,
+					"arguments": [
+						{
+							"name": "numerator",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "denominator",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "pip_mode_set_auto_enter_on_background",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1661950165,
+					"arguments": [
+						{
+							"name": "auto_enter_on_background",
+							"type": "bool"
+						},
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
 				}
 			],
 			"signals": [
@@ -159863,6 +159948,14 @@
 				{
 					"name": "NOTIFICATION_TEXT_SERVER_CHANGED",
 					"value": 2018
+				},
+				{
+					"name": "NOTIFICATION_APPLICATION_PIP_MODE_ENTERED",
+					"value": 2019
+				},
+				{
+					"name": "NOTIFICATION_APPLICATION_PIP_MODE_EXITED",
+					"value": 2020
 				}
 			],
 			"methods": [
@@ -182908,6 +183001,14 @@
 				{
 					"name": "NOTIFICATION_TEXT_SERVER_CHANGED",
 					"value": 2018
+				},
+				{
+					"name": "NOTIFICATION_APPLICATION_PIP_MODE_ENTERED",
+					"value": 2019
+				},
+				{
+					"name": "NOTIFICATION_APPLICATION_PIP_MODE_EXITED",
+					"value": 2020
 				},
 				{
 					"name": "NOTIFICATION_ACCESSIBILITY_UPDATE",
@@ -302519,6 +302620,28 @@
 					]
 				},
 				{
+					"name": "shaped_get_run_glyph_range",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4069534484,
+					"return_value": {
+						"type": "Vector2i"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
 					"name": "shaped_get_run_font_rid",
 					"is_const": true,
 					"is_vararg": false,
@@ -307703,6 +307826,29 @@
 				},
 				{
 					"name": "_shaped_get_run_range",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 4069534484,
+					"return_value": {
+						"type": "Vector2i"
+					},
+					"arguments": [
+						{
+							"name": "shaped",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "_shaped_get_run_glyph_range",
 					"is_const": true,
 					"is_static": false,
 					"is_required": false,
