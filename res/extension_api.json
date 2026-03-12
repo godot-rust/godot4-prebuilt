@@ -87041,6 +87041,56 @@
 					}
 				},
 				{
+					"name": "set_fix_alpha_border",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "fix_alpha_border",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_fix_alpha_border",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_premult_alpha",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "premult_alpha",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_premult_alpha",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_base_scale",
 					"is_const": false,
 					"is_vararg": false,
@@ -87146,6 +87196,18 @@
 				}
 			],
 			"properties": [
+				{
+					"type": "bool",
+					"name": "fix_alpha_border",
+					"setter": "set_fix_alpha_border",
+					"getter": "get_fix_alpha_border"
+				},
+				{
+					"type": "bool",
+					"name": "premult_alpha",
+					"setter": "set_premult_alpha",
+					"getter": "get_premult_alpha"
+				},
 				{
 					"type": "float",
 					"name": "base_scale",
@@ -330470,8 +330532,12 @@
 							"value": 3
 						},
 						{
-							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_MAX",
+							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_PARENT_NODE",
 							"value": 4
+						},
+						{
+							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_MAX",
+							"value": 5
 						}
 					]
 				},
@@ -330492,8 +330558,12 @@
 							"value": 2
 						},
 						{
-							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MAX",
+							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_PARENT_NODE",
 							"value": 3
+						},
+						{
+							"name": "DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MAX",
+							"value": 4
 						}
 					]
 				},
