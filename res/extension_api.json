@@ -35237,8 +35237,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 285050433,
+					"hash": 398361042,
 					"hash_compatibility": [
+						285050433,
 						4069484420
 					],
 					"arguments": [
@@ -35256,6 +35257,11 @@
 							"type": "int",
 							"meta": "int32",
 							"default_value": "-1"
+						},
+						{
+							"name": "name",
+							"type": "StringName",
+							"default_value": "&\"\""
 						}
 					]
 				},
@@ -35336,6 +35342,61 @@
 					]
 				},
 				{
+					"name": "set_blend_point_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3780747571,
+					"arguments": [
+						{
+							"name": "point",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_blend_point_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 659327637,
+					"return_value": {
+						"type": "StringName"
+					},
+					"arguments": [
+						{
+							"name": "point",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "find_blend_point_by_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2458036349,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
 					"name": "remove_blend_point",
 					"is_const": false,
 					"is_vararg": false,
@@ -35361,6 +35422,26 @@
 						"type": "int",
 						"meta": "int32"
 					}
+				},
+				{
+					"name": "reorder_blend_point",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "from_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "to_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
 				},
 				{
 					"name": "set_min_space",
@@ -35591,8 +35672,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 402261981,
+					"hash": 768750458,
 					"hash_compatibility": [
+						402261981,
 						1533588937
 					],
 					"arguments": [
@@ -35609,6 +35691,11 @@
 							"type": "int",
 							"meta": "int32",
 							"default_value": "-1"
+						},
+						{
+							"name": "name",
+							"type": "StringName",
+							"default_value": "&\"\""
 						}
 					]
 				},
@@ -35687,6 +35774,61 @@
 					]
 				},
 				{
+					"name": "set_blend_point_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3780747571,
+					"arguments": [
+						{
+							"name": "point",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_blend_point_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 659327637,
+					"return_value": {
+						"type": "StringName"
+					},
+					"arguments": [
+						{
+							"name": "point",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "find_blend_point_by_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2458036349,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
 					"name": "remove_blend_point",
 					"is_const": false,
 					"is_vararg": false,
@@ -35712,6 +35854,26 @@
 						"type": "int",
 						"meta": "int32"
 					}
+				},
+				{
+					"name": "reorder_blend_point",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3937882851,
+					"arguments": [
+						{
+							"name": "from_index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "to_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
 				},
 				{
 					"name": "add_triangle",
@@ -326585,6 +326747,17 @@
 					"return_value": {
 						"type": "float",
 						"meta": "double"
+					}
+				},
+				{
+					"name": "has_tweeners",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
 					}
 				},
 				{
