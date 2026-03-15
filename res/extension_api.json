@@ -34852,6 +34852,15 @@
 					"name": "tree_changed"
 				},
 				{
+					"name": "node_updated",
+					"arguments": [
+						{
+							"name": "object_id",
+							"type": "int"
+						}
+					]
+				},
+				{
 					"name": "animation_node_renamed",
 					"arguments": [
 						{
@@ -268444,6 +268453,23 @@
 					"return_value": {
 						"type": "StringName"
 					}
+				},
+				{
+					"name": "has_script_method",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2619796661,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "method_name",
+							"type": "StringName"
+						}
+					]
 				},
 				{
 					"name": "has_script_signal",
