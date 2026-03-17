@@ -80573,6 +80573,25 @@
 					]
 				},
 				{
+					"name": "_get_cursor_shape",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3820158470,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "at_position",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
 					"name": "_accessibility_get_contextual_info",
 					"is_const": true,
 					"is_static": false,
@@ -82491,7 +82510,7 @@
 					},
 					"arguments": [
 						{
-							"name": "position",
+							"name": "at_position",
 							"type": "Vector2",
 							"default_value": "Vector2(0, 0)"
 						}
@@ -108322,6 +108341,24 @@
 					"return_value": {
 						"type": "PackedStringArray"
 					}
+				},
+				{
+					"name": "_customize_strings",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2560709669,
+					"return_value": {
+						"type": "typedarray::PackedStringArray"
+					},
+					"arguments": [
+						{
+							"name": "strings",
+							"type": "typedarray::PackedStringArray"
+						}
+					]
 				}
 			]
 		},
@@ -164699,6 +164736,18 @@
 							"type": "String"
 						}
 					]
+				},
+				{
+					"name": "_get_supported_extensions",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1139954409,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
 				},
 				{
 					"name": "_write_begin",
