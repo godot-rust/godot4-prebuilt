@@ -117974,10 +117974,11 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2553855095,
+					"hash": 3275867622,
 					"hash_compatibility": [
 						1851767612,
 						3344325384,
+						2553855095,
 						1222433716,
 						1149405976
 					],
@@ -118035,6 +118036,17 @@
 							"type": "float",
 							"meta": "float",
 							"default_value": "0.0"
+						},
+						{
+							"name": "palette_index",
+							"type": "int",
+							"meta": "int64",
+							"default_value": "0"
+						},
+						{
+							"name": "custom_colors",
+							"type": "PackedColorArray",
+							"default_value": "PackedColorArray()"
 						}
 					]
 				},
@@ -118216,6 +118228,54 @@
 						"type": "int",
 						"meta": "int32"
 					}
+				},
+				{
+					"name": "get_palette_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					}
+				},
+				{
+					"name": "get_palette_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 844755477,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_palette_colors",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2552048864,
+					"return_value": {
+						"type": "PackedColorArray"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
 				},
 				{
 					"name": "get_spacing",
@@ -121236,6 +121296,58 @@
 						"type": "float",
 						"meta": "float"
 					}
+				},
+				{
+					"name": "get_palette_index",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					}
+				},
+				{
+					"name": "set_palette_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "palette_index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_palette_custom_colors",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1392750486,
+					"return_value": {
+						"type": "PackedColorArray"
+					}
+				},
+				{
+					"name": "set_palette_custom_colors",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3546319833,
+					"arguments": [
+						{
+							"name": "colors",
+							"type": "PackedColorArray"
+						}
+					]
 				}
 			],
 			"properties": [
@@ -121308,6 +121420,18 @@
 					"name": "baseline_offset",
 					"setter": "set_baseline_offset",
 					"getter": "get_baseline_offset"
+				},
+				{
+					"type": "int",
+					"name": "palette_index",
+					"setter": "set_palette_index",
+					"getter": "get_palette_index"
+				},
+				{
+					"type": "PackedColorArray",
+					"name": "palette_custom_colors",
+					"setter": "set_palette_custom_colors",
+					"getter": "get_palette_custom_colors"
 				}
 			]
 		},
@@ -202456,6 +202580,156 @@
 					}
 				},
 				{
+					"name": "set_use_scale_3d",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "using_scale_3d",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_scale_3d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_scale_3d_min",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "scale_3d_min",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_scale_3d_min",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_scale_3d_max",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "scale_3d_max",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_scale_3d_max",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_use_rotation_3d",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "using_rotation_3d",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_rotation_3d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_rotation_3d_min",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "rotation_3d_min",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_rotation_3d_min",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_rotation_3d_max",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "rotation_3d_max",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_rotation_3d_max",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
 					"name": "set_color_ramp",
 					"is_const": false,
 					"is_vararg": false,
@@ -203626,6 +203900,24 @@
 					"index": 7
 				},
 				{
+					"type": "bool",
+					"name": "use_rotation_3d",
+					"setter": "set_use_rotation_3d",
+					"getter": "is_using_rotation_3d"
+				},
+				{
+					"type": "Vector3",
+					"name": "rotation_3d_min",
+					"setter": "set_rotation_3d_min",
+					"getter": "get_rotation_3d_min"
+				},
+				{
+					"type": "Vector3",
+					"name": "rotation_3d_max",
+					"setter": "set_rotation_3d_max",
+					"getter": "get_rotation_3d_max"
+				},
+				{
 					"type": "float",
 					"name": "inherit_velocity_ratio",
 					"setter": "set_inherit_velocity_ratio",
@@ -203917,6 +204209,24 @@
 					"name": "attractor_interaction_enabled",
 					"setter": "set_attractor_interaction_enabled",
 					"getter": "is_attractor_interaction_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "use_scale_3d",
+					"setter": "set_use_scale_3d",
+					"getter": "is_using_scale_3d"
+				},
+				{
+					"type": "Vector3",
+					"name": "scale_3d_min",
+					"setter": "set_scale_3d_min",
+					"getter": "get_scale_3d_min"
+				},
+				{
+					"type": "Vector3",
+					"name": "scale_3d_max",
+					"setter": "set_scale_3d_max",
+					"getter": "get_scale_3d_max"
 				},
 				{
 					"type": "Vector2",
@@ -300224,7 +300534,7 @@
 							"type": "RID"
 						},
 						{
-							"name": "force_autohinter",
+							"name": "modulate",
 							"type": "bool"
 						}
 					]
@@ -300243,6 +300553,140 @@
 						{
 							"name": "font_rid",
 							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "font_get_palette_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2198884583,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "font_get_palette_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1464764419,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "font_get_palette_colors",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1595517857,
+					"return_value": {
+						"type": "PackedColorArray"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "font_set_palette_custom_colors",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4037098590,
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						},
+						{
+							"name": "colors",
+							"type": "PackedColorArray"
+						}
+					]
+				},
+				{
+					"name": "font_get_palette_custom_colors",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1569415609,
+					"return_value": {
+						"type": "PackedColorArray"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "font_get_used_palette",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2198884583,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "font_set_used_palette",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
 						}
 					]
 				},
@@ -305356,6 +305800,147 @@
 						{
 							"name": "font_rid",
 							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "_font_get_palette_count",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2198884583,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "_font_get_palette_name",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1464764419,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "_font_get_palette_colors",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1595517857,
+					"return_value": {
+						"type": "PackedColorArray"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "_font_set_palette_custom_colors",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 4037098590,
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						},
+						{
+							"name": "colors",
+							"type": "PackedColorArray"
+						}
+					]
+				},
+				{
+					"name": "_font_get_palette_custom_colors",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1569415609,
+					"return_value": {
+						"type": "PackedColorArray"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "_font_get_used_palette",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2198884583,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "_font_set_used_palette",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3411492887,
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						},
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int64"
 						}
 					]
 				},
