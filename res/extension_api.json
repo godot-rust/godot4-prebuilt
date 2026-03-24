@@ -80496,6 +80496,24 @@
 					]
 				},
 				{
+					"name": "_get_tooltip_auto_translate_mode_at",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3257223865,
+					"return_value": {
+						"type": "enum::Node.AutoTranslateMode"
+					},
+					"arguments": [
+						{
+							"name": "at_position",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
 					"name": "_get_drag_data",
 					"is_const": false,
 					"is_static": false,
@@ -129927,6 +129945,10 @@
 						{
 							"name": "TRANSFORM_ALIGN_Z_BILLBOARD_Y_TO_VELOCITY",
 							"value": 3
+						},
+						{
+							"name": "TRANSFORM_ALIGN_LOCAL_BILLBOARD",
+							"value": 4
 						}
 					]
 				}
@@ -130679,6 +130701,56 @@
 					}
 				},
 				{
+					"name": "set_transform_align_channel_filter",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 540833286,
+					"arguments": [
+						{
+							"name": "channel_filter",
+							"type": "enum::RenderingServer.ParticlesTransformAlignCustomSrc"
+						}
+					]
+				},
+				{
+					"name": "get_transform_align_channel_filter",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1664431231,
+					"return_value": {
+						"type": "enum::RenderingServer.ParticlesTransformAlignCustomSrc"
+					}
+				},
+				{
+					"name": "set_transform_align_axis",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3781785913,
+					"arguments": [
+						{
+							"name": "align",
+							"type": "enum::RenderingServer.ParticlesTransformAlignAxis"
+						}
+					]
+				},
+				{
+					"name": "get_transform_align_axis",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2427180841,
+					"return_value": {
+						"type": "enum::RenderingServer.ParticlesTransformAlignAxis"
+					}
+				},
+				{
 					"name": "convert_from_particles",
 					"is_const": false,
 					"is_vararg": false,
@@ -130866,6 +130938,18 @@
 					"name": "transform_align",
 					"setter": "set_transform_align",
 					"getter": "get_transform_align"
+				},
+				{
+					"type": "int",
+					"name": "transform_align_axis",
+					"setter": "set_transform_align_axis",
+					"getter": "get_transform_align_axis"
+				},
+				{
+					"type": "int",
+					"name": "transform_align_channel_filter",
+					"setter": "set_transform_align_channel_filter",
+					"getter": "get_transform_align_channel_filter"
 				},
 				{
 					"type": "bool",
@@ -164008,6 +164092,18 @@
 					}
 				},
 				{
+					"name": "get_item_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
 					"name": "get_last_unused_item_id",
 					"is_const": true,
 					"is_vararg": false,
@@ -189606,7 +189702,7 @@
 			"enums": [
 				{
 					"name": "ConnectFlags",
-					"is_bitfield": false,
+					"is_bitfield": true,
 					"values": [
 						{
 							"name": "CONNECT_DEFERRED",
@@ -196348,6 +196444,31 @@
 					]
 				},
 				{
+					"name": "get_foveation_with_subsampled_images",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_foveation_with_subsampled_images",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
 					"name": "is_action_set_active",
 					"is_const": true,
 					"is_vararg": false,
@@ -196801,6 +196922,12 @@
 					"name": "foveation_dynamic",
 					"setter": "set_foveation_dynamic",
 					"getter": "get_foveation_dynamic"
+				},
+				{
+					"type": "bool",
+					"name": "foveation_with_subsampled_images",
+					"setter": "set_foveation_with_subsampled_images",
+					"getter": "get_foveation_with_subsampled_images"
 				},
 				{
 					"type": "float",
@@ -203745,6 +203872,106 @@
 						"type": "float",
 						"meta": "float"
 					}
+				},
+				{
+					"name": "set_using_rotation_velocity_3d",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use_rotation_velocity_3d",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_rotation_velocity_3d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_rotation_velocity_3d_max",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "rotation_velocity_3d_max",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_rotation_velocity_3d_max",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_rotation_velocity_3d_min",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3460891852,
+					"arguments": [
+						{
+							"name": "rotation_velocity_3d_min",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_rotation_velocity_3d_min",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "set_rotation_velocity_3d_curve",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "rotation_velocity_3d_curve",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_rotation_velocity_3d_curve",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
 				}
 			],
 			"signals": [
@@ -204085,6 +204312,30 @@
 					"name": "velocity_limit_curve",
 					"setter": "set_velocity_limit_curve",
 					"getter": "get_velocity_limit_curve"
+				},
+				{
+					"type": "bool",
+					"name": "use_rotation_velocity_3d",
+					"setter": "set_using_rotation_velocity_3d",
+					"getter": "is_using_rotation_velocity_3d"
+				},
+				{
+					"type": "Vector3",
+					"name": "rotation_velocity_3d_min",
+					"setter": "set_rotation_velocity_3d_min",
+					"getter": "get_rotation_velocity_3d_min"
+				},
+				{
+					"type": "Vector3",
+					"name": "rotation_velocity_3d_max",
+					"setter": "set_rotation_velocity_3d_max",
+					"getter": "get_rotation_velocity_3d_max"
+				},
+				{
+					"type": "CurveXYZTexture",
+					"name": "rotation_velocity_3d_curve",
+					"setter": "set_rotation_velocity_3d_curve",
+					"getter": "get_rotation_velocity_3d_curve"
 				},
 				{
 					"type": "Vector3",
@@ -247399,6 +247650,50 @@
 						{
 							"name": "PARTICLES_TRANSFORM_ALIGN_Z_BILLBOARD_Y_TO_VELOCITY",
 							"value": 3
+						},
+						{
+							"name": "PARTICLES_TRANSFORM_ALIGN_LOCAL_BILLBOARD",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "ParticlesTransformAlignCustomSrc",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "PARTICLES_ALIGN_CHANNEL_FILTER_DISABLED",
+							"value": 0
+						},
+						{
+							"name": "PARTICLES_ALIGN_CHANNEL_FILTER_X",
+							"value": 1
+						},
+						{
+							"name": "PARTICLES_ALIGN_CHANNEL_FILTER_Y",
+							"value": 2
+						},
+						{
+							"name": "PARTICLES_ALIGN_CHANNEL_FILTER_Z",
+							"value": 3
+						},
+						{
+							"name": "PARTICLES_ALIGN_CHANNEL_FILTER_W",
+							"value": 4
+						}
+					]
+				},
+				{
+					"name": "ParticlesTransformAlignAxis",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "PARTICLES_ALIGN_AXIS_X",
+							"value": 0
+						},
+						{
+							"name": "PARTICLES_ALIGN_AXIS_Y",
+							"value": 1
 						}
 					]
 				},
@@ -253085,6 +253380,42 @@
 						{
 							"name": "align",
 							"type": "enum::RenderingServer.ParticlesTransformAlign"
+						}
+					]
+				},
+				{
+					"name": "particles_set_transform_align_channel_filter",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1303285813,
+					"arguments": [
+						{
+							"name": "particles",
+							"type": "RID"
+						},
+						{
+							"name": "channel_filter",
+							"type": "enum::RenderingServer.ParticlesTransformAlignCustomSrc"
+						}
+					]
+				},
+				{
+					"name": "particles_set_transform_align_axis",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3065310065,
+					"arguments": [
+						{
+							"name": "particles",
+							"type": "RID"
+						},
+						{
+							"name": "p_rotation_axis",
+							"type": "enum::RenderingServer.ParticlesTransformAlignAxis"
 						}
 					]
 				},
@@ -260069,6 +260400,23 @@
 							"name": "deep_subresources_mode",
 							"type": "enum::Resource.DeepDuplicateMode",
 							"default_value": "1"
+						}
+					]
+				},
+				{
+					"name": "copy_from_resource",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3338311164,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "resource",
+							"type": "Resource"
 						}
 					]
 				}
@@ -269475,6 +269823,17 @@
 							"type": "Script"
 						}
 					]
+				},
+				{
+					"name": "get_unsaved_files",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1139954409,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
 				},
 				{
 					"name": "save_all_scripts",
@@ -318499,6 +318858,21 @@
 						},
 						{
 							"name": "terrain_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "clear_terrains",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "terrain_set",
 							"type": "int",
 							"meta": "int32"
 						}
