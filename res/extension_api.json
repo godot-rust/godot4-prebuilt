@@ -271963,6 +271963,31 @@
 					}
 				},
 				{
+					"name": "set_scroll_horizontal_by_default",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_scroll_horizontal_by_default",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_deadzone",
 					"is_const": false,
 					"is_vararg": false,
@@ -272182,6 +272207,12 @@
 					"name": "vertical_scroll_mode",
 					"setter": "set_vertical_scroll_mode",
 					"getter": "get_vertical_scroll_mode"
+				},
+				{
+					"type": "bool",
+					"name": "scroll_horizontal_by_default",
+					"setter": "set_scroll_horizontal_by_default",
+					"getter": "is_scroll_horizontal_by_default"
 				},
 				{
 					"type": "int",
@@ -326813,6 +326844,31 @@
 				},
 				{
 					"name": "is_folding_disabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_accept_children",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "allowed",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_accepting_children",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
