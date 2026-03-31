@@ -88271,6 +88271,24 @@
 					]
 				},
 				{
+					"name": "get_drive_label",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 990163283,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "get_current_drive",
 					"is_const": false,
 					"is_vararg": false,
@@ -92810,6 +92828,26 @@
 						{
 							"name": "flag",
 							"type": "enum::DisplayServer.WindowFlags"
+						},
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "window_set_icon",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2457502155,
+					"arguments": [
+						{
+							"name": "icon",
+							"type": "Image"
 						},
 						{
 							"name": "window_id",
@@ -269842,6 +269880,23 @@
 					"is_static": false,
 					"is_virtual": false,
 					"hash": 3218959716
+				},
+				{
+					"name": "close_file",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 166001499,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
 				}
 			],
 			"signals": [
