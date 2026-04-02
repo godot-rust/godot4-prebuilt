@@ -58694,12 +58694,21 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 373806689,
+					"hash": 66938510,
+					"hash_compatibility": [
+						373806689
+					],
 					"arguments": [
 						{
 							"name": "process_time",
 							"type": "float",
 							"meta": "float"
+						},
+						{
+							"name": "process_time_residual",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -60625,12 +60634,21 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 373806689,
+					"hash": 66938510,
+					"hash_compatibility": [
+						373806689
+					],
 					"arguments": [
 						{
 							"name": "process_time",
 							"type": "float",
 							"meta": "float"
+						},
+						{
+							"name": "process_time_residual",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
@@ -108859,16 +108877,35 @@
 					"name": "_commit",
 					"is_const": false,
 					"is_static": false,
-					"is_required": true,
+					"is_required": false,
 					"is_vararg": false,
 					"is_virtual": true,
-					"hash": 83702148,
+					"hash": 2678287736,
+					"hash_compatibility": [
+						83702148
+					],
 					"arguments": [
 						{
 							"name": "msg",
 							"type": "String"
+						},
+						{
+							"name": "amend",
+							"type": "bool"
 						}
 					]
+				},
+				{
+					"name": "_allow_amends",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
 				},
 				{
 					"name": "_get_diff",
@@ -129210,12 +129247,21 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 373806689,
+					"hash": 2019720106,
+					"hash_compatibility": [
+						373806689
+					],
 					"arguments": [
 						{
 							"name": "process_time",
 							"type": "float",
 							"meta": "float"
+						},
+						{
+							"name": "process_time_residual",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0"
 						}
 					]
 				},
@@ -130835,12 +130881,21 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 373806689,
+					"hash": 66938510,
+					"hash_compatibility": [
+						373806689
+					],
 					"arguments": [
 						{
 							"name": "process_time",
 							"type": "float",
 							"meta": "float"
+						},
+						{
+							"name": "process_time_residual",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				}
@@ -141599,7 +141654,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3108122999,
+					"hash": 2018602448,
+					"hash_compatibility": [
+						3108122999
+					],
 					"return_value": {
 						"type": "enum::Error"
 					},
@@ -141612,6 +141670,17 @@
 							"name": "grayscale",
 							"type": "bool",
 							"default_value": "false"
+						},
+						{
+							"name": "color_image",
+							"type": "bool",
+							"default_value": "false"
+						},
+						{
+							"name": "max_linear_value",
+							"type": "float",
+							"meta": "float",
+							"default_value": "-1.0"
 						}
 					]
 				},
@@ -141621,7 +141690,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3178917920,
+					"hash": 1477518536,
+					"hash_compatibility": [
+						3178917920
+					],
 					"return_value": {
 						"type": "PackedByteArray"
 					},
@@ -141630,6 +141702,17 @@
 							"name": "grayscale",
 							"type": "bool",
 							"default_value": "false"
+						},
+						{
+							"name": "color_image",
+							"type": "bool",
+							"default_value": "false"
+						},
+						{
+							"name": "max_linear_value",
+							"type": "float",
+							"meta": "float",
+							"default_value": "-1.0"
 						}
 					]
 				},
@@ -150455,6 +150538,48 @@
 					"return_value": {
 						"type": "JavaObject"
 					}
+				},
+				{
+					"name": "create_sam_callback",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2479014754,
+					"return_value": {
+						"type": "JavaObject"
+					},
+					"arguments": [
+						{
+							"name": "sam_interface",
+							"type": "String"
+						},
+						{
+							"name": "callable",
+							"type": "Callable"
+						}
+					]
+				},
+				{
+					"name": "create_proxy",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2694931752,
+					"return_value": {
+						"type": "JavaObject"
+					},
+					"arguments": [
+						{
+							"name": "object",
+							"type": "Object"
+						},
+						{
+							"name": "interfaces",
+							"type": "PackedStringArray"
+						}
+					]
 				}
 			]
 		},
@@ -202372,8 +202497,12 @@
 							"value": 3
 						},
 						{
-							"name": "PARTICLE_FLAG_MAX",
+							"name": "PARTICLE_FLAG_INHERIT_EMITTER_SCALE",
 							"value": 4
+						},
+						{
+							"name": "PARTICLE_FLAG_MAX",
+							"value": 5
 						}
 					]
 				},
@@ -204051,6 +204180,13 @@
 					"setter": "set_particle_flag",
 					"getter": "get_particle_flag",
 					"index": 3
+				},
+				{
+					"type": "bool",
+					"name": "particle_flag_inherit_emitter_scale",
+					"setter": "set_particle_flag",
+					"getter": "get_particle_flag",
+					"index": 4
 				},
 				{
 					"type": "Vector3",
@@ -253168,16 +253304,25 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1794382983,
+					"hash": 1515254041,
+					"hash_compatibility": [
+						1794382983
+					],
 					"arguments": [
 						{
 							"name": "particles",
 							"type": "RID"
 						},
 						{
-							"name": "time",
+							"name": "process_time",
 							"type": "float",
 							"meta": "float"
+						},
+						{
+							"name": "process_time_residual",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.0"
 						}
 					]
 				},
