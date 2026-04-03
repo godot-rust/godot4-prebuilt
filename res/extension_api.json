@@ -233278,6 +233278,306 @@
 			]
 		},
 		{
+			"name": "RDAccelerationStructureGeometry",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_flags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1046628555,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "bitfield::RenderingDevice.AccelerationStructureGeometryFlagBits"
+						}
+					]
+				},
+				{
+					"name": "get_flags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1694887119,
+					"return_value": {
+						"type": "bitfield::RenderingDevice.AccelerationStructureGeometryFlagBits"
+					}
+				},
+				{
+					"name": "set_vertex_buffer",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "get_vertex_buffer",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "set_vertex_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_vertex_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
+					"name": "set_vertex_stride",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_vertex_stride",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
+					"name": "set_vertex_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_vertex_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
+					"name": "set_vertex_format",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 565531219,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "enum::RenderingDevice.DataFormat"
+						}
+					]
+				},
+				{
+					"name": "get_vertex_format",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2235804183,
+					"return_value": {
+						"type": "enum::RenderingDevice.DataFormat"
+					}
+				},
+				{
+					"name": "set_index_buffer",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "get_index_buffer",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "set_index_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_index_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
+					"name": "set_index_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_index_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "flags",
+					"setter": "set_flags",
+					"getter": "get_flags"
+				},
+				{
+					"type": "RID",
+					"name": "vertex_buffer",
+					"setter": "set_vertex_buffer",
+					"getter": "get_vertex_buffer"
+				},
+				{
+					"type": "int",
+					"name": "vertex_offset",
+					"setter": "set_vertex_offset",
+					"getter": "get_vertex_offset"
+				},
+				{
+					"type": "int",
+					"name": "vertex_stride",
+					"setter": "set_vertex_stride",
+					"getter": "get_vertex_stride"
+				},
+				{
+					"type": "int",
+					"name": "vertex_count",
+					"setter": "set_vertex_count",
+					"getter": "get_vertex_count"
+				},
+				{
+					"type": "int",
+					"name": "vertex_format",
+					"setter": "set_vertex_format",
+					"getter": "get_vertex_format"
+				},
+				{
+					"type": "RID",
+					"name": "index_buffer",
+					"setter": "set_index_buffer",
+					"getter": "get_index_buffer"
+				},
+				{
+					"type": "int",
+					"name": "index_offset",
+					"setter": "set_index_offset",
+					"getter": "get_index_offset"
+				},
+				{
+					"type": "int",
+					"name": "index_count",
+					"setter": "set_index_count",
+					"getter": "get_index_count"
+				}
+			]
+		},
+		{
 			"name": "RDAttachmentFormat",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -242901,15 +243201,15 @@
 					]
 				},
 				{
-					"name": "AccelerationStructureGeometryBits",
+					"name": "AccelerationStructureGeometryFlagBits",
 					"is_bitfield": true,
 					"values": [
 						{
-							"name": "ACCELERATION_STRUCTURE_GEOMETRY_OPAQUE",
+							"name": "ACCELERATION_STRUCTURE_GEOMETRY_OPAQUE_BIT",
 							"value": 1
 						},
 						{
-							"name": "ACCELERATION_STRUCTURE_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION",
+							"name": "ACCELERATION_STRUCTURE_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT",
 							"value": 2
 						}
 					]
@@ -245492,29 +245792,14 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1252581520,
+					"hash": 1394907487,
 					"return_value": {
 						"type": "RID"
 					},
 					"arguments": [
 						{
-							"name": "vertex_array",
-							"type": "RID"
-						},
-						{
-							"name": "index_array",
-							"type": "RID"
-						},
-						{
-							"name": "geometry_bits",
-							"type": "bitfield::RenderingDevice.AccelerationStructureGeometryBits",
-							"default_value": "0"
-						},
-						{
-							"name": "position_attribute_location",
-							"type": "int",
-							"meta": "uint32",
-							"default_value": "0"
+							"name": "geometries",
+							"type": "typedarray::RDAccelerationStructureGeometry"
 						}
 					]
 				},
@@ -248016,8 +248301,12 @@
 							"value": 4
 						},
 						{
-							"name": "VIEWPORT_SCALING_3D_MODE_MAX",
+							"name": "VIEWPORT_SCALING_3D_MODE_NEAREST",
 							"value": 5
+						},
+						{
+							"name": "VIEWPORT_SCALING_3D_MODE_MAX",
+							"value": 6
 						}
 					]
 				},
@@ -331733,8 +332022,12 @@
 							"value": 4
 						},
 						{
-							"name": "SCALING_3D_MODE_MAX",
+							"name": "SCALING_3D_MODE_NEAREST",
 							"value": 5
+						},
+						{
+							"name": "SCALING_3D_MODE_MAX",
+							"value": 6
 						}
 					]
 				},
