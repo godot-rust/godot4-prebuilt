@@ -90017,6 +90017,10 @@
 						{
 							"name": "WINDOW_EVENT_FORCE_CLOSE",
 							"value": 8
+						},
+						{
+							"name": "WINDOW_EVENT_OUTPUT_MAX_LINEAR_VALUE_CHANGED",
+							"value": 9
 						}
 					]
 				},
@@ -183626,6 +183630,10 @@
 				{
 					"name": "NOTIFICATION_WM_POSITION_CHANGED",
 					"value": 1012
+				},
+				{
+					"name": "NOTIFICATION_WM_OUTPUT_MAX_LINEAR_VALUE_CHANGED",
+					"value": 1013
 				},
 				{
 					"name": "NOTIFICATION_OS_MEMORY_WARNING",
@@ -348233,6 +348241,15 @@
 				},
 				{
 					"name": "title_changed"
+				},
+				{
+					"name": "output_max_linear_value_changed",
+					"arguments": [
+						{
+							"name": "output_max_linear_value",
+							"type": "float"
+						}
+					]
 				}
 			],
 			"properties": [
