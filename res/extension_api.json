@@ -121876,9 +121876,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1333564645,
+					"hash": 3762224011,
 					"return_value": {
-						"type": "Dictionary"
+						"type": "Variant"
 					},
 					"arguments": [
 						{
@@ -233586,6 +233586,176 @@
 			]
 		},
 		{
+			"name": "RDAccelerationStructureInstance",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_transform",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2952846383,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "Transform3D"
+						}
+					]
+				},
+				{
+					"name": "get_transform",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3229777777,
+					"return_value": {
+						"type": "Transform3D"
+					}
+				},
+				{
+					"name": "set_id",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
+					"name": "set_mask",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "int",
+							"meta": "uint8"
+						}
+					]
+				},
+				{
+					"name": "get_mask",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint8"
+					}
+				},
+				{
+					"name": "set_flags",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2971840141,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "bitfield::RenderingDevice.AccelerationStructureInstanceFlagBits"
+						}
+					]
+				},
+				{
+					"name": "get_flags",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2410182637,
+					"return_value": {
+						"type": "bitfield::RenderingDevice.AccelerationStructureInstanceFlagBits"
+					}
+				},
+				{
+					"name": "set_blas",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "get_blas",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "Transform3D",
+					"name": "transform",
+					"setter": "set_transform",
+					"getter": "get_transform"
+				},
+				{
+					"type": "int",
+					"name": "id",
+					"setter": "set_id",
+					"getter": "get_id"
+				},
+				{
+					"type": "int",
+					"name": "mask",
+					"setter": "set_mask",
+					"getter": "get_mask"
+				},
+				{
+					"type": "int",
+					"name": "flags",
+					"setter": "set_flags",
+					"getter": "get_flags"
+				},
+				{
+					"type": "RID",
+					"name": "blas",
+					"setter": "set_blas",
+					"getter": "get_blas"
+				}
+			]
+		},
+		{
 			"name": "RDAttachmentFormat",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -243209,6 +243379,32 @@
 					]
 				},
 				{
+					"name": "AccelerationStructureFlagBits",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT",
+							"value": 1
+						},
+						{
+							"name": "ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT",
+							"value": 2
+						},
+						{
+							"name": "ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT",
+							"value": 4
+						},
+						{
+							"name": "ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT",
+							"value": 8
+						},
+						{
+							"name": "ACCELERATION_STRUCTURE_LOW_MEMORY_BIT",
+							"value": 16
+						}
+					]
+				},
+				{
 					"name": "AccelerationStructureGeometryFlagBits",
 					"is_bitfield": true,
 					"values": [
@@ -243219,6 +243415,28 @@
 						{
 							"name": "ACCELERATION_STRUCTURE_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT",
 							"value": 2
+						}
+					]
+				},
+				{
+					"name": "AccelerationStructureInstanceFlagBits",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "ACCELERATION_STRUCTURE_INSTANCE_TRIANGLE_FACING_CULL_DISABLE_BIT",
+							"value": 1
+						},
+						{
+							"name": "ACCELERATION_STRUCTURE_INSTANCE_TRIANGLE_FLIP_FACING_BIT",
+							"value": 2
+						},
+						{
+							"name": "ACCELERATION_STRUCTURE_INSTANCE_FORCE_OPAQUE_BIT",
+							"value": 4
+						},
+						{
+							"name": "ACCELERATION_STRUCTURE_INSTANCE_FORCE_NO_OPAQUE_BIT",
+							"value": 8
 						}
 					]
 				},
@@ -245800,7 +246018,7 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1394907487,
+					"hash": 1010940044,
 					"return_value": {
 						"type": "RID"
 					},
@@ -245808,51 +246026,10 @@
 						{
 							"name": "geometries",
 							"type": "typedarray::RDAccelerationStructureGeometry"
-						}
-					]
-				},
-				{
-					"name": "tlas_instances_buffer_create",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3821760831,
-					"return_value": {
-						"type": "RID"
-					},
-					"arguments": [
-						{
-							"name": "instance_count",
-							"type": "int",
-							"meta": "uint32"
 						},
 						{
-							"name": "creation_bits",
-							"type": "bitfield::RenderingDevice.BufferCreationBits",
-							"default_value": "0"
-						}
-					]
-				},
-				{
-					"name": "tlas_instances_buffer_fill",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1473425859,
-					"arguments": [
-						{
-							"name": "instances_buffer",
-							"type": "RID"
-						},
-						{
-							"name": "blases",
-							"type": "typedarray::RID"
-						},
-						{
-							"name": "transforms",
-							"type": "typedarray::Transform3D"
+							"name": "flags",
+							"type": "bitfield::RenderingDevice.AccelerationStructureFlagBits"
 						}
 					]
 				},
@@ -245862,19 +246039,24 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 41030802,
+					"hash": 592780330,
 					"return_value": {
 						"type": "RID"
 					},
 					"arguments": [
 						{
-							"name": "instances_buffer",
-							"type": "RID"
+							"name": "max_instance_count",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "flags",
+							"type": "bitfield::RenderingDevice.AccelerationStructureFlagBits"
 						}
 					]
 				},
 				{
-					"name": "acceleration_structure_build",
+					"name": "blas_build",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -245885,8 +246067,29 @@
 					},
 					"arguments": [
 						{
-							"name": "acceleration_structure",
+							"name": "blas",
 							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "tlas_build",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 261981775,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "tlas",
+							"type": "RID"
+						},
+						{
+							"name": "instances",
+							"type": "typedarray::RDAccelerationStructureInstance"
 						}
 					]
 				},
