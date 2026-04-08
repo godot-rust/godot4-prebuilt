@@ -80484,6 +80484,18 @@
 					]
 				},
 				{
+					"name": "_get_maximum_size",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
 					"name": "_get_minimum_size",
 					"is_const": true,
 					"is_static": false,
@@ -80683,6 +80695,28 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "get_maximum_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "get_combined_maximum_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
 					"name": "get_minimum_size",
 					"is_const": true,
 					"is_vararg": false,
@@ -80695,6 +80729,42 @@
 				},
 				{
 					"name": "get_combined_minimum_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_propagate_maximum_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_propagating_maximum_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_bound_minimum_size",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -80970,6 +81040,20 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "set_custom_maximum_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "size",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
 					"name": "set_custom_minimum_size",
 					"is_const": false,
 					"is_vararg": false,
@@ -81177,6 +81261,17 @@
 				},
 				{
 					"name": "get_combined_pivot_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "get_custom_maximum_size",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -83058,6 +83153,14 @@
 					}
 				},
 				{
+					"name": "update_maximum_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
 					"name": "update_minimum_size",
 					"is_const": false,
 					"is_vararg": false,
@@ -83181,6 +83284,9 @@
 					"name": "size_flags_changed"
 				},
 				{
+					"name": "maximum_size_changed"
+				},
+				{
 					"name": "minimum_size_changed"
 				},
 				{
@@ -83193,6 +83299,18 @@
 					"name": "clip_contents",
 					"setter": "set_clip_contents",
 					"getter": "is_clipping_contents"
+				},
+				{
+					"type": "bool",
+					"name": "propagate_maximum_size",
+					"setter": "set_propagate_maximum_size",
+					"getter": "is_propagating_maximum_size"
+				},
+				{
+					"type": "Vector2",
+					"name": "custom_maximum_size",
+					"setter": "set_custom_maximum_size",
+					"getter": "get_custom_maximum_size"
 				},
 				{
 					"type": "Vector2",
@@ -272477,6 +272595,10 @@
 						{
 							"name": "SCROLL_MODE_RESERVE",
 							"value": 4
+						},
+						{
+							"name": "SCROLL_MODE_MAXIMIZE_FIRST",
+							"value": 5
 						}
 					]
 				},
@@ -285908,6 +286030,26 @@
 			"is_instantiable": true,
 			"inherits": "Resource",
 			"api_type": "core",
+			"enums": [
+				{
+					"name": "LoopMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "LOOP_NONE",
+							"value": 0
+						},
+						{
+							"name": "LOOP_LINEAR",
+							"value": 1
+						},
+						{
+							"name": "LOOP_PINGPONG",
+							"value": 2
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "add_animation",
@@ -286065,6 +286207,41 @@
 					"hash": 2619796661,
 					"return_value": {
 						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "anim",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "set_animation_loop_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 918068248,
+					"arguments": [
+						{
+							"name": "anim",
+							"type": "StringName"
+						},
+						{
+							"name": "loop_mode",
+							"type": "enum::SpriteFrames.LoopMode"
+						}
+					]
+				},
+				{
+					"name": "get_animation_loop_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3606360228,
+					"return_value": {
+						"type": "enum::SpriteFrames.LoopMode"
 					},
 					"arguments": [
 						{
