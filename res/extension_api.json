@@ -277752,6 +277752,14 @@
 					}
 				},
 				{
+					"name": "reset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
 					"name": "set_jiggle_joint_bone2d_node",
 					"is_const": false,
 					"is_vararg": false,
