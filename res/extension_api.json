@@ -73531,6 +73531,10 @@
 						{
 							"name": "KIND_PLAIN_TEXT",
 							"value": 9
+						},
+						{
+							"name": "KIND_KEYWORD",
+							"value": 10
 						}
 					]
 				},
@@ -271497,8 +271501,12 @@
 							"value": 9
 						},
 						{
-							"name": "CODE_COMPLETION_KIND_MAX",
+							"name": "CODE_COMPLETION_KIND_KEYWORD",
 							"value": 10
+						},
+						{
+							"name": "CODE_COMPLETION_KIND_MAX",
+							"value": 11
 						}
 					]
 				}
