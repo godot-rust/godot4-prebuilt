@@ -4329,6 +4329,10 @@ pub type GDExtensionInterfaceVariantGetObjectInstanceId = ::std::option::Option<
 pub type GDExtensionInterfaceVariantGetTypeName = ::std::option::Option<
     unsafe extern "C" fn(p_type: GDExtensionVariantType, r_name: GDExtensionUninitializedStringPtr),
 >;
+#[doc = " @name variant_get_type_by_name\n @since 4.7\n\n Gets the Variant type by name.\n\n @param p_type_name The variant type name.\n\n @return The variant type for the given name; otherwise VARIANT_MAX if name is invalid."]
+pub type GDExtensionInterfaceVariantGetTypeByName = ::std::option::Option<
+    unsafe extern "C" fn(p_type_name: GDExtensionConstStringPtr) -> GDExtensionVariantType,
+>;
 #[doc = " @name variant_can_convert\n @since 4.1\n\n Checks if Variants can be converted from one type to another.\n\n @param p_from The Variant type to convert from.\n @param p_to The Variant type to convert to.\n\n @return true if the conversion is possible; otherwise false."]
 pub type GDExtensionInterfaceVariantCanConvert = ::std::option::Option<
     unsafe extern "C" fn(

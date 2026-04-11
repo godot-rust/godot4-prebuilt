@@ -97253,6 +97253,10 @@
 						{
 							"name": "CONTEXT_SLOT_2D_EDITOR",
 							"value": 6
+						},
+						{
+							"name": "CONTEXT_SLOT_INSPECTOR_PROPERTY",
+							"value": 7
 						}
 					]
 				}
@@ -101910,6 +101914,30 @@
 					}
 				},
 				{
+					"name": "collapse_all_folding",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "expand_all_folding",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "expand_revertable",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
 					"name": "instantiate_property_editor",
 					"is_const": false,
 					"is_vararg": false,
@@ -101949,6 +101977,24 @@
 							"name": "wide",
 							"type": "bool",
 							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "create_default_inspector",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 2419746798,
+					"return_value": {
+						"type": "EditorInspector"
+					},
+					"arguments": [
+						{
+							"name": "filter_line_edit",
+							"type": "LineEdit",
+							"default_value": "null"
 						}
 					]
 				}
@@ -138580,6 +138626,125 @@
 							"name": "item",
 							"type": "int",
 							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_used_octants",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::Vector3i"
+					}
+				},
+				{
+					"name": "get_used_octants_by_item",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 663333327,
+					"return_value": {
+						"type": "typedarray::Vector3i"
+					},
+					"arguments": [
+						{
+							"name": "item",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_used_cells_in_octant",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2658725580,
+					"return_value": {
+						"type": "typedarray::Vector3i"
+					},
+					"arguments": [
+						{
+							"name": "octant_coords",
+							"type": "Vector3i"
+						}
+					]
+				},
+				{
+					"name": "get_used_cells_in_octant_by_item",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2384667821,
+					"return_value": {
+						"type": "typedarray::Vector3i"
+					},
+					"arguments": [
+						{
+							"name": "octant_coords",
+							"type": "Vector3i"
+						},
+						{
+							"name": "item",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_octants_in_bounds",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2489849902,
+					"return_value": {
+						"type": "typedarray::Vector3i"
+					},
+					"arguments": [
+						{
+							"name": "bounds",
+							"type": "AABB"
+						}
+					]
+				},
+				{
+					"name": "get_used_octants_in_bounds",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2489849902,
+					"return_value": {
+						"type": "typedarray::Vector3i"
+					},
+					"arguments": [
+						{
+							"name": "bounds",
+							"type": "AABB"
+						}
+					]
+				},
+				{
+					"name": "get_octant_coords_from_cell_coords",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2075501597,
+					"return_value": {
+						"type": "Vector3i"
+					},
+					"arguments": [
+						{
+							"name": "cell_coords",
+							"type": "Vector3i"
 						}
 					]
 				},
@@ -194784,7 +194949,16 @@
 					"is_required": false,
 					"is_vararg": false,
 					"is_virtual": true,
-					"hash": 3218959716
+					"hash": 309044627,
+					"hash_compatibility": [
+						3218959716
+					],
+					"arguments": [
+						{
+							"name": "interaction_profile_metadata",
+							"type": "OpenXRInteractionProfileMetadata"
+						}
+					]
 				},
 				{
 					"name": "_on_before_instance_created",
@@ -233794,6 +233968,33 @@
 					}
 				},
 				{
+					"name": "set_hit_sbt_range",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_hit_sbt_range",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					}
+				},
+				{
 					"name": "set_flags",
 					"is_const": false,
 					"is_vararg": false,
@@ -233862,6 +234063,12 @@
 					"name": "mask",
 					"setter": "set_mask",
 					"getter": "get_mask"
+				},
+				{
+					"type": "int",
+					"name": "hit_sbt_range",
+					"setter": "set_hit_sbt_range",
+					"getter": "get_hit_sbt_range"
 				},
 				{
 					"type": "int",
@@ -234154,6 +234361,110 @@
 					"name": "depth_attachment",
 					"setter": "set_depth_attachment",
 					"getter": "get_depth_attachment"
+				}
+			]
+		},
+		{
+			"name": "RDHitGroup",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_closest_hit_shader",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2556777288,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "RDPipelineShader"
+						}
+					]
+				},
+				{
+					"name": "get_closest_hit_shader",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2937716847,
+					"return_value": {
+						"type": "RDPipelineShader"
+					}
+				},
+				{
+					"name": "set_any_hit_shader",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2556777288,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "RDPipelineShader"
+						}
+					]
+				},
+				{
+					"name": "get_any_hit_shader",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2937716847,
+					"return_value": {
+						"type": "RDPipelineShader"
+					}
+				},
+				{
+					"name": "set_intersection_shader",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2556777288,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "RDPipelineShader"
+						}
+					]
+				},
+				{
+					"name": "get_intersection_shader",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2937716847,
+					"return_value": {
+						"type": "RDPipelineShader"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "Object",
+					"name": "closest_hit_shader",
+					"setter": "set_closest_hit_shader",
+					"getter": "get_closest_hit_shader"
+				},
+				{
+					"type": "Object",
+					"name": "any_hit_shader",
+					"setter": "set_any_hit_shader",
+					"getter": "get_any_hit_shader"
+				},
+				{
+					"type": "Object",
+					"name": "intersection_shader",
+					"setter": "set_intersection_shader",
+					"getter": "get_intersection_shader"
 				}
 			]
 		},
@@ -235888,6 +236199,79 @@
 					"name": "patch_control_points",
 					"setter": "set_patch_control_points",
 					"getter": "get_patch_control_points"
+				}
+			]
+		},
+		{
+			"name": "RDPipelineShader",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_shader",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722037293,
+					"arguments": [
+						{
+							"name": "p_member",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "get_shader",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "set_specialization_constants",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 381264803,
+					"arguments": [
+						{
+							"name": "specialization_constants",
+							"type": "typedarray::RDPipelineSpecializationConstant"
+						}
+					]
+				},
+				{
+					"name": "get_specialization_constants",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::RDPipelineSpecializationConstant"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "RID",
+					"name": "shader",
+					"setter": "set_shader",
+					"getter": "get_shader"
+				},
+				{
+					"type": "typedarray::RDPipelineSpecializationConstant",
+					"name": "specialization_constants",
+					"setter": "set_specialization_constants",
+					"getter": "get_specialization_constants"
 				}
 			]
 		},
@@ -246101,19 +246485,27 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1448838280,
+					"hash": 1489129684,
 					"return_value": {
 						"type": "RID"
 					},
 					"arguments": [
 						{
-							"name": "shader",
-							"type": "RID"
+							"name": "raygen_shaders",
+							"type": "typedarray::RDPipelineShader"
 						},
 						{
-							"name": "specialization_constants",
-							"type": "typedarray::RDPipelineSpecializationConstant",
-							"default_value": "Array[RDPipelineSpecializationConstant]([])"
+							"name": "miss_shaders",
+							"type": "typedarray::RDPipelineShader"
+						},
+						{
+							"name": "hit_groups",
+							"type": "typedarray::RDHitGroup"
+						},
+						{
+							"name": "max_trace_recursion_depth",
+							"type": "int",
+							"meta": "uint32"
 						}
 					]
 				},
@@ -246212,6 +246604,125 @@
 						{
 							"name": "instances",
 							"type": "typedarray::RDAccelerationStructureInstance"
+						}
+					]
+				},
+				{
+					"name": "hit_sbt_create",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2233757277,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "raytracing_pipeline",
+							"type": "RID"
+						},
+						{
+							"name": "initial_hit_group_capacity",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "hit_sbt_set_pipeline",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3181288260,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "hit_sbt",
+							"type": "RID"
+						},
+						{
+							"name": "raytracing_pipeline",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "hit_sbt_range_alloc",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2722015314,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					},
+					"arguments": [
+						{
+							"name": "hit_sbt",
+							"type": "RID"
+						},
+						{
+							"name": "hit_group_count",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "hit_sbt_range_free",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3804025326,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "hit_sbt",
+							"type": "RID"
+						},
+						{
+							"name": "range",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "hit_sbt_range_update",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1332346675,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "hit_sbt",
+							"type": "RID"
+						},
+						{
+							"name": "range",
+							"type": "int",
+							"meta": "int64"
+						},
+						{
+							"name": "offset",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "hit_group_indices",
+							"type": "PackedInt32Array"
 						}
 					]
 				},
@@ -246988,12 +247499,21 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1649997291,
+					"hash": 2559472681,
 					"arguments": [
 						{
 							"name": "raytracing_list",
 							"type": "int",
 							"meta": "int64"
+						},
+						{
+							"name": "raygen_shader_index",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "hit_sbt",
+							"type": "RID"
 						},
 						{
 							"name": "width",
@@ -247002,6 +247522,11 @@
 						},
 						{
 							"name": "height",
+							"type": "int",
+							"meta": "uint32"
+						},
+						{
+							"name": "depth",
 							"type": "int",
 							"meta": "uint32"
 						}
@@ -263222,8 +263747,26 @@
 							"value": 64
 						},
 						{
-							"name": "UPDATE_WIDTH_IN_PERCENT",
+							"name": "UPDATE_WIDTH_UNIT",
 							"value": 128
+						}
+					]
+				},
+				{
+					"name": "ImageUnit",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "IMAGE_UNIT_PIXEL",
+							"value": 0
+						},
+						{
+							"name": "IMAGE_UNIT_PERCENT",
+							"value": 1
+						},
+						{
+							"name": "IMAGE_UNIT_EM",
+							"value": 2
 						}
 					]
 				}
@@ -263316,11 +263859,12 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1390915033,
+					"hash": 1980227702,
 					"hash_compatibility": [
 						3580801207,
 						3017663154,
 						1389823276,
+						1390915033,
 						3346058748
 					],
 					"arguments": [
@@ -263330,14 +263874,14 @@
 						},
 						{
 							"name": "width",
-							"type": "int",
-							"meta": "int32",
+							"type": "float",
+							"meta": "float",
 							"default_value": "0"
 						},
 						{
 							"name": "height",
-							"type": "int",
-							"meta": "int32",
+							"type": "float",
+							"meta": "float",
 							"default_value": "0"
 						},
 						{
@@ -263371,14 +263915,14 @@
 							"default_value": "\"\""
 						},
 						{
-							"name": "width_in_percent",
-							"type": "bool",
-							"default_value": "false"
+							"name": "width_unit",
+							"type": "enum::RichTextLabel.ImageUnit",
+							"default_value": "0"
 						},
 						{
-							"name": "height_in_percent",
-							"type": "bool",
-							"default_value": "false"
+							"name": "height_unit",
+							"type": "enum::RichTextLabel.ImageUnit",
+							"default_value": "0"
 						},
 						{
 							"name": "alt_text",
@@ -263393,9 +263937,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 6389170,
+					"hash": 202998225,
 					"hash_compatibility": [
-						815048486
+						815048486,
+						6389170
 					],
 					"arguments": [
 						{
@@ -263412,14 +263957,14 @@
 						},
 						{
 							"name": "width",
-							"type": "int",
-							"meta": "int32",
+							"type": "float",
+							"meta": "float",
 							"default_value": "0"
 						},
 						{
 							"name": "height",
-							"type": "int",
-							"meta": "int32",
+							"type": "float",
+							"meta": "float",
 							"default_value": "0"
 						},
 						{
@@ -263448,14 +263993,14 @@
 							"default_value": "\"\""
 						},
 						{
-							"name": "width_in_percent",
-							"type": "bool",
-							"default_value": "false"
+							"name": "width_unit",
+							"type": "enum::RichTextLabel.ImageUnit",
+							"default_value": "0"
 						},
 						{
-							"name": "height_in_percent",
-							"type": "bool",
-							"default_value": "false"
+							"name": "height_unit",
+							"type": "enum::RichTextLabel.ImageUnit",
+							"default_value": "0"
 						}
 					]
 				},

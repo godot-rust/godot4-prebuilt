@@ -1338,6 +1338,18 @@ typedef GDObjectInstanceID (*GDExtensionInterfaceVariantGetObjectInstanceId)(GDE
 typedef void (*GDExtensionInterfaceVariantGetTypeName)(GDExtensionVariantType p_type, GDExtensionUninitializedStringPtr r_name);
 
 /**
+ * @name variant_get_type_by_name
+ * @since 4.7
+ *
+ * Gets the Variant type by name.
+ *
+ * @param p_type_name The variant type name.
+ *
+ * @return The variant type for the given name; otherwise VARIANT_MAX if name is invalid.
+ */
+typedef GDExtensionVariantType (*GDExtensionInterfaceVariantGetTypeByName)(GDExtensionConstStringPtr p_type_name);
+
+/**
  * @name variant_can_convert
  * @since 4.1
  *
