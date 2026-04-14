@@ -35237,6 +35237,28 @@
 							"value": 2
 						}
 					]
+				},
+				{
+					"name": "SyncMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SYNC_MODE_NONE",
+							"value": 0
+						},
+						{
+							"name": "SYNC_MODE_INDEPENDENT",
+							"value": 1
+						},
+						{
+							"name": "SYNC_MODE_CYCLIC_MUTABLE",
+							"value": 2
+						},
+						{
+							"name": "SYNC_MODE_CYCLIC_CONSTANT",
+							"value": 3
+						}
+					]
 				}
 			],
 			"methods": [
@@ -35607,6 +35629,58 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "set_sync_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1065895142,
+					"arguments": [
+						{
+							"name": "sync_mode",
+							"type": "enum::AnimationNodeBlendSpace1D.SyncMode"
+						}
+					]
+				},
+				{
+					"name": "get_sync_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 132474921,
+					"return_value": {
+						"type": "enum::AnimationNodeBlendSpace1D.SyncMode"
+					}
+				},
+				{
+					"name": "set_cyclic_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "length",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_cyclic_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
 				}
 			],
 			"properties": [
@@ -35645,6 +35719,18 @@
 					"name": "sync",
 					"setter": "set_use_sync",
 					"getter": "is_using_sync"
+				},
+				{
+					"type": "int",
+					"name": "sync_mode",
+					"setter": "set_sync_mode",
+					"getter": "get_sync_mode"
+				},
+				{
+					"type": "float",
+					"name": "cyclic_length",
+					"setter": "set_cyclic_length",
+					"getter": "get_cyclic_length"
 				}
 			]
 		},
@@ -35670,6 +35756,28 @@
 						{
 							"name": "BLEND_MODE_DISCRETE_CARRY",
 							"value": 2
+						}
+					]
+				},
+				{
+					"name": "SyncMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SYNC_MODE_NONE",
+							"value": 0
+						},
+						{
+							"name": "SYNC_MODE_INDEPENDENT",
+							"value": 1
+						},
+						{
+							"name": "SYNC_MODE_CYCLIC_MUTABLE",
+							"value": 2
+						},
+						{
+							"name": "SYNC_MODE_CYCLIC_CONSTANT",
+							"value": 3
 						}
 					]
 				}
@@ -36168,6 +36276,58 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "set_sync_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2615784488,
+					"arguments": [
+						{
+							"name": "sync_mode",
+							"type": "enum::AnimationNodeBlendSpace2D.SyncMode"
+						}
+					]
+				},
+				{
+					"name": "get_sync_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 242032665,
+					"return_value": {
+						"type": "enum::AnimationNodeBlendSpace2D.SyncMode"
+					}
+				},
+				{
+					"name": "set_cyclic_length",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "length",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_cyclic_length",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "double"
+					}
 				}
 			],
 			"signals": [
@@ -36229,6 +36389,18 @@
 					"name": "sync",
 					"setter": "set_use_sync",
 					"getter": "is_using_sync"
+				},
+				{
+					"type": "int",
+					"name": "sync_mode",
+					"setter": "set_sync_mode",
+					"getter": "get_sync_mode"
+				},
+				{
+					"type": "float",
+					"name": "cyclic_length",
+					"setter": "set_cyclic_length",
+					"getter": "get_cyclic_length"
 				}
 			]
 		},
@@ -107071,34 +107243,40 @@
 			"is_instantiable": true,
 			"inherits": "RefCounted",
 			"api_type": "editor",
-			"constants": [
+			"enums": [
 				{
-					"name": "IMPORT_SCENE",
-					"value": 1
-				},
-				{
-					"name": "IMPORT_ANIMATION",
-					"value": 2
-				},
-				{
-					"name": "IMPORT_FAIL_ON_MISSING_DEPENDENCIES",
-					"value": 4
-				},
-				{
-					"name": "IMPORT_GENERATE_TANGENT_ARRAYS",
-					"value": 8
-				},
-				{
-					"name": "IMPORT_USE_NAMED_SKIN_BINDS",
-					"value": 16
-				},
-				{
-					"name": "IMPORT_DISCARD_MESHES_AND_MATERIALS",
-					"value": 32
-				},
-				{
-					"name": "IMPORT_FORCE_DISABLE_MESH_COMPRESSION",
-					"value": 64
+					"name": "ImportFlags",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "IMPORT_SCENE",
+							"value": 1
+						},
+						{
+							"name": "IMPORT_ANIMATION",
+							"value": 2
+						},
+						{
+							"name": "IMPORT_FAIL_ON_MISSING_DEPENDENCIES",
+							"value": 4
+						},
+						{
+							"name": "IMPORT_GENERATE_TANGENT_ARRAYS",
+							"value": 8
+						},
+						{
+							"name": "IMPORT_USE_NAMED_SKIN_BINDS",
+							"value": 16
+						},
+						{
+							"name": "IMPORT_DISCARD_MESHES_AND_MATERIALS",
+							"value": 32
+						},
+						{
+							"name": "IMPORT_FORCE_DISABLE_MESH_COMPRESSION",
+							"value": 64
+						}
+					]
 				}
 			],
 			"methods": [
@@ -123917,6 +124095,20 @@
 					]
 				},
 				{
+					"name": "TextureMapMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "TEXTURE_MAP_MODE_DO_NOT_REMAP",
+							"value": 0
+						},
+						{
+							"name": "TEXTURE_MAP_MODE_REMAP_TO_STANDARD_MATERIAL",
+							"value": 1
+						}
+					]
+				},
+				{
 					"name": "VisibilityMode",
 					"is_bitfield": false,
 					"values": [
@@ -123931,6 +124123,28 @@
 						{
 							"name": "VISIBILITY_MODE_EXCLUDE",
 							"value": 2
+						}
+					]
+				},
+				{
+					"name": "ImportFlags",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "IMPORT_FLAG_GENERATE_TANGENT_ARRAYS",
+							"value": 8
+						},
+						{
+							"name": "IMPORT_FLAG_USE_NAMED_SKIN_BINDS",
+							"value": 16
+						},
+						{
+							"name": "IMPORT_FLAG_DISCARD_MESHES_AND_MATERIALS",
+							"value": 32
+						},
+						{
+							"name": "IMPORT_FLAG_FORCE_DISABLE_MESH_COMPRESSION",
+							"value": 64
 						}
 					]
 				}
@@ -124063,6 +124277,31 @@
 					"hash": 948057992,
 					"return_value": {
 						"type": "enum::GLTFDocument.RootNodeMode"
+					}
+				},
+				{
+					"name": "set_texture_map_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3144426102,
+					"arguments": [
+						{
+							"name": "texture_map_mode",
+							"type": "enum::GLTFDocument.TextureMapMode"
+						}
+					]
+				},
+				{
+					"name": "get_texture_map_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2113256994,
+					"return_value": {
+						"type": "enum::GLTFDocument.TextureMapMode"
 					}
 				},
 				{
@@ -124392,6 +124631,12 @@
 				},
 				{
 					"type": "int",
+					"name": "texture_map_mode",
+					"setter": "set_texture_map_mode",
+					"getter": "get_texture_map_mode"
+				},
+				{
+					"type": "int",
 					"name": "visibility_mode",
 					"setter": "set_visibility_mode",
 					"getter": "get_visibility_mode"
@@ -124669,6 +124914,24 @@
 						},
 						{
 							"name": "root",
+							"type": "Node"
+						}
+					]
+				},
+				{
+					"name": "_export_get_property_list",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 186716585,
+					"return_value": {
+						"type": "typedarray::Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "root_node",
 							"type": "Node"
 						}
 					]
@@ -270408,23 +270671,6 @@
 					}
 				},
 				{
-					"name": "instance_has",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 397768994,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "base_object",
-							"type": "Object"
-						}
-					]
-				},
-				{
 					"name": "has_source_code",
 					"is_const": true,
 					"is_vararg": false,
@@ -270638,6 +270884,23 @@
 					"return_value": {
 						"type": "Variant"
 					}
+				},
+				{
+					"name": "instance_has",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 397768994,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "base_object",
+							"type": "Object"
+						}
+					]
 				}
 			],
 			"properties": [
@@ -271485,24 +271748,6 @@
 					]
 				},
 				{
-					"name": "_instance_has",
-					"is_const": true,
-					"is_static": false,
-					"is_required": true,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 397768994,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "object",
-							"type": "Object"
-						}
-					]
-				},
-				{
 					"name": "_has_source_code",
 					"is_const": true,
 					"is_static": false,
@@ -271880,6 +272125,24 @@
 					"return_value": {
 						"type": "Variant"
 					}
+				},
+				{
+					"name": "_instance_has",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 397768994,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "object",
+							"type": "Object"
+						}
+					]
 				}
 			]
 		},
