@@ -41333,6 +41333,124 @@
 			]
 		},
 		{
+			"name": "AreaLight3D",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Light3D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_area_texture",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4051416890,
+					"arguments": [
+						{
+							"name": "texture",
+							"type": "Texture2D"
+						}
+					]
+				},
+				{
+					"name": "get_area_texture",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3635182373,
+					"return_value": {
+						"type": "Texture2D"
+					}
+				},
+				{
+					"name": "set_area_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 743155724,
+					"arguments": [
+						{
+							"name": "area_size",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_area_size",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "set_area_normalize_energy",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_area_normalizing_energy",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "float",
+					"name": "area_range",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 4
+				},
+				{
+					"type": "float",
+					"name": "area_attenuation",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 6
+				},
+				{
+					"type": "bool",
+					"name": "area_normalize_energy",
+					"setter": "set_area_normalize_energy",
+					"getter": "is_area_normalizing_energy"
+				},
+				{
+					"type": "Vector2",
+					"name": "area_size",
+					"setter": "set_area_size",
+					"getter": "get_area_size"
+				},
+				{
+					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture",
+					"name": "area_texture",
+					"setter": "set_area_texture",
+					"getter": "get_area_texture"
+				}
+			]
+		},
+		{
 			"name": "ArrayMesh",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -83471,16 +83589,10 @@
 			],
 			"properties": [
 				{
-					"type": "bool",
-					"name": "clip_contents",
-					"setter": "set_clip_contents",
-					"getter": "is_clipping_contents"
-				},
-				{
-					"type": "bool",
-					"name": "propagate_maximum_size",
-					"setter": "set_propagate_maximum_size",
-					"getter": "is_propagating_maximum_size"
+					"type": "Vector2",
+					"name": "custom_minimum_size",
+					"setter": "set_custom_minimum_size",
+					"getter": "get_custom_minimum_size"
 				},
 				{
 					"type": "Vector2",
@@ -83489,16 +83601,16 @@
 					"getter": "get_custom_maximum_size"
 				},
 				{
-					"type": "Vector2",
-					"name": "custom_minimum_size",
-					"setter": "set_custom_minimum_size",
-					"getter": "get_custom_minimum_size"
+					"type": "bool",
+					"name": "propagate_maximum_size",
+					"setter": "set_propagate_maximum_size",
+					"getter": "is_propagating_maximum_size"
 				},
 				{
-					"type": "int",
-					"name": "layout_direction",
-					"setter": "set_layout_direction",
-					"getter": "get_layout_direction"
+					"type": "bool",
+					"name": "clip_contents",
+					"setter": "set_clip_contents",
+					"getter": "is_clipping_contents"
 				},
 				{
 					"type": "int",
@@ -83699,6 +83811,12 @@
 					"name": "localize_numeral_system",
 					"setter": "set_localize_numeral_system",
 					"getter": "is_localizing_numeral_system"
+				},
+				{
+					"type": "int",
+					"name": "layout_direction",
+					"setter": "set_layout_direction",
+					"getter": "get_layout_direction"
 				},
 				{
 					"type": "bool",
@@ -96122,36 +96240,6 @@
 				}
 			],
 			"methods": [
-				{
-					"name": "set_width",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "width",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_height",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "height",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
 				{
 					"name": "set_format",
 					"is_const": false,
@@ -248896,6 +248984,10 @@
 						{
 							"name": "LIGHT_SPOT",
 							"value": 2
+						},
+						{
+							"name": "LIGHT_AREA",
+							"value": 3
 						}
 					]
 				},
@@ -253131,6 +253223,17 @@
 					}
 				},
 				{
+					"name": "area_light_create",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 529393457,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
 					"name": "light_set_color",
 					"is_const": false,
 					"is_vararg": false,
@@ -253420,6 +253523,42 @@
 						{
 							"name": "mode",
 							"type": "enum::RenderingServer.LightDirectionalSkyMode"
+						}
+					]
+				},
+				{
+					"name": "light_area_set_size",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3201125042,
+					"arguments": [
+						{
+							"name": "light",
+							"type": "RID"
+						},
+						{
+							"name": "size",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "light_area_set_normalize_energy",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "light",
+							"type": "RID"
+						},
+						{
+							"name": "enable",
+							"type": "bool"
 						}
 					]
 				},
@@ -333476,6 +333615,14 @@
 						{
 							"name": "DEBUG_DRAW_INTERNAL_BUFFER",
 							"value": 26
+						},
+						{
+							"name": "DEBUG_DRAW_CLUSTER_AREA_LIGHTS",
+							"value": 27
+						},
+						{
+							"name": "DEBUG_DRAW_AREA_LIGHT_ATLAS",
+							"value": 28
 						}
 					]
 				},

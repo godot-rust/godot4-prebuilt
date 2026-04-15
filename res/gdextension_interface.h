@@ -244,6 +244,7 @@ typedef void (*GDExtensionClassUnreference)(GDExtensionClassInstancePtr p_instan
 typedef void (*GDExtensionClassCallVirtual)(GDExtensionClassInstancePtr p_instance, const GDExtensionConstTypePtr *p_args, GDExtensionTypePtr r_ret);
 typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance)(void *p_class_userdata);
 typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance2)(void *p_class_userdata, GDExtensionBool p_notify_postinitialize);
+typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance3)(void *p_class_userdata, GDExtensionBool p_notify_postinitialize);
 typedef void (*GDExtensionClassFreeInstance)(void *p_class_userdata, GDExtensionClassInstancePtr p_instance);
 typedef GDExtensionClassInstancePtr (*GDExtensionClassRecreateInstance)(void *p_class_userdata, GDExtensionObjectPtr p_object);
 typedef GDExtensionClassCallVirtual (*GDExtensionClassGetVirtual)(void *p_class_userdata, GDExtensionConstStringNamePtr p_name);
@@ -389,6 +390,7 @@ typedef struct {
 } GDExtensionClassCreationInfo4;
 
 typedef GDExtensionClassCreationInfo4 GDExtensionClassCreationInfo5;
+typedef GDExtensionClassCreationInfo5 GDExtensionClassCreationInfo6;
 typedef struct __GdextClassLibrary *GDExtensionClassLibraryPtr;
 /* Passed a pointer to a PackedStringArray that should be filled with the classes that may be used by the GDExtension. */
 typedef void (*GDExtensionEditorGetClassesUsedCallback)(GDExtensionTypePtr p_packed_string_array);
@@ -2772,7 +2774,7 @@ typedef void *(*GDExtensionInterfaceCallableCustomGetUserData)(GDExtensionConstT
 /**
  * @name classdb_construct_object
  * @since 4.1
- * @deprecated Deprecated in Godot 4.4. Use `classdb_construct_object2` instead.
+ * @deprecated Deprecated in Godot 4.4. Use `classdb_construct_object3` instead.
  *
  * Constructs an Object of the requested class.
  *
@@ -2787,6 +2789,7 @@ typedef GDExtensionObjectPtr (*GDExtensionInterfaceClassdbConstructObject)(GDExt
 /**
  * @name classdb_construct_object2
  * @since 4.4
+ * @deprecated Deprecated in Godot 4.6. Use `classdb_construct_object3` instead.
  *
  * Constructs an Object of the requested class.
  *
@@ -2799,6 +2802,23 @@ typedef GDExtensionObjectPtr (*GDExtensionInterfaceClassdbConstructObject)(GDExt
  * @return A pointer to the newly created Object.
  */
 typedef GDExtensionObjectPtr (*GDExtensionInterfaceClassdbConstructObject2)(GDExtensionConstStringNamePtr p_classname);
+
+/**
+ * @name classdb_construct_object3
+ * @since 4.6
+ *
+ * Constructs an Object of the requested class.
+ *
+ * The passed class must be a built-in godot class, or an already-registered extension class. In both cases, object_set_instance() should be called to fully initialize the object.
+ * If the type is a subtype of RefCounted, it already has a refcount of 1. The caller must take ownership the refcount and is responsible for decrementing it again when the object is no longer needed.
+ *
+ * "NOTIFICATION_POSTINITIALIZE" must be sent after construction.
+ *
+ * @param p_classname A pointer to a StringName with the class name.
+ *
+ * @return A pointer to the newly created Object.
+ */
+typedef GDExtensionObjectPtr (*GDExtensionInterfaceClassdbConstructObject3)(GDExtensionConstStringNamePtr p_classname);
 
 /**
  * @name classdb_get_method_bind
@@ -2829,7 +2849,7 @@ typedef void *(*GDExtensionInterfaceClassdbGetClassTag)(GDExtensionConstStringNa
 /**
  * @name classdb_register_extension_class
  * @since 4.1
- * @deprecated Deprecated in Godot 4.2. Use `classdb_register_extension_class5` instead.
+ * @deprecated Deprecated in Godot 4.2. Use `classdb_register_extension_class6` instead.
  *
  * Registers an extension class in the ClassDB.
  *
@@ -2845,7 +2865,7 @@ typedef void (*GDExtensionInterfaceClassdbRegisterExtensionClass)(GDExtensionCla
 /**
  * @name classdb_register_extension_class2
  * @since 4.2
- * @deprecated Deprecated in Godot 4.3. Use `classdb_register_extension_class5` instead.
+ * @deprecated Deprecated in Godot 4.3. Use `classdb_register_extension_class6` instead.
  *
  * Registers an extension class in the ClassDB.
  *
@@ -2861,7 +2881,7 @@ typedef void (*GDExtensionInterfaceClassdbRegisterExtensionClass2)(GDExtensionCl
 /**
  * @name classdb_register_extension_class3
  * @since 4.3
- * @deprecated Deprecated in Godot 4.4. Use `classdb_register_extension_class5` instead.
+ * @deprecated Deprecated in Godot 4.4. Use `classdb_register_extension_class6` instead.
  *
  * Registers an extension class in the ClassDB.
  *
@@ -2877,7 +2897,7 @@ typedef void (*GDExtensionInterfaceClassdbRegisterExtensionClass3)(GDExtensionCl
 /**
  * @name classdb_register_extension_class4
  * @since 4.4
- * @deprecated Deprecated in Godot 4.5. Use `classdb_register_extension_class5` instead.
+ * @deprecated Deprecated in Godot 4.5. Use `classdb_register_extension_class6` instead.
  *
  * Registers an extension class in the ClassDB.
  *
@@ -2893,6 +2913,7 @@ typedef void (*GDExtensionInterfaceClassdbRegisterExtensionClass4)(GDExtensionCl
 /**
  * @name classdb_register_extension_class5
  * @since 4.5
+ * @deprecated Deprecated in Godot 4.6. Use `classdb_register_extension_class6` instead.
  *
  * Registers an extension class in the ClassDB.
  *
@@ -2904,6 +2925,21 @@ typedef void (*GDExtensionInterfaceClassdbRegisterExtensionClass4)(GDExtensionCl
  * @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo5 struct.
  */
 typedef void (*GDExtensionInterfaceClassdbRegisterExtensionClass5)(GDExtensionClassLibraryPtr p_library, GDExtensionConstStringNamePtr p_class_name, GDExtensionConstStringNamePtr p_parent_class_name, const GDExtensionClassCreationInfo5 *p_extension_funcs);
+
+/**
+ * @name classdb_register_extension_class6
+ * @since 4.6
+ *
+ * Registers an extension class in the ClassDB.
+ *
+ * Provided struct can be safely freed once the function returns.
+ *
+ * @param p_library A pointer the library received by the GDExtension's entry point function.
+ * @param p_class_name A pointer to a StringName with the class name.
+ * @param p_parent_class_name A pointer to a StringName with the parent class name.
+ * @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo6 struct. In contrast to GDExtensionClassCreationInfo5, the creation function must return RefCounted subtypes with a refcount of 1.
+ */
+typedef void (*GDExtensionInterfaceClassdbRegisterExtensionClass6)(GDExtensionClassLibraryPtr p_library, GDExtensionConstStringNamePtr p_class_name, GDExtensionConstStringNamePtr p_parent_class_name, const GDExtensionClassCreationInfo6 *p_extension_funcs);
 
 /**
  * @name classdb_register_extension_class_method
