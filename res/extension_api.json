@@ -82899,6 +82899,31 @@
 					]
 				},
 				{
+					"name": "set_translation_context",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "context",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_translation_context",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				},
+				{
 					"name": "set_default_cursor_shape",
 					"is_const": false,
 					"is_vararg": false,
@@ -83817,6 +83842,12 @@
 					"name": "layout_direction",
 					"setter": "set_layout_direction",
 					"getter": "get_layout_direction"
+				},
+				{
+					"type": "StringName",
+					"name": "translation_context",
+					"setter": "set_translation_context",
+					"getter": "get_translation_context"
 				},
 				{
 					"type": "bool",
@@ -190554,14 +190585,17 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3927539163,
+					"hash": 2619796661,
+					"hash_compatibility": [
+						3927539163
+					],
 					"return_value": {
 						"type": "bool"
 					},
 					"arguments": [
 						{
 							"name": "class",
-							"type": "String"
+							"type": "StringName"
 						}
 					]
 				},
