@@ -325986,6 +325986,17 @@
 					]
 				},
 				{
+					"name": "get_custom_drawing_canvas_item",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
 					"name": "set_hide_root",
 					"is_const": false,
 					"is_vararg": false,
