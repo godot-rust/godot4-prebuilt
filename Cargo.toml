@@ -1,6 +1,6 @@
 [package]
 name = "gdextension-api"
-version = "0.4.0"
+version = "0.4.1"
 edition = "2024"
 license = "MPL-2.0"
 description = "Godot GDExtension API; used by godot-rust."
@@ -12,6 +12,7 @@ categories = ["game-engines", "graphics"]
 
 # Version history:
 # 0.4: include docs in extension_api.json (compatible, but larger crate)
+# 0.4.0: not published, too large (16 MB). after this, removed non-0-patch versions.
 # 0.3: Minimum Godot 4.2
 # 0.2: Only generate gdextension_interface.rs for minor versions
 # 0.1: Initial release
