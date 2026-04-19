@@ -5,9 +5,6 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-// Since this lib.rs is repurposed as a module file, avoid crate-level attributes such as
-// #![doc(html_logo_url)] here.
-
 //! # GDExtension API for Godot 4.5
 
 use std::borrow::Cow;
@@ -23,14 +20,14 @@ pub const GODOT_VERSION_STRING: &str = "4.5";
 
 /// Returns the contents of the JSON API file `extension_api.json`.
 pub const fn load_gdextension_json() -> CowStr {
-    Cow::Borrowed(include_str!("../res/extension_api.json"))
+    Cow::Borrowed(include_str!("extension_api.json"))
 }
 
 /// Returns the contents of `gdextension_interface.json`.
 ///
 /// Describes the GDExtension C API. Backwards-compatible with all supported Godot versions.
 pub const fn load_gdextension_interface_json() -> CowStr {
-    Cow::Borrowed(include_str!("../../../res/gdextension_interface.json"))
+    Cow::Borrowed(include_str!("../gdextension_interface.json"))
 }
 
 /// Dynamically fetch a property of this crate.
