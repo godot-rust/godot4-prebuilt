@@ -19,7 +19,7 @@ pub type CowStr = Cow<'static, str>;
 pub const GODOT_VERSION_STRING: &str = "4.2";
 
 /// Returns the contents of the JSON API file `extension_api.json`.
-pub const fn load_gdextension_json() -> CowStr {
+pub const fn load_extension_api_json() -> CowStr {
     Cow::Borrowed(include_str!("extension_api.json"))
 }
 
