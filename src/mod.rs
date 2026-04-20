@@ -23,13 +23,6 @@ pub const fn load_gdextension_json() -> CowStr {
     Cow::Borrowed(include_str!("extension_api.json"))
 }
 
-/// Returns the contents of `gdextension_interface.json`.
-///
-/// Describes the GDExtension C API. Backwards-compatible with all supported Godot versions.
-pub const fn load_gdextension_interface_json() -> CowStr {
-    Cow::Borrowed(include_str!("../gdextension_interface.json"))
-}
-
 /// Dynamically fetch a property of this crate.
 pub fn get_package_property(key: &str) -> Option<CowStr> {
     let value = match key {
