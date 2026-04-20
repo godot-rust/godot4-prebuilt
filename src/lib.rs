@@ -13,6 +13,7 @@ use std::borrow::Cow;
 pub const fn load_gdextension_interface_json() -> Cow<'static, str> {
     Cow::Borrowed(include_str!("gdextension_interface.json"))
 }
+
 #[path = "4.2/mod.rs"]
 pub mod version_4_2;
 #[path = "4.3/mod.rs"]
