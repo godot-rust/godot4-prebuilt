@@ -242,8 +242,17 @@ typedef void (*GDExtensionClassToString)(GDExtensionClassInstancePtr p_instance,
 typedef void (*GDExtensionClassReference)(GDExtensionClassInstancePtr p_instance);
 typedef void (*GDExtensionClassUnreference)(GDExtensionClassInstancePtr p_instance);
 typedef void (*GDExtensionClassCallVirtual)(GDExtensionClassInstancePtr p_instance, const GDExtensionConstTypePtr *p_args, GDExtensionTypePtr r_ret);
+/* Called to construct an instance of the class.
+ * For classes descending from RefCounted, the reference count should be zero.
+ */
 typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance)(void *p_class_userdata);
+/* Called to construct an instance of the class.
+ * For classes descending from RefCounted, the reference count should be zero.
+ */
 typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance2)(void *p_class_userdata, GDExtensionBool p_notify_postinitialize);
+/* Called to construct an instance of the class.
+ * For classes descending from RefCounted, the reference count should already be incremented by 1.
+ */
 typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance3)(void *p_class_userdata, GDExtensionBool p_notify_postinitialize);
 typedef void (*GDExtensionClassFreeInstance)(void *p_class_userdata, GDExtensionClassInstancePtr p_instance);
 typedef GDExtensionClassInstancePtr (*GDExtensionClassRecreateInstance)(void *p_class_userdata, GDExtensionObjectPtr p_object);
@@ -265,7 +274,7 @@ typedef struct {
 	GDExtensionClassToString to_string_func;
 	GDExtensionClassReference reference_func;
 	GDExtensionClassUnreference unreference_func;
-	/* (Default) constructor; mandatory. If the class is not instantiable, consider making it virtual or abstract. */
+	/* Class constructor. Required unless the class is virtual or abstract. */
 	GDExtensionClassCreateInstance create_instance_func;
 	/* Destructor; mandatory. */
 	GDExtensionClassFreeInstance free_instance_func;
@@ -291,7 +300,7 @@ typedef struct {
 	GDExtensionClassToString to_string_func;
 	GDExtensionClassReference reference_func;
 	GDExtensionClassUnreference unreference_func;
-	/* (Default) constructor; mandatory. If the class is not instantiable, consider making it virtual or abstract. */
+	/* Class constructor. Required unless the class is virtual or abstract. */
 	GDExtensionClassCreateInstance create_instance_func;
 	/* Destructor; mandatory. */
 	GDExtensionClassFreeInstance free_instance_func;
@@ -329,7 +338,7 @@ typedef struct {
 	GDExtensionClassToString to_string_func;
 	GDExtensionClassReference reference_func;
 	GDExtensionClassUnreference unreference_func;
-	/* (Default) constructor; mandatory. If the class is not instantiable, consider making it virtual or abstract. */
+	/* Class constructor. Required unless the class is virtual or abstract. */
 	GDExtensionClassCreateInstance create_instance_func;
 	/* Destructor; mandatory. */
 	GDExtensionClassFreeInstance free_instance_func;
@@ -368,7 +377,7 @@ typedef struct {
 	GDExtensionClassToString to_string_func;
 	GDExtensionClassReference reference_func;
 	GDExtensionClassUnreference unreference_func;
-	/* (Default) constructor; mandatory. If the class is not instantiable, consider making it virtual or abstract. */
+	/* Class constructor. Required unless the class is virtual or abstract. */
 	GDExtensionClassCreateInstance2 create_instance_func;
 	/* Destructor; mandatory. */
 	GDExtensionClassFreeInstance free_instance_func;
@@ -390,7 +399,44 @@ typedef struct {
 } GDExtensionClassCreationInfo4;
 
 typedef GDExtensionClassCreationInfo4 GDExtensionClassCreationInfo5;
-typedef GDExtensionClassCreationInfo5 GDExtensionClassCreationInfo6;
+typedef struct {
+	GDExtensionBool is_virtual;
+	GDExtensionBool is_abstract;
+	GDExtensionBool is_exposed;
+	GDExtensionBool is_runtime;
+	GDExtensionConstStringPtr icon_path;
+	GDExtensionClassSet set_func;
+	GDExtensionClassGet get_func;
+	GDExtensionClassGetPropertyList get_property_list_func;
+	GDExtensionClassFreePropertyList2 free_property_list_func;
+	GDExtensionClassPropertyCanRevert property_can_revert_func;
+	GDExtensionClassPropertyGetRevert property_get_revert_func;
+	GDExtensionClassValidateProperty validate_property_func;
+	GDExtensionClassNotification2 notification_func;
+	GDExtensionClassToString to_string_func;
+	GDExtensionClassReference reference_func;
+	GDExtensionClassUnreference unreference_func;
+	/* Class constructor. Required unless the class is virtual or abstract. */
+	GDExtensionClassCreateInstance3 create_instance_func;
+	/* Destructor; mandatory. */
+	GDExtensionClassFreeInstance free_instance_func;
+	GDExtensionClassRecreateInstance recreate_instance_func;
+	/* Queries a virtual function by name and returns a callback to invoke the requested virtual function. */
+	GDExtensionClassGetVirtual2 get_virtual_func;
+	/* Paired with `call_virtual_with_data_func`, this is an alternative to `get_virtual_func` for extensions that
+	 * need or benefit from extra data when calling virtual functions.
+	 * Returns user data that will be passed to `call_virtual_with_data_func`.
+	 * Returning `NULL` from this function signals to Godot that the virtual function is not overridden.
+	 * Data returned from this function should be managed by the extension and must be valid until the extension is deinitialized.
+	 * You should supply either `get_virtual_func`, or `get_virtual_call_data_func` with `call_virtual_with_data_func`.
+	 */
+	GDExtensionClassGetVirtualCallData2 get_virtual_call_data_func;
+	/* Used to call virtual functions when `get_virtual_call_data_func` is not null. */
+	GDExtensionClassCallVirtualWithData call_virtual_with_data_func;
+	/* Per-class user data, later accessible in instance bindings. */
+	void *class_userdata;
+} GDExtensionClassCreationInfo6;
+
 typedef struct __GdextClassLibrary *GDExtensionClassLibraryPtr;
 /* Passed a pointer to a PackedStringArray that should be filled with the classes that may be used by the GDExtension. */
 typedef void (*GDExtensionEditorGetClassesUsedCallback)(GDExtensionTypePtr p_packed_string_array);
@@ -2937,7 +2983,7 @@ typedef void (*GDExtensionInterfaceClassdbRegisterExtensionClass5)(GDExtensionCl
  * @param p_library A pointer the library received by the GDExtension's entry point function.
  * @param p_class_name A pointer to a StringName with the class name.
  * @param p_parent_class_name A pointer to a StringName with the parent class name.
- * @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo6 struct. In contrast to GDExtensionClassCreationInfo5, the creation function must return RefCounted subtypes with a refcount of 1.
+ * @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo6 struct.
  */
 typedef void (*GDExtensionInterfaceClassdbRegisterExtensionClass6)(GDExtensionClassLibraryPtr p_library, GDExtensionConstStringNamePtr p_class_name, GDExtensionConstStringNamePtr p_parent_class_name, const GDExtensionClassCreationInfo6 *p_extension_funcs);
 

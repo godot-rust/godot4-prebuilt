@@ -1979,7 +1979,279 @@ fn bindgen_test_layout_GDExtensionClassCreationInfo4() {
     );
 }
 pub type GDExtensionClassCreationInfo5 = GDExtensionClassCreationInfo4;
-pub type GDExtensionClassCreationInfo6 = GDExtensionClassCreationInfo5;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct GDExtensionClassCreationInfo6 {
+    pub is_virtual: GDExtensionBool,
+    pub is_abstract: GDExtensionBool,
+    pub is_exposed: GDExtensionBool,
+    pub is_runtime: GDExtensionBool,
+    pub icon_path: GDExtensionConstStringPtr,
+    pub set_func: GDExtensionClassSet,
+    pub get_func: GDExtensionClassGet,
+    pub get_property_list_func: GDExtensionClassGetPropertyList,
+    pub free_property_list_func: GDExtensionClassFreePropertyList2,
+    pub property_can_revert_func: GDExtensionClassPropertyCanRevert,
+    pub property_get_revert_func: GDExtensionClassPropertyGetRevert,
+    pub validate_property_func: GDExtensionClassValidateProperty,
+    pub notification_func: GDExtensionClassNotification2,
+    pub to_string_func: GDExtensionClassToString,
+    pub reference_func: GDExtensionClassReference,
+    pub unreference_func: GDExtensionClassUnreference,
+    pub create_instance_func: GDExtensionClassCreateInstance3,
+    pub free_instance_func: GDExtensionClassFreeInstance,
+    pub recreate_instance_func: GDExtensionClassRecreateInstance,
+    pub get_virtual_func: GDExtensionClassGetVirtual2,
+    pub get_virtual_call_data_func: GDExtensionClassGetVirtualCallData2,
+    pub call_virtual_with_data_func: GDExtensionClassCallVirtualWithData,
+    pub class_userdata: *mut ::std::os::raw::c_void,
+}
+#[test]
+fn bindgen_test_layout_GDExtensionClassCreationInfo6() {
+    const UNINIT: ::std::mem::MaybeUninit<GDExtensionClassCreationInfo6> =
+        ::std::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::std::mem::size_of::<GDExtensionClassCreationInfo6>(),
+        160usize,
+        concat!("Size of: ", stringify!(GDExtensionClassCreationInfo6))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<GDExtensionClassCreationInfo6>(),
+        8usize,
+        concat!("Alignment of ", stringify!(GDExtensionClassCreationInfo6))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_virtual) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(is_virtual)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_abstract) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(is_abstract)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_exposed) as usize - ptr as usize },
+        2usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(is_exposed)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).is_runtime) as usize - ptr as usize },
+        3usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(is_runtime)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).icon_path) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(icon_path)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).set_func) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(set_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_func) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(get_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_property_list_func) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(get_property_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_property_list_func) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(free_property_list_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).property_can_revert_func) as usize - ptr as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(property_can_revert_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).property_get_revert_func) as usize - ptr as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(property_get_revert_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).validate_property_func) as usize - ptr as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(validate_property_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).notification_func) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(notification_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).to_string_func) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(to_string_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).reference_func) as usize - ptr as usize },
+        88usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(reference_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).unreference_func) as usize - ptr as usize },
+        96usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(unreference_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).create_instance_func) as usize - ptr as usize },
+        104usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(create_instance_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).free_instance_func) as usize - ptr as usize },
+        112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(free_instance_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).recreate_instance_func) as usize - ptr as usize },
+        120usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(recreate_instance_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_virtual_func) as usize - ptr as usize },
+        128usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(get_virtual_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).get_virtual_call_data_func) as usize - ptr as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(get_virtual_call_data_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).call_virtual_with_data_func) as usize - ptr as usize },
+        144usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(call_virtual_with_data_func)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr).class_userdata) as usize - ptr as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GDExtensionClassCreationInfo6),
+            "::",
+            stringify!(class_userdata)
+        )
+    );
+}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __GdextClassLibrary {
@@ -5079,7 +5351,7 @@ pub type GDExtensionInterfaceClassdbRegisterExtensionClass5 = ::std::option::Opt
         p_extension_funcs: *const GDExtensionClassCreationInfo5,
     ),
 >;
-#[doc = " @name classdb_register_extension_class6\n @since 4.6\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo6 struct. In contrast to GDExtensionClassCreationInfo5, the creation function must return RefCounted subtypes with a refcount of 1."]
+#[doc = " @name classdb_register_extension_class6\n @since 4.6\n\n Registers an extension class in the ClassDB.\n\n Provided struct can be safely freed once the function returns.\n\n @param p_library A pointer the library received by the GDExtension's entry point function.\n @param p_class_name A pointer to a StringName with the class name.\n @param p_parent_class_name A pointer to a StringName with the parent class name.\n @param p_extension_funcs A pointer to a GDExtensionClassCreationInfo6 struct."]
 pub type GDExtensionInterfaceClassdbRegisterExtensionClass6 = ::std::option::Option<
     unsafe extern "C" fn(
         p_library: GDExtensionClassLibraryPtr,
