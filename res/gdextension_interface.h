@@ -231,7 +231,7 @@ typedef struct {
 } GDExtensionMethodInfo;
 
 typedef const GDExtensionPropertyInfo *(*GDExtensionClassGetPropertyList)(GDExtensionClassInstancePtr p_instance, uint32_t *r_count);
-typedef void (*GDExtensionClassFreePropertyList)(GDExtensionClassInstancePtr p_instance, const GDExtensionPropertyInfo *p_list);
+typedef void (*GDExtensionClassFreePropertyList)(GDExtensionClassInstancePtr p_instance, const GDExtensionPropertyInfo *p_list); /* Deprecated in Godot 4.3. Use `GDExtensionClassFreePropertyList2` instead. */
 typedef void (*GDExtensionClassFreePropertyList2)(GDExtensionClassInstancePtr p_instance, const GDExtensionPropertyInfo *p_list, uint32_t p_count);
 typedef GDExtensionBool (*GDExtensionClassPropertyCanRevert)(GDExtensionClassInstancePtr p_instance, GDExtensionConstStringNamePtr p_name);
 typedef GDExtensionBool (*GDExtensionClassPropertyGetRevert)(GDExtensionClassInstancePtr p_instance, GDExtensionConstStringNamePtr p_name, GDExtensionVariantPtr r_ret);
@@ -245,20 +245,20 @@ typedef void (*GDExtensionClassCallVirtual)(GDExtensionClassInstancePtr p_instan
 /* Called to construct an instance of the class.
  * For classes descending from RefCounted, the reference count should be zero.
  */
-typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance)(void *p_class_userdata);
+typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance)(void *p_class_userdata); /* Deprecated in Godot 4.4. Use `GDExtensionClassCreateInstance3` instead. */
 /* Called to construct an instance of the class.
  * For classes descending from RefCounted, the reference count should be zero.
  */
-typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance2)(void *p_class_userdata, GDExtensionBool p_notify_postinitialize);
+typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance2)(void *p_class_userdata, GDExtensionBool p_notify_postinitialize); /* Deprecated in Godot 4.7. Use `GDExtensionClassCreateInstance3` instead. */
 /* Called to construct an instance of the class.
  * For classes descending from RefCounted, the reference count should already be incremented by 1.
  */
 typedef GDExtensionObjectPtr (*GDExtensionClassCreateInstance3)(void *p_class_userdata, GDExtensionBool p_notify_postinitialize);
 typedef void (*GDExtensionClassFreeInstance)(void *p_class_userdata, GDExtensionClassInstancePtr p_instance);
 typedef GDExtensionClassInstancePtr (*GDExtensionClassRecreateInstance)(void *p_class_userdata, GDExtensionObjectPtr p_object);
-typedef GDExtensionClassCallVirtual (*GDExtensionClassGetVirtual)(void *p_class_userdata, GDExtensionConstStringNamePtr p_name);
+typedef GDExtensionClassCallVirtual (*GDExtensionClassGetVirtual)(void *p_class_userdata, GDExtensionConstStringNamePtr p_name); /* Deprecated in Godot 4.4. Use `GDExtensionClassGetVirtual2` instead. */
 typedef GDExtensionClassCallVirtual (*GDExtensionClassGetVirtual2)(void *p_class_userdata, GDExtensionConstStringNamePtr p_name, uint32_t p_hash);
-typedef void *(*GDExtensionClassGetVirtualCallData)(void *p_class_userdata, GDExtensionConstStringNamePtr p_name);
+typedef void *(*GDExtensionClassGetVirtualCallData)(void *p_class_userdata, GDExtensionConstStringNamePtr p_name); /* Deprecated in Godot 4.4. Use `GDExtensionClassGetVirtualCallData2` instead. */
 typedef void *(*GDExtensionClassGetVirtualCallData2)(void *p_class_userdata, GDExtensionConstStringNamePtr p_name, uint32_t p_hash);
 typedef void (*GDExtensionClassCallVirtualWithData)(GDExtensionClassInstancePtr p_instance, GDExtensionConstStringNamePtr p_name, void *p_virtual_call_userdata, const GDExtensionConstTypePtr *p_args, GDExtensionTypePtr r_ret);
 typedef struct {
@@ -283,7 +283,7 @@ typedef struct {
 	GDExtensionClassGetRID get_rid_func;
 	/* Per-class user data, later accessible in instance bindings. */
 	void *class_userdata;
-} GDExtensionClassCreationInfo; /* Deprecated in Godot 4.2. Use `GDExtensionClassCreationInfo4` instead. */
+} GDExtensionClassCreationInfo; /* Deprecated in Godot 4.2. Use `GDExtensionClassCreationInfo6` instead. */
 
 typedef struct {
 	GDExtensionBool is_virtual;
@@ -320,7 +320,7 @@ typedef struct {
 	GDExtensionClassGetRID get_rid_func;
 	/* Per-class user data, later accessible in instance bindings. */
 	void *class_userdata;
-} GDExtensionClassCreationInfo2; /* Deprecated in Godot 4.3. Use `GDExtensionClassCreationInfo4` instead. */
+} GDExtensionClassCreationInfo2; /* Deprecated in Godot 4.3. Use `GDExtensionClassCreationInfo6` instead. */
 
 typedef struct {
 	GDExtensionBool is_virtual;
@@ -358,7 +358,7 @@ typedef struct {
 	GDExtensionClassGetRID get_rid_func;
 	/* Per-class user data, later accessible in instance bindings. */
 	void *class_userdata;
-} GDExtensionClassCreationInfo3; /* Deprecated in Godot 4.4. Use `GDExtensionClassCreationInfo4` instead. */
+} GDExtensionClassCreationInfo3; /* Deprecated in Godot 4.4. Use `GDExtensionClassCreationInfo6` instead. */
 
 typedef struct {
 	GDExtensionBool is_virtual;
@@ -396,9 +396,9 @@ typedef struct {
 	GDExtensionClassCallVirtualWithData call_virtual_with_data_func;
 	/* Per-class user data, later accessible in instance bindings. */
 	void *class_userdata;
-} GDExtensionClassCreationInfo4;
+} GDExtensionClassCreationInfo4; /* Deprecated in Godot 4.5. Use `GDExtensionClassCreationInfo6` instead. */
 
-typedef GDExtensionClassCreationInfo4 GDExtensionClassCreationInfo5;
+typedef GDExtensionClassCreationInfo4 GDExtensionClassCreationInfo5; /* Deprecated in Godot 4.7. Use `GDExtensionClassCreationInfo6` instead. */
 typedef struct {
 	GDExtensionBool is_virtual;
 	GDExtensionBool is_abstract;
@@ -755,7 +755,7 @@ typedef struct {
 	uint32_t minor;
 	uint32_t patch;
 	const char *string;
-} GDExtensionGodotVersion;
+} GDExtensionGodotVersion; /* Deprecated in Godot 4.5. Use `GDExtensionGodotVersion2` instead. */
 
 typedef struct {
 	uint32_t major;
@@ -2835,7 +2835,7 @@ typedef GDExtensionObjectPtr (*GDExtensionInterfaceClassdbConstructObject)(GDExt
 /**
  * @name classdb_construct_object2
  * @since 4.4
- * @deprecated Deprecated in Godot 4.6. Use `classdb_construct_object3` instead.
+ * @deprecated Deprecated in Godot 4.7. Use `classdb_construct_object3` instead.
  *
  * Constructs an Object of the requested class.
  *
@@ -2851,7 +2851,7 @@ typedef GDExtensionObjectPtr (*GDExtensionInterfaceClassdbConstructObject2)(GDEx
 
 /**
  * @name classdb_construct_object3
- * @since 4.6
+ * @since 4.7
  *
  * Constructs an Object of the requested class.
  *
@@ -2959,7 +2959,7 @@ typedef void (*GDExtensionInterfaceClassdbRegisterExtensionClass4)(GDExtensionCl
 /**
  * @name classdb_register_extension_class5
  * @since 4.5
- * @deprecated Deprecated in Godot 4.6. Use `classdb_register_extension_class6` instead.
+ * @deprecated Deprecated in Godot 4.7. Use `classdb_register_extension_class6` instead.
  *
  * Registers an extension class in the ClassDB.
  *
@@ -2974,7 +2974,7 @@ typedef void (*GDExtensionInterfaceClassdbRegisterExtensionClass5)(GDExtensionCl
 
 /**
  * @name classdb_register_extension_class6
- * @since 4.6
+ * @since 4.7
  *
  * Registers an extension class in the ClassDB.
  *
