@@ -352083,7 +352083,7 @@
 					"name": "button_pressed",
 					"arguments": [
 						{
-							"name": "name",
+							"name": "action_name",
 							"type": "String"
 						}
 					]
@@ -352092,7 +352092,7 @@
 					"name": "button_released",
 					"arguments": [
 						{
-							"name": "name",
+							"name": "action_name",
 							"type": "String"
 						}
 					]
@@ -352101,7 +352101,7 @@
 					"name": "input_float_changed",
 					"arguments": [
 						{
-							"name": "name",
+							"name": "action_name",
 							"type": "String"
 						},
 						{
@@ -352114,7 +352114,7 @@
 					"name": "input_vector2_changed",
 					"arguments": [
 						{
-							"name": "name",
+							"name": "action_name",
 							"type": "String"
 						},
 						{
