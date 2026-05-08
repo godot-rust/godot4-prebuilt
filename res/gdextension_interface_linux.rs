@@ -5169,7 +5169,7 @@ pub type GDExtensionInterfaceObjectGetClassName = ::std::option::Option<
         r_class_name: GDExtensionUninitializedStringNamePtr,
     ) -> GDExtensionBool,
 >;
-#[doc = " @name object_cast_to\n @since 4.1\n\n Casts an Object to a different type.\n\n @param p_object A pointer to the Object.\n @param p_class_tag A pointer uniquely identifying a built-in class in the ClassDB.\n\n @return Returns a pointer to the Object, or NULL if it can't be cast to the requested type."]
+#[doc = " @name object_cast_to\n @since 4.1\n @deprecated Deprecated in Godot 4.7. Use the `is_class` method on `Object` to check if an object can be cast instead. If true, the previous pointer can be reinterpreted as a pointer to the target type.\n\n Casts an Object to a different type.\n\n @param p_object A pointer to the Object.\n @param p_class_tag A pointer uniquely identifying a built-in class in the ClassDB.\n\n @return Returns a pointer to the Object, or NULL if it can't be cast to the requested type."]
 pub type GDExtensionInterfaceObjectCastTo = ::std::option::Option<
     unsafe extern "C" fn(
         p_object: GDExtensionConstObjectPtr,
@@ -5302,7 +5302,7 @@ pub type GDExtensionInterfaceClassdbGetMethodBind = ::std::option::Option<
         p_hash: GDExtensionInt,
     ) -> GDExtensionMethodBindPtr,
 >;
-#[doc = " @name classdb_get_class_tag\n @since 4.1\n\n Gets a pointer uniquely identifying the given built-in class in the ClassDB.\n\n @param p_classname A pointer to a StringName with the class name.\n\n @return A pointer uniquely identifying the built-in class in the ClassDB."]
+#[doc = " @name classdb_get_class_tag\n @since 4.1\n @deprecated Deprecated in Godot 4.7. No longer needed. Use the `is_class` method on `Object` instead.\n\n Gets a pointer uniquely identifying the given built-in class in the ClassDB.\n\n @param p_classname A pointer to a StringName with the class name.\n\n @return A pointer uniquely identifying the built-in class in the ClassDB."]
 pub type GDExtensionInterfaceClassdbGetClassTag = ::std::option::Option<
     unsafe extern "C" fn(p_classname: GDExtensionConstStringNamePtr) -> *mut ::std::os::raw::c_void,
 >;

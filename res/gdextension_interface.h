@@ -2594,6 +2594,7 @@ typedef GDExtensionBool (*GDExtensionInterfaceObjectGetClassName)(GDExtensionCon
 /**
  * @name object_cast_to
  * @since 4.1
+ * @deprecated Deprecated in Godot 4.7. Use the `is_class` method on `Object` to check if an object can be cast instead. If true, the previous pointer can be reinterpreted as a pointer to the target type.
  *
  * Casts an Object to a different type.
  *
@@ -2883,6 +2884,7 @@ typedef GDExtensionMethodBindPtr (*GDExtensionInterfaceClassdbGetMethodBind)(GDE
 /**
  * @name classdb_get_class_tag
  * @since 4.1
+ * @deprecated Deprecated in Godot 4.7. No longer needed. Use the `is_class` method on `Object` instead.
  *
  * Gets a pointer uniquely identifying the given built-in class in the ClassDB.
  *
