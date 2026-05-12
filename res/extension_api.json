@@ -33523,7 +33523,7 @@
 					"name": "animation_added",
 					"arguments": [
 						{
-							"name": "name",
+							"name": "anim_name",
 							"type": "StringName"
 						}
 					]
@@ -33532,7 +33532,7 @@
 					"name": "animation_removed",
 					"arguments": [
 						{
-							"name": "name",
+							"name": "anim_name",
 							"type": "StringName"
 						}
 					]
@@ -33541,11 +33541,11 @@
 					"name": "animation_renamed",
 					"arguments": [
 						{
-							"name": "name",
+							"name": "old_name",
 							"type": "StringName"
 						},
 						{
-							"name": "to_name",
+							"name": "new_name",
 							"type": "StringName"
 						}
 					]
@@ -33554,7 +33554,7 @@
 					"name": "animation_changed",
 					"arguments": [
 						{
-							"name": "name",
+							"name": "anim_name",
 							"type": "StringName"
 						}
 					]
@@ -34885,7 +34885,7 @@
 							"type": "int"
 						},
 						{
-							"name": "name",
+							"name": "node_name",
 							"type": "String"
 						}
 					]
@@ -39416,7 +39416,7 @@
 					"name": "current_animation_changed",
 					"arguments": [
 						{
-							"name": "name",
+							"name": "anim_name",
 							"type": "StringName"
 						}
 					]
@@ -201273,7 +201273,21 @@
 					]
 				},
 				{
-					"name": "set_search_bar_enabled_on_item_count",
+					"name": "set_search_bar_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "set_search_bar_min_item_count",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -201281,11 +201295,23 @@
 					"hash": 1286410249,
 					"arguments": [
 						{
-							"name": "counts",
+							"name": "count",
 							"type": "int",
 							"meta": "int32"
 						}
 					]
+				},
+				{
+					"name": "get_search_bar_min_item_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
 				},
 				{
 					"name": "set_search_bar_fuzzy_search_enabled",
@@ -201512,18 +201538,6 @@
 					"hash": 36873697,
 					"return_value": {
 						"type": "bool"
-					}
-				},
-				{
-					"name": "get_search_bar_enabled_on_item_count",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3905245786,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
 					}
 				},
 				{
@@ -201795,10 +201809,16 @@
 					"getter": "get_allow_reselect"
 				},
 				{
+					"type": "bool",
+					"name": "search_bar_enabled",
+					"setter": "set_search_bar_enabled",
+					"getter": "is_search_bar_enabled"
+				},
+				{
 					"type": "int",
-					"name": "enable_search_bar_on_item_count",
-					"setter": "set_search_bar_enabled_on_item_count",
-					"getter": "get_search_bar_enabled_on_item_count"
+					"name": "search_bar_min_item_count",
+					"setter": "set_search_bar_min_item_count",
+					"getter": "get_search_bar_min_item_count"
 				},
 				{
 					"type": "bool",
@@ -232431,6 +232451,20 @@
 					}
 				},
 				{
+					"name": "set_search_bar_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
 					"name": "is_search_bar_enabled",
 					"is_const": true,
 					"is_vararg": false,
@@ -232442,7 +232476,7 @@
 					}
 				},
 				{
-					"name": "set_search_bar_enabled_on_item_count",
+					"name": "set_search_bar_min_item_count",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -232457,7 +232491,7 @@
 					]
 				},
 				{
-					"name": "get_search_bar_enabled_on_item_count",
+					"name": "get_search_bar_min_item_count",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -232659,10 +232693,16 @@
 					"getter": "get_shrink_width"
 				},
 				{
+					"type": "bool",
+					"name": "search_bar_enabled",
+					"setter": "set_search_bar_enabled",
+					"getter": "is_search_bar_enabled"
+				},
+				{
 					"type": "int",
-					"name": "search_bar_enabled_on_item_count",
-					"setter": "set_search_bar_enabled_on_item_count",
-					"getter": "get_search_bar_enabled_on_item_count"
+					"name": "search_bar_min_item_count",
+					"setter": "set_search_bar_min_item_count",
+					"getter": "get_search_bar_min_item_count"
 				},
 				{
 					"type": "bool",
@@ -355373,7 +355413,7 @@
 					"name": "button_pressed",
 					"arguments": [
 						{
-							"name": "name",
+							"name": "action_name",
 							"type": "String"
 						}
 					]
@@ -355382,7 +355422,7 @@
 					"name": "button_released",
 					"arguments": [
 						{
-							"name": "name",
+							"name": "action_name",
 							"type": "String"
 						}
 					]
@@ -355391,7 +355431,7 @@
 					"name": "input_float_changed",
 					"arguments": [
 						{
-							"name": "name",
+							"name": "action_name",
 							"type": "String"
 						},
 						{
@@ -355404,7 +355444,7 @@
 					"name": "input_vector2_changed",
 					"arguments": [
 						{
-							"name": "name",
+							"name": "action_name",
 							"type": "String"
 						},
 						{
