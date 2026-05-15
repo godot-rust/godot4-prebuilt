@@ -104252,6 +104252,18 @@
 					}
 				},
 				{
+					"name": "_can_commit_handle_on_click",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "_redraw",
 					"is_const": false,
 					"is_static": false,
