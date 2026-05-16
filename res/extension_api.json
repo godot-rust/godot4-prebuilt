@@ -98795,7 +98795,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3879521245,
+					"hash": 1201906210,
+					"hash_compatibility": [
+						3879521245
+					],
 					"return_value": {
 						"type": "enum::Error"
 					},
@@ -98816,6 +98819,11 @@
 							"name": "flags",
 							"type": "bitfield::EditorExportPlatform.DebugFlags",
 							"default_value": "0"
+						},
+						{
+							"name": "notify",
+							"type": "bool",
+							"default_value": "true"
 						}
 					]
 				},
