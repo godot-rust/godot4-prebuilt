@@ -201091,7 +201091,13 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1466479800,
+					"hash": 2141509306,
+					"hash_compatibility": [
+						1466479800
+					],
+					"return_value": {
+						"type": "bool"
+					},
 					"arguments": [
 						{
 							"name": "from",
@@ -328501,12 +328507,20 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1286410249,
+					"hash": 972357352,
+					"hash_compatibility": [
+						1286410249
+					],
 					"arguments": [
 						{
 							"name": "column",
 							"type": "int",
 							"meta": "int32"
+						},
+						{
+							"name": "set_as_cursor",
+							"type": "bool",
+							"default_value": "true"
 						}
 					]
 				},
