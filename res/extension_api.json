@@ -67404,6 +67404,28 @@
 							"value": 3
 						}
 					]
+				},
+				{
+					"name": "OversamplingWithScale",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "OVERSAMPLING_WITH_SCALE_PARENT_NODE",
+							"value": 0
+						},
+						{
+							"name": "OVERSAMPLING_WITH_SCALE_DISABLED",
+							"value": 1
+						},
+						{
+							"name": "OVERSAMPLING_WITH_SCALE_ENABLED",
+							"value": 2
+						},
+						{
+							"name": "OVERSAMPLING_WITH_SCALE_MAX",
+							"value": 3
+						}
+					]
 				}
 			],
 			"methods": [
@@ -69430,6 +69452,31 @@
 					"return_value": {
 						"type": "enum::CanvasItem.ClipChildrenMode"
 					}
+				},
+				{
+					"name": "set_oversampling_with_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 872218804,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "enum::CanvasItem.OversamplingWithScale"
+						}
+					]
+				},
+				{
+					"name": "get_oversampling_with_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2026097197,
+					"return_value": {
+						"type": "enum::CanvasItem.OversamplingWithScale"
+					}
 				}
 			],
 			"signals": [
@@ -69482,6 +69529,12 @@
 					"name": "clip_children",
 					"setter": "set_clip_children_mode",
 					"getter": "get_clip_children_mode"
+				},
+				{
+					"type": "int",
+					"name": "oversampling_with_scale",
+					"setter": "set_oversampling_with_scale",
+					"getter": "get_oversampling_with_scale"
 				},
 				{
 					"type": "int",
