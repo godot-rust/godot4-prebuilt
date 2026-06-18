@@ -24,3 +24,5 @@ pub mod version_4_4;
 pub mod version_4_5;
 #[path = "4.6/mod.rs"]
 pub mod version_4_6;
+#[path = "4.7/mod.rs"]
+pub mod version_4_7;
