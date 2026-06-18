@@ -1,0 +1,18 @@
+[package]
+name = "gdextension-api"
+version = "0.5.1"
+edition = "2024"
+license = "MPL-2.0"
+description = "Godot GDExtension API; used by godot-rust."
+repository = "https://github.com/godot-rust/gdext"
+homepage = "https://godot-rust.github.io"
+keywords = ["gamedev", "godot", "engine", "ffi"]
+categories = ["game-engines", "graphics"]
+# No rust-version, used internally.
+
+# Version history:
+# 0.5: Migrate to gdextension_interface.json, yeet bindgen
+# 0.4: Include docs in extension_api.json (compatible, but larger crate)
+# 0.3: Minimum Godot 4.2
+# 0.2: Only generate gdextension_interface.rs for minor versions
+# 0.1: Initial release
