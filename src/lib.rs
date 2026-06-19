@@ -8,7 +8,7 @@
 // Since this lib.rs is repurposed as a module file, avoid crate-level attributes such as
 // #![doc(html_logo_url)] here.
 
-//! # GDExtension API for Godot 4.7
+//! # GDExtension API for Godot 4.8
 
 use std::borrow::Cow;
 
@@ -19,7 +19,7 @@ pub type CowStr = Cow<'static, str>;
 ///
 /// Note that this currently only contains the `major.minor[.patch]` part, so even `4.2-rc1` would be `4.2` (although pre-releases are currently
 /// not published).
-pub const GODOT_VERSION_STRING: &str = "4.7";
+pub const GODOT_VERSION_STRING: &str = "4.8";
 
 /// Returns the contents of the header file `gdextension_interface.h`.
 pub const fn load_gdextension_header_h() -> CowStr {

@@ -1,11 +1,11 @@
 {
 	"header": {
 		"version_major": 4,
-		"version_minor": 7,
+		"version_minor": 8,
 		"version_patch": 0,
-		"version_status": "rc",
+		"version_status": "dev",
 		"version_build": "custom_build",
-		"version_full_name": "Godot Engine v4.7.rc.custom_build",
+		"version_full_name": "Godot Engine v4.8.dev.custom_build",
 		"precision": "single"
 	},
 	"builtin_class_sizes": [
@@ -6512,7 +6512,17 @@
 					"return_type": "bool"
 				},
 				{
+					"name": "<=",
+					"right_type": "bool",
+					"return_type": "bool"
+				},
+				{
 					"name": ">",
+					"right_type": "bool",
+					"return_type": "bool"
+				},
+				{
+					"name": ">=",
 					"right_type": "bool",
 					"return_type": "bool"
 				},
@@ -272313,6 +272323,15 @@
 					"name": "request_save_history"
 				},
 				{
+					"name": "request_save_previous_state",
+					"arguments": [
+						{
+							"name": "state",
+							"type": "Dictionary"
+						}
+					]
+				},
+				{
 					"name": "request_help",
 					"arguments": [
 						{
@@ -272340,15 +272359,6 @@
 						{
 							"name": "what",
 							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "request_save_previous_state",
-					"arguments": [
-						{
-							"name": "state",
-							"type": "Dictionary"
 						}
 					]
 				},
