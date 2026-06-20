@@ -104227,6 +104227,17 @@
 					"return_value": {
 						"type": "PackedInt32Array"
 					}
+				},
+				{
+					"name": "is_selected",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			]
 		},
@@ -139290,6 +139301,56 @@
 							"default_value": "0.1"
 						}
 					]
+				},
+				{
+					"name": "set_debug_show_octants",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_debug_show_octants",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_debug_octant_color",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2920490490,
+					"arguments": [
+						{
+							"name": "color",
+							"type": "Color"
+						}
+					]
+				},
+				{
+					"name": "get_debug_octant_color",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3444240500,
+					"return_value": {
+						"type": "Color"
+					}
 				}
 			],
 			"signals": [
@@ -139384,6 +139445,18 @@
 					"name": "bake_navigation",
 					"setter": "set_bake_navigation",
 					"getter": "is_baking_navigation"
+				},
+				{
+					"type": "bool",
+					"name": "debug_show_octants",
+					"setter": "set_debug_show_octants",
+					"getter": "get_debug_show_octants"
+				},
+				{
+					"type": "Color",
+					"name": "debug_octant_color",
+					"setter": "set_debug_octant_color",
+					"getter": "get_debug_octant_color"
 				}
 			]
 		},
@@ -145572,6 +145645,108 @@
 					"hash": 1116898809,
 					"return_value": {
 						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_joy_touchpad_finger_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4135671252,
+					"return_value": {
+						"type": "Vector2"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "finger",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "touchpad",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "get_joy_touchpad_finger_pressure",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4212583121,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "finger",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "touchpad",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "get_joy_touchpad_fingers",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3923454890,
+					"return_value": {
+						"type": "PackedInt32Array"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "touchpad",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
+					"name": "get_joy_num_touchpads",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
 					},
 					"arguments": [
 						{
@@ -162569,6 +162744,10 @@
 						{
 							"name": "ARRAY_FLAG_COMPRESS_ATTRIBUTES",
 							"value": 536870912
+						},
+						{
+							"name": "ARRAY_FLAG_USE_STORAGE_BUFFER",
+							"value": 1073741824
 						}
 					]
 				},
@@ -190181,6 +190360,17 @@
 					"hash": 201670096,
 					"return_value": {
 						"type": "String"
+					}
+				},
+				{
+					"name": "get_preferred_locales",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1139954409,
+					"return_value": {
+						"type": "PackedStringArray"
 					}
 				},
 				{
@@ -249471,6 +249661,10 @@
 							"value": 536870912
 						},
 						{
+							"name": "ARRAY_FLAG_USE_STORAGE_BUFFER",
+							"value": 1073741824
+						},
+						{
 							"name": "ARRAY_FLAG_FORMAT_VERSION_BASE",
 							"value": 35
 						},
@@ -253102,6 +253296,94 @@
 						{
 							"name": "data",
 							"type": "PackedByteArray"
+						}
+					]
+				},
+				{
+					"name": "mesh_surface_get_vertex_buffer_rd_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1066463050,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "mesh",
+							"type": "RID"
+						},
+						{
+							"name": "surface",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "mesh_surface_get_attribute_buffer_rd_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1066463050,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "mesh",
+							"type": "RID"
+						},
+						{
+							"name": "surface",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "mesh_surface_get_skin_buffer_rd_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1066463050,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "mesh",
+							"type": "RID"
+						},
+						{
+							"name": "surface",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "mesh_surface_get_index_buffer_rd_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1066463050,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "mesh",
+							"type": "RID"
+						},
+						{
+							"name": "surface",
+							"type": "int",
+							"meta": "int32"
 						}
 					]
 				},
@@ -348584,6 +348866,31 @@
 					}
 				},
 				{
+					"name": "set_fullscreen_shortcut_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_fullscreen_shortcut_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "is_maximize_allowed",
 					"is_const": true,
 					"is_vararg": false,
@@ -350427,6 +350734,12 @@
 					"setter": "set_flag",
 					"getter": "get_flag",
 					"index": 12
+				},
+				{
+					"type": "bool",
+					"name": "fullscreen_shortcut_enabled",
+					"setter": "set_fullscreen_shortcut_enabled",
+					"getter": "is_fullscreen_shortcut_enabled"
 				},
 				{
 					"type": "bool",
