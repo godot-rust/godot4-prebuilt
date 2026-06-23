@@ -39209,6 +39209,31 @@
 					}
 				},
 				{
+					"name": "set_clear_cache_on_stop_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_clear_cache_on_stop_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "get_current_animation_position",
 					"is_const": true,
 					"is_vararg": false,
@@ -39515,6 +39540,12 @@
 					"name": "movie_quit_on_finish",
 					"setter": "set_movie_quit_on_finish_enabled",
 					"getter": "is_movie_quit_on_finish_enabled"
+				},
+				{
+					"type": "bool",
+					"name": "clear_cache_on_stop",
+					"setter": "set_clear_cache_on_stop_enabled",
+					"getter": "is_clear_cache_on_stop_enabled"
 				}
 			]
 		},
@@ -122132,6 +122163,436 @@
 							"meta": "uint32"
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "FuzzySearch",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_start_offset",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "start_offset",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_start_offset",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_max_results",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_results",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_max_results",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_max_misses",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_misses",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_max_misses",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_use_exact_tokens",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "use_exact_tokens",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_use_exact_tokens",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_case_sensitive",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "case_sensitive",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_case_sensitive",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_filter_low_scores",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "filter_low_scores",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_filter_low_scores",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_filter_factor",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "filter_factor",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_filter_factor",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_filter_cutoff",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "filter_cutoff",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_filter_cutoff",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "search",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1830672150,
+					"return_value": {
+						"type": "FuzzySearchMatch"
+					},
+					"arguments": [
+						{
+							"name": "query",
+							"type": "String"
+						},
+						{
+							"name": "target",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "search_all",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4033994781,
+					"return_value": {
+						"type": "typedarray::FuzzySearchMatch"
+					},
+					"arguments": [
+						{
+							"name": "query",
+							"type": "String"
+						},
+						{
+							"name": "targets",
+							"type": "PackedStringArray"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "start_offset",
+					"setter": "set_start_offset",
+					"getter": "get_start_offset"
+				},
+				{
+					"type": "int",
+					"name": "max_results",
+					"setter": "set_max_results",
+					"getter": "get_max_results"
+				},
+				{
+					"type": "int",
+					"name": "max_misses",
+					"setter": "set_max_misses",
+					"getter": "get_max_misses"
+				},
+				{
+					"type": "bool",
+					"name": "use_exact_tokens",
+					"setter": "set_use_exact_tokens",
+					"getter": "get_use_exact_tokens"
+				},
+				{
+					"type": "bool",
+					"name": "case_sensitive",
+					"setter": "set_case_sensitive",
+					"getter": "get_case_sensitive"
+				},
+				{
+					"type": "bool",
+					"name": "filter_low_scores",
+					"setter": "set_filter_low_scores",
+					"getter": "get_filter_low_scores"
+				},
+				{
+					"type": "float",
+					"name": "filter_factor",
+					"setter": "set_filter_factor",
+					"getter": "get_filter_factor"
+				},
+				{
+					"type": "float",
+					"name": "filter_cutoff",
+					"setter": "set_filter_cutoff",
+					"getter": "get_filter_cutoff"
+				}
+			]
+		},
+		{
+			"name": "FuzzySearchMatch",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_target",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "target",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_target",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_score",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "score",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_score",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_original_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "original_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_original_index",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_matched_substrings",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3995934104,
+					"return_value": {
+						"type": "typedarray::Vector2i"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "target",
+					"setter": "set_target",
+					"getter": "get_target"
+				},
+				{
+					"type": "int",
+					"name": "score",
+					"setter": "set_score",
+					"getter": "get_score"
+				},
+				{
+					"type": "int",
+					"name": "original_index",
+					"setter": "set_original_index",
+					"getter": "get_original_index"
 				}
 			]
 		},
@@ -207789,6 +208250,17 @@
 					"hash": 931347320,
 					"return_value": {
 						"type": "enum::PhysicalBone3D.JointType"
+					}
+				},
+				{
+					"name": "get_joint_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
 					}
 				},
 				{
