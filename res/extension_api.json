@@ -105818,72 +105818,6 @@
 					]
 				},
 				{
-					"name": "add_scene_format_importer_plugin",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2764104752,
-					"arguments": [
-						{
-							"name": "scene_format_importer",
-							"type": "EditorSceneFormatImporter"
-						},
-						{
-							"name": "first_priority",
-							"type": "bool",
-							"default_value": "false"
-						}
-					]
-				},
-				{
-					"name": "remove_scene_format_importer_plugin",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2637776123,
-					"arguments": [
-						{
-							"name": "scene_format_importer",
-							"type": "EditorSceneFormatImporter"
-						}
-					]
-				},
-				{
-					"name": "add_scene_post_import_plugin",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3492436322,
-					"arguments": [
-						{
-							"name": "scene_import_plugin",
-							"type": "EditorScenePostImportPlugin"
-						},
-						{
-							"name": "first_priority",
-							"type": "bool",
-							"default_value": "false"
-						}
-					]
-				},
-				{
-					"name": "remove_scene_post_import_plugin",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3045178206,
-					"arguments": [
-						{
-							"name": "scene_import_plugin",
-							"type": "EditorScenePostImportPlugin"
-						}
-					]
-				},
-				{
 					"name": "add_export_plugin",
 					"is_const": false,
 					"is_vararg": false,
@@ -105936,34 +105870,6 @@
 						{
 							"name": "platform",
 							"type": "EditorExportPlatform"
-						}
-					]
-				},
-				{
-					"name": "add_node_3d_gizmo_plugin",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1541015022,
-					"arguments": [
-						{
-							"name": "plugin",
-							"type": "EditorNode3DGizmoPlugin"
-						}
-					]
-				},
-				{
-					"name": "remove_node_3d_gizmo_plugin",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1541015022,
-					"arguments": [
-						{
-							"name": "plugin",
-							"type": "EditorNode3DGizmoPlugin"
 						}
 					]
 				},
@@ -106068,6 +105974,100 @@
 						{
 							"name": "plugin",
 							"type": "EditorContextMenuPlugin"
+						}
+					]
+				},
+				{
+					"name": "add_node_3d_gizmo_plugin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1541015022,
+					"arguments": [
+						{
+							"name": "plugin",
+							"type": "EditorNode3DGizmoPlugin"
+						}
+					]
+				},
+				{
+					"name": "remove_node_3d_gizmo_plugin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1541015022,
+					"arguments": [
+						{
+							"name": "plugin",
+							"type": "EditorNode3DGizmoPlugin"
+						}
+					]
+				},
+				{
+					"name": "add_scene_format_importer_plugin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2764104752,
+					"arguments": [
+						{
+							"name": "scene_format_importer",
+							"type": "EditorSceneFormatImporter"
+						},
+						{
+							"name": "first_priority",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "remove_scene_format_importer_plugin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2637776123,
+					"arguments": [
+						{
+							"name": "scene_format_importer",
+							"type": "EditorSceneFormatImporter"
+						}
+					]
+				},
+				{
+					"name": "add_scene_post_import_plugin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3492436322,
+					"arguments": [
+						{
+							"name": "scene_import_plugin",
+							"type": "EditorScenePostImportPlugin"
+						},
+						{
+							"name": "first_priority",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "remove_scene_post_import_plugin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3045178206,
+					"arguments": [
+						{
+							"name": "scene_import_plugin",
+							"type": "EditorScenePostImportPlugin"
 						}
 					]
 				},
@@ -133508,6 +133508,50 @@
 							"type": "enum::Generic6DOFJoint3D.Flag"
 						}
 					]
+				},
+				{
+					"name": "set_angular_target_rotation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1727505552,
+					"arguments": [
+						{
+							"name": "target_rotation",
+							"type": "Quaternion"
+						}
+					]
+				},
+				{
+					"name": "get_angular_target_rotation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1222331677,
+					"return_value": {
+						"type": "Quaternion"
+					}
+				},
+				{
+					"name": "has_target_rotation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "clear_angular_target_rotation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
 				}
 			]
 		},
@@ -142314,8 +142358,16 @@
 							"value": 46
 						},
 						{
-							"name": "FORMAT_MAX",
+							"name": "FORMAT_ASTC_6x6",
 							"value": 47
+						},
+						{
+							"name": "FORMAT_ASTC_6x6_HDR",
+							"value": 48
+						},
+						{
+							"name": "FORMAT_MAX",
+							"value": 49
 						}
 					]
 				},
@@ -142438,6 +142490,32 @@
 						{
 							"name": "COMPRESS_SOURCE_NORMAL",
 							"value": 2
+						}
+					]
+				},
+				{
+					"name": "CompressProfile",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "COMPRESS_PROFILE_AUTOMATIC",
+							"value": 0
+						},
+						{
+							"name": "COMPRESS_PROFILE_MAX_QUALITY",
+							"value": 1
+						},
+						{
+							"name": "COMPRESS_PROFILE_COMPRESSED",
+							"value": 2
+						},
+						{
+							"name": "COMPRESS_PROFILE_MAX_COMPRESSION",
+							"value": 3
+						},
+						{
+							"name": "COMPRESS_PROFILE_MAX",
+							"value": 4
 						}
 					]
 				},
@@ -143144,8 +143222,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2975424957,
+					"hash": 3872125418,
 					"hash_compatibility": [
+						2975424957,
 						4094210332
 					],
 					"return_value": {
@@ -143162,8 +143241,8 @@
 							"default_value": "0"
 						},
 						{
-							"name": "astc_format",
-							"type": "enum::Image.ASTCFormat",
+							"name": "profile",
+							"type": "enum::Image.CompressProfile",
 							"default_value": "0"
 						}
 					]
@@ -143174,8 +143253,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 4212890953,
+					"hash": 2576825933,
 					"hash_compatibility": [
+						4212890953,
 						279105990
 					],
 					"return_value": {
@@ -143191,8 +143271,8 @@
 							"type": "enum::Image.UsedChannels"
 						},
 						{
-							"name": "astc_format",
-							"type": "enum::Image.ASTCFormat",
+							"name": "profile",
+							"type": "enum::Image.CompressProfile",
 							"default_value": "0"
 						}
 					]
@@ -165292,6 +165372,25 @@
 					]
 				},
 				{
+					"name": "set_item_category",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3780747571,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "category",
+							"type": "StringName"
+						}
+					]
+				},
+				{
 					"name": "set_item_mesh",
 					"is_const": false,
 					"is_vararg": false,
@@ -165453,6 +165552,24 @@
 					"hash": 844755477,
 					"return_value": {
 						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "id",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_item_category",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 659327637,
+					"return_value": {
+						"type": "StringName"
 					},
 					"arguments": [
 						{
@@ -224281,6 +224398,41 @@
 					]
 				},
 				{
+					"name": "generic_6dof_joint_set_angular_target_rotation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 514574805,
+					"arguments": [
+						{
+							"name": "joint",
+							"type": "RID"
+						},
+						{
+							"name": "target_rotation",
+							"type": "Quaternion"
+						}
+					]
+				},
+				{
+					"name": "generic_6dof_joint_get_angular_target_rotation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3909263396,
+					"return_value": {
+						"type": "Quaternion"
+					},
+					"arguments": [
+						{
+							"name": "joint",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "free_rid",
 					"is_const": false,
 					"is_vararg": false,
@@ -227947,6 +228099,43 @@
 						{
 							"name": "flag",
 							"type": "enum::PhysicsServer3D.G6DOFJointAxisFlag"
+						}
+					]
+				},
+				{
+					"name": "_generic_6dof_joint_set_angular_target_rotation",
+					"is_const": false,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 514574805,
+					"arguments": [
+						{
+							"name": "joint",
+							"type": "RID"
+						},
+						{
+							"name": "target_rotation",
+							"type": "Quaternion"
+						}
+					]
+				},
+				{
+					"name": "_generic_6dof_joint_get_angular_target_rotation",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 3909263396,
+					"return_value": {
+						"type": "Quaternion"
+					},
+					"arguments": [
+						{
+							"name": "joint",
+							"type": "RID"
 						}
 					]
 				},
@@ -283529,6 +283718,18 @@
 					]
 				},
 				{
+					"name": "get_point_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
 					"name": "set_ray_pickable",
 					"is_const": false,
 					"is_vararg": false,
@@ -283620,6 +283821,11 @@
 					"name": "ray_pickable",
 					"setter": "set_ray_pickable",
 					"getter": "is_ray_pickable"
+				},
+				{
+					"type": "int",
+					"name": "point_count",
+					"getter": "get_point_count"
 				},
 				{
 					"type": "int",
