@@ -98166,10 +98166,18 @@
 					"is_required": false,
 					"is_vararg": false,
 					"is_virtual": true,
-					"hash": 1286410249,
+					"hash": 3937882851,
+					"hash_compatibility": [
+						1286410249
+					],
 					"arguments": [
 						{
 							"name": "layout",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "slot",
 							"type": "int",
 							"meta": "int32"
 						}
@@ -102798,6 +102806,17 @@
 					"hash": 3819628421,
 					"return_value": {
 						"type": "EditorUndoRedoManager"
+					}
+				},
+				{
+					"name": "get_scene_paint_2d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4188778635,
+					"return_value": {
+						"type": "ScenePaint2DEditor"
 					}
 				},
 				{
@@ -270767,6 +270786,72 @@
 			]
 		},
 		{
+			"name": "ScenePaint2DEditor",
+			"is_refcounted": false,
+			"is_instantiable": false,
+			"inherits": "Control",
+			"api_type": "editor",
+			"methods": [
+				{
+					"name": "register_scene_provider",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2575427985,
+					"arguments": [
+						{
+							"name": "control",
+							"type": "Control"
+						},
+						{
+							"name": "callback",
+							"type": "Callable"
+						}
+					]
+				},
+				{
+					"name": "unregister_scene_provider",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1496901182,
+					"arguments": [
+						{
+							"name": "control",
+							"type": "Control"
+						}
+					]
+				},
+				{
+					"name": "set_painted_scene",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2735608809,
+					"arguments": [
+						{
+							"name": "scene",
+							"type": "Node2D"
+						}
+					]
+				},
+				{
+					"name": "get_painted_scene",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3536679914,
+					"return_value": {
+						"type": "Node2D"
+					}
+				}
+			]
+		},
+		{
 			"name": "SceneReplicationConfig",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -303507,6 +303592,17 @@
 					}
 				},
 				{
+					"name": "get_short_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
 					"name": "get_features",
 					"is_const": true,
 					"is_vararg": false,
@@ -308670,6 +308766,18 @@
 					"is_const": true,
 					"is_static": false,
 					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "_get_short_name",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 201670096,
