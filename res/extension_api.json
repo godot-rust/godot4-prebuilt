@@ -123220,58 +123220,7 @@
 					]
 				},
 				{
-					"name": "foldingRange",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3877611628,
-					"return_value": {
-						"type": "Array"
-					},
-					"arguments": [
-						{
-							"name": "params",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
-					"name": "codeLens",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3877611628,
-					"return_value": {
-						"type": "Array"
-					},
-					"arguments": [
-						{
-							"name": "params",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
 					"name": "documentLink",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3877611628,
-					"return_value": {
-						"type": "Array"
-					},
-					"arguments": [
-						{
-							"name": "params",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
-					"name": "colorPresentation",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -169954,6 +169903,28 @@
 					]
 				},
 				{
+					"name": "is_item_indeterminate",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3120086654,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "rid",
+							"type": "RID"
+						},
+						{
+							"name": "idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
 					"name": "is_item_checkable",
 					"is_const": true,
 					"is_vararg": false,
@@ -170305,6 +170276,29 @@
 						},
 						{
 							"name": "checked",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "set_item_indeterminate",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2658558584,
+					"arguments": [
+						{
+							"name": "rid",
+							"type": "RID"
+						},
+						{
+							"name": "idx",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "indeterminate",
 							"type": "bool"
 						}
 					]
@@ -232342,6 +232336,25 @@
 					]
 				},
 				{
+					"name": "set_item_indeterminate",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "indeterminate",
+							"type": "bool"
+						}
+					]
+				},
+				{
 					"name": "set_item_id",
 					"is_const": false,
 					"is_vararg": false,
@@ -232814,6 +232827,24 @@
 				},
 				{
 					"name": "is_item_checked",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "is_item_indeterminate",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
