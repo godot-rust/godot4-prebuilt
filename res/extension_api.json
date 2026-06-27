@@ -57968,6 +57968,31 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "set_reverse_sort",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "reverse_sort",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_reverse_sort",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"properties": [
@@ -57982,6 +58007,12 @@
 					"name": "vertical",
 					"setter": "set_vertical",
 					"getter": "is_vertical"
+				},
+				{
+					"type": "bool",
+					"name": "reverse_sort",
+					"setter": "set_reverse_sort",
+					"getter": "is_reverse_sort"
 				}
 			]
 		},
@@ -92414,10 +92445,20 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3995934104,
+					"hash": 663333327,
+					"hash_compatibility": [
+						3995934104
+					],
 					"return_value": {
 						"type": "typedarray::Rect2"
-					}
+					},
+					"arguments": [
+						{
+							"name": "screen",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
 				},
 				{
 					"name": "get_display_safe_area",
@@ -92425,10 +92466,20 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 410525958,
+					"hash": 2161169500,
+					"hash_compatibility": [
+						410525958
+					],
 					"return_value": {
 						"type": "Rect2i"
-					}
+					},
+					"arguments": [
+						{
+							"name": "screen",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
 				},
 				{
 					"name": "get_screen_count",
@@ -133220,8 +133271,16 @@
 							"value": 21
 						},
 						{
-							"name": "PARAM_MAX",
+							"name": "PARAM_LINEAR_DRIVE_FORCE_LIMIT",
 							"value": 22
+						},
+						{
+							"name": "PARAM_ANGULAR_DRIVE_TORQUE_LIMIT",
+							"value": 23
+						},
+						{
+							"name": "PARAM_MAX",
+							"value": 24
 						}
 					]
 				},
@@ -220728,8 +220787,16 @@
 							"value": 21
 						},
 						{
-							"name": "G6DOF_JOINT_MAX",
+							"name": "G6DOF_JOINT_LINEAR_DRIVE_FORCE_LIMIT",
 							"value": 22
+						},
+						{
+							"name": "G6DOF_JOINT_ANGULAR_DRIVE_TORQUE_LIMIT",
+							"value": 23
+						},
+						{
+							"name": "G6DOF_JOINT_MAX",
+							"value": 24
 						}
 					]
 				},
