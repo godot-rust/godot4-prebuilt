@@ -141286,6 +141286,56 @@
 					}
 				},
 				{
+					"name": "set_keep_partial_download",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_keeping_partial_download",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_append_to_download_file",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_appending_to_download_file",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "get_downloaded_bytes",
 					"is_const": true,
 					"is_vararg": false,
@@ -141437,6 +141487,18 @@
 					"name": "download_chunk_size",
 					"setter": "set_download_chunk_size",
 					"getter": "get_download_chunk_size"
+				},
+				{
+					"type": "bool",
+					"name": "keep_partial_download",
+					"setter": "set_keep_partial_download",
+					"getter": "is_keeping_partial_download"
+				},
+				{
+					"type": "bool",
+					"name": "append_to_download_file",
+					"setter": "set_append_to_download_file",
+					"getter": "is_appending_to_download_file"
 				},
 				{
 					"type": "bool",
@@ -298803,6 +298865,31 @@
 					]
 				},
 				{
+					"name": "set_selection_handle_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_selection_handle_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_line_wrapping_mode",
 					"is_const": false,
 					"is_vararg": false,
@@ -300435,6 +300522,12 @@
 					"name": "tab_input_mode",
 					"setter": "set_tab_input_mode",
 					"getter": "get_tab_input_mode"
+				},
+				{
+					"type": "bool",
+					"name": "selection_handle_enabled",
+					"setter": "set_selection_handle_enabled",
+					"getter": "is_selection_handle_enabled"
 				},
 				{
 					"type": "bool",
