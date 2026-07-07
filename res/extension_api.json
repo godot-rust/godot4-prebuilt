@@ -92445,7 +92445,7 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 663333327,
+					"hash": 1388654637,
 					"hash_compatibility": [
 						3995934104
 					],
@@ -92456,7 +92456,8 @@
 						{
 							"name": "screen",
 							"type": "int",
-							"meta": "int32"
+							"meta": "int32",
+							"default_value": "-1"
 						}
 					]
 				},
@@ -92466,7 +92467,7 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2161169500,
+					"hash": 2439012528,
 					"hash_compatibility": [
 						410525958
 					],
@@ -92477,7 +92478,8 @@
 						{
 							"name": "screen",
 							"type": "int",
-							"meta": "int32"
+							"meta": "int32",
+							"default_value": "-1"
 						}
 					]
 				},
