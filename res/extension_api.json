@@ -102759,6 +102759,17 @@
 			"api_type": "editor",
 			"methods": [
 				{
+					"name": "is_exiting",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "restart_editor",
 					"is_const": false,
 					"is_vararg": false,
