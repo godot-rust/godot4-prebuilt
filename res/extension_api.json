@@ -133318,6 +133318,10 @@
 							"value": 2
 						},
 						{
+							"name": "FLAG_ENABLE_ANGULAR_MOTOR",
+							"value": 4
+						},
+						{
 							"name": "FLAG_ENABLE_MOTOR",
 							"value": 4
 						},
@@ -220896,6 +220900,10 @@
 							"value": 3
 						},
 						{
+							"name": "G6DOF_JOINT_FLAG_ENABLE_ANGULAR_MOTOR",
+							"value": 4
+						},
+						{
 							"name": "G6DOF_JOINT_FLAG_ENABLE_MOTOR",
 							"value": 4
 						},
@@ -264831,6 +264839,23 @@
 					"return_value": {
 						"type": "int",
 						"meta": "int64"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_resource_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1703090593,
+					"return_value": {
+						"type": "String"
 					},
 					"arguments": [
 						{
