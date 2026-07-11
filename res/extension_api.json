@@ -44202,7 +44202,7 @@
 					"arguments": [
 						{
 							"name": "src_buffer",
-							"type": "const void*"
+							"type": "const AudioFrame*"
 						},
 						{
 							"name": "r_dst_buffer",
@@ -166805,7 +166805,7 @@
 						},
 						{
 							"name": "audio_frame_block",
-							"type": "const void*"
+							"type": "const int32_t*"
 						}
 					]
 				},
