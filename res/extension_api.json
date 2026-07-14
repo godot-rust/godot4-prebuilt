@@ -36353,12 +36353,6 @@
 					"getter": "get_auto_triangles"
 				},
 				{
-					"type": "PackedInt32Array",
-					"name": "triangles",
-					"setter": "_set_triangles",
-					"getter": "_get_triangles"
-				},
-				{
 					"type": "Vector2",
 					"name": "min_space",
 					"setter": "set_min_space",
@@ -273546,18 +273540,6 @@
 					]
 				},
 				{
-					"name": "request_save_history"
-				},
-				{
-					"name": "request_save_previous_state",
-					"arguments": [
-						{
-							"name": "state",
-							"type": "Dictionary"
-						}
-					]
-				},
-				{
 					"name": "request_help",
 					"arguments": [
 						{
@@ -273607,6 +273589,18 @@
 						{
 							"name": "method",
 							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "request_save_history"
+				},
+				{
+					"name": "request_save_previous_state",
+					"arguments": [
+						{
+							"name": "state",
+							"type": "Dictionary"
 						}
 					]
 				}
