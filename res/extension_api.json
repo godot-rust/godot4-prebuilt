@@ -98207,16 +98207,13 @@
 			],
 			"methods": [
 				{
-					"name": "_update_layout",
+					"name": "_update_layout_and_slot",
 					"is_const": false,
 					"is_static": false,
 					"is_required": false,
 					"is_vararg": false,
 					"is_virtual": true,
 					"hash": 3937882851,
-					"hash_compatibility": [
-						1286410249
-					],
 					"arguments": [
 						{
 							"name": "layout",
@@ -98265,6 +98262,22 @@
 						{
 							"name": "section",
 							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "_update_layout",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "layout",
+							"type": "int",
+							"meta": "int32"
 						}
 					]
 				},
