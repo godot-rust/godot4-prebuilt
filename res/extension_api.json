@@ -20966,7 +20966,7 @@
 					"hash": 2145562546,
 					"arguments": [
 						{
-							"name": "method",
+							"name": "callable",
 							"type": "Callable"
 						},
 						{
@@ -21004,7 +21004,7 @@
 					"hash": 2145562546,
 					"arguments": [
 						{
-							"name": "method",
+							"name": "callable",
 							"type": "Callable"
 						},
 						{
@@ -21216,7 +21216,7 @@
 					"hash": 4075186556,
 					"arguments": [
 						{
-							"name": "method",
+							"name": "callable",
 							"type": "Callable"
 						}
 					]
@@ -21230,7 +21230,7 @@
 					"hash": 4075186556,
 					"arguments": [
 						{
-							"name": "method",
+							"name": "callable",
 							"type": "Callable"
 						}
 					]
@@ -21244,7 +21244,7 @@
 					"hash": 4272450342,
 					"arguments": [
 						{
-							"name": "method",
+							"name": "callable",
 							"type": "Callable"
 						},
 						{
@@ -21263,7 +21263,7 @@
 					"hash": 4129521963,
 					"arguments": [
 						{
-							"name": "method",
+							"name": "callable",
 							"type": "Callable"
 						}
 					]
@@ -21277,7 +21277,7 @@
 					"hash": 4129521963,
 					"arguments": [
 						{
-							"name": "method",
+							"name": "callable",
 							"type": "Callable"
 						}
 					]
