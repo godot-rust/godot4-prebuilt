@@ -56395,6 +56395,10 @@
 						{
 							"name": "BLEND_MODE_DISABLED",
 							"value": 4
+						},
+						{
+							"name": "BLEND_MODE_PREMULTIPLIED_ALPHA",
+							"value": 5
 						}
 					]
 				}
