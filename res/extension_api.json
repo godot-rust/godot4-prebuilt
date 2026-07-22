@@ -61853,7 +61853,7 @@
 					"getter": "get_draw_order"
 				},
 				{
-					"type": "Mesh",
+					"type": "QuadMesh,BoxMesh,SphereMesh,CapsuleMesh,CylinderMesh,PrismMesh,TorusMesh,PlaneMesh,TextMesh,RibbonTrailMesh,TubeTrailMesh,PointMesh,ArrayMesh,ImmediateMesh,PlaceholderMesh,Mesh",
 					"name": "mesh",
 					"setter": "set_mesh",
 					"getter": "get_mesh"
@@ -78297,7 +78297,7 @@
 			],
 			"properties": [
 				{
-					"type": "Shape2D",
+					"type": "RectangleShape2D,CircleShape2D,CapsuleShape2D,SegmentShape2D,SeparationRayShape2D,WorldBoundaryShape2D,ConvexPolygonShape2D,ConcavePolygonShape2D,Shape2D",
 					"name": "shape",
 					"setter": "set_shape",
 					"getter": "get_shape"
@@ -78466,7 +78466,7 @@
 			],
 			"properties": [
 				{
-					"type": "Shape3D",
+					"type": "BoxShape3D,SphereShape3D,CapsuleShape3D,CylinderShape3D,SeparationRayShape3D,HeightMapShape3D,WorldBoundaryShape3D,ConvexPolygonShape3D,ConcavePolygonShape3D,Shape3D",
 					"name": "shape",
 					"setter": "set_shape",
 					"getter": "get_shape"
@@ -100728,6 +100728,28 @@
 						{
 							"name": "code",
 							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "add_apple_embedded_platform_spm_package",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3533781844,
+					"arguments": [
+						{
+							"name": "url",
+							"type": "String"
+						},
+						{
+							"name": "version",
+							"type": "String"
+						},
+						{
+							"name": "products",
+							"type": "PackedStringArray"
 						}
 					]
 				},
@@ -132230,28 +132252,28 @@
 					"getter": "get_draw_passes"
 				},
 				{
-					"type": "Mesh",
+					"type": "QuadMesh,BoxMesh,SphereMesh,CapsuleMesh,CylinderMesh,PrismMesh,TorusMesh,PlaneMesh,TextMesh,RibbonTrailMesh,TubeTrailMesh,PointMesh,ArrayMesh,ImmediateMesh,PlaceholderMesh,Mesh",
 					"name": "draw_pass_1",
 					"setter": "set_draw_pass_mesh",
 					"getter": "get_draw_pass_mesh",
 					"index": 0
 				},
 				{
-					"type": "Mesh",
+					"type": "QuadMesh,BoxMesh,SphereMesh,CapsuleMesh,CylinderMesh,PrismMesh,TorusMesh,PlaneMesh,TextMesh,RibbonTrailMesh,TubeTrailMesh,PointMesh,ArrayMesh,ImmediateMesh,PlaceholderMesh,Mesh",
 					"name": "draw_pass_2",
 					"setter": "set_draw_pass_mesh",
 					"getter": "get_draw_pass_mesh",
 					"index": 1
 				},
 				{
-					"type": "Mesh",
+					"type": "QuadMesh,BoxMesh,SphereMesh,CapsuleMesh,CylinderMesh,PrismMesh,TorusMesh,PlaneMesh,TextMesh,RibbonTrailMesh,TubeTrailMesh,PointMesh,ArrayMesh,ImmediateMesh,PlaceholderMesh,Mesh",
 					"name": "draw_pass_3",
 					"setter": "set_draw_pass_mesh",
 					"getter": "get_draw_pass_mesh",
 					"index": 2
 				},
 				{
-					"type": "Mesh",
+					"type": "QuadMesh,BoxMesh,SphereMesh,CapsuleMesh,CylinderMesh,PrismMesh,TorusMesh,PlaneMesh,TextMesh,RibbonTrailMesh,TubeTrailMesh,PointMesh,ArrayMesh,ImmediateMesh,PlaceholderMesh,Mesh",
 					"name": "draw_pass_4",
 					"setter": "set_draw_pass_mesh",
 					"getter": "get_draw_pass_mesh",
@@ -165096,7 +165118,7 @@
 			],
 			"properties": [
 				{
-					"type": "Mesh",
+					"type": "BoxMesh,SphereMesh,CapsuleMesh,CylinderMesh,PrismMesh,TorusMesh,PlaneMesh,QuadMesh,TextMesh,RibbonTrailMesh,TubeTrailMesh,PointMesh,ArrayMesh,ImmediateMesh,PlaceholderMesh,Mesh",
 					"name": "mesh",
 					"setter": "set_mesh",
 					"getter": "get_mesh"
@@ -165428,7 +165450,7 @@
 			],
 			"properties": [
 				{
-					"type": "Mesh",
+					"type": "BoxMesh,SphereMesh,CapsuleMesh,CylinderMesh,PrismMesh,TorusMesh,PlaneMesh,QuadMesh,TextMesh,RibbonTrailMesh,TubeTrailMesh,PointMesh,ArrayMesh,ImmediateMesh,PlaceholderMesh,Mesh",
 					"name": "mesh",
 					"setter": "set_mesh",
 					"getter": "get_mesh"
@@ -167350,7 +167372,7 @@
 					"getter": "get_visible_instance_count"
 				},
 				{
-					"type": "Mesh",
+					"type": "BoxMesh,SphereMesh,CapsuleMesh,CylinderMesh,PrismMesh,TorusMesh,PlaneMesh,QuadMesh,TextMesh,RibbonTrailMesh,TubeTrailMesh,PointMesh,ArrayMesh,ImmediateMesh,PlaceholderMesh,Mesh",
 					"name": "mesh",
 					"setter": "set_mesh",
 					"getter": "get_mesh"
@@ -189831,7 +189853,7 @@
 					"getter": "is_generating_mipmaps"
 				},
 				{
-					"type": "Noise",
+					"type": "FastNoiseLite,Noise",
 					"name": "noise",
 					"setter": "set_noise",
 					"getter": "get_noise"
@@ -190111,7 +190133,7 @@
 					"getter": "get_depth"
 				},
 				{
-					"type": "Noise",
+					"type": "FastNoiseLite,Noise",
 					"name": "noise",
 					"setter": "set_noise",
 					"getter": "get_noise"
@@ -294095,6 +294117,32 @@
 					]
 				},
 				{
+					"name": "SizingMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "TAB_SIZING_FIT_CONTENT",
+							"value": 0
+						},
+						{
+							"name": "TAB_SIZING_UNIFORM",
+							"value": 1
+						},
+						{
+							"name": "TAB_SIZING_JUSTIFY",
+							"value": 2
+						},
+						{
+							"name": "TAB_SIZING_EXPAND",
+							"value": 3
+						},
+						{
+							"name": "TAB_SIZING_MAX",
+							"value": 4
+						}
+					]
+				},
+				{
 					"name": "CloseButtonDisplayPolicy",
 					"is_bitfield": false,
 					"values": [
@@ -294657,6 +294705,31 @@
 					}
 				},
 				{
+					"name": "set_tab_sizing",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3891044528,
+					"arguments": [
+						{
+							"name": "tab_sizing",
+							"type": "enum::TabBar.SizingMode"
+						}
+					]
+				},
+				{
+					"name": "get_tab_sizing",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2145546792,
+					"return_value": {
+						"type": "enum::TabBar.SizingMode"
+					}
+				},
+				{
 					"name": "set_clip_tabs",
 					"is_const": false,
 					"is_vararg": false,
@@ -295108,6 +295181,12 @@
 					"getter": "get_tab_alignment"
 				},
 				{
+					"type": "int",
+					"name": "tab_sizing",
+					"setter": "set_tab_sizing",
+					"getter": "get_tab_sizing"
+				},
+				{
 					"type": "bool",
 					"name": "clip_tabs",
 					"setter": "set_clip_tabs",
@@ -295344,6 +295423,31 @@
 					"hash": 2178122193,
 					"return_value": {
 						"type": "enum::TabBar.AlignmentMode"
+					}
+				},
+				{
+					"name": "set_tab_sizing",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3891044528,
+					"arguments": [
+						{
+							"name": "tab_sizing",
+							"type": "enum::TabBar.SizingMode"
+						}
+					]
+				},
+				{
+					"name": "get_tab_sizing",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2145546792,
+					"return_value": {
+						"type": "enum::TabBar.SizingMode"
 					}
 				},
 				{
@@ -296023,6 +296127,12 @@
 					"name": "tab_alignment",
 					"setter": "set_tab_alignment",
 					"getter": "get_tab_alignment"
+				},
+				{
+					"type": "int",
+					"name": "tab_sizing",
+					"setter": "set_tab_sizing",
+					"getter": "get_tab_sizing"
 				},
 				{
 					"type": "int",
