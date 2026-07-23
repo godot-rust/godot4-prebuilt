@@ -268818,6 +268818,40 @@
 					}
 				},
 				{
+					"name": "get_velocity_at_local_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2656412154,
+					"return_value": {
+						"type": "Vector2"
+					},
+					"arguments": [
+						{
+							"name": "local_position",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
+					"name": "get_velocity_at_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2656412154,
+					"return_value": {
+						"type": "Vector2"
+					},
+					"arguments": [
+						{
+							"name": "global_point",
+							"type": "Vector2"
+						}
+					]
+				},
+				{
 					"name": "set_axis_velocity",
 					"is_const": false,
 					"is_vararg": false,
@@ -269879,6 +269913,40 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "get_velocity_at_local_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 192990374,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "local_position",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "get_velocity_at_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 192990374,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "global_point",
+							"type": "Vector3"
+						}
+					]
 				},
 				{
 					"name": "set_axis_velocity",
