@@ -5254,11 +5254,11 @@ pub type GDExtensionInterfaceObjectGetScriptInstance = ::std::option::Option<
         p_language: GDExtensionObjectPtr,
     ) -> GDExtensionScriptInstanceDataPtr,
 >;
-#[doc = " @name object_set_script_instance\n @since 4.5\n\n Set the script instance data attached to this object.\n\n @param p_object A pointer to the Object.\n @param p_script_instance A pointer to the script instance data to attach to this object."]
+#[doc = " @name object_set_script_instance\n @since 4.5\n\n Set the script instance attached to this object.\n\n @param p_object A pointer to the Object.\n @param p_script_instance A pointer to the script instance to attach to this object. Create a script instance through the latest version of \"script_instance_create()\"."]
 pub type GDExtensionInterfaceObjectSetScriptInstance = ::std::option::Option<
     unsafe extern "C" fn(
         p_object: GDExtensionObjectPtr,
-        p_script_instance: GDExtensionScriptInstanceDataPtr,
+        p_script_instance: GDExtensionScriptInstancePtr,
     ),
 >;
 #[doc = " @name callable_custom_create\n @since 4.2\n @deprecated Deprecated in Godot 4.3. Use `callable_custom_create2` instead.\n\n Creates a custom Callable object from a function pointer.\n\n Provided struct can be safely freed once the function returns.\n\n @param r_callable A pointer that will receive the new Callable.\n @param p_callable_custom_info The info required to construct a Callable."]
