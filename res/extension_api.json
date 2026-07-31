@@ -273635,9 +273635,6 @@
 					"name": "name_changed"
 				},
 				{
-					"name": "edited_script_changed"
-				},
-				{
 					"name": "search_in_files_requested",
 					"arguments": [
 						{
@@ -273710,6 +273707,9 @@
 							"type": "Dictionary"
 						}
 					]
+				},
+				{
+					"name": "edited_script_changed"
 				}
 			]
 		},
