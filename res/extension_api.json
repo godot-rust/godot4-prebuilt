@@ -102490,6 +102490,31 @@
 							"default_value": "null"
 						}
 					]
+				},
+				{
+					"name": "set_property_clipboard",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1114965689,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "Variant"
+						}
+					]
+				},
+				{
+					"name": "get_property_clipboard",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1460262497,
+					"return_value": {
+						"type": "Variant"
+					}
 				}
 			],
 			"signals": [
