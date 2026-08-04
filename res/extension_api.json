@@ -201068,6 +201068,36 @@
 							"value": 1000763000
 						}
 					]
+				},
+				{
+					"name": "TrackingState",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "TRACKING_UNSUPPORTED_CAPABILITY",
+							"value": -3
+						},
+						{
+							"name": "TRACKING_NO_PERMISSION",
+							"value": -2
+						},
+						{
+							"name": "TRACKING_SETUP_FAILED",
+							"value": -1
+						},
+						{
+							"name": "TRACKING_NOT_ACTIVE",
+							"value": 0
+						},
+						{
+							"name": "TRACKING_SETTING_UP",
+							"value": 1
+						},
+						{
+							"name": "TRACKING_ENABLED",
+							"value": 2
+						}
+					]
 				}
 			],
 			"methods": [
@@ -201115,7 +201145,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1874506473,
+					"hash": 1586751596,
+					"hash_compatibility": [
+						1874506473
+					],
 					"return_value": {
 						"type": "OpenXRFutureResult"
 					},
@@ -201131,6 +201164,11 @@
 						},
 						{
 							"name": "user_callback",
+							"type": "Callable",
+							"default_value": "Callable()"
+						},
+						{
+							"name": "failed_callback",
 							"type": "Callable",
 							"default_value": "Callable()"
 						}
@@ -201812,6 +201850,30 @@
 			"is_instantiable": true,
 			"inherits": "OpenXRExtensionWrapper",
 			"api_type": "core",
+			"enums": [
+				{
+					"name": "MarkerTypeFlags",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "MARKER_QR_CODE",
+							"value": 1
+						},
+						{
+							"name": "MARKER_MICRO_QR_CODE",
+							"value": 2
+						},
+						{
+							"name": "MARKER_ARUCO",
+							"value": 4
+						},
+						{
+							"name": "MARKER_APRIL_TAG",
+							"value": 8
+						}
+					]
+				}
+			],
 			"methods": [
 				{
 					"name": "is_qrcode_supported",
@@ -201918,6 +201980,49 @@
 							"name": "next_snapshot_query",
 							"type": "OpenXRStructureBase",
 							"default_value": "null"
+						}
+					]
+				},
+				{
+					"name": "get_built_in_tracking_state",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 434811308,
+					"return_value": {
+						"type": "enum::OpenXRSpatialEntityExtension.TrackingState"
+					}
+				},
+				{
+					"name": "start_built_in_tracking",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4090240782,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "marker_types",
+							"type": "bitfield::OpenXRSpatialMarkerTrackingCapability.MarkerTypeFlags"
+						}
+					]
+				},
+				{
+					"name": "stop_built_in_tracking",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3216645846,
+					"arguments": [
+						{
+							"name": "clear_trackers",
+							"type": "bool",
+							"default_value": "true"
 						}
 					]
 				}
