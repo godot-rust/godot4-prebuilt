@@ -199123,6 +199123,28 @@
 					}
 				},
 				{
+					"name": "get_vertices",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2961356807,
+					"return_value": {
+						"type": "PackedVector2Array"
+					}
+				},
+				{
+					"name": "get_indices",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1930428628,
+					"return_value": {
+						"type": "PackedInt32Array"
+					}
+				},
+				{
 					"name": "get_mesh",
 					"is_const": false,
 					"is_vararg": false,
@@ -202079,6 +202101,43 @@
 							"name": "user_callback",
 							"type": "Callable",
 							"default_value": "Callable()"
+						}
+					]
+				},
+				{
+					"name": "get_built_in_tracking_state",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 434811308,
+					"return_value": {
+						"type": "enum::OpenXRSpatialEntityExtension.TrackingState"
+					}
+				},
+				{
+					"name": "start_built_in_tracking",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2240911060,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "stop_built_in_tracking",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3216645846,
+					"arguments": [
+						{
+							"name": "clear_trackers",
+							"type": "bool",
+							"default_value": "true"
 						}
 					]
 				}
