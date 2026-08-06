@@ -246876,6 +246876,10 @@
 						{
 							"name": "SUPPORTS_HDR_OUTPUT",
 							"value": 13
+						},
+						{
+							"name": "SUPPORTS_RASTERIZATION_RATE_MAP",
+							"value": 14
 						}
 					]
 				},
@@ -355493,6 +355497,10 @@
 						{
 							"name": "XR_VRS_TEXTURE_FORMAT_FRAGMENT_DENSITY_MAP",
 							"value": 2
+						},
+						{
+							"name": "XR_VRS_TEXTURE_FORMAT_RASTERIZATION_RATE_MAP",
+							"value": 3
 						}
 					]
 				}
