@@ -52212,7 +52212,29 @@
 					]
 				},
 				{
+					"name": "press",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
 					"name": "set_pressed",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "pressed",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "set_pressed_no_signal",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -52235,20 +52257,6 @@
 					"return_value": {
 						"type": "bool"
 					}
-				},
-				{
-					"name": "set_pressed_no_signal",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "pressed",
-							"type": "bool"
-						}
-					]
 				},
 				{
 					"name": "is_hovered",
