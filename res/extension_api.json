@@ -89733,6 +89733,10 @@
 				{
 					"name": "INVALID_INDICATOR_ID",
 					"value": -1
+				},
+				{
+					"name": "INVALID_NOTIFICATION_ID",
+					"value": -1
 				}
 			],
 			"enums": [
@@ -90717,6 +90721,24 @@
 						{
 							"name": "WINDOW_EDGE_MAX",
 							"value": 8
+						}
+					]
+				},
+				{
+					"name": "NotificationStatus",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "NOTIFICATION_ACTIVATED",
+							"value": 0
+						},
+						{
+							"name": "NOTIFICATION_DISMISSED",
+							"value": 1
+						},
+						{
+							"name": "NOTIFICATION_FAILED",
+							"value": 2
 						}
 					]
 				},
@@ -95758,6 +95780,51 @@
 							"name": "hotspot",
 							"type": "Vector2",
 							"default_value": "Vector2(0, 0)"
+						}
+					]
+				},
+				{
+					"name": "send_toast_notification",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3914862447,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "title",
+							"type": "String"
+						},
+						{
+							"name": "text",
+							"type": "String"
+						},
+						{
+							"name": "image",
+							"type": "Texture2D"
+						},
+						{
+							"name": "callback",
+							"type": "Callable"
+						}
+					]
+				},
+				{
+					"name": "hide_toast_notification",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "id",
+							"type": "int",
+							"meta": "int32"
 						}
 					]
 				},
@@ -146440,6 +146507,43 @@
 				},
 				{
 					"name": "is_joy_motion_sensors_calibrating",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1116898809,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_joy_motion_sensors_auto_calibration_enabled",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 300928843,
+					"arguments": [
+						{
+							"name": "device",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_joy_motion_sensors_auto_calibration_enabled",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
