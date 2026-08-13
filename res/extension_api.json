@@ -275170,6 +275170,18 @@
 					}
 				},
 				{
+					"name": "_get_recognized_extensions",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1139954409,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
+				},
+				{
 					"name": "_supports_builtin_mode",
 					"is_const": true,
 					"is_static": false,
@@ -275748,18 +275760,6 @@
 							"type": "bool"
 						}
 					]
-				},
-				{
-					"name": "_get_recognized_extensions",
-					"is_const": true,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 1139954409,
-					"return_value": {
-						"type": "PackedStringArray"
-					}
 				},
 				{
 					"name": "_get_public_functions",
