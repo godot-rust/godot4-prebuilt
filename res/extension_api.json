@@ -52212,29 +52212,7 @@
 					]
 				},
 				{
-					"name": "press",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
 					"name": "set_pressed",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "pressed",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "set_pressed_no_signal",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -52257,6 +52235,20 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "set_pressed_no_signal",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "pressed",
+							"type": "bool"
+						}
+					]
 				},
 				{
 					"name": "is_hovered",
@@ -84474,43 +84466,6 @@
 					]
 				},
 				{
-					"name": "set_global",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 300928843,
-					"arguments": [
-						{
-							"name": "index",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "enabled",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_global",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1116898809,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
 					"name": "set_relative",
 					"is_const": false,
 					"is_vararg": false,
@@ -85173,43 +85128,6 @@
 				},
 				{
 					"name": "is_axis_z_inverted",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1116898809,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "index",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_global",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 300928843,
-					"arguments": [
-						{
-							"name": "index",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "enabled",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_global",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -89733,10 +89651,6 @@
 				{
 					"name": "INVALID_INDICATOR_ID",
 					"value": -1
-				},
-				{
-					"name": "INVALID_NOTIFICATION_ID",
-					"value": -1
 				}
 			],
 			"enums": [
@@ -90721,24 +90635,6 @@
 						{
 							"name": "WINDOW_EDGE_MAX",
 							"value": 8
-						}
-					]
-				},
-				{
-					"name": "NotificationStatus",
-					"is_bitfield": false,
-					"values": [
-						{
-							"name": "NOTIFICATION_ACTIVATED",
-							"value": 0
-						},
-						{
-							"name": "NOTIFICATION_DISMISSED",
-							"value": 1
-						},
-						{
-							"name": "NOTIFICATION_FAILED",
-							"value": 2
 						}
 					]
 				},
@@ -95784,51 +95680,6 @@
 					]
 				},
 				{
-					"name": "send_toast_notification",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3914862447,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					},
-					"arguments": [
-						{
-							"name": "title",
-							"type": "String"
-						},
-						{
-							"name": "text",
-							"type": "String"
-						},
-						{
-							"name": "image",
-							"type": "Texture2D"
-						},
-						{
-							"name": "callback",
-							"type": "Callable"
-						}
-					]
-				},
-				{
-					"name": "hide_toast_notification",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1286410249,
-					"arguments": [
-						{
-							"name": "id",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
 					"name": "get_swap_cancel_ok",
 					"is_const": false,
 					"is_vararg": false,
@@ -97853,21 +97704,6 @@
 				}
 			],
 			"methods": [
-				{
-					"name": "_get_menu_options",
-					"is_const": false,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 4155329257,
-					"arguments": [
-						{
-							"name": "data",
-							"type": "typeddictionary::StringName;Variant"
-						}
-					]
-				},
 				{
 					"name": "_popup_menu",
 					"is_const": false,
@@ -146524,43 +146360,6 @@
 					]
 				},
 				{
-					"name": "set_joy_motion_sensors_auto_calibration_enabled",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 300928843,
-					"arguments": [
-						{
-							"name": "device",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_joy_motion_sensors_auto_calibration_enabled",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1116898809,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "device",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
 					"name": "get_joy_touchpad_finger_position",
 					"is_const": true,
 					"is_vararg": false,
@@ -151828,53 +151627,6 @@
 					"hash": 2722473700,
 					"return_value": {
 						"type": "Quaternion"
-					},
-					"arguments": [
-						{
-							"name": "index",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "joint",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "set_joint_use_rest_for_limitation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1383440665,
-					"arguments": [
-						{
-							"name": "index",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "joint",
-							"type": "int",
-							"meta": "int32"
-						},
-						{
-							"name": "enabled",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_joint_using_rest_for_limitation",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2522259332,
-					"return_value": {
-						"type": "bool"
 					},
 					"arguments": [
 						{
@@ -161895,31 +161647,6 @@
 					}
 				},
 				{
-					"name": "set_use_rest_for_limitation",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enabled",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_using_rest_for_limitation",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
 					"name": "set_primary_limit_angle",
 					"is_const": false,
 					"is_vararg": false,
@@ -162380,12 +162107,6 @@
 					"name": "use_angle_limitation",
 					"setter": "set_use_angle_limitation",
 					"getter": "is_using_angle_limitation"
-				},
-				{
-					"type": "bool",
-					"name": "use_rest_for_limitation",
-					"setter": "set_use_rest_for_limitation",
-					"getter": "is_using_rest_for_limitation"
 				},
 				{
 					"type": "bool",
@@ -199402,28 +199123,6 @@
 					}
 				},
 				{
-					"name": "get_vertices",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2961356807,
-					"return_value": {
-						"type": "PackedVector2Array"
-					}
-				},
-				{
-					"name": "get_indices",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1930428628,
-					"return_value": {
-						"type": "PackedInt32Array"
-					}
-				},
-				{
 					"name": "get_mesh",
 					"is_const": false,
 					"is_vararg": false,
@@ -202382,43 +202081,6 @@
 							"default_value": "Callable()"
 						}
 					]
-				},
-				{
-					"name": "get_built_in_tracking_state",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 434811308,
-					"return_value": {
-						"type": "enum::OpenXRSpatialEntityExtension.TrackingState"
-					}
-				},
-				{
-					"name": "start_built_in_tracking",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2240911060,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "stop_built_in_tracking",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3216645846,
-					"arguments": [
-						{
-							"name": "clear_trackers",
-							"type": "bool",
-							"default_value": "true"
-						}
-					]
 				}
 			]
 		},
@@ -202494,25 +202156,6 @@
 					"is_required": false,
 					"is_vararg": false,
 					"is_virtual": true,
-					"hash": 3744713108,
-					"return_value": {
-						"type": "int",
-						"meta": "uint64"
-					},
-					"arguments": [
-						{
-							"name": "next",
-							"type": "int",
-							"meta": "uint64"
-						}
-					]
-				},
-				{
-					"name": "get_header",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
 					"hash": 3744713108,
 					"return_value": {
 						"type": "int",
@@ -247174,10 +246817,6 @@
 						{
 							"name": "SUPPORTS_HDR_OUTPUT",
 							"value": 13
-						},
-						{
-							"name": "SUPPORTS_RASTERIZATION_RATE_MAP",
-							"value": 14
 						}
 					]
 				},
@@ -275170,18 +274809,6 @@
 					}
 				},
 				{
-					"name": "_get_recognized_extensions",
-					"is_const": true,
-					"is_static": false,
-					"is_required": false,
-					"is_vararg": false,
-					"is_virtual": true,
-					"hash": 1139954409,
-					"return_value": {
-						"type": "PackedStringArray"
-					}
-				},
-				{
 					"name": "_supports_builtin_mode",
 					"is_const": true,
 					"is_static": false,
@@ -275760,6 +275387,18 @@
 							"type": "bool"
 						}
 					]
+				},
+				{
+					"name": "_get_recognized_extensions",
+					"is_const": true,
+					"is_static": false,
+					"is_required": true,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 1139954409,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
 				},
 				{
 					"name": "_get_public_functions",
@@ -355795,10 +355434,6 @@
 						{
 							"name": "XR_VRS_TEXTURE_FORMAT_FRAGMENT_DENSITY_MAP",
 							"value": 2
-						},
-						{
-							"name": "XR_VRS_TEXTURE_FORMAT_RASTERIZATION_RATE_MAP",
-							"value": 3
 						}
 					]
 				}
