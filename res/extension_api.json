@@ -158170,6 +158170,33 @@
 					"return_value": {
 						"type": "CameraAttributes"
 					}
+				},
+				{
+					"name": "set_specular_intensity",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 373806689,
+					"arguments": [
+						{
+							"name": "specular_intensity",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_specular_intensity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
 				}
 			],
 			"properties": [
@@ -158208,6 +158235,12 @@
 					"name": "directional",
 					"setter": "set_directional",
 					"getter": "is_directional"
+				},
+				{
+					"type": "float",
+					"name": "specular_intensity",
+					"setter": "set_specular_intensity",
+					"getter": "get_specular_intensity"
 				},
 				{
 					"type": "int",
