@@ -98842,6 +98842,31 @@
 					}
 				},
 				{
+					"name": "set_allow_switch_screen",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "allow",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_allow_switch_screen",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_icon_name",
 					"is_const": false,
 					"is_vararg": false,
@@ -99130,6 +99155,12 @@
 					"name": "closable",
 					"setter": "set_closable",
 					"getter": "is_closable"
+				},
+				{
+					"type": "bool",
+					"name": "allow_switch_screen",
+					"setter": "set_allow_switch_screen",
+					"getter": "is_allow_switch_screen"
 				},
 				{
 					"type": "StringName",
