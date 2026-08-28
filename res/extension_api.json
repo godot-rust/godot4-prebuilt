@@ -88974,28 +88974,28 @@
 					"getter": "get_size"
 				},
 				{
-					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture",
+					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture,-StreamedTexture2D",
 					"name": "texture_albedo",
 					"setter": "set_texture",
 					"getter": "get_texture",
 					"index": 0
 				},
 				{
-					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture",
+					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture,-StreamedTexture2D",
 					"name": "texture_normal",
 					"setter": "set_texture",
 					"getter": "get_texture",
 					"index": 1
 				},
 				{
-					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture",
+					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture,-StreamedTexture2D",
 					"name": "texture_orm",
 					"setter": "set_texture",
 					"getter": "get_texture",
 					"index": 2
 				},
 				{
-					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture",
+					"type": "Texture2D,-AnimatedTexture,-AtlasTexture,-CameraTexture,-CanvasTexture,-MeshTexture,-Texture2DRD,-ViewportTexture,-StreamedTexture2D",
 					"name": "texture_emission",
 					"setter": "set_texture",
 					"getter": "get_texture",
@@ -209154,8 +209154,12 @@
 							"value": 58
 						},
 						{
-							"name": "MONITOR_MAX",
+							"name": "RENDER_STREAMING_TEXTURE_MEM_USED",
 							"value": 59
+						},
+						{
+							"name": "MONITOR_MAX",
+							"value": 60
 						}
 					]
 				},
@@ -254232,6 +254236,24 @@
 					]
 				},
 				{
+					"name": "texture_replace_compatible",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 395945892,
+					"arguments": [
+						{
+							"name": "texture",
+							"type": "RID"
+						},
+						{
+							"name": "by_texture",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "texture_set_size_override",
 					"is_const": false,
 					"is_vararg": false,
@@ -265618,6 +265640,13 @@
 		},
 		{
 			"name": "ResourceImporterShaderFile",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "ResourceImporter",
+			"api_type": "editor"
+		},
+		{
+			"name": "ResourceImporterStreamedTexture",
 			"is_refcounted": true,
 			"is_instantiable": true,
 			"inherits": "ResourceImporter",
@@ -292199,6 +292228,117 @@
 			]
 		},
 		{
+			"name": "StreamedTexture2D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Texture2D",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "load",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 166001499,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_load_path",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_max_lod_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_lod",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_max_lod_override",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_min_lod_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "min_lod",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_min_lod_override",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "load_path",
+					"setter": "load",
+					"getter": "get_load_path"
+				},
+				{
+					"type": "int",
+					"name": "max_lod_override",
+					"setter": "set_max_lod_override",
+					"getter": "get_max_lod_override"
+				},
+				{
+					"type": "int",
+					"name": "min_lod_override",
+					"setter": "set_min_lod_override",
+					"getter": "get_min_lod_override"
+				}
+			]
+		},
+		{
 			"name": "StyleBox",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -317995,6 +318135,141 @@
 					"name": "flip_v",
 					"setter": "set_flip_v",
 					"getter": "is_flipped_v"
+				}
+			]
+		},
+		{
+			"name": "TextureStreaming",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "Object",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_min_lod_override",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_min_lod_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "min_lod",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_max_lod_override",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_max_lod_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_lod",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_memory_budget_mb_override",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
+					"name": "set_memory_budget_mb_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "mb",
+							"type": "int",
+							"meta": "uint32"
+						}
+					]
+				},
+				{
+					"name": "get_memory_budget_bytes_used",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					}
+				},
+				{
+					"name": "flush_texture_streaming",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				}
+			],
+			"signals": [
+				{
+					"name": "flush_completed"
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "min_lod_override",
+					"setter": "set_min_lod_override",
+					"getter": "get_min_lod_override"
+				},
+				{
+					"type": "int",
+					"name": "max_lod_override",
+					"setter": "set_max_lod_override",
+					"getter": "get_max_lod_override"
+				},
+				{
+					"type": "int",
+					"name": "memory_budget_mb_override",
+					"setter": "set_memory_budget_mb_override",
+					"getter": "get_memory_budget_mb_override"
 				}
 			]
 		},
@@ -360790,6 +361065,10 @@
 		{
 			"name": "ThemeDB",
 			"type": "ThemeDB"
+		},
+		{
+			"name": "TextureStreaming",
+			"type": "TextureStreaming"
 		},
 		{
 			"name": "EditorInterface",
