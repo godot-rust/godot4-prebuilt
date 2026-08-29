@@ -246899,6 +246899,10 @@
 						{
 							"name": "TEXTURE_SLICE_3D",
 							"value": 2
+						},
+						{
+							"name": "TEXTURE_SLICE_2D_ARRAY",
+							"value": 3
 						}
 					]
 				},
@@ -248192,8 +248196,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1808971279,
+					"hash": 1274035419,
 					"hash_compatibility": [
+						1808971279,
 						864132525
 					],
 					"return_value": {
@@ -248227,6 +248232,12 @@
 						{
 							"name": "slice_type",
 							"type": "enum::RenderingDevice.TextureSliceType",
+							"default_value": "0"
+						},
+						{
+							"name": "layers",
+							"type": "int",
+							"meta": "uint32",
 							"default_value": "0"
 						}
 					]
