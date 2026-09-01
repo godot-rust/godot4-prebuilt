@@ -90691,6 +90691,24 @@
 					]
 				},
 				{
+					"name": "SensorOrientation",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "SENSOR_ORIENTATION_UNDEFINED",
+							"value": 0
+						},
+						{
+							"name": "SENSOR_ORIENTATION_PORTRAIT",
+							"value": 1
+						},
+						{
+							"name": "SENSOR_ORIENTATION_LANDSCAPE",
+							"value": 2
+						}
+					]
+				},
+				{
 					"name": "VirtualKeyboardType",
 					"is_bitfield": false,
 					"values": [
@@ -96844,7 +96862,7 @@
 					"arguments": [
 						{
 							"name": "orientation",
-							"type": "int"
+							"type": "enum::DisplayServer.SensorOrientation"
 						}
 					]
 				}
@@ -143463,7 +143481,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1633102583,
+					"hash": 991832544,
+					"hash_compatibility": [
+						1633102583
+					],
 					"return_value": {
 						"type": "enum::Error"
 					},
@@ -143472,6 +143493,17 @@
 							"name": "renormalize",
 							"type": "bool",
 							"default_value": "false"
+						},
+						{
+							"name": "preserve_alpha_test_coverage",
+							"type": "bool",
+							"default_value": "false"
+						},
+						{
+							"name": "alpha_test_threshold",
+							"type": "float",
+							"meta": "float",
+							"default_value": "0.5"
 						}
 					]
 				},
@@ -146655,6 +146687,17 @@
 					}
 				},
 				{
+					"name": "get_device_orientation",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1222331677,
+					"return_value": {
+						"type": "Quaternion"
+					}
+				},
+				{
 					"name": "get_joy_accelerometer",
 					"is_const": true,
 					"is_vararg": false,
@@ -147092,6 +147135,20 @@
 						{
 							"name": "value",
 							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "set_device_orientation",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1727505552,
+					"arguments": [
+						{
+							"name": "value",
+							"type": "Quaternion"
 						}
 					]
 				},
@@ -272385,6 +272442,17 @@
 						"type": "Node2D"
 					}
 				}
+			],
+			"signals": [
+				{
+					"name": "scene_painted",
+					"arguments": [
+						{
+							"name": "node",
+							"type": "Node2D"
+						}
+					]
+				}
 			]
 		},
 		{
@@ -277633,6 +277701,20 @@
 							"name": "get_groups",
 							"type": "bool",
 							"default_value": "false"
+						}
+					]
+				},
+				{
+					"name": "set_include_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
 						}
 					]
 				},
@@ -285806,6 +285888,31 @@
 					}
 				},
 				{
+					"name": "set_format",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "format",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_format",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
 					"name": "set_suffix",
 					"is_const": false,
 					"is_vararg": false,
@@ -286020,6 +286127,12 @@
 					"name": "update_on_text_changed",
 					"setter": "set_update_on_text_changed",
 					"getter": "get_update_on_text_changed"
+				},
+				{
+					"type": "String",
+					"name": "format",
+					"setter": "set_format",
+					"getter": "get_format"
 				},
 				{
 					"type": "String",
