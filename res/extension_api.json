@@ -266669,6 +266669,31 @@
 					}
 				},
 				{
+					"name": "set_copy_bone_skin_scale",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_copying_bone_skin_scale",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_use_global_pose",
 					"is_const": false,
 					"is_vararg": false,
@@ -266800,6 +266825,12 @@
 					"name": "profile",
 					"setter": "set_profile",
 					"getter": "get_profile"
+				},
+				{
+					"type": "bool",
+					"name": "copy_bone_skin_scale",
+					"setter": "set_copy_bone_skin_scale",
+					"getter": "is_copying_bone_skin_scale"
 				},
 				{
 					"type": "bool",
