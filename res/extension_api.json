@@ -3733,8 +3733,12 @@
 					"value": 44
 				},
 				{
-					"name": "PROPERTY_HINT_MAX",
+					"name": "PROPERTY_HINT_AUDIO_BUS",
 					"value": 45
+				},
+				{
+					"name": "PROPERTY_HINT_MAX",
+					"value": 46
 				}
 			]
 		},
@@ -52912,8 +52916,12 @@
 							"value": 12
 						},
 						{
-							"name": "FEATURE_MAX",
+							"name": "FEATURE_PARTICLES_ANIMATION",
 							"value": 13
+						},
+						{
+							"name": "FEATURE_MAX",
+							"value": 14
 						}
 					]
 				},
@@ -56035,6 +56043,13 @@
 					"setter": "set_flag",
 					"getter": "get_flag",
 					"index": 5
+				},
+				{
+					"type": "bool",
+					"name": "particles_anim_enabled",
+					"setter": "set_feature",
+					"getter": "get_feature",
+					"index": 13
 				},
 				{
 					"type": "int",
@@ -285944,6 +285959,56 @@
 					}
 				},
 				{
+					"name": "set_plural_format",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 83702148,
+					"arguments": [
+						{
+							"name": "format",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_plural_format",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_format_auto_translate_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 776149714,
+					"arguments": [
+						{
+							"name": "mode",
+							"type": "enum::Node.AutoTranslateMode"
+						}
+					]
+				},
+				{
+					"name": "get_format_auto_translate_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2498906432,
+					"return_value": {
+						"type": "enum::Node.AutoTranslateMode"
+					}
+				},
+				{
 					"name": "set_suffix",
 					"is_const": false,
 					"is_vararg": false,
@@ -286160,24 +286225,6 @@
 					"getter": "get_update_on_text_changed"
 				},
 				{
-					"type": "String",
-					"name": "format",
-					"setter": "set_format",
-					"getter": "get_format"
-				},
-				{
-					"type": "String",
-					"name": "prefix",
-					"setter": "set_prefix",
-					"getter": "get_prefix"
-				},
-				{
-					"type": "String",
-					"name": "suffix",
-					"setter": "set_suffix",
-					"getter": "get_suffix"
-				},
-				{
 					"type": "float",
 					"name": "custom_arrow_step",
 					"setter": "set_custom_arrow_step",
@@ -286194,6 +286241,36 @@
 					"name": "select_all_on_focus",
 					"setter": "set_select_all_on_focus",
 					"getter": "is_select_all_on_focus"
+				},
+				{
+					"type": "String",
+					"name": "format",
+					"setter": "set_format",
+					"getter": "get_format"
+				},
+				{
+					"type": "String",
+					"name": "plural_format",
+					"setter": "set_plural_format",
+					"getter": "get_plural_format"
+				},
+				{
+					"type": "int",
+					"name": "format_auto_translate_mode",
+					"setter": "set_format_auto_translate_mode",
+					"getter": "get_format_auto_translate_mode"
+				},
+				{
+					"type": "String",
+					"name": "prefix",
+					"setter": "set_prefix",
+					"getter": "get_prefix"
+				},
+				{
+					"type": "String",
+					"name": "suffix",
+					"setter": "set_suffix",
+					"getter": "get_suffix"
 				}
 			]
 		},
