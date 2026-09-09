@@ -57302,7 +57302,7 @@
 			]
 		},
 		{
-			"name": "BoneSpreader3D",
+			"name": "BoneSpaceAdjuster3D",
 			"is_refcounted": false,
 			"is_instantiable": true,
 			"inherits": "SkeletonModifier3D",
@@ -197211,6 +197211,29 @@
 					]
 				},
 				{
+					"name": "_set_spatial_container_views_locate_info_and_get_next_pointer",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2722015314,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "spatial_container",
+							"type": "RID"
+						},
+						{
+							"name": "next_pointer",
+							"type": "void*"
+						}
+					]
+				},
+				{
 					"name": "_set_reference_space_create_info_and_get_next_pointer",
 					"is_const": false,
 					"is_static": false,
@@ -197227,6 +197250,29 @@
 							"name": "reference_space_type",
 							"type": "int",
 							"meta": "int32"
+						},
+						{
+							"name": "next_pointer",
+							"type": "void*"
+						}
+					]
+				},
+				{
+					"name": "_set_spatial_container_create_info_and_get_next_pointer",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2722015314,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "spatial_container",
+							"type": "RID"
 						},
 						{
 							"name": "next_pointer",
@@ -201890,6 +201936,258 @@
 							"meta": "int64"
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialContainerExtension",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRExtensionWrapper",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "is_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_spatial_container_active",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_supported_bounds_modes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2915620761,
+					"return_value": {
+						"type": "Array"
+					}
+				},
+				{
+					"name": "get_spatial_container_state",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 212870561,
+					"return_value": {
+						"type": "OpenXRSpatialContainerState"
+					}
+				},
+				{
+					"name": "get_spatial_container_bounds",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3783033775,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "request_spatial_container_bounds_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1261129373,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "bounds_mode",
+							"type": "enum::OpenXRSpatialContainerState.BoundsMode"
+						}
+					]
+				},
+				{
+					"name": "request_spatial_container_visible",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2703660260,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "visible",
+							"type": "bool"
+						}
+					]
+				}
+			],
+			"signals": [
+				{
+					"name": "spatial_container_bounds_changed",
+					"arguments": [
+						{
+							"name": "spatial_container_rid",
+							"type": "RID"
+						},
+						{
+							"name": "spatial_container_infinite_bounds",
+							"type": "bool"
+						},
+						{
+							"name": "spatial_container_bounds_mode",
+							"type": "int"
+						},
+						{
+							"name": "spatial_container_bounds",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "spatial_container_bounds_mode_request_denied",
+					"arguments": [
+						{
+							"name": "spatial_container_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "spatial_container_closed",
+					"arguments": [
+						{
+							"name": "spatial_container_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "spatial_container_interactable_changed",
+					"arguments": [
+						{
+							"name": "spatial_container_rid",
+							"type": "RID"
+						},
+						{
+							"name": "spatial_container_interactable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "spatial_container_visible_changed",
+					"arguments": [
+						{
+							"name": "spatial_container_rid",
+							"type": "RID"
+						},
+						{
+							"name": "spatial_container_visible",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "spatial_container_visible_request_denied",
+					"arguments": [
+						{
+							"name": "spatial_container_rid",
+							"type": "RID"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialContainerSelfRenderingExtension",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRExtensionWrapper",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "is_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialContainerState",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "BoundsMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "BOUNDS_MODE_BOUNDED",
+							"value": 0
+						},
+						{
+							"name": "BOUNDS_MODE_IMMERSIVE",
+							"value": 1
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "get_bounds_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1708123309,
+					"return_value": {
+						"type": "enum::OpenXRSpatialContainerState.BoundsMode"
+					}
+				},
+				{
+					"name": "is_interactable",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_visible",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			]
 		},
