@@ -57302,7 +57302,7 @@
 			]
 		},
 		{
-			"name": "BoneSpreader3D",
+			"name": "BoneSpaceAdjuster3D",
 			"is_refcounted": false,
 			"is_instantiable": true,
 			"inherits": "SkeletonModifier3D",
@@ -117448,6 +117448,18 @@
 						{
 							"name": "CUSTOMIZATION_DELETE",
 							"value": 8
+						},
+						{
+							"name": "CUSTOMIZATION_NAVIGATION_BUTTONS",
+							"value": 9
+						},
+						{
+							"name": "CUSTOMIZATION_DRIVE_SELECTOR",
+							"value": 10
+						},
+						{
+							"name": "CUSTOMIZATION_FILTERS",
+							"value": 11
 						}
 					]
 				}
@@ -118292,6 +118304,27 @@
 					"setter": "set_customization_flag_enabled",
 					"getter": "is_customization_flag_enabled",
 					"index": 8
+				},
+				{
+					"type": "bool",
+					"name": "navigation_buttons_enabled",
+					"setter": "set_customization_flag_enabled",
+					"getter": "is_customization_flag_enabled",
+					"index": 9
+				},
+				{
+					"type": "bool",
+					"name": "drive_selector_enabled",
+					"setter": "set_customization_flag_enabled",
+					"getter": "is_customization_flag_enabled",
+					"index": 10
+				},
+				{
+					"type": "bool",
+					"name": "filters_enabled",
+					"setter": "set_customization_flag_enabled",
+					"getter": "is_customization_flag_enabled",
+					"index": 11
 				},
 				{
 					"type": "String",
@@ -149712,6 +149745,31 @@
 					"return_value": {
 						"type": "bool"
 					}
+				},
+				{
+					"name": "set_long_press",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "long_press",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_long_press",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"properties": [
@@ -149744,6 +149802,12 @@
 					"name": "double_tap",
 					"setter": "set_double_tap",
 					"getter": "is_double_tap"
+				},
+				{
+					"type": "bool",
+					"name": "long_press",
+					"setter": "set_long_press",
+					"getter": "is_long_press"
 				}
 			]
 		},
@@ -157188,8 +157252,16 @@
 							"value": 20
 						},
 						{
-							"name": "PARAM_MAX",
+							"name": "PARAM_CONTACT_SHADOW_OPACITY",
 							"value": 21
+						},
+						{
+							"name": "PARAM_CONTACT_SHADOW_BLUR",
+							"value": 22
+						},
+						{
+							"name": "PARAM_MAX",
+							"value": 23
 						}
 					]
 				},
@@ -157536,6 +157608,31 @@
 					}
 				},
 				{
+					"name": "set_allow_contact_shadows",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enabled",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_allow_contact_shadows",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "set_bake_mode",
 					"is_const": false,
 					"is_vararg": false,
@@ -157769,6 +157866,26 @@
 					"name": "shadow_caster_mask",
 					"setter": "set_shadow_caster_mask",
 					"getter": "get_shadow_caster_mask"
+				},
+				{
+					"type": "bool",
+					"name": "shadow_contact_shadows_allow",
+					"setter": "set_allow_contact_shadows",
+					"getter": "get_allow_contact_shadows"
+				},
+				{
+					"type": "float",
+					"name": "shadow_contact_shadows_opacity",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 21
+				},
+				{
+					"type": "float",
+					"name": "shadow_contact_shadows_blur",
+					"setter": "set_param",
+					"getter": "get_param",
+					"index": 22
 				},
 				{
 					"type": "bool",
@@ -194144,6 +194261,18 @@
 					}
 				},
 				{
+					"name": "get_primary_view_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint32"
+					}
+				},
+				{
 					"name": "get_view_configuration",
 					"is_const": true,
 					"is_vararg": false,
@@ -197211,6 +197340,29 @@
 					]
 				},
 				{
+					"name": "_set_spatial_container_views_locate_info_and_get_next_pointer",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2722015314,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "spatial_container",
+							"type": "RID"
+						},
+						{
+							"name": "next_pointer",
+							"type": "void*"
+						}
+					]
+				},
+				{
 					"name": "_set_reference_space_create_info_and_get_next_pointer",
 					"is_const": false,
 					"is_static": false,
@@ -197227,6 +197379,29 @@
 							"name": "reference_space_type",
 							"type": "int",
 							"meta": "int32"
+						},
+						{
+							"name": "next_pointer",
+							"type": "void*"
+						}
+					]
+				},
+				{
+					"name": "_set_spatial_container_create_info_and_get_next_pointer",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2722015314,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "spatial_container",
+							"type": "RID"
 						},
 						{
 							"name": "next_pointer",
@@ -197676,6 +197851,57 @@
 							"type": "void*"
 						}
 					]
+				},
+				{
+					"name": "_get_camera_projections",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2969235509,
+					"return_value": {
+						"type": "typedarray::Projection"
+					},
+					"arguments": [
+						{
+							"name": "tracker_name",
+							"type": "StringName"
+						},
+						{
+							"name": "aspect",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "z_near",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "z_far",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "_get_camera_offsets",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 689397652,
+					"return_value": {
+						"type": "typedarray::Transform3D"
+					},
+					"arguments": [
+						{
+							"name": "tracker_name",
+							"type": "StringName"
+						}
+					]
 				}
 			]
 		},
@@ -197685,6 +197911,37 @@
 			"is_instantiable": true,
 			"inherits": "OpenXRExtensionWrapper",
 			"api_type": "core"
+		},
+		{
+			"name": "OpenXRFoveatedInsetViewport",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "SubViewport",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_xr_origin3d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 505038244,
+					"return_value": {
+						"type": "XROrigin3D"
+					}
+				},
+				{
+					"name": "get_xr_camera3d",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1715292258,
+					"return_value": {
+						"type": "XRCamera3D"
+					}
+				}
+			]
 		},
 		{
 			"name": "OpenXRFrameSynthesisExtension",
@@ -198889,6 +199146,32 @@
 					]
 				},
 				{
+					"name": "ViewConfiguration",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "VIEW_CONFIGURATION_MONO",
+							"value": 0
+						},
+						{
+							"name": "VIEW_CONFIGURATION_STEREO",
+							"value": 1
+						},
+						{
+							"name": "VIEW_CONFIGURATION_STEREO_WITH_INSET",
+							"value": 2
+						},
+						{
+							"name": "VIEW_CONFIGURATION_UNSET",
+							"value": 254
+						},
+						{
+							"name": "VIEW_CONFIGURATION_UNKNOWN",
+							"value": 255
+						}
+					]
+				},
+				{
 					"name": "Hand",
 					"is_bitfield": false,
 					"values": [
@@ -199185,6 +199468,17 @@
 					"hash": 36873697,
 					"return_value": {
 						"type": "bool"
+					}
+				},
+				{
+					"name": "get_active_view_configuration",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905272016,
+					"return_value": {
+						"type": "enum::OpenXRInterface.ViewConfiguration"
 					}
 				},
 				{
@@ -201890,6 +202184,258 @@
 							"meta": "int64"
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialContainerExtension",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRExtensionWrapper",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "is_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_spatial_container_active",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "get_supported_bounds_modes",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2915620761,
+					"return_value": {
+						"type": "Array"
+					}
+				},
+				{
+					"name": "get_spatial_container_state",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 212870561,
+					"return_value": {
+						"type": "OpenXRSpatialContainerState"
+					}
+				},
+				{
+					"name": "get_spatial_container_bounds",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3783033775,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "request_spatial_container_bounds_mode",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1261129373,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "bounds_mode",
+							"type": "enum::OpenXRSpatialContainerState.BoundsMode"
+						}
+					]
+				},
+				{
+					"name": "request_spatial_container_visible",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2703660260,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "visible",
+							"type": "bool"
+						}
+					]
+				}
+			],
+			"signals": [
+				{
+					"name": "spatial_container_bounds_changed",
+					"arguments": [
+						{
+							"name": "spatial_container_rid",
+							"type": "RID"
+						},
+						{
+							"name": "spatial_container_infinite_bounds",
+							"type": "bool"
+						},
+						{
+							"name": "spatial_container_bounds_mode",
+							"type": "int"
+						},
+						{
+							"name": "spatial_container_bounds",
+							"type": "Vector3"
+						}
+					]
+				},
+				{
+					"name": "spatial_container_bounds_mode_request_denied",
+					"arguments": [
+						{
+							"name": "spatial_container_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "spatial_container_closed",
+					"arguments": [
+						{
+							"name": "spatial_container_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "spatial_container_interactable_changed",
+					"arguments": [
+						{
+							"name": "spatial_container_rid",
+							"type": "RID"
+						},
+						{
+							"name": "spatial_container_interactable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "spatial_container_visible_changed",
+					"arguments": [
+						{
+							"name": "spatial_container_rid",
+							"type": "RID"
+						},
+						{
+							"name": "spatial_container_visible",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "spatial_container_visible_request_denied",
+					"arguments": [
+						{
+							"name": "spatial_container_rid",
+							"type": "RID"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialContainerSelfRenderingExtension",
+			"is_refcounted": false,
+			"is_instantiable": true,
+			"inherits": "OpenXRExtensionWrapper",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "is_enabled",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			]
+		},
+		{
+			"name": "OpenXRSpatialContainerState",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "BoundsMode",
+					"is_bitfield": false,
+					"values": [
+						{
+							"name": "BOUNDS_MODE_BOUNDED",
+							"value": 0
+						},
+						{
+							"name": "BOUNDS_MODE_IMMERSIVE",
+							"value": 1
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "get_bounds_mode",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1708123309,
+					"return_value": {
+						"type": "enum::OpenXRSpatialContainerState.BoundsMode"
+					}
+				},
+				{
+					"name": "is_interactable",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "is_visible",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			]
 		},
@@ -251972,8 +252518,16 @@
 							"value": 20
 						},
 						{
-							"name": "LIGHT_PARAM_MAX",
+							"name": "LIGHT_PARAM_CONTACT_SHADOW_OPACITY",
 							"value": 21
+						},
+						{
+							"name": "LIGHT_PARAM_CONTACT_SHADOW_BLUR",
+							"value": 22
+						},
+						{
+							"name": "LIGHT_PARAM_MAX",
+							"value": 23
 						}
 					]
 				},
@@ -256453,6 +257007,24 @@
 					]
 				},
 				{
+					"name": "light_set_allow_contact_shadows",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1265174801,
+					"arguments": [
+						{
+							"name": "light",
+							"type": "RID"
+						},
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
 					"name": "light_omni_set_shadow_mode",
 					"is_const": false,
 					"is_vararg": false,
@@ -258842,6 +259414,29 @@
 							"name": "z_far",
 							"type": "float",
 							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "camera_set_xr_projections",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1352140595,
+					"arguments": [
+						{
+							"name": "camera",
+							"type": "RID"
+						},
+						{
+							"name": "projections",
+							"type": "typedarray::Projection"
+						},
+						{
+							"name": "offsets",
+							"type": "typedarray::Transform3D",
+							"default_value": "Array[Transform3D]([])"
 						}
 					]
 				},
@@ -356829,7 +357424,42 @@
 			"is_refcounted": false,
 			"is_instantiable": true,
 			"inherits": "Camera3D",
-			"api_type": "core"
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_tracker",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "tracker_name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_tracker",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2002593661,
+					"return_value": {
+						"type": "StringName"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "tracker",
+					"setter": "set_tracker",
+					"getter": "get_tracker"
+				}
+			]
 		},
 		{
 			"name": "XRController3D",
@@ -358668,6 +359298,55 @@
 					"hash": 3218959716
 				},
 				{
+					"name": "get_camera_projections",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2969235509,
+					"return_value": {
+						"type": "typedarray::Projection"
+					},
+					"arguments": [
+						{
+							"name": "tracker_name",
+							"type": "StringName"
+						},
+						{
+							"name": "aspect",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "near",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "far",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_camera_offsets",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 689397652,
+					"return_value": {
+						"type": "typedarray::Transform3D"
+					},
+					"arguments": [
+						{
+							"name": "tracker_name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
 					"name": "get_transform_for_view",
 					"is_const": false,
 					"is_vararg": false,
@@ -359082,6 +359761,57 @@
 					"return_value": {
 						"type": "Transform3D"
 					}
+				},
+				{
+					"name": "_get_camera_projections",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 2969235509,
+					"return_value": {
+						"type": "typedarray::Projection"
+					},
+					"arguments": [
+						{
+							"name": "tracker_name",
+							"type": "StringName"
+						},
+						{
+							"name": "aspect",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "z_near",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "z_far",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "_get_camera_offsets",
+					"is_const": false,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 689397652,
+					"return_value": {
+						"type": "typedarray::Transform3D"
+					},
+					"arguments": [
+						{
+							"name": "tracker_name",
+							"type": "StringName"
+						}
+					]
 				},
 				{
 					"name": "_get_transform_for_view",
@@ -360167,7 +360897,7 @@
 					"is_bitfield": false,
 					"values": [
 						{
-							"name": "TRACKER_HEAD",
+							"name": "TRACKER_CAMERA",
 							"value": 1
 						},
 						{
@@ -360205,6 +360935,10 @@
 						{
 							"name": "TRACKER_ANY",
 							"value": 255
+						},
+						{
+							"name": "TRACKER_HEAD",
+							"value": 1
 						}
 					]
 				},
@@ -360503,6 +361237,55 @@
 					],
 					"return_value": {
 						"type": "XRTracker"
+					},
+					"arguments": [
+						{
+							"name": "tracker_name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_camera_projections",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2969235509,
+					"return_value": {
+						"type": "typedarray::Projection"
+					},
+					"arguments": [
+						{
+							"name": "tracker_name",
+							"type": "StringName"
+						},
+						{
+							"name": "aspect",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "near",
+							"type": "float",
+							"meta": "double"
+						},
+						{
+							"name": "far",
+							"type": "float",
+							"meta": "double"
+						}
+					]
+				},
+				{
+					"name": "get_camera_offsets",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 689397652,
+					"return_value": {
+						"type": "typedarray::Transform3D"
 					},
 					"arguments": [
 						{
