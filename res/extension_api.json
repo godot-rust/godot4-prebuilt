@@ -82491,6 +82491,24 @@
 					]
 				},
 				{
+					"name": "add_theme_sound_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3407455952,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						},
+						{
+							"name": "audio",
+							"type": "AudioStream"
+						}
+					]
+				},
+				{
 					"name": "remove_theme_icon_override",
 					"is_const": false,
 					"is_vararg": false,
@@ -82562,6 +82580,20 @@
 				},
 				{
 					"name": "remove_theme_constant_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "remove_theme_sound_override",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -82727,6 +82759,28 @@
 					]
 				},
 				{
+					"name": "get_theme_sound",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1579966710,
+					"return_value": {
+						"type": "AudioStream"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						},
+						{
+							"name": "theme_type",
+							"type": "StringName",
+							"default_value": "&\"\""
+						}
+					]
+				},
+				{
 					"name": "has_theme_icon_override",
 					"is_const": true,
 					"is_vararg": false,
@@ -82813,6 +82867,23 @@
 				},
 				{
 					"name": "has_theme_constant_override",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2619796661,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "has_theme_sound_override",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -82963,6 +83034,28 @@
 					"hash_compatibility": [
 						1187511791
 					],
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						},
+						{
+							"name": "theme_type",
+							"type": "StringName",
+							"default_value": "&\"\""
+						}
+					]
+				},
+				{
+					"name": "has_theme_sound",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 866386512,
 					"return_value": {
 						"type": "bool"
 					},
@@ -117834,31 +117927,6 @@
 					]
 				},
 				{
-					"name": "set_mode_overrides_title",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "override",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "is_mode_overriding_title",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
 					"name": "set_file_mode",
 					"is_const": false,
 					"is_vararg": false,
@@ -118166,6 +118234,31 @@
 					"is_static": false,
 					"is_virtual": false,
 					"hash": 3218959716
+				},
+				{
+					"name": "set_mode_overrides_title",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "override",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_mode_overriding_title",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
 				}
 			],
 			"signals": [
@@ -211658,6 +211751,280 @@
 			]
 		},
 		{
+			"name": "PhysicsCastMotionResult2D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_safe_fraction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_unsafe_fraction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "float",
+					"name": "safe_fraction",
+					"getter": "get_safe_fraction"
+				},
+				{
+					"type": "float",
+					"name": "unsafe_fraction",
+					"getter": "get_unsafe_fraction"
+				}
+			]
+		},
+		{
+			"name": "PhysicsCastMotionResult3D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_safe_fraction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "get_unsafe_fraction",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1740695150,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "float",
+					"name": "safe_fraction",
+					"getter": "get_safe_fraction"
+				},
+				{
+					"type": "float",
+					"name": "unsafe_fraction",
+					"getter": "get_unsafe_fraction"
+				}
+			]
+		},
+		{
+			"name": "PhysicsCollideShapeResult2D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_max_collisions",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_max_collisions",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_collisions",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collision_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_point_on_queried_shape",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2299179447,
+					"return_value": {
+						"type": "Vector2"
+					},
+					"arguments": [
+						{
+							"name": "collision_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_point_on_colliding_shape",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2299179447,
+					"return_value": {
+						"type": "Vector2"
+					},
+					"arguments": [
+						{
+							"name": "collision_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "max_collisions",
+					"setter": "set_max_collisions",
+					"getter": "get_max_collisions"
+				}
+			]
+		},
+		{
+			"name": "PhysicsCollideShapeResult3D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_max_collisions",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_max_collisions",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_collisions",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collision_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_point_on_queried_shape",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 711720468,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "collision_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_point_on_colliding_shape",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 711720468,
+					"return_value": {
+						"type": "Vector3"
+					},
+					"arguments": [
+						{
+							"name": "collision_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "max_collisions",
+					"setter": "set_max_collisions",
+					"getter": "get_max_collisions"
+				}
+			]
+		},
+		{
 			"name": "PhysicsDirectBodyState2D",
 			"is_refcounted": false,
 			"is_instantiable": false,
@@ -214790,6 +215157,24 @@
 			"api_type": "core",
 			"methods": [
 				{
+					"name": "intersect_ray",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1590275562,
+					"return_value": {
+						"type": "Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsRayQueryParameters2D",
+							"meta": "required"
+						}
+					]
+				},
+				{
 					"name": "intersect_point",
 					"is_const": false,
 					"is_vararg": false,
@@ -214813,24 +215198,6 @@
 							"type": "int",
 							"meta": "int32",
 							"default_value": "32"
-						}
-					]
-				},
-				{
-					"name": "intersect_ray",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 1590275562,
-					"return_value": {
-						"type": "Dictionary"
-					},
-					"arguments": [
-						{
-							"name": "parameters",
-							"type": "PhysicsRayQueryParameters2D",
-							"meta": "required"
 						}
 					]
 				},
@@ -214920,6 +215287,144 @@
 						{
 							"name": "parameters",
 							"type": "PhysicsShapeQueryParameters2D",
+							"meta": "required"
+						}
+					]
+				},
+				{
+					"name": "intersect_ray_into",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2480877099,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsRayQueryParameters2D",
+							"meta": "required"
+						},
+						{
+							"name": "result",
+							"type": "PhysicsIntersectRayResult2D",
+							"meta": "required"
+						}
+					]
+				},
+				{
+					"name": "intersect_point_into",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2338147429,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsPointQueryParameters2D",
+							"meta": "required"
+						},
+						{
+							"name": "result",
+							"type": "PhysicsIntersectPointResult2D",
+							"meta": "required"
+						}
+					]
+				},
+				{
+					"name": "intersect_shape_into",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1052395953,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsShapeQueryParameters2D",
+							"meta": "required"
+						},
+						{
+							"name": "result",
+							"type": "PhysicsIntersectShapeResult2D",
+							"meta": "required"
+						}
+					]
+				},
+				{
+					"name": "cast_motion_into",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1136743640,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsShapeQueryParameters2D",
+							"meta": "required"
+						},
+						{
+							"name": "result",
+							"type": "PhysicsCastMotionResult2D",
+							"meta": "required"
+						}
+					]
+				},
+				{
+					"name": "collide_shape_into",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2406737026,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsShapeQueryParameters2D",
+							"meta": "required"
+						},
+						{
+							"name": "result",
+							"type": "PhysicsCollideShapeResult2D",
+							"meta": "required"
+						}
+					]
+				},
+				{
+					"name": "get_rest_info_into",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 328042613,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsShapeQueryParameters2D",
+							"meta": "required"
+						},
+						{
+							"name": "result",
+							"type": "PhysicsGetRestInfoResult2D",
 							"meta": "required"
 						}
 					]
@@ -215260,6 +215765,24 @@
 			"api_type": "core",
 			"methods": [
 				{
+					"name": "intersect_ray",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3957970750,
+					"return_value": {
+						"type": "Dictionary"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsRayQueryParameters3D",
+							"meta": "required"
+						}
+					]
+				},
+				{
 					"name": "intersect_point",
 					"is_const": false,
 					"is_vararg": false,
@@ -215283,24 +215806,6 @@
 							"type": "int",
 							"meta": "int32",
 							"default_value": "32"
-						}
-					]
-				},
-				{
-					"name": "intersect_ray",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3957970750,
-					"return_value": {
-						"type": "Dictionary"
-					},
-					"arguments": [
-						{
-							"name": "parameters",
-							"type": "PhysicsRayQueryParameters3D",
-							"meta": "required"
 						}
 					]
 				},
@@ -215390,6 +215895,144 @@
 						{
 							"name": "parameters",
 							"type": "PhysicsShapeQueryParameters3D",
+							"meta": "required"
+						}
+					]
+				},
+				{
+					"name": "intersect_ray_into",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1101524092,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsRayQueryParameters3D",
+							"meta": "required"
+						},
+						{
+							"name": "result",
+							"type": "PhysicsIntersectRayResult3D",
+							"meta": "required"
+						}
+					]
+				},
+				{
+					"name": "intersect_point_into",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4224456912,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsPointQueryParameters3D",
+							"meta": "required"
+						},
+						{
+							"name": "result",
+							"type": "PhysicsIntersectPointResult3D",
+							"meta": "required"
+						}
+					]
+				},
+				{
+					"name": "intersect_shape_into",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2386936143,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsShapeQueryParameters3D",
+							"meta": "required"
+						},
+						{
+							"name": "result",
+							"type": "PhysicsIntersectShapeResult3D",
+							"meta": "required"
+						}
+					]
+				},
+				{
+					"name": "cast_motion_into",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1750186052,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsShapeQueryParameters3D",
+							"meta": "required"
+						},
+						{
+							"name": "result",
+							"type": "PhysicsCastMotionResult3D",
+							"meta": "required"
+						}
+					]
+				},
+				{
+					"name": "collide_shape_into",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 117908487,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsShapeQueryParameters3D",
+							"meta": "required"
+						},
+						{
+							"name": "result",
+							"type": "PhysicsCollideShapeResult3D",
+							"meta": "required"
+						}
+					]
+				},
+				{
+					"name": "get_rest_info_into",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 383425697,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "parameters",
+							"type": "PhysicsShapeQueryParameters3D",
+							"meta": "required"
+						},
+						{
+							"name": "result",
+							"type": "PhysicsGetRestInfoResult3D",
 							"meta": "required"
 						}
 					]
@@ -215748,6 +216391,979 @@
 							"type": "Vector3"
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "PhysicsGetRestInfoResult2D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_point",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "get_normal",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "get_collider_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "get_collider_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					}
+				},
+				{
+					"name": "get_collider_shape",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_collider_velocity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "Vector2",
+					"name": "point",
+					"getter": "get_point"
+				},
+				{
+					"type": "Vector2",
+					"name": "normal",
+					"getter": "get_normal"
+				},
+				{
+					"type": "RID",
+					"name": "collider_rid",
+					"getter": "get_collider_rid"
+				},
+				{
+					"type": "int",
+					"name": "collider_id",
+					"getter": "get_collider_id"
+				},
+				{
+					"type": "int",
+					"name": "collider_shape",
+					"getter": "get_collider_shape"
+				},
+				{
+					"type": "Vector2",
+					"name": "collider_velocity",
+					"getter": "get_collider_velocity"
+				}
+			]
+		},
+		{
+			"name": "PhysicsGetRestInfoResult3D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_point",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "get_normal",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "get_collider_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "get_collider_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					}
+				},
+				{
+					"name": "get_collider_shape",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_collider_velocity",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "Vector3",
+					"name": "point",
+					"getter": "get_point"
+				},
+				{
+					"type": "Vector3",
+					"name": "normal",
+					"getter": "get_normal"
+				},
+				{
+					"type": "RID",
+					"name": "collider_rid",
+					"getter": "get_collider_rid"
+				},
+				{
+					"type": "int",
+					"name": "collider_id",
+					"getter": "get_collider_id"
+				},
+				{
+					"type": "int",
+					"name": "collider_shape",
+					"getter": "get_collider_shape"
+				},
+				{
+					"type": "Vector3",
+					"name": "collider_velocity",
+					"getter": "get_collider_velocity"
+				}
+			]
+		},
+		{
+			"name": "PhysicsIntersectPointResult2D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_max_intersections",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_max_intersections",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_intersections",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_intersection_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_collider_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collider_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 495598643,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collider",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3332903315,
+					"return_value": {
+						"type": "Object"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collider_shape",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "max_intersections",
+					"setter": "set_max_intersections",
+					"getter": "get_max_intersections"
+				}
+			]
+		},
+		{
+			"name": "PhysicsIntersectPointResult3D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_max_intersections",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_max_intersections",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_intersections",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_intersection_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_collider_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collider_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 495598643,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collider",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3332903315,
+					"return_value": {
+						"type": "Object"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collider_shape",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "max_intersections",
+					"setter": "set_max_intersections",
+					"getter": "get_max_intersections"
+				}
+			]
+		},
+		{
+			"name": "PhysicsIntersectRayResult2D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "get_normal",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3341600327,
+					"return_value": {
+						"type": "Vector2"
+					}
+				},
+				{
+					"name": "get_collider_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "get_collider_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					}
+				},
+				{
+					"name": "get_collider",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1981248198,
+					"return_value": {
+						"type": "Object"
+					}
+				},
+				{
+					"name": "get_collider_shape",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "Vector2",
+					"name": "position",
+					"getter": "get_position"
+				},
+				{
+					"type": "Vector2",
+					"name": "normal",
+					"getter": "get_normal"
+				},
+				{
+					"type": "RID",
+					"name": "collider_rid",
+					"getter": "get_collider_rid"
+				},
+				{
+					"type": "int",
+					"name": "collider_id",
+					"getter": "get_collider_id"
+				},
+				{
+					"type": "Object",
+					"name": "collider",
+					"getter": "get_collider"
+				},
+				{
+					"type": "int",
+					"name": "collider_shape",
+					"getter": "get_collider_shape"
+				}
+			]
+		},
+		{
+			"name": "PhysicsIntersectRayResult3D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_position",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "get_normal",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3360562783,
+					"return_value": {
+						"type": "Vector3"
+					}
+				},
+				{
+					"name": "get_collider_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2944877500,
+					"return_value": {
+						"type": "RID"
+					}
+				},
+				{
+					"name": "get_collider_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					}
+				},
+				{
+					"name": "get_collider",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1981248198,
+					"return_value": {
+						"type": "Object"
+					}
+				},
+				{
+					"name": "get_collider_shape",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_collider_face_index",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "Vector3",
+					"name": "position",
+					"getter": "get_position"
+				},
+				{
+					"type": "Vector3",
+					"name": "normal",
+					"getter": "get_normal"
+				},
+				{
+					"type": "RID",
+					"name": "collider_rid",
+					"getter": "get_collider_rid"
+				},
+				{
+					"type": "int",
+					"name": "collider_id",
+					"getter": "get_collider_id"
+				},
+				{
+					"type": "Object",
+					"name": "collider",
+					"getter": "get_collider"
+				},
+				{
+					"type": "int",
+					"name": "collider_shape",
+					"getter": "get_collider_shape"
+				},
+				{
+					"type": "int",
+					"name": "collider_face_index",
+					"getter": "get_collider_face_index"
+				}
+			]
+		},
+		{
+			"name": "PhysicsIntersectShapeResult2D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_max_intersections",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_max_intersections",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_intersections",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_intersection_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_collider_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collider_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 495598643,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collider",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3332903315,
+					"return_value": {
+						"type": "Object"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collider_shape",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "max_intersections",
+					"setter": "set_max_intersections",
+					"getter": "get_max_intersections"
+				}
+			]
+		},
+		{
+			"name": "PhysicsIntersectShapeResult3D",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "get_max_intersections",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_max_intersections",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1286410249,
+					"arguments": [
+						{
+							"name": "max_intersections",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_intersection_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3905245786,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_collider_id",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collider_rid",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 495598643,
+					"return_value": {
+						"type": "RID"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collider",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3332903315,
+					"return_value": {
+						"type": "Object"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_collider_shape",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 923996154,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					},
+					"arguments": [
+						{
+							"name": "intersection_index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "int",
+					"name": "max_intersections",
+					"setter": "set_max_intersections",
+					"getter": "get_max_intersections"
 				}
 			]
 		},
@@ -319226,8 +320842,12 @@
 							"value": 5
 						},
 						{
-							"name": "DATA_TYPE_MAX",
+							"name": "DATA_TYPE_SOUND",
 							"value": 6
+						},
+						{
+							"name": "DATA_TYPE_MAX",
+							"value": 7
 						}
 					]
 				}
@@ -320030,6 +321650,138 @@
 					}
 				},
 				{
+					"name": "set_sound",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2577918927,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						},
+						{
+							"name": "theme_type",
+							"type": "StringName"
+						},
+						{
+							"name": "sound",
+							"type": "AudioStream"
+						}
+					]
+				},
+				{
+					"name": "get_sound",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1175136407,
+					"return_value": {
+						"type": "AudioStream"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						},
+						{
+							"name": "theme_type",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "has_sound",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 471820014,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						},
+						{
+							"name": "theme_type",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "rename_sound",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 642128662,
+					"arguments": [
+						{
+							"name": "old_name",
+							"type": "StringName"
+						},
+						{
+							"name": "name",
+							"type": "StringName"
+						},
+						{
+							"name": "theme_type",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "clear_sound",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3740211285,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						},
+						{
+							"name": "theme_type",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "get_sound_list",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 4291131558,
+					"return_value": {
+						"type": "PackedStringArray"
+					},
+					"arguments": [
+						{
+							"name": "theme_type",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_sound_type_list",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1139954409,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
+				},
+				{
 					"name": "set_default_base_scale",
 					"is_const": false,
 					"is_vararg": false,
@@ -320648,6 +322400,31 @@
 					"return_value": {
 						"type": "StyleBox"
 					}
+				},
+				{
+					"name": "set_fallback_sound",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2210767741,
+					"arguments": [
+						{
+							"name": "audio",
+							"type": "AudioStream"
+						}
+					]
+				},
+				{
+					"name": "get_fallback_sound",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1183832186,
+					"return_value": {
+						"type": "AudioStream"
+					}
 				}
 			],
 			"signals": [
@@ -320685,6 +322462,12 @@
 					"name": "fallback_stylebox",
 					"setter": "set_fallback_stylebox",
 					"getter": "get_fallback_stylebox"
+				},
+				{
+					"type": "AudioStream",
+					"name": "fallback_sound",
+					"setter": "set_fallback_sound",
+					"getter": "get_fallback_sound"
 				}
 			]
 		},
@@ -353019,6 +354802,31 @@
 					}
 				},
 				{
+					"name": "set_disable_webxr_layers",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "disable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_disable_webxr_layers",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
 					"name": "is_input_source_active",
 					"is_const": true,
 					"is_vararg": false,
@@ -353242,6 +355050,12 @@
 					"name": "requested_reference_space_types",
 					"setter": "set_requested_reference_space_types",
 					"getter": "get_requested_reference_space_types"
+				},
+				{
+					"type": "bool",
+					"name": "disable_webxr_layers",
+					"setter": "set_disable_webxr_layers",
+					"getter": "get_disable_webxr_layers"
 				},
 				{
 					"type": "String",
@@ -354551,6 +356365,24 @@
 					]
 				},
 				{
+					"name": "add_theme_sound_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3407455952,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						},
+						{
+							"name": "sound",
+							"type": "AudioStream"
+						}
+					]
+				},
+				{
 					"name": "remove_theme_icon_override",
 					"is_const": false,
 					"is_vararg": false,
@@ -354622,6 +356454,20 @@
 				},
 				{
 					"name": "remove_theme_constant_override",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3304788590,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "remove_theme_sound_override",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -354787,6 +356633,28 @@
 					]
 				},
 				{
+					"name": "get_theme_sound",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1579966710,
+					"return_value": {
+						"type": "AudioStream"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						},
+						{
+							"name": "theme_type",
+							"type": "StringName",
+							"default_value": "&\"\""
+						}
+					]
+				},
+				{
 					"name": "has_theme_icon_override",
 					"is_const": true,
 					"is_vararg": false,
@@ -354873,6 +356741,23 @@
 				},
 				{
 					"name": "has_theme_constant_override",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2619796661,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						}
+					]
+				},
+				{
+					"name": "has_theme_sound_override",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -355023,6 +356908,28 @@
 					"hash_compatibility": [
 						1187511791
 					],
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "StringName"
+						},
+						{
+							"name": "theme_type",
+							"type": "StringName",
+							"default_value": "&\"\""
+						}
+					]
+				},
+				{
+					"name": "has_theme_sound",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 866386512,
 					"return_value": {
 						"type": "bool"
 					},
