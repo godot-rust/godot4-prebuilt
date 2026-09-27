@@ -277263,15 +277263,6 @@
 					"name": "name_changed"
 				},
 				{
-					"name": "search_in_files_requested",
-					"arguments": [
-						{
-							"name": "text",
-							"type": "String"
-						}
-					]
-				},
-				{
 					"name": "request_help",
 					"arguments": [
 						{
@@ -277303,15 +277294,6 @@
 					]
 				},
 				{
-					"name": "replace_in_files_requested",
-					"arguments": [
-						{
-							"name": "text",
-							"type": "String"
-						}
-					]
-				},
-				{
 					"name": "go_to_method",
 					"arguments": [
 						{
@@ -277338,6 +277320,24 @@
 				},
 				{
 					"name": "edited_script_changed"
+				},
+				{
+					"name": "search_in_files_requested",
+					"arguments": [
+						{
+							"name": "text",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "replace_in_files_requested",
+					"arguments": [
+						{
+							"name": "text",
+							"type": "String"
+						}
+					]
 				}
 			]
 		},
