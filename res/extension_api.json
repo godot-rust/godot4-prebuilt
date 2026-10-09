@@ -157426,16 +157426,12 @@
 							"value": 20
 						},
 						{
-							"name": "PARAM_CONTACT_SHADOW_OPACITY",
+							"name": "PARAM_CONTACT_SHADOW_BLUR",
 							"value": 21
 						},
 						{
-							"name": "PARAM_CONTACT_SHADOW_BLUR",
-							"value": 22
-						},
-						{
 							"name": "PARAM_MAX",
-							"value": 23
+							"value": 22
 						}
 					]
 				},
@@ -158049,17 +158045,10 @@
 				},
 				{
 					"type": "float",
-					"name": "shadow_contact_shadows_opacity",
-					"setter": "set_param",
-					"getter": "get_param",
-					"index": 21
-				},
-				{
-					"type": "float",
 					"name": "shadow_contact_shadows_blur",
 					"setter": "set_param",
 					"getter": "get_param",
-					"index": 22
+					"index": 21
 				},
 				{
 					"type": "bool",
@@ -254226,16 +254215,12 @@
 							"value": 20
 						},
 						{
-							"name": "LIGHT_PARAM_CONTACT_SHADOW_OPACITY",
+							"name": "LIGHT_PARAM_CONTACT_SHADOW_BLUR",
 							"value": 21
 						},
 						{
-							"name": "LIGHT_PARAM_CONTACT_SHADOW_BLUR",
-							"value": 22
-						},
-						{
 							"name": "LIGHT_PARAM_MAX",
-							"value": 23
+							"value": 22
 						}
 					]
 				},
