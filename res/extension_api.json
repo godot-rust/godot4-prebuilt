@@ -3,9 +3,9 @@
 		"version_major": 4,
 		"version_minor": 8,
 		"version_patch": 0,
-		"version_status": "dev",
+		"version_status": "beta",
 		"version_build": "custom_build",
-		"version_full_name": "Godot Engine v4.8.dev.custom_build",
+		"version_full_name": "Godot Engine v4.8.beta.custom_build",
 		"precision": "single"
 	},
 	"builtin_class_sizes": [
@@ -94303,6 +94303,26 @@
 					]
 				},
 				{
+					"name": "window_set_ime_rect",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2829673102,
+					"arguments": [
+						{
+							"name": "rect",
+							"type": "Rect2i"
+						},
+						{
+							"name": "window_id",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "0"
+						}
+					]
+				},
+				{
 					"name": "window_set_vsync_mode",
 					"is_const": false,
 					"is_vararg": false,
@@ -160231,11 +160251,11 @@
 					"is_bitfield": false,
 					"values": [
 						{
-							"name": "TILING_MODE_UNIT",
+							"name": "TILING_MODE_STRETCH",
 							"value": 0
 						},
 						{
-							"name": "TILING_MODE_LENGTH",
+							"name": "TILING_MODE_TILE",
 							"value": 1
 						},
 						{
@@ -188082,7 +188102,10 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2570952461,
+					"hash": 4170434404,
+					"hash_compatibility": [
+						2570952461
+					],
 					"arguments": [
 						{
 							"name": "node",
@@ -188093,6 +188116,11 @@
 							"name": "keep_groups",
 							"type": "bool",
 							"default_value": "false"
+						},
+						{
+							"name": "keep_owned_children",
+							"type": "bool",
+							"default_value": "true"
 						}
 					]
 				},
@@ -355975,6 +356003,20 @@
 					]
 				},
 				{
+					"name": "set_ime_rect",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1763793166,
+					"arguments": [
+						{
+							"name": "rect",
+							"type": "Rect2i"
+						}
+					]
+				},
+				{
 					"name": "is_embedded",
 					"is_const": true,
 					"is_vararg": false,
@@ -364222,7 +364264,7 @@
 		},
 		{
 			"name": "Glyph",
-			"format": "int start = -1;int end = -1;uint8_t count = 0;uint8_t repeat = 1;uint16_t flags = 0;float x_off = 0.f;float y_off = 0.f;float advance = 0.f;RID font_rid;int font_size = 0;int32_t index = 0"
+			"format": "int start = -1;int end = -1;uint8_t count = 0;uint8_t repeat = 1;uint16_t flags = 0;float x_off = 0.f;float y_off = 0.f;float advance = 0.f;RID font_rid;int font_size = 0;int32_t index = 0;int span_index = -1"
 		},
 		{
 			"name": "ObjectID",
