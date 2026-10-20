@@ -158314,6 +158314,10 @@
 						{
 							"name": "BAKE_ERROR_ATLAS_TOO_SMALL",
 							"value": 11
+						},
+						{
+							"name": "BAKE_ERROR_TEXTURE_EXCEEDS_DEVICE_LIMIT",
+							"value": 12
 						}
 					]
 				},
