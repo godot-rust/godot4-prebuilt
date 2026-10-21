@@ -109732,7 +109732,7 @@
 					"getter": "is_flat"
 				},
 				{
-					"type": "bool",
+					"type": "int",
 					"name": "control_state",
 					"setter": "set_control_state",
 					"getter": "get_control_state"
