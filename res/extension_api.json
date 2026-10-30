@@ -160226,9 +160226,9 @@
 			]
 		},
 		{
-			"name": "Line3D",
+			"name": "LineBase3D",
 			"is_refcounted": false,
-			"is_instantiable": true,
+			"is_instantiable": false,
 			"inherits": "GeometryInstance3D",
 			"api_type": "core",
 			"enums": [
@@ -330393,7 +330393,7 @@
 			"name": "Trail3D",
 			"is_refcounted": false,
 			"is_instantiable": true,
-			"inherits": "Line3D",
+			"inherits": "LineBase3D",
 			"api_type": "core",
 			"enums": [
 				{
@@ -330549,11 +330549,11 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2165032565,
+					"hash": 838352442,
 					"arguments": [
 						{
 							"name": "material_mode",
-							"type": "enum::Line3D.MaterialMode"
+							"type": "enum::LineBase3D.MaterialMode"
 						}
 					]
 				},
@@ -330563,9 +330563,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3629890196,
+					"hash": 3506372543,
 					"return_value": {
-						"type": "enum::Line3D.MaterialMode"
+						"type": "enum::LineBase3D.MaterialMode"
 					}
 				},
 				{
@@ -330599,11 +330599,11 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3254932473,
+					"hash": 1728914772,
 					"arguments": [
 						{
 							"name": "alignment",
-							"type": "enum::Line3D.MeshAlignment"
+							"type": "enum::LineBase3D.MeshAlignment"
 						}
 					]
 				},
@@ -330613,9 +330613,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 603151927,
+					"hash": 1842977196,
 					"return_value": {
-						"type": "enum::Line3D.MeshAlignment"
+						"type": "enum::LineBase3D.MeshAlignment"
 					}
 				},
 				{
@@ -330651,11 +330651,11 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3698560511,
+					"hash": 3386846958,
 					"arguments": [
 						{
 							"name": "tiling_mode",
-							"type": "enum::Line3D.TilingMode"
+							"type": "enum::LineBase3D.TilingMode"
 						}
 					]
 				},
@@ -330665,9 +330665,9 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1009472955,
+					"hash": 73744199,
 					"return_value": {
-						"type": "enum::Line3D.TilingMode"
+						"type": "enum::LineBase3D.TilingMode"
 					}
 				},
 				{
