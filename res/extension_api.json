@@ -188106,10 +188106,7 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 4170434404,
-					"hash_compatibility": [
-						2570952461
-					],
+					"hash": 2570952461,
 					"arguments": [
 						{
 							"name": "node",
@@ -188120,11 +188117,6 @@
 							"name": "keep_groups",
 							"type": "bool",
 							"default_value": "false"
-						},
-						{
-							"name": "keep_owned_children",
-							"type": "bool",
-							"default_value": "true"
 						}
 					]
 				},
