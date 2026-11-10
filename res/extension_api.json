@@ -250957,6 +250957,23 @@
 					]
 				},
 				{
+					"name": "texture_get_nearest_supported_samples",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1603719724,
+					"return_value": {
+						"type": "enum::RenderingDevice.TextureSamples"
+					},
+					"arguments": [
+						{
+							"name": "format",
+							"type": "RDTextureFormat"
+						}
+					]
+				},
+				{
 					"name": "texture_get_native_handle",
 					"is_const": false,
 					"is_vararg": false,
