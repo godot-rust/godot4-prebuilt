@@ -281894,7 +281894,7 @@
 			],
 			"properties": [
 				{
-					"type": "typedarray::24/17:InputEvent",
+					"type": "typedarray::24/17:InputEvent,-InputEventShortcut",
 					"name": "events",
 					"setter": "set_events",
 					"getter": "get_events"
@@ -313499,6 +313499,24 @@
 							"name": "data_size",
 							"type": "int",
 							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "_font_validate",
+					"is_const": true,
+					"is_static": false,
+					"is_required": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"hash": 4155700596,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
 						}
 					]
 				},
